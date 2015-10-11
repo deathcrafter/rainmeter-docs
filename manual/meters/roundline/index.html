@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Roundline meter - Rainmeter 3.2 Manual</title>
+	<link href="../../../css/main.css?3" rel="stylesheet">
+	<link rel="shortcut icon" href="//rainmeter.net/favicon.ico">
+	<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6/html5shiv.min.js"></script><![endif]-->
+</head>
+<body>
+	<div id="wrapper">
+		<div id="top">
+			<div class="container">
+				<a id="logo" href="//rainmeter.net/"></a>
+				<nav id="nav">
+					<ul>
+					<li><a href="//rainmeter.net">Home</a>
+					<li><a href="//rainmeter.net/about">About</a>
+					<li><a href="/" class="active">Docs</a>
+					<li><a href="//rainmeter.net/discover">Discover</a>
+					<li><a href="//rainmeter.net/forum">Forum</a>
+					</ul>
+				</nav>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div id="side-content">
+	<h1 id="category"><a href="/manual">3.2 Manual</a></h1>
+
+	<form id="search-form" method="get" action="http://www.google.com/search">
+		<input name="sitesearch" value="docs.rainmeter.net" type="hidden">
+		<input id="search" name="q" maxlength="255" size="16" placeholder="Search" type="text">
+	</form>
+
+	<nav id="tree">
+		<h1>Contents</h1>
+<ul>
+<li><a href="/manual/getting-started">Getting Started</a>
+	<ul>
+	<li><a href="/manual/getting-started/setting-up">Setting Up</a>
+	<li><a href="/manual/getting-started/using-rainmeter">Using Rainmeter</a>
+	<li><a href="/manual/getting-started/customizing">Customizing</a>
+	<li><a href="/manual/getting-started/creating-skins">Creating Skins</a>
+	<li><a href="/manual/getting-started/skin-anatomy">Anatomy of a Skin</a>
+	<li><a href="/manual/getting-started/basic-tutorials">Basic Tutorials</a>
+		<ul>
+		<li><a href="/manual/getting-started/basic-tutorials/launcher">Launcher</a>
+		<li><a href="/manual/getting-started/basic-tutorials/clock">Clock</a>
+		<li><a href="/manual/getting-started/basic-tutorials/system">System</a>
+		</ul>
+	</ul>
+<li><a href="/manual/installing-rainmeter">Installing Rainmeter</a>
+<li><a href="/manual/user-interface">User Interface</a>
+	<ul>
+	<li><a href="/manual/user-interface/manage">Manage</a>
+	<li><a href="/manual/user-interface/about">About</a>
+	<li><a href="/manual/user-interface/context-menus">Context Menus</a>
+	</ul>
+<li><a href="/manual/installing-skins">Installing Skins</a>
+<li><a href="/manual/publishing-skins">Publishing Skins</a>
+</ul>
+
+<h1>Reference</h1>
+<ul>
+<li><a href="/manual/settings">Settings</a>
+	<ul>
+	<li><a href="/manual/settings/rainmeter-section">[Rainmeter] Section</a>
+	<li><a href="/manual/settings/traymeasure-section">[TrayMeasure] Section</a>
+	<li><a href="/manual/settings/skin-sections">[Skin] Sections</a>
+	</ul>
+<li><a href="/manual/skins">Skins</a>
+	<ul>
+	<li><a href="/manual/skins/option-types">Option Types</a>
+	<li><a href="/manual/skins/rainmeter-section">[Rainmeter] Section</a>
+	<li><a href="/manual/skins/metadata-section">[Metadata] Section</a>
+	<li><a href="/manual/skins/include-option">@Include Options</a>
+	<li><a href="/manual/skins/resources-folder">@Resources Folder</a>
+	</ul>
+<li><a href="/manual/meters">Meters</a>
+	<ul>
+	<li><a href="/manual/meters/general-options">General Options</a>
+		<ul>
+		<li><a href="/manual/meters/general-options/image-options">Image Options</a>
+		<li><a href="/manual/meters/general-options/meterstyles">MeterStyles</a>
+		<li><a href="/manual/meters/general-options/tooltips">Tooltips</a>
+		</ul>
+	<li><a href="/manual/meters/bar">Bar</a>
+	<li><a href="/manual/meters/bitmap">Bitmap</a>
+	<li><a href="/manual/meters/button">Button</a>
+	<li><a href="/manual/meters/histogram">Histogram</a>
+	<li><a href="/manual/meters/image">Image</a>
+	<li><a href="/manual/meters/line">Line</a>
+	<li><a href="/manual/meters/rotator">Rotator</a>
+	<li><a href="/manual/meters/roundline">Roundline</a>
+	<li><a href="/manual/meters/string">String</a>
+	</ul>
+<li><a href="/manual/measures">Measures</a>
+	<ul>
+	<li><a href="/manual/measures/general-options">General Options</a>
+		<ul>
+		<li><a href="/manual/measures/general-options/ifactions">IfActions</a>
+		<li><a href="/manual/measures/general-options/ifconditions">IfConditions</a>
+		<li><a href="/manual/measures/general-options/ifmatchactions">IfMatchActions</a>
+		<li><a href="/manual/measures/general-options/substitute">Substitute</a>
+		</ul>
+	<li><a href="/manual/measures/calc">Calc</a>
+	<li><a href="/manual/measures/cpu">CPU</a>
+	<li><a href="/manual/measures/freediskspace">FreeDiskSpace</a>
+	<li><a href="/manual/measures/memory">Memory</a>
+	<li><a href="/manual/measures/net">Net</a>
+	<li><a href="/manual/measures/plugin">Plugin</a>
+	<li><a href="/manual/measures/registry">Registry</a>
+	<li><a href="/manual/measures/script">Script</a>
+	<li><a href="/manual/measures/string">String</a>
+	<li><a href="/manual/measures/time">Time</a>
+	<li><a href="/manual/measures/uptime">Uptime</a>
+	</ul>
+<li><a href="/manual/plugins">Plugins</a>
+	<ul>
+	<li><a href="/manual/plugins/advancedcpu">AdvancedCPU</a>
+	<li><a href="/manual/plugins/audiolevel">AudioLevel</a>
+	<li><a href="/manual/plugins/coretemp">CoreTemp</a>
+	<li><a href="/manual/plugins/fileview">FileView</a>
+	<li><a href="/manual/plugins/folderinfo">FolderInfo</a>
+	<li><a href="/manual/plugins/inputtext">InputText</a>
+	<li><a href="/manual/plugins/itunes">iTunes</a>
+	<li><a href="/manual/plugins/mediakey">MediaKey</a>
+	<li><a href="/manual/plugins/nowplaying">NowPlaying</a>
+	<li><a href="/manual/plugins/perfmon">PerfMon</a>
+	<li><a href="/manual/plugins/ping">Ping</a>
+	<li><a href="/manual/plugins/power">Power</a>
+	<li><a href="/manual/plugins/process">Process</a>
+	<li><a href="/manual/plugins/quote">Quote</a>
+	<li><a href="/manual/plugins/recyclemanager">RecycleManager</a>
+	<li><a href="/manual/plugins/resmon">ResMon</a>
+	<li><a href="/manual/plugins/speedfan">SpeedFan</a>
+	<li><a href="/manual/plugins/sysinfo">SysInfo</a>
+	<li><a href="/manual/plugins/virtualdesktops">VirtualDesktops</a>
+	<li><a href="/manual/plugins/webparser">WebParser</a>
+	<li><a href="/manual/plugins/wifistatus">WiFiStatus</a>
+	<li><a href="/manual/plugins/win7audio">Win7Audio</a>
+	<li><a href="/manual/plugins/windowmessage">WindowMessage</a>
+	</ul>
+<li><a href="/manual/bangs">Bangs</a>
+<li><a href="/manual/formulas">Formulas</a>
+<li><a href="/manual/variables">Variables</a>
+	<ul>
+	<li><a href="/manual/variables/built-in-variables">Built-In Variables</a>
+	<li><a href="/manual/variables/section-variables">Section Variables</a>
+	<li><a href="/manual/variables/mouse-variables">Mouse Variables</a>
+	</ul>
+<li><a href="/manual/groups">Groups</a>
+<li><a href="/manual/mouse-actions">Mouse Actions</a>
+<li><a href="/manual/lua-scripting">Lua Scripting</a>
+</ul>
+
+<h1>More</h1>
+<ul>
+<li><a href="/manual-beta">3.3 Beta Manual</a>
+<li><a href="/tips">Tips &amp; Tricks</a>
+<li><a href="/snippets">Snippets</a>
+<li><a href="/developers">Developers</a>
+<li><a href="/history">Version History</a>
+</ul>
+
+	</nav>
+</div>
+<div id="content">
+	<header>
+		<h1>Roundline meter</h1>
+	</header>
+	<article><p><code>Meter=Roundline</code> displays a line or solid fill that rotates in a circle around a point, based on a measure value.</p>
+
+<p>The values for <a href="#StartAngle">StartAngle</a> and <a href="#RotationAngle">RotationAngle</a> are defined in <a href="/tips/radians-guide">Radians</a></p>
+
+<h2>Options</h2>
+<dl>
+	<dt>General meter options</dt>
+	<dd>
+		<p>All <a href="/manual/meters/general-options">general meter options</a> are valid.</p>
+	</dd>
+
+	<dt id="MeasureName"><code>MeasureName</code></dt>
+	<dd>
+		<p>Name of the measure whose percentual value controls the amount of rotation. The measure must be able to return <a href="/manual/measures#Percentage">percentual values</a>.</p>
+		<p><b>Note:</b> If MeasureName is not specified, then the value is in effect always 100%, which can be used for instance to draw a circle or other curved solid.</p>
+	</dd>
+
+	<dt id="StartAngle"><code>StartAngle</code></dt>
+	<dd>
+		<p>The starting angle in <a href="/tips/radians-guide">radians</a> for the line. This defines the starting point on the circle that will be treated as zero percent. The zero angle is to the right of the center.</p>
+	</dd>
+	
+	<dt id="RotationAngle"><code>RotationAngle</code></dt>
+	<dd>
+		<p>The size of the rotation angle in <a href="/tips/radians-guide">radians</a> for the line. This defines the distance in radians from <code>StartAngle</code> that the meter will travel around the circle when the measure value is 100%. Use a negative value for counter-clockwise rotation.</p>
+	</dd>
+	
+	<dt id="LineStart"><code>LineStart</code></dt>
+	<dd>
+		<p>Defines the distance in pixels from the center of rotation at which the line starts.</p>
+	</dd>
+	
+	<dt id="LineLength"><code>LineLength</code></dt>
+	<dd>
+		<p>Length in pixels of the line. The length is always measured from the center of rotation, regardless of the <code>LineStart</code> option.</p>
+	</dd>
+
+	<dt id="LineWidth"><code>LineWidth</code> <small>Default: <code>1</code></small></dt>
+	<dd>
+		<p>Width in pixels of the line when <code>Solid</code> is 0.</p>
+	</dd>
+
+	<dt id="LineColor"><code>LineColor</code> <small>Default: <code>255,255,255,255</code></small></dt>
+	<dd>
+		<p>The <a href="/manual/skins/option-types#Color">Color</a> of the line.</p>
+	</dd>
+
+	<dt id="Solid"><code>Solid</code> <small>Default: <code>0</code></small></dt>
+	<dd>
+		<p>If set to 1, meter will fill the meter with <code>LineColor</code> from <code>StartAngle</code> to the current <code>MeasureName</code> percentage value. <code>LineWidth</code> is ignored.</p>
+	</dd>
+	
+	<dt id="ControlAngle"><code>ControlAngle</code> <small>Default: <code>1</code></small></dt>
+	<dd>
+		<p>If ControlAngle is 1 (default), then the percentage value of the measure that is bound to the meter controls the angle of the line (or the fill rotation if Solid=1) starting at <code>StartAngle</code> for <code>RotationAngle</code> radians.</p>
+		
+		<p>If ControlAngle is set to 0, then the measure does not control the angle of the line, which will be static at the value in <code>StartAngle</code>. <code>RotationAngle</code> is ignored.</p>		
+	</dd>	
+
+	<dt id="ControlStart"><code>ControlStart, StartShift</code> <small>Default: <code>0</code></small></dt>
+	<dd>
+		<p>If ControlStart is set to 1, then the percentage value of the measure that is bound to the meter controls the starting position of the line. This is defined by <code>StartShift</code>, and will range from <code>LineStart</code> to (<code>LineStart</code> + <code>StartShift</code>) pixels from the center of rotation.</p>
+	</dd>
+
+	<dt id="ControlLength"><code>ControlLength, LengthShift</code> <small>Default: <code>0</code></small></dt>
+	<dd>
+		<p>If ControlLength is set to 1, then the percentage value of the measure that is bound to the meter controls the length of the line. This is defined by <code>LengthShift</code>, and will range from <code>LineLength</code> to (<code>LineLength</code> + <code>LengthShift</code>) pixels from the center of rotation.</p>
+	</dd>
+	
+	<dt id="ValueRemainder"><code>ValueRemainder</code></dt>
+	<dd>
+		<p>Use a remainder instead of the actual measured value.</p>
+		
+		<p>This is primarily used to draw an analog clock. When used with the value of a <a href="/manual/measures/time">Time</a> measure in <a href="#MeasureName">MeasureName</a> the meter will internally use the <code>%</code> modulo mathematical <a href="/manual/formulas#Operators">operator</a>, and calculate the meter based on the <a href="http://en.wikipedia.org/wiki/Euclidean_division" target="_blank" rel="external">remainder</a> when the number of seconds in the Time measure is divided by the following values:</p>
+		<ul>
+		<li>Hours Hand: <code>ValueRemainder=43200</code> Seconds in a 12-hour analog clock face.</li>
+		<li>Minutes Hand: <code>ValueRemainder=3600</code> Seconds in an hour.</li>
+		<li>Seconds Hand: <code>ValueRemainder=60</code> Seconds in a minute.</li>
+		</ul>
+		<p>See the <a href="/manual/meters/rotator">Rotator</a> meter for an example.</p>
+	</dd>
+</dl>
+
+<p><b>Note:</b> If the width and height are not defined, the center point is at the X and Y position of the meter and any part of the meter that intersects with the edges of the skin window will be cut off. If width and height are specified, the center point will be in the middle of the bounding box and the skin window will include the meter.</p>
+
+<h2>Example</h2>
+<a href="/manual/examples/ExampleMeterRoundline.rmskin" class="download"></a>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="title">[Rainmeter]</span></span><br><span class="line"><span class="setting">Update=<span class="value"><span class="number">1000</span></span></span></span><br><span class="line"><span class="setting">AccurateText=<span class="value"><span class="number">1</span></span></span></span><br><span class="line"><span class="setting">DynamicWindowSize=<span class="value"><span class="number">1</span></span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[Metadata]</span></span><br><span class="line"><span class="setting">Name=<span class="value">ExampleMeterRoundline</span></span></span><br><span class="line"><span class="setting">Author=<span class="value">The Rainmeter Team</span></span></span><br><span class="line"><span class="setting">Information=<span class="value">Example of the Roundline meter</span></span></span><br><span class="line"><span class="setting">License=<span class="value">Creative Commons Attribution-Non-Commercial-Share Alike <span class="number">3.0</span></span></span></span><br><span class="line"><span class="setting">Version=<span class="value"><span class="number">1.0</span></span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[MeasureFreeDisk]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">FreeDiskSpace</span></span></span><br><span class="line"><span class="setting">Drive=<span class="value">C:</span></span></span><br><span class="line"><span class="setting">InvertMeasure=<span class="value"><span class="number">1</span></span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[MeasureTotalDisk]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">FreeDiskSpace</span></span></span><br><span class="line"><span class="setting">Drive=<span class="value">C:</span></span></span><br><span class="line"><span class="setting">Total=<span class="value"><span class="number">1</span></span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[MeterTotalDisk]</span></span><br><span class="line"><span class="setting">Meter=<span class="value">Roundline</span></span></span><br><span class="line"><span class="setting">MeasureName=<span class="value">MeasureTotalDisk</span></span></span><br><span class="line"><span class="setting">X=<span class="value"><span class="number">0</span></span></span></span><br><span class="line"><span class="setting">Y=<span class="value"><span class="number">0</span></span></span></span><br><span class="line"><span class="setting">W=<span class="value"><span class="number">120</span></span></span></span><br><span class="line"><span class="setting">H=<span class="value"><span class="number">120</span></span></span></span><br><span class="line"><span class="setting">StartAngle=<span class="value"><span class="number">4.712</span></span></span></span><br><span class="line"><span class="setting">RotationAngle=<span class="value"><span class="number">6.283</span></span></span></span><br><span class="line"><span class="setting">LineLength=<span class="value"><span class="number">60</span></span></span></span><br><span class="line"><span class="setting">LineColor=<span class="value"><span class="number">40</span>,<span class="number">92</span>,<span class="number">87</span>,<span class="number">255</span></span></span></span><br><span class="line"><span class="setting">Solid=<span class="value"><span class="number">1</span></span></span></span><br><span class="line"><span class="setting">AntiAlias=<span class="value"><span class="number">1</span></span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[MeterFreeDisk]</span></span><br><span class="line"><span class="setting">Meter=<span class="value">Roundline</span></span></span><br><span class="line"><span class="setting">MeasureName=<span class="value">MeasureFreeDisk</span></span></span><br><span class="line"><span class="setting">X=<span class="value"><span class="number">0</span></span></span></span><br><span class="line"><span class="setting">Y=<span class="value"><span class="number">0</span></span></span></span><br><span class="line"><span class="setting">W=<span class="value"><span class="number">120</span></span></span></span><br><span class="line"><span class="setting">H=<span class="value"><span class="number">120</span></span></span></span><br><span class="line"><span class="setting">StartAngle=<span class="value"><span class="number">4.712</span></span></span></span><br><span class="line"><span class="setting">RotationAngle=<span class="value"><span class="number">6.283</span></span></span></span><br><span class="line"><span class="setting">LineLength=<span class="value"><span class="number">56</span></span></span></span><br><span class="line"><span class="setting">LineColor=<span class="value"><span class="number">216</span>,<span class="number">242</span>,<span class="number">240</span>,<span class="number">255</span></span></span></span><br><span class="line"><span class="setting">Solid=<span class="value"><span class="number">1</span></span></span></span><br><span class="line"><span class="setting">AntiAlias=<span class="value"><span class="number">1</span></span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[MeterTotalText]</span></span><br><span class="line"><span class="setting">Meter=<span class="value">String</span></span></span><br><span class="line"><span class="setting">MeasureName=<span class="value">MeasureTotalDisk</span></span></span><br><span class="line"><span class="setting">X=<span class="value"><span class="number">60</span></span></span></span><br><span class="line"><span class="setting">Y=<span class="value"><span class="number">130</span></span></span></span><br><span class="line"><span class="setting">FontSize=<span class="value"><span class="number">11</span></span></span></span><br><span class="line"><span class="setting">FontColor=<span class="value"><span class="number">36</span>,<span class="number">82</span>,<span class="number">77</span>,<span class="number">255</span></span></span></span><br><span class="line"><span class="setting">StringAlign=<span class="value">Center</span></span></span><br><span class="line"><span class="setting">AntiAlias=<span class="value"><span class="number">1</span></span></span></span><br><span class="line"><span class="setting">AutoScale=<span class="value"><span class="number">1</span></span></span></span><br><span class="line"><span class="setting">Text=<span class="value">Total Disk: %<span class="number">1</span></span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[MeterFreeText]</span></span><br><span class="line"><span class="setting">Meter=<span class="value">String</span></span></span><br><span class="line"><span class="setting">MeasureName=<span class="value">MeasureFreeDisk</span></span></span><br><span class="line"><span class="setting">X=<span class="value"><span class="number">60</span></span></span></span><br><span class="line"><span class="setting">Y=<span class="value"><span class="number">6</span>R</span></span></span><br><span class="line"><span class="setting">FontSize=<span class="value"><span class="number">11</span></span></span></span><br><span class="line"><span class="setting">FontColor=<span class="value"><span class="number">216</span>,<span class="number">242</span>,<span class="number">240</span>,<span class="number">255</span></span></span></span><br><span class="line"><span class="setting">StringAlign=<span class="value">Center</span></span></span><br><span class="line"><span class="setting">AntiAlias=<span class="value"><span class="number">1</span></span></span></span><br><span class="line"><span class="setting">AutoScale=<span class="value"><span class="number">1</span></span></span></span><br><span class="line"><span class="setting">Text=<span class="value">Free Disk: %<span class="number">1</span></span></span></span><br></pre></td></tr></table></figure>
+
+<div class="exampleprev">
+	<p><img src="/manual/img/example-meters/ExampleMeterRoundline.jpg"></p>
+	<p>An example skin demontrating a Roundline meter.</p>
+</div>
+</article>
+</div>
+			</div>
+		</div>
+
+		<div id="footer-push"></div>
+		<footer>
+			<div class="container">
+				Hosting provided by <a href="http://osirisdevelopment.com/">Osiris Development</a> &mdash; <a href="http://batterybarpro.com/">BatteryBar</a>, the best battery life tracker.
+			</div>
+		</footer>
+	</div>
+
+	<script src="../../../js/main.js?4"></script>
+</body>
+</html>

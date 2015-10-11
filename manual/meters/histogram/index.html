@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Histogram meter - Rainmeter 3.2 Manual</title>
+	<link href="../../../css/main.css?3" rel="stylesheet">
+	<link rel="shortcut icon" href="//rainmeter.net/favicon.ico">
+	<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6/html5shiv.min.js"></script><![endif]-->
+</head>
+<body>
+	<div id="wrapper">
+		<div id="top">
+			<div class="container">
+				<a id="logo" href="//rainmeter.net/"></a>
+				<nav id="nav">
+					<ul>
+					<li><a href="//rainmeter.net">Home</a>
+					<li><a href="//rainmeter.net/about">About</a>
+					<li><a href="/" class="active">Docs</a>
+					<li><a href="//rainmeter.net/discover">Discover</a>
+					<li><a href="//rainmeter.net/forum">Forum</a>
+					</ul>
+				</nav>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div id="side-content">
+	<h1 id="category"><a href="/manual">3.2 Manual</a></h1>
+
+	<form id="search-form" method="get" action="http://www.google.com/search">
+		<input name="sitesearch" value="docs.rainmeter.net" type="hidden">
+		<input id="search" name="q" maxlength="255" size="16" placeholder="Search" type="text">
+	</form>
+
+	<nav id="tree">
+		<h1>Contents</h1>
+<ul>
+<li><a href="/manual/getting-started">Getting Started</a>
+	<ul>
+	<li><a href="/manual/getting-started/setting-up">Setting Up</a>
+	<li><a href="/manual/getting-started/using-rainmeter">Using Rainmeter</a>
+	<li><a href="/manual/getting-started/customizing">Customizing</a>
+	<li><a href="/manual/getting-started/creating-skins">Creating Skins</a>
+	<li><a href="/manual/getting-started/skin-anatomy">Anatomy of a Skin</a>
+	<li><a href="/manual/getting-started/basic-tutorials">Basic Tutorials</a>
+		<ul>
+		<li><a href="/manual/getting-started/basic-tutorials/launcher">Launcher</a>
+		<li><a href="/manual/getting-started/basic-tutorials/clock">Clock</a>
+		<li><a href="/manual/getting-started/basic-tutorials/system">System</a>
+		</ul>
+	</ul>
+<li><a href="/manual/installing-rainmeter">Installing Rainmeter</a>
+<li><a href="/manual/user-interface">User Interface</a>
+	<ul>
+	<li><a href="/manual/user-interface/manage">Manage</a>
+	<li><a href="/manual/user-interface/about">About</a>
+	<li><a href="/manual/user-interface/context-menus">Context Menus</a>
+	</ul>
+<li><a href="/manual/installing-skins">Installing Skins</a>
+<li><a href="/manual/publishing-skins">Publishing Skins</a>
+</ul>
+
+<h1>Reference</h1>
+<ul>
+<li><a href="/manual/settings">Settings</a>
+	<ul>
+	<li><a href="/manual/settings/rainmeter-section">[Rainmeter] Section</a>
+	<li><a href="/manual/settings/traymeasure-section">[TrayMeasure] Section</a>
+	<li><a href="/manual/settings/skin-sections">[Skin] Sections</a>
+	</ul>
+<li><a href="/manual/skins">Skins</a>
+	<ul>
+	<li><a href="/manual/skins/option-types">Option Types</a>
+	<li><a href="/manual/skins/rainmeter-section">[Rainmeter] Section</a>
+	<li><a href="/manual/skins/metadata-section">[Metadata] Section</a>
+	<li><a href="/manual/skins/include-option">@Include Options</a>
+	<li><a href="/manual/skins/resources-folder">@Resources Folder</a>
+	</ul>
+<li><a href="/manual/meters">Meters</a>
+	<ul>
+	<li><a href="/manual/meters/general-options">General Options</a>
+		<ul>
+		<li><a href="/manual/meters/general-options/image-options">Image Options</a>
+		<li><a href="/manual/meters/general-options/meterstyles">MeterStyles</a>
+		<li><a href="/manual/meters/general-options/tooltips">Tooltips</a>
+		</ul>
+	<li><a href="/manual/meters/bar">Bar</a>
+	<li><a href="/manual/meters/bitmap">Bitmap</a>
+	<li><a href="/manual/meters/button">Button</a>
+	<li><a href="/manual/meters/histogram">Histogram</a>
+	<li><a href="/manual/meters/image">Image</a>
+	<li><a href="/manual/meters/line">Line</a>
+	<li><a href="/manual/meters/rotator">Rotator</a>
+	<li><a href="/manual/meters/roundline">Roundline</a>
+	<li><a href="/manual/meters/string">String</a>
+	</ul>
+<li><a href="/manual/measures">Measures</a>
+	<ul>
+	<li><a href="/manual/measures/general-options">General Options</a>
+		<ul>
+		<li><a href="/manual/measures/general-options/ifactions">IfActions</a>
+		<li><a href="/manual/measures/general-options/ifconditions">IfConditions</a>
+		<li><a href="/manual/measures/general-options/ifmatchactions">IfMatchActions</a>
+		<li><a href="/manual/measures/general-options/substitute">Substitute</a>
+		</ul>
+	<li><a href="/manual/measures/calc">Calc</a>
+	<li><a href="/manual/measures/cpu">CPU</a>
+	<li><a href="/manual/measures/freediskspace">FreeDiskSpace</a>
+	<li><a href="/manual/measures/memory">Memory</a>
+	<li><a href="/manual/measures/net">Net</a>
+	<li><a href="/manual/measures/plugin">Plugin</a>
+	<li><a href="/manual/measures/registry">Registry</a>
+	<li><a href="/manual/measures/script">Script</a>
+	<li><a href="/manual/measures/string">String</a>
+	<li><a href="/manual/measures/time">Time</a>
+	<li><a href="/manual/measures/uptime">Uptime</a>
+	</ul>
+<li><a href="/manual/plugins">Plugins</a>
+	<ul>
+	<li><a href="/manual/plugins/advancedcpu">AdvancedCPU</a>
+	<li><a href="/manual/plugins/audiolevel">AudioLevel</a>
+	<li><a href="/manual/plugins/coretemp">CoreTemp</a>
+	<li><a href="/manual/plugins/fileview">FileView</a>
+	<li><a href="/manual/plugins/folderinfo">FolderInfo</a>
+	<li><a href="/manual/plugins/inputtext">InputText</a>
+	<li><a href="/manual/plugins/itunes">iTunes</a>
+	<li><a href="/manual/plugins/mediakey">MediaKey</a>
+	<li><a href="/manual/plugins/nowplaying">NowPlaying</a>
+	<li><a href="/manual/plugins/perfmon">PerfMon</a>
+	<li><a href="/manual/plugins/ping">Ping</a>
+	<li><a href="/manual/plugins/power">Power</a>
+	<li><a href="/manual/plugins/process">Process</a>
+	<li><a href="/manual/plugins/quote">Quote</a>
+	<li><a href="/manual/plugins/recyclemanager">RecycleManager</a>
+	<li><a href="/manual/plugins/resmon">ResMon</a>
+	<li><a href="/manual/plugins/speedfan">SpeedFan</a>
+	<li><a href="/manual/plugins/sysinfo">SysInfo</a>
+	<li><a href="/manual/plugins/virtualdesktops">VirtualDesktops</a>
+	<li><a href="/manual/plugins/webparser">WebParser</a>
+	<li><a href="/manual/plugins/wifistatus">WiFiStatus</a>
+	<li><a href="/manual/plugins/win7audio">Win7Audio</a>
+	<li><a href="/manual/plugins/windowmessage">WindowMessage</a>
+	</ul>
+<li><a href="/manual/bangs">Bangs</a>
+<li><a href="/manual/formulas">Formulas</a>
+<li><a href="/manual/variables">Variables</a>
+	<ul>
+	<li><a href="/manual/variables/built-in-variables">Built-In Variables</a>
+	<li><a href="/manual/variables/section-variables">Section Variables</a>
+	<li><a href="/manual/variables/mouse-variables">Mouse Variables</a>
+	</ul>
+<li><a href="/manual/groups">Groups</a>
+<li><a href="/manual/mouse-actions">Mouse Actions</a>
+<li><a href="/manual/lua-scripting">Lua Scripting</a>
+</ul>
+
+<h1>More</h1>
+<ul>
+<li><a href="/manual-beta">3.3 Beta Manual</a>
+<li><a href="/tips">Tips &amp; Tricks</a>
+<li><a href="/snippets">Snippets</a>
+<li><a href="/developers">Developers</a>
+<li><a href="/history">Version History</a>
+</ul>
+
+	</nav>
+</div>
+<div id="content">
+	<header>
+		<h1>Histogram meter</h1>
+	</header>
+	<article><p><code>Meter=Histogram</code> displays a histogram for the current and past values of one or two measures.</p><p></p>
+
+<p>The primary graph is defined with <a href="#MeasureName">MeasureName</a>, with an optional secondary graph defined by <a href="MeasureName">MeasureName2</a>.</p>
+
+<h2>Options</h2>
+<dl>
+	<dt>General meter options</dt>
+	<dd>
+		<p>All <a href="/manual/meters/general-options">general meter options</a> are valid.</p>
+	</dd>
+
+	<dt id="MeasureName"><code>MeasureName</code>, <code>MeasureName2</code></dt>
+	<dd>
+		<p>Name of the primary (required) and secondary (optional) measures to use for the histogram. The measure(s) used must be able to return <a href="/manual/measures#Percentage">percentual values</a>.</p>
+	</dd>
+
+	<dt id="Autoscale"><code>Autoscale</code> <small>Default: <code>0</code></small></dt>
+	<dd>
+		<p>If set to <code>1</code>, the histogram is automatically scaled to show all the values.</p>
+	</dd>
+
+	<dt id="GraphStart"><code>GraphStart</code> <small>Default: <code>Right</code></small></dt>
+	<dd>
+		<p>Starting point of the graph. Valid values are <code>Left</code> and <code>Right</code>.</p>
+	</dd>
+
+	<dt id="GraphOrientation"><code>GraphOrientation</code> <small>Default: <code>Vertical</code></small></dt>
+	<dd>
+		<p>Orientation of the graph elements. Valid values are <code>Horizontal</code> and <code>Vertical</code>.</p>
+	</dd>
+
+	<dt id="Flip"><code>Flip</code> <small>Default: <code>0</code></small></dt>
+	<dd>
+		<p>If set to <code>1</code>, the meter is flipped vertically.</p>
+	</dd>
+
+	<dt id="PrimaryColor"><code>PrimaryColor</code>, <code>SecondaryColor</code>, <code>BothColor</code></dt>
+	<dd>
+		<p>Sets the <a href="/manual/skins/option-types#Color">Colors</a> for the histogram.</p>
+		
+		<p><code>PrimaryColor</code> is the color for the primary histogram. Default is dark green  <code>0,128,0</code>.</p>
+		<p><code>SecondaryColor</code> is the color for the secondary histogram. Default is red <code>255,0,0</code>.</p>
+		<p><code>BothColor</code> is the color used where the histogram elements overlap. Default is yellow <code>255,255,0</code>.</p>
+	</dd>
+
+	<dt id="PrimaryImage"><code>PrimaryImage</code>, <code>SecondaryImage</code>, <code>BothImage</code></dt>
+	<dd>
+		<p>Optional images used for the histogram instead of <code>PrimaryColor</code>, <code>SecondaryColor</code>, <code>BothColor</code>.</p>
+		
+		<p><code>PrimaryImage</code> is the image used for the primary histogram.</p>
+		<p><code>SecondaryImage</code> is the image used for the secondary histogram.</p>
+		<p><code>BothImage</code> is the image used where the histogram elements overlap.</p>
+		<p><em>If SecondaryImage is defined, then BothImage is required.</em></p>
+		
+		<p>The image is "revealed" both horizontally and vertically, to the <a href="/manual/measures#Percentage">percentage</a> defined by the current value of the <a href="#MeasureName">MeasureName</a> bound to the meter, and as a factor of time.</p>
+		
+		<p><b>Note: </b>The image size cannot be modified with the <a href="/manual/meters/general-options#WH">W</a> or <a href="/manual/meters/general-options#WH">H</a> general meter options, and will be displayed in the original image size. The size of the histogram will be defined by the size of the image. If different images are used for PrimaryImage, SecondaryImage or BothImage, they must be the same size.</p>
+	</dd>
+	
+	<dt id="PrimaryImagePath"><code>PrimaryImagePath</code>, <code>SecondaryImagePath</code>, <code>BothImagePath</code></dt>
+	<dd>
+		<p><a href="/manual/skins/option-types#Path">Path</a> to the location of optional image used as the primary, secondary or both histograms.</p>
+	</dd>	
+
+	<dt id="ImageCrop"><code>PrimaryImageCrop</code>, <code>SecondaryImageCrop</code>, <code>BothImageCrop</code></dt>
+	<dd>
+		<p>See <a href="/manual/meters/general-options/image-options#ImageCrop">ImageCrop</a>.</p>
+	</dd>
+
+	<dt id="ImageTint"><code>PrimaryImageTint</code>, <code>SecondaryImageTint</code>, <code>BothImageTint</code></dt>
+	<dd>
+		<p>See <a href="/manual/meters/general-options/image-options#ImageTint">ImageTint</a>.</p>
+	</dd>
+
+	<dt id="ImageAlpha"><code>PrimaryImageAlpha</code>, <code>SecondaryImageAlpha</code>, <code>BothImageAlpha</code></dt>
+	<dd>
+		<p>See <a href="/manual/meters/general-options/image-options#ImageAlpha">ImageAlpha</a>.</p>
+	</dd>
+
+	<dt id="ImageFlip"><code>PrimaryImageFlip</code>, <code>SecondaryImageFlip</code>, <code>BothImageFlip</code></dt>
+	<dd>
+		<p>See <a href="/manual/meters/general-options/image-options#ImageFlip">ImageFlip</a>.</p>
+	</dd>
+
+	<dt id="ImageRotate"><code>PrimaryImageRotate</code>, <code>SecondaryImageRotate</code>, <code>BothImageRotate</code></dt>
+	<dd>
+		<p>See <a href="/manual/meters/general-options/image-options#ImageRotate">ImageRotate</a>.</p>
+	</dd>
+
+	<dt id="ColorMatrix"><code>PrimaryColorMatrix<em>N</em></code>, <code>SecondaryColorMatrix<em>N</em></code>, <code>BothImageColorMatrix<em>N</em></code></dt>
+	<dd>
+		<p>See <a href="/manual/meters/general-options/image-options#ColorMatrix">ColorMatrix<em>N</em></a>.</p>
+	</dd>
+</dl>
+
+<h3 id="Deprecated">Deprecated Features</h3>
+
+<p>The following options have been deprecated and should not be used. They are still supported, but may be removed in future versions.</p>
+
+<ul>
+	<li><p><code>SecondaryMeasure</code><br>
+		<a href="#MeasureName">MeasureName2</a> should be used to define an optional secondary measure for the meter.
+	</p></li>
+</ul>	
+
+<h2>Example</h2>
+<a href="/manual/examples/ExampleMeterHistogram.rmskin" class="download"></a>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="title">[Rainmeter]</span></span><br><span class="line"><span class="setting">Update=<span class="value"><span class="number">1000</span></span></span></span><br><span class="line"><span class="setting">AccurateText=<span class="value"><span class="number">1</span></span></span></span><br><span class="line"><span class="setting">DynamicWindowSize=<span class="value"><span class="number">1</span></span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[Metadata]</span></span><br><span class="line"><span class="setting">Name=<span class="value">ExampleMeterHistogram</span></span></span><br><span class="line"><span class="setting">Author=<span class="value">The Rainmeter Team</span></span></span><br><span class="line"><span class="setting">Information=<span class="value">Example of the Histogram meter</span></span></span><br><span class="line"><span class="setting">License=<span class="value">Creative Commons Attribution-Non-Commercial-Share Alike <span class="number">3.0</span></span></span></span><br><span class="line"><span class="setting">Version=<span class="value"><span class="number">1.0</span></span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[MeasureCPU]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">CPU</span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[MeterCPUBackgroundImage]</span></span><br><span class="line"><span class="setting">Meter=<span class="value">Image</span></span></span><br><span class="line"><span class="setting">SolidColor=<span class="value"><span class="number">24</span>,<span class="number">102</span>,<span class="number">10</span></span></span></span><br><span class="line"><span class="setting">X=<span class="value"><span class="number">0</span></span></span></span><br><span class="line"><span class="setting">Y=<span class="value"><span class="number">0</span></span></span></span><br><span class="line"><span class="setting">W=<span class="value"><span class="number">220</span></span></span></span><br><span class="line"><span class="setting">H=<span class="value"><span class="number">70</span></span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[MeterCPUHistogram]</span></span><br><span class="line"><span class="setting">Meter=<span class="value">Histogram</span></span></span><br><span class="line"><span class="setting">MeasureName=<span class="value">MeasureCPU</span></span></span><br><span class="line"><span class="setting">X=<span class="value"><span class="number">5</span></span></span></span><br><span class="line"><span class="setting">Y=<span class="value"><span class="number">5</span></span></span></span><br><span class="line"><span class="setting">W=<span class="value"><span class="number">210</span></span></span></span><br><span class="line"><span class="setting">H=<span class="value"><span class="number">60</span></span></span></span><br><span class="line"><span class="setting">PrimaryColor=<span class="value"><span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span></span></span></span><br><span class="line"><span class="setting">SolidColor=<span class="value"><span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">100</span></span></span></span><br><span class="line"><span class="setting">AntiAlias=<span class="value"><span class="number">1</span></span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[MeterCPUText]</span></span><br><span class="line"><span class="setting">Meter=<span class="value">String</span></span></span><br><span class="line"><span class="setting">MeasureName=<span class="value">MeasureCPU</span></span></span><br><span class="line"><span class="setting">X=<span class="value"><span class="number">110</span></span></span></span><br><span class="line"><span class="setting">Y=<span class="value"><span class="number">10</span>R</span></span></span><br><span class="line"><span class="setting">FontSize=<span class="value"><span class="number">13</span></span></span></span><br><span class="line"><span class="setting">FontColor=<span class="value"><span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span></span></span></span><br><span class="line"><span class="setting">StringAlign=<span class="value">Center</span></span></span><br><span class="line"><span class="setting">AntiAlias=<span class="value"><span class="number">1</span></span></span></span><br><span class="line"><span class="setting">Text=<span class="value">CPU Usage: %<span class="number">1</span>%</span></span></span><br></pre></td></tr></table></figure>
+
+<div class="exampleprev">
+	<p><img src="/manual/img/example-meters/ExampleMeterHistogram.jpg"></p>
+	<p>An example skin demontrating a Histogram meter.</p>
+</div>
+</article>
+</div>
+			</div>
+		</div>
+
+		<div id="footer-push"></div>
+		<footer>
+			<div class="container">
+				Hosting provided by <a href="http://osirisdevelopment.com/">Osiris Development</a> &mdash; <a href="http://batterybarpro.com/">BatteryBar</a>, the best battery life tracker.
+			</div>
+		</footer>
+	</div>
+
+	<script src="../../../js/main.js?4"></script>
+</body>
+</html>

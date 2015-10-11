@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>AdvancedCPU measure - Rainmeter 3.2 Manual</title>
+	<link href="../../../css/main.css?3" rel="stylesheet">
+	<link rel="shortcut icon" href="//rainmeter.net/favicon.ico">
+	<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6/html5shiv.min.js"></script><![endif]-->
+</head>
+<body>
+	<div id="wrapper">
+		<div id="top">
+			<div class="container">
+				<a id="logo" href="//rainmeter.net/"></a>
+				<nav id="nav">
+					<ul>
+					<li><a href="//rainmeter.net">Home</a>
+					<li><a href="//rainmeter.net/about">About</a>
+					<li><a href="/" class="active">Docs</a>
+					<li><a href="//rainmeter.net/discover">Discover</a>
+					<li><a href="//rainmeter.net/forum">Forum</a>
+					</ul>
+				</nav>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div id="side-content">
+	<h1 id="category"><a href="/manual">3.2 Manual</a></h1>
+
+	<form id="search-form" method="get" action="http://www.google.com/search">
+		<input name="sitesearch" value="docs.rainmeter.net" type="hidden">
+		<input id="search" name="q" maxlength="255" size="16" placeholder="Search" type="text">
+	</form>
+
+	<nav id="tree">
+		<h1>Contents</h1>
+<ul>
+<li><a href="/manual/getting-started">Getting Started</a>
+	<ul>
+	<li><a href="/manual/getting-started/setting-up">Setting Up</a>
+	<li><a href="/manual/getting-started/using-rainmeter">Using Rainmeter</a>
+	<li><a href="/manual/getting-started/customizing">Customizing</a>
+	<li><a href="/manual/getting-started/creating-skins">Creating Skins</a>
+	<li><a href="/manual/getting-started/skin-anatomy">Anatomy of a Skin</a>
+	<li><a href="/manual/getting-started/basic-tutorials">Basic Tutorials</a>
+		<ul>
+		<li><a href="/manual/getting-started/basic-tutorials/launcher">Launcher</a>
+		<li><a href="/manual/getting-started/basic-tutorials/clock">Clock</a>
+		<li><a href="/manual/getting-started/basic-tutorials/system">System</a>
+		</ul>
+	</ul>
+<li><a href="/manual/installing-rainmeter">Installing Rainmeter</a>
+<li><a href="/manual/user-interface">User Interface</a>
+	<ul>
+	<li><a href="/manual/user-interface/manage">Manage</a>
+	<li><a href="/manual/user-interface/about">About</a>
+	<li><a href="/manual/user-interface/context-menus">Context Menus</a>
+	</ul>
+<li><a href="/manual/installing-skins">Installing Skins</a>
+<li><a href="/manual/publishing-skins">Publishing Skins</a>
+</ul>
+
+<h1>Reference</h1>
+<ul>
+<li><a href="/manual/settings">Settings</a>
+	<ul>
+	<li><a href="/manual/settings/rainmeter-section">[Rainmeter] Section</a>
+	<li><a href="/manual/settings/traymeasure-section">[TrayMeasure] Section</a>
+	<li><a href="/manual/settings/skin-sections">[Skin] Sections</a>
+	</ul>
+<li><a href="/manual/skins">Skins</a>
+	<ul>
+	<li><a href="/manual/skins/option-types">Option Types</a>
+	<li><a href="/manual/skins/rainmeter-section">[Rainmeter] Section</a>
+	<li><a href="/manual/skins/metadata-section">[Metadata] Section</a>
+	<li><a href="/manual/skins/include-option">@Include Options</a>
+	<li><a href="/manual/skins/resources-folder">@Resources Folder</a>
+	</ul>
+<li><a href="/manual/meters">Meters</a>
+	<ul>
+	<li><a href="/manual/meters/general-options">General Options</a>
+		<ul>
+		<li><a href="/manual/meters/general-options/image-options">Image Options</a>
+		<li><a href="/manual/meters/general-options/meterstyles">MeterStyles</a>
+		<li><a href="/manual/meters/general-options/tooltips">Tooltips</a>
+		</ul>
+	<li><a href="/manual/meters/bar">Bar</a>
+	<li><a href="/manual/meters/bitmap">Bitmap</a>
+	<li><a href="/manual/meters/button">Button</a>
+	<li><a href="/manual/meters/histogram">Histogram</a>
+	<li><a href="/manual/meters/image">Image</a>
+	<li><a href="/manual/meters/line">Line</a>
+	<li><a href="/manual/meters/rotator">Rotator</a>
+	<li><a href="/manual/meters/roundline">Roundline</a>
+	<li><a href="/manual/meters/string">String</a>
+	</ul>
+<li><a href="/manual/measures">Measures</a>
+	<ul>
+	<li><a href="/manual/measures/general-options">General Options</a>
+		<ul>
+		<li><a href="/manual/measures/general-options/ifactions">IfActions</a>
+		<li><a href="/manual/measures/general-options/ifconditions">IfConditions</a>
+		<li><a href="/manual/measures/general-options/ifmatchactions">IfMatchActions</a>
+		<li><a href="/manual/measures/general-options/substitute">Substitute</a>
+		</ul>
+	<li><a href="/manual/measures/calc">Calc</a>
+	<li><a href="/manual/measures/cpu">CPU</a>
+	<li><a href="/manual/measures/freediskspace">FreeDiskSpace</a>
+	<li><a href="/manual/measures/memory">Memory</a>
+	<li><a href="/manual/measures/net">Net</a>
+	<li><a href="/manual/measures/plugin">Plugin</a>
+	<li><a href="/manual/measures/registry">Registry</a>
+	<li><a href="/manual/measures/script">Script</a>
+	<li><a href="/manual/measures/string">String</a>
+	<li><a href="/manual/measures/time">Time</a>
+	<li><a href="/manual/measures/uptime">Uptime</a>
+	</ul>
+<li><a href="/manual/plugins">Plugins</a>
+	<ul>
+	<li><a href="/manual/plugins/advancedcpu">AdvancedCPU</a>
+	<li><a href="/manual/plugins/audiolevel">AudioLevel</a>
+	<li><a href="/manual/plugins/coretemp">CoreTemp</a>
+	<li><a href="/manual/plugins/fileview">FileView</a>
+	<li><a href="/manual/plugins/folderinfo">FolderInfo</a>
+	<li><a href="/manual/plugins/inputtext">InputText</a>
+	<li><a href="/manual/plugins/itunes">iTunes</a>
+	<li><a href="/manual/plugins/mediakey">MediaKey</a>
+	<li><a href="/manual/plugins/nowplaying">NowPlaying</a>
+	<li><a href="/manual/plugins/perfmon">PerfMon</a>
+	<li><a href="/manual/plugins/ping">Ping</a>
+	<li><a href="/manual/plugins/power">Power</a>
+	<li><a href="/manual/plugins/process">Process</a>
+	<li><a href="/manual/plugins/quote">Quote</a>
+	<li><a href="/manual/plugins/recyclemanager">RecycleManager</a>
+	<li><a href="/manual/plugins/resmon">ResMon</a>
+	<li><a href="/manual/plugins/speedfan">SpeedFan</a>
+	<li><a href="/manual/plugins/sysinfo">SysInfo</a>
+	<li><a href="/manual/plugins/virtualdesktops">VirtualDesktops</a>
+	<li><a href="/manual/plugins/webparser">WebParser</a>
+	<li><a href="/manual/plugins/wifistatus">WiFiStatus</a>
+	<li><a href="/manual/plugins/win7audio">Win7Audio</a>
+	<li><a href="/manual/plugins/windowmessage">WindowMessage</a>
+	</ul>
+<li><a href="/manual/bangs">Bangs</a>
+<li><a href="/manual/formulas">Formulas</a>
+<li><a href="/manual/variables">Variables</a>
+	<ul>
+	<li><a href="/manual/variables/built-in-variables">Built-In Variables</a>
+	<li><a href="/manual/variables/section-variables">Section Variables</a>
+	<li><a href="/manual/variables/mouse-variables">Mouse Variables</a>
+	</ul>
+<li><a href="/manual/groups">Groups</a>
+<li><a href="/manual/mouse-actions">Mouse Actions</a>
+<li><a href="/manual/lua-scripting">Lua Scripting</a>
+</ul>
+
+<h1>More</h1>
+<ul>
+<li><a href="/manual-beta">3.3 Beta Manual</a>
+<li><a href="/tips">Tips &amp; Tricks</a>
+<li><a href="/snippets">Snippets</a>
+<li><a href="/developers">Developers</a>
+<li><a href="/history">Version History</a>
+</ul>
+
+	</nav>
+</div>
+<div id="content">
+	<header>
+		<h1>AdvancedCPU measure</h1>
+	</header>
+	<article><p><code>Plugin=AdvancedCPU</code> measures CPU usage by processes.</p>
+
+<p><b>Note:</b> The value is a calculation of process CPU time scaled by the number of CPU cores. In order to use the value as a <a href="/manual/measures#Percentage">percentage</a> in meters, it must have the <a href="/manual/measures/general-options/#MaxValue">MaxValue</a> of the measure dynamically set to the current value of an AdvancedCPU measure which has no <code>CPUInclude</code> or <code>CPUExclude</code> options. See the <a href="#Example">Example</a> below.</p>
+
+<h2>Options</h2>
+<dl>
+	<dt>General measure options</dt>
+	<dd>
+		<p>All <a href="/manual/measures/general-options">general measure options</a> are valid.</p>
+	</dd>
+
+	<dt id="CPUInclude"><code>CPUInclude</code></dt>
+	<dd>
+		<p>List of process names separated by <code>;</code> (semicolon) to use in measurements	. If specified, <code>CPUExclude</code> is ignored.</p>
+	</dd>
+
+	<dt id="CPUExclude"><code>CPUExclude</code></dt>
+	<dd>
+		<p>List of processes separated by <code>;</code> (semicolon) to ignore in measurements.</p>
+		<p><b>Note:</b> The process <b>Idle</b> is a placeholder process used to manage unused CPU, therefore it should be excluded with <code>CPUExclude=Idle</code> to obtain CPU or <code>TopProcess</code> usage.</p>
+	</dd>
+
+	<dt id="TopProcess"><code>TopProcess</code> <small>Default: <code>0</code></small></dt>
+	<dd>
+		<p>Measures the process that is currently using the most CPU. Valid values are:
+		<ul>
+		<li><code>1</code> : The <a href="/manual/measures#Values">value</a> will be the process CPU usage.</li>
+		<li><code>2</code> : The <a href="/manual/measures#Values">string value</a> will be the process name. The number value is not altered.</li>
+		</ul></p>
+	</dd>
+</dl>
+
+<h2 id="Example">Example</h2>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="title">[Rainmeter]</span></span><br><span class="line"><span class="setting">Update=<span class="value"><span class="number">1000</span></span></span></span><br><span class="line"><span class="setting">DynamicWindowSize=<span class="value"><span class="number">1</span></span></span></span><br><span class="line"><span class="setting">BackGroundMode=<span class="value"><span class="number">2</span></span></span></span><br><span class="line"><span class="setting">SolidColor=<span class="value"><span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span></span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">;Measure maximum CPU time for use in MaxValue in other measures</span></span><br><span class="line"><span class="title">[MeasureCPUMax]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">Plugin</span></span></span><br><span class="line"><span class="setting">Plugin=<span class="value">AdvancedCPU</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">;Measure current CPU usage with MaxValue set</span></span><br><span class="line"><span class="title">[MeasureCPU]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">Plugin</span></span></span><br><span class="line"><span class="setting">Plugin=<span class="value">AdvancedCPU</span></span></span><br><span class="line"><span class="setting">CPUExclude=<span class="value">Idle</span></span></span><br><span class="line"><span class="setting">MaxValue=<span class="value">[MeasureCPUMax]</span></span></span><br><span class="line"><span class="setting">DynamicVariables=<span class="value"><span class="number">1</span></span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">;Measure Name of top process</span></span><br><span class="line"><span class="title">[MeasureTopName]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">Plugin</span></span></span><br><span class="line"><span class="setting">Plugin=<span class="value">AdvancedCPU</span></span></span><br><span class="line"><span class="setting">CPUExclude=<span class="value">Idle</span></span></span><br><span class="line"><span class="setting">TopProcess=<span class="value"><span class="number">2</span></span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">;Measure CPU usage of top process with MaxValue set</span></span><br><span class="line"><span class="title">[MeasureTop%]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">Plugin</span></span></span><br><span class="line"><span class="setting">Plugin=<span class="value">AdvancedCPU</span></span></span><br><span class="line"><span class="setting">CPUExclude=<span class="value">Idle</span></span></span><br><span class="line"><span class="setting">TopProcess=<span class="value"><span class="number">1</span></span></span></span><br><span class="line"><span class="setting">MaxValue=<span class="value">[MeasureCPUMax]</span></span></span><br><span class="line"><span class="setting">DynamicVariables=<span class="value"><span class="number">1</span></span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">;Show current CPU usage as a percentage</span></span><br><span class="line"><span class="title">[MeterCPU]</span></span><br><span class="line"><span class="setting">Meter=<span class="value">String</span></span></span><br><span class="line"><span class="setting">MeasureName=<span class="value">MeasureCPU</span></span></span><br><span class="line"><span class="setting">Y=<span class="value"><span class="number">2</span>R</span></span></span><br><span class="line"><span class="setting">FontColor=<span class="value"><span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span></span></span></span><br><span class="line"><span class="setting">FontSize=<span class="value"><span class="number">12</span></span></span></span><br><span class="line"><span class="setting">AntiAlias=<span class="value"><span class="number">1</span></span></span></span><br><span class="line"><span class="setting">Percentual=<span class="value"><span class="number">1</span></span></span></span><br><span class="line"><span class="setting">NumOfDecimals=<span class="value"><span class="number">2</span></span></span></span><br><span class="line"><span class="setting">DynamicVariables=<span class="value"><span class="number">1</span></span></span></span><br><span class="line"><span class="setting">Text=<span class="value">CPU Usage: %<span class="number">1</span></span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">;Show name of top process</span></span><br><span class="line"><span class="title">[MeterTopName]</span></span><br><span class="line"><span class="setting">Meter=<span class="value">String</span></span></span><br><span class="line"><span class="setting">MeasureName=<span class="value">MeasureTopName</span></span></span><br><span class="line"><span class="setting">Y=<span class="value"><span class="number">2</span>R</span></span></span><br><span class="line"><span class="setting">FontColor=<span class="value"><span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span></span></span></span><br><span class="line"><span class="setting">FontSize=<span class="value"><span class="number">12</span></span></span></span><br><span class="line"><span class="setting">AntiAlias=<span class="value"><span class="number">1</span></span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">;Show CPU usage of top process as a percentage</span></span><br><span class="line"><span class="title">[MeterTop%]</span></span><br><span class="line"><span class="setting">Meter=<span class="value">String</span></span></span><br><span class="line"><span class="setting">MeasureName=<span class="value">MeasureTop%</span></span></span><br><span class="line"><span class="setting">X=<span class="value"><span class="number">2</span>R</span></span></span><br><span class="line"><span class="setting">Y=<span class="value"><span class="number">0</span>r</span></span></span><br><span class="line"><span class="setting">FontColor=<span class="value"><span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span></span></span></span><br><span class="line"><span class="setting">FontSize=<span class="value"><span class="number">12</span></span></span></span><br><span class="line"><span class="setting">AntiAlias=<span class="value"><span class="number">1</span></span></span></span><br><span class="line"><span class="setting">Percentual=<span class="value"><span class="number">1</span></span></span></span><br><span class="line"><span class="setting">NumOfDecimals=<span class="value"><span class="number">2</span></span></span></span><br><span class="line"><span class="setting">Text=<span class="value">(%<span class="number">1</span>)</span></span></span><br></pre></td></tr></table></figure>
+
+</article>
+</div>
+			</div>
+		</div>
+
+		<div id="footer-push"></div>
+		<footer>
+			<div class="container">
+				Hosting provided by <a href="http://osirisdevelopment.com/">Osiris Development</a> &mdash; <a href="http://batterybarpro.com/">BatteryBar</a>, the best battery life tracker.
+			</div>
+		</footer>
+	</div>
+
+	<script src="../../../js/main.js?4"></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>WebParser: Lookahead Assertions in RegExp - Rainmeter Tips &amp;amp; Tricks</title>
+	<link href="../../css/main.css?3" rel="stylesheet">
+	<link rel="shortcut icon" href="//rainmeter.net/favicon.ico">
+	<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6/html5shiv.min.js"></script><![endif]-->
+</head>
+<body>
+	<div id="wrapper">
+		<div id="top">
+			<div class="container">
+				<a id="logo" href="//rainmeter.net/"></a>
+				<nav id="nav">
+					<ul>
+					<li><a href="//rainmeter.net">Home</a>
+					<li><a href="//rainmeter.net/about">About</a>
+					<li><a href="/" class="active">Docs</a>
+					<li><a href="//rainmeter.net/discover">Discover</a>
+					<li><a href="//rainmeter.net/forum">Forum</a>
+					</ul>
+				</nav>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div id="side-content">
+	<h1 id="category"><a href="/tips">Tips &amp;amp; Tricks</a></h1>
+
+	<form id="search-form" method="get" action="http://www.google.com/search">
+		<input name="sitesearch" value="docs.rainmeter.net" type="hidden">
+		<input id="search" name="q" maxlength="255" size="16" placeholder="Search" type="text">
+	</form>
+
+	<nav id="tree">
+		<h1>Contents</h1>
+<ul>
+<li><a href="/tips#BeyondTheBasics">Beyond the Basics</a>
+<li><a href="/tips#GoodToKnow">Good To Know</a>
+<li><a href="/tips#GettingThingsDone">Getting Things Done</a>
+</ul>
+
+<h1>More</h1>
+<ul>
+<li><a href="/manual">3.2 Final Manual</a>
+<li><a href="/manual-beta">3.3 Beta Manual</a>
+<li><a href="/snippets">Snippets</a>
+<li><a href="/developers">Developers</a>
+<li><a href="/history">Version History</a>
+</ul>
+
+	</nav>
+</div>
+<div id="content">
+	<header>
+		<h1>WebParser: Lookahead Assertions in RegExp</h1>
+	</header>
+	<article><p>Many times you need to parse an RSS feed or other web site, and can't be sure beforehand how many results for a particular search might be there. You might search for five occurrences of something when there are only four, and the entire regular expression will fail and no results will be returned to the WebParser measure(s).</p>
+
+<p>This can be solved by using what is known in regular expressions as a "Lookahead Assertion". What this does is evaluate an expression you define that says in effect "do this search if some pattern is found, otherwise continue the regular expression without failing".</p>
+
+<p>The best way to explain this is probably to give an example with an explanation of what it is doing.</p>
+
+<p>Let's start with an HTML file. We will use the "file://" functionality of WebParser for this test, so we can parse a local file on our hard drive.</p>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">HTML</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">BODY</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="title">Item</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="title">Name</span>&gt;</span>Larry<span class="tag">&lt;/<span class="title">Name</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="title">Item</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="title">Item</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="title">Name</span>&gt;</span>Curly<span class="tag">&lt;/<span class="title">Name</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="title">Item</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="title">BODY</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">HTML</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>Normally, we might use something like this in a WebParser measure to search for and return three results:</p>
+
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="title">[MeasureParent]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">Plugin</span></span></span><br><span class="line"><span class="setting">Plugin=<span class="value">WebParser</span></span></span><br><span class="line"><span class="setting">URL=<span class="value">file://#CURRENTPATH#MyFile.html</span></span></span><br><span class="line"><span class="setting">RegExp=<span class="value"><span class="string">"(?siU)&lt;Item&gt;.*&lt;Name&gt;(.*)&lt;/Name&gt;.*&lt;Item&gt;.*&lt;Name&gt;(.*)&lt;/Name&gt;.*&lt;Item&gt;.*&lt;Name&gt;(.*)&lt;/Name&gt;.*"</span></span></span></span><br></pre></td></tr></table></figure>
+
+<p>The problem is, there are only two instances of "&lt;Item&gt;" in this file at this time, and the regular expression will fail and no results will be returned to the WebParser measure. A feed or web site might have none or twenty "&lt;Item&gt;" occurrences, and you can't always know ahead of time.</p>
+
+<p>Using a "lookahead assertion" will allow you to solve this. You can use a RegExp of:</p>
+
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="comment">;RegExp with look-ahead assertions</span></span><br><span class="line"><span class="setting">RegExp=<span class="value"><span class="string">"(?siU)(?(?=.*&lt;Item&gt;).*&lt;Name&gt;(.*)&lt;/Name&gt;)(?(?=.*&lt;Item&gt;).*&lt;Name&gt;(.*)&lt;/Name&gt;)(?(?=.*&lt;Item&gt;).*&lt;Name&gt;(.*)&lt;/Name&gt;)"</span></span></span></span><br></pre></td></tr></table></figure>
+
+<p>Now the WebParser measure will return the two StringIndexes for "Larry" and "Curly", and will just return a null value for the third search item (the third StringIndex) without failing.</p>
+
+<p><b>How does this work?</b></p>
+
+<p><code>(?(?=.*&lt;Item&gt;).*&lt;Name&gt;(.*)&lt;/Name&gt;)</code></p>
+
+<p>The <code>(?</code> at the beginning, paired with the <code>)</code> at the very end, is an <em>IF conditional</em> directive, basically saying "If the following succeeds, then..."</p>
+
+<p>The <code>(?=.*&lt;Item&gt;)</code> next is the <em>lookahead assertion</em>. It is asking "If I look ahead from here, does the text <code>.*&lt;Item&gt;</code> exist?"</p>
+
+<p>If "true", what comes outside the lookahead assertion, <code>.*&lt;Name&gt;(.*)&lt;/Name&gt;</code> is searched for and the capture is made. The trailing <code>)</code> ends that starting <code>(?</code> IF conditional.</p>
+
+<p>The point of that overall outside <code>(? ... )</code> IF conditional is to keep the RegExp from failing if the lookahead assertion is "false". If the test in the lookahead is "true", fine. If not, it just shrugs and continues to the next part of the RegExp or exits gracefully at the end of the expression.</p><p>
+
+</p><p><b>Example skin</b></p>
+
+<p>Let's put it all together. I will use a [Variable] to define the search pattern, then just repeatedly use the variable in the <code>RegExp=</code> statement to save some typing, and set a <code>Substitute=</code> on the WebParser measures so we get something other than just a null value displayed.</p>
+
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="title">[Rainmeter]</span></span><br><span class="line"><span class="setting">DynamicWindowSize=<span class="value"><span class="number">1</span></span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[Variables]</span></span><br><span class="line"><span class="setting">Get=<span class="value">(?(?=.*&lt;Item&gt;).*&lt;Name&gt;(.*)&lt;/Name&gt;)</span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[MeasureParent]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">Plugin</span></span></span><br><span class="line"><span class="setting">Plugin=<span class="value">WebParser</span></span></span><br><span class="line"><span class="setting">URL=<span class="value">file://#CURRENTPATH#Test.html</span></span></span><br><span class="line"><span class="setting">RegExp=<span class="value"><span class="string">"(?siU)#Get##Get##Get#"</span></span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[MeasureChild1]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">Plugin</span></span></span><br><span class="line"><span class="setting">Plugin=<span class="value">WebParser</span></span></span><br><span class="line"><span class="setting">URL=<span class="value">[MeasureParent]</span></span></span><br><span class="line"><span class="setting">StringIndex=<span class="value"><span class="number">1</span></span></span></span><br><span class="line"><span class="setting">Substitute=<span class="value"><span class="string">""</span>:<span class="string">"No Moe!"</span></span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[MeasureChild2]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">Plugin</span></span></span><br><span class="line"><span class="setting">Plugin=<span class="value">WebParser</span></span></span><br><span class="line"><span class="setting">URL=<span class="value">[MeasureParent]</span></span></span><br><span class="line"><span class="setting">StringIndex=<span class="value"><span class="number">2</span></span></span></span><br><span class="line"><span class="setting">Substitute=<span class="value"><span class="string">""</span>:<span class="string">"No Moe!"</span></span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[MeasureChild3]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">Plugin</span></span></span><br><span class="line"><span class="setting">Plugin=<span class="value">WebParser</span></span></span><br><span class="line"><span class="setting">URL=<span class="value">[MeasureParent]</span></span></span><br><span class="line"><span class="setting">StringIndex=<span class="value"><span class="number">3</span></span></span></span><br><span class="line"><span class="setting">Substitute=<span class="value"><span class="string">""</span>:<span class="string">"No Moe!"</span></span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[MeterChild1]</span></span><br><span class="line"><span class="setting">Meter=<span class="value">String</span></span></span><br><span class="line"><span class="setting">MeasureName=<span class="value">MeasureChild1</span></span></span><br><span class="line"><span class="setting">FontSize=<span class="value"><span class="number">10</span></span></span></span><br><span class="line"><span class="setting">FontColor=<span class="value"><span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span></span></span></span><br><span class="line"><span class="setting">AntiAlias=<span class="value"><span class="number">1</span></span></span></span><br><span class="line"><span class="setting">Text=<span class="value">Item <span class="number">1</span>: %<span class="number">1</span></span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[MeterChild2]</span></span><br><span class="line"><span class="setting">Meter=<span class="value">String</span></span></span><br><span class="line"><span class="setting">MeasureName=<span class="value">MeasureChild2</span></span></span><br><span class="line"><span class="setting">Y=<span class="value"><span class="number">2</span>R</span></span></span><br><span class="line"><span class="setting">FontSize=<span class="value"><span class="number">10</span></span></span></span><br><span class="line"><span class="setting">FontColor=<span class="value"><span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span></span></span></span><br><span class="line"><span class="setting">AntiAlias=<span class="value"><span class="number">1</span></span></span></span><br><span class="line"><span class="setting">Text=<span class="value">Item <span class="number">2</span>: %<span class="number">1</span></span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[MeterChild3]</span></span><br><span class="line"><span class="setting">Meter=<span class="value">String</span></span></span><br><span class="line"><span class="setting">MeasureName=<span class="value">MeasureChild3</span></span></span><br><span class="line"><span class="setting">Y=<span class="value"><span class="number">2</span>R</span></span></span><br><span class="line"><span class="setting">FontSize=<span class="value"><span class="number">10</span></span></span></span><br><span class="line"><span class="setting">FontColor=<span class="value"><span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span></span></span></span><br><span class="line"><span class="setting">AntiAlias=<span class="value"><span class="number">1</span></span></span></span><br><span class="line"><span class="setting">Text=<span class="value">Item <span class="number">3</span>: %<span class="number">1</span></span></span></span><br></pre></td></tr></table></figure>
+
+<p>This will display:<br>
+<pre>
+Item 1: Larry
+Item 2: Curly
+Item 3: No Moe!
+</pre>
+</p><br>
+
+<p>Details on how "Lookaround" functionality works in regular expressions can be found at <a href="http://www.regular-expressions.info/lookaround.html" target="_blank" rel="external">RegExp Tutorial</a>.</p>
+
+<p>Guides, tutorials and tools for regular expressions can be found at <a href="/manual/skins/option-types#RegExp">Resources for regular expressions</a>.</p>
+</article>
+</div>
+			</div>
+		</div>
+
+		<div id="footer-push"></div>
+		<footer>
+			<div class="container">
+				Hosting provided by <a href="http://osirisdevelopment.com/">Osiris Development</a> &mdash; <a href="http://batterybarpro.com/">BatteryBar</a>, the best battery life tracker.
+			</div>
+		</footer>
+	</div>
+
+	<script src="../../js/main.js?4"></script>
+</body>
+</html>

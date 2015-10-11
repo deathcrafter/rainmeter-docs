@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Counters Guide - Rainmeter Tips &amp;amp; Tricks</title>
+	<link href="../../css/main.css?3" rel="stylesheet">
+	<link rel="shortcut icon" href="//rainmeter.net/favicon.ico">
+	<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6/html5shiv.min.js"></script><![endif]-->
+</head>
+<body>
+	<div id="wrapper">
+		<div id="top">
+			<div class="container">
+				<a id="logo" href="//rainmeter.net/"></a>
+				<nav id="nav">
+					<ul>
+					<li><a href="//rainmeter.net">Home</a>
+					<li><a href="//rainmeter.net/about">About</a>
+					<li><a href="/" class="active">Docs</a>
+					<li><a href="//rainmeter.net/discover">Discover</a>
+					<li><a href="//rainmeter.net/forum">Forum</a>
+					</ul>
+				</nav>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div id="side-content">
+	<h1 id="category"><a href="/tips">Tips &amp;amp; Tricks</a></h1>
+
+	<form id="search-form" method="get" action="http://www.google.com/search">
+		<input name="sitesearch" value="docs.rainmeter.net" type="hidden">
+		<input id="search" name="q" maxlength="255" size="16" placeholder="Search" type="text">
+	</form>
+
+	<nav id="tree">
+		<h1>Contents</h1>
+<ul>
+<li><a href="/tips#BeyondTheBasics">Beyond the Basics</a>
+<li><a href="/tips#GoodToKnow">Good To Know</a>
+<li><a href="/tips#GettingThingsDone">Getting Things Done</a>
+</ul>
+
+<h1>More</h1>
+<ul>
+<li><a href="/manual">3.2 Final Manual</a>
+<li><a href="/manual-beta">3.3 Beta Manual</a>
+<li><a href="/snippets">Snippets</a>
+<li><a href="/developers">Developers</a>
+<li><a href="/history">Version History</a>
+</ul>
+
+	</nav>
+</div>
+<div id="content">
+	<header>
+		<h1>Counters Guide</h1>
+	</header>
+	<article><p><em>Tip by smurfier</em></p>
+
+<p>This method of creating individual counters has been around for a bit but I decided that they should be written up as there are a few tricks that I've figured out. The advantages of using independent counters are numerous and include the ability to increase their amount by any number you want and being able to pause or reset their values.</p>
+
+<h2>Understanding Modulus</h2>
+
+<p>Before we take on the task of explaining how to create and use counters we need to understand what the <code>%</code> operator means. What it is called is the <a href="http://en.wikipedia.org/wiki/Modulo_operation" target="_blank" rel="external">Modulo</a> operator. The first form of division most of us were taught in school was long division. This is also known as <a href="http://en.wikipedia.org/wiki/Remainder" target="_blank" rel="external">Remainder Division</a> to some people.</p>
+
+<p>The main concept of this type of division is that when you take one number and divide it by another number sometimes there is something left over. For example when you take the number 10 and divide it by 3 you don't simply have the number 3. There's the little problem of having an extra 1 to deal with. There are two ways this can be dealt with. You can either express it as a decimal which can get a bit messy (3.3333...) or you can simply say "3 with a remainder of 1". The second method is what we will be working with.</p>
+
+<p>The modulus operator simply returns the remainder of any division you would do. For example if you were to do <code>10 % 3</code> the number 1 would be returned.</p>
+
+<p>There is a simplified explanation how the <code>%</code> operator works with counters in Rainmeter at <a href="http://rainmeter.net/forum/viewtopic.php?p=96826#p96826" target="_blank" rel="external">Using the modulo '%' operator in a counter measure</a>.</p>
+
+<h2>Creating Counters</h2>
+<p>First we're going to create some variables that we are going to use later on.</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="title">[Variables]</span></span><br><span class="line"><span class="setting">MaxNumber=<span class="value"><span class="number">30</span></span></span></span><br><span class="line"><span class="setting">Pause=<span class="value"><span class="number">1</span></span></span></span><br><span class="line"><span class="setting">Reset=<span class="value"><span class="number">1</span></span></span></span><br></pre></td></tr></table></figure>
+
+<p>Now we need to create the counter.</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="title">[cCounter]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">Calc</span></span></span><br><span class="line"><span class="setting">Formula=<span class="value">cCounter+<span class="number">1</span></span></span></span><br></pre></td></tr></table></figure>
+
+<p>The reason this works is that when calling a measure the value from the last update cycle is used. With this in mind, by calling the measure inside itself we can easily change it's value.</p>
+
+<p><b>Note:</b> When naming your counter always remember that there is a built in Variable/Function named Counter so yours should be named something else.</p>
+
+<p>Though the counter we just created will continue counting forever just like the built in Counter Variable/Function it does have one advantage. The built in version does not reset unless the skin is unloaded and reloaded. This can sometimes create issues. The counter we just created will always reset when the skin is refreshed.</p>
+
+<h3>Making the counter reset at a given value</h3>
+
+<p>Having it reset after a given value is easy and is accomplished the same way as if you were using the Counter variable.</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="title">[cCounter]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">Calc</span></span></span><br><span class="line"><span class="setting">Formula=<span class="value">(cCounter+<span class="number">1</span>)%(#MaxNumber#+<span class="number">1</span>)</span></span></span><br></pre></td></tr></table></figure>
+
+<p>This will have the counter reset to zero after it hits 30, which is what we have MaxNumber set to. We have the measure add 1 to MaxNumber so that it will reset after the value else it will reset at that value. This is due to the fact that including the number 0 counting to 30 is actually 31 numbers.</p>
+
+<p>If you want your counter to reset to one instead of zero we just need to move things around a bit.</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="title">[cCounter]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">Calc</span></span></span><br><span class="line"><span class="setting">Formula=<span class="value">cCounter%#MaxNumber#+<span class="number">1</span></span></span></span><br></pre></td></tr></table></figure>
+
+<p>With this method we also don't need to worry about adding one to the reset value.</p>
+
+<h3>Resetting a counter via Mouse Actions</h3>
+
+<p>How about having it reset to zero when we click on the skin.</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="title">[Rainmeter]</span></span><br><span class="line"><span class="setting">LeftMouseUpAction=<span class="value">!SetVariable Reset <span class="number">0</span></span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[cCounter]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">Calc</span></span></span><br><span class="line"><span class="setting">Formula=<span class="value">(cCounter+<span class="number">1</span>)*#Reset#</span></span></span><br><span class="line"><span class="setting">IfBelowValue=<span class="value"><span class="number">1</span></span></span></span><br><span class="line"><span class="setting">IfBelowAction=<span class="value">!SetVariable Reset <span class="number">1</span></span></span></span><br><span class="line"><span class="setting">DynamicVariables=<span class="value"><span class="number">1</span></span></span></span><br></pre></td></tr></table></figure>
+
+<p>Multiplying the counter by zero will easily reset it. Just make sure to set an action to set the Reset variable back to one when you're done.</p>
+
+<p>Or an alternative for resetting the counter with just a MouseOver:</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="title">[Rainmeter]</span></span><br><span class="line"><span class="setting">MouseOverAction=<span class="value">!DisableMeasure cCounter</span></span></span><br><span class="line"><span class="setting">MouseLeaveAction=<span class="value">!EnableMeasure cCounter</span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[cCounter]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">Calc</span></span></span><br><span class="line"><span class="setting">Formula=<span class="value">cCounter+<span class="number">1</span></span></span></span><br></pre></td></tr></table></figure>
+
+<p><b>Note:</b> This method only works if the counter is disabled for at least one update cycle.</p>
+
+<p>Now we can combine a couple methods of resetting to have the counter count up, reset, and wait for us to tell it restart again.</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="title">[cCounter]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">Calc</span></span></span><br><span class="line"><span class="setting">Formula=<span class="value">cCounter+<span class="number">1</span></span></span></span><br><span class="line"><span class="setting">IfEqualValue=<span class="value">#MaxNumber#</span></span></span><br><span class="line"><span class="setting">IfEqualAction=<span class="value">!DisableMeasure #CURRENTSECTION#</span></span></span><br></pre></td></tr></table></figure>
+
+<p>When we want the counter to start counting again we just need to use <code>!EnableMeasure cCounter</code>.</p>
+
+<h3>Pausing a counter</h3>
+
+<p>Lets pause the counter when you mouse-over the skin.</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="title">[Rainmeter]</span></span><br><span class="line"><span class="setting">MouseOverAction=<span class="value">!SetVariable Pause <span class="number">0</span></span></span></span><br><span class="line"><span class="setting">MouseLeaveAction=<span class="value">!SetVariable Pause <span class="number">1</span></span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[cCounter]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">Calc</span></span></span><br><span class="line"><span class="setting">Formula=<span class="value">cCounter+#Pause#</span></span></span><br><span class="line"><span class="setting">DynamicVariables=<span class="value"><span class="number">1</span></span></span></span><br></pre></td></tr></table></figure>
+
+<p>When the MouseOver action is triggered you stop adding 1 to the counter yet it retains it's value. When the mouse leaves the skin you start adding 1 to it again.</p>
+
+<p><b>Note:</b> This functionality may also be accomplished using the <a href="/manual/bangs#PauseMeasure">!PauseMeasure, !UnpauseMeasure and !TogglePauseMeasure</a> bangs.</p>
+
+<p>We can also have the counter stop counting at a certain value and stay there.</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="title">[cCounter]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">Calc</span></span></span><br><span class="line"><span class="setting">Formula=<span class="value">cCounter+(cCounter&lt;#MaxNumber#)</span></span></span><br></pre></td></tr></table></figure>
+
+<p>What we did was added a conditional statement. Conditional statements without an "if ? then : else" format resolve to either 1 for true or 0 for false. Using this fact we can easily use conditional statements in mathematical formulas.</p>
+
+<h3>Triggering Actions with a Counter</h3>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="title">[cCounter]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">Calc</span></span></span><br><span class="line"><span class="setting">Formula=<span class="value">cCounter+<span class="number">1</span></span></span></span><br><span class="line"><span class="setting">IfAboveValue=<span class="value">#MaxNumber#</span></span></span><br><span class="line"><span class="setting">IfAboveAction=<span class="value">[!DisableMeasure #CURRENTSECTION#][<span class="string">"Some Action"</span>]</span></span></span><br></pre></td></tr></table></figure>
+
+<p>This will count up to the MaxNumber, disable itself so it doesn't continue to count, and execute some action such as opening an addon. This method can be used to execute some action a certain number of updates after the skin is loaded.</p>
+
+<p>We can use the built in Counter function/variable to accomplish the same thing. Please note that Counter returns the number of updates since the skin was initially loaded and only returns to zero when Rainmeter is loaded or a !RefreshApp bang is used.</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="title">[cCounter]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">Calc</span></span></span><br><span class="line"><span class="setting">Formula=<span class="value">Counter</span></span></span><br><span class="line"><span class="setting">IfAboveValue=<span class="value">#MaxNumber#</span></span></span><br><span class="line"><span class="setting">IfAboveAction=<span class="value">[!DisableMeasure #CURRENTSECTION#][<span class="string">"Some Action"</span>]</span></span></span><br></pre></td></tr></table></figure>
+
+<p><b>Note:</b> To execute a set of commands when the skin is loaded or refreshed, without using a counter, use <code>OnRefreshAction=!SomeAction</code> in the <code>[Rainmeter]</code> section of the skin.</p>
+
+<h3>Bonus Lesson: Making a counter that counts down, not up</h3>
+
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="title">[cCounter]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">Calc</span></span></span><br><span class="line"><span class="setting">Formula=<span class="value">(cCounter-<span class="number">1</span>+(#MaxNumber#+<span class="number">1</span>))%(#MaxNumber#+<span class="number">1</span>)</span></span></span><br></pre></td></tr></table></figure>
+
+<p>This one is a bit harder to explain. What we are doing is taking the value of the counter and subtracting 1. Then we have to add the value of our MaxNumber else we'll just end up with a negative value. Now we have to take the remainder of that value using Modulo to get our final value.</p>
+
+<h2>Using Counters</h2>
+
+<h3>Cycling Images</h3>
+
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="title">[cCounter]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">Calc</span></span></span><br><span class="line"><span class="setting">Formula=<span class="value">cCounter%#MaxNumber#+<span class="number">1</span></span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[MeterImage]</span></span><br><span class="line"><span class="setting">Meter=<span class="value">Image</span></span></span><br><span class="line"><span class="setting">MeasureName=<span class="value">cCounter</span></span></span><br><span class="line"><span class="setting">ImageName=<span class="value">#@#Images/%<span class="number">1</span>.png</span></span></span><br></pre></td></tr></table></figure>
+
+<h3>Cycling Between Measures</h3>
+
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="title">[Variables]</span></span><br><span class="line"><span class="setting">MaxNumber=<span class="value"><span class="number">3</span></span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[cCounter]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">Calc</span></span></span><br><span class="line"><span class="setting">Formula=<span class="value">cCounter%#MaxNumber#+<span class="number">1</span></span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[Measure1]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">String</span></span></span><br><span class="line"><span class="setting">String=<span class="value">This is the first measure.</span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[Measure2]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">String</span></span></span><br><span class="line"><span class="setting">String=<span class="value">This is the second measure.</span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[Measure3]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">String</span></span></span><br><span class="line"><span class="setting">String=<span class="value">This is the third measure.</span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[MeterString]</span></span><br><span class="line"><span class="setting">Meter=<span class="value">String</span></span></span><br><span class="line"><span class="setting">MeasureName=<span class="value">Measure1</span></span></span><br><span class="line"><span class="setting">MeasureName2=<span class="value">Measure2</span></span></span><br><span class="line"><span class="setting">MeasureName3=<span class="value">Measure3</span></span></span><br><span class="line"><span class="setting">Text=<span class="value">%[cCounter]</span></span></span><br><span class="line"><span class="setting">DynamicVariables=<span class="value"><span class="number">1</span></span></span></span><br></pre></td></tr></table></figure>
+
+</article>
+</div>
+			</div>
+		</div>
+
+		<div id="footer-push"></div>
+		<footer>
+			<div class="container">
+				Hosting provided by <a href="http://osirisdevelopment.com/">Osiris Development</a> &mdash; <a href="http://batterybarpro.com/">BatteryBar</a>, the best battery life tracker.
+			</div>
+		</footer>
+	</div>
+
+	<script src="../../js/main.js?4"></script>
+</body>
+</html>
