@@ -23,6 +23,12 @@ function toggleClass(elem, className) {
     }
 }
 
+(function() {
+	if (location.hostname === 'rainmeter.github.io') {
+		location.replace('http://docs.rainmeter.net');
+	}
+})();
+
 // Spice up the side nav.
 (function() {
 	var nav = document.getElementById('tree');
@@ -63,7 +69,7 @@ function toggleClass(elem, className) {
 	}
 })();
 
-// Make ctrl+click on <dt> and <hn> tags anchor the page with id.
+// Make ctrl+click on <dt> and <hN> tags anchor the page with id.
 (function() {
 	var tags = ['dt', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
 	for (i = 0; tag = tags[i]; ++i) {
@@ -174,4 +180,3 @@ function toggleClass(elem, className) {
 		}
 	}
 })();
-</pre></hn></dt>
