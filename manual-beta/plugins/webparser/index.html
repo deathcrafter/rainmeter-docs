@@ -189,7 +189,7 @@
 <p>The values of the two <a href="#ParentChild">child</a> measures are now the information parsed into StringIndexes 1 and 2 by the <a href="#ParentChild">parent</a> measure. These can then be used with <a href="/manual-beta/meters/general-options/#MeasureName">MeasureName</a> and other options in <a href="/manual-beta/meters/">meters</a>.
 
 
-</p><p><b>Note:</b> More information and examples for WebParser can be found at <a href="/tips/webparser-tutorial/">WebParser Tutorial</a> and <a href="/tips/rss-feed-tutorial/">RSS/Atom Feed Tutorial</a>.</p>
+<p><b>Note:</b> More information and examples for WebParser can be found at <a href="/tips/webparser-tutorial/">WebParser Tutorial</a> and <a href="/tips/rss-feed-tutorial/">RSS/Atom Feed Tutorial</a>.</p>
 
 <h2>Options</h2>
 <dl>
@@ -200,11 +200,11 @@
 
 	<dt id="URL"><code>URL</code></dt>
 	<dd>
-		<p><a href="http://en.wikipedia.org/wiki/Uniform_resource_locator" target="_blank" rel="external">URL</a> to the site or file to be downloaded and parsed. If the name of another WebParser measure is used, e.g. <code>URL=[SomeMeasure]</code>, then the value of the <a href="#ParentChild">parent</a> measure is used, generally by referring to a specific <a href="#StringIndex">StringIndex</a> number.</p>
+		<p><a href="http://en.wikipedia.org/wiki/Uniform_resource_locator">URL</a> to the site or file to be downloaded and parsed. If the name of another WebParser measure is used, e.g. <code>URL=[SomeMeasure]</code>, then the value of the <a href="#ParentChild">parent</a> measure is used, generally by referring to a specific <a href="#StringIndex">StringIndex</a> number.</p>
 
-		<p id="Authentication">WebParser <b>cannot</b> use cookies or other session-based authentication, so it <b>cannot</b> be used to retrieve information from web sites requiring a login. However, Webparser <b>can</b> be used on sites which support <a href="http://en.wikipedia.org/wiki/Basic_access_authentication" target="_blank" rel="external">HTTP authentication</a>. E.g. <code>http://myname:mypassword@somesite.com</code>.</p>
+		<p id="Authentication">WebParser <b>cannot</b> use cookies or other session-based authentication, so it <b>cannot</b> be used to retrieve information from web sites requiring a login. However, Webparser <b>can</b> be used on sites which support <a href="http://en.wikipedia.org/wiki/Basic_access_authentication">HTTP authentication</a>. E.g. <code>http://myname:mypassword@somesite.com</code>.</p>
 
-		<p id="Local">WebParser can read and parse local files on your computer by using the <code>file://</code> <a href="http://en.wikipedia.org/wiki/File_URI_scheme" target="_blank" rel="external">URI scheme</a>. E.g. <code>URL=file://<a href="/manual-beta/variables/built-in-variables/#CURRENTPATH">#CURRENTPATH#</a>SomeFile.txt</code>.</p>
+		<p id="Local">WebParser can read and parse local files on your computer by using the <code>file://</code> <a href="http://en.wikipedia.org/wiki/File_URI_scheme">URI scheme</a>. E.g. <code>URL=file://<a href="/manual-beta/variables/built-in-variables/#CURRENTPATH">#CURRENTPATH#</a>SomeFile.txt</code>.</p>
 		
 		<p>If you want to use the current value of a measure in a dynamic way as a <a href="/manual-beta/variables/section-variables/">Section Variable</a>, rather than as a reference to a "parent" WebParser measure, you must prefix the name of the measure with the <code>&</code> character.</p>
 
@@ -243,7 +243,7 @@
 
 	<dt id="DecodeCharacterReference"><code>DecodeCharacterReference</code> <small>Default: <code>0</code></small></dt>
 	<dd>
-		<p>Automatically decodes <a href="http://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references" target="_blank" rel="external">HTML Character References</a>. This will eliminate the need to use a <a href="/manual-beta/measures/general-options/substitute/"><code>Substitute</code></a> statement to translate character references like <code>&amp;quot;</code>, <code>&amp;amp;</code>, <code>&amp;lt;</code>, and <code>&amp;gt;</code> to the actual character. Valid values are:</p>
+		<p>Automatically decodes <a href="http://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references">HTML Character References</a>. This will eliminate the need to use a <a href="/manual-beta/measures/general-options/substitute/"><code>Substitute</code></a> statement to translate character references like <code>&amp;quot;</code>, <code>&amp;amp;</code>, <code>&amp;lt;</code>, and <code>&amp;gt;</code> to the actual character. Valid values are:</p>
 		<ul>
 			<li><code>0</code>: Does nothing (default).</li>
 			<li><code>1</code>: Decodes both numeric character references and character entity references.</li>
@@ -281,7 +281,7 @@
 	<dd>
 		<p>If the <code>Download</code> option is set to <code>1</code>, this option defines a relative path and file name where the downloaded file will be saved instead of in Windows <code>TEMP</code>.
 
-		</p><p>A folder <code>DownloadFile</code> will be created in the <a href="/manual-beta/variables/built-in-variables/#CURRENTPATH">current folder</a>, and the defined relative path and file name will be created under that. It is not possible to specify an absolute path.</p>
+		<p>A folder <code>DownloadFile</code> will be created in the <a href="/manual-beta/variables/built-in-variables/#CURRENTPATH">current folder</a>, and the defined relative path and file name will be created under that. It is not possible to specify an absolute path.</p>
 
 		<p><b>Note:</b> This file is <b>not</b> a temporary file so it is <b>not</b> deleted after unloading a skin or exiting Rainmeter.</p>
 
@@ -320,7 +320,7 @@
 
 	<dt id="CodePage"><code>CodePage</code> <small>Default: <code>0</code></small></dt>
 	<dd>
-		 <p>Defines the <a href="http://en.wikipedia.org/wiki/Code_page" target="_blank" rel="external">code page</a> of the downloaded URL=http:// web page or external file read with URL=file://.</p>
+		 <p>Defines the <a href="http://en.wikipedia.org/wiki/Code_page">code page</a> of the downloaded URL=http:// web page or external file read with URL=file://.</p>
 		 
 		 <p>Most web sites on the web today are encoded with the Unicode UTF-8 standard. This is the default for WebParser, and it will seamlessly handle the site. No CodePage option is needed.</p>
 
@@ -337,9 +337,9 @@
 		 
 		 <p>In addition, there are times when an external local file to be parsed with URL=file:// will be encoded in other than the ANSI (really ASCII plus "extended ASCII" specific to the locale of the computer) encoding used as the default in most Windows-based text editors. Primarily this will be in Unicode UFT-16 LE. In this case, the <code>CodePage=1200</code> option must be used to tell WebParer how to interpret the resource being read.</p>
 		 
-		 <p>Codepage definitions and more information can be found at <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dd317756(v=vs.85).aspx" target="_blank" rel="external">Windows code pages</a>.</p>
+		 <p>Codepage definitions and more information can be found at <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dd317756(v=vs.85).aspx">Windows code pages</a>.</p>
 		 
-		 <p>Additional general help with Unicode encoding in Rainmeter can be found at <a href="http://forum.rainmeter.net/viewtopic.php?p=92182#p92182" target="_blank" rel="external">Character Encoding in Rainmeter</a>.</p>
+		 <p>Additional general help with Unicode encoding in Rainmeter can be found at <a href="http://forum.rainmeter.net/viewtopic.php?p=92182#p92182">Character Encoding in Rainmeter</a>.</p>
 	</dd>
 </dl>
 
@@ -387,7 +387,7 @@
 		<p><b>Note:</b> When <a href="#Download">Download</a> is used on a <a href="#ParentChild">child</a> measure, the download itself is treated as a <a href="#ParentChild">parent</a> function, and any <a href="#FinishAction">FinishAction</a> on the measure will be executed if the download succeeds, and any <a href="#OnDownloadErrorAction">OnDownloadErrorAction</a> on the measure will be executed if the download fails.</p>		
 	</dd>
 	
-	<br><p><b>Note:</b> If some condition causes the error actions to be executed, care should be taken not to create an endless loop or cause the skin to repeatedly try to access a resource in a short period of time. For instance, it would not be wise to have these actions automatically update the measure they are on, or refresh the skin.</p> 
+	<br/><p><b>Note:</b> If some condition causes the error actions to be executed, care should be taken not to create an endless loop or cause the skin to repeatedly try to access a resource in a short period of time. For instance, it would not be wise to have these actions automatically update the measure they are on, or refresh the skin.</p> 
 </dl>	
 
 <h2 id="MeasureCommands">Measure Commands</h2>

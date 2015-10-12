@@ -59,7 +59,7 @@
 	</header>
 	<article><p>This tutorial is meant to shed some light on using the <a href="/manual/plugins/webparser/">WebParser plugin</a> in Rainmeter to retrieve information from a website for use in your skins. A lot of us have used WebParser to get RSS feeds or other data from websites, but often by using or tweaking existing code, and without really understanding how it works.
 
-</p><h2>WebParser overview</h2>
+<h2>WebParser overview</h2>
 
 <p>WebParser is a plugin <a href="/manual/measures/">measure</a> type in Rainmeter, that is used to connect to some resource, normally a web site on the internet, read the raw HTML output that the site returns, and parse information from that output to use in <a href="/manual/meters/">meters</a> in your skin.</p>
 
@@ -71,13 +71,13 @@
 
 <p>It is important right off to understand that WebParser works with a "parent / child" approach.  What happens is that the parent measure connects to the site with the <a href="/manual/plugins/webparser/#URL">URL</a>, and uses the <a href="/manual/plugins/webparser/#RegExp">RegExp</a> option to capture some information with one or more instances of <code>(.*)</code>. The captured information is held by WebParser, and is individually referenced by child measures with the <a href="/manual/plugins/webparser/#StringIndex">StringIndex</a> numbers.  Each <code>(.*)</code> captures some information and creates a StringIndex.
 
-</p><h2>The RegExp option</h2>
+<h2>The RegExp option</h2>
 
 <p>Now let's spend a minute talking about the key part of the code, that <code>RegExp</code> option. As we saw above, WebParser uses a <em>regular expression</em> to search for the bits of information you want to retrieve, and return them in one or more <code>StringIndex</code> values on the measure.</p>
 
-<p>So how do we build one of these mysterious <code>RegExp</code> statements in Rainmeter? Let me use a template showing the format in simple terms:</p><p>
+<p>So how do we build one of these mysterious <code>RegExp</code> statements in Rainmeter? Let me use a template showing the format in simple terms:<p>
 
-</p><p><code>RegExp=(?siU)Search1(.*)Search2.*</code></p>
+<p><code>RegExp=(?siU)Search1(.*)Search2.*</code></p>
 
 <p>So enclosed in quotes, you have:</p>
 <ul>
@@ -184,7 +184,7 @@
 
 <p>
 
-</p><p>So we want to add to our "RegExp=" statement, search for the flag image name, and return the result in the next StringIndex on the parent measure:</p>
+<p>So we want to add to our "RegExp=" statement, search for the flag image name, and return the result in the next StringIndex on the parent measure:</p>
 
 <figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="title">[MeasureSite]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">Plugin</span></span></span><br><span class="line"><span class="setting">Plugin=<span class="value">WebParser</span></span></span><br><span class="line"><span class="setting">URL=<span class="value">http://www.tell-my-ip.com/index.html</span></span></span><br><span class="line"><span class="setting">RegExp=<span class="value">(?siU)&lt;td.*&gt;Your IP Address:&lt;/td&gt;&lt;td&gt;(.*)&lt;/td&gt;.*&lt;td&gt;Country:&lt;/td&gt;.*&lt;img src=<span class="string">"(.*)"</span>&gt;</span></span></span><br><span class="line"><span class="setting">UpdateRate=<span class="value"><span class="number">3600</span></span></span></span><br></pre></td></tr></table></figure>
 
@@ -234,7 +234,7 @@
 
 <figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="title">[MeasureCountryName]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">Plugin</span></span></span><br><span class="line"><span class="setting">Plugin=<span class="value">WebParser</span></span></span><br><span class="line"><span class="setting">URL=<span class="value">[MeasureSite]</span></span></span><br><span class="line"><span class="setting">StringIndex=<span class="value"><span class="number">3</span></span></span></span><br></pre></td></tr></table></figure>
 
-</p><p>When we add this child measure, it ends up with a value of "United States".</p>
+<p>When we add this child measure, it ends up with a value of "United States".</p>
 
 <h3>And so on...</h3>
 

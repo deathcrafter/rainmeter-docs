@@ -230,22 +230,22 @@
 		
 		<h4 id="TimeZoneValues">Time Zone values</h4>
 		<ul>
-		<li><code>TIMEZONE_ISDST</code><br>
-		[Number] A flag indicating the current state of Daylight Savings Time for the local computer.<br>
-		Possible return values are:<br>
-		<code>1</code> : Daylight Savings Time is currently in effect<br>
-		<code>0</code> : Daylight Savings Time is currently not in effect<br>
+		<li><code>TIMEZONE_ISDST</code><br/>
+		[Number] A flag indicating the current state of Daylight Savings Time for the local computer.<br/>
+		Possible return values are:<br/>
+		<code>1</code> : Daylight Savings Time is currently in effect<br/>
+		<code>0</code> : Daylight Savings Time is currently not in effect<br/>
 		<code>-1</code> : The local region does not use Daylight Savings Time, or the functionality is disabled in Windows.</li>
-		<li><code>TIMEZONE_BIAS</code><br>
+		<li><code>TIMEZONE_BIAS</code><br/>
 		[Number] The difference, in minutes, between standard local time and Coordinated Universal Time (UTC). This is the difference <em>from</em> the standard local time <em>to</em> UTC, or <code>UTC = standard local time + time zone bias</code>.</li>
-		<li><code>TIMEZONE_STANDARD_NAME</code><br>
+		<li><code>TIMEZONE_STANDARD_NAME</code><br/>
 		[String] The full name of the local computer's Time Zone when Daylight Savings Time is not in effect. For example, "Eastern Standard Time".</li>
-		<li><code>TIMEZONE_STANDARD_BIAS</code><br>
+		<li><code>TIMEZONE_STANDARD_BIAS</code><br/>
 		[Number] The difference in minutes between standard local time and the local time when Daylight Savings Time is not in effect. For most areas, this will always be zero. Adding this to the value of TIMEZONE_BIAS will produce the total actual difference in minutes between the local computer and UTC when Daylight Savings Time is not in effect, or <code>UTC = standard local time + time zone bias + standard bias</code>.</li>
-		<li><code>TIMEZONE_DAYLIGHT_NAME</code><br>
+		<li><code>TIMEZONE_DAYLIGHT_NAME</code><br/>
 		[String] The full name of the local computer's Time Zone when Daylight Savings Time is in effect. For example, "Eastern Daylight Time".</li>
-		<li><code>TIMEZONE_DAYLIGHT_BIAS</code><br>
-		[Number] The difference in minutes between standard local time and the local time when Daylight Savings Time is in effect. For most areas, this will always be -60. Adding this to the value of TIMEZONE_BIAS will produce the total actual difference in minutes between the local computer and UTC when Daylight Savings Time is in effect, or <code>UTC = standard local time + time zone bias + daylight bias</code>.<br><br>
+		<li><code>TIMEZONE_DAYLIGHT_BIAS</code><br/>
+		[Number] The difference in minutes between standard local time and the local time when Daylight Savings Time is in effect. For most areas, this will always be -60. Adding this to the value of TIMEZONE_BIAS will produce the total actual difference in minutes between the local computer and UTC when Daylight Savings Time is in effect, or <code>UTC = standard local time + time zone bias + daylight bias</code>.<br/><br/>
 		<b>Note:</b> Also see Daylight Savings Time <a href="/manual-beta/measures/time/#TimeStamp">TimeStamp</a> options on <a href="/manual-beta/measures/time/">Time</a> measures.</li>
 		</ul>
 	</dd>
@@ -255,8 +255,8 @@
 		<p>An additional selector option that can be used to define an instance for some <a href="#SysInfoType">SysInfoType</a> values.</p>
 
 		<p><b>Network Interface Controller</b></p>
-		<p>For <code>SysInfoType</code> values related to network information, this will identify the network interface controller (NIC) to use.</p><p>
-		</p><p>This can be defined in one of several ways:
+		<p>For <code>SysInfoType</code> values related to network information, this will identify the network interface controller (NIC) to use.<p>
+		<p>This can be defined in one of several ways:
 		<ul>
 			<li>The string value <code>Best</code>, which will automatically detect the active interface.</li>
 			<li>The name of the network interface controller. For example, <code>Qualcomm AR938x Wireless Network Adapter</code>.</li>

@@ -62,9 +62,9 @@
 <p>It is not the intention of this guide to teach WebParser or regular expressions. There is a lot of help to get you started at:</p>
 
 <ul>
-<li><a href="http://docs.rainmeter.net/tips/webparser-tutorial" target="_blank" rel="external">WebParser Tutorial</a></li>
-<li><a href="http://www.regular-expressions.info/tutorial.html" target="_blank" rel="external">Regular-Expressions.com Tutorial</a></li>
-<li><a href="http://www.rexegg.com/" target="_blank" rel="external">RexEgg Tutorial</a></li>
+<li><a href="http://docs.rainmeter.net/tips/webparser-tutorial">WebParser Tutorial</a></li>
+<li><a href="http://www.regular-expressions.info/tutorial.html">Regular-Expressions.com Tutorial</a></li>
+<li><a href="http://www.rexegg.com/">RexEgg Tutorial</a></li>
 </ul>
 
 <p>What we are going to focus on is the methods you can use to debug your <code>RegExp</code> (regular expression) option in Rainmeter, to build, test and find problems when parsing a web site or local file.</p>
@@ -83,7 +83,7 @@
 
 <figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="title">[MeasureSite]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">Plugin</span></span></span><br><span class="line"><span class="setting">Plugin=<span class="value">WebParser</span></span></span><br><span class="line"><span class="setting">URL=<span class="value">http://www.tell-my-ip.com/index.html</span></span></span><br><span class="line"><span class="setting">RegExp=<span class="value">(?siU)&lt;td.*&gt;Your IP Address.*&lt;td&gt;(.*)&lt;/td&gt;.*&lt;td.*&gt;Country:.*&lt;img src=<span class="string">"(.*)"</span>&gt; (.*)&lt;/td&gt;.*&lt;td&gt;Region.*&lt;td&gt;(.*)&lt;/td&gt;.*&lt;td&gt;City.*&lt;td&gt;(.*)&lt;/td&gt;.*&lt;td&gt;ISP:.*&lt;td&gt;(.*)&lt;/td&gt;.*&lt;td&gt;Latitude:.*&lt;td&gt;(.*)&lt;/td&gt;.*&lt;td&gt;Longitude:.*&lt;td&gt;(.*)&lt;/td&gt;</span></span></span><br></pre></td></tr></table></figure>
 
-<p>In the above, we have eight captures <code>(.*)</code>, creating eight StringIndex numbers.  So we would create eight child WebParser measures to pick off each one, and we can then display the data any way we like in meters. Again, refer to <a href="http://docs.rainmeter.net/tips/webparser-tutorial" target="_blank" rel="external">WebParser Tutorial</a> for a full explanation of how WebParser works.</p>
+<p>In the above, we have eight captures <code>(.*)</code>, creating eight StringIndex numbers.  So we would create eight child WebParser measures to pick off each one, and we can then display the data any way we like in meters. Again, refer to <a href="http://docs.rainmeter.net/tips/webparser-tutorial">WebParser Tutorial</a> for a full explanation of how WebParser works.</p>
 
 <h2>Starting our RegExp</h2>
 
@@ -93,7 +93,7 @@
 
 <p>We then start building our <code>RegExp</code>, using <code>&lt;td.*&gt;Your IP Address.*&lt;td&gt;(.*)&lt;/td&gt;</code> to search for <code>&lt;td.*&gt;Your IP Address.*&lt;td&gt;</code>, then capture that IP address into a <code>StringIndex</code> with <code>(.*)</code> until we hit <code>&lt;/td&gt;</code>.
 
-</p><p>So we would start with:</p>
+<p>So we would start with:</p>
 
 <figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="title">[MeasureSite]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">Plugin</span></span></span><br><span class="line"><span class="setting">Plugin=<span class="value">WebParser</span></span></span><br><span class="line"><span class="setting">URL=<span class="value">http://www.tell-my-ip.com/index.html</span></span></span><br><span class="line"><span class="setting">RegExp=<span class="value">(?siU)&lt;td.*&gt;Your IP Address.*&lt;td&gt;(.*)&lt;/td&gt;</span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[MeasureIP]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">Plugin</span></span></span><br><span class="line"><span class="setting">Plugin=<span class="value">WebParser</span></span></span><br><span class="line"><span class="setting">URL=<span class="value">[MeasureSite]</span></span></span><br><span class="line"><span class="setting">StringIndex=<span class="value"><span class="number">1</span></span></span></span><br></pre></td></tr></table></figure>
 
@@ -123,7 +123,7 @@
 
 <figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="title">[MeasureSite]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">Plugin</span></span></span><br><span class="line"><span class="setting">Plugin=<span class="value">WebParser</span></span></span><br><span class="line"><span class="setting">URL=<span class="value">http://www.tell-my-ip.com/index.html</span></span></span><br><span class="line"><span class="setting">RegExp=</span><br><span class="line"><span class="value">Debug=<span class="number">2</span></span></span></span><br></pre></td></tr></table></figure>
 
-<p>As you can see, we don't even have a <code>RegExp</code> option yet, just a WebParser measure that connects to the site and downloads the HTML to our WebParserDump.txt text file.</p> Open that file in your favorite text editor, and it can be used as a reference as you continue.<p></p>
+<p>As you can see, we don't even have a <code>RegExp</code> option yet, just a WebParser measure that connects to the site and downloads the HTML to our WebParserDump.txt text file.</p> Open that file in your favorite text editor, and it can be used as a reference as you continue.</p>
 
 <p><b>Note:</b> When you are done building and testing your <code>RegExp</code> option, be sure to remove the <code>Debug=2</code> line, so it isn't constantly downloading and writing that file as you actually use your skin.</p>
 
@@ -133,7 +133,7 @@
 
 <p>RainRexExp is an add-on utility you can use with WebParser / Rainmeter to create, test and debug your <code>RegExp</code> regular expression options. The way the tool works is to actually connect to the site you are using in your <code>URL</code> option, download the text exactly as WebParser would see it, (it basically tells the site it IS WebParser) and give you a way to build and test your <code>RegExp</code> while seeing exactly what is being set in the <code>StringIndex</code> values.</p>
 
-<p>Get the tool here: <a href="http://www.rainmeter.net/RainRegExp.zip" target="_blank" rel="external">RainRegExp.zip</a>. Simply unzip the files into any folder you desire, and run the <b>RainRegExp.exe</b> executable.</p>
+<p>Get the tool here: <a href="http://www.rainmeter.net/RainRegExp.zip">RainRegExp.zip</a>. Simply unzip the files into any folder you desire, and run the <b>RainRegExp.exe</b> executable.</p>
 
 <div class="exampleprev">
 	<img src="/tips/img/webparser-debugging-regexp/RainRegExp.jpg" class="lightbox">

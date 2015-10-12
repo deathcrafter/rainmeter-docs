@@ -125,19 +125,19 @@ Default value:<br>
 	<li>Brightness = 0</li>
 	<li>Contrast = 1</li>
 	<li>Saturation = 1
-</li></ul></p>
+</ul></p>
 <figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="title">[Variables]</span></span><br><span class="line"><span class="setting">Brightness=<span class="value">-<span class="number">0.2</span></span></span></span><br><span class="line"><span class="setting">Contrast=<span class="value"><span class="number">1.2</span></span></span></span><br><span class="line"><span class="setting">Saturation=<span class="value"><span class="number">1.5</span></span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[b]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">Calc</span></span></span><br><span class="line"><span class="setting">Formula=<span class="value">#Brightness#</span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[c]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">Calc</span></span></span><br><span class="line"><span class="setting">Formula=<span class="value">#Contrast#</span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[s]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">Calc</span></span></span><br><span class="line"><span class="setting">Formula=<span class="value">#Saturation#</span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[t+b]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">Calc</span></span></span><br><span class="line"><span class="setting">Formula=<span class="value">((<span class="number">1.0</span>-c)/<span class="number">2</span>)+b</span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[c(sr)]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">Calc</span></span></span><br><span class="line"><span class="setting">Formula=<span class="value">c*((<span class="number">1</span>-s)*<span class="number">0.3086</span>)</span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[c(sg)]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">Calc</span></span></span><br><span class="line"><span class="setting">Formula=<span class="value">c*((<span class="number">1</span>-s)*<span class="number">0.6094</span>)</span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[c(sb)]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">Calc</span></span></span><br><span class="line"><span class="setting">Formula=<span class="value">c*((<span class="number">1</span>-s)*<span class="number">0.0820</span>)</span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[c(sr+s)]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">Calc</span></span></span><br><span class="line"><span class="setting">Formula=<span class="value">c*(((<span class="number">1</span>-s)*<span class="number">0.3086</span>)+s)</span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[c(sg+s)]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">Calc</span></span></span><br><span class="line"><span class="setting">Formula=<span class="value">c*(((<span class="number">1</span>-s)*<span class="number">0.6094</span>)+s)</span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[c(sb+s)]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">Calc</span></span></span><br><span class="line"><span class="setting">Formula=<span class="value">c*(((<span class="number">1</span>-s)*<span class="number">0.0820</span>)+s)</span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[Image]</span></span><br><span class="line"><span class="setting">Meter=<span class="value">Image</span></span></span><br><span class="line"><span class="setting">ImageName=<span class="value">cats.jpg</span></span></span><br><span class="line"><span class="setting">ColorMatrix1=<span class="value">[c(sr+s)];[c(sr)];[c(sr)];<span class="number">0</span>;<span class="number">0</span></span></span></span><br><span class="line"><span class="setting">ColorMatrix2=<span class="value">[c(sg)];[c(sg+s)];[c(sg)];<span class="number">0</span>;<span class="number">0</span></span></span></span><br><span class="line"><span class="setting">ColorMatrix3=<span class="value">[c(sb)];[c(sb)];[c(sb+s)];<span class="number">0</span>;<span class="number">0</span></span></span></span><br><span class="line"><span class="setting">ColorMatrix4=<span class="value"><span class="number">0</span>;<span class="number">0</span>;<span class="number">0</span>;<span class="number">1</span>;<span class="number">0</span></span></span></span><br><span class="line"><span class="setting">ColorMatrix5=<span class="value">[t+b];[t+b];[t+b];<span class="number">0</span>;<span class="number">1</span></span></span></span><br><span class="line"><span class="setting">DynamicVariables=<span class="value"><span class="number">1</span></span></span></span><br></pre></td></tr></table></figure>
 
 <h3>Some examples of matrix values as a color filter</h3>
 
 <p><b>[Original Image]</b></p>
 <div class="exampleprev">
-<img src="/tips/img/colormatrix-guide/ColorMatrixOriginal.jpg">
+<img src="/tips/img/colormatrix-guide/ColorMatrixOriginal.jpg"/>
 </div>
 <br><br>
 <p><b>[Grayscale]</b></p>
 <div class="exampleprev">
-<img src="/tips/img/colormatrix-guide/ColorMatrix02.jpg">
+<img src="/tips/img/colormatrix-guide/ColorMatrix02.jpg"/>
 </div>
 <pre>;GreyScale
 ColorMatrix1=0.33;0.33;0.33;0;0
@@ -147,7 +147,7 @@ ColorMatrix3=0.11;0.11;0.11;0;0
 <br><br>
 <p><b>[Invert]</b></p>
 <div class="exampleprev">
-<img src="/tips/img/colormatrix-guide/ColorMatrix03.jpg">
+<img src="/tips/img/colormatrix-guide/ColorMatrix03.jpg"/>
 </div>
 <pre>;Invert
 ColorMatrix1=-1;0;0;0;0
@@ -158,7 +158,7 @@ ColorMatrix5=1;1;1;0;1
 <br><br>
 <p><b>[Swap RGB to BGR]</b></p>
 <div class="exampleprev">
-<img src="/tips/img/colormatrix-guide/ColorMatrix04.jpg">
+<img src="/tips/img/colormatrix-guide/ColorMatrix04.jpg"/>
 </div>
 <pre>;Swap RGB to BGR
 ColorMatrix1=0;0;1;0;0
@@ -168,7 +168,7 @@ ColorMatrix3=1;0;0;0;0
 <br><br>
 <p><b>[Sepia Color]</b></p>
 <div class="exampleprev">
-<img src="/tips/img/colormatrix-guide/ColorMatrix05.jpg">
+<img src="/tips/img/colormatrix-guide/ColorMatrix05.jpg"/>
 </div>
 <pre>;Sepia Color
 ColorMatrix1=0.393;0.349;0.272;0;0
@@ -178,7 +178,7 @@ ColorMatrix3=0.189;0.168;0.131;0;0
 <br><br>
 <p><b>[Black & White]</b></p>
 <div class="exampleprev">
-<img src="/tips/img/colormatrix-guide/ColorMatrix06.jpg">
+<img src="/tips/img/colormatrix-guide/ColorMatrix06.jpg"/>
 </div>
 <pre>;Black & White
 ColorMatrix1=1.5;1.5;1.5;0;0
@@ -189,7 +189,7 @@ ColorMatrix5=-1;-1;-1;0;1
 <br><br>
 <p><b>[Polaroid Color]</b></p>
 <div class="exampleprev">
-<img src="/tips/img/colormatrix-guide/ColorMatrix07.jpg">
+<img src="/tips/img/colormatrix-guide/ColorMatrix07.jpg"/>
 </div>
 <pre>;Polaroid Color
 ColorMatrix1=1.438;-0.062;-0.062;0;0
@@ -200,7 +200,7 @@ ColorMatrix5=-0.03;0.05;-0.02;0;1
 <br><br>
 <p><b>[White to Alpha]</b></p>
 <div class="exampleprev">
-<img src="/tips/img/colormatrix-guide/ColorMatrix08.jpg">
+<img src="/tips/img/colormatrix-guide/ColorMatrix08.jpg"/>
 </div>
 <pre>;White to Alpha
 ColorMatrix1=1;0;0;-1;0
@@ -212,7 +212,7 @@ ColorMatrix3=0;0;1;-1;0
 <p><b>Create a realistic old photo using ColorMatrix.</b></p>
 <p>First, adjust each RGB matrix values and increase contrast slightly like this.</p>
 <div class="exampleprev">
-<img src="/tips/img/colormatrix-guide/ColorMatrix09.jpg">
+<img src="/tips/img/colormatrix-guide/ColorMatrix09.jpg"/>
 </div>
 <pre>ColorMatrix1=0.25;0.25;0.25;0;0
 ColorMatrix2=0.5;0.5;0.5;0;0
@@ -222,7 +222,7 @@ ColorMatrix5=0.2;0.2;0.2;0;1
 <br><br>
 <p>Next, find an image of some old paper and overlay it on the original image.</p>
 <div class="exampleprev">
-<img src="/tips/img/colormatrix-guide/ColorMatrixOldPaper.jpg">
+<img src="/tips/img/colormatrix-guide/ColorMatrixOldPaper.jpg"/>
 </div>
 <p>Then, increase the contrast of the old paper, and set the alpha value of the whole image to 50%.</p>
 <pre>ColorMatrix1=2;0;0;0;0
@@ -234,7 +234,7 @@ ColorMatrix5=-0.1;-0.1;-0.1;0;1
 <br><br>
 <p>Result:</p>
 <div class="exampleprev">
-<img src="/tips/img/colormatrix-guide/ColorMatrix10.jpg">
+<img src="/tips/img/colormatrix-guide/ColorMatrix10.jpg"/>
 </div>
 <br><br>
 <p>Full code for this effect:</p>

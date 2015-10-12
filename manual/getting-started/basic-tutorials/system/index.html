@@ -243,18 +243,18 @@
 <p>By default, the <b>Roundline</b> meter will draw a single line from the center of the meter to the outside edge, pointing to the position represented by the value of the measure. We don't want a "pointer" in this case, but want to draw and fill a circle. There are few options we have used to control this.</p>
 
 <ul>
-<li><a href="/manual/meters/roundline#LineStart">LineStart</a>=15<br>
+<li><a href = "!meters/roundline#LineStart">LineStart</a>=15<br/>
 This tells the Roundline that we want the line to start 15 pixels from the center of the meter.</li>
-<li><a href="/manual/meters/roundline#LineLength">LineLength</a>=20<br>
-This sets the overall length of the line to 20 pixels. Remember that our meter is 40 pixels wide in total, but only 20 pixels wide from the center to the outside edge.<br><br>
-The result of these two options is a line that starts 15 pixels from the center, and extends to the full 20 pixels defined as the length from the center to the edge. So in effect, a 5 pixel line at the outside edge.<br><br></li>
-<li><a href="/manual/meters/roundline#Solid">Solid</a>=1<br>
+<li><a href = "!meters/roundline#LineLength">LineLength</a>=20<br/>
+This sets the overall length of the line to 20 pixels. Remember that our meter is 40 pixels wide in total, but only 20 pixels wide from the center to the outside edge.<br/><br/>
+The result of these two options is a line that starts 15 pixels from the center, and extends to the full 20 pixels defined as the length from the center to the edge. So in effect, a 5 pixel line at the outside edge.<br/><br/></li>
+<li><a href = "!meters/roundline#Solid">Solid</a>=1<br/>
 This option tells the Roundline that instead of a single line, we want the meter to "fill" from the position defined as 0% to the current value represented by the measure. So instead of a "pointer", we get a circle being filled as the value changes.</li>
 </ul>
 
 <p>Then we are using one of the variables we defined in the <b>[Variables]</b> section at the beginning. We want to set the color of the circle to a nice light blue, which we defined as <code>LightBlue=207,224,255,255</code>. So we set the option in the Roundline meter to <code>LineColor=#LightBlue#</code>.
 
-</p><p>Good job!  Roundline is a very useful and flexible meter type in Rainmeter, and once you play with the options and different behaviors you will find lots of creative ways to use it. Take a breather...</p>
+<p>Good job!  Roundline is a very useful and flexible meter type in Rainmeter, and once you play with the options and different behaviors you will find lots of creative ways to use it. Take a breather...</p>
 
 <h2>Continuing the skin</h2>
 
@@ -332,11 +332,11 @@ This option tells the Roundline that instead of a single line, we want the meter
 <p>The <a href="/manual/measures/freediskspace/">FreeDiskSpace</a> measure obtains space information about a drive. There are several options we are using that should be explained.</p>
 
 <ul>
-<li><a href="/manual/measures/freediskspace/#Drive">Drive</a>=#CurrentDrive#<br>
+<li><a href="/manual/measures/freediskspace/#Drive">Drive</a>=#CurrentDrive#<br/>
 This option tells the measure which drive to examine. In this case, we are using one of the variables we defined earlier, to set the value to <b>C:</b>.</li>
-<li><a href="/manual/measures/freediskspace/#IgnoreRemovable">IgnoreRemovable</a>=0<br>
+<li><a href="/manual/measures/freediskspace/#IgnoreRemovable">IgnoreRemovable</a>=0<br/>
 By default, FreeDiskSpace will ignore all removable drives like USB or optical drives. Set <b>IgnoreRemovable=0</b> to enable measuring these kinds of drives.</li>
-<li><a href="/manual/measures/general-options/#InvertMeasure">InvertMeasure</a>=1<br>
+<li><a href="/manual/measures/general-options/#InvertMeasure">InvertMeasure</a>=1<br/>
 By default, FreeDiskSpace will measure the free space on a drive. To measure the used space, you use the <a href="/manual/measures/general-options/">General Measure Option</a> <b>InvertMeasure=1</b> to reverse what is measured.</li>
 </ul>
 

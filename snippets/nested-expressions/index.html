@@ -87,7 +87,7 @@
 
 </div>
 
-<p>Now we need to start adding the bits that do all the work. What makes this all possible is the balanced expression matching capability of Lua. This would be the <code>&#37;b</code> pattern matching class. We use it by placing the beginning and ending characters after it. More detail can be found <a href="http://www.lua.org/pil/20.2.html" target="_blank" rel="external">here</a>.</p>
+<p>Now we need to start adding the bits that do all the work. What makes this all possible is the balanced expression matching capability of Lua. This would be the <code>&#37;b</code> pattern matching class. We use it by placing the beginning and ending characters after it. More detail can be found <a href="http://www.lua.org/pil/20.2.html">here</a>.</p>
 
 <div class="noscroll">
 <figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">nested</span><span class="params">(line)</span></span></span><br><span class="line">	<span class="keyword">return</span> (<span class="built_in">string</span>.gsub(line, <span class="string">'&amp;#37;b&#123;&#125;'</span>, <span class="function"><span class="keyword">function</span><span class="params">(input)</span></span></span><br><span class="line">		<span class="comment">-- Do Something Here</span></span><br><span class="line">	<span class="keyword">end</span>))</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>

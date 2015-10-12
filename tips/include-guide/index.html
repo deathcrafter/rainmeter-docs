@@ -64,11 +64,11 @@
 <p>There are several rules to using @include. The first is the @include call.<br>
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">[Section]</span><br><span class="line">@include=SomeFile.inc</span><br></pre></td></tr></table></figure>
 
-</p><p><b>Note:</b> The @include call must be made within a section. Authors have generally used the <code>[Rainmeter]</code> or <code>[Variables]</code> sections when appropriate.</p>
+<p><b>Note:</b> The @include call must be made within a section. Authors have generally used the <code>[Rainmeter]</code> or <code>[Variables]</code> sections when appropriate.</p>
 <p>The second being the file that you're including.<br>
 <figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="title">[Variables]</span></span><br><span class="line"><span class="setting">SomeVariable=<span class="value">AValue</span></span></span><br></pre></td></tr></table></figure>
 
-</p><p>The file being used with @include must be formatted in the INI format, meaning that it has all the appropriate [sections] followed by Key=Value pairs. This includes using the [Variables] section.</p>
+<p>The file being used with @include must be formatted in the INI format, meaning that it has all the appropriate [sections] followed by Key=Value pairs. This includes using the [Variables] section.</p>
 <p>If you want to include more than one file, they need to be listed with unique identifiers.</p>
 <pre>@include=SomeFile.inc
 @include2=SomeOtherFile.inc

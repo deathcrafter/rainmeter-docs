@@ -218,22 +218,22 @@
 		</ul>
 		<h4 id="TimeZoneValues">Time Zone values. (Some are string and some are numeric)</h4>
 		<ul>
-		<li><code>TIMEZONE_ISDST</code><br>
-		A numeric flag indicating the current state of Daylight Savings Time for the local computer.<br>
-		Possible Values are:<br>
-		<code>1</code> : Daylight Savings Time is currently in effect<br>
-		<code>0</code> : Daylight Savings Time is currently not in effect<br>
+		<li><code>TIMEZONE_ISDST</code><br/>
+		A numeric flag indicating the current state of Daylight Savings Time for the local computer.<br/>
+		Possible Values are:<br/>
+		<code>1</code> : Daylight Savings Time is currently in effect<br/>
+		<code>0</code> : Daylight Savings Time is currently not in effect<br/>
 		<code>-1</code> : The local region does not use Daylight Savings Time, or the functionality is disabled in Windows.</li>
-		<li><code>TIMEZONE_BIAS</code><br>
+		<li><code>TIMEZONE_BIAS</code><br/>
 		The numeric difference, in minutes, between standard local time and Coordinated Universal Time (UTC). This is the difference <em>from</em> the standard local time <em>to</em> UTC, or <code>UTC = standard local time + time zone bias</code>.</li>
-		<li><code>TIMEZONE_STANDARD_NAME</code><br>
+		<li><code>TIMEZONE_STANDARD_NAME</code><br/>
 		The full string name of the local computer's Time Zone when Daylight Savings Time is not in effect. For example, "Eastern Standard Time".</li>
-		<li><code>TIMEZONE_STANDARD_BIAS</code><br>
+		<li><code>TIMEZONE_STANDARD_BIAS</code><br/>
 		The numeric difference in minutes between standard local time and the local time when Daylight Savings Time is not in effect. For most areas, this will always be zero. Adding this to the value of TIMEZONE_BIAS will produce the total actual difference in minutes between the local computer and UTC when Daylight Savings Time is not in effect, or <code>UTC = standard local time + time zone bias + standard bias</code>.</li>
-		<li><code>TIMEZONE_DAYLIGHT_NAME</code><br>
+		<li><code>TIMEZONE_DAYLIGHT_NAME</code><br/>
 		The full string name of the local computer's Time Zone when Daylight Savings Time is in effect. For example, "Eastern Daylight Time".</li>
-		<li><code>TIMEZONE_DAYLIGHT_BIAS</code><br>
-		The numeric difference in minutes between standard local time and the local time when Daylight Savings Time is in effect. For most areas, this will always be -60. Adding this to the value of TIMEZONE_BIAS will produce the total actual difference in minutes between the local computer and UTC when Daylight Savings Time is in effect, or <code>UTC = standard local time + time zone bias + daylight bias</code>.<br><br>
+		<li><code>TIMEZONE_DAYLIGHT_BIAS</code><br/>
+		The numeric difference in minutes between standard local time and the local time when Daylight Savings Time is in effect. For most areas, this will always be -60. Adding this to the value of TIMEZONE_BIAS will produce the total actual difference in minutes between the local computer and UTC when Daylight Savings Time is in effect, or <code>UTC = standard local time + time zone bias + daylight bias</code>.<br/><br/>
 		<b>Note:</b> Also see Daylight Savings Time <a href="/manual/measures/time/#TimeStamp">TimeStamp</a> options on <a href="/manual/measures/time/">Time</a> measures.</li>
 		</ul>
 	</dd>
