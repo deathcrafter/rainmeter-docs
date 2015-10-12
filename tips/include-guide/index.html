@@ -37,18 +37,18 @@
 	<nav id="tree">
 		<h1>Contents</h1>
 <ul>
-<li><a href="/tips#BeyondTheBasics">Beyond the Basics</a>
-<li><a href="/tips#GoodToKnow">Good To Know</a>
-<li><a href="/tips#GettingThingsDone">Getting Things Done</a>
+<li><a href="/tips/#BeyondTheBasics">Beyond the Basics</a>
+<li><a href="/tips/#GoodToKnow">Good To Know</a>
+<li><a href="/tips/#GettingThingsDone">Getting Things Done</a>
 </ul>
 
 <h1>More</h1>
 <ul>
-<li><a href="/manual">3.2 Final Manual</a>
-<li><a href="/manual-beta">3.3 Beta Manual</a>
-<li><a href="/snippets">Snippets</a>
-<li><a href="/developers">Developers</a>
-<li><a href="/history">Version History</a>
+<li><a href="/manual/">3.2 Final Manual</a>
+<li><a href="/manual-beta/">3.3 Beta Manual</a>
+<li><a href="/snippets/">Snippets</a>
+<li><a href="/developers/">Developers</a>
+<li><a href="/history/">Version History</a>
 </ul>
 
 	</nav>
@@ -59,7 +59,7 @@
 	</header>
 	<article><p><em>Tip by Brian and Smurfier</em></p>
 
-<p>While <a href="/manual/skins/include-option">@include</a> is a simple tool it is powerful as well. It can be used to make skin code shorter by stripping out longer code into shorter files. Repetitive code used in multiple skins can be managed with one file. It can even be used to load different code when you open a skin.</p>
+<p>While <a href="/manual/skins/include-option/">@include</a> is a simple tool it is powerful as well. It can be used to make skin code shorter by stripping out longer code into shorter files. Repetitive code used in multiple skins can be managed with one file. It can even be used to load different code when you open a skin.</p>
 <h3>Using @include</h3>
 <p>There are several rules to using @include. The first is the @include call.<br>
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">[Section]</span><br><span class="line">@include=SomeFile.inc</span><br></pre></td></tr></table></figure>
@@ -106,11 +106,11 @@
 <p>Creating different pages is as easy as putting each page in it's own file and naming them in a sequence. Then in the Parent skin we need to define a variable that we will use to change the page.</p>
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">[Variables]</span><br><span class="line">Page=1</span><br><span class="line">@include=Pages\PageNum#Page#.inc</span><br></pre></td></tr></table></figure>
 
-<p>In the parent skin we can change the page using the <a href="/manual/bangs#WriteKeyValue">!WriteKeyValue</a> bang. Just remember that after changing the Page variable we need to refresh the skin so that the new page will be loaded.</p>
+<p>In the parent skin we can change the page using the <a href="/manual/bangs/#WriteKeyValue">!WriteKeyValue</a> bang. Just remember that after changing the Page variable we need to refresh the skin so that the new page will be loaded.</p>
 
 <p><code>[!WriteKeyValue Variables Page 2][!Refresh]</code></p>
 
-<p>The method is exactly the same for using Stylesheets. Instead of containing meters a style sheet contains <a href="/manual/meters/general-options/meterstyles">MeterStyles</a> which define the look and feel of your skin.</p>
+<p>The method is exactly the same for using Stylesheets. Instead of containing meters a style sheet contains <a href="/manual/meters/general-options/meterstyles/">MeterStyles</a> which define the look and feel of your skin.</p>
 </article>
 </div>
 

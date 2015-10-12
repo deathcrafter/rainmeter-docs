@@ -37,18 +37,18 @@
 	<nav id="tree">
 		<h1>Contents</h1>
 <ul>
-<li><a href="/tips#BeyondTheBasics">Beyond the Basics</a>
-<li><a href="/tips#GoodToKnow">Good To Know</a>
-<li><a href="/tips#GettingThingsDone">Getting Things Done</a>
+<li><a href="/tips/#BeyondTheBasics">Beyond the Basics</a>
+<li><a href="/tips/#GoodToKnow">Good To Know</a>
+<li><a href="/tips/#GettingThingsDone">Getting Things Done</a>
 </ul>
 
 <h1>More</h1>
 <ul>
-<li><a href="/manual">3.2 Final Manual</a>
-<li><a href="/manual-beta">3.3 Beta Manual</a>
-<li><a href="/snippets">Snippets</a>
-<li><a href="/developers">Developers</a>
-<li><a href="/history">Version History</a>
+<li><a href="/manual/">3.2 Final Manual</a>
+<li><a href="/manual-beta/">3.3 Beta Manual</a>
+<li><a href="/snippets/">Snippets</a>
+<li><a href="/developers/">Developers</a>
+<li><a href="/history/">Version History</a>
 </ul>
 
 	</nav>
@@ -59,7 +59,7 @@
 	</header>
 	<article><p>Two of the meters in Rainmeter use a unit of measurement called <b>Radians</b> in order to calculate a position on the circumference of a circle. This is a common unit used by mathematicians, scientists, and yes, programmers when working with things that are round. This guide will try to make it easier to understand and use radians in the context of Rainmeter.</p>
 
-<p>The two meters that use radians in their options are <a href="/manual-beta/meters/roundline">Roundline</a> and <a href="/manual-beta/meters/rotator">Rotator</a>. Roundline draws a line or solid fill that rotates around a center point based on some measure value. Rotator does much the same, using an image you provide rather than drawing the meter. Both use <a href="/manual-beta/meters/rotator#StartAngle">StartAngle</a> and <a href="/manual-beta/meters/rotator#RotationAngle">RotationAngle</a> to control the starting point on the circle, and the total amount of distance around the circle that constitutes 100 percent. That way they can be used to display the value of any measure that defines a percentage.</p>
+<p>The two meters that use radians in their options are <a href="/manual-beta/meters/roundline/">Roundline</a> and <a href="/manual-beta/meters/rotator/">Rotator</a>. Roundline draws a line or solid fill that rotates around a center point based on some measure value. Rotator does much the same, using an image you provide rather than drawing the meter. Both use <a href="/manual-beta/meters/rotator/#StartAngle">StartAngle</a> and <a href="/manual-beta/meters/rotator/#RotationAngle">RotationAngle</a> to control the starting point on the circle, and the total amount of distance around the circle that constitutes 100 percent. That way they can be used to display the value of any measure that defines a percentage.</p>
 
 <h2>So what are radians?</h2>
 
@@ -85,17 +85,17 @@
 
 <h2>A Rainmeter shortcut</h2>
 
-<p>While we think it is important to have a basic understanding of how radians work in Rainmeter, there is a way to cheat. There is a function in Rainmeter that can be used to automatically convert a number of degrees to a number of radians for you. It is the <a href="/manual-beta/measures/calc#Functions">Rad(x)</a> formula function, which will convert "x" as a number of degrees to the corresponding number of radians.  Remember that any formula used outside of the <code>Formula</code> option of a Calc measure must be enclosed in parentheses.</p>
+<p>While we think it is important to have a basic understanding of how radians work in Rainmeter, there is a way to cheat. There is a function in Rainmeter that can be used to automatically convert a number of degrees to a number of radians for you. It is the <a href="/manual-beta/measures/calc/#Functions">Rad(x)</a> formula function, which will convert "x" as a number of degrees to the corresponding number of radians.  Remember that any formula used outside of the <code>Formula</code> option of a Calc measure must be enclosed in parentheses.</p>
 
 <p><code>StartAngle=(Rad(270))</code></p>
 
 <h2>Example</h2>
 
-<p>We can use a CPU measure, which returns the amount of CPU usage as a percentage from 0% to 100%. Then we want to have a <a href="/manual-beta/meters/roundline">Roundline</a> meter that displays the current value as filling a circle. We want the starting point at the top of the circle, and 100% defined as coming all the way back around to the top.</p>
+<p>We can use a CPU measure, which returns the amount of CPU usage as a percentage from 0% to 100%. Then we want to have a <a href="/manual-beta/meters/roundline/">Roundline</a> meter that displays the current value as filling a circle. We want the starting point at the top of the circle, and 100% defined as coming all the way back around to the top.</p>
 
 <figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="title">[MeasureCPU]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">CPU</span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[MeterCPUCircle]</span></span><br><span class="line"><span class="setting">Meter=<span class="value">Roundline</span></span></span><br><span class="line"><span class="setting">MeasureName=<span class="value">MeasureCPU</span></span></span><br><span class="line"><span class="setting">W=<span class="value"><span class="number">40</span></span></span></span><br><span class="line"><span class="setting">H=<span class="value"><span class="number">40</span></span></span></span><br><span class="line"><span class="setting">StartAngle=<span class="value">(Rad(<span class="number">270</span>))</span></span></span><br><span class="line"><span class="setting">RotationAngle=<span class="value">(Rad(<span class="number">360</span>))</span></span></span><br><span class="line"><span class="setting">LineWidth=<span class="value"><span class="number">5</span></span></span></span><br><span class="line"><span class="setting">LineStart=<span class="value"><span class="number">15</span></span></span></span><br><span class="line"><span class="setting">LineLength=<span class="value"><span class="number">20</span></span></span></span><br><span class="line"><span class="setting">LineColor=<span class="value"><span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span></span></span></span><br><span class="line"><span class="setting">Solid=<span class="value"><span class="number">1</span></span></span></span><br><span class="line"><span class="setting">AntiAlias=<span class="value"><span class="number">1</span></span></span></span><br></pre></td></tr></table></figure>
 
-<p>The important bits here are the two options <a href="/manual-beta/meters/rotator#StartAngle">StartAngle</a> and <a href="/manual-beta/meters/rotator#RotationAngle">RotationAngle</a>. StartAngle is defined as <b>(Rad(270))</b>, which is to say <b>270&deg;</b> in radians. This means that if you start directly from the right of center at <b>0&deg;</b> it will take <b>270&deg;</b> degrees in <b>radians</b> to define the distance to the top of the circle moving clockwise. That will be the starting point for the meter. RotationAngle is defined as <b>(Rad(360))</b>, which is telling Rainmeter that the distance defined as <b>100%</b> is all the way around <b>360&deg;</b>, or the full circle.</p>
+<p>The important bits here are the two options <a href="/manual-beta/meters/rotator/#StartAngle">StartAngle</a> and <a href="/manual-beta/meters/rotator/#RotationAngle">RotationAngle</a>. StartAngle is defined as <b>(Rad(270))</b>, which is to say <b>270&deg;</b> in radians. This means that if you start directly from the right of center at <b>0&deg;</b> it will take <b>270&deg;</b> degrees in <b>radians</b> to define the distance to the top of the circle moving clockwise. That will be the starting point for the meter. RotationAngle is defined as <b>(Rad(360))</b>, which is telling Rainmeter that the distance defined as <b>100%</b> is all the way around <b>360&deg;</b>, or the full circle.</p>
 
 <p>In another example, if you wanted to do a "VU Meter" type of approach, with the starting point on the left and 100% defined on the right, you would use:</p>
 

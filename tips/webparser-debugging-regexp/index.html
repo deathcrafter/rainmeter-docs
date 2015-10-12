@@ -37,18 +37,18 @@
 	<nav id="tree">
 		<h1>Contents</h1>
 <ul>
-<li><a href="/tips#BeyondTheBasics">Beyond the Basics</a>
-<li><a href="/tips#GoodToKnow">Good To Know</a>
-<li><a href="/tips#GettingThingsDone">Getting Things Done</a>
+<li><a href="/tips/#BeyondTheBasics">Beyond the Basics</a>
+<li><a href="/tips/#GoodToKnow">Good To Know</a>
+<li><a href="/tips/#GettingThingsDone">Getting Things Done</a>
 </ul>
 
 <h1>More</h1>
 <ul>
-<li><a href="/manual">3.2 Final Manual</a>
-<li><a href="/manual-beta">3.3 Beta Manual</a>
-<li><a href="/snippets">Snippets</a>
-<li><a href="/developers">Developers</a>
-<li><a href="/history">Version History</a>
+<li><a href="/manual/">3.2 Final Manual</a>
+<li><a href="/manual-beta/">3.3 Beta Manual</a>
+<li><a href="/snippets/">Snippets</a>
+<li><a href="/developers/">Developers</a>
+<li><a href="/history/">Version History</a>
 </ul>
 
 	</nav>
@@ -57,7 +57,7 @@
 	<header>
 		<h1>WebParser: Debugging RegExp</h1>
 	</header>
-	<article><p>One of the keys to using <a href="/manual/plugins/webparser">WebParser</a> in Rainmeter is the all-important <a href="/manual/plugins/webparser#RegExp">RegExp</a> option.</p>
+	<article><p>One of the keys to using <a href="/manual/plugins/webparser/">WebParser</a> in Rainmeter is the all-important <a href="/manual/plugins/webparser/#RegExp">RegExp</a> option.</p>
 
 <p>It is not the intention of this guide to teach WebParser or regular expressions. There is a lot of help to get you started at:</p>
 
@@ -71,7 +71,7 @@
 
 <h2>Overview</h2>
 
-<p>Just as a quick overview, WebParser is used with a parent measure to connect to a resource, a web site or local file, and parse the text that is returned into <a href="/manual/plugins/webparser#StringIndex">StringIndex</a> values that can be used in child measures to extract the individual elements of information you want. You can then display the information in String, Image or other meters.</p>
+<p>Just as a quick overview, WebParser is used with a parent measure to connect to a resource, a web site or local file, and parse the text that is returned into <a href="/manual/plugins/webparser/#StringIndex">StringIndex</a> values that can be used in child measures to extract the individual elements of information you want. You can then display the information in String, Image or other meters.</p>
 
 <p>At its simplest, you use WebParser like this:</p>
 
@@ -101,7 +101,7 @@
 
 <figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="title">[MeasureSite]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">Plugin</span></span></span><br><span class="line"><span class="setting">Plugin=<span class="value">WebParser</span></span></span><br><span class="line"><span class="setting">URL=<span class="value">http://www.tell-my-ip.com/index.html</span></span></span><br><span class="line"><span class="setting">RegExp=<span class="value">(?siU)&lt;td.*&gt;Your IP Address.*&lt;td&gt;(.*)&lt;/td&gt;.*&lt;td.*&gt;Country:.*&lt;img src=<span class="string">"(.*)"</span>&gt; (.*)&lt;/td&gt;.*&lt;td&gt;Region.*&lt;td&gt;(.*)&lt;/td&gt;.*&lt;td&gt;City.*&lt;td&gt;(.*)&lt;/td&gt;.*&lt;td&gt;ISP:.*&lt;td&gt;(.*)&lt;/td&gt;.*&lt;td&gt;Latitude:.*&lt;td&gt;(.*)&lt;/td&gt;.*&lt;td&gt;Longitude:.*&lt;td&gt;(.*)&lt;/td&gt;</span></span></span><br></pre></td></tr></table></figure>
 
-<p>Use <a href="/manual/user-interface/about#SkinsTab">About / Skins</a> to check that our measures are returning the correct values.</p>
+<p>Use <a href="/manual/user-interface/about/#SkinsTab">About / Skins</a> to check that our measures are returning the correct values.</p>
 
 <div class="exampleprev">
 	<img src="/tips/img/webparser-debugging-regexp/AboutSkins.jpg" class="lightbox">
@@ -119,7 +119,7 @@
 
 <h2 id="Debug">Debug=2</h2>
 
-<p>If you set <a href="/manual/plugins/webparser#Debug">Debug=2</a> on the parent WebParser measure, (the one with the <code>RegExp</code> on it) and load the skin, it will create a text file <b>WebParserDump.txt</b> in the same folder as your skin .ini file. WebParserDump.txt is simply an exact copy of what the site sent to WebParser, and is an excellent resource when building your <code>RegExp</code> option.</p>
+<p>If you set <a href="/manual/plugins/webparser/#Debug">Debug=2</a> on the parent WebParser measure, (the one with the <code>RegExp</code> on it) and load the skin, it will create a text file <b>WebParserDump.txt</b> in the same folder as your skin .ini file. WebParserDump.txt is simply an exact copy of what the site sent to WebParser, and is an excellent resource when building your <code>RegExp</code> option.</p>
 
 <figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="title">[MeasureSite]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">Plugin</span></span></span><br><span class="line"><span class="setting">Plugin=<span class="value">WebParser</span></span></span><br><span class="line"><span class="setting">URL=<span class="value">http://www.tell-my-ip.com/index.html</span></span></span><br><span class="line"><span class="setting">RegExp=</span><br><span class="line"><span class="value">Debug=<span class="number">2</span></span></span></span><br></pre></td></tr></table></figure>
 

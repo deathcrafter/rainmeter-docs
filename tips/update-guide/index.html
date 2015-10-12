@@ -37,18 +37,18 @@
 	<nav id="tree">
 		<h1>Contents</h1>
 <ul>
-<li><a href="/tips#BeyondTheBasics">Beyond the Basics</a>
-<li><a href="/tips#GoodToKnow">Good To Know</a>
-<li><a href="/tips#GettingThingsDone">Getting Things Done</a>
+<li><a href="/tips/#BeyondTheBasics">Beyond the Basics</a>
+<li><a href="/tips/#GoodToKnow">Good To Know</a>
+<li><a href="/tips/#GettingThingsDone">Getting Things Done</a>
 </ul>
 
 <h1>More</h1>
 <ul>
-<li><a href="/manual">3.2 Final Manual</a>
-<li><a href="/manual-beta">3.3 Beta Manual</a>
-<li><a href="/snippets">Snippets</a>
-<li><a href="/developers">Developers</a>
-<li><a href="/history">Version History</a>
+<li><a href="/manual/">3.2 Final Manual</a>
+<li><a href="/manual-beta/">3.3 Beta Manual</a>
+<li><a href="/snippets/">Snippets</a>
+<li><a href="/developers/">Developers</a>
+<li><a href="/history/">Version History</a>
 </ul>
 
 	</nav>
@@ -59,7 +59,7 @@
 	</header>
 	<article><h3>Using Update, UpdateDivider and UpdateRate</h3>
 
-<p>The <a href="/manual/skins/rainmeter-section#Update">Update</a> option in the [Rainmeter] section controls how often in milliseconds a skin should update the measures and meters. The <a href="/manual/measures/general-options/#UpdateDivider">UpdateDivider</a> option on a <a href="/manual/meters/general-options/#UpdateDivider">meter</a> or a <a href="/manual/measures/general-options/#UpdateDivider">measure</a> allows you multiply the update interval for that specific meter or measure. By applying UpdateDivider correctly, it is possible to make your skins more efficient.</p>
+<p>The <a href="/manual/skins/rainmeter-section/#Update">Update</a> option in the [Rainmeter] section controls how often in milliseconds a skin should update the measures and meters. The <a href="/manual/measures/general-options/#UpdateDivider">UpdateDivider</a> option on a <a href="/manual/meters/general-options/#UpdateDivider">meter</a> or a <a href="/manual/measures/general-options/#UpdateDivider">measure</a> allows you multiply the update interval for that specific meter or measure. By applying UpdateDivider correctly, it is possible to make your skins more efficient.</p>
 
 <p>For example, <code>UpdateDivider=5</code> on a measure would cause that meter to update only on every 5th update cycle. When <code>Update=1000</code>, the measure will update every (1000 x 5) milliseconds, which is equal to every 5 seconds.</p>
 
@@ -75,7 +75,7 @@
 
 <h3>What about UpdateRate?</h3>
 
-<p>UpdateDivider is an option available to <em>all</em> meters and measures. <a href="/manual/plugins/webparser#UpdateRate">UpdateRate</a>, on the other hand, is only available with the WebParser and Ping plugins. For the purpose of this example, let us use a plugin measure using WebParser.</p>
+<p>UpdateDivider is an option available to <em>all</em> meters and measures. <a href="/manual/plugins/webparser/#UpdateRate">UpdateRate</a>, on the other hand, is only available with the WebParser and Ping plugins. For the purpose of this example, let us use a plugin measure using WebParser.</p>
 
 <p>UpdateRate essentially states how often the WebParser should connect to the internet to download the specified URL. The general formula for this is in seconds is as follows: (Update x UpdateDivider x UpdateRate / 1000).</p>
 
