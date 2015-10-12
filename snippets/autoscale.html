@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>AutoScale - Rainmeter Snippets</title>
+	<link href="../css/main.css" rel="stylesheet">
+	<link rel="shortcut icon" href="//www.rainmeter.net/favicon.ico">
+	<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6/html5shiv.min.js"></script><![endif]-->
+</head>
+<body>
+	<div id="wrapper">
+		<div id="top">
+			<div class="container">
+				<a id="logo" href="//rainmeter.net/"></a>
+				<nav id="nav">
+					<ul>
+					<li><a href="//www.rainmeter.net">Home</a>
+					<li><a href="//www.rainmeter.net/about">About</a>
+					<li><a href="/" class="active">Docs</a>
+					<li><a href="//www.rainmeter.net/discover">Discover</a>
+					<li><a href="//forum.rainmeter.net">Forum</a>
+					</ul>
+				</nav>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div id="side-content">
+	<h1 id="category"><a href="/snippets">Snippets</a></h1>
+
+	<form id="search-form" method="get" action="http://www.google.com/search">
+		<input name="sitesearch" value="docs.rainmeter.net" type="hidden">
+		<input id="search" name="q" maxlength="255" size="16" placeholder="Search" type="text">
+	</form>
+
+	<nav id="tree">
+		<h1>Contents</h1>
+<ul>
+<li><a href="/snippets#General">General</a>
+<li><a href="/snippets#Conversions">Conversions</a>
+<li><a href="/snippets#FileInputOutput">File Input &amp; Output</a>
+<li><a href="/snippets#Math">Math</a>
+<li><a href="/snippets#Methods">Methods</a>
+<li><a href="/snippets#Rainmeter">Rainmeter</a>
+<li><a href="/snippets#Strings">Strings</a>
+<li><a href="/snippets#Time">Time</a>
+</ul>
+
+<h1>More</h1>
+<ul>
+<li><a href="/manual">3.2 Final Manual</a>
+<li><a href="/manual-beta">3.3 Beta Manual</a>
+<li><a href="/tips">Tips &amp; Tricks</a>
+<li><a href="/developers">Developers</a>
+<li><a href="/history">Version History</a>
+</ul>
+
+	</nav>
+</div>
+<div id="content">
+	<header>
+		<h1>AutoScale</h1>
+	</header>
+	<article><p>Automatically scales a number of bytes with an optional number of decimal places. Returns a second string value of the scale suffix. <a href="http://www.t1shopper.com/tools/calculate/" target="_blank" rel="external">More information</a>.</p>
+
+<div class="noscroll">
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">AutoScale</span><span class="params">(num, idp)</span></span></span><br><span class="line">	<span class="built_in">assert</span>(<span class="built_in">tonumber</span>(num), <span class="string">'AutoScale expects a number.'</span>)</span><br><span class="line">	<span class="keyword">local</span> scales = &#123;<span class="string">'B'</span>, <span class="string">'kB'</span>, <span class="string">'MB'</span>, <span class="string">'GB'</span>, <span class="string">'TB'</span>, <span class="string">'PB'</span>, <span class="string">'EB'</span>, <span class="string">'ZB'</span>, <span class="string">'YB'</span>&#125;</span><br><span class="line">	<span class="keyword">local</span> places = idp <span class="keyword">or</span> <span class="number">0</span></span><br><span class="line">	<span class="keyword">local</span> scale = <span class="string">""</span></span><br><span class="line">	<span class="keyword">local</span> scaled = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> i, v <span class="keyword">in</span> <span class="built_in">ipairs</span>(scales) <span class="keyword">do</span></span><br><span class="line">		<span class="keyword">if</span> (num &lt; (<span class="number">1024</span> ^ i)) <span class="keyword">or</span> (i == #scales) <span class="keyword">then</span></span><br><span class="line">			scale = v</span><br><span class="line">			scaled = Round(num / <span class="number">1024</span> ^ (i - <span class="number">1</span>), places)</span><br><span class="line">			<span class="keyword">break</span></span><br><span class="line">		<span class="keyword">end</span></span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> scaled, scale</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Round</span><span class="params">(num, idp)</span></span></span><br><span class="line">	<span class="built_in">assert</span>(<span class="built_in">tonumber</span>(num), <span class="string">'Round expects a number.'</span>)</span><br><span class="line">	<span class="keyword">local</span> mult = <span class="number">10</span> ^ (idp <span class="keyword">or</span> <span class="number">0</span>)</span><br><span class="line">	<span class="keyword">if</span> num &gt;= <span class="number">0</span> <span class="keyword">then</span></span><br><span class="line">		<span class="keyword">return</span> <span class="built_in">math</span>.floor(num * mult + <span class="number">0.5</span>) / mult</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="keyword">return</span> <span class="built_in">math</span>.ceil(num * mult - <span class="number">0.5</span>) / mult</span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+</div>	
+</article>
+</div>
+			</div>
+		</div>
+
+		<div id="footer-push"></div>
+	</div>
+
+	<script src="../js/main.js"></script>
+</body>
+</html>

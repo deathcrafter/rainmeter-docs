@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>String meter - Rainmeter 3.2 Manual</title>
+	<link href="../../css/main.css" rel="stylesheet">
+	<link rel="shortcut icon" href="//www.rainmeter.net/favicon.ico">
+	<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6/html5shiv.min.js"></script><![endif]-->
+</head>
+<body>
+	<div id="wrapper">
+		<div id="top">
+			<div class="container">
+				<a id="logo" href="//rainmeter.net/"></a>
+				<nav id="nav">
+					<ul>
+					<li><a href="//www.rainmeter.net">Home</a>
+					<li><a href="//www.rainmeter.net/about">About</a>
+					<li><a href="/" class="active">Docs</a>
+					<li><a href="//www.rainmeter.net/discover">Discover</a>
+					<li><a href="//forum.rainmeter.net">Forum</a>
+					</ul>
+				</nav>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div id="side-content">
+	<h1 id="category"><a href="/manual">3.2 Manual</a></h1>
+
+	<form id="search-form" method="get" action="http://www.google.com/search">
+		<input name="sitesearch" value="docs.rainmeter.net" type="hidden">
+		<input id="search" name="q" maxlength="255" size="16" placeholder="Search" type="text">
+	</form>
+
+	<nav id="tree">
+		<h1>Contents</h1>
+<ul>
+<li><a href="/manual/getting-started">Getting Started</a>
+	<ul>
+	<li><a href="/manual/getting-started/setting-up">Setting Up</a>
+	<li><a href="/manual/getting-started/using-rainmeter">Using Rainmeter</a>
+	<li><a href="/manual/getting-started/customizing">Customizing</a>
+	<li><a href="/manual/getting-started/creating-skins">Creating Skins</a>
+	<li><a href="/manual/getting-started/skin-anatomy">Anatomy of a Skin</a>
+	<li><a href="/manual/getting-started/basic-tutorials">Basic Tutorials</a>
+		<ul>
+		<li><a href="/manual/getting-started/basic-tutorials/launcher">Launcher</a>
+		<li><a href="/manual/getting-started/basic-tutorials/clock">Clock</a>
+		<li><a href="/manual/getting-started/basic-tutorials/system">System</a>
+		</ul>
+	</ul>
+<li><a href="/manual/installing-rainmeter">Installing Rainmeter</a>
+<li><a href="/manual/user-interface">User Interface</a>
+	<ul>
+	<li><a href="/manual/user-interface/manage">Manage</a>
+	<li><a href="/manual/user-interface/about">About</a>
+	<li><a href="/manual/user-interface/context-menus">Context Menus</a>
+	</ul>
+<li><a href="/manual/installing-skins">Installing Skins</a>
+<li><a href="/manual/publishing-skins">Publishing Skins</a>
+</ul>
+
+<h1>Reference</h1>
+<ul>
+<li><a href="/manual/settings">Settings</a>
+	<ul>
+	<li><a href="/manual/settings/rainmeter-section">[Rainmeter] Section</a>
+	<li><a href="/manual/settings/traymeasure-section">[TrayMeasure] Section</a>
+	<li><a href="/manual/settings/skin-sections">[Skin] Sections</a>
+	</ul>
+<li><a href="/manual/skins">Skins</a>
+	<ul>
+	<li><a href="/manual/skins/option-types">Option Types</a>
+	<li><a href="/manual/skins/rainmeter-section">[Rainmeter] Section</a>
+	<li><a href="/manual/skins/metadata-section">[Metadata] Section</a>
+	<li><a href="/manual/skins/include-option">@Include Options</a>
+	<li><a href="/manual/skins/resources-folder">@Resources Folder</a>
+	</ul>
+<li><a href="/manual/meters">Meters</a>
+	<ul>
+	<li><a href="/manual/meters/general-options">General Options</a>
+		<ul>
+		<li><a href="/manual/meters/general-options/image-options">Image Options</a>
+		<li><a href="/manual/meters/general-options/meterstyles">MeterStyles</a>
+		<li><a href="/manual/meters/general-options/tooltips">Tooltips</a>
+		</ul>
+	<li><a href="/manual/meters/bar">Bar</a>
+	<li><a href="/manual/meters/bitmap">Bitmap</a>
+	<li><a href="/manual/meters/button">Button</a>
+	<li><a href="/manual/meters/histogram">Histogram</a>
+	<li><a href="/manual/meters/image">Image</a>
+	<li><a href="/manual/meters/line">Line</a>
+	<li><a href="/manual/meters/rotator">Rotator</a>
+	<li><a href="/manual/meters/roundline">Roundline</a>
+	<li><a href="/manual/meters/string">String</a>
+	</ul>
+<li><a href="/manual/measures">Measures</a>
+	<ul>
+	<li><a href="/manual/measures/general-options">General Options</a>
+		<ul>
+		<li><a href="/manual/measures/general-options/ifactions">IfActions</a>
+		<li><a href="/manual/measures/general-options/ifconditions">IfConditions</a>
+		<li><a href="/manual/measures/general-options/ifmatchactions">IfMatchActions</a>
+		<li><a href="/manual/measures/general-options/substitute">Substitute</a>
+		</ul>
+	<li><a href="/manual/measures/calc">Calc</a>
+	<li><a href="/manual/measures/cpu">CPU</a>
+	<li><a href="/manual/measures/freediskspace">FreeDiskSpace</a>
+	<li><a href="/manual/measures/memory">Memory</a>
+	<li><a href="/manual/measures/net">Net</a>
+	<li><a href="/manual/measures/plugin">Plugin</a>
+	<li><a href="/manual/measures/registry">Registry</a>
+	<li><a href="/manual/measures/script">Script</a>
+	<li><a href="/manual/measures/string">String</a>
+	<li><a href="/manual/measures/time">Time</a>
+	<li><a href="/manual/measures/uptime">Uptime</a>
+	</ul>
+<li><a href="/manual/plugins">Plugins</a>
+	<ul>
+	<li><a href="/manual/plugins/advancedcpu">AdvancedCPU</a>
+	<li><a href="/manual/plugins/audiolevel">AudioLevel</a>
+	<li><a href="/manual/plugins/coretemp">CoreTemp</a>
+	<li><a href="/manual/plugins/fileview">FileView</a>
+	<li><a href="/manual/plugins/folderinfo">FolderInfo</a>
+	<li><a href="/manual/plugins/inputtext">InputText</a>
+	<li><a href="/manual/plugins/itunes">iTunes</a>
+	<li><a href="/manual/plugins/mediakey">MediaKey</a>
+	<li><a href="/manual/plugins/nowplaying">NowPlaying</a>
+	<li><a href="/manual/plugins/perfmon">PerfMon</a>
+	<li><a href="/manual/plugins/ping">Ping</a>
+	<li><a href="/manual/plugins/power">Power</a>
+	<li><a href="/manual/plugins/process">Process</a>
+	<li><a href="/manual/plugins/quote">Quote</a>
+	<li><a href="/manual/plugins/recyclemanager">RecycleManager</a>
+	<li><a href="/manual/plugins/resmon">ResMon</a>
+	<li><a href="/manual/plugins/speedfan">SpeedFan</a>
+	<li><a href="/manual/plugins/sysinfo">SysInfo</a>
+	<li><a href="/manual/plugins/virtualdesktops">VirtualDesktops</a>
+	<li><a href="/manual/plugins/webparser">WebParser</a>
+	<li><a href="/manual/plugins/wifistatus">WiFiStatus</a>
+	<li><a href="/manual/plugins/win7audio">Win7Audio</a>
+	<li><a href="/manual/plugins/windowmessage">WindowMessage</a>
+	</ul>
+<li><a href="/manual/bangs">Bangs</a>
+<li><a href="/manual/formulas">Formulas</a>
+<li><a href="/manual/variables">Variables</a>
+	<ul>
+	<li><a href="/manual/variables/built-in-variables">Built-In Variables</a>
+	<li><a href="/manual/variables/section-variables">Section Variables</a>
+	<li><a href="/manual/variables/mouse-variables">Mouse Variables</a>
+	</ul>
+<li><a href="/manual/groups">Groups</a>
+<li><a href="/manual/mouse-actions">Mouse Actions</a>
+<li><a href="/manual/lua-scripting">Lua Scripting</a>
+</ul>
+
+<h1>More</h1>
+<ul>
+<li><a href="/manual-beta">3.3 Beta Manual</a>
+<li><a href="/tips">Tips &amp; Tricks</a>
+<li><a href="/snippets">Snippets</a>
+<li><a href="/developers">Developers</a>
+<li><a href="/history">Version History</a>
+</ul>
+
+	</nav>
+</div>
+<div id="content">
+	<header>
+		<h1>String meter</h1>
+	</header>
+	<article><p><code>Meter=String</code> displays text.</p>
+
+<h2>Options</h2>
+<dl>
+	<dt>General meter options</dt>
+	<dd>
+		<p>All <a href="/manual/meters/general-options">general meter options</a> are valid.</p>
+	</dd>
+
+	<dt id="MeasureName"><code>MeasureName</code>, <code>MeasureName2</code>, ..., <code>MeasureName<em>N</em></code></dt>
+	<dd>
+		<p>Name(s) of the measure(s) bound to the meter. The meter will display the current value of the measure defined in <code>MeasureName</code>, with values for additional measures bound to the meter available using the <code>%<em>N</em></code> syntax in the <a href="#Text">Text</a> option.</p>
+		
+		<p>The meter does not require a <code>MeasureName<em>N</em></code> option if the <a href="#Text">Text</a> option alone will be used to define the string to display.</p>
+	</dd>
+
+	<dt id="Text"><code>Text</code> <small>Default: <code>%1</code></small></dt>
+	<dd>
+		<p>Text to display. If <code>MeasureName</code> is specified, <code>Text</code> will default to the value of the measure.</p>
+
+		<p>The values of the measure(s) specified with <code>MeasureName</code> can be used with the <code>%<em>N</em></code> syntax as follows:</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="setting">MeasureName=<span class="value">SomeMeasure</span></span></span><br><span class="line"><span class="setting">MeasureName2=<span class="value">SomeMeasure2</span></span></span><br><span class="line"><span class="setting">Text=<span class="value">This is text containing %<span class="number">1</span> and %<span class="number">2</span>.</span></span></span><br><span class="line"><span class="comment">; %1 and %2 will be replaced by the string values of SomeMeasure and</span></span><br><span class="line"><span class="comment">; SomeMeasure2, respectively.</span></span><br></pre></td></tr></table></figure>
+
+	
+	<p>The <code>Text</code> option can take any combination of the following forms:</p>
+	<ul>
+	<li>Display the value of a measure bound with <code>MeasureName</code></li>
+	<li>Display the values of multiple measures bound with <code>MeasureName<em>N</em></code>, and formatted with the <code>%<em>N</em></code> syntax.</li>
+	<li>Display static text defined in the option.</li>
+	<li>Display the current value of any <a href="/manual/variables">variables</a> or <a href="/manual/variables/section-variables">section variables</a>. <em>Note that the meter must contain the <a href="/manual/meters/general-options#DynamicVariables">DynamicVariables</a> option to use the current value of variables or measures defined as a section variable.</em></li>
+	</ul></dd>
+
+	<dt id="Prefix"><code>Prefix</code></dt>
+	<dd>
+		<p>Text displayed before <code>Text</code>.</p>
+
+		<p><b>Note:</b> It is preferable to put the entire string in <code>Text</code> instead of using this option.</p>
+	</dd>
+
+	<dt id="Postfix"><code>Postfix</code></dt>
+	<dd>
+		<p>Text displayed after <code>Text</code>.</p>
+
+		<p><b>Note:</b> It is preferable to put the entire string in <code>Text</code> instead of using this option.</p>
+	</dd>
+
+	<dt id="FontFace"><code>FontFace</code> <small>Default: <code>Arial</code></small></dt>
+	<dd>
+		<p>Family name of the font to use for the text. The font must either be installed in Windows directly or must be <a href="/manual/skins/resources-folder#Fonts">loaded at runtime</a>.</p>
+
+		<p><b>See also:</b> <a href="/tips/fonts-guide">Fonts Guide</a>.</p>
+	</dd>
+
+	<dt id="FontSize"><code>FontSize</code> <small>Default: <code>10</code></small></dt>
+	<dd>
+		<p>Size of the font in points. This is an integer value, with decimal values rounded down.</p>
+	</dd>
+
+	<dt id="FontColor"><code>FontColor</code> <small>Default: <code>0,0,0,255</code></small></dt>
+	<dd>
+		<p><a href="/manual/skins/option-types#Color">Color</a> of the font.</p>
+	</dd>
+
+	<dt id="StringAlign"><code>StringAlign</code> <small>Default: <code>Left</code></small></dt>
+	<dd>
+		<p>Horizontal and vertical alignment of the string. Valid values are:</p>
+		<ul>
+		<li><code>Left</code>, <code>Right</code>, <code>Center</code> (or <code>LeftTop</code>, <code>RightTop</code>, <code>CenterTop</code>)</li>
+		<li><code>LeftBottom</code>, <code>RightBottom</code>, <code>CenterBottom</code></li>
+		<li><code>LeftCenter</code>, <code>RightCenter</code>, <code>CenterCenter</code></li>
+		</ul>
+		<p>The string will be aligned using the values of the <code>X</code> and or <code>Y</code> settings as the anchor point. So to CenterCenter align a string within a meter with a width and height of 100, set <code>X=50</code>, <code>Y=50</code> and <code>StringAlign=CenterCenter</code>.</p>
+	</dd>
+
+	<dt id="StringStyle"><code>StringStyle</code> <small>Default: <code>Normal</code></small></dt>
+	<dd>
+		<p>Style of the string. Valid values are <code>Normal</code>, <code>Bold</code>, <code>Italic</code>, and <code>BoldItalic</code>.</p>
+	</dd>
+
+	<dt id="StringCase"><code>StringCase</code> <small>Default: <code>None</code></small></dt>
+	<dd>
+		<p>Converts the string to a case. Valid values are <code>None</code>, <code>Upper</code>, <code>Lower</code>, and <code>Proper</code>.</p>
+	</dd>
+
+	<dt id="StringEffect"><code>StringEffect</code> <small>Default: <code>None</code></small></dt>
+	<dd>
+		<p>Effect applied to a string. Valid values are <code>None</code>, <code>Shadow</code>, and <code>Border</code>.</p>
+	</dd>
+
+	<dt id="FontEffectColor"><code>FontEffectColor</code> <small>Default: <code>0,0,0,255</code></small></dt>
+	<dd>
+		<p><a href="/manual/skins/option-types#Color">Color</a> of the StringEffect.</p>
+	</dd>
+
+	<dt id="ClipString"><code>ClipString</code> <small>Default: <code>0</code></small></dt>
+	<dd>
+		<p>Controls how strings are truncated (clipped) or wrapped to fit in or expand the containing meter. Valid values are:</p>
+		<ul>
+		<li><code>0</code>: Disabled. The string will not be clipped or wrapped. (default)</li>
+		<li><code>1</code>: Enabled. The string will be clipped with an added ellipsis <code>...</code> when it exceeds the specified <code>W</code> (<a href="/manual/meters/general-options#WH">width</a>) option on the meter. If the <code>H</code> (<a href="/manual/meters/general-options#WH">height</a>) option is large enough to allow multiple lines, the text is wrapped until the value of <code>H</code> is reached, then clipped.</li>
+		<li><code>2</code>: Auto. The string will be clipped or wrapped based on the value of <code>W</code> and/or <code>H</code>. If the width or height are not specified, the meter itself will change size to accommodate the string. This setting works in conjunction with the <a href="#ClipStringW">ClipStringW</a> and <a href="#ClipStringH">ClipStringH</a> options below, to set a "maximum" size that the meter should expand to accomodate the string before clipping.
+		</li></ul>
+		<p><b>Notes: </b>The changing size of meters when <code>ClipString=2</code> can cause truncation issues with the overall window size of the skin, unless <a href="/manual/skins/rainmeter-section#DynamicWindowSize">DynamicWindowSize=1</a> is set in the [Rainmeter] section of the skin.</p>
+		<p>When <code>ClipString=2</code> is used with bound measures that have an initial value of "", (WebParser and QuotePlugin for example) <a href="/manual/meters/general-options#DynamicVariables">DynamicVariables=1</a> must be set on the meter.</p>
+	</dd>
+
+	<dt id="ClipStringW"><code>ClipStringW</code></dt>
+	<dd>
+		<p>Sets a maximum width that the meter will expand to accommodate the string when <code>ClipString=2</code>. This setting is ignored if the <code>W</code> option is set.</p>
+	</dd>
+
+	<dt id="ClipStringH"><code>ClipStringH</code></dt>
+	<dd>
+		<p>Sets a maximum height that the meter will expand to accommodate the string when <code>ClipString=2</code>. This setting is ignored if the <code>H</code> option is set.</p>
+	</dd>
+
+	<dt id="Angle"><code>Angle</code> <small>Default: <code>0.0</code></small></dt>
+	<dd>
+		<p>Defines the angle of the text in radians.</p>
+		
+		<p><b>Note:</b> The size and position of the text are always calculated as if the text is horizontal. This also means that the click-able field used for <a href="/manual/mouse-actions">Mouse Actions</a> does not change. It remains where the text would be with no Angle.</p>
+		
+		<p>More information about using Angle can be found at <a href="http://forum.rainmeter.net/viewtopic.php?p=104103" target="_blank" rel="external">Working with Angle on a String Meter</a>.</p>
+	</dd>
+
+	<dt id="Percentual"><code>Percentual</code> <small>Default: <code>0</code></small></dt>
+	<dd>
+		<p>If set to <code>1</code>, the value of bound measures are converted to a <a href="/manual/measures#Percentage">percentage</a>. This is useful if a measure does not return a percentage value, but either automatically defines a valid "range" of values (e.g. <a href="/manual/measures/freediskspace">FreeDiskSpace</a>) or when the <a href="/manual/measures/general-options#MinValue">MinValue</a> and/or <a href="/manual/measures/general-options#MaxValue">MaxValue</a> options are manually set on the measure.</p>
+	</dd>
+
+	<dt id="NumOfDecimals"><code>NumOfDecimals</code> <small>Default: <code>0</code></small></dt>
+	<dd>
+		<p>Number of decimals to display with numerical measure values.</p>
+	</dd>
+
+	<dt id="Scale"><code>Scale</code> <small>Default: <code>1</code></small></dt>
+	<dd>
+		<p>Scaling factor used for the measure values. The measure value is divided by the specified value. If the specified value has a decimal point (e.g. <code>1000.0</code>), the result will also display decimals.</p>
+		
+		<p><b>Note:</b> If <code>AutoScale</code> is enabled, this option is ignored.</p>
+	</dd>
+
+	<dt id="AutoScale"><code>AutoScale</code> <small>Default: <code>0</code></small></dt>
+	<dd>
+		<p>Automatically scales the measure values. The scaled result is appended with k, M, G, etc. as appropriate. Valid values are:</p>
+		<ul>
+		<li><code>0</code>: Disabled.</li>
+		<li><code>1</code>: Scales by 1024.</li>
+		<li><code>1k</code>: Scales by 1024 with kilo as the lowest unit.</li>
+		<li><code>2</code>: Scales by 1000.</li>
+		<li><code>2k</code>: Scales by 1000 with kilo as the lowest unit.</li>
+		</ul>
+		
+		<p><b>Note:</b> The value returned by AutoScale adds a space between the scaled number and the scale unit abbreviation. To remove this space simply add <code>Substitute=" ":""</code> to the Measure that the AutoScale is being applied to.</p>
+	</dd>
+</dl>
+
+<p><b>Note:</b> Using the <a href="/manual/meters/general-options#SolidColor">SolidColor</a> option, with a value of <code>SolidColor=0,0,0,1</code>, will give a string meter a solid but virtually transparent background. This can make executing <a href="/manual/mouse-actions">mouse actions</a> on the text easier and more reliable.</p>
+
+<h2>Example</h2>
+<a href="/manual/examples/ExampleMeterString.rmskin" class="download"></a>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="title">[Rainmeter]</span></span><br><span class="line"><span class="setting">Update=<span class="value"><span class="number">1000</span></span></span></span><br><span class="line"><span class="setting">AccurateText=<span class="value"><span class="number">1</span></span></span></span><br><span class="line"><span class="setting">DynamicWindowSize=<span class="value"><span class="number">1</span></span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[Metadata]</span></span><br><span class="line"><span class="setting">Name=<span class="value">ExampleMeterString</span></span></span><br><span class="line"><span class="setting">Author=<span class="value">The Rainmeter Team</span></span></span><br><span class="line"><span class="setting">Information=<span class="value">Example of the String meter</span></span></span><br><span class="line"><span class="setting">License=<span class="value">Creative Commons Attribution-Non-Commercial-Share Alike <span class="number">3.0</span></span></span></span><br><span class="line"><span class="setting">Version=<span class="value"><span class="number">1.0</span></span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[MeasureDate]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">Time</span></span></span><br><span class="line"><span class="setting">Format=<span class="value">%A, %b %#d, %Y</span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[MeterDate]</span></span><br><span class="line"><span class="setting">Meter=<span class="value">String</span></span></span><br><span class="line"><span class="setting">MeasureName=<span class="value">MeasureDate</span></span></span><br><span class="line"><span class="setting">X=<span class="value"><span class="number">0</span></span></span></span><br><span class="line"><span class="setting">Y=<span class="value"><span class="number">0</span></span></span></span><br><span class="line"><span class="setting">FontColor=<span class="value"><span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span></span></span></span><br><span class="line"><span class="setting">FontFace=<span class="value">Segoe UI</span></span></span><br><span class="line"><span class="setting">FontSize=<span class="value"><span class="number">17</span></span></span></span><br><span class="line"><span class="setting">StringEffect=<span class="value">Shadow</span></span></span><br><span class="line"><span class="setting">FontEffectColor=<span class="value"><span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span></span></span></span><br><span class="line"><span class="setting">AntiAlias=<span class="value"><span class="number">1</span></span></span></span><br><span class="line"><span class="setting">Text=<span class="value">Today is: %<span class="number">1</span></span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[MeterText1]</span></span><br><span class="line"><span class="setting">Meter=<span class="value">String</span></span></span><br><span class="line"><span class="setting">X=<span class="value"><span class="number">0</span></span></span></span><br><span class="line"><span class="setting">Y=<span class="value"><span class="number">0</span>R</span></span></span><br><span class="line"><span class="setting">FontColor=<span class="value"><span class="number">197</span>,<span class="number">239</span>,<span class="number">252</span>,<span class="number">255</span></span></span></span><br><span class="line"><span class="setting">FontSize=<span class="value"><span class="number">12</span></span></span></span><br><span class="line"><span class="setting">AntiAlias=<span class="value"><span class="number">1</span></span></span></span><br><span class="line"><span class="setting">Text=<span class="value">Relative to bottom of previous meter</span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[MeterText2]</span></span><br><span class="line"><span class="setting">Meter=<span class="value">String</span></span></span><br><span class="line"><span class="setting">X=<span class="value"><span class="number">300</span></span></span></span><br><span class="line"><span class="setting">Y=<span class="value"><span class="number">10</span>R</span></span></span><br><span class="line"><span class="setting">W=<span class="value"><span class="number">300</span></span></span></span><br><span class="line"><span class="setting">H=<span class="value"><span class="number">20</span></span></span></span><br><span class="line"><span class="setting">StringAlign=<span class="value">Right</span></span></span><br><span class="line"><span class="setting">FontColor=<span class="value"><span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span></span></span></span><br><span class="line"><span class="setting">StringStyle=<span class="value">Italic</span></span></span><br><span class="line"><span class="setting">FontSize=<span class="value"><span class="number">14</span></span></span></span><br><span class="line"><span class="setting">AntiAlias=<span class="value"><span class="number">1</span></span></span></span><br><span class="line"><span class="setting">Text=<span class="value">Right justified italic text</span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[MeterText3]</span></span><br><span class="line"><span class="setting">Meter=<span class="value">String</span></span></span><br><span class="line"><span class="setting">X=<span class="value"><span class="number">150</span></span></span></span><br><span class="line"><span class="setting">Y=<span class="value"><span class="number">5</span>R</span></span></span><br><span class="line"><span class="setting">W=<span class="value"><span class="number">300</span></span></span></span><br><span class="line"><span class="setting">H=<span class="value"><span class="number">20</span></span></span></span><br><span class="line"><span class="setting">StringAlign=<span class="value">Center</span></span></span><br><span class="line"><span class="setting">FontColor=<span class="value"><span class="number">252</span>,<span class="number">245</span>,<span class="number">197</span>,<span class="number">255</span></span></span></span><br><span class="line"><span class="setting">StringStyle=<span class="value">Bold</span></span></span><br><span class="line"><span class="setting">FontSize=<span class="value"><span class="number">14</span></span></span></span><br><span class="line"><span class="setting">AntiAlias=<span class="value"><span class="number">1</span></span></span></span><br><span class="line"><span class="setting">Text=<span class="value">Centered bold text</span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[MeterText4]</span></span><br><span class="line"><span class="setting">Meter=<span class="value">String</span></span></span><br><span class="line"><span class="setting">X=<span class="value"><span class="number">0</span></span></span></span><br><span class="line"><span class="setting">Y=<span class="value"><span class="number">10</span>R</span></span></span><br><span class="line"><span class="setting">W=<span class="value"><span class="number">200</span></span></span></span><br><span class="line"><span class="setting">H=<span class="value"><span class="number">50</span></span></span></span><br><span class="line"><span class="setting">ClipString=<span class="value"><span class="number">1</span></span></span></span><br><span class="line"><span class="setting">FontColor=<span class="value"><span class="number">197</span>,<span class="number">252</span>,<span class="number">223</span>,<span class="number">255</span></span></span></span><br><span class="line"><span class="setting">StringStyle=<span class="value">Bold</span></span></span><br><span class="line"><span class="setting">FontSize=<span class="value"><span class="number">14</span></span></span></span><br><span class="line"><span class="setting">AntiAlias=<span class="value"><span class="number">1</span></span></span></span><br><span class="line"><span class="setting">Text=<span class="value">This text will wrap due to ClipString=<span class="number">1</span></span></span></span><br></pre></td></tr></table></figure>
+
+<div class="exampleprev">
+	<p><img src="/manual/img/example-meters/ExampleMeterString.jpg"></p>
+	<p>An example skin showing various string options.</p>
+</div>
+</article>
+</div>
+			</div>
+		</div>
+
+		<div id="footer-push"></div>
+	</div>
+
+	<script src="../../js/main.js"></script>
+</body>
+</html>
