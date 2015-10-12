@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>WiFiStatus plugin - Rainmeter 3.2 Manual</title>
+	<link href="../../../css/main.css" rel="stylesheet">
+	<link rel="shortcut icon" href="//www.rainmeter.net/favicon.ico">
+	<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6/html5shiv.min.js"></script><![endif]-->
+</head>
+<body>
+	<div id="wrapper">
+		<div id="top">
+			<div class="container">
+				<a id="logo" href="//rainmeter.net/"></a>
+				<nav id="nav">
+					<ul>
+					<li><a href="//www.rainmeter.net">Home</a>
+					<li><a href="//www.rainmeter.net/about">About</a>
+					<li><a href="/" class="active">Docs</a>
+					<li><a href="//www.rainmeter.net/discover">Discover</a>
+					<li><a href="//forum.rainmeter.net">Forum</a>
+					</ul>
+				</nav>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div id="side-content">
+	<h1 id="category"><a href="/manual">3.2 Manual</a></h1>
+
+	<form id="search-form" method="get" action="http://www.google.com/search">
+		<input name="sitesearch" value="docs.rainmeter.net" type="hidden">
+		<input id="search" name="q" maxlength="255" size="16" placeholder="Search" type="text">
+	</form>
+
+	<nav id="tree">
+		<h1>Contents</h1>
+<ul>
+<li><a href="/manual/getting-started">Getting Started</a>
+	<ul>
+	<li><a href="/manual/getting-started/setting-up">Setting Up</a>
+	<li><a href="/manual/getting-started/using-rainmeter">Using Rainmeter</a>
+	<li><a href="/manual/getting-started/customizing">Customizing</a>
+	<li><a href="/manual/getting-started/creating-skins">Creating Skins</a>
+	<li><a href="/manual/getting-started/skin-anatomy">Anatomy of a Skin</a>
+	<li><a href="/manual/getting-started/basic-tutorials">Basic Tutorials</a>
+		<ul>
+		<li><a href="/manual/getting-started/basic-tutorials/launcher">Launcher</a>
+		<li><a href="/manual/getting-started/basic-tutorials/clock">Clock</a>
+		<li><a href="/manual/getting-started/basic-tutorials/system">System</a>
+		</ul>
+	</ul>
+<li><a href="/manual/installing-rainmeter">Installing Rainmeter</a>
+<li><a href="/manual/user-interface">User Interface</a>
+	<ul>
+	<li><a href="/manual/user-interface/manage">Manage</a>
+	<li><a href="/manual/user-interface/about">About</a>
+	<li><a href="/manual/user-interface/context-menus">Context Menus</a>
+	</ul>
+<li><a href="/manual/installing-skins">Installing Skins</a>
+<li><a href="/manual/publishing-skins">Publishing Skins</a>
+</ul>
+
+<h1>Reference</h1>
+<ul>
+<li><a href="/manual/settings">Settings</a>
+	<ul>
+	<li><a href="/manual/settings/rainmeter-section">[Rainmeter] Section</a>
+	<li><a href="/manual/settings/traymeasure-section">[TrayMeasure] Section</a>
+	<li><a href="/manual/settings/skin-sections">[Skin] Sections</a>
+	</ul>
+<li><a href="/manual/skins">Skins</a>
+	<ul>
+	<li><a href="/manual/skins/option-types">Option Types</a>
+	<li><a href="/manual/skins/rainmeter-section">[Rainmeter] Section</a>
+	<li><a href="/manual/skins/metadata-section">[Metadata] Section</a>
+	<li><a href="/manual/skins/include-option">@Include Options</a>
+	<li><a href="/manual/skins/resources-folder">@Resources Folder</a>
+	</ul>
+<li><a href="/manual/meters">Meters</a>
+	<ul>
+	<li><a href="/manual/meters/general-options">General Options</a>
+		<ul>
+		<li><a href="/manual/meters/general-options/image-options">Image Options</a>
+		<li><a href="/manual/meters/general-options/meterstyles">MeterStyles</a>
+		<li><a href="/manual/meters/general-options/tooltips">Tooltips</a>
+		</ul>
+	<li><a href="/manual/meters/bar">Bar</a>
+	<li><a href="/manual/meters/bitmap">Bitmap</a>
+	<li><a href="/manual/meters/button">Button</a>
+	<li><a href="/manual/meters/histogram">Histogram</a>
+	<li><a href="/manual/meters/image">Image</a>
+	<li><a href="/manual/meters/line">Line</a>
+	<li><a href="/manual/meters/rotator">Rotator</a>
+	<li><a href="/manual/meters/roundline">Roundline</a>
+	<li><a href="/manual/meters/string">String</a>
+	</ul>
+<li><a href="/manual/measures">Measures</a>
+	<ul>
+	<li><a href="/manual/measures/general-options">General Options</a>
+		<ul>
+		<li><a href="/manual/measures/general-options/ifactions">IfActions</a>
+		<li><a href="/manual/measures/general-options/ifconditions">IfConditions</a>
+		<li><a href="/manual/measures/general-options/ifmatchactions">IfMatchActions</a>
+		<li><a href="/manual/measures/general-options/substitute">Substitute</a>
+		</ul>
+	<li><a href="/manual/measures/calc">Calc</a>
+	<li><a href="/manual/measures/cpu">CPU</a>
+	<li><a href="/manual/measures/freediskspace">FreeDiskSpace</a>
+	<li><a href="/manual/measures/memory">Memory</a>
+	<li><a href="/manual/measures/net">Net</a>
+	<li><a href="/manual/measures/plugin">Plugin</a>
+	<li><a href="/manual/measures/registry">Registry</a>
+	<li><a href="/manual/measures/script">Script</a>
+	<li><a href="/manual/measures/string">String</a>
+	<li><a href="/manual/measures/time">Time</a>
+	<li><a href="/manual/measures/uptime">Uptime</a>
+	</ul>
+<li><a href="/manual/plugins">Plugins</a>
+	<ul>
+	<li><a href="/manual/plugins/advancedcpu">AdvancedCPU</a>
+	<li><a href="/manual/plugins/audiolevel">AudioLevel</a>
+	<li><a href="/manual/plugins/coretemp">CoreTemp</a>
+	<li><a href="/manual/plugins/fileview">FileView</a>
+	<li><a href="/manual/plugins/folderinfo">FolderInfo</a>
+	<li><a href="/manual/plugins/inputtext">InputText</a>
+	<li><a href="/manual/plugins/itunes">iTunes</a>
+	<li><a href="/manual/plugins/mediakey">MediaKey</a>
+	<li><a href="/manual/plugins/nowplaying">NowPlaying</a>
+	<li><a href="/manual/plugins/perfmon">PerfMon</a>
+	<li><a href="/manual/plugins/ping">Ping</a>
+	<li><a href="/manual/plugins/power">Power</a>
+	<li><a href="/manual/plugins/process">Process</a>
+	<li><a href="/manual/plugins/quote">Quote</a>
+	<li><a href="/manual/plugins/recyclemanager">RecycleManager</a>
+	<li><a href="/manual/plugins/resmon">ResMon</a>
+	<li><a href="/manual/plugins/speedfan">SpeedFan</a>
+	<li><a href="/manual/plugins/sysinfo">SysInfo</a>
+	<li><a href="/manual/plugins/virtualdesktops">VirtualDesktops</a>
+	<li><a href="/manual/plugins/webparser">WebParser</a>
+	<li><a href="/manual/plugins/wifistatus">WiFiStatus</a>
+	<li><a href="/manual/plugins/win7audio">Win7Audio</a>
+	<li><a href="/manual/plugins/windowmessage">WindowMessage</a>
+	</ul>
+<li><a href="/manual/bangs">Bangs</a>
+<li><a href="/manual/formulas">Formulas</a>
+<li><a href="/manual/variables">Variables</a>
+	<ul>
+	<li><a href="/manual/variables/built-in-variables">Built-In Variables</a>
+	<li><a href="/manual/variables/section-variables">Section Variables</a>
+	<li><a href="/manual/variables/mouse-variables">Mouse Variables</a>
+	</ul>
+<li><a href="/manual/groups">Groups</a>
+<li><a href="/manual/mouse-actions">Mouse Actions</a>
+<li><a href="/manual/lua-scripting">Lua Scripting</a>
+</ul>
+
+<h1>More</h1>
+<ul>
+<li><a href="/manual-beta">3.3 Beta Manual</a>
+<li><a href="/tips">Tips &amp; Tricks</a>
+<li><a href="/snippets">Snippets</a>
+<li><a href="/developers">Developers</a>
+<li><a href="/history">Version History</a>
+</ul>
+
+	</nav>
+</div>
+<div id="content">
+	<header>
+		<h1>WiFiStatus plugin</h1>
+	</header>
+	<article><p><code>Plugin=WiFiStatus</code> can be used to display various attributes of visible wireless networks in your area.</p>
+
+<p>Windows XP SP2 users need to install the <a href="http://www.microsoft.com/downloads/details.aspx?FamilyId=52A43BAB-DC4E-413F-AC71-158EFD1ADA50&displaylang=en" target="_blank" rel="external">KB918977</a> hotfix.</p>
+
+<h2>Options</h2>
+<dl>
+	<dt>General measure options</dt>
+	<dd>
+		All <a href="/manual/measures/general-options">general measure options</a> are valid.
+	</dd>
+
+
+	<dt id="WiFiInfoType"><code>WiFiInfoType</code></dt>
+	<dd>
+		<p>This defines what is measured. This option is <b>required</b>. Valid values are:</p>
+		<ul>
+			<li><code>SSID</code>: The broadcast name for your current connection. When trying to connect, you may see a 'connecting...' or 'authorizing...' next to the name, but only if your update speed is around 2 seconds.</li>
+			<li><code>Quality</code>: Percentage value of the maximum dBm signal strength for your current connection.</li>
+			<li><code>Encryption</code>: The cipher algorithm being used for your current connection. Possible values are: <code>NONE</code>, <code>WEP40</code>, <code>TKIP</code>, <code>AES</code>, <code>WEP104</code>, <code>WPA_GROUP</code>, and <code>WEP</code>. An unknown algorithm will return <code>???</code>.</li>
+			<li><code>AUTH</code>: The authentication algorithm being used for your current connection. Possible values are: <code>Open</code>, <code>Shared</code>, <code>WPA-NONE</code>, <code>WPA-Enterprise</code>, <code>WPA-Personal</code>, <code>WPA2-Enterprise</code>, and <code>WPA2-Personal</code>. An unknown algorithm will return <code>???</code>.</li>
+			<li><code>PHY</code>: The supported bands for your connection (<b>not</b> your adapter). Possible values are <code>802.11a</code>, <code>802.11ac</code>, <code>802.11b</code>, <code>802.11g</code>, <code>802.11n</code>, <code>DSSS</code>, <code>FHSSS</code>, and <code>IR-Band</code>. An unknown band will return <code>???</code>. <b>Note:</b> The <code>PHY</code> option is only supported in Windows Vista and higher.</li>
+			<li><code>List</code>: Returns a list of all visible networks. The list is automatically separated by line-breaks <code>\n</code>, so each network appears on a separate line. It will also display the <code>PHY</code>, <code>Encryption</code>, and <code>AUTH</code> algorithms next the the network <code>SSID</code>.</li>
+		</ul>
+	</dd>
+
+	<dt id="WiFiIntfID"><code>WiFiIntfID</code> <small>Default: <code>0</code></small></dt>
+	<dd>
+		Only use this if you have more than 1 wireless interface adapter (which may include any bluetooth or infrared receivers). If you do not get any response from the measure with this value at <code>0</code>, then try other values starting from <code>1</code>, then <code>2</code> and so on.
+	</dd>
+
+	<dt id="WiFiListStyle"><code>WiFiListStyle</code> <small>Default: <code>0</code></small></dt>
+	<dd>
+		<p>This allows you to control what information appears along with the names of all visible networks when <code>WiFiInfoType=List</code>. Valid values are:</p>
+		<ul>
+			<li><code>0</code>: SSID.</li>
+			<li><code>1</code>: SSID @band.</li>
+			<li><code>2</code>: SSID (Encryption:Authentication).</li>
+			<li><code>3</code>: SSID @band (Encryption:Authentication).</li>
+		</ul>
+	</dd>
+
+	<dt id="WiFiListLimit"><code>WiFiListLimit</code> <small>Default: <code>5</code></small></dt>
+	<dd>
+		<p>Allows you to control the number of networks that are will be displayed when used with <code>WiFiInfoType=List</code>.</p>
+		<p><b>Note:</b> The list is sorted in descending order based on the signal quality of each network (i.e. strongest first, weakest last).</p>
+	</dd>
+</dl>
+
+<h2>Example</h2>
+
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="title">[MeasureSSID]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">Plugin</span></span></span><br><span class="line"><span class="setting">Plugin=<span class="value">WiFiStatus</span></span></span><br><span class="line"><span class="setting">WiFiInfoType=<span class="value">SSID</span></span></span><br><span class="line"><span class="setting">WiFiIntfID=<span class="value"><span class="number">0</span></span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[MeasureNetworks]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">Plugin</span></span></span><br><span class="line"><span class="setting">Plugin=<span class="value">WiFiStatus</span></span></span><br><span class="line"><span class="setting">WiFiInfoType=<span class="value">LIST</span></span></span><br><span class="line"><span class="setting">WiFiIntfID=<span class="value"><span class="number">0</span></span></span></span><br><span class="line"><span class="setting">WiFiListStyle=<span class="value"><span class="number">3</span></span></span></span><br></pre></td></tr></table></figure>
+
+</article>
+</div>
+			</div>
+		</div>
+
+		<div id="footer-push"></div>
+	</div>
+
+	<script src="../../../js/main.js"></script>
+</body>
+</html>

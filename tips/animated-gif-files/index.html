@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Animated .GIF Files - Rainmeter Tips &amp; Tricks</title>
+	<link href="../../css/main.css" rel="stylesheet">
+	<link rel="shortcut icon" href="//www.rainmeter.net/favicon.ico">
+	<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6/html5shiv.min.js"></script><![endif]-->
+</head>
+<body>
+	<div id="wrapper">
+		<div id="top">
+			<div class="container">
+				<a id="logo" href="//rainmeter.net/"></a>
+				<nav id="nav">
+					<ul>
+					<li><a href="//www.rainmeter.net">Home</a>
+					<li><a href="//www.rainmeter.net/about">About</a>
+					<li><a href="/" class="active">Docs</a>
+					<li><a href="//www.rainmeter.net/discover">Discover</a>
+					<li><a href="//forum.rainmeter.net">Forum</a>
+					</ul>
+				</nav>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div id="side-content">
+	<h1 id="category"><a href="/tips">Tips &amp; Tricks</a></h1>
+
+	<form id="search-form" method="get" action="http://www.google.com/search">
+		<input name="sitesearch" value="docs.rainmeter.net" type="hidden">
+		<input id="search" name="q" maxlength="255" size="16" placeholder="Search" type="text">
+	</form>
+
+	<nav id="tree">
+		<h1>Contents</h1>
+<ul>
+<li><a href="/tips#BeyondTheBasics">Beyond the Basics</a>
+<li><a href="/tips#GoodToKnow">Good To Know</a>
+<li><a href="/tips#GettingThingsDone">Getting Things Done</a>
+</ul>
+
+<h1>More</h1>
+<ul>
+<li><a href="/manual">3.2 Final Manual</a>
+<li><a href="/manual-beta">3.3 Beta Manual</a>
+<li><a href="/snippets">Snippets</a>
+<li><a href="/developers">Developers</a>
+<li><a href="/history">Version History</a>
+</ul>
+
+	</nav>
+</div>
+<div id="content">
+	<header>
+		<h1>Animated .GIF Files</h1>
+	</header>
+	<article><p><em>Tip by Kenz0 and JSMorley</em></p>
+
+<p>Rainmeter will not display animated .gif files by just using a Meter=Image meter. It will treat the animated gif as just a regular .gif file and display only the first "frame" of the image.</p>
+
+<p>There are ways to use your animated .gif files in Rainmeter however. It requires using one of a couple of tools to do some conversions on your original image, and a couple of ways to display the result so it is animated and looks just like your original in all its glory.</p>
+
+<p>Let's use this animated .gif image for our example:</p>
+<div class="exampleprev">
+<img src="/tips/img/animated-gif-files/Shark.gif">
+</div>
+
+<h3>Method One: Using Individual Frame Images</h3>
+<p><em>Advantages: Simple easy to use conversion tool.<br>
+Disadvantages: More hard drive space, a bit more CPU usage.</em></p>
+<p>This method involves "deconstructing" your .gif image into separate .jpg or .png files, then displaying them one after the other in a way that creates an animation effect.</p>
+<p><b>Step 1: Get GifFrame.exe</b></p><p>
+</p><p>This is a free utility you can get <a href="http://www.softpedia.com/progDownload/Animated-Gif-Frame-Extractor-Download-145596.html" target="_blank">HERE</a><br>
+Use this utility to convert your .gif file to individual images. The images can be saved as .jpg or .png. Use .png to preserve transparency.</p>
+<p><b>Step 2: Create a skin like this to display the images one after the other to create an animation.</b></p>
+
+<a href="/tips/examples/ExampleAnimatedGif.rmskin" class="download"></a>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="comment">;=================================================</span></span><br><span class="line"><span class="comment">; Rainmeter configuration file</span></span><br><span class="line"><span class="comment">; Updated October 4, 2012</span></span><br><span class="line"><span class="comment">;</span></span><br><span class="line"><span class="comment">; Note - You will need to get GifFrames.exe from:</span></span><br><span class="line"><span class="comment">; http://www.evanolds.com/#GFE</span></span><br><span class="line"><span class="comment">; Use this tool to convert your .gif to individual .jpg or .png images.</span></span><br><span class="line"><span class="comment">;</span></span><br><span class="line"><span class="comment">;=================================================</span></span><br><span class="line"><span class="title"></span><br><span class="line">[Rainmeter]</span></span><br><span class="line"><span class="setting">Update=<span class="value"><span class="number">100</span></span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[Metadata]</span></span><br><span class="line"><span class="setting">Name=<span class="value">GIFFrames</span></span></span><br><span class="line"><span class="setting">Author=<span class="value">Jeffrey Morley</span></span></span><br><span class="line"><span class="setting">Information=<span class="value">Displays a deconstructed .gif file (individual frames) as if it was a .gif file || Instructions: See .ini file for how to get and use GifFrames.exe</span></span></span><br><span class="line"><span class="setting">Version=<span class="value">March <span class="number">8</span>, <span class="number">2010</span></span></span></span><br><span class="line"><span class="setting">License=<span class="value">Creative Commons Attribution-Non-Commercial-Share Alike <span class="number">3.0</span></span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[ImageNumberCalc]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">Calc</span></span></span><br><span class="line"><span class="setting">Formula=<span class="value">Counter % <span class="number">12</span></span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[ImageMeter]</span></span><br><span class="line"><span class="setting">Meter=<span class="value">Image</span></span></span><br><span class="line"><span class="setting">ImageName=<span class="value">#@#ImagesFrames\Frame[ImageNumberCalc].png</span></span></span><br><span class="line"><span class="setting">DynamicVariables=<span class="value"><span class="number">1</span></span></span></span><br></pre></td></tr></table></figure>
+
+<h3>Method Two: Converting a .GIF to a Multiple Frame "Bitmap" Image</h3>
+<p><em>Advantages: Less hard drive space, a bit less CPU intensive<br>
+Disadvantages: Conversion tool is just a bit more complicated.</em></p>
+<p>This involves using a tool called <em>ImageMagick</em> to convert your .gif file into a "bitmap" with multiple frames, then using the Meter=BITMAP meter type in Rainmeter to display the frames in the single image as an animation. The bitmap will look like this:</p>
+<div class="exampleprev">
+<img src="/tips/img/animated-gif-files/SharkBitmap.png" class="lightbox">
+</div>
+<p><b>Step 1: Get ImageMagick</b></p><p>
+</p><p>This is a free utility you can get <a href="http://www.imagemagick.org/script/binary-releases.php?ImageMagick=ricm49nmhtgaut61n97h3fmt92#windows" target="_blank">HERE</a><br>
+You should probably get the latest "Portable" "Static" version on the list at the above site. This will allow you to just unzip the program and use it from the command line without any "installation".</p>
+<p>Use this utility to convert your .gif file to a multiple frame bitmap image. The image can be saved as .jpg or .png. Use .png to preserve transparency.</p>
+<p>Convert your .gif image to a "Bitmap" with the following in a cmd.exe command prompt window: <em>C:\PathToImageMagick\convert.exe +append C:\PathToGif\YourGif.gif C:\PathToDesiredOutput\YourBitmap.png</em></p>
+<p><b>Step 2: Create a skin like this to display the bitmap frames one after the other to create an animation.</b></p>
+
+<a href="/tips/examples/ExampleAnimatedGif.rmskin" class="download"></a>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="comment">;=================================================</span></span><br><span class="line"><span class="comment">; Rainmeter configuration file</span></span><br><span class="line"><span class="comment">; Updated October 4, 2012</span></span><br><span class="line"><span class="comment">;</span></span><br><span class="line"><span class="comment">; Note - You will need to get ImageMagick from:</span></span><br><span class="line"><span class="comment">; http://www.imagemagick.org/script/binary-releases.php?ImageMagick=ricm49nmhtgaut61n97h3fmt92#windows</span></span><br><span class="line"><span class="comment">; Get the last one on the list, the latest "Portable / Static" 16bit version.</span></span><br><span class="line"><span class="comment">; Convert your .gif image to a "Bitmap" with the following in a cmd.exe command prompt window:</span></span><br><span class="line"><span class="comment">; C:\PathToImageMagick\convert.exe +append C:\PathToGif\YourGif.gif C:\PathToDesiredOutput\YourBitmap.png</span></span><br><span class="line"><span class="comment">;</span></span><br><span class="line"><span class="comment">;=================================================</span></span><br><span class="line"><span class="title"></span><br><span class="line">[Rainmeter]</span></span><br><span class="line"><span class="setting">Update=<span class="value"><span class="number">100</span></span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[Metadata]</span></span><br><span class="line"><span class="setting">Name=<span class="value">GIFBitmap</span></span></span><br><span class="line"><span class="setting">Author=<span class="value">kenz0</span></span></span><br><span class="line"><span class="setting">Information=<span class="value">Displays a <span class="string">"Bitmap"</span> made from a .gif file using ImageMagick to convert a .gif to a multi-frame bitmap image. || Instructions: See .ini file for how to get and use ImageMagick</span></span></span><br><span class="line"><span class="setting">Version=<span class="value">March <span class="number">8</span>, <span class="number">2010</span></span></span></span><br><span class="line"><span class="setting">License=<span class="value">Creative Commons Attribution-Non-Commercial-Share Alike <span class="number">3.0</span></span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[MeasureAnimation]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">CALC</span></span></span><br><span class="line"><span class="setting">Formula=<span class="value">Counter % <span class="number">12</span></span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[MeterAnimation]</span></span><br><span class="line"><span class="setting">Meter=<span class="value">BITMAP</span></span></span><br><span class="line"><span class="setting">MeasureName=<span class="value">MeasureAnimation</span></span></span><br><span class="line"><span class="setting">BitmapImage=<span class="value">#@#ImagesBitmap\shark_bitmap.png</span></span></span><br><span class="line"><span class="setting">BitmapFrames=<span class="value"><span class="number">12</span></span></span></span><br><span class="line"><span class="setting">BitmapExtend=<span class="value"><span class="number">1</span></span></span></span><br></pre></td></tr></table></figure>
+
+</article>
+</div>
+
+			</div>
+		</div>
+
+		<div id="footer-push"></div>
+	</div>
+
+	<script src="../../js/main.js"></script>
+</body>
+</html>

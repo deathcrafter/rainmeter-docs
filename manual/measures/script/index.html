@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Script measure - Rainmeter 3.2 Manual</title>
+	<link href="../../../css/main.css" rel="stylesheet">
+	<link rel="shortcut icon" href="//www.rainmeter.net/favicon.ico">
+	<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6/html5shiv.min.js"></script><![endif]-->
+</head>
+<body>
+	<div id="wrapper">
+		<div id="top">
+			<div class="container">
+				<a id="logo" href="//rainmeter.net/"></a>
+				<nav id="nav">
+					<ul>
+					<li><a href="//www.rainmeter.net">Home</a>
+					<li><a href="//www.rainmeter.net/about">About</a>
+					<li><a href="/" class="active">Docs</a>
+					<li><a href="//www.rainmeter.net/discover">Discover</a>
+					<li><a href="//forum.rainmeter.net">Forum</a>
+					</ul>
+				</nav>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div id="side-content">
+	<h1 id="category"><a href="/manual">3.2 Manual</a></h1>
+
+	<form id="search-form" method="get" action="http://www.google.com/search">
+		<input name="sitesearch" value="docs.rainmeter.net" type="hidden">
+		<input id="search" name="q" maxlength="255" size="16" placeholder="Search" type="text">
+	</form>
+
+	<nav id="tree">
+		<h1>Contents</h1>
+<ul>
+<li><a href="/manual/getting-started">Getting Started</a>
+	<ul>
+	<li><a href="/manual/getting-started/setting-up">Setting Up</a>
+	<li><a href="/manual/getting-started/using-rainmeter">Using Rainmeter</a>
+	<li><a href="/manual/getting-started/customizing">Customizing</a>
+	<li><a href="/manual/getting-started/creating-skins">Creating Skins</a>
+	<li><a href="/manual/getting-started/skin-anatomy">Anatomy of a Skin</a>
+	<li><a href="/manual/getting-started/basic-tutorials">Basic Tutorials</a>
+		<ul>
+		<li><a href="/manual/getting-started/basic-tutorials/launcher">Launcher</a>
+		<li><a href="/manual/getting-started/basic-tutorials/clock">Clock</a>
+		<li><a href="/manual/getting-started/basic-tutorials/system">System</a>
+		</ul>
+	</ul>
+<li><a href="/manual/installing-rainmeter">Installing Rainmeter</a>
+<li><a href="/manual/user-interface">User Interface</a>
+	<ul>
+	<li><a href="/manual/user-interface/manage">Manage</a>
+	<li><a href="/manual/user-interface/about">About</a>
+	<li><a href="/manual/user-interface/context-menus">Context Menus</a>
+	</ul>
+<li><a href="/manual/installing-skins">Installing Skins</a>
+<li><a href="/manual/publishing-skins">Publishing Skins</a>
+</ul>
+
+<h1>Reference</h1>
+<ul>
+<li><a href="/manual/settings">Settings</a>
+	<ul>
+	<li><a href="/manual/settings/rainmeter-section">[Rainmeter] Section</a>
+	<li><a href="/manual/settings/traymeasure-section">[TrayMeasure] Section</a>
+	<li><a href="/manual/settings/skin-sections">[Skin] Sections</a>
+	</ul>
+<li><a href="/manual/skins">Skins</a>
+	<ul>
+	<li><a href="/manual/skins/option-types">Option Types</a>
+	<li><a href="/manual/skins/rainmeter-section">[Rainmeter] Section</a>
+	<li><a href="/manual/skins/metadata-section">[Metadata] Section</a>
+	<li><a href="/manual/skins/include-option">@Include Options</a>
+	<li><a href="/manual/skins/resources-folder">@Resources Folder</a>
+	</ul>
+<li><a href="/manual/meters">Meters</a>
+	<ul>
+	<li><a href="/manual/meters/general-options">General Options</a>
+		<ul>
+		<li><a href="/manual/meters/general-options/image-options">Image Options</a>
+		<li><a href="/manual/meters/general-options/meterstyles">MeterStyles</a>
+		<li><a href="/manual/meters/general-options/tooltips">Tooltips</a>
+		</ul>
+	<li><a href="/manual/meters/bar">Bar</a>
+	<li><a href="/manual/meters/bitmap">Bitmap</a>
+	<li><a href="/manual/meters/button">Button</a>
+	<li><a href="/manual/meters/histogram">Histogram</a>
+	<li><a href="/manual/meters/image">Image</a>
+	<li><a href="/manual/meters/line">Line</a>
+	<li><a href="/manual/meters/rotator">Rotator</a>
+	<li><a href="/manual/meters/roundline">Roundline</a>
+	<li><a href="/manual/meters/string">String</a>
+	</ul>
+<li><a href="/manual/measures">Measures</a>
+	<ul>
+	<li><a href="/manual/measures/general-options">General Options</a>
+		<ul>
+		<li><a href="/manual/measures/general-options/ifactions">IfActions</a>
+		<li><a href="/manual/measures/general-options/ifconditions">IfConditions</a>
+		<li><a href="/manual/measures/general-options/ifmatchactions">IfMatchActions</a>
+		<li><a href="/manual/measures/general-options/substitute">Substitute</a>
+		</ul>
+	<li><a href="/manual/measures/calc">Calc</a>
+	<li><a href="/manual/measures/cpu">CPU</a>
+	<li><a href="/manual/measures/freediskspace">FreeDiskSpace</a>
+	<li><a href="/manual/measures/memory">Memory</a>
+	<li><a href="/manual/measures/net">Net</a>
+	<li><a href="/manual/measures/plugin">Plugin</a>
+	<li><a href="/manual/measures/registry">Registry</a>
+	<li><a href="/manual/measures/script">Script</a>
+	<li><a href="/manual/measures/string">String</a>
+	<li><a href="/manual/measures/time">Time</a>
+	<li><a href="/manual/measures/uptime">Uptime</a>
+	</ul>
+<li><a href="/manual/plugins">Plugins</a>
+	<ul>
+	<li><a href="/manual/plugins/advancedcpu">AdvancedCPU</a>
+	<li><a href="/manual/plugins/audiolevel">AudioLevel</a>
+	<li><a href="/manual/plugins/coretemp">CoreTemp</a>
+	<li><a href="/manual/plugins/fileview">FileView</a>
+	<li><a href="/manual/plugins/folderinfo">FolderInfo</a>
+	<li><a href="/manual/plugins/inputtext">InputText</a>
+	<li><a href="/manual/plugins/itunes">iTunes</a>
+	<li><a href="/manual/plugins/mediakey">MediaKey</a>
+	<li><a href="/manual/plugins/nowplaying">NowPlaying</a>
+	<li><a href="/manual/plugins/perfmon">PerfMon</a>
+	<li><a href="/manual/plugins/ping">Ping</a>
+	<li><a href="/manual/plugins/power">Power</a>
+	<li><a href="/manual/plugins/process">Process</a>
+	<li><a href="/manual/plugins/quote">Quote</a>
+	<li><a href="/manual/plugins/recyclemanager">RecycleManager</a>
+	<li><a href="/manual/plugins/resmon">ResMon</a>
+	<li><a href="/manual/plugins/speedfan">SpeedFan</a>
+	<li><a href="/manual/plugins/sysinfo">SysInfo</a>
+	<li><a href="/manual/plugins/virtualdesktops">VirtualDesktops</a>
+	<li><a href="/manual/plugins/webparser">WebParser</a>
+	<li><a href="/manual/plugins/wifistatus">WiFiStatus</a>
+	<li><a href="/manual/plugins/win7audio">Win7Audio</a>
+	<li><a href="/manual/plugins/windowmessage">WindowMessage</a>
+	</ul>
+<li><a href="/manual/bangs">Bangs</a>
+<li><a href="/manual/formulas">Formulas</a>
+<li><a href="/manual/variables">Variables</a>
+	<ul>
+	<li><a href="/manual/variables/built-in-variables">Built-In Variables</a>
+	<li><a href="/manual/variables/section-variables">Section Variables</a>
+	<li><a href="/manual/variables/mouse-variables">Mouse Variables</a>
+	</ul>
+<li><a href="/manual/groups">Groups</a>
+<li><a href="/manual/mouse-actions">Mouse Actions</a>
+<li><a href="/manual/lua-scripting">Lua Scripting</a>
+</ul>
+
+<h1>More</h1>
+<ul>
+<li><a href="/manual-beta">3.3 Beta Manual</a>
+<li><a href="/tips">Tips &amp; Tricks</a>
+<li><a href="/snippets">Snippets</a>
+<li><a href="/developers">Developers</a>
+<li><a href="/history">Version History</a>
+</ul>
+
+	</nav>
+</div>
+<div id="content">
+	<header>
+		<h1>Script measure</h1>
+	</header>
+	<article><p><code>Measure=Script</code> measures information returned using the Lua scripting language.</p>
+<p><b>See also:</b> <a href="/manual/lua-scripting">Lua Scripting</a> for details on using Lua with Rainmeter.</p>
+
+<h2>Options</h2>
+<dl>
+	<dt>General measure options</dt>
+	<dd>
+		All <a href="/manual/measures/general-options">general measure options</a> are valid.
+	</dd>
+
+	<dt id="ScriptFile"><code>ScriptFile</code></dt>
+	<dd>
+		Path to the .lua script file.
+	</dd>
+
+	<dt id="UserDefined"><code>User defined options</code></dt>
+	<dd>
+		Any Key=Value option can be added to the measure, defining values which can be accessed by the Lua script using the <a href="/manual/lua-scripting#SelfObject">SELF</a> object.
+	</dd>
+</dl>
+
+<h2>Bangs</h2>
+<p>Script measure can be controlled with the <a href="/manual/bangs#CommandMeasure">!CommandMeasure</a> bang. See <a href="/manual/lua-scripting#CommandMeasure">Lua Scripting</a> for more information.</p>
+
+<h2>Example</h2>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="title">[Rainmeter]</span></span><br><span class="line"><span class="setting">Update=<span class="value"><span class="number">1000</span></span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[MeasureScript]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">Script</span></span></span><br><span class="line"><span class="setting">ScriptFile=<span class="value">MyScript.lua</span></span></span><br><span class="line"><span class="setting">MyStringOption=<span class="value">Hello World</span></span></span><br><span class="line"><span class="setting">MyNumberOption=<span class="value"><span class="number">27</span></span></span></span><br></pre></td></tr></table></figure>
+
+</article>
+</div>
+			</div>
+		</div>
+
+		<div id="footer-push"></div>
+	</div>
+
+	<script src="../../../js/main.js"></script>
+</body>
+</html>

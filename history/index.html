@@ -1,0 +1,1878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Version History - Rainmeter Version History</title>
+	<link href="../css/main.css" rel="stylesheet">
+	<link rel="shortcut icon" href="//www.rainmeter.net/favicon.ico">
+	<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6/html5shiv.min.js"></script><![endif]-->
+</head>
+<body>
+	<div id="wrapper">
+		<div id="top">
+			<div class="container">
+				<a id="logo" href="//rainmeter.net/"></a>
+				<nav id="nav">
+					<ul>
+					<li><a href="//www.rainmeter.net">Home</a>
+					<li><a href="//www.rainmeter.net/about">About</a>
+					<li><a href="/" class="active">Docs</a>
+					<li><a href="//www.rainmeter.net/discover">Discover</a>
+					<li><a href="//forum.rainmeter.net">Forum</a>
+					</ul>
+				</nav>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div id="side-content">
+	<h1 id="category"><a href="/history">Version History</a></h1>
+
+	<form id="search-form" method="get" action="http://www.google.com/search">
+		<input name="sitesearch" value="docs.rainmeter.net" type="hidden">
+		<input id="search" name="q" maxlength="255" size="16" placeholder="Search" type="text">
+	</form>
+
+	<nav id="tree">
+		<h1>Contents</h1>
+<ul>
+<li><a href="#3.3">Rainmeter 3.3</a>
+<li><a href="#3.2">Rainmeter 3.2</a>
+<li><a href="#3.1">Rainmeter 3.1</a>
+<li><a href="#3.0.2">Rainmeter 3.0.2</a>
+<li><a href="#3.0.1">Rainmeter 3.0.1</a>
+<li><a href="#3.0">Rainmeter 3.0</a>
+<li><a href="#2.5">Rainmeter 2.5</a>
+<li><a href="#2.4">Rainmeter 2.4</a>
+<li><a href="#2.3">Rainmeter 2.3</a>
+<li><a href="#2.2">Rainmeter 2.2</a>
+<li><a href="#2.1">Rainmeter 2.1</a>
+<li><a href="#2.0">Rainmeter 2.0</a>
+<li><a href="#1.3">Rainmeter 1.3</a>
+<li><a href="#1.2">Rainmeter 1.2</a>
+<li><a href="#1.1">Rainmeter 1.1</a>
+<li><a href="#1.0">Rainmeter 1.0</a>
+</ul>
+
+<h1>Pre-Development</h1>
+<ul>
+<li><a href="#0.14">Rainmeter 0.14</a>
+<li><a href="#0.13">Rainmeter 0.13</a>
+<li><a href="#0.12">Rainmeter 0.12</a>
+<li><a href="#0.11">Rainmeter 0.11</a>
+<li><a href="#0.10">Rainmeter 0.10</a>
+<li><a href="#0.9">Rainmeter 0.9</a>
+<li><a href="#0.8">Rainmeter 0.8</a>
+<li><a href="#0.7">Rainmeter 0.7</a>
+<li><a href="#0.6">Rainmeter 0.6</a>
+<li><a href="#0.5">Rainmeter 0.5</a>
+<li><a href="#0.4">Rainmeter 0.4</a>
+<li><a href="#0.3">Rainmeter 0.3</a>
+<li><a href="#0.2">Rainmeter 0.2</a>
+<li><a href="#0.1">Rainmeter 0.1</a>
+</ul>
+
+<h1>More</h1>
+<ul>
+<li><a href="/manual">3.2 Final Manual</a>
+<li><a href="/manual-beta">3.3 Beta Manual</a>
+<li><a href="/tips">Tips &amp; Tricks</a>
+<li><a href="/snippets">Snippets</a>
+</ul>
+
+	</nav>
+</div>
+<div id="content">
+	<header>
+		<h1>Version History</h1>
+	</header>
+	<article><p>This page includes a brief description of changes included in each publicly-released version of Rainmeter. For a complete, line-by-line history of Rainmeter's source code changes since version <a href="#0.14">0.14</a>, see the project <a href="https://github.com/rainmeter/rainmeter/commits/master" target="_blank" rel="external">commit history on GitHub</a>.</p>
+
+<h2 id="3.3">Rainmeter 3.3</h2>
+
+<p>October 4, 2015 - Revision 2468</p>
+<ul>
+<li><b>Changed</b> Context options: Changed the maximum number of ContextTitle<em>N</em> / ContextAction<em>N</em> pairs from 15 to 25.</li>
+<li><b>Fixed</b> Tooltips: Corrected an issue where a dynamic value for a ToolTipTitle would be one skin update behind.</li>
+<li><b>Fixed</b> Tooltips: Corrected an issue where removing a ToolTipTitle with !SetOption would not work.</li>
+</ul>
+
+<p>September 27, 2015 - Revision 2464</p>
+<ul>
+<li><b>Changed</b> SysInfo plugin: Added support for Windows 10 to <code>SysInfoType=OS_VERSION</code>.</li>
+<li><b>Fixed</b> Quote plugin: Corrected an issue where some Unicode characters in a text file read by the plugin could be mistaken for an end-of-file control character and truncate the returned string.</li>
+</ul>
+
+<p>August 15, 2015 - Revision 2461</p>
+<ul>
+<li><b>Added</b> Skins: Added new <code>SkinWidth</code> and <code>SkinHeight</code> option to the [Rainmeter] section of a skin. This will constrain the skin to the dimensions defined, either the width, the height, or both. Any meter or part of a meter positioned outside the defined boundaries will be truncated. DynamicWindowSize will be ignored for the defined dimension(s), and meters that would normally display even "outside" the skin will be truncated by the "fixed" skin dimensions.</li>
+<li><b>Fixed</b> IfActions: Corrected an issue with IfMatch where doing a match on a measure that has returned no string value could crash Rainmeter.</li>
+<li><b>Fixed</b> Skin Installer: Corrected an issue with the comparison of plugin versions when multiple plugins were included in the .rmskin.</li>
+<li><b>Fixed</b> String meter: Corrected an issue with <code>InlineSetting=GradientColor</code> where the gradient did not properly react to relative positioning dynamically changing the meter position.</li>
+</ul>
+
+<p>August 11, 2015 - Revision 2457</p>
+<ul>
+<li><b>Fixed</b> WebParser: Fixed a bug introduced in r2455 that caused grandparent > parent > child measures to fail RegExp.</li>
+</ul>
+
+<p>August 11, 2015 - Revision 2455</p>
+<ul>
+<li><b>Fixed</b> String meter: Additional corrections to the Inline Options settings. Fixed an issue when Unicode characters were embedded in the string.</li>
+<li><b>Changed</b> PCRE library: Updated the PCRE library to version 8.37. Also added the UTF-16 version of the library files, and changed all Rainmeter functionality to use the UTF-16 libraries.</li>
+</ul>
+
+<p>August 6, 2015 - Revision 2438</p>
+<ul>
+<li><b>Changed</b> Skin Installer: The Skin Installer application, used to install .rmskin files in Rainmeter, has been modified so it will by default not replace a newer version of an included 3rd-party plugin with an older version. This is based on the "File version" information in the compiled .dll file(s).</li>
+<li><b>Fixed</b> String meter: Corrected an issue with the Inline Options <code>GradientColor</code> setting, that was causing incorrect percentage placement of the gradient in some cases.</li>
+<li><b>Fixed</b> Image meter: Corrected an issue where removing a <code>MaskImageName</code> with !SetOption was not possible.</li>
+</ul>
+
+<p>July 31, 2015 - Revision 2423</p>
+<ul>
+<li><b>Added</b> String meter: Added new <a href="http://docs.rainmeter.net/manual-beta/meters/string/inline" target="_blank" rel="external">Inline Options</a> features to the String meter. This will allow "inline" formatting of part or all of a string, and adds several new formatting options including a color gradient.</li>
+<li><b>Added</b> SysInfo plugin: Added <code>SysInfoType=PAGESIZE</code> to the <a href="http://docs.rainmeter.net/manual-beta/plugins/sysinfo" target="_blank" rel="external">SysInfo</a> plugin.</li>
+<li><b>Fixed</b> Plugin API: Corrected a bug, introduced in r2416, which caused some threaded plugins to fail when sending a FinishAction to Rainmeter.</li>
+</ul>
+
+<p>May 31, 2015 - Revision 2416</p>
+<ul>
+<li><b>Fixed</b> RegExpSubstitute: Corrected a bug, introduced in r2414, where comparisons with an empty string could fail.</li>
+<li><b>Fixed</b> Plugin API: Corrected a long-standing issue where a plugin could crash or hang Rainmeter if Refresh All or Unload Skin was done while the plugin was executing commands to the main Rainmeter process.</li>
+</ul>
+
+<p>May 24, 2015 - Revision 2414</p>
+<ul>
+<li><b>Fixed</b> RegExpSubstitute: Fixed a problem where a (capture) that returned an empty string would cause Rainmeter to hang or crash. Care should still be taken when using <code>*</code> (zero or more) quantifiers or <code>(?(?=</code> (If/Then Lookaround) constructs in RegExpSubstitute, as any (capture) returning an empty string will cause the Substitute to fail.</li>
+<li><b>Fixed</b> Net measures: Improved the detection of "Best" and "named" <code>Interface</code> options on Windows XP.</li>
+</ul>
+
+<p>April 30, 2015 - Revision 2412</p>
+<ul>
+<li><b>Fixed</b> Net measures: Corrected a bug when using Interface with a number, introduced in r2410. It is important that this new version be used in place of r2410.</li>
+</ul>
+
+<p>April 29, 2015 - Revision 2410</p>
+<ul>
+<li><b>Changed</b> Net measures: Changed the values accepted for the <a href="http://docs.rainmeter.net/manual-beta/measures/net#Interface" target="_blank" rel="external">Interface</a> option to accept new values of "Best", which will automatically use the active network interface, or a string value of the name of the desired Network Interface Controller (NIC).</li>
+<li><b>Changed</b> SysInfo plugin: Changed the values accepted for the <a href="http://docs.rainmeter.net/manual-beta/plugins/sysinfo#SysInfoData" target="_blank" rel="external">SysInfoData</a> option with network related <a href="http://docs.rainmeter.net/manual-beta/plugins/sysinfo#Network" target="_blank" rel="external">SysInfoType</a> options to accept new values of "Best", which will automatically use the active network interface, or a string value of the name of the desired Network Interface Controller (NIC).</li>
+<li><b>Changed</b> About / Log: Changed the Time column in the About / Log panel to use the current time in Hours, Minutes, Seconds and Milliseconds rather than elapsed time since Rainmeter was started.</li>
+</ul>
+
+<p>April 6, 2015 - Revision 2402</p>
+<ul>
+<li><b>Added</b> Loop: Added new <a href="http://docs.rainmeter.net/manual-beta/measures/loop" target="_blank" rel="external">Loop</a> measure. This will create a looping counter between two numbers.</li>
+<li><b>Added</b> NowPlaying: Added a value of <code>Genre</code> to the <a href="http://docs.rainmeter.net/manual-beta/plugins/nowplaying#PlayerType" target="_blank" rel="external">PlayerType</a> option. This option value is currently supported with the AIMP, CAD, iTunes, WMP and WinAmp <a href="http://docs.rainmeter.net/manual-beta/plugins/nowplaying#PlayerName" target="_blank" rel="external">PlayerName</a> values.</li> 
+</ul>
+
+<h2 id="3.2">Rainmeter 3.2.1</h2>
+
+<p>March 24, 2015 - Revision 2386</p>
+<p><b>3.2.1 Release Version</b></p>
+<ul>
+<li><b>Fixed</b> QuotePlugin: Fixed a bug with the random number generation that could potentially crash Rainmeter.</li>
+</ul>
+
+<p>March 22, 2015 - Revision 2384</p>
+<p><b>3.2 Release Version</b></p>
+<ul>
+<li><b>Fixed</b> QuotePlugin: Changed the routines used to generate a random number to be more reliable.</li>
+</ul>
+
+<p>March 15, 2015 - Revision 2383</p>
+<p><b>Release Candidate 1</b></p>
+<ul>
+<li><b>Added</b> WebParser: Added new <a href="http://docs.rainmeter.net/manual-beta/plugins/webparser/#OnDownloadErrorAction" target="_blank" rel="external">OnDownloadErrorAction</a> to WebParser measures to allow taking an action when a remote file defined by <code>Download=1</code> fails to download or can't be saved locally.</li>
+<li><b>Changed</b> Rainmeter: Added the value <code>~100</code> to both Manage and the skin context menus to support setting the transparency of a skin to an opacity of <code>1</code>, which is invisible but will still react to the mouse. This can be used in conjunction with the <a href="http://docs.rainmeter.net/manual-beta/user-interface/manage/#SkinSettings" target="_blank" rel="external">fade in / fade out / on hover</a> capabilities.</li>
+</ul>
+
+<p>March 9, 2015 - Revision 2380</p>
+<ul>
+<li><b>Fixed</b> AudioLevel: Fixed a long-standing issue where stopping music or other sounds or exiting an application playing music or other sounds could cause the plugin just keep the last values it received. This resulted in a freezing of meter displays and on some systems a buzzing sound being produced for some number of milliseconds.</li>
+</ul>
+
+<p>March 3, 2015 - Revision 2379</p>
+<ul>
+<li><b>Fixed</b> Rainmeter: Fixed a bug introduced in r2378 that would crash Rainmeter if a malformed option, with a trailing comma, i.e. <code>FontColor=255,255,255,</code> was used.</li>
+</ul>
+
+<p>March 2, 2015 - Revision 2378</p>
+<ul>
+<li><b>Added</b> WebParser: Added new <a href="http://docs.rainmeter.net/manual-beta/plugins/webparser/#OnConnectErrorAction" target="_blank" rel="external">OnConnectErrorAction</a> to WebParser parent measures to allow taking an action when a site or file resource cannot be connected to.</li>
+<li><b>Added</b> WebParser: Added new <a href="http://docs.rainmeter.net/manual-beta/plugins/webparser/#OnRegExpErrorAction" target="_blank" rel="external">OnRegExpErrorAction</a> to WebParser parent measures to allow taking an action when parsing a site or file resource with <code>RegExp</code> (regular expression) fails.</li>
+<li><b>Changed</b> WebParser: Changed the <a href="http://docs.rainmeter.net/manual-beta/plugins/webparser/#FinishAction" target="_blank" rel="external">FinishAction</a> to not be executed when parsing a site or file resource with <code>RegExp</code> (regular expression) fails AND an <code>OnRegExpErrorAction</code> is defined on the measure.</li>
+<li><b>Added</b> WebParser: Added a new <a href="http://docs.rainmeter.net/manual-beta/plugins/webparser/#CommandMeasureReset" target="_blank" rel="external">Reset</a> command, used with the <a href="http://docs.rainmeter.net/manual-beta/bangs/#CommandMeasure" target="_blank" rel="external">!CommandMeasure</a> bang, to reset all values in the WebParser parent and related child measures to their initial empty values.</li>
+<li><b>Fixed</b> Math: Corrected a problem when a comma-separated, multi-argument math function was used in a formula in a comma-separated, multi-argument option. For instance using <code>Clamp(x,low,high)</code> in the arguments for <code>FontColor=rrr,ggg,bbb,aaa</code>.</li>
+<li><b>Fixed</b> Skin Installer: Changed the Skin Packager to only allow inclusion of a valid 400x60 .bmp file as a custom header in a .rmskin. Improperly sized custom images were causing visual problems in the Skin Installer user interface.</li>
+</ul>
+
+<p>February 22, 2015 - Revision 2373</p>
+<ul>
+<li><b>Changed</b> Time: Added a <code>Local</code> value to the FormatLocale option, e.g. <code>FormatLocale=Local</code>. This will cause the output format of the measure to automatically use the date / time "locale" language and format set in Windows for the machine the skin is running on, rather than defaulting to a standard platform-agnostic "English" representation.</li>
+<li><b>Fixed</b> Time: Accounted for some minor bugs in Microsoft's implementation of the code to read and parse the TimeStampFormat option.</li>
+</ul>
+
+<p>February 18, 2015 - Revision 2371</p>
+<ul>
+<li><b>Changed</b> Time: Changed the <a href="http://docs.rainmeter.net/manual-beta/measures/time#TimeStamp" target="_blank" rel="external">TimeStamp</a> option to allow a formatted date / time string as input.</li> 
+<li><b>Added</b> Time: Added new <a href="http://docs.rainmeter.net/manual-beta/measures/time#TimeStampFormat" target="_blank" rel="external">TimeStampFormat</a> and <a href="http://docs.rainmeter.net/manual-beta/measures/time#TimeStampLocale" target="_blank" rel="external">TimeStampLocale</a> options to support the changes to TimeStamp above.</li>
+<li><b>Added</b> Time: Added new <a href="http://docs.rainmeter.net/manual-beta/measures/time#FormatLocale" target="_blank" rel="external">FormatLocale</a> option to support formatting a Time measure in any defined language / locale.</li>
+<li><b>Added</b> UpTime: Added a new <a href="http://docs.rainmeter.net/manual-beta/measures/uptime#SecondsValue" target="_blank" rel="external">SecondsValue</a> option to allow formatting any defined number of seconds into "days, hours, minutes, seconds" as desired. This will override the default behavior of the UpTime measure.</li>
+<li><b>Added</b> Section Variables: Added a new <a href="http://docs.rainmeter.net/manual-beta/variables/section-variables#Timestamp" target="_blank" rel="external">:Timestamp</a> section variable measure modifier. This will return the Windows timestamp value of the named Time measure, and overcomes a limitation with getting and using this number when a Time measure has a Format option.<br><br>
+All of the above additions and changes are related to new functionality for getting and using date / time information in skins. As well as support for Language / Locale values in Time measures. Details and examples can be found at <a href="http://forum.rainmeter.net/viewtopic.php?f=114&t=20398" target="_blank" rel="external">Change Announcements</a>.</li>
+</ul>
+
+<p>February 8, 2015 - Revision 2360</p>
+<ul>
+<li><b>Added</b> Time: Added several <a href="http://docs.rainmeter.net/manual-beta/measures/time#TimeStamp" target="_blank" rel="external">TimeStamp</a> options to obtain Daylight Savings Time information for the local computer.</li>
+<li><b>Added</b> SysInfo plugin: Added several <a href="http://docs.rainmeter.net/manual-beta/plugins/sysinfo#TimeZoneValues" target="_blank" rel="external">SysInfoType</a> option values to obtain Time Zone and Daylight Savings Time information for the local computer.</li>
+</ul>
+
+<p>February 1, 2015 - Revision 2357</p>
+<ul>
+<li><b>Added</b> Formulas: Added Atan2(y, x) math function. Returns the radians of arc tangent between points Y and X in the Cartesian plane. The sign of the elements determines the quadrant.</li>
+<li><b>Added</b> FileView: Added a new <em>PathToFile</em> value for the <a href="http://docs.rainmeter.net/manual-beta/plugins/fileview#Type" target="_blank" rel="external">Type</a> child measure option. This will return just the path the file, including a trailing "\".</li>
+</ul>
+
+<p>January 27, 2015 - Revision 2355</p>
+<ul>
+<li><b>Fixed</b> Context Menu: Corrected some functionality bugs introduced in r2353 with the display and sorting of items on the context menus.</li>
+</ul>
+
+<p>January 25, 2015 - Revision 2353</p>
+<ul>
+<li><b>Added</b> Context Menu: Added <a href="http://docs.rainmeter.net/manual-beta/user-interface/context-menus#RainmeterContextMenus" target="_blank" rel="external">Favorites</a> functionality to the Rainmeter and Skins context menus. Also added support for making a skin a "Favorite" in the <a href="http://docs.rainmeter.net/manual-beta/user-interface/manage#SkinsTab" target="_blank" rel="external">Manage</a> dialog.</li>
+<li><b>Added</b> WifiStatus: Added support for the 802.11ac protocol.</li>
+<li><b>Changed</b> Context Menu: Moved "Open folder" and "Disable dragging" options to the top of the Skins context menu for easier access.</li>
+<li><b>Fixed</b> Regular Expressions: Fixed a recursion bug in the PCRE regular expression library that could cause a crash of Rainmeter in rare cases.</li>
+<li><b>Changed</b> Time: A running time measure will now automatically update for a change in Daylight Savings Time without requiring a skin refresh.</li>
+</ul>
+
+<p>September 17, 2014 - Revision 2326</p>
+<ul>
+<li><b>Fixed</b> Corrected a bug introduced in r2325 that would cause external applications like AutoIt to be unable to identify and send messages to the Rainmeter window handle.</li>
+</ul>
+
+<p>September 16, 2014 - Revision 2325</p>
+<ul>
+<li><b>Added</b> Skins: Added a new <a href="http://docs.rainmeter.net/manual-beta/skins/rainmeter-section/#DefaultUpdateDivider" target="_blank" rel="external">DefaultUpdateDivider</a> option to the [Rainmeter] section of skins.</li>
+</ul>
+
+<p>September 9, 2014 - Revision 2318</p>
+<ul>
+<li><b>Fixed</b> AudioLevel plugin: Added error trapping when the AudioLevel plugin is used on the unsupported Windows XP operating system.</li>
+</ul>
+
+<p>September 9, 2014 - Revision 2317</p>
+<ul>
+<li><b>Added</b> Plugins: Added new AudioLevel plugin by author dgrace to the Rainmeter build. This will allow for real-time VU-Meter and Spectrum Analyzer visualizations of sound output. See <a href="http://docs.rainmeter.net/manual-beta/plugins/audiolevel" target="_blank" rel="external">AudioLevel plugin</a> for full documentation and example skins.</li>
+<li><b>Fixed</b> AudioLevel plugin: Fixed an issue with the <code>Format</code> child measure option that was not returning a Unicode string value.</li>
+</ul>
+
+<p>August 29, 2014 - Revision 2313</p>
+<ul>
+<li><b>Added</b> Formulas: Added new Min(x, y), Max(x, y) and Clamp(x, low, high) functions to formulas.</li>
+<li><b>Fixed</b> Formulas: Corrected an error when a negative number was used in combination with the Random function.</li>
+</ul>
+
+<p>August 23, 2014 - Revision 2311</p>
+<ul>
+<li><b>Changed</b> Image: Due to possible conflicts, removed support for ImagePath from MaskImageName functionality. MaskImagePath should be used to define a shared location for mask images, or simply use a full or relative path as part of MaskImageName. ImagePath should only be used to define a location for an Image meter's primary image.</li>
+</ul>
+
+<p>August 21, 2014 - Revision 2308</p>
+<ul>
+<li><b>Added</b> Image: New Mask Image functionality added. See <a href="http://docs.rainmeter.net/manual-beta/meters/image#MaskImage" target="_blank" rel="external">Image - Mask Image</a> for documentation, and <a href="http://forum.rainmeter.net/viewtopic.php?p=103408#p103408" target="_blank" rel="external">Change Announcements</a> for more details.</li>
+<li><b>Changed</b> Rainmeter: Updated Metadata and removed AppVersion from default illustro skins.</li>
+<li><b>Changed</b> About: Prevent invalid plugins from showing up on Plugins tab in Manage.</li>
+</ul>
+
+<p>July 14, 2014 - Revision 2302</p>
+<ul>
+<li><b>Fixed</b> Rainmeter: Corrected an issue where the #SCREENAREAWIDTH# / #SCREENAREAHEIGHT# built-in variables would not initially detect the monitor the skin was loaded on until a refresh.</li>
+<li><b>Fixed</b> Layouts: Corrected an issue where the list of Layouts in Manage / Layouts could be off by one if the @Backup Layout was missing.</li>
+<li><b>Fixed</b> Power plugin: Corrected a STATUS issue when the battery level is higher than "low", but not currently charging.</li>
+<li><b>Changed</b> Language: Updates to Russian language.</li>
+</ul>
+
+<h2 id="3.1">Rainmeter 3.1</h2>
+<p>May 25, 2014 - Revision 2290<br>
+</p><p><b>3.1 Release</b></p>
+<ul>
+<li><b>Fixed</b> WebParser: Corrected a measure name case sensitivity issue.</li>
+<li><b>Fixed</b> NowPlaying: Corrected a measure name case sensitivity issue.</li>
+</ul>
+
+<p>April 6, 2014 - Revision 2286</p>
+<ul>
+<li><b>Added</b> NowPlaying: User Ivan Yu added Taglib files for MP4 support.</li>
+</ul>
+
+<p>February 23, 2014 - Revision 2282</p>
+<ul>
+<li><b>Added</b> SysInfo: Added new IDLE_TIME <a href="/manual-beta/plugins/sysinfo#SysInfoType">SysInfoType</a> option. This will return the number of seconds since the last user input (mouse or keyboard) to the operating system.</li>
+</ul>
+
+<p>February 16, 2014 - Revision 2280</p>
+<ul>
+<li><b>Changed</b> Added the Windows version and bit architecture to the About / Version dialog.</li>
+<li><b>Fixed</b> Corrected that separators were not displayed with the <a href="/manual-beta/bangs#SkinCustomMenu">!SkinCustomMenu</a> bang.</li>
+</ul>
+
+<p>February 9, 2014 - Revision 2269</p>
+<ul>
+<li><b>Added</b> FileView: Added support for opening the Windows properties or context menu dialogs for file or folder objects. Details at <a href="/manual-beta/plugins/fileview#OtherCommands">FileView - Other Commands</a>.</li>
+<li><b>Added</b> Rainmeter: Added <a href="/manual-beta/bangs#SkinCustomMenu">!SkinCustomMenu</a> bang to display only user-defined <a href="/manual-beta/skins/rainmeter-section#Context">context menu</a> items instead of the normal skin context menu.</li>
+</ul>
+
+<p>January 5, 2014 - Revision 2255</p>
+<ul>
+<li><b>Added</b> Measures: New <a href="/manual-beta/measures/string">String</a> measure type, used to create and manipulate string values.</li>
+<li><b>Added</b> Measures: New <a href="/manual-beta/measures/general-options/ifmatchactions">IfMatchAction</a> options for taking actions based on a regular expression comparison with the measure's string value. See <a href="http://forum.rainmeter.net/viewtopic.php?f=113&amp;t=17421" target="_blank" rel="external">Change Announcements</a> for details and examples.</li>
+<li><b>Added</b> Section Variables: New <a href="/manual-beta/variables/section-variables#EscapeRegExp">:EscapeRegExp</a> measure section variable parameter. This will return the string value of the measure with all regular expression <a href="http://www.regular-expressions.info/characters.html" target="_blank" rel="external">reserved characters</a> escaped.</li>
+<li><b>Added</b> Section Variables: New <a href="/manual-beta/variables/section-variables#EncodeURL">:EncodeURL</a> measure section variable parameter. This will return the string value of the measure as a <a href="http://www.blooberry.com/indexdot/html/topics/urlencoding.htm" target="_blank" rel="external">URL-encoded</a> string.</li>
+<li><b>Fixed</b> WebParser: A problem in some cases with properly handling [&amp;MeasureName] variables on the URL option.</li>
+<li><b>Changed</b> Calc: Due to possible impacts on system resources, <a href="/manual-beta/measures/calc#UniqueRandom">UniqueRandom</a> now has a limit of 65535, defined by the difference between LowBound and HighBound.</li>
+</ul>
+
+<p>December 23, 2013 - Revision 2218</p>
+<ul>
+<li><b>Fixed</b> Corrected an issue with the AdvancedCPU and Perfmon plugins and 32bit Rainmeter, caused in an earlier beta.</li>
+</ul>
+
+<p>December 22, 2013 - Revision 2211</p>
+<ul>
+<li><b>Fixed</b> Corrected a bug with the Round math function, caused in an earlier beta.</li>
+<li><b>Changed</b> Language: Updates to localization language strings.</li>
+</ul>
+
+<p>December 22, 2013 - Revision 2209</p>
+<ul>
+<li><b>Added</b> SysInfo: Added new LAN_CONNECTIVITY and INTERNET_CONNECTIVITY <a href="/manual-beta/plugins/sysinfo#SysInfoType">SysInfoType</a> options. Measure will return "1" on success and "-1" on failure.</li>
+<li><b>Fixed</b> Calc: Fixed repeating log error message when Random function HighBound is smaller than LowBound.</li>
+<li><b>Changed</b> Tooltip: ToolTipIcon option now allows a relative path to the image.</li>
+<li><b>Changed</b> Language: Updates to localization language strings.</li>
+</ul>
+
+<p>November 10, 2013 - Revision 2187</p>
+<ul>
+<li><b>Added</b> Measures: New <a href="/manual-beta/measures/general-options/ifconditions">IfConditions</a> functionality added.  This is a powerful extension to the concepts provided in IfActions, allowing multiple tests and actions, both "true" and "false" testing, and the ability to use logical AND and OR operators in the conditions. See <a href="http://forum.rainmeter.net/viewtopic.php?p=94135#p94135" target="_blank" rel="external">Change Announcements</a> for details and example skins.</li>
+</ul>
+
+<h2 id="3.0.2">Rainmeter 3.0.2</h2>
+
+<p>October 29, 2013 - Revision 2161<br>
+</p><p><b>3.0.2 Release</b></p>
+<ul>
+<li><b>Fixed</b> Rainmeter: Fixed an issue where skins would "flicker" when refreshed.</li>
+</ul>
+
+<h2 id="3.0.1">Rainmeter 3.0.1</h2>
+
+<p>October 20, 2013 - Revision 2151<br>
+</p><p><b>3.0.1 Release</b></p>
+<ul>
+<li><b>Fixed</b> Direct2D: Fixed crash of Rainmeter in D2D when String meters had a negative width or height.</li>
+<li><b>Fixed</b> Rainmeter: Fixed an AnchorX/Y issue caused by a change to support D2D.</li>
+<li><b>Changed</b> SkinInstaller/SkinPackager: Support Unicode characters in skin paths when creating or installing .rmskin files.</li>
+<li><b>Fixed</b> Installer: Fixed that the illustro default layout was not loaded when Rainmeter was installed in portable mode.</li>
+<li><b>Fixed</b> Installer: Reset to English instead of Arabic when a user's system has an unrecognized language code in Windows.</li>
+<li><b>Changed</b> Language: Updated Hungarian and Romanian languages..</li>
+<li><b>Changed</b> NowPlaying: Clear details when track ends with iTunes.</li>
+<li><b>Changed</b> Installer: Removed 64-bit install checkbox for standard installs on 32-bit systems.</li>
+<li><b>Changed</b> Rainmeter: Updated project files to support Windows 8.1.</li>
+<li><b>Changed</b> Installer: Removed the need to support / install older versions of .NET and C++ runtimes.</li>
+<li><b>Changed</b> Installer: Embed msvcr110.dll and msvcp110.dll C++ 2012 runtime libraries, so if they are not currently installed on the user's system, Rainmeter will not need to try to download and install them.</li>
+</ul>
+
+<h2 id="3.0">Rainmeter 3.0</h2>
+
+<p>October 13, 2013 - Revision 2113<br>
+</p><p><b>3.0 Release</b></p>
+<ul>
+<li><b>Fixed</b> String meter: Corrected an incompatibility between GDI+ and D2D when a string ends with a carriage return.</li>
+<li><b>Changed</b> Languages: Updated several language files for changes to the Rainmeter user interface.</li>
+</ul>
+
+<p>October 6, 2013 - Revision 2106<br>
+</p><p><b>3.0 Release Candidate 1</b></p>
+<ul>
+<li><b>Changed</b> Direct2D (UseD2D) rendering is now used by default if the system supports it. See <a href="http://www.rainmeter.net/Release30" target="_blank" rel="external">Rainmeter 3.0 Release Notes</a> for details.</li>
+</ul>
+
+<p>September 29, 2013 - Revision 2097<br>
+<ul>
+<li><b>Changed</b> Due to some Direct2D issues with image quality when an image meter is "resized" in Rainmeter with W and H, all image rendering is changed to use the GDI+ engine while a more permanent solution is found.</li>
+</ul>
+
+</p><p>September 22, 2013 - Revision 2094<br>
+<ul>
+<li><b>Fixed</b> Lua Scripting: Fixed a problem with a defined "default" value not working with SKIN:GetVariable() and meter:GetOption().</li>
+</ul>
+
+</p><p>September 15, 2013 - Revision 2090<br>
+<ul>
+<li><b>Added</b> Variables: New #ROOTCONFIG# built-in variable. Name of root config - Highest-level folder under the skins folder for the current skin.</li>
+<li><b>Fixed</b> Bangs: Fixed a bug where the !Manage bang would not function without any parameter. "Skins" is the default parameter.</li>
+<li><b>Fixed</b> Meters: Fixed a bug where in some cases the width and height of a meter was not dynamically changing correctly when the Padding option was used.</li>
+</ul>
+
+</p><p>August 26, 2013 - Revision 2085<br>
+<ul>
+<li><b>Added</b> About: Added a "Clear" button to the About / Log panel to remove the current contents of the log displayed in the panel.</li>
+<li><b>Changed</b> Bangs: Added "Config" and "File" parameters to the <a href="/manual-beta/bangs#Manage">!Manage</a> bang. This will allow opening the Manage / Skin panel with the desired config and / or skin .ini file automatically selected in the list.</li>
+</ul>
+
+</p><p>August 18, 2013 - Revision 2081<br>
+<ul>
+<li><b>Added</b> Calc: Added a new <a href="/manual-beta/measures/calc#UniqueRandom">UniqueRandom</a> option. If set to 1, any measure using the random constant and UpdateRandom will not repeat until all values between and including LowBound and HighBound have been used. Note that any dynamic change to LowBound or HighBound will reset the tracking of values. See <a href="http://forum.rainmeter.net/viewtopic.php?p=91109#p91109" target="_blank" rel="external">Change Announcements</a> for an example skin.</li>
+</ul>
+
+</p><p>August 12, 2013 - Revision 2076<br>
+<ul>
+<li><b>Changed</b> Script: We have now added support for Unicode characters in Lua scripting. There are some limitations, see <a href="http://forum.rainmeter.net/viewtopic.php?p=90816#p90816" target="_blank" rel="external">Change Announcements</a> for important details.</li>
+<li><b>Changed</b> Direct2D: There have been many fixes and improvements for compatibility with the new UseD2D / Direct2D functionality and older skins. See <a href="http://forum.rainmeter.net/viewtopic.php?p=90817#p90817" target="_blank" rel="external">Change Announcements</a> for details.</li>
+</ul>
+
+</p><p>August 4, 2013 - Revision 2050<br>
+Special bug fix release<br>
+<ul>
+<li><b>Fixed</b> Rainmeter: Fixed an issue with Direct2D where a string meter with an empty string would still have a width and height.</li>
+<li><b>Fixed</b> About: Fixed a bug in the Log panel that could cause problems with the "Source" column.</li>
+</ul>
+
+</p><p>August 4, 2013 - Revision 2047<br>
+<ul>
+<li><b>Changed</b> WebParser: WebParser now supports <a href="/manual-beta/variables#DynamicVariables">Dynamic Variables</a>. See <a href="http://forum.rainmeter.net/viewtopic.php?p=90521#p90521" target="_blank" rel="external">Change Announcements</a> for <b>important</b> details.</li>
+<li><b>Changed</b> Rainmeter: Important improvements made to the D2D (Direct2D) rendering option for Rainmeter. See <a href="http://forum.rainmeter.net/viewtopic.php?p=90520#p90520" target="_blank" rel="external">Change Announcements</a> for <b>important</b> details.</li>
+<li><b>Added</b> Manage Dialog: Added "UseD2D" option in the Manage / Settings Tab. If checked, all skins are refreshed using D2D (Direct2D) rendering. The option is disabled on systems that do not support D2D. Windows 7 with the latest <a href="http://www.microsoft.com/en-us/download/details.aspx?id=36805" target="_blank" rel="external">Platform Update</a> or Windows 8 is required.</li>
+<li><b>Added</b> Rainmeter: Added AccurateText option in the [Rainmeter] section of skins. When AccurateText=0 (default) and UseD2D=0, inaccurate GDI+ measuring of text is used. When AccurateText=1 and UseD2D=0, Accurate measuring occurs similar to D2D. When AccurateText=0 and UseD2D=1, D2D adds padding to the text similar to GDI+. When AccurateText=1 and UseD2D=1, Accurate measuring occurs using D2D.</li>
+</ul>
+
+</p><h3 id="r2022">21 July, 2013 <small>(r2022)</small></h3>
+<ul>
+<li><b>Removed</b> String meter: Due to problems and inconsistent behavior, removed the ability to include trailing spaces on the Text option that was added in previous betas. See the new Padding option for an alternative solution.</li>
+<li><b>Added</b> Meters: Added <a href="/manual-beta/meters/general-options#Padding">Padding</a>=<i>left,top,right,bottom</i> option to meters. Allows adding pixels around any or all sides a meter. The width and height of the meter will dynamically be adjusted to the new size.</li>
+<li><b>Added</b> Measures: Added <a href="/manual-beta/measures/general-options#Paused">Paused</a>=<i>0/1</i> option to measures. This allows setting the "paused" state of a measure, in addition to the !PauseMeasure/!UnpauseMeasure/!TogglePauseMeasure bangs previously added.</li>
+<li><b>Fixed</b> !SetWallpaper: Improved performance when setting the wallpaper with large images.</li>
+<li><b>Changed</b> Button meter: Changed the mouse <i>over</i> behavior to ignore transparent areas of the image, to match the mouse <i>click</i> behavior.</li>
+</ul>
+
+<h3 id="r2012">14 July, 2013 <small>(r2012)</small></h3>
+<ul>
+<li><b>Changed</b> String meter: Trailing spaces are displayed in the Text option if the value is enclosed in quotes. This was previously changed in D2D, and now has the same behavior in GDI+.</li>
+<li><b>Added</b> !PauseMeasure: New <a href="/manual-beta/bangs#PauseMeasure">!PauseMeasure</a>, <a href="/manual-beta/bangs#PauseMeasure">!UnpauseMeasure</a>, and <a href="/manual-beta/bangs#PauseMeasure">!TogglePauseMeasure</a> bangs. This is similar to a disabled measure, however the measure retains its current value instead of changing to 0. Group versions of these bangs also added.</li>
+<li><b>Changed</b> !SetWallpaper: Changed the problem that an image file set with !SetWallpaper would be locked in Windows.</li>
+<li><b>Fixed</b> Rainmeter: Fix for a problem with !DeactivateConfig in a OnCloseAction that could cause high CPU usage.</li>
+</ul>
+
+<h3 id="r1995">30 June, 2013 <small>(r1995)</small></h3>
+<ul>
+<li><b>Changed</b> Error Logging: Improved the About/Log dialog to better show the source of errors. Where possible, the config\skin.ini and meter or measure section producing the error will be displayed.</li>
+<li><b>Fixed</b> String Meter: Corrected a bug where trailing spaces were not displayed when the option value was enclosed in quotes. <code>Text="Some Trailing spaces&nbsp;&nbsp;&nbsp;&nbsp;"</code></li>
+</ul>
+
+<h3 id="r1990">23 June, 2013 <small>(r1990)</small></h3>
+<ul>
+<li><b>Fixed</b> Lua Scripting: Fixed an issue where some meter related bangs (i.e. !HideMeterGroup) were ignored in the Initialize() function of the script.</li>
+<li><b>Fixed</b> Meters: Fixed an issue where the hiding of a meter caused the skin to have a width and height of zero would not properly destroy the drawing of the last meter hidden.</li>
+<li><b>Changed</b> Languages: User Daniel Peukert made some updates and corrections to the Czech language files.</li>
+</ul>
+
+<h3 id="r1986">17 June, 2013 <small>(r1986)</small></h3>
+<ul>
+<li><b>Fixed</b> Image meter: Fixed a bug that caused images not be be displayed when both MeasureName and ImageName options were used.</li>
+</ul>
+
+<h3 id="r1979">16 June, 2013 <small>(r1979)</small></h3>
+<ul>
+<li><b>Fixed</b> String meter: Fixed a small bug with the Angle option.</li>
+<li><b>Changed</b> Many internal changes to improve performance and stability.</li>
+</ul>
+
+<h3 id="r1950">9 June, 2013 <small>(r1950)</small></h3>
+<ul>
+<li><b>Added</b> New <a href="/manual-beta/meters/general-options/image-options#ImagePath">ImagePath</a> option added to General Image Options. This replaces the Path option on Image meters, and extends the functionality to all other meters that support images. <i>Note that Histogram uses PrimaryImagePath, SecondaryImagePath and BothImagePath due to the fact that the Histogram meter has an optional secondary measure binding.</i></li>
+</ul>
+
+<h3 id="r1946">4 June, 2013 <small>(r1946)</small></h3>
+<ul>
+<li><b>Fixed</b> Fixed an issue with the !Toggle bang that could cause a crash in some instances.</li>
+</ul>
+
+<h3 id="r1945">3 June, 2013 <small>(r1945)</small></h3>
+<ul>
+<li><b>Fixed</b> Corrected a couple of bugs with group bangs that caused them to fail. One long-standing, and one caused by the most recent r1941 beta.</li>
+</ul>
+
+<h3 id="r1941">2 June, 2013 <small>(r1941)</small></h3>
+<ul>
+<li><b>Changed</b> Improvements to the level of detail in the Rainmeter log when there are command or bang errors.</li>
+<li><b>Changed</b> Major refactoring of the Rainmeter code for efficiency and easier code maintenance.</li>
+</ul>
+
+<h3 id="r1930">19 May, 2013 <small>(r1930)</small></h3>
+<ul>
+<li><b>Changed</b> Process: Improvements made to the Process plugin to correct issues with the plugin not being able to detect processes started with a higher security level than Rainmeter, 64bit processes when Rainmeter is 32bit, and processes run as a Windows "service".</li>
+<li><b>Fixed</b> Roundline: Corrected a rounding error when a large value is used for the StartAngle option.</li>
+</ul>
+
+
+<h3 id="r1928">12 May, 2013 <small>(r1928)</small></h3>
+<ul>
+<li><b>Added</b> Image meter: New UseExifOrientation option to automatically correct the orientation of images based on the <a href="http://www.impulseadventure.com/photo/exif-orientation.html" target="_blank" rel="external">EXIF</a> data encoded in the image by a camera.</li>
+<li><b>Fixed</b> NowPlaying: Corrected an issue that caused the NowPlaying plugin to fail on XP systems in some cases.</li>
+<li><b>Changed</b> Plugin SDK: Updated and improved the C++/C# <a href="https://github.com/rainmeter/rainmeter-plugin-sdk" target="_blank" rel="external">Plugin SDK</a> for developers wishing to create Rainmeter plugins.</li>
+</ul>
+
+<h3 id="r1916">5 May, 2013 <small>(r1916)</small></h3>
+<ul>
+<li><b>Fixed</b> Corrected an issue with the NowPlaying plugin on systems running Windows XP that could cause it to fail.</li>
+</ul>
+
+<h3 id="r1906">28 April, 2013 <small>(r1906)</small></h3>
+<ul>
+<li><b>Fixed</b> Image Meter: Fixed an issue where an image meter controlled by a Substitute on a measure could error with "Unable to open" in some cases.</li>
+<li><b>Added</b> Skins: Added OnWakeAction to [Rainmeter] to take action when Windows returns from sleep or hibernate states.</li>
+</ul>
+
+<h3 id="r1879">14 April, 2013 <small>(r1900)</small></h3>
+<ul>
+<li><b>Removed</b> Rainmeter: Due to some style issues with XP, removed icons for <i>Unload skin</i> and <i>Exit</i> in context menus.</li>
+<li><b>Fixed</b> InputText: Corrected a problem that could prevent functionality on Windows XP in some cases.</li>
+<li><b>Changed</b> OnChangeAction: Reduced resource usage with the action.</li>
+<li><b>Changed</b> D2D: The ability to load fonts in D2D with the "LocalFont" option or (preferably) the @Resources\Fonts automatic loading has been implemented.</li>
+<li><b>Changed</b> D2D: Major improvements to the handling of font recognition and family/subfamily attributes on both installed and "local" fonts.</li>
+<li><b>Changed</b> D2D: Fix for ScaleMargins and other image handling issues.</li>
+</ul>
+
+<h3 id="r1879">7 April, 2013 <small>(r1879)</small></h3>
+<ul>
+<li><b>Added</b> Rainmeter: Added icon to 'Unload skin' and "Exit" in context menus.</li>
+<li><b>Changed</b> D2D: Added support for TransformationMatrix (all meters) and Angle (string meters).
+</li><li><b>Changed</b> D2D: Made some changes to how font "family" and "subfamily" names are handled, to be more consistent with GDI+.</li>
+</ul>
+
+<h3 id="r1871">31 March, 2013 <small>(r1871)</small></h3>
+<ul>
+<li><b>Added</b> InputText: Added OnDismissAction to the plugin.</li>
+<li><b>Fixed</b> FileView: Fixed an issue with the Open command which in rare instances could crash Rainmeter.</li>
+<li><b>Changed</b> Localization: Updated language files.</li>
+</ul>
+
+<h2 id="2.5">Rainmeter 2.5</h2>
+
+<h3 id="r1842">24 March, 2013 <small>(r1842)</small></h3>
+<p><b>2.5 Final Release</b></p>
+
+<h3 id="r1819">10 March, 2013 <small>(r1819)</small></h3>
+<ul>
+<li><b>Changed</b> InputText: Improved formula and section variables support in measure options and inline CommandN option. X, Y, W, H and FontSize are supported. DynamicVariables is not required on the measure.</li>
+<li><b>Changed</b> SkinInstaller: Remove all [Rainmeter] section options from layouts installed by a .rmskin. Skin authors may not automatically overwrite the user's settings for these options.</li>
+<li><b>Changed</b> SkinInstaller: Add FileView to protected official plugins, FileView.dll may not be distributed with a .rmskin.</li>
+</ul>
+
+<h3 id="r1808">5 March, 2013 <small>(r1808)</small></h3>
+<ul>
+<li><b>Fixed</b> FileView: Fixed an issue with threading that caused icons to display as the Windows default / unknown image in some cases.</li>
+<li><b>Changed</b> FileView: WildcardSearch now works properly with Recursive=2.</li>
+</ul>
+
+<h3 id="r1806">3 March, 2013 <small>(r1806)</small></h3>
+<ul>
+<li><b>Added</b> Ping: Added FinishAction to plugin. Action to execute as soon as a successful value is returned, or when the number of milliseconds set in the Timeout option is reached.</li>
+<li><b>Changed</b> InputText: Updated to current Rainmeter API. Options in plugin can now use dynamic variables.</li>
+<li><b>Fixed</b> InputText: Fixed issues with handle leaks caused by threading.</li>
+<li><b>Fixed</b> InputText: Fixed an issue that prevented input using a <a href="http://en.wikipedia.org/wiki/Input_method_editor" target="_blank" rel="external">language IME</a> in the field.</li>
+<li><b>Added</b> FileView: Added Recursive=2 option. Allows recursive indexing of files in a folder tree. Folders are ignored with this option. Plugin commands FollowPath and PreviousFolder are disabled, and ShowFile, ShowFolder, and ShowDotDot options have no effect.</li>
+<li><b>Changed</b> FileView: Drives are now sorted.</li>
+<li><b>Changed</b> FileView: Drives are now counted as folders for Type=FolderCount.</li>
+<li><b>Changed</b> FileView: Folders now return dates and times.</li>
+<li><b>Added</b> Plugin API: Added new RMG_SKINNAME and RMG_SKINWINDOWHANDLE options to RmGet() to plugin SDK.</li>
+</ul>
+
+<h3 id="r1792">10 February, 2013 <small>(r1792)</small></h3>
+<ul>
+<li><b>Fixed</b> FileView: Corrected an issue where an invalid path could crash Rainmeter.</li>
+<li><b>Fixed</b> WebParser: Corrected a string length issue that could crash Rainmeter.</li>
+</ul>
+
+<h3 id="r1786">3 February, 2013 <small>(r1786)</small></h3>
+<ul>
+<li><b>Fixed</b> ClipString: Several minor fixes to ClipString=2.</li>
+<li><b>Fixed</b> FileView: The current index number was not being reset on Update command.</li>
+<li><b>Fixed</b> Calc: An issue with negative signs being incorrectly parsed was corrected.</li>
+</ul>
+
+<h3 id="r1781">27 January, 2013 <small>(r1781)</small></h3>
+<ul>
+<li><b>Changed</b> ClipString: Added new ClipString=2 setting and new ClipStringW / ClipStringH options. This will allow for more dynamic clipping and wrapping of a string while sizing the containing meter to accommodate the entire contents.</li>
+<li><b>Changed</b> WebParser: Changed the behavior of the ProxyServer option to better handle how WebParser interacts with Internet Explorer for proxy management.</li>
+<li><b>Fixed</b> FileView: The default icon index was off by 1 when non IconPath was specified.</li>
+<li><b>Fixed</b> Installer: Improved VC++ 2012 redistributable checking.</li>
+</ul>
+
+<h3 id="r1767">21 January, 2013 <small>(r1767)</small></h3>
+<ul>
+	<li><b>Added</b> Added new <a href="/manual-beta/variables/mouse-variables">Mouse Variables</a>.</li>
+	<li><b>Added</b> FileView: Added new <a href="/manual-beta/plugins/fileview#FinishAction">FinishAction</a> option to the plugin.
+</li></ul>
+
+<h3 id="r1761">15 January, 2013 <small>(r1761)</small></h3>
+<ul>
+	<li><b>Fixed</b> OnChangeAction: Fixed an issue with increased CPU usage caused by this new functionality.</li>
+</ul>
+
+<h3 id="r1758">13 January, 2013 <small>(r1758)</small></h3>
+<ul>
+	<li><b>Added</b> FileView: Added new <a href="/manual-beta/plugins/fileview">FileView plugin</a>.</li>
+	<li><b>Added</b> Added new OnUpdateAction command to <a href="/manual-beta/skins/rainmeter-section#OnUpdateAction">Skins</a>, <a href="/manual-beta/meters/general-options#OnUpdateAction">Meters</a> and <a href="/manual-beta/measures/general-options#OnUpdateAction">Measures</a>.</li>
+	<li><b>Added</b> Added new OnChangeAction command to <a href="/manual-beta/measures/general-options#OnChangeAction">Measures</a>.</li>
+</ul>
+
+<h3 id="r1748">6 January, 2013 <small>(r1748)</small></h3>
+<ul>
+	<li><b>Changed</b> NowPlaying: Improved cover handling with some players.</li>
+	<li><b>Fixed</b> NowPlaying: Fixed crash with CAD interface in some cases.</li>
+	<li><b>Fixed</b> Calc: Fixed handling of negative numbers without brackets "5+-1" is now valid and equal to "5+(-1)".</li>
+	<li><b>Fixed</b> Localization: Fixed dialog layout with "right-to-left" languages.</li>
+	<li><b>Fixed</b> Line meter: Fixed crash when LineCount not equal to count of "N" in MeasureNameN.</li>
+	<li><b>Changed</b> Upgraded project to Visual Studio 2012 (Update 1). New VC++ runtime libraries will be installed on normal installation.</li>
+</ul>
+
+<h3 id="r1720">16 December, 2012 <small>(r1720)</small></h3>
+<ul>
+	<li><b>Changed</b> Internal changes to context menus and program dialogs to improve the Localization foundation.</li>
+</ul>
+
+<h3 id="r1716">9 December, 2012 <small>(r1716)</small></h3>
+<ul>
+	<li><b>Changed</b> Context Menus: Fixed some bugs with the context menus caused in last week's beta.</li>
+</ul>
+
+<h3 id="r1713">2 December, 2012 <small>(r1713)</small></h3>
+<ul>
+	<li><b>Changed</b> Bangs: Added "*" as a wildcard parameter to !UpdateMeasure and !UpdateMeter to immediately update all measures/meters.</li>
+	<li><b>Changed</b> Mouse: Fixed that left/right scroll actions were not executed if there are no up/down scroll actions.</li>
+	<li><b>Changed</b> Mouse: Fixed that MouseActionCursor was not reset when the skin was refreshed in some cases.</li>
+	<li><b>Changed</b> Mouse: Fixed that MouseActionCursor did not work with the new scroll actions.</li>
+</ul>
+
+<h3 id="r1706">25 November, 2012 <small>(r1706)</small></h3>
+<ul>
+	<li><b>Changed</b> Mouse Actions: Mouse scrolling on skins and meters now works without having to click to "focus" the skin window.</li>
+	<li><b>Changed</b> WebParser: Changed the Debug=2 option to write WebParserDump.txt to the current skin folder.</li>
+	<li><b>Changed</b> Manage: Now allows negative X/Y coordinates.</li>
+</ul>
+
+<h3 id="r1696">18 November, 2012 <small>(r1696)</small></h3>
+<ul>
+	<li><b>Added</b> Mouse Actions: Support added for the mouse scroll wheel.</li>
+	<li><b>Added</b> Skins: OnFocusAction / OnUnFocusAction options added to the [Rainmeter] section of the skin, to execute actions when a skin gains or loses focus (by clicking it) in Windows.</li>
+	<li><b>Added</b> Mouse Actions: Support added for two extra mouse buttons in Mouse Actions.</li>
+	<li><b>Changed</b> Manage: Added settings for Editor and Show notification area icon to Settings tab.</li>
+	<li><b>Fixed</b> Skin Packager: Fixed an issue with a memory leak.</li>
+</ul>
+
+<h2 id="2.4">Rainmeter 2.4</h2>
+
+<h3 id="r1678">4 November, 2012 <small>(r1678)</small></h3>
+<p><b>2.4 Final Release</b></p>
+
+<h3 id="r1677">28 October, 2012 <small>(r1677)</small></h3>
+<p><b>Release Candidate One</b></p>
+<ul>
+	<li><b>Fixed</b> Rainmeter: Fixed an issue with focus on tray context menu.</li>
+	<li><b>Changed</b> Context: Changed "Help" to open the new <a href="/">Rainmeter Documentation</a>.</li>
+</ul>
+
+<h3 id="r1673">7 October, 2012 <small>(r1673)</small></h3>
+<ul>
+	<li><b>Added</b> Skins: Added support for custom skin Context Menu items.</li>
+	<li><b>Changed</b> Manage: Changed the term "Themes" to "Layouts" throughout Rainmeter.</li>
+	<li><b>Added</b> Bangs: Added new !LoadLayout bang to load saved Layouts.</li>
+	<li><b>Removed</b> Skin Installer: Deprecated the /LoadTheme command line option.</li>
+	<li><b>Changed</b> Script: Fixed a problem with loading ScriptFile with a path using Unicode characters.</li>
+	<li><b>Fixed</b> Plugin Developers: Fixed an issue with DllExporter in the plugin API.</li>
+</ul>
+
+<h3 id="r1645">30 September, 2012 <small>(r1645)</small></h3>
+<ul>
+	<li><b>Changed</b> Skins: Moved Author from [Rainmeter] to [Metadata].</li>
+	<li><b>Changed</b> Roundline: Removed MeasureName requirement. This removes the need for a "dummy" measure when drawing generic circles.</li>
+	<li><b>Changed</b> String: Arial is now the default font when FontFace is not specified or errors occur. Error logging with font problems improved.</li>
+	<li><b>Added</b> Time: Added support for formulas in TimeZone.</li>
+</ul>
+
+<h3 id="r1634">24 September, 2012 <small>(r1634)</small></h3>
+<ul>
+	<li><b>Fixed</b> Fixed a problem with !SetOption and Measures broken in 1633.</li>
+</ul>
+
+<h3 id="r1633">23 September, 2012 <small>(r1633)</small></h3>
+<ul>
+	<li><b>Fixed</b> RecycleManager: Fixed update issue with Windows XP.</li>
+	<li><b>Removed</b> NetIn/NetOut/NetTotal: Removed TrafficAction option.</li>
+</ul>
+
+<h3 id="r1626">16 September, 2012 <small>(r1626)</small></h3>
+<ul>
+	<li><b>Removed</b> Localization: Removed Croatian and Lithuanian.</li>
+	<li><b>Changed</b> SysInfo: Added Windows 8 and Windows Server 2012 support.</li>
+	<li><b>Changed</b> Ping: Improved error reporting.</li>
+</ul>
+
+<h3 id="r1623">9 September, 2012 <small>(r1623)</small></h3>
+<ul>
+	<li><b>Fixed</b> Fixed infinite loop with RegExpSubstitute when Substitute has a empty string.</li>
+	<li><b>Changed</b> IfEqualAction: Now compares the values as 64bit integer.</li>
+</ul>
+
+<h3 id="r1617">2 September, 2012 <small>(r1617)</small></h3>
+<ul>
+	<li><b>Added</b> Time: Added Timestamp option to Time measures.</li>
+	<li><b>Fixed</b> Lua: Fixed some occasions where an error in a Lua script could crash Rainmeter.</li>
+	<li><b>Fixed</b> QuotePlugin: Fixed handle leak.</li>
+</ul>
+
+<h3 id="r1613">26 August, 2012 <small>(r1613)</small></h3>
+<ul>
+	<li><b>Changed</b> Registry: Changed the measure to return a number value as well as a string when REG_SZ entries contain a number.</li>
+</ul>
+
+<h3 id="r1611">19 August, 2012 <small>(r1611)</small></h3>
+<ul>
+		<li><b>Added</b> Image: Added PreserveAspectRatio=2 feature to Image meter.</li>
+	<li><b>Changed</b> Added quotes around filename when using ConfigEditor.</li>
+	<li><b>Fixed</b> Script: Fixed backwards compatibility issues due to removed tolua.cast.</li>
+	<li><b>Fixed</b> Time: Fixed that Time measure logs invalid format error on initial skin load.</li>
+	<li><b>Fixed</b> String: Fixed an issue with StringAlign and relative positioning.</li>
+	<li><b>Fixed</b> Fixed an issue with #CURRENTCONFIGWIDTH# and #CURRENTCONFIGHEIGHT# on initial skin load.</li>
+	<li><b>Changed</b> Memory: Minor optimizations for Memory measures.</li>
+</ul>
+
+<h3 id="r1598">12 August, 2012 <small>(r1598)</small></h3>
+<ul>
+	<li><b>Fixed</b> Lua: Fixed a bug that did not allow "group" related bangs to work correctly.</li>
+	<li><b>Changed</b> Section Variables: - Trailing zeros are trimmed if decimal places modifier is not used.</li>
+	<li><b>Added</b> Section Variables: - Added [Measure:MaxValue] and [Measure:MinValue] functionality.</li>
+</ul>
+
+<h3 id="r1593">5 August, 2012 <small>(r1593)</small></h3>
+<ul>
+	<li><b>Added</b> Added new [Meter:]/[Measure:] Section Variables functionality.</li>
+	<li><b>Fixed</b> Fixed bugs with a missing tray icon in some cases on startup, and when TrayMeasure options are reloaded.</li>
+	<li><b>Fixed</b> Meters: Fixed a problem with resizing of certain meters with !SetOption.</li>
+	<li><b>Changed</b> Lua: ReplaceVariables() now also replaces section variables.</li>
+</ul>
+
+<h3 id="r1578">29 July, 2012 <small>(r1578)</small></h3>
+<ul>
+	<li><b>Removed</b> Localization: Due to inactivity, removed support for the Latvian and Slovenian languages.</li>
+	<li><b>Changed</b> Installer: Made SSE hardware architecture support a requirement, allowing significant performance improvements.</li>
+	<li><b>Changed</b> Installer: Added file association for .inc files if one does not exist, to facilitate editing @Include files.</li>
+</ul>
+
+<h3 id="r1570">23 July, 2012 <small>(r1570)</small></h3>
+<ul>
+	<li><b>Added</b> Added support for custom and some built-in alternative mouse action cursors.</li>
+	<li><b>Changed</b> Bang: Made second parameter of !ActivateConfig optional. The next variant is used instead.</li>
+	<li><b>Changed</b> Script: Fixed that GetMeter/GetMeasure/GetVariable functions do not correctly return nil on error.</li>
+	<li><b>Changed</b> Script: Fixed that Initialize() was not called when the script is changed dynamically.</li>
+	<li><b>Removed</b> Script: Removed various uneeded or inappropriate Lua functions.</li>
+	<li><b>Changed</b> Meter: Changed MeasureName(N) to work dynamically.</li>
+	<li><b>Changed</b> Changed @include behavior. Sections in the included file are inserted at the position in the .ini where the @include is defined.</li>
+	<li><b>Changed</b> Meter: Fixed that meters were initialized before measures.</li>
+	<li><b>Changed</b> !SetOption: Changed to work with X, Y, and Hidden on meters.</li>
+	<li><b>Changed</b> FreeDiskSpace: Changed the measure to obey user account disk quotas in Windows. Override with DiskQuota=0.</li>
+</ul>
+
+<h2 id="2.3">Rainmeter 2.3</h2>
+
+<h3 id="r1468">17 June, 2012 <small>(r1468)</small></h3>
+<ul>
+	<li><b>Added</b> Added new .rmskin packager functionality.</li>
+	<li><b>Removed</b> Removed backup functionality from Manage.</li>
+</ul>
+
+<h3 id="r1446">10 June, 2012 <small>(r1446)</small></h3>
+<ul>
+	<li><b>Fixed</b> Plugin: Fixed error when using forward slash in Plugin=.</li>
+</ul>
+
+<h3 id="r1434">3 June, 2012 <small>(r1434)</small></h3>
+<ul>
+	<li><b>Fixed</b> WebParser.dll: Fixed that [measures] in FinishAction were not dynamic.</li>
+	<li><b>Fixed</b> NowPlaying.dll: Fixed that [measures] in TrackChangeAction were not dynamic.</li>
+	<li><b>Fixed</b> Calc: Fixed integer overflow with Random when using large LowBound/HighBound values.</li>
+</ul>
+
+<h3 id="r1406">26 May, 2012 <small>(r1406)</small></h3>
+<ul>
+	<li><b>Changed</b> Minor tweaks and improvements to language localization.</li>
+</ul>
+
+<h3 id="r1387">20 May, 2012 <small>(r1387)</small></h3>
+<ul>
+	<li><b>Added</b> String meter: Added vertical alignment to StringAlign option.</li>
+	<li><b>Added</b> Added support for @Resources folder in skins.</li>
+	<li><b>Fixed</b> Corrected an issue with restoring .rmskins created by the Backup feature in Manage.</li>
+	<li><b>Fixed</b> Corrected an issue with InputText plugin and bangs beginning with "[".</li>
+</ul>
+
+<h3 id="r1377">13 May, 2012 <small>(r1377)</small></h3>
+<ul>
+	<li><b>Added</b> Added GraphOrientation and GraphStart to Line and Histogram meters.</li>
+	<li><b>Changed</b> Lua Script: Added support for multiple parameters to SKIN:Bang().</li>
+	<li><b>Changed</b> Made "!Execute" optional in all bangs.</li>
+	<li><b>Fixed</b> Fixed error with StringCase=UPPER/LOWER/PROPER with non-Latin chars in String meters.</li>
+	<li><b>Fixed</b> Fixed bug causing crash when installing .rmskins and using InputText plugin.</li>
+	<li><b>Fixed</b> Fixed bangs designed to work on Groups not functioning correctly.</li>
+</ul>
+
+<h3 id="r1372">10 May, 2012 <small>(r1372)</small></h3>
+<ul>
+	<li><b>Fixed</b> Installer: Fixed a potential issue when installing with UAC enabled.</li>
+</ul>
+
+<h3 id="r1364">6 May, 2012 <small>(r1364)</small></h3>
+<ul>
+	<li><b>Changed</b> Installer: Changed the path input to be directly editable on portable installs.</li>
+	<li><b>Added</b> New Rainmeter.data file to support future improvements to how default plugin values and other internal Rainmeter information is managed.</li>
+	<li><b>Added</b> Internal system tray notifications to welcome new users to Rainmeter and provide notifications of new available versions.</li>
+</ul>
+
+<h3 id="r1349">29 April, 2012 <small>(r1349)</small></h3>
+<ul>
+	<li><b>Changed</b> Localization: Corrections and additions to language files.</li>
+	<li><b>Changed</b> Installer: Simplification and improvements to the Rainmeter installer.</li>
+</ul>
+
+<h3 id="r1334">22 April, 2012 <small>(r1334)</small></h3>
+<ul>
+	<li><b>Changed</b> AdvancedCPU plugin: Added support for dynamic variables.</li>
+	<li><b>Changed</b> Win7Audio plugin: Added support for dynamic variables.</li>
+	<li><b>Changed</b> WifiStatus plugin: Added support for dynamic variables.</li>
+	<li><b>Fixed</b> Manage Themes dialog: Fixed a problem with selecting theme after saving in some cases.</li>
+	<li><b>Fixed</b> NowPlaying plugin: Fixed negative duration issue with Winamp.</li>
+	<li><b>Fixed</b> NowPlaying plugin: Fixed that SHUFFLE, REPEAT, and VOLUME were not reset on player shutdown.</li>
+</ul>
+
+<h3 id="r1320">15 April, 2012 <small>(r1320)</small></h3>
+<ul>
+	<li><b>Changed</b> Updated the 24x24 resolution Rainmeter tray icon.</li>
+	<li><b>Changed</b> FolderInfo plugin: Added support for dynamic Folder= and fixed a memory leak issue.</li>
+	<li><b>Fixed</b> Fixed that the initial measure value was always zero.</li>
+</ul>
+
+<h3 id="r1304">8 April, 2012 <small>(r1304)</small></h3>
+<ul>
+	<li><b>Added</b> Added support for formulas in all numerical options and bang parameters.</li>
+	<li><b>Added</b> Added !Log bang.</li>
+	<li><b>Added</b> Calc measure: Added rad function.</li>
+	<li><b>Changed</b> Updated notification area icon.</li>
+	<li><b>Changed</b> Reduced the number of errors that automatically cause the About Log dialog to appear.</li>
+	<li><b>Fixed</b> Time measure: Fixed that did not default to <code>%H:%M:%S</code>.</li>
+	<li><b>Fixed</b> Calc measure: Fixed sgn function.</li>
+	<li><b>Fixed</b> PerfMon plugin: Fixed 0 return value in some cases.</li>
+	<li><b>Fixed</b> PerfMon plugin: Fixed issue with MaxValue in some cases.</li>
+	<li><b>Removed</b> Removed support for TrayExecuteL and TrayExecuteDL in Rainmeter.ini.</li>
+</ul>
+
+<h3 id="r1273">1 April, 2012 <small>(r1273)</small></h3>
+<ul>
+	<li><b>Added</b> Added OnCloseAction option to [Rainmeter].</li>
+	<li><b>Fixed</b> PerfMon plugin: Fixed incorrect return value in some cases.</li>
+	<li><b>Fixed</b> Fixed that X, Y, and Hidden are not reset in some cases when using !SetOption with MeterStyle.</li>
+</ul>
+
+<h3 id="r1265">25 March, 2012 <small>(r1265)</small></h3>
+<ul>
+	<li><b>Fixed</b> SysInfo plugin: Fixed incorrect return value in some cases.</li>
+	<li><b>Fixed</b> PerfMon plugin: Fixed incorrect return value in some cases.</li>
+</ul>
+
+<h3 id="r1259">18 March, 2012 <small>(r1259)</small></h3>
+<ul>
+	<li><b>Added</b> NowPlaying plugin: Added support for types NUMBER and YEAR.</li>
+	<li><b>Changed</b> Script measure: Added support for simple numbers in SKIN:ParseFormula().</li>
+	<li><b>Changed</b> FolderInfo plugin: Added support for DynamicVariables.</li>
+	<li><b>Changed</b> SysInfo plugin: Added support for DynamicVariables.</li>
+	<li><b>Changed</b> PerfMon plugin: Added support for DynamicVariables.</li>
+</ul>
+
+<h3 id="r1245">11 March, 2012 <small>(r1245)</small></h3>
+<ul>
+	<li><b>Added</b> Script measure: Added SELF measure object.</li>
+	<li><b>Added</b> Script measure: Added measure:GetNumberOption() function.</li>
+	<li><b>Added</b> Script measure: Added SKIN:ParseFormula() function.</li>
+	<li><b>Changed</b> Script measure: Added optional default value to measure:GetOption.</li>
+	<li><b>Changed</b> !Move/!MoveMeter bangs: Added support for formulas.</li>
+	<li><b>Fixed</b> !SetWallpaper bang: Fixed that .png images were not supported with Windows 7.</li>
+</ul>
+
+<h3 id="r1231">4 March, 2012 <small>(r1231)</small></h3>
+<ul>
+	<li><b>Fixed</b> NowPlaying plugin: Fixed crash caused by invalid PlayerName=.</li>
+	<li><b>Fixed</b> NowPlaying plugin: Fixed that PlayerType=COVER did not work with iTunes.</li>
+</ul>
+
+<h3 id="r1229">26 February, 2012 <small>(r1229)</small></h3>
+<ul>
+	<li><b>Changed</b> About dialog: Variables now sorted alphabetically.</li>
+	<li><b>Fixed</b> About dialog: Fixed that the Skins tab did not work with Windows XP.</li>
+</ul>
+
+<h3 id="r1224">22 February, 2012 <small>(r1224)</small></h3>
+<ul>
+	<li><b>Added</b> About dialog: Added support for viewing variables.</li>
+	<li><b>Added</b> About dialog: Added support for CTRL+C (copy) shortcut and tooltips in Log and Skins tabs.</li>
+	<li><b>Fixed</b> WebParser plugin: Fixed crash with FinishAction in some cases.</li>
+	<li><b>Fixed</b> Fixed that skins disappeared in some cases when resuming from sleep/hibernate modes.</li>
+	<li><b>Changed</b> About dialog: Renamed Measures tab to Skins.</li>
+</ul>
+
+<h3 id="r1203">19 February, 2012 <small>(r1203)</small></h3>
+<ul>
+	<li><b>Added</b> Formulas now allowed in addtional setttings.</li>
+	<li><b>Added</b> Manage/About dialogs: Support for keyboard shortcuts and commands.</li>
+	<li><b>Fixed</b> Fixed crash when Rainmeter.exe bang arguments did not contain the config parameter.</li>
+	<li><b>Fixed</b> !EnableMeasure bang: Fixed crash when measure is not found.</li>
+	<li><b>Fixed</b> !WriteKeyValue bang: Fixed that formulas didn't work.</li>
+	<li><b>Fixed</b> Installer: Improved administrative rights detection.</li>
+	<li><b>Fixed</b> Window message API: Partly broken since, fixed.</li>
+	<li><b>Fixed</b> NowPlaying plugin: Fixed that TrackChangeAction was executed on refresh despite player being inactive.</li>
+	<li><b>Changed</b> RecycleManager plugin: Greatly reduced CPU usage.</li>
+	<li><b>Changed</b> Network statistics now saved every two minutes (instead of every minute).</li>
+	<li><b>Changed</b> WebParser.dll: Updated to new plugin API.</li>
+	<li><b>Removed</b> RecycleManager plugin: Removed support for Drives option.</li>
+</ul>
+
+<h3 id="r1182">12 February, 2012 <small>(r1182)</small></h3>
+<ul>
+	<li><b>Added</b> Language: Added Czech.</li>
+	<li><b>Fixed</b> !SetOptionGroup bang: Didn't work with measures.</li>
+	<li><b>Fixed</b> !DeactivateConfig bang: Didn't work without (Config) parameter.</li>
+	<li><b>Fixed</b> Plugin measure: C# plugins didn't work on 32bit Windows 7 in some cases.</li>
+	<li><b>Fixed</b> CoreTemp plugin: CoreTempType didn't work (always returned Temperature).</li>
+	<li><b>Fixed</b> NowPlaying plugin: PlayerType=COVER did not work when PlayerName was
+changed with !SetOption/!SetVariable.</li>
+	<li><b>Fixed</b> About dialog: Dialog not updated when a skin is closed.</li>
+</ul>
+
+<h3 id="r1172">5 February, 2012 <small>(r1172)</small></h3>
+<ul>
+	<li><b>Added</b> New and improved C/C++/C# plugin API.</li>
+	<li><b>Added</b> !SetWallpaper bang.</li>
+	<li><b>Added</b> !SetClip bang.</li>
+	<li><b>Added</b> Ping plugin: Added support for DynamicVariables.</li>
+	<li><b>Added</b> CoreTemp plugin: Added support for DynamicVariables.</li>
+	<li><b>Added</b> WindowMessage plugin: Added support for DynamicVariables.</li>
+	<li><b>Added</b> RecycleManager plugin: Added support for DynamicVariables.</li>
+	<li><b>Added</b> Quote plugin: Added support for DynamicVariables.</li>
+	<li><b>Added</b> SpeedFan plugin: Added support for DynamicVariables.</li>
+	<li><b>Added</b> ResMon plugin: Added support for DynamicVariables.</li>
+	<li><b>Added</b> NowPlaying plugin: Added support for DynamicVariables.</li>
+	<li><b>Fixed</b> Image: Fixed image quality issue with .ico files.</li>
+	<li><b>Fixed</b> Calc measure: Fixed delay with measure values.</li>
+	<li><b>Fixed</b> Installer: Fixed silent install and added optional /LANGUAGE switch.</li>
+	<li><b>Fixed</b> Manage dialog: Fixed crashes in rare cases.</li>
+	<li><b>Changed</b> Statistics now gathered and saved periodically only if a NetIn/NetOut/NetTotal measure using <code>Cumulative=1</code> has been active in the current session.</li>
+	<li><b>Changed</b> Calc measure: Increased nested conditional limit to 30 (from 9).</li>
+</ul>
+
+<h2 id="2.2">Rainmeter 2.2</h2>
+
+<h3 id="r1103">2 January, 2012 <small>(r1103)</small></h3>
+<ul>
+	<li><b>Fixed</b> NowPlaying plugin: Fixed minor inaccuracy with setting Winamp volume.</li>
+	<li><b>Changed</b> Process plugin: Changed return value to -1 when process not active.</li>
+</ul>
+
+<h3 id="r1084">18 December, 2011 <small>(r1084)</small></h3>
+<ul>
+	<li><b>Added</b> Added Process plugin.</li>
+</ul>
+
+<h3 id="r1078">11 December, 2011 <small>(r1078)</small></h3>
+<ul>
+	<li><b>Added</b> FreeDiskSpace measure: Added Type option.</li>
+</ul>
+
+<h3 id="r1074">4 December, 2011 <small>(r1074)</small></h3>
+<ul>
+	<li><b>Fixed</b> Fixed that Rainmeter.stats is not created in some cases.</li>
+</ul>
+
+<h3 id="r1071">27 November, 2011 <small>(r1071)</small></h3>
+<ul>
+	<li><b>Fixed</b> Fixed degraded tray icon quality with high DPI.</li>
+	<li><b>Changed</b> Installer: Some options is now disabled (and unchangable) when performing an upgrade installation.</li>
+</ul>
+
+<h3 id="r1037">13 November, 2011 <small>(r1037)</small></h3>
+<ul>
+	<li><b>Fixed</b> NowPlaying plugin: Fixed that album name and cover weren't displayed with Winamp in some cases.</li>
+	<li><b>Fixed</b> Fixed infinite loop when Rainmeter.exe launched with an argument containing square backets.</li>
+	<li><b>Fixed</b> Fixed that position changes were not always saved.</li>
+	<li><b>Fixed</b> Button meter: Fixed flicker issue when used in combination with MouseOver.</li>
+	<li><b>Fixed</b> CoreTemp plugin: Fixed that returned numerical values weren't subject to Scale, NumOfDecimals, etc.</li>
+	<li><b>Changed</b> The 'Normal' skin position now stays on desktop when 'Show desktop' is used.</li>
+</ul>
+
+<h3 id="r1020">6 November, 2011 <small>(r1020)</small></h3>
+<ul>
+	<li><b>Fixed</b> Fixed issue with negative W and/or H values.</li>
+	<li><b>Changed</b> Substantial improvements to image drawing performance.</li>
+</ul>
+
+<h3 id="r1008">30 October, 2011 <small>(r1008)</small></h3>
+<ul>
+	<li><b>Fixed</b> Fixed crash with negative W values.</li>
+	<li><b>Fixed</b> Fixed that StartHidden didn't work.</li>
+</ul>
+
+<h3 id="r1002">23 October, 2011 <small>(r1002)</small></h3>
+<ul>
+	<li>Added two new languages: Chinese (Traditional) and Lithuanian.</li>
+	<li>Updates to many of the other languages.</li>
+	<li>Fixed issue with Background= and .png files.</li>
+</ul>
+
+<h3 id="r1000">16 October, 2011 <small>(r1000)</small></h3>
+<ul>
+	<li>NowPlaying: Fixed issues caused by new 10.5 version of iTunes application.</li>
+	<li>Localization: Several languages added / updated.</li>
+	<li>WebParser: Fixed that matching failed with Codepage= other than 0 and 65001 in some cases.</li>
+	<li>PowerPlugin: Fixed crash when waking up from sleep/hibernation in some cases.</li>
+	<li>Manage Themes: Fixed that loaded wallpaper was not set permanently.</li>
+	<li>Installer: Fixed that default language detection failed on 64bit Rainmeter.</li>
+	<li>Installer: Now remembers language selection.</li>
+</ul>
+
+<h3 id="r995">9 October, 2011 <small>(r995)</small></h3>
+<ul>
+	<li>Added initial support for localization / language in the Rainmeter application. The application UI, context menus and log entries.</li>
+	<li>New languages will be added during the course of the beta cycle, as translations are provided and validated.</li>
+	<li>Fixed that "Edit Skin" in "Manage" caused a needless UAC elevation prompt in some cases.</li>
+	<li>WebParser: Fixed a RegExp failure if the data contained embedded NULL characters.</li>
+	<li>DynamicVariables are now supported on plugins for settings that are common to all measures, like MaxValue, Disabled, etc.</li>
+	<li>Removed support for using Rainmeter.dll as a LiteStep modual. This was required to support Localization project.</li>
+	<li>Fixed a bug in "Manage" that did not save the skin "Position" value correctly.</li>
+	<li>Reduced overall system resource usage.</li>
+	<li>Fixed a bug in "Manage" that did not allow negative numbers to be entered for "LoadOrder".</li>
+</ul>
+
+
+<h2 id="2.1">Rainmeter 2.1</h2>
+
+<h3 id="r959">18 September, 2011 <small>(r959)</small></h3>
+<ul>
+	<li>Manage Skins: Load order can now be changed.</li>
+	<li>Fix: PLAY/PLAYLOOP commands didn't work with relative paths.</li>
+	<li>Errors that used to pop up messagebox are now logged and shown in the About Log dialog.</li>
+	<li>Added #CURRENTFILE# variable.</li>
+	<li>NowPlayingPlugin: Added SHUFFLE and REPEAT types and accompanying SetShuffle and SetRepeat bangs.</li>
+	<li>NowPlayingPlugin: Fixed a bug with "SetVolume=100" and Winamp.</li>
+	<li>Fixed that using '!Execute [""]' opens program folder (results in no action now).</li>
+	<li>Rainmeter 2.1 released. Rainmeter 2.2 entered beta.</li>
+</ul>
+
+<h3 id="r934">4 September, 2011 <small>(r934)</small></h3>
+<ul>
+	<li>Added the ability to use Ctrl Key to override mouse actions on skin or in Rainmeter.ini.</li>
+	<li>Bug fixes and additional functionality for Manager and About.</li>
+</ul>
+
+<h3 id="r918">28 August, 2011 <small>(r918)</small></h3>
+<ul>
+	<li>Added new "Manager" functionality.</li>
+	<li>Changes to the "About" dialog.</li>
+	<li>Changes to "Metadata" fields.</li>
+	<li>DEBUG messages from plugins are now only logged if Debug= is set on the skin or Rainmeter.</li>
+</ul>
+
+<h3 id="r912">21 August, 2011 <small>(r912)</small></h3>
+<ul>
+	<li>Added a new Magic Quote feature, consisting of three quotes """. This will allow you to "escape" quotes you need to send in a bang to Rainmeter.</li>
+	<li>WebParser: Errors and warnings are now logged as errors and warnings (instead of as debug).</li>
+	<li>NowPlayingPlugin: Minor changes, fix to "current track functionality".</li>
+</ul>
+
+<h3 id="r903">14 August, 2011 <small>(r903)</small></h3>
+<ul>
+	<li>Changed print() function in Lua to allow printing tables in to log columns.</li>
+	<li>Fix for "On Desktop" to better work with "Show Desktop" in Windows.</li>
+	<li>Changes Rainstaller, RainThemes, RainBrowser and RainBackup to correct an issue where %APPDATA% was not being found consistently.</li>
+	<li>Fix for Rainstaller to correct a UAC issue on some user's systems.</li>
+</ul>
+
+<h3 id="r895">7 August, 2011 <small>(r895)</small></h3>
+<ul>
+	<li>Several minor bug fixes for Lua scripting functionality.</li>
+	<li>Tweak to performance when writing network statistics.</li>
+	<li>Fix for Cumulative=1 on Net/xx measures not working correctly.</li>
+</ul>
+
+<h3 id="r885">31 July, 2011 <small>(r885)</small></h3>
+<ul>
+	<li>Added new !SetOption / !SetOptionGroup bangs.</li>
+	<li>Allows changing most "settings" on a measure or meter via a bang. Note that DynamicVariables=1 is NOT required to use this functionality.</li>
+	<li>Added support for Regular Expressions in Substitute on all measures.</li>
+	<li>Allows using Regular Expressions to replace values returned by a measure.</li>
+	<li>Requires RegExpSubstitute=1 on the measure.</li>
+	<li>Added ability to "escape" real variables and measures as follows: #*RealVar*# / [*RealMeasure*].</li>
+	<li>Script: Fixed Lua crash on refresh when Update() in the script has an error.</li>
+	<li>Script: Fixed that the value of the Script measure is not reset when an error occurs.</li>
+	<li>Script: Fixed that AutoScale/Scale/Percentual/NumOfDecimals were not applied for MeasureName=ScriptMeasure.</li>
+	<li>NowPlayingPlugin: Fixed that the OpenPlayer bang didn't work correctly since r848.</li>
+	<li>NowPlayingPlugin: Fixed that the "SetPosition +n" bang didn't work correctly.</li>
+	<li>NowPlayingPlugin: OpenPlayer bang with foobar2000 now opens foobar2000 maximized regardless of previous state.</li>
+	<li>Fixed that Rainmeter crashes when [] is in bang. E.g. !SetVariable test "blaa[]".</li>
+</ul>
+
+<h3 id="r874">24 July, 2011 <small>(r874)</small></h3>
+<ul>
+	<li>Several improvements to the NowPlaying plugin:</li>
+	<li>Track title was not updating when playing a radio stream with Winamp.</li>
+	<li>foobar2000: Added support for the SetPosition bang.</li>
+	<li>foobar2000: Fixed that TITLE/ARTIST/ALBUM was a space when empty (i.e. " " instead of "").</li>
+</ul>
+
+<h3 id="r871">17 July, 2011 <small>(r871)</small></h3>
+<ul>
+	<li>FolderInfo: Fixed an issue that InfoType=FolderSize would not return a value larger than 4GB.</li>
+	<li>Many minor improvements to internal Rainmeter code addressing performance and reliability.</li>
+</ul>
+
+<h3 id="r863">10 July, 2011 <small>(r863)</small></h3>
+<ul>
+	<li>Optimized some internal Rainmeter code to reduce processing time on startup and on refreshing.</li>
+	<li>NowPlaying: Fixed Play/Pause issue with MusicBee.</li>
+	<li>Improved performance when reading network statistics from Rainmeter.stats.</li>
+	<li>Removed SkinAuthor method from PluginBridge. Plugin authors should read author from [Rainmeter] instead.</li>
+	<li>Added !CommandMeasure bang. This replaces !PluginBang, which is being depreciated and should not be used in new skins.</li>
+	<li>Lua: deprecated tolua.cast(), GetValue(), GetStringValue().</li>
+	<li>Lua: added GetVariable().</li>
+	<li>Lua: ScriptFile may now be a relative or fully described path in the script measure in the skin.</li>
+</ul>
+
+<h3 id="r848">3 July, 2011 <small>(r848)</small></h3>
+<ul>
+	<li>WebParser: Added UTF-16LE support using CodePage=1200.</li>
+	<li>Rainstaller: Fixed an issue with SkinPath not being correctly read with portable installs.</li>
+	<li>NowPlaying plugin: Support added for VLC media player.</li>
+	<li>NowPlaying plugin: Fixed: TITLE was empty when listening to radio stations with Winamp.</li>
+	<li>NowPlaying plugin: Fixed: Metadata may not be updated until full refresh after closing one of multiple NowPlaying based skins.</li>
+	<li>Removed trailing zeros from calculated numbers.</li>
+	<li>Made "Rainmeter" optional in the name of a bang. For example, !RainmeterShowMeter and !ShowMeter are now treated equally.</li>
+	<li>Changed the illustro suite of skins to use new "!Rainmeter"-less bangs.</li>
+</ul>
+
+<h3 id="r838">26 June, 2011 <small>(r838)</small></h3>
+<ul>
+	<li>Fixed a display issue when a skin is dragged to the top of the virtual screen.</li>
+	<li>Fixed the problem where skins would "flicker" when set to "On Desktop" and the Windows "Show Desktop" feature is used.</li>
+	<li>Updated the installer to add the installation of VC++ 2010 SP1 libraries if needed on a user's system.</li>
+	<li>NowPlaying plugin: Added PlayerType=STATUS (returns 1 when player is open, 0 when closed).</li>
+	<li>NowPlaying plugin: Winamp interface: Fixed that file paths over about 100 chars did not display all metadata.</li>
+	<li>NowPlaying plugin: CAD interface: Added workaround for issue caused by Rainmeter running as elevated and player running as normal process (Windows Vista+).</li>
+</ul>
+
+<h3 id="r834">19 June, 2011 <small>(r834)</small></h3>
+<ul>
+	<li>Corrected the issue that PlayerName=, TrackChangeAction=, and DisableLeadingZero= were shared with all running skins, making it impossible to have multiple player skins at once.</li>
+</ul>
+
+<h3 id="r832">12 June, 2011 <small>(r832)</small></h3>
+<ul>
+	<li>Added SetPosition and Pause bangs to NowPlaying plugin.</li>
+	<li>NowPlayingPlugin: Added interface to receive MSN/Windows Live Messenger 'Listening to' notifications sent by various players. (e.g. Media Player Classic, Zune) and fixed crash when using the WinAmp interface in multiple skins.</li>
+</ul>
+
+<h3 id="r826">5 June, 2011 <small>(r826)</small></h3>
+<ul>
+	<li>Minor tweaks to NowPlaying plugin.</li>
+	<li>Fixed an issue with FinishAction on a WebParser measure not working correctly if #CURRENTCONFIG# was not specified.</li>
+	<li>Changes to Uptime measure to work better on Vista/Win7 systems.</li>
+</ul>
+
+<h3 id="r822">29 May, 2011 <small>(r822)</small></h3>
+<ul>
+	<li>Added support for MusicBee and MediaMonkey to NowPlaying plugin.</li>
+	<li>Improved image caching when image scaling is not required, to reduce resource usage.</li>
+</ul>
+
+<h3 id="r816">22 May, 2011 <small>(r816)</small></h3>
+<ul>
+	<li>Added NowPlaying media plugin as noted above.</li>
+	<li>Fix to Rainstaller when a full restore of a .rmskin made with RainBackup is done containing the "Backup" folder from \Skins.</li>
+</ul>
+
+<h3 id="r808">15 May, 2011 <small>(r808)</small></h3>
+<ul>
+	<li>Fixed an issue with Rainstaller that was preventing it from restoring full backup .rmskins made with RainBackup.</li>
+	<li>Changes to the Rainmeter source build process to better support those using Visual Studio in both 32 and 64 bit architectures.</li>
+</ul>
+
+<h3 id="r805">8 May, 2011 <small>(r805)</small></h3>
+<ul>
+	<li>Fixed a bug with Measure=Registry returning invalid DWORD values.</li>
+	<li>Improved fix in r800 that correctly handles SkinPath in Rainmeter.ini for portable installations.</li>
+</ul>
+
+<h3 id="r793">17 April, 2011 <small>(r793)</small></h3>
+<ul>
+	<li>Change to how network statistics are stored (Rainmeter.stats).</li>
+	<li>Fixed an issue with the Rainmeter icon on the System Tray/Notification Area disappearing when Explorer was restarted.</li>
+	<li>Fixed an issue that Roundline "Shift" parameters were not working when Solid=0 was set on the meter.</li>
+	<li>Fixed a problem where SkinPath was read from Rainmeter.ini in portable installations.</li>
+</ul>
+
+<h3 id="r790">10 April, 2011 <small>(r790)</small></h3>
+<ul>
+	<li>Added the NowPlaying media player plugin by developer and overall Rainmeter superstar poiru.</li>
+	<li>Added support for Aero Glass "blur" effects on skins.</li>
+	<li>FolderInfo now returns size in bytes. If using InfoType=FolderSizeStr, (which until now autoscaled the value internally) AutoScale=1 should be added to the meter(s). While this does change the behavior, it allows for the use of Scale, NumOfDecimals, etc. that weren't possible prior to this change without an extra Calc measure.</li>
+	<li>Fixes InputText plugin failing if a "config name" folder had a space in it.</li>
+	<li>Fix for the CoreTemp plugin to address a mutex handle leak.</li>
+	<li>Added image caching system to the internal Rainmeter code.</li>
+	<li>New option for Uptime meter: setting added to disable the addition of days to hours when days (%4) is not specified in the Format= setting. Use AddDaysToHours=1/0 to control this option.</li>
+	<li>Some bug fixes and improvements to VirtualDesktops plugin from Patrick at Dexpot.</li>
+	<li>"Silent" installation of Rainmeter now available.</li>
+	<li>Rainmeter development environment updated to Visual C++ 2010.</li>
+	<li>Rainmeter now requires WinXP SP2 / Win2003 SP1 / WinVista or Win7.</li>
+	<li>Support for Win2k (Windows 2000) is not provided in the new VC++ 2010 development environment.</li>
+</ul>
+
+<h2 id="2.0">Rainmeter 2.0</h2>
+<h3 id="r745">6 February, 2011 <small>(r745)</small></h3>
+<ul>
+	<li>Rainmeter installer changed to a single .exe which installs both 32bit and 64bit Rainmeter.</li>
+	<li>Fixed an issue with "BevelType" in meters not displaying correctly.</li>
+	<li>Added AutoScale=2 and "k" postfix to Meter=STRING.</li>
+	<li>Removed Enigma and Gnometer skins from the build. Now available as a download after the install.</li>
+	<li>Added new illustro default skin suite.</li>
+	<li>Updated Rainmeter to support UNICODE characters better.</li>
+	<li>MeterStyle now supports multiple styles in a single meter. (MeterStyle=Style1 | Style2 | Style3)</li>
+	<li>Added support for image effects on BAR and ROTATOR meters.</li>
+	<li>ToolTipHidden can now be added to the [Rainmeter] section of a skin to turn off / on ToolTips for an entire skin.</li>
+	<li>Update to illustro from 0.9.0 to 0.9.1</li>
+	<li>Addedd "Version" information to Windows "Properties / Details" dialog for plugin .dll files.</li>
+	<li>RainStaller: Added the ability to distribute both 32bit and 64bit 3rd-party plugins in a single .rmskin file.</li>
+	<li>RainThemes: Addressed an issue where on some systems Rainmeter was not exiting properly, generating an error.</li>
+	<li>Fixed an issue with an inconstent "space" between the value and the "k/m/g/t" postfix on AutoScaled values.</li>
+	<li>Fixed an issue where UpdateDivider was being ignored on meters when DynamicVariables=1 was set.</li>
+	<li>The Rainmeter installer can now install in "portable" mode, no more unzipping required.</li>
+	<li>Changed Meters so that unlimited MeasureName(x) values and %xx values can be used.</li>
+	<li>Added new FolderInfo plugin.</li>
+	<li>Removed old MBM5 plugin from the build.</li>
+	<li>Removed WirelessInfo plugin from the build.</li>
+	<li>This was outdated and replaced by WiFiStatus.</li>
+	<li>Fixed an issue where Rainmeter would stop loading skins if there was a NULL [] section.</li>
+	<li>Added DisableRDP=1/0 to disable redraw during RDP session.</li>
+	<li>This should be added to [Rainmeter] in Rainmeter.ini (Thanks to FUR10N for the code.)</li>
+	<li>Added DisableDragging=1/0 to toggle "Dragging" for all skins at once.</li>
+	<li>This is set in [Rainmeter] in Rainmeter.ini, and can be changed from the context menu under "Configs".</li>
+	<li>"Groups" can now be defined under an individual skin's [Rainmeter] section as well as in Rainmeter.ini.</li>
+	<li>Fixed a minor bug with !RainmeterZPos.</li>
+	<li>Fixed an issue where AlwaysOnTop=-1/-2 was failing on startup.</li>
+	<li>"About" dialog now opens with the log selected by default.</li>
+	<li>Added the image manipulation functions (Greyscale / ImageTint / ImageAlpha / ColorMatrixN / ImageFlip to BITMAP and BUTTON meters.</li>
+	<li>Added the image manipulation functions (PrimaryGreyscale / PrimaryImageTint / PrimaryImageAlpha / PrimaryColorMatrixN / PrimaryImageFlip / PrimaryImageRotate / Secondaryall above / Bothall above to HISTOGRAM meters.</li>
+	<li>Change to InputText Plugin to add FocusDismiss= (0/1 - Default is 0).</li>
+	<li>This switch changes the behavior of the input box so it is dismissed without firing any actions if the input field loses focus (if the user clicks outside the input box).</li>
+	<li>Fixed: FolderInfo.dll did not support relative paths (thanks to elestel).</li>
+	<li>Fixed: TrayMeasure didn't work with Measure=PLUGIN.</li>
+	<li>Fixed: Bug created by an earlier revision which impacted using "X/Y=xxR" in some cases.</li>
+	<li>Issue was identified in <a href="http://forum.rainmeter.net/viewtopic.php?f=5&amp;t=4059&amp;p=39475#p39461" target="_blank" rel="external">Forum Thread</a>.</li>
+	<li>Fixed: Bug in Rainstaller that prevented an author from distributing both 32bit and 64bit versions of a PLUGIN.</li>
+	<li>Added ScaleMargins to Image meter.</li>
+	<li>Changed !RainmeterPluginBang to allow specifying only MeasureName.</li>
+	<li>iTunesPlugin now accepts commands as a !RainmeterPluginBang.</li>
+	<li>CSPluginTemplate has been added to the Rainmeter source code.</li>
+	<li>Added #CURRENTSECTION# variable.</li>
+	<li>Fixed a bug in the iTunes plugin that could crash Rainmeter.</li>
+	<li>Added several new !Bangs to Rainmeter.</li>
+	<li>!RainmeterUpdate / !RainmeterUpdateMeter / !RainmeterUpdateMeterGroup / !RainmeterUpdateMeasure / !RainmeterUpdateMeasureGroup</li>
+	<li>Changed Update= and UpdateDivider to enable a setting of -1, disabling updates after the initial load/refresh.</li>
+</ul>
+
+<h2 id="1.3">Rainmeter 1.3</h2>
+<h3 id="r560">3 October, 2010 <small>(r560)</small></h3>
+<ul>
+	<li>Fixed a issue that MouseOver/LeaveAction could loop infinitely when used with !RainmeterMoveMeter.</li>
+	<li>Minor change to RainThemes to make closing Rainmeter more efficient.</li>
+	<li>Changes to many Rainmeter error/prompt dialogs to make them more descriptive.</li>
+	<li>Fixed a issue that Value column isn't updated if value is empty string in the About dialog.</li>
+	<li>Fixed a issue that Download=1 doesn't work correctly in some cases in WebParser.</li>
+	<li>Added [Measure]-name to log messages in WebParser.</li>
+	<li>Rainmeter error messages now display meter/measure in question.</li>
+	<li>Change to detect skins with no meters OR measures to reduce issues with people loading Rainlendar skins and such.</li>
+	<li>Fixed an issue where ToolTips were remaining active on hidden meters.</li>
+	<li>Added the ability to use formulas to define ToolTipWidth.</li>
+	<li>Rainstaller: Added display of fonts to be installed in a .rmskin.</li>
+	<li>Fix for long standing issue where numbers were being truncated to zero decimal places in some instances, causing possible incorrect calculated values when the measure's number was used dynamically later.</li>
+	<li>Fix for a TooTip initialization issue which could cause intermittent Windows Taskbar error message loop when Rainmeter was started.</li>
+	<li>NumOfDecimals is now enabled when Percentual=1 is used in a STRING meter.</li>
+	<li>Fixed a multithreading issue that could cause a crash of Rainmeter in the internal function LSLog().</li>
+	<li>Added new character entity &apos; to automatic decode for WebParser.</li>
+	<li>Added code to address Microsoft security issue: <a href="http://www.kb.cert.org/vuls/id/707943" target="_blank" rel="external">Details</a>.</li>
+	<li>
+		<p>Changed ToolTip function to allow using %1, %2 etc. as appropriate for various meter types:</p>
+		<ul>
+			<li>Line, String: %1, %2, %3, ...</li>
+			<li>Histogram: %1, %2</li>
+			<li>Others: %1</li>
+			<li>Some minor fixes to the About diaglog.</li>
+		</ul>
+	</li>
+	<li>
+		<p>New statement / option for WebParser to automatically decode html <a href="http://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references" target="_blank" rel="external">Character References</a>.</p>
+		<p><code>DecodeCharacterReference=0 | 1 | 2 | 3</code> (default 0)</p>
+		<ul>
+			<li>0: Does nothing. (default)</li>
+			<li>1: Decodes both numeric character references and character entity references.</li>
+			<li>2: Decodes only numeric character references.</li>
+			<li>3: Decodes only character entity references.</li>
+		</ul>
+	</li>
+	<li>
+		<p>Improved the PLAY command so it works more like a !bang does:</p>
+		<ul>
+			<li>ButtonCommand=PLAY #SKINSPATH#Beeper\Sounds\beep.wav</li>
+			<li>ButtonCommand=PLAY "#SKINSPATH#Beeper\Sounds\beep.wav"</li>
+			<li>ButtonCommand=!execute [PLAY #SKINSPATH#Beeper\Sounds\beep.wav]</li>
+			<li>ButtonCommand=!execute [PLAY "#SKINSPATH#Beeper\Sounds\beep.wav"]</li>
+		</ul>
+	</li>
+	<li>Fix an issue with the "ClickThrough" skin setting broken in an earlier beta.</li>
+	<li>Major visual / interface changes to the "About" dialog. Should make this a much more valuable tool for "debugging" skins.</li>
+	<li>
+		<p>Win7AudioPlugin updated to version 1.6.</p>
+		<ul>
+			<li>New bangs Mute/Unmute</li>
+			<li>Volume shows -1 when muted</li>
+		</ul>
+	</li>
+	<li>Fixed an issue where dynamic variables would be reset to default when Windows "WorkArea" is reset by changing the screen resolution or a screensaver is activated.</li>
+	<li>Minor fixes to WebParser for a memory leak and routines to interact with Rainmeter "window".</li>
+	<li>Changed to allow substituting quote characters in Substitute= statements. This is done by using single quotes to surround the first part of the "find":"replace" pair. So Substitute='"':"" would remove all quotes from the text.</li>
+	<li>Single and double quotes MUST be "mismatched" on the "find:replace" pairs when using single quotes as a delimiter, or the Substitute will fail. Example: Substitute='"':"None" will replace a quote with the word None. Substitute="None":'"' will replace the word None with a quote. However, Substitute='"':'None' will fail, as you can't use single quotes on both sides of the "find:replace" pairs. An easier to read example is Substitute='red':'blue', which will fail.</li>
+	<li>Updated the pcre (Regular Expression) library from 6.4 to 8.10. The pcre change log is at <a href="http://www.pcre.org/changelog.txt" target="_blank" rel="external">Change Log</a></li>
+	<li>Fixed an issue where certain invalid RegExp statements could crash Rainmeter.</li>
+	<li>Simplified and improved the Rainstaller user interface.</li>
+	<li>
+		<p>Added new !bangs to change "settings" in Rainmeter.ini for current / group / all skins at once.</p>
+		<ul>
+			<li>!RainmeterDraggable/!RainmeterDraggableGroup</li>
+			<li>!RainmeterKeepOnScreen/!RainmeterKeepOnScreenGroup</li>
+			<li>!RainmeterClickThrough/!RainmeterClickThroughGroup</li>
+			<li>!RainmeterSnapEdges/!RainmeterSnapEdgesGroup</li>
+			<li>!RainmeterSnapEdges [parm1] (Config | *)</li>
+			<li>!RainmeterSnapEdgesGroup [parm1] [GroupName]</li>
+		</ul>
+
+		<p>Parm1:</p>
+		<ul>
+			<li>-1 toggles the setting.</li>
+			<li>0 forces the setting to off.</li>
+			<li>1 forces to setting to on.</li>
+		</ul>
+	</li>
+	<li>WebParser: Fix for issue where StringIndexes from previous call to WebParser would remain even if the item no longer exists. This fixes a long standing problem with uTorrent skins for example, when the last item was removed from uTorrent but remained displayed in the skin until a refresh was done.</li>
+	<li>Added MeasureName2 as an alternative to SecondaryMeasureName in Meter=Histogram.</li>
+	<li>Changes to CALC measure to remove any and all restrictions on the string case of function names. Calc measures are now completely case-insensitive, with the exception of the "b/o/x" character when specifying the base of a number, this must be lower case.</li>
+	<li>Added new PluginMediaKey plugin by poiru. <a href="http://www.rainmeter.net/Plugins-MediaKey" target="_blank" rel="external">PluginMediaKey</a>.</li>
+	<li>Some minor improvements to MouseOver/MouseLeave actions.</li>
+	<li>Change to Rainstaller to close RainBrowser if it is running when a skin is installed, to eliminate a problem with open files.</li>
+	<li>Fix by elestel to iTunes plugin: iTunesPlugin did not handle AboutToPromptUserToQuitEvent.</li>
+	<li>Added new #ROOTCONFIGPATH# variable. This will contain the path to the highest level folder under \Skins for the current config. #ROOTCONFIGPATH#Settings\UserVariables.inc can be used to have an @Include work even if you move a skin to another "suite" for instance.</li>
+	<li>Re-design of the layout of the Rainmeter manual. The manual is now exclusively online. The "Help" context menu item will launch the appropriate (release or beta) version of the manual in your default web browser. The Rainmeter.chm help file is no longer included in the build or installed on your PC.</li>
+	<li>Added new !RainmeterWriteKeyValue bang. !RainmeterWriteKeyValue "Section" "Key" "Value" ("FileSpec"), where "FileSpec" is an optional parameter. If FileSpec is not present, the change is automatically done in the currently running skin file. If the bang is executed from the command line, FileSpec is required. FileSpec must be either in the \Skins or %APPDATA%\Rainmeter paths. This can be used to permanently change any Key=Value setting in any .ini or .inc file (Including Rainmeter.ini).</li>
+	<li>Changes to MouseLeaveAction to make it more reliable and faster. This should eliminate having to put MouseLeaveAction in the [Rainmeter] section to ensure detection.</li>
+	<li>Made the "About" dialog a bit larger by default. Other cosmetic changes to this dialog.</li>
+	<li>Fixed WifiStatusPlugin so it no longer closes WLAN handle when skin is closed even if another skin is still using it.</li>
+	<li>Fixed an issue where an invalid Format= code in a Time or Uptime measure would crash Rainmeter. Invalid formats are now written to the debug log and the measure just gracefully fails.</li>
+	<li>Change to Rainstaller so that a default Rainmeter plugin will not be overwritten if an author includes it by mistake in a .rmskin file.</li>
+	<li>Fixed an issue where Rainmeter was detecting an incorrect value for %APPDATA% in a multi-user environment.</li>
+	<li>Fixed an issue where check marks of context menu items in configs/root/variants menu are cleared if !RainmeterDeactivateConfig/!RainmeterToggleConfig is used.</li>
+	<li>Minor fix to new "groups" function for configs.</li>
+	<li>Added root folder of a config on the skin context menu.</li>
+	<li>Fixed an issue where the context menu did not close when focus was given to another windows element.</li>
+	<li>Many additions to the supported Windows Messages that Rainmeter will respond to, allowing 3rd-party applications to query Rainmeter for paths, currently loaded configs, etc. These changes are courtesy of JamesAC and Patrick from Dexpot.</li>
+	<li>Added the Win7AudioPlugin plugin by Reiswaffle.</li>
+	<li>Added the PluginVirtualDesktops plugin from Patrick at Dexpot. This will provide support for Virtual Desktop Management tools like Dexpot and VirtuaWin.</li>
+	<li>Added new "version checking" functionality, with DisableVersionChecking= setting in Rainmeter.ini and on "About" dialog.</li>
+	<li>Re-design of the RainBrowser GUI.</li>
+	<li>Major re-design of the Rainmeter and Skins context menus.</li>
+	<li>Fix to Calc measure to properly allow use of numbering systems other than decimal using a prefix of 0b (binary) 0x (hex) 0o (octal) on the numbers.</li>
+	<li>Added "Group=" to meters and measures in skins, and in Rainmeter.ini to support configs. This allows many !bangs to operate on multiple entities at once without multiple !bang statements.</li>
+	<li>Major improvement to "logging" in Rainmeter, including new context menu support.</li>
+	<li>Addition of support for multiple monitors when using DesktopWorkArea. This change is courtesy of user Jott.</li>
+	<li>Addtion of "ToolTip" functionality, so meters can have standard Windows tooltips when hovered over.</li>
+	<li>Improvement to image quality when scaling images.</li>
+</ul>
+
+<h2 id="1.2">Rainmeter 1.2</h2>
+<h3 id="r440">24 June, 2010 <small>(r440)</small></h3>
+<ul>
+	<li>Major improvements to how Rainmeter works with multiple monitors.</li>
+	<li>New WebParser settting "DownloadFile=" to allow local storage and naming of downloaded images.</li>
+	<li>New !Bang - !RainmeterRefreshApp. Allows full Rainmeter refresh from a skin or command line.</li>
+	<li>FIXED: Issue where DynamicVariables=1 disabled UpdateDivider.</li>
+	<li>FIXED: LineColor did not use the values of Dynamic Variables in Meter=Line.</li>
+	<li>FIXED: Inconsistent numerical value via DynamicVariables. ( issue 130 )</li>
+	<li>FIXED: Problem with WebParser and "local files" with Cyrillic chars in the path. (issue 139)</li>
+	<li>The coded character set of the logfile is changed to UTF-8. (ccs=UTF-8) <a href="http://msdn.microsoft.com/en-us/library/yeby3zcb(VS.80).aspx" target="_blank" rel="external">msdn.microsoft.com</a></li>
+	<li>"MS Shell Dlg 2" is now used for the ABOUT dialog box. <a href="http://support.microsoft.com/kb/282187" target="_blank" rel="external">msdn.microsoft.com</a></li>
+	<li>FIXED: Invalid error message box when DynamicVariables is 1 and FontSize is 0. (issue 126)</li>
+	<li>FIXED: Virtual Bytes usage for an x64 process with perfmon plugin does not display value greater than 4 GB ( issue 113 )</li>
+	<li>FIXED: A numeric value greater than 32bit can be now displayed when NumOfDecimals is 0 in Meter=STRING.</li>
+	<li>FIXED: Compatibility issue in Windows 2000. (AboutDialog, SysInfo)</li>
+	<li>CHANGED: FontSize=0 (invisible) is now valid in a STRING meter.</li>
+	<li>CHANGED: The parsing of parameters to use default values for incorrect "typing". (ie: FontSize=ABC)</li>
+	<li>FIXED: An issue with skins not positioning correctly on multiple monitors when KeepOnScreen=1.</li>
+	<li>Added "Processor=n" parameter to Measure=CPU function so it can be used as well as / instead of PefMon.dll Plugin to measure multiple-core CPU systems. Processor=1 is the first core, etc. Processor=0 or no parameter is still the average of all cores.</li>
+	<li>Changed NetIn and NetOut function to return correct information if Interface=0 is set. This was returning an incorrectly high value by combining the activity of the physical network card with Windows virtual interfaces.</li>
+	<li>Added the statement "Debug=1 / 0" in the [Rainmeter] section of Rainmeter.ini. This currently will do some logging of enumerated monitors and network interfaces and may be added to over time.</li>
+	<li>FIXED: Corrected an invalid return value from MainWndProc.</li>
+	<li>Added the parameter "ImageAlpha=" for image meters. This will allow setting the "transparency" of an image from 0 (invisible) to 255 (fully opaque).</li>
+	<li>Changed "AntiAlias=1" to use "default" interpolation instead of "Bicubic". This should result in better antialiasing of images.</li>
+	<li>RainBrowser: Minor change to a link added by the program to [Metadata]</li>
+	<li>FIXED: Corrected an issue where a BAR meter did not work correctly with DynamicVariables=1</li>
+	<li>Added new image tinting / transforming functions in IMAGE meter. (ImageTint, GreyScale, ColorMatrix(1-5), ImageFlip, ImageRotate)</li>
+	<li>FIXED: Improved image antialiasing with ImageRotate function.</li>
+	<li>Removed ImageAlpha function as it is replaced by ImageTint.</li>
+	<li>FIXED: The ability to have inline comments was broken in r340. Now works again to have Key=Value ;comment</li>
+	<li>FIXED: The RANDOM function was only returning a random number on the first run.</li>
+	<li>Changed the PLAY function to play the .wav file asynchronously so Rainmeter is not "paused" during play.</li>
+	<li>Added StringCase function to Meter=String. StringCase=[NONE | UPPER | LOWER | PROPER]</li>
+	<li>Change !RainmeterSetVariable to accept formulas as a parameter. Formulas must be enclosed in parentheses with the entire parameter enclosed in quotes if there are spaces in the formula: !RainmeterSetVariable VarName "(#SCREENAREAWIDTH# - 50)".</li>
+	<li>Changed the code to enable the use of "On Desktop" (AlwaysOnTop=-2) Z-Position for skins under Vista and Win7.</li>
+	<li>Added !RainmeterSetTransparency, !RainmeterShowFade, !RainmeterHideFade,!RainmeterToggleFade.</li>
+	<li>Added logging of the installed font families to the log file when Debug=1 is set.</li>
+	<li>FIXED: a problem with incorrect image resizing when AntiAlias=0 was set.</li>
+	<li>Fixed the crash problem when multiple Rainmeter instances are running and Window's "show desktop" was used.</li>
+	<li>RainThemes: Changed code so your original ConfigEditor and SkinPath settings are not modified when you load a theme.</li>
+	<li>Modified the handling of "On Desktop". This affects all Windows versions.</li>
+	<li>Added "LoadOrder=" in Rainmeter.ini on each config, to handle the skins' loading order.</li>
+	<li>Some changes in how network statistics are saved in Rainmeter.ini.</li>
+	<li>Fixed a problem that prevented !RainmeterQuit from executing when no meter window is running.</li>
+	<li>Fixed a problem with StyleTemplate which was causing issues with MeterStyle in rare cases.</li>
+	<li>Added a workaround to avoid the "IniFileMapping" function when reading skins, which was causing .ini files with Windows reserved names like Control.ini or Win.ini to produce errors.</li>
+	<li>Added Rainmeter version information to the right click (Properties / Details) menu for Rainmeter.exe.</li>
+	<li>Fixed an issue with Rainmeter properly using UNC (Universal Naming Convention) network shared drives / folders, such as "\\SERVER".</li>
+	<li>Fixed a small bug in @Include routines that impacted some @Inlcude and MeterStyle combinations.</li>
+	<li>The RANDOM math function was case sensitive, requiring "Random" only. Now case insensitive.</li>
+	<li>Fixed an issue where a very high Update rate could cause problems closing a skin.</li>
+	<li>Changed the HighBound parameter for RANDOM to return up to and including the number in HighBound instead of just up to.</li>
+	<li>Added #CRLF# as a built-in variable to allow putting a carriage return / line feed in a string meter.</li>
+	<li>Changed the undocumented LG (logarithm) function to be LOG and added to the manual.</li>
+	<li>Corrected an issue where formulas could not be used for defining X and Y on a meter if the "relative position" (r/R) modifiers were used.</li>
+	<li>Added new built-in variable #PROGRAMDRIVE# which will return X: or \\Server or \\Server\X: (X=drive letter).</li>
+	<li>Corrected an issue with network statistics on a logical WiFi network interface.</li>
+	<li>Build 376 was missing a fix that addressed a WiFi NetIn/NetOut problem.</li>
+	<li>Fix to allow UNC paths in @Include statements to function correctly.</li>
+	<li>Rainstaller is now included in the Rainmeter build.</li>
+	<li>Rainmeter installer now asks to run Rainmeter when complete.</li>
+	<li>Rainstaller: Added a sample .rmskin as a template for authors.</li>
+	<li>Rainstaller: Fixed a bug when there was no top level folder in a .rmskin.</li>
+	<li>Rainstaller: Added Merge=1/0 to support addons for suites.</li>
+	<li>Changes to better support PortableApps.com in RainThemes and Rainstaller. Now preserves user's settings in [Rainmeter] for SkinPath, ConfigEditor and TrayExecute(x).</li>
+	<li>Improved the Registry measure to handle registry keys added or deleted while the skin is running.</li>
+	<li>RainThemes: Added the ability to edit themes in your text editor. Changed the UI to better match Rainstaller.</li>
+	<li>Removed Tranquil suite of skins.</li>
+	<li>Removed Wing Firefox and Lightning Sunset Enigma themes.</li>
+	<li>Added Gnometer suite of skins as a default. Either Enigma or Gnometer can be chosen on a new install.</li>
+	<li>Added RainBackup application. Added to Windows Start Menu under Rainmeter.</li>
+	<li>Many Improvements to Rainmeter Installer. Allows for selection of default suite of skins and runs Rainmeter at the end.</li>
+	<li>Speedfan improvement to add SpeedFanScale for converting from Celsius to Fahrenheit.</li>
+	<li>Many Updates and fixes to Enigma.</li>
+	<li>RainThemes now protects default themes from overwrite to facilitate future updates.</li>
+	<li>Fix to Ping Plugin to work better with newer versions of Windows.</li>
+	<li>Fix to timing issue with Ping Plugin to reduce possibility of Rainmeter crash when pinging an active server not responding to the Ping service.</li>
+	<li>Changed @Include to allow the use of variables in the statement.</li>
+	<li>Updated GUI for EnigmaConfigure. Now also restores saved settings on upgrade of Enigma from \Backup.</li>
+	<li>Improvement of functionality when using !Rainmeter(Hide/Show)Meter and DynamicVariables=1.</li>
+	<li>Fixed a bug in SpeedFan that could cause a crash if SpeedFanType was not set to TEMPERATURE.</li>
+	<li>Changed an error in using Dynamic image names to write to the log rather than producing an error dialog.</li>
+	<li>Fixed an issue with loading image names when in a MeterStyle.</li>
+	<li>Fixed a bug in Meter=Histogram.</li>
+	<li>Fixed a bug in the Ping plugin that could cause a crash if the network was not present when the skin was refreshed.</li>
+</ul>
+
+<h2 id="1.1">Rainmeter 1.1</h2>
+<h3 id="r306">1 November, 2009 <small>(r306)</small></h3>
+<ul>
+	<li>The default value for the UpdateRate in the WebParser is now 600 (=10 mins).</li>
+	<li>Fix for the ToggleiTunes command in the iTunesPlugin.</li>
+	<li>The IgnoreRemovable now defaults to true (1) which should help with the missing disk errors.</li>
+	<li>Added Themes submenu to the Rainmeter's context and tray menus.</li>
+	<li>Variables can be used under the [Variables] section (as long as they have been defined before the current variable is read).</li>
+	<li>Changed RainThemes to automatically create a theme called "AutoSave" which will contain your current setup.</li>
+	<li>The windows stay visible with Windows 7 Aero Peek.</li>
+	<li>WebParser reads the resource now only if it has been modified. This can be overridden with ForceReload=1.</li>
+	<li>!RainmeterRefresh and !RainmeterQuit are now handled only during the event loop since they can crash the application if executed during Update().</li>
+	<li>It's now possible to use the measures as if they were variables (use [MeasureName] instead #VariableName#). Set DynamicVariables=1 for all meters and measures which refer to other measures.</li>
+	<li>New bang !RainmeterSetVariable can be used to change the value of a variable (DynamicVariables must be 1 in places where the variable is used).</li>
+	<li>Skin information and instructions can be added to [Metadata] section.</li>
+	<li>Aspect ratio of the image is preserved when the image is scaled.</li>
+	<li>New RANDOM function in the CALC measure type.</li>
+	<li>Fonts can now be stored in Rainmeter\Fonts or with the skin and not "installed" in Windows.</li>
+	<li>Added support for style sections. MeterStyle can be used in meters to read the values from the style section.</li>
+	<li>Added support for the middle mouse button (MiddleMouseDownAction / MiddleMouseUpAction).</li>
+	<li>The skin files can read other files with @include statement.</li>
+	<li>If native transparency is enabled the windows are not refreshed anymore when settings change but they are just moved to the correct location.</li>
+	<li>Added a version check for the skins which come with Rainmeter so they can be upgraded.</li>
+	<li>Path and filename of the file created by Debug=2 in WebParser is now configurable with Debug2File="[Path\]filename.ext".</li>
+	<li>The standard "hand pointer" mouse cursor is shown when you hover over a meter with any "MouseAction" on it or a button.</li>
+	<li>Added #CURRENTCONFIG# as a "built-in" variable.</li>
+	<li>Fixed: [Measure] contained in Action in Measure and Meter are not replaced when reading skins. They are replaced only when executing action.</li>
+	<li>Fixed: When the designation of Drive is wrong, a strange volume label is indicated.</li>
+	<li>The !bangs can be now used from command line even if there are no active configs.</li>
+	<li>Included RainBrowser to the build.</li>
+	<li>WiFiStatus: Added a variable called WifiListLimit=X that allows you control how many access points to display at a time.</li>
+	<li>WiFiStatus: Removed all popup errors, all debugging messages now sent to Rainmeter log file.</li>
+	<li>WiFiStatus: Fixed some memory leaks 7 and Vista users were facing.</li>
+</ul>
+
+<h2 id="1.0">Rainmeter 1.0</h2>
+<h3 id="r163">7 August, 2009 <small>(r163)</small></h3>
+<ul>
+	<li>Diskspace can be checked from the removable drives too.</li>
+	<li>Time measure didn't show correct week number. Fixed.</li>
+	<li>New plugins: RecycleManager and iTunesPlugin</li>
+	<li>SysInfo plugin updated with 11 new SysInfoTypes.</li>
+	<li>SysInfo IP Address extened to select active interfaces.</li>
+	<li>The help couldn't be opened if Rainmeter was installed to a folder with spaces. Fixed.</li>
+	<li>Added support for transition frames for the bitmap meter.</li>
+	<li>Some Vista specific fixes: Rainmeter.ini and Rainmeter.log are now written to %APPDATA%\Rainmeter and editing the skins will ask for admin privileges.</li>
+	<li>When Rainmeter is started the first time the default skin is activated automatically.</li>
+	<li>New build in variables: #WORKAREAX#, #WORKAREAY#, #WORKAREAWIDTH#, #WORKAREAHEIGHT#, #SCREENAREAWIDTH#, #SCREENAREAHEIGHT#, #PROGRAMPATH#, #SETTINGSPATH#, #SKINSPATH#, #PLUGINSPATH#, #ADDONSPATH# and #CURRENTPATH# (this is the path where the ini file that is currently read is located).</li>
+	<li>Math formulas can be used to define the window position and the meter dimensions (the formula must be surrounded in parenthesis).</li>
+	<li>If there is a file called Default.ini in the program folder it will be used as the default settings file for new users.</li>
+	<li>The location of the settings file (rainmeter.ini) can be defined as a command line argument.</li>
+	<li>Meters have now support for a transformation matrix.</li>
+	<li>New !bangs: !RainmeterPluginBang and !RainmeterQuit.</li>
+</ul>
+
+<h2 id="0.14">Rainmeter 0.14</h2>
+<h3>22 January, 2006</h3>
+<ul>
+	<li>Webparser parses the files as UTF8 by default. The codepage can be changed with CodePage.</li>
+	<li>Added proxy support for the webparser.</li>
+	<li>The reference measures in Webparser can use RegExps to parse the substring.</li>
+	<li>Fixed few graphics problems with the images.</li>
+	<li>Fixed the background rendering bug and incompatibility problem with DynamicWindowSize.</li>
+	<li>Some !bangs didn't work during the first update cycle. Fixed.</li>
+	<li>Fixed SSID and BANDWIDTH in the WirelessPlugin.</li>
+	<li>WindowMessagePlugin uses PostMessage instead of SendMessage so now you can control Rainmeter with it too :-).</li>
+	<li>Fixed couple of crashes with !RainmeterRefresh-bang.</li>
+	<li>The plugin folder can be defined with RainmeterPluginPath in step.rc.</li>
+	<li>The AdvancedCPU can show the process that currently takes the most CPU time.</li>
+	<li>Substitutes are applied in the order they are defined.</li>
+	<li>Fixed a crash with the PingPlugin and added TimeoutValue which defines the value on timeout.</li>
+	<li>QuotePlugin can scan subfolders and it's possible to filter the files by extension.</li>
+	<li>The tray meter can load directly icon files.</li>
+	<li>Fixed hit test in BITMAP measure when alignments are used.</li>
+	<li>Format in TIME measure can show the time and date as locale specific string.</li>
+	<li>Added OnRefreshAction which is executed when the config is refreshed.</li>
+	<li>Fixed uptime in 64-bit build.</li>
+</ul>
+
+<h2 id="0.13">Rainmeter 0.13</h2>
+<h3>20 July, 2005</h3>
+<ul>
+	<li>Compiled as Unicode so this is Win2k/WinXP only from now on.</li>
+	<li>Removed wharf interface. Use !RainmeterLsBoxHook instead.</li>
+	<li>Some code optimizations.</li>
+	<li>Updated the PCRE-library in WebParser.</li>
+	<li>WebParser: Debug=2 Dumps the downloaded data to a file (C:\WebParserDump.txt).</li>
+	<li>Fixed crash bug when plugins were used as the tray measure.</li>
+	<li>UpdateDivider didn't work in meters. Fixed.</li>
+	<li>Empty substitutes are now also possible.</li>
+	<li>Added button meter, which should make button creation easier.</li>
+	<li>Removed size limitation from the section names. It should be now possible to have as many meters and measures in the skins as you like.</li>
+	<li>Meter background can be drawn with a gradient fill (It's quite slow so don't overuse it).</li>
+	<li>R (i.e capital r) in the relative position makes the meter relative to the bottom (or right) edge of the previous meter.</li>
+	<li>Created a quote plugin for random texts and images.</li>
+	<li>Created a window message plugin that allows to control other applications (e.g. Winamp).</li>
+	<li>Created a ping plugin for network status checking.</li>
+	<li>STRING meter calculates its size automatically.</li>
+	<li>The window size can be recalculated dynamically with DynamicWindowSize.</li>
+	<li>It's possible to use the string value of the measures in the actions.</li>
+	<li>Quoted paths work with !Execute-bang.</li>
+	<li>MaxValue works in all plugins.</li>
+	<li>Configs can use environment strings.</li>
+	<li>Added fade effects. Set FadeDuration=0 to disable them.</li>
+	<li>The memory measures can show >4GB values correctly.</li>
+	<li>The tray histogram's colors can be changed.</li>
+	<li>Tray can show also a bitmap meter.</li>
+	<li>Snap to Edges snaps to other meter windows too.</li>
+	<li>Added Angle to string meter.</li>
+	<li>Fixed the 4GB addition bug with cumulative net measures (I hope :-).</li>
+	<li>Font size does not change anymore with the screen DPI.</li>
+	<li>Added Format to Uptime measure.</li>
+	<li>Added BackgroundMargins and scalable background images (Use BackgroundMode=3).</li>
+	<li>WebParser checks references only in the same config file and not in all active configs.</li>
+	<li>Shift, alt and ctrl-keys don't disable mouse events anymore (except the "Hide on mouse over").</li>
+	<li>The drag area can be defined with DragMargins.</li>
+	<li>Added Flip to bar meter.</li>
+	<li>Added "Keep on Screen"-option which makes the window to stay inside the monitor.</li>
+	<li>ClickThrough can be disabled with Shift-key.</li>
+	<li>Added ErrorString to WebParser.</li>
+	<li>Negative values should work with the MBM5 plugin.</li>
+	<li>Added IfEqualValue and IfEqualAction.</li>
+	<li>Added Label to the DiskSpace measure which will return the drive's label as string.</li>
+	<li>Mouse clicks to the tray icon can execute bangs now.</li>
+	<li>The about dialog shouldn't have a scrolling problem anymore.</li>
+</ul>
+
+<h2 id="0.12">Rainmeter 0.12</h2>
+<h3>13 August, 2004</h3>
+<ul>
+	<li>Fixed !RainmeterLsBoxHook.</li>
+	<li>Position changing from the menu works a bit better now.</li>
+	<li>Mouse over actions didn't work unless the window was set to draggable. Fixed.</li>
+	<li>Added automatic update checking (it can be enabled from the about dialog).</li>
+	<li>Sending bangs to deactivated config shouldn't crash Rainmeter anymore.</li>
+	<li>Fixed a typo: ValueReminder -> ValueRemainder (the old one works still too).</li>
+	<li>Added LineStart to the roundline-meter.</li>
+</ul>
+
+<h2 id="0.11">Rainmeter 0.11</h2>
+<h3>10 July, 2004</h3>
+<ul>
+	<li>The OnDesktop setting wasn't read from the config file correctly. Fixed.</li>
+	<li>Meter position can be defined relatively to the previous meter by adding 'r' to the end if the value (e.g. X=10r).</li>
+	<li>Fixed autoscaling with NumOfDecimals=0.</li>
+	<li>Added Format to LIFETIME in PowerPlugin.</li>
+	<li>Added STATUS2 to PowerPlugin, which is the same as STATUS except that the BatteryFlag in SYSTEM_POWER_STATUS is returned as is.</li>
+	<li>Fixed finalization in the plugins.</li>
+	<li>Calc-measure's Counter is separate for each active config.</li>
+	<li>Fixed TrayIcon.</li>
+	<li>Added handling of MaxValue to WebParser.</li>
+	<li>IMAGE meter's W and H can be used to scale the image.</li>
+	<li>Width of the STRING meter is handled correctly for right and center aligned text.</li>
+	<li>Mouse leave checks transparent pixels.</li>
+	<li>The WebParser can be now used to download images from the net.</li>
+	<li>Refresh all updates the skin-list so it's not necessary to restart Rainmeter anymore when installing new skins.</li>
+	<li>Fixed a crash bug with HISTOGRAM meter.</li>
+	<li>All substitute strings were not used always. Fixed.</li>
+	<li>Added "Show Log File" to context menu.</li>
+	<li>Spaces in config names should now work correctly. Use quotes around the name in !bangs.</li>
+	<li>Use * as config name in bangs to send the command to all active configs.</li>
+	<li>Added !RainmeterToggleConfig-bang.</li>
+	<li>Added BarBorder to the BAR-meter.</li>
+	<li>Rainmeter reads now the whole folder structure of the Skins-dir (i.e. skins can be placed into subfolders).</li>
+	<li>Date for local time wasn't calculated correctly. Fixed.</li>
+</ul>
+
+<h2 id="0.10">Rainmeter 0.10</h2>
+<h3>5 June, 2004</h3>
+<ul>
+	<li>Fixed a bug in PowerPlugin (the max value of STATUS was set incorrectly).</li>
+	<li>Inverted measures sometimes gave negative values. Fixed.</li>
+	<li>MBM5plugin's MHZ didn't work. Fixed.</li>
+	<li>Added CPU speed measure into the PowerPlugin too. This one measures the current MHz of the processor.</li>
+	<li>Fixed a memory leak in Perfmon and in AdvancedCPU plugins.</li>
+	<li>Improved the about dialog.</li>
+	<li>Created ROTATOR meter, which rotates images.</li>
+	<li>Added menu items for config &amp; skin editing (opens the ini-file in editor).</li>
+	<li>Added TimeZone and DaylightSavingTime to Time measure.</li>
+	<li>Most of the values are now doubles instead of integers. This also means that there might be some inaccuracy with very large values (e.g. diskspace).</li>
+	<li>MaxValue and MinValue can be defined for all measures.</li>
+	<li>Time measure converts the Format to value (e.g. if Format=%S, a meter bound to it shows values from 0 to 59).</li>
+	<li>MaxRegValue is gone. Use MaxValue instead.</li>
+	<li>Sysinfo plugin detects now Windows 2003 too.</li>
+	<li>Variables can be defined in [Variables] section for 'easy' customization of the configs.</li>
+	<li>Added possibility to change the string values with substitute strings.</li>
+	<li>Meter's transparency can be changed with AlphaValue.</li>
+	<li>Added a click through feature (works only with native transparency).</li>
+	<li>Added Total to FreeDiskSpace and the memory measures.</li>
+	<li>Added LineWidth to the Line meter.</li>
+	<li>Added Flip to Histogram and Line meters.</li>
+	<li>Made the string meter multibindable. Several values can be displayed with Text-keyword.</li>
+	<li>Added MouseOverAction and MouseLeaveAction to the meters and main window.</li>
+	<li>Implemented Calc measure, which can calculate math formulas. The measures can be used as variables.</li>
+	<li>Added Solid to the ROUNDLINE meter, which draws a pie.</li>
+	<li>Moved the Update setting from Rainmeter.ini to the skin's ini-file so that skin can determine it's update speed.</li>
+	<li>AverageSize can be used to measures an average value (the parameter is the value window size).</li>
+	<li>UpdateDivider works for meters too.</li>
+	<li>If the image meter is bound to a measure it tries to load the image named after the value (that is returned as string).</li>
+	<li>Added !RainmeterResetStats-bang.</li>
+	<li>Fixed !RainmeterZPos-bang when executed without Litestep.</li>
+	<li>Added ClipString to the string meter.</li>
+	<li>AlwaysOnTop=2 keeps the window on top of other topmost windows (like to taskbar).</li>
+	<li>AlwaysOnTop=-2 keeps the window on desktop.</li>
+	<li>DesktopWorkArea can be used to change the desktop's work area.</li>
+	<li>String meter displays the battery time in HH:MM:SS-format (or "Unknown", if it not supported).</li>
+	<li>Removed !RainmeterChangeConfig and added !RainmeterActivateConfig and !RainmeterDeactivateConfig</li>
+	<li>Added a tray icon. It can be bound to a [TrayMeasure] in Rainmeter.ini.</li>
+	<li>The tray icon can be disabled with TrayIcon=0.</li>
+	<li>Meters can be moved with !RainmeterMoveMeter.</li>
+	<li>Window position can be overridden with RainmeterWindowX and RainmeterWindowY in step.rc.</li>
+	<li>Configs can use AppVersion to inform that they need a specific version of Rainmeter to run.</li>
+	<li>The config editor can be changed with ConfigEditor=editor.exe in Rainmeter.ini (don't use spaces in the filename).</li>
+	<li>New Help!</li>
+</ul>
+
+<h2 id="0.9">Rainmeter 0.9</h2>
+<h3>9 February, 2003</h3>
+<ul>
+	<li>Fixed a bug in the ini-file parsing routine.</li>
+	<li>Created a PowerPlugin for laptop battery information.</li>
+	<li>Selecting the network interface didn't work. Fixed.</li>
+	<li>The general config and skin's config are separated into different ini-files.</li>
+	<li>Added RainmeterSkinPath step.rc command, which sets the path to the skin folders.</li>
+	<li>Skins are read from Skins-folder by default (instead of the main folder).</li>
+	<li>The about dialog now shows all the active measures.</li>
+	<li>Removed GatherStatistics. Stats are now always gathered if a measure supports that.</li>
+	<li>Added Cumulative to net meters.</li>
+	<li>Added AntiAlias to line meter and string meter.</li>
+	<li>All colors can now have 4 parameters, where the last one is the alpha value.</li>
+	<li>Added a round line meter that can be used draw analog VU-meters and such.</li>
+	<li>Added Autoscale to the histogram meter.</li>
+	<li>Added support for native W2k/XP transparency.</li>
+	<li>Implemented a median filter in the automatic max value tracker to strip out the spikes.</li>
+	<li>!Execute bang works now also with the standalone version of Rainmeter.</li>
+	<li>Added BackgroundMode option.</li>
+	<li>Added SolidColor &amp; BevelType options to the meters and the main window for a solid color background.</li>
+	<li>Added few new bangs: !RainmeterMove, !RainmeterZPos, !RainmeterAbout, !RainmeterRedraw and !RainmeterLsBoxHook.</li>
+	<li>The string meter can be used to draw normal text if it's not bound to anything (just use the Prefix/Postfix).</li>
+	<li>Added AllowNegativeCoordinates option to allow the use of negative coordinates.</li>
+	<li>Snapping now works on all monitors (thanks to Owain Cleaver for the patch).</li>
+	<li>Fixed the MBM5plugin to work with the newer version of Motherboard Monitor.</li>
+	<li>Added CPU and MHZ to the MBM5plugin.</li>
+</ul>
+
+<h2 id="0.8">Rainmeter 0.8</h2>
+<h3>30 June, 2002</h3>
+<ul>
+	<li>Rainmeter is not anymore dependant on lsapi.dll. It only uses lsapi.dll's functions if ran as Litestep plugin.</li>
+	<li>The position is not updated to the ini-file if the file has changed.</li>
+	<li>Added possibility to choose the measured network interface.</li>
+	<li>Negative coords were saved as very high positive values. Now they should be saved as zero.</li>
+	<li>Added a autoscaling line meter that can display multiple histograms.</li>
+	<li>Added RainmeterCurrentConfig and RainmeterCurrentConfigIni step.rc commands that can used to set a specific config.</li>
+	<li>Added MBM5MaxValue for the MBM5 plug-in.</li>
+	<li>Fixed a bug that didn't reset the AlwaysOnTop state of the window after refresh.</li>
+	<li>AlwaysOnTop has now three possible values: -1 puts the window always on bottom, 0 is normal window positioning and 1 puts it always on top.</li>
+	<li>Changed the compilation settings and the DLL is a quite a bit smaller now.</li>
+	<li>Plugins can display string values now too.</li>
+	<li>Created a SysInfo plugin that displays all kinds of data (IP number, OS version, etc.).</li>
+	<li>The about dialog is now modeless.</li>
+	<li>Fixed a memory leak in perfmon.dll.</li>
+	<li>Created a AdvancedCPU plugin that allows include/exclude processes in % Processor Time.</li>
+	<li>Added SnapEdges option that snaps the window the the screen edges when moved.</li>
+	<li>Added NumOfDecimals option for the string meter.</li>
+	<li>Added !RainmeterToggle bang.</li>
+</ul>
+
+<h2 id="0.7">Rainmeter 0.7</h2>
+<h3>5 May, 2002</h3>
+<ul>
+	<li>Fixed a bug with histogram meter's bitmap blitting.</li>
+	<li>IfAboveAction and IfBelowAction didn't work. Fixed.</li>
+	<li>Added BitmapZeroFrame option to BITMAP meter.</li>
+	<li>Added build-in commands for playing sounds in actions.</li>
+	<li>Added NetTotal measure.</li>
+	<li>Added TrafficAction and TrafficValue to execute actions after certain amount of net traffic.</li>
+	<li>Added Hidden option to meters and Disabled option to measures.</li>
+	<li>New plugin: MBM5plugin, which measures MBM5 data (temperature, fans and volts).</li>
+	<li>Added Image meter, which just shows one image.</li>
+	<li>Fixed a bug in Perfmon.dll that prevented measuring counters that do not have instance names.</li>
+	<li>Added !RainmeterHideMeter, !RainmeterShowMeter and !RainmeterToggleMeter to change visiblity of individual meters.</li>
+	<li>Added !RainmeterDisableMeasure, !RainmeterEnableMeasure and !RainmeterToggleMeasure to change status of individual measures.</li>
+	<li>The registry measure is now able to access also other keys than just the ones under HKEY_CURRENT_USER.</li>
+	<li>The ini-files inside subfolders do not have to be named as Rainmeter.ini (anything that ends with .ini works).</li>
+	<li>The same subfolder can contain several configuration ini-files.</li>
+	<li>The !RainmeterRefresh can now get the config name and the inifile as arguments.</li>
+	<li>Added !RainmeterChangeConfig bang.</li>
+	<li>Negative coordinates are saved as zero to prevent the window to be placed off screen.</li>
+	<li>Added UpdateDivider for measures.</li>
+	<li>The Rainmeter.exe can be used to send !bangs to the Rainmeter (but only Rainmeter bangs!).</li>
+	<li>Fixed vertical bar meter (should grow, not slide).</li>
+	<li>Fixed a bug: histogram values were drawn one pixel too short.</li>
+	<li>The left and right mouse actions can be defined also per meter.</li>
+</ul>
+
+<h2 id="0.6">Rainmeter 0.6</h2>
+<h3>15 January, 2002</h3>
+<ul>
+	<li>Fixed a bug that made the CPU-meter to go 100% after refreshing on Win9x.</li>
+	<li>It is not necessary to name the config file as "Rainmeter.ini", anything that ends with ".ini" will do. Note that this only applies if the name of the config file is defined explicitely.</li>
+	<li>If the previously used config cannot be found anymore, the first one is used instead.</li>
+</ul>
+
+<h2 id="0.5">Rainmeter 0.5</h2>
+<h3>26 December, 2001</h3>
+<ul>
+	<li>IMPORTANT! The configuration file format has been changed and the old ini-files do not work anymore! Also some of the config keywords have been changed.</li>
+	<li>Structural changes to the code (now it is easier to maintain).</li>
+	<li>Added GatherStatistics, which is currently only supported by the NetIn/Out-measures.</li>
+	<li>Added Plugin measure for external counters. Check the source code for example plugin.</li>
+	<li>Added Registry measure, which can get data from a given registry key.</li>
+	<li>Added button up actions (RightMouseUpAction and LeftMouseUpAction) and renamed the down actions as RightMouseDownAction and LeftMouseDownAction.</li>
+	<li>Added support for actions that are executed when a measure goes above/below certain value.</li>
+	<li>Removed the PerfMon measure because of incompatibilities with NT4. The PerfMon measure is now implemented as Rainmeter plugin.</li>
+	<li>Added Time-measure.</li>
+	<li>Colors can now be defined also as hex values in RGB-format (e.g. FontColor=FFCCDD).</li>
+	<li>The position of the window can be stored into the ini-file automatically.</li>
+	<li>Added support for multiple configurations. The configs can be changed from context menu.</li>
+</ul>
+
+<h2 id="0.4">Rainmeter 0.4</h2>
+<h3>1 September, 2001</h3>
+<ul>
+	<li>If the maximum value for the meters (e.g. NetInSpeed) is not given it is determined automatically from the input.</li>
+	<li>All measures can be displayed as percentual strings.</li>
+	<li>Added uptime-measure. Usable in a string-meter only!</li>
+	<li>Added two new meters: Bar and Bitmap.</li>
+	<li>Added !RainmeterRefresh bang.</li>
+	<li>Added left and right mouse button actions.</li>
+	<li>Now it is possible to define the location (and the name) of Rainmeter.ini-file in the step.rc with RainmeterIniFile.</li>
+	<li>Added context menu, which can be used to refresh the window and quit the program if ran as standalone.</li>
+	<li>Added possibility to use images as the backgrounds for the histogram graphs.</li>
+	<li>Small adjustments so that Rainmeter can run in a lsbox as *WharfModule. Dunno if it also works in a real wharf.</li>
+</ul>
+
+<h2 id="0.3">Rainmeter 0.3</h2>
+<h3>19 August, 2001</h3>
+<ul>
+	<li>Added support for NT performance data.</li>
+	<li>Added support for measuring free disk space.</li>
+	<li>Added possibility to display the measure values as plain strings.</li>
+	<li>Added automatic scaling for the string values.</li>
+	<li>Added possibility to invert the values (e.g. measure allocated disk space instead of free space).</li>
+	<li>Improved mouse over hiding.</li>
+	<li>Now it is possible to start Rainmeter hidden.</li>
+	<li>Added support for Litestep's Revision ID.</li>
+</ul>
+
+<h2 id="0.2">Rainmeter 0.2</h2>
+<h3>19 July, 2001</h3>
+<ul>
+	<li>Rewrote (almost) everything.</li>
+	<li>The CPU &amp; memory are now measured a bit different way.</li>
+</ul>
+
+<h2 id="0.1">Rainmeter 0.1</h2>
+<h3>22 February, 2001</h3>
+<ul>
+	<li>Initial beta release.</li>
+</ul>
+</article>
+</div>
+			</div>
+		</div>
+
+		<div id="footer-push"></div>
+	</div>
+
+	<script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Radians Guide - Rainmeter Tips &amp; Tricks</title>
+	<link href="../../css/main.css" rel="stylesheet">
+	<link rel="shortcut icon" href="//www.rainmeter.net/favicon.ico">
+	<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6/html5shiv.min.js"></script><![endif]-->
+</head>
+<body>
+	<div id="wrapper">
+		<div id="top">
+			<div class="container">
+				<a id="logo" href="//rainmeter.net/"></a>
+				<nav id="nav">
+					<ul>
+					<li><a href="//www.rainmeter.net">Home</a>
+					<li><a href="//www.rainmeter.net/about">About</a>
+					<li><a href="/" class="active">Docs</a>
+					<li><a href="//www.rainmeter.net/discover">Discover</a>
+					<li><a href="//forum.rainmeter.net">Forum</a>
+					</ul>
+				</nav>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div id="side-content">
+	<h1 id="category"><a href="/tips">Tips &amp; Tricks</a></h1>
+
+	<form id="search-form" method="get" action="http://www.google.com/search">
+		<input name="sitesearch" value="docs.rainmeter.net" type="hidden">
+		<input id="search" name="q" maxlength="255" size="16" placeholder="Search" type="text">
+	</form>
+
+	<nav id="tree">
+		<h1>Contents</h1>
+<ul>
+<li><a href="/tips#BeyondTheBasics">Beyond the Basics</a>
+<li><a href="/tips#GoodToKnow">Good To Know</a>
+<li><a href="/tips#GettingThingsDone">Getting Things Done</a>
+</ul>
+
+<h1>More</h1>
+<ul>
+<li><a href="/manual">3.2 Final Manual</a>
+<li><a href="/manual-beta">3.3 Beta Manual</a>
+<li><a href="/snippets">Snippets</a>
+<li><a href="/developers">Developers</a>
+<li><a href="/history">Version History</a>
+</ul>
+
+	</nav>
+</div>
+<div id="content">
+	<header>
+		<h1>Radians Guide</h1>
+	</header>
+	<article><p>Two of the meters in Rainmeter use a unit of measurement called <b>Radians</b> in order to calculate a position on the circumference of a circle. This is a common unit used by mathematicians, scientists, and yes, programmers when working with things that are round. This guide will try to make it easier to understand and use radians in the context of Rainmeter.</p>
+
+<p>The two meters that use radians in their options are <a href="/manual-beta/meters/roundline">Roundline</a> and <a href="/manual-beta/meters/rotator">Rotator</a>. Roundline draws a line or solid fill that rotates around a center point based on some measure value. Rotator does much the same, using an image you provide rather than drawing the meter. Both use <a href="/manual-beta/meters/rotator#StartAngle">StartAngle</a> and <a href="/manual-beta/meters/rotator#RotationAngle">RotationAngle</a> to control the starting point on the circle, and the total amount of distance around the circle that constitutes 100 percent. That way they can be used to display the value of any measure that defines a percentage.</p>
+
+<h2>So what are radians?</h2>
+
+<p>Without going too deeply into the math involved, (there are tons of sites like <a href="http://en.wikipedia.org/wiki/Radian" target="_blank" rel="external">Wikipedia</a> that can melt your brain with the details) radians measure an arc angle that defines a <b>distance</b> around the circumference of a circle. The default starting point, or 0 radians, is directly to the <b>right of the center</b> point. This is probably the most important thing to wrap your head around right from the start. Radians have nothing at all to do with the degrees on a <b>compass</b>, which is traditionally shown with 0&deg; degrees (or North) pointing straight up.</p>
+
+<p>So in short, radians are a way of defining a point on a circle of any size, measuring a <b>distance</b> around the circle from 0 radians to the point you want.</p>
+
+<p>It is a bit cumbersome to try to think of a circle in terms of radians. It is more intuitive to think of a circle in terms of degrees. A circle has 360 degrees, and we are all used to and can easily picture what 45&deg;, 90&deg;, 180&deg; and 270&deg; mean in terms of distance. All we need to do is think about the circle with 0&deg; pointing to the right of center, and add the number of degrees we need to get to the desired point.</p><p>
+
+</p><p>So for example, if we want to define the point at the <b>top</b> of a circle, we can easily see that it will be 270&deg; away from 0&deg;, going clockwise around the circle. So what we want is a way to define that distance of 270&deg; as a number of <b>radians</b>.</p>
+
+<h2>Calculating radians</h2>
+
+<p><b>Degrees to Radians:</b> (<i>degrees</i>*(PI/180))</p>
+
+<p>You can also reverse the process if you need to:</p>
+
+<p><b>Radians to Degrees:</b> (<i>radians</i>*(180/PI))</p>
+
+<p><b>Note:</b> The simplest way to do this is to just use Google. If you search using "<em>nn</em> degrees in radians" it will provide exactly the answer you need.</p>
+
+<p><code>45 degrees = 0.785398163 radians</code></p>
+
+<h2>A Rainmeter shortcut</h2>
+
+<p>While we think it is important to have a basic understanding of how radians work in Rainmeter, there is a way to cheat. There is a function in Rainmeter that can be used to automatically convert a number of degrees to a number of radians for you. It is the <a href="/manual-beta/measures/calc#Functions">Rad(x)</a> formula function, which will convert "x" as a number of degrees to the corresponding number of radians.  Remember that any formula used outside of the <code>Formula</code> option of a Calc measure must be enclosed in parentheses.</p>
+
+<p><code>StartAngle=(Rad(270))</code></p>
+
+<h2>Example</h2>
+
+<p>We can use a CPU measure, which returns the amount of CPU usage as a percentage from 0% to 100%. Then we want to have a <a href="/manual-beta/meters/roundline">Roundline</a> meter that displays the current value as filling a circle. We want the starting point at the top of the circle, and 100% defined as coming all the way back around to the top.</p>
+
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="title">[MeasureCPU]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">CPU</span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[MeterCPUCircle]</span></span><br><span class="line"><span class="setting">Meter=<span class="value">Roundline</span></span></span><br><span class="line"><span class="setting">MeasureName=<span class="value">MeasureCPU</span></span></span><br><span class="line"><span class="setting">W=<span class="value"><span class="number">40</span></span></span></span><br><span class="line"><span class="setting">H=<span class="value"><span class="number">40</span></span></span></span><br><span class="line"><span class="setting">StartAngle=<span class="value">(Rad(<span class="number">270</span>))</span></span></span><br><span class="line"><span class="setting">RotationAngle=<span class="value">(Rad(<span class="number">360</span>))</span></span></span><br><span class="line"><span class="setting">LineWidth=<span class="value"><span class="number">5</span></span></span></span><br><span class="line"><span class="setting">LineStart=<span class="value"><span class="number">15</span></span></span></span><br><span class="line"><span class="setting">LineLength=<span class="value"><span class="number">20</span></span></span></span><br><span class="line"><span class="setting">LineColor=<span class="value"><span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span></span></span></span><br><span class="line"><span class="setting">Solid=<span class="value"><span class="number">1</span></span></span></span><br><span class="line"><span class="setting">AntiAlias=<span class="value"><span class="number">1</span></span></span></span><br></pre></td></tr></table></figure>
+
+<p>The important bits here are the two options <a href="/manual-beta/meters/rotator#StartAngle">StartAngle</a> and <a href="/manual-beta/meters/rotator#RotationAngle">RotationAngle</a>. StartAngle is defined as <b>(Rad(270))</b>, which is to say <b>270&deg;</b> in radians. This means that if you start directly from the right of center at <b>0&deg;</b> it will take <b>270&deg;</b> degrees in <b>radians</b> to define the distance to the top of the circle moving clockwise. That will be the starting point for the meter. RotationAngle is defined as <b>(Rad(360))</b>, which is telling Rainmeter that the distance defined as <b>100%</b> is all the way around <b>360&deg;</b>, or the full circle.</p>
+
+<p>In another example, if you wanted to do a "VU Meter" type of approach, with the starting point on the left and 100% defined on the right, you would use:</p>
+
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="setting">StartAngle=<span class="value">(Rad(<span class="number">180</span>))</span></span></span><br><span class="line"><span class="setting">RotationAngle=<span class="value">(Rad(<span class="number">180</span>))</span></span></span><br></pre></td></tr></table></figure>
+
+<p>This is saying start <b>180&deg;</b> clockwise from <b>0&deg; / 360&deg;</b> (remember, starting directly right of center), and travel a total distance of <b>180&deg;</b> from there to define <b>100%</b>.
+</p></article>
+</div>
+
+			</div>
+		</div>
+
+		<div id="footer-push"></div>
+	</div>
+
+	<script src="../../js/main.js"></script>
+</body>
+</html>

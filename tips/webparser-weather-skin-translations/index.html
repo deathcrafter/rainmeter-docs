@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>WebParser: Weather Skin Translations - Rainmeter Tips &amp; Tricks</title>
+	<link href="../../css/main.css" rel="stylesheet">
+	<link rel="shortcut icon" href="//www.rainmeter.net/favicon.ico">
+	<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6/html5shiv.min.js"></script><![endif]-->
+</head>
+<body>
+	<div id="wrapper">
+		<div id="top">
+			<div class="container">
+				<a id="logo" href="//rainmeter.net/"></a>
+				<nav id="nav">
+					<ul>
+					<li><a href="//www.rainmeter.net">Home</a>
+					<li><a href="//www.rainmeter.net/about">About</a>
+					<li><a href="/" class="active">Docs</a>
+					<li><a href="//www.rainmeter.net/discover">Discover</a>
+					<li><a href="//forum.rainmeter.net">Forum</a>
+					</ul>
+				</nav>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div id="side-content">
+	<h1 id="category"><a href="/tips">Tips &amp; Tricks</a></h1>
+
+	<form id="search-form" method="get" action="http://www.google.com/search">
+		<input name="sitesearch" value="docs.rainmeter.net" type="hidden">
+		<input id="search" name="q" maxlength="255" size="16" placeholder="Search" type="text">
+	</form>
+
+	<nav id="tree">
+		<h1>Contents</h1>
+<ul>
+<li><a href="/tips#BeyondTheBasics">Beyond the Basics</a>
+<li><a href="/tips#GoodToKnow">Good To Know</a>
+<li><a href="/tips#GettingThingsDone">Getting Things Done</a>
+</ul>
+
+<h1>More</h1>
+<ul>
+<li><a href="/manual">3.2 Final Manual</a>
+<li><a href="/manual-beta">3.3 Beta Manual</a>
+<li><a href="/snippets">Snippets</a>
+<li><a href="/developers">Developers</a>
+<li><a href="/history">Version History</a>
+</ul>
+
+	</nav>
+</div>
+<div id="content">
+	<header>
+		<h1>WebParser: Weather Skin Translations</h1>
+	</header>
+	<article><p>One of the things that is often asked is "How can I translate the weather conditions text, returned by WebParser when creating or editing a weather skin, to my own language?"</p>
+<p>This actually pretty simple to do. First find the measure or measures (often in a weather skin there will be 3 - 5 of them) which are returning the "weather conditions" text. It will look something like this:</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="title">[MeasureCurrentWeatherConditions]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">Plugin</span></span></span><br><span class="line"><span class="setting">Plugin=<span class="value">WebParser</span></span></span><br><span class="line"><span class="setting">Url=<span class="value">[MeasureYahooWeather]</span></span></span><br><span class="line"><span class="setting">StringIndex=<span class="value"><span class="number">34</span></span></span></span><br></pre></td></tr></table></figure>
+
+<p><em>Note that a weather skin normally works by having a first, primary measure that retrieves all the information from the weather RSS feed in one shot. Then there will be subsequent measures which will extract the individual bits of information from the large array of values returned by this first measure. So you will often see something like:</em></p>
+
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="title">[MeasureYahooWeather]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">Plugin</span></span></span><br><span class="line"><span class="setting">Plugin=<span class="value">WebParser</span></span></span><br><span class="line"><span class="setting">UpdateRate=<span class="value"><span class="number">600</span></span></span></span><br><span class="line"><span class="setting">URL=<span class="value">http://weather.yahooapis.com/forecastrss?p=#Location#&amp;u=#Unit#</span></span></span><br><span class="line"><span class="setting">RegExp=<span class="value"><span class="string">"(?siU)&lt;title&gt;.*- (.*)&lt;/title&gt;.*&lt;link&gt;(.*)/\*(.*)&lt;/link&gt;.*&lt;description&gt;(.*)&lt;/description&gt;.*&lt;language&gt;(.*)&lt;/language&gt;.*&lt;lastBuildDate&gt;(.*)&lt;/lastBuildDate&gt;.*&lt;yweather:location city="</span>(.*)<span class="string">".*region="</span>(.*)<span class="string">".*country="</span>(.*)<span class="string">".*&lt;yweather:units temperature="</span>(.*)<span class="string">".*distance="</span>(.*)<span class="string">".* pressure="</span>(.*)<span class="string">".*speed="</span>(.*)<span class="string">".*&lt;yweather:wind chill="</span>(.*)<span class="string">".*direction="</span>(.*)<span class="string">".*speed="</span>(.*)<span class="string">".*&lt;yweather:atmosphere humidity="</span>(.*)<span class="string">".* visibility="</span>(.*)<span class="string">".*pressure="</span>(.*)<span class="string">".* rising="</span>(.*)<span class="string">".*&lt;yweather:astronomy sunrise="</span>(.*)<span class="string">".*sunset="</span>(.*)<span class="string">".*&lt;title&gt;(.*)&lt;/title&gt;.*&lt;width&gt;(.*)&lt;/width&gt;.*&lt;height&gt;(.*)&lt;/height&gt;.*&lt;link&gt;(.*)&lt;/link&gt;.*&lt;url&gt;(.*)&lt;/url&gt;.*&lt;title&gt;(.*)&lt;/title&gt;.*&lt;geo:lat&gt;(.*)&lt;/geo:lat&gt;.*&lt;geo:long&gt;(.*)&lt;/geo:long&gt;.*&lt;link&gt;(.*)/\*(.*)&lt;/link&gt;.*&lt;pubDate&gt;(.*)&lt;/pubDate&gt;.*&lt;yweather:condition text="</span>(.*)<span class="string">".*code="</span>(.*)<span class="string">".*temp="</span>(.*)<span class="string">".*date="</span>(.*)<span class="string">".*&lt;img src="</span>(.*)<span class="string">".*Current Conditions:&lt;/b&gt;&lt;br /&gt;(.*)&lt;BR /&gt;.*Forecast:&lt;/b&gt;&lt;BR /&gt;(.*)&lt;br /&gt;.*(.*)&lt;br /&gt;.*&lt;a href="</span>(.*)/\*(.*)<span class="string">"&gt;.*provided by &lt;a href="</span>(.*)<span class="string">" &gt;(.*)&lt;/a&gt;.*&lt;yweather:forecast day="</span>(.*)<span class="string">".*date="</span>(.*)<span class="string">".*low="</span>(.*)<span class="string">".*high="</span>(.*)<span class="string">".*text="</span>(.*)<span class="string">".*code="</span>(.*)<span class="string">".*&lt;yweather:forecast day="</span>(.*)<span class="string">".*date="</span>(.*)<span class="string">".*low="</span>(.*)<span class="string">".*high="</span>(.*)<span class="string">".*text="</span>(.*)<span class="string">".*code="</span>(.*)<span class="string">".*"</span></span></span></span><br></pre></td></tr></table></figure>
+
+<p><em>Followed by something like this later on in the skin:</em></p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="title">[MeasureCurrentWeatherConditions]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">Plugin</span></span></span><br><span class="line"><span class="setting">Plugin=<span class="value">WebParser</span></span></span><br><span class="line"><span class="setting">Url=<span class="value">[MeasureYahooWeather]</span></span></span><br><span class="line"><span class="setting">StringIndex=<span class="value"><span class="number">34</span></span></span></span><br></pre></td></tr></table></figure>
+
+<p><em>As you can see, the measure [MeasureCurrentWeatherConditions] is using as its "Url=" the result of [MeasureYahooWeather] (our first main RSS measure) and specifically asking for StringIndex 34, the index in the array of returned values which holds the first of the "Weather Condition" values, in this case the "Current Conditions".</em></p>
+<p>Since Weather.com / Yahoo Weather return these values in English, you may want to translate them to your native language. To do so, add a line at the end of each of the measures that specifically return "Weather Conditions" text. In our current example, after the line "StringIndex=34".</p>
+<p><b>RegExpSubstitute=1</b><br>
+<b>Substitute="(?i)^Cloudy$":"Bewölkt","^Partly Cloudy$":"Teilweise Bewölkt"</b></p>
+<p>And so on... Continuing with the pattern:</p>
+<p><b>Substitute="Thing to replace":"Thing to replace with","Thing to replace":"Thing to replace with"</b></p>
+<p>The punctuation is important. "Thing to replace" and "Thing to replace with" are enclosed in quotes. There is a colon between them. Pairs are separated with commas.</p>
+<p>We use RegExpSubstitute so a regular expression comparison is used. Then in the Substitute option, we first tell it to be case insensitive <code>(?i)</code>, and look for very specific strings by using start-of-string <code>^</code> and end-of-string <code>$</code> as boundaries.</p>
+<p>That is all there is to it. In our example above, "Cloudy" will be replaced with "Bewölkt" when the text is later displayed in a meter.</p>
+<br>
+<p><em>What "Weather Conditions" text codes are returned by Yahoo Weather so I know what to translate?"</em></p>
+<p>Here is a list with the number of the icon and the text returned:</p>
+<pre>
+0	tornado
+1	tropical storm
+2	hurricane
+3	severe thunderstorms
+4	thunderstorms
+5	mixed rain and snow
+6	mixed rain and sleet
+7	mixed snow and sleet
+8	freezing drizzle
+9	drizzle
+10	freezing rain
+11	showers
+12	showers
+13	snow flurries
+14	light snow showers
+15	blowing snow
+16	snow
+17	hail
+18	sleet
+19	dust
+20	foggy
+21	haze
+22	smoky
+23	blustery
+24	windy
+25	cold
+26	cloudy
+27	mostly cloudy (night, but the "night" text is not included)
+28	mostly cloudy (day, but the "day" text is not included)
+29	partly cloudy (night, but the "night" text is not included)
+30	partly cloudy (day, but the "day" text is not included)
+31	clear (night, but the "night" text is not included)
+32	sunny
+33	fair (night, but the "night" text is not included)
+34	fair (day, but the "day" text is not included)
+35	mixed rain and hail
+36	hot
+37	isolated thunderstorms
+38	scattered thunderstorms
+39	scattered thunderstorms
+40	scattered showers
+41	heavy snow
+42	scattered snow showers
+43	heavy snow
+44	partly cloudy
+45	thundershowers
+46	snow showers
+47	isolated thundershowers
+3200	not available
+</pre>
+</article>
+</div>
+
+			</div>
+		</div>
+
+		<div id="footer-push"></div>
+	</div>
+
+	<script src="../../js/main.js"></script>
+</body>
+</html>
