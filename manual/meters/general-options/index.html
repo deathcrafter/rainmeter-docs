@@ -1,1 +1,317 @@
-<!DOCTYPE html><html lang=en><head><meta charset=utf-8><title>General Meter Options - Rainmeter 3.3 Manual</title><link href="../../../css/main.css?v=1" rel=stylesheet><link rel="shortcut icon" href=//www.rainmeter.net/favicon.ico><!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6/html5shiv.min.js"></script><![endif]--><body><div id=wrapper><div id=top><div class=container><a id=logo href=//rainmeter.net></a><nav id=nav><ul><li><a href=//www.rainmeter.net>Home</a><li><a href=//www.rainmeter.net/about>About</a><li><a href="../../../" class=active>Docs</a><li><a href=//www.rainmeter.net/discover>Discover</a><li><a href=//forum.rainmeter.net>Forum</a></ul></nav></div></div><div class=container><div class=row><div id=side-content><h1 id=category><a href=../../../manual>3.3 Manual</a></h1><form id=search-form method=get action=http://www.google.com/search><input name=sitesearch value=docs.rainmeter.net type=hidden> <input id=search name=q maxlength=255 size=16 placeholder=Search type=text></form><nav id=tree><h1>Contents</h1><ul><li><a href="../../getting-started/">Getting Started</a><ul><li><a href="../../getting-started/setting-up/">Setting Up</a><li><a href="../../getting-started/using-rainmeter/">Using Rainmeter</a><li><a href="../../getting-started/customizing/">Customizing</a><li><a href="../../getting-started/creating-skins/">Creating Skins</a><li><a href="../../getting-started/skin-anatomy/">Anatomy of a Skin</a><li><a href="../../getting-started/basic-tutorials/">Basic Tutorials</a><ul><li><a href="../../getting-started/basic-tutorials/launcher/">Launcher</a><li><a href="../../getting-started/basic-tutorials/clock/">Clock</a><li><a href="../../getting-started/basic-tutorials/system/">System</a></ul></ul><li><a href="../../installing-rainmeter/">Installing Rainmeter</a><li><a href="../../user-interface/">User Interface</a><ul><li><a href="../../user-interface/manage/">Manage</a><li><a href="../../user-interface/about/">About</a><li><a href="../../user-interface/context-menus/">Context Menus</a></ul><li><a href="../../installing-skins/">Installing Skins</a><li><a href="../../publishing-skins/">Publishing Skins</a></ul><h1>Reference</h1><ul><li><a href="../../settings/">Settings</a><ul><li><a href="../../settings/rainmeter-section/">[Rainmeter] Section</a><li><a href="../../settings/traymeasure-section/">[TrayMeasure] Section</a><li><a href="../../settings/skin-sections/">[Skin] Sections</a></ul><li><a href="../../skins/">Skins</a><ul><li><a href="../../skins/option-types/">Option Types</a><li><a href="../../skins/rainmeter-section/">[Rainmeter] Section</a><li><a href="../../skins/metadata-section/">[Metadata] Section</a><li><a href="../../skins/include-option/">@Include Options</a><li><a href="../../skins/resources-folder/">@Resources Folder</a></ul><li><a href="../">Meters</a><ul><li><a href="">General Options</a><ul><li><a href="image-options/">Image Options</a><li><a href="meterstyles/">MeterStyles</a><li><a href="tooltips/">Tooltips</a></ul><li><a href="../bar/">Bar</a><li><a href="../bitmap/">Bitmap</a><li><a href="../button/">Button</a><li><a href="../histogram/">Histogram</a><li><a href="../image/">Image</a><li><a href="../line/">Line</a><li><a href="../rotator/">Rotator</a><li><a href="../roundline/">Roundline</a><li><a href="../string/">String</a><ul><li><a href="../string/inline/">Inline Options</a></ul></ul><li><a href="../../measures/">Measures</a><ul><li><a href="../../measures/general-options/">General Options</a><ul><li><a href="../../measures/general-options/ifactions/">IfActions</a><li><a href="../../measures/general-options/ifconditions/">IfConditions</a><li><a href="../../measures/general-options/ifmatchactions/">IfMatchActions</a><li><a href="../../measures/general-options/substitute/">Substitute</a></ul><li><a href="../../measures/calc/">Calc</a><li><a href="../../measures/cpu/">CPU</a><li><a href="../../measures/freediskspace/">FreeDiskSpace</a><li><a href="../../measures/loop/">Loop</a><li><a href="../../measures/memory/">Memory</a><li><a href="../../measures/net/">Net</a><li><a href="../../measures/plugin/">Plugin</a><li><a href="../../measures/registry/">Registry</a><li><a href="../../measures/script/">Script</a><li><a href="../../measures/string/">String</a><li><a href="../../measures/time/">Time</a><li><a href="../../measures/uptime/">Uptime</a></ul><li><a href="../../plugins/">Plugins</a><ul><li><a href="../../plugins/actiontimer/">ActionTimer</a><li><a href="../../plugins/advancedcpu/">AdvancedCPU</a><li><a href="../../plugins/audiolevel/">AudioLevel</a><li><a href="../../plugins/coretemp/">CoreTemp</a><li><a href="../../plugins/fileview/">FileView</a><li><a href="../../plugins/folderinfo/">FolderInfo</a><li><a href="../../plugins/inputtext/">InputText</a><li><a href="../../plugins/itunes/">iTunes</a><li><a href="../../plugins/mediakey/">MediaKey</a><li><a href="../../plugins/nowplaying/">NowPlaying</a><li><a href="../../plugins/perfmon/">PerfMon</a><li><a href="../../plugins/ping/">Ping</a><li><a href="../../plugins/power/">Power</a><li><a href="../../plugins/process/">Process</a><li><a href="../../plugins/quote/">Quote</a><li><a href="../../plugins/recyclemanager/">RecycleManager</a><li><a href="../../plugins/resmon/">ResMon</a><li><a href="../../plugins/runcommand/">RunCommand</a><li><a href="../../plugins/speedfan/">SpeedFan</a><li><a href="../../plugins/sysinfo/">SysInfo</a><li><a href="../../plugins/virtualdesktops/">VirtualDesktops</a><li><a href="../../plugins/webparser/">WebParser</a><li><a href="../../plugins/wifistatus/">WiFiStatus</a><li><a href="../../plugins/win7audio/">Win7Audio</a><li><a href="../../plugins/windowmessage/">WindowMessage</a></ul><li><a href="../../bangs/">Bangs</a><li><a href="../../formulas/">Formulas</a><li><a href="../../variables/">Variables</a><ul><li><a href="../../variables/built-in-variables/">Built-In Variables</a><li><a href="../../variables/section-variables/">Section Variables</a><li><a href="../../variables/mouse-variables/">Mouse Variables</a></ul><li><a href="../../groups/">Groups</a><li><a href="../../mouse-actions/">Mouse Actions</a><li><a href="../../lua-scripting/">Lua Scripting</a></ul><h1>More</h1><ul><li><a href="../../../manual-beta/">4.0 Beta Manual</a><li><a href="../../../tips/">Tips &amp; Tricks</a><li><a href="../../../snippets/">Snippets</a><li><a href="../../../developers/">Developers</a><li><a href="../../../history/">Version History</a></ul></nav></div><div id=content><header><h1>General Meter Options</h1></header><article><p>Options available for use with all meters.<h2>Options</h2><dl><dt id=Meter><code>Meter</code><dd><p>Type of the meter (e.g. <code>Bar</code> or <code>String</code>). This option is required and may not be changed dynamically.<dt id=MeterStyle><code>MeterStyle</code><dd><p>Specifies one or more sections as <a href="meterstyles/">MeterStyles</a> from which option values are inherited. Multiple MeterStyles are delimited with pipes (<code>|</code>).<dt id=MeasureName><code>MeasureName</code>, <code>MeasureName2</code>, <code>MeasureName3</code>...<dd><p>"Binds" the meter to one or more measures. This means that the meter displays the values of these measures in some way. The exact form of the display depends on the type of meter. See each meter type's page for details about what kind of values are valid for that type, and how the values are displayed.<dt id=XY><code>X</code>, <code>Y</code> <small>Default: <code>0</code></small><dd><p>Specifies the x (horizontal) and y (vertical) position of the meter in pixels relative to the top-left edge of the skin.<p><p><em>Relative positioning:</em> If the value is appended with <code>r</code>, the position is relative to the top/left edge of the previous meter. If the value is appended with <code>R</code>, the position is relative to the bottom/right edge of the previous meter.<p><b>Examples:</b><br><code>X=150</code> : Meter begins 150 horizontal pixels from the right edge of the skin window.<br><code>Y=75</code> : Meter begins 75 vertical pixels from the top edge of the skin window.<br><br><code>X=10R</code> : Meter begins 10 horizontal pixels to the right of the previous meter.<br><code>Y=0r</code> : Meter begins at the same vertical position as the previous meter.<dt id=WH><code>W</code>, <code>H</code><dd><p>Specifies the width and height of the meter in pixels. String meters and meters which display an image file can automatically determine the width and height. For all other cases, <code>W</code> and <code>H</code> must be defined.<dt id=Padding><code>Padding</code> <small>Format: <code>Left,Top,Right,Bottom</code></small><dd><p>Adds padding in pixels around any or all sides of a meter. The width and height of the meter will dynamically be adjusted to the new size. The padding will be drawn using the <a href=../../skins/option-types/#Color>Color</a> defined with <a href=#SolidColor>SolidColor / SolidColor2</a>.<p><b>Format:</b> <code>Padding=Left,Top,Right,Bottom</code><p><b>Example:</b> <code>Padding=5,10,5,10</code><dt id=Hidden><code>Hidden</code> <small>Default: <code>0</code></small><dd><p>If set to <code>1</code>, the meter is hidden. The visibility can also be changed with the <a href=../../bangs/#ShowHideToggleMeter>!ShowMeter and !HideMeter bangs</a>.<dt id=UpdateDivider><code>UpdateDivider</code> <small>Default: <code>1</code></small><dd><p>Frequency at which the meter is updated. The <a href=../../skins/rainmeter-section/#Update><code>Update</code></a> option in the [Rainmeter] section of the skin is multiplied by the specified value to determine how often the meter is updated.<p><b>Example:</b> If <code>Update=1000</code> (in the [Rainmeter] section) and <code>UpdateDivider=30</code>, the meter is updated every 30 seconds.<p>If <code>UpdateDivider=-1</code> or any negative number, then the meter is only updated once when the skin is loaded or refreshed.<dt id=OnUpdateAction><code>OnUpdateAction</code><dd><p><a href=../../skins/option-types/#Action>Action</a> to execute each time the meter is updated.<p><b>Note:</b> This may be based on the values in <a href=../../skins/rainmeter-section/#Update>Update</a> in the [Rainmeter] section and any <a href=#UpdateDivider>UpdateDivider</a> on the meter, or if the meter is updated with a <a href=../../bangs/#Meter>Meter Bang</a> or other relevant bang.<dt id=SolidColor><code>SolidColor</code>, <code>SolidColor2</code> <small>Default: <code>0,0,0,0</code></small><dd><p><a href=../../skins/option-types/#Color>Color</a> of the meter background. If <code>SolidColor2</code> is also specified, the background is a <a href=#GradientAngle>gradient</a> composed of <code>SolidColor</code> and <code>SolidColor2</code>.<p><b>Hint:</b> <code>SolidColor=0,0,0,1</code> can be used to make transparent areas of the meter clickable.<dt id=GradientAngle><code>GradientAngle</code><dd><p>Angle of the gradient in degrees when both <code>SolidColor</code> and <code>SolidColor2</code> are defined.<dt id=BevelType><code>BevelType</code> <small>Default: <code>0</code></small><dd><p>If enabled, draws a bevel around the edges of the rectangle specified by <code>H</code> and <code>W</code>. Valid values are:<ul><li><code>0</code>: No bevel<li><code>1</code>: Raised<li><code>2</code>: Sunken</ul><dt id=AntiAlias><code>AntiAlias</code> <small>Default: <code>0</code></small><dd><p>If set to <code>1</code>, antialising (edge smoothing) is used when the meter is drawn.<dt id=DynamicVariables><code>DynamicVariables</code> <small>Default: <code>0</code></small><dd><p>If set to <code>1</code>, the meter is dynamic.<p><b>See also:</b> <a href=../../variables/#DynamicVariables>Dynamic Variables</a><dt id=TransformationMatrix><code>TransformationMatrix</code> <small>Default: <code>1;0;0;1;0;0</code></small><dd><p>Defines a 3x2 matrix which can be used to transform the meter. Transformations include: scaling, skewing, and translating (ie. moving). There must be <b>exactly</b> 6 values separated by semicolons <code>;</code>.<p><b>TransformationMatrix={scale x};{skew x};{skew y};{scale y};{move x};{move y}</b><p>Combining these can have drastic effects on the meter it is applied to.<p><b>See also:</b> <a href="../../../tips/transformation-matrix-guide/">Transformation Matrix</a><p><b>Examples:</b><ul><li><code>TransformationMatrix=-1; 0; 0; 1; 40; 0</code>: This will flip <code>X</code> along the line <code>X=20</code>.<li><code>TransformationMatrix=1; 0; 0; -1; 0; 100</code>: This will flip <code>Y</code> along the line <code>Y=50</code>.<li><code>TransformationMatrix=0.5; 0; 0; 1; 25; 0</code>: This will scale <code>X</code> by <code>0.5</code> at <code>X=50</code>.</ul><p><b>Note:</b> All transformations are relative to the top left corner of the window and not to the meter itself. So if you want to rotate the meter by its center the translation component in the matrix must be relative to the top left corner of the window.<p>Also note that the even if the meter's visual location and orientation is changed by the transformation the place where it would be located without the transformation will still be used to define the window size and register the mouse clicks. This might change in the future though.<dt id=Group><code>Group</code><dd><p>Defines a group or series of groups that the meter belongs to. For more information please see the <a href="../../groups/">Groups</a> page.</dl></article></div></div></div><div id=footer-push></div></div><script src="../../../js/main.js?v=2"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>General Meter Options - Rainmeter 3.3 Manual</title>
+	<link href="/css/main.css?v=1" rel="stylesheet">
+	<link rel="shortcut icon" href="//www.rainmeter.net/favicon.ico">
+	<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6/html5shiv.min.js"></script><![endif]-->
+</head>
+<body>
+	<div id="wrapper">
+		<div id="top">
+			<div class="container">
+				<a id="logo" href="//rainmeter.net/"></a>
+				<nav id="nav">
+					<ul>
+					<li><a href="//www.rainmeter.net">Home</a>
+					<li><a href="//www.rainmeter.net/about">About</a>
+					<li><a href="/" class="active">Docs</a>
+					<li><a href="//www.rainmeter.net/discover">Discover</a>
+					<li><a href="//forum.rainmeter.net">Forum</a>
+					</ul>
+				</nav>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div id="side-content">
+	<h1 id="category"><a href="/manual">3.3 Manual</a></h1>
+
+	<form id="search-form" method="get" action="http://www.google.com/search">
+		<input name="sitesearch" value="docs.rainmeter.net" type="hidden">
+		<input id="search" name="q" maxlength="255" size="16" placeholder="Search" type="text">
+	</form>
+
+	<nav id="tree">
+		<h1>Contents</h1>
+<ul>
+<li><a href="/manual/getting-started/">Getting Started</a>
+	<ul>
+	<li><a href="/manual/getting-started/setting-up/">Setting Up</a>
+	<li><a href="/manual/getting-started/using-rainmeter/">Using Rainmeter</a>
+	<li><a href="/manual/getting-started/customizing/">Customizing</a>
+	<li><a href="/manual/getting-started/creating-skins/">Creating Skins</a>
+	<li><a href="/manual/getting-started/skin-anatomy/">Anatomy of a Skin</a>
+	<li><a href="/manual/getting-started/basic-tutorials/">Basic Tutorials</a>
+		<ul>
+		<li><a href="/manual/getting-started/basic-tutorials/launcher/">Launcher</a>
+		<li><a href="/manual/getting-started/basic-tutorials/clock/">Clock</a>
+		<li><a href="/manual/getting-started/basic-tutorials/system/">System</a>
+		</ul>
+	</ul>
+<li><a href="/manual/installing-rainmeter/">Installing Rainmeter</a>
+<li><a href="/manual/user-interface/">User Interface</a>
+	<ul>
+	<li><a href="/manual/user-interface/manage/">Manage</a>
+	<li><a href="/manual/user-interface/about/">About</a>
+	<li><a href="/manual/user-interface/context-menus/">Context Menus</a>
+	</ul>
+<li><a href="/manual/installing-skins/">Installing Skins</a>
+<li><a href="/manual/publishing-skins/">Publishing Skins</a>
+</ul>
+
+<h1>Reference</h1>
+<ul>
+<li><a href="/manual/settings/">Settings</a>
+	<ul>
+	<li><a href="/manual/settings/rainmeter-section/">[Rainmeter] Section</a>
+	<li><a href="/manual/settings/traymeasure-section/">[TrayMeasure] Section</a>
+	<li><a href="/manual/settings/skin-sections/">[Skin] Sections</a>
+	</ul>
+<li><a href="/manual/skins/">Skins</a>
+	<ul>
+	<li><a href="/manual/skins/option-types/">Option Types</a>
+	<li><a href="/manual/skins/rainmeter-section/">[Rainmeter] Section</a>
+	<li><a href="/manual/skins/metadata-section/">[Metadata] Section</a>
+	<li><a href="/manual/skins/include-option/">@Include Options</a>
+	<li><a href="/manual/skins/resources-folder/">@Resources Folder</a>
+	</ul>
+<li><a href="/manual/meters/">Meters</a>
+	<ul>
+	<li><a href="/manual/meters/general-options/">General Options</a>
+		<ul>
+		<li><a href="/manual/meters/general-options/image-options/">Image Options</a>
+		<li><a href="/manual/meters/general-options/meterstyles/">MeterStyles</a>
+		<li><a href="/manual/meters/general-options/tooltips/">Tooltips</a>
+		</ul>
+	<li><a href="/manual/meters/bar/">Bar</a>
+	<li><a href="/manual/meters/bitmap/">Bitmap</a>
+	<li><a href="/manual/meters/button/">Button</a>
+	<li><a href="/manual/meters/histogram/">Histogram</a>
+	<li><a href="/manual/meters/image/">Image</a>
+	<li><a href="/manual/meters/line/">Line</a>
+	<li><a href="/manual/meters/rotator/">Rotator</a>
+	<li><a href="/manual/meters/roundline/">Roundline</a>
+	<li><a href="/manual/meters/string/">String</a>
+<ul>
+  <li><a href="/manual/meters/string/inline/">Inline Options</a>
+</ul>
+	</ul>
+<li><a href="/manual/measures/">Measures</a>
+	<ul>
+	<li><a href="/manual/measures/general-options/">General Options</a>
+		<ul>
+		<li><a href="/manual/measures/general-options/ifactions/">IfActions</a>
+		<li><a href="/manual/measures/general-options/ifconditions/">IfConditions</a>
+		<li><a href="/manual/measures/general-options/ifmatchactions/">IfMatchActions</a>
+		<li><a href="/manual/measures/general-options/substitute/">Substitute</a>
+		</ul>
+	<li><a href="/manual/measures/calc/">Calc</a>
+	<li><a href="/manual/measures/cpu/">CPU</a>
+	<li><a href="/manual/measures/freediskspace/">FreeDiskSpace</a>
+	<li><a href="/manual/measures/loop/">Loop</a>
+	<li><a href="/manual/measures/memory/">Memory</a>
+	<li><a href="/manual/measures/net/">Net</a>
+	<li><a href="/manual/measures/plugin/">Plugin</a>
+	<li><a href="/manual/measures/registry/">Registry</a>
+	<li><a href="/manual/measures/script/">Script</a>
+	<li><a href="/manual/measures/string/">String</a>
+	<li><a href="/manual/measures/time/">Time</a>
+	<li><a href="/manual/measures/uptime/">Uptime</a>
+	</ul>
+<li><a href="/manual/plugins/">Plugins</a>
+	<ul>
+	<li><a href="/manual/plugins/actiontimer/">ActionTimer</a>
+	<li><a href="/manual/plugins/advancedcpu/">AdvancedCPU</a>
+	<li><a href="/manual/plugins/audiolevel/">AudioLevel</a>
+	<li><a href="/manual/plugins/coretemp/">CoreTemp</a>
+	<li><a href="/manual/plugins/fileview/">FileView</a>
+	<li><a href="/manual/plugins/folderinfo/">FolderInfo</a>
+	<li><a href="/manual/plugins/inputtext/">InputText</a>
+	<li><a href="/manual/plugins/itunes/">iTunes</a>
+	<li><a href="/manual/plugins/mediakey/">MediaKey</a>
+	<li><a href="/manual/plugins/nowplaying/">NowPlaying</a>
+	<li><a href="/manual/plugins/perfmon/">PerfMon</a>
+	<li><a href="/manual/plugins/ping/">Ping</a>
+	<li><a href="/manual/plugins/power/">Power</a>
+	<li><a href="/manual/plugins/process/">Process</a>
+	<li><a href="/manual/plugins/quote/">Quote</a>
+	<li><a href="/manual/plugins/recyclemanager/">RecycleManager</a>
+	<li><a href="/manual/plugins/resmon/">ResMon</a>
+	<li><a href="/manual/plugins/runcommand/">RunCommand</a>
+	<li><a href="/manual/plugins/speedfan/">SpeedFan</a>
+	<li><a href="/manual/plugins/sysinfo/">SysInfo</a>
+	<li><a href="/manual/plugins/virtualdesktops/">VirtualDesktops</a>
+	<li><a href="/manual/plugins/webparser/">WebParser</a>
+	<li><a href="/manual/plugins/wifistatus/">WiFiStatus</a>
+	<li><a href="/manual/plugins/win7audio/">Win7Audio</a>
+	<li><a href="/manual/plugins/windowmessage/">WindowMessage</a>
+	</ul>
+<li><a href="/manual/bangs/">Bangs</a>
+<li><a href="/manual/formulas/">Formulas</a>
+<li><a href="/manual/variables/">Variables</a>
+	<ul>
+	<li><a href="/manual/variables/built-in-variables/">Built-In Variables</a>
+	<li><a href="/manual/variables/section-variables/">Section Variables</a>
+	<li><a href="/manual/variables/mouse-variables/">Mouse Variables</a>
+	</ul>
+<li><a href="/manual/groups/">Groups</a>
+<li><a href="/manual/mouse-actions/">Mouse Actions</a>
+<li><a href="/manual/lua-scripting/">Lua Scripting</a>
+</ul>
+
+<h1>More</h1>
+<ul>
+<li><a href="/manual-beta/">4.0 Beta Manual</a>
+<li><a href="/tips/">Tips &amp; Tricks</a>
+<li><a href="/snippets/">Snippets</a>
+<li><a href="/developers/">Developers</a>
+<li><a href="/history/">Version History</a>
+</ul>
+
+	</nav>
+</div>
+<div id="content">
+	<header>
+		<h1>General Meter Options</h1>
+	</header>
+	<article><p>Options available for use with all meters.</p>
+
+<h2>Options</h2>
+<dl>
+	<dt id="Meter"><code>Meter</code></dt>
+	<dd>
+		<p>Type of the meter (e.g. <code>Bar</code> or <code>String</code>). This option is required and may not be changed dynamically.</p>
+	</dd>
+
+	<dt id="MeterStyle"><code>MeterStyle</code></dt>
+	<dd>
+		<p>Specifies one or more sections as <a href="/manual/meters/general-options/meterstyles/">MeterStyles</a> from which option values are inherited. Multiple MeterStyles are delimited with pipes (<code>|</code>).</p>
+	</dd>
+
+	<dt id="MeasureName"><code>MeasureName</code>, <code>MeasureName2</code>, <code>MeasureName3</code>... </dt>
+	<dd>
+		<p>"Binds" the meter to one or more measures. This means that the meter displays the values of these measures in some way. The exact form of the display depends on the type of meter. See each meter type's page for details about what kind of values are valid for that type, and how the values are displayed.</p>
+	</dd>
+
+	<dt id="XY"><code>X</code>, <code>Y</code> <small>Default: <code>0</code></small></dt>
+	<dd>
+		<p>Specifies the x (horizontal) and y (vertical) position of the meter in pixels relative to the top-left edge of the skin.<p>
+
+		<p><em>Relative positioning:</em> If the value is appended with <code>r</code>, the position is relative to the top/left edge of the previous meter. If the value is appended with <code>R</code>, the position is relative to the bottom/right edge of the previous meter.</p>
+		
+		<p><b>Examples:</b><br/>
+		<code>X=150</code> : Meter begins 150 horizontal pixels from the right edge of the skin window.<br/>
+		<code>Y=75</code> : Meter begins 75 vertical pixels from the top edge of the skin window.<br/><br/>
+		<code>X=10R</code> : Meter begins 10 horizontal pixels to the right of the previous meter.<br/>
+		<code>Y=0r</code> : Meter begins at the same vertical position as the previous meter.</p>
+	</dd>
+
+	<dt id="WH"><code>W</code>, <code>H</code></dt>
+	<dd>
+		<p>Specifies the width and height of the meter in pixels. String meters and meters which display an image file can automatically determine the width and height. For all other cases, <code>W</code> and <code>H</code> must be defined.</p>
+	</dd>
+	
+	<dt id="Padding"><code>Padding</code> <small>Format: <code>Left,Top,Right,Bottom</code></small></dt>
+	<dd>
+		<p>Adds padding in pixels around any or all sides of a meter. The width and height of the meter will dynamically be adjusted to the new size. The padding will be drawn using the <a href="/manual/skins/option-types/#Color">Color</a> defined with <a href="#SolidColor">SolidColor / SolidColor2</a>.</p>
+		<p><b>Format:</b> <code>Padding=Left,Top,Right,Bottom</code></p>
+		<p><b>Example:</b> <code>Padding=5,10,5,10</code></p>
+	</dd>	
+	
+	<dt id="Hidden"><code>Hidden</code> <small>Default: <code>0</code></small></dt>
+	<dd>
+		<p>If set to <code>1</code>, the meter is hidden. The visibility can also be changed with the <a href="/manual/bangs/#ShowHideToggleMeter">!ShowMeter and !HideMeter bangs</a>.</p>
+	</dd>
+
+	<dt id="UpdateDivider"><code>UpdateDivider</code> <small>Default: <code>1</code></small></dt>
+	<dd>
+		<p>Frequency at which the meter is updated. The <a href="/manual/skins/rainmeter-section/#Update"><code>Update</code></a> option in the [Rainmeter] section of the skin is multiplied by the specified value to determine how often the meter is updated.</p>
+
+		<p><b>Example:</b> If <code>Update=1000</code> (in the [Rainmeter] section) and <code>UpdateDivider=30</code>, the meter is updated every 30 seconds.</p>
+		
+		<p>If <code>UpdateDivider=-1</code> or any negative number, then the meter is only updated once when the skin is loaded or refreshed.</p>
+	</dd>
+
+	<dt id="OnUpdateAction"><code>OnUpdateAction</code></dt>
+	<dd>
+		<p><a href="/manual/skins/option-types/#Action">Action</a> to execute each time the meter is updated.</p>
+		
+		<p><b>Note:</b> This may be based on the values in <a href="/manual/skins/rainmeter-section/#Update">Update</a> in the [Rainmeter] section and any <a href="#UpdateDivider">UpdateDivider</a> on the meter, or if the meter is updated with a <a href="/manual/bangs/#Meter">Meter Bang</a> or other relevant bang.</p>
+	</dd>
+
+	<dt id="SolidColor"><code>SolidColor</code>, <code>SolidColor2</code> <small>Default: <code>0,0,0,0</code></small></dt>
+	<dd>
+		<p><a href="/manual/skins/option-types/#Color">Color</a> of the meter background. If <code>SolidColor2</code> is also specified, the background is a <a href="#GradientAngle">gradient</a> composed of <code>SolidColor</code> and <code>SolidColor2</code>.</p>
+
+		<p><b>Hint:</b> <code>SolidColor=0,0,0,1</code> can be used to make transparent areas of the meter clickable.</p>
+	</dd>
+	
+	<dt id="GradientAngle"><code>GradientAngle</code></dt>
+	<dd>
+		<p>Angle of the gradient in degrees when both <code>SolidColor</code> and <code>SolidColor2</code> are defined.</p>
+	</dd>
+
+	<dt id="BevelType"><code>BevelType</code> <small>Default: <code>0</code></small></dt>
+	<dd>
+		<p>If enabled, draws a bevel around the edges of the rectangle specified by <code>H</code> and <code>W</code>. Valid values are:</p>
+		<ul>
+		<li><code>0</code>: No bevel</li>
+		<li><code>1</code>: Raised</li>
+		<li><code>2</code>: Sunken</li>
+		</ul>
+	</dd>
+
+	<dt id="AntiAlias"><code>AntiAlias</code> <small>Default: <code>0</code></small></dt>
+	<dd>
+		<p>If set to <code>1</code>, antialising (edge smoothing) is used when the meter is drawn.</p>
+	</dd>
+
+	<dt id="DynamicVariables"><code>DynamicVariables</code> <small>Default: <code>0</code></small></dt>
+	<dd>
+		<p>If set to <code>1</code>, the meter is dynamic.</p>
+
+		<p><b>See also:</b> <a href="/manual/variables/#DynamicVariables">Dynamic Variables</a></p>
+	</dd>
+
+	<dt id="TransformationMatrix"><code>TransformationMatrix</code> <small>Default: <code>1;0;0;1;0;0</code></small></dt>
+	<dd>
+		<p>Defines a 3x2 matrix which can be used to transform the meter. Transformations include: scaling, skewing, and translating (ie. moving). There must be <b>exactly</b> 6 values separated by semicolons <code>;</code>.</p>
+
+		<p><b>TransformationMatrix={scale x};{skew x};{skew y};{scale y};{move x};{move y}</b></p>
+
+		<p>Combining these can have drastic effects on the meter it is applied to.</p>
+
+		<p><b>See also:</b> <a href="/tips/transformation-matrix-guide/">Transformation Matrix</a></p>
+
+		<p><b>Examples:</b>
+		<ul>
+			<li><code>TransformationMatrix=-1; 0; 0; 1; 40; 0</code>: This will flip <code>X</code> along the line <code>X=20</code>.</li>
+			<li><code>TransformationMatrix=1; 0; 0; -1; 0; 100</code>: This will flip <code>Y</code> along the line <code>Y=50</code>.</li>
+			<li><code>TransformationMatrix=0.5; 0; 0; 1; 25; 0</code>: This will scale <code>X</code> by <code>0.5</code> at <code>X=50</code>.</li>
+		</ul></p>
+
+		<p><b>Note:</b> All transformations are relative to the top left corner of the window and not to the meter itself. So if you want to rotate the meter by its center the translation component in the matrix must be relative to the top left corner of the window.</p>
+
+		<p>Also note that the even if the meter's visual location and orientation is changed by the transformation the place where it would be located without the transformation will still be used to define the window size and register the mouse clicks. This might change in the future though.</p>
+	</dd>
+	
+	<dt id="Group"><code>Group</code></dt>
+	<dd>
+		<p>Defines a group or series of groups that the meter belongs to. For more information please see the <a href="/manual/groups/">Groups</a> page.</p>
+	</dd>
+</dl>
+</article>
+</div>
+
+			</div>
+		</div>
+
+		<div id="footer-push"></div>
+	</div>
+
+	<script src="/js/main.js?v=2"></script>
+</body>
+</html>

@@ -1,1 +1,321 @@
-<!DOCTYPE html><html lang=en><head><meta charset=utf-8><title>NowPlaying plugin - Rainmeter 3.3 Manual</title><link href="../../../css/main.css?v=1" rel=stylesheet><link rel="shortcut icon" href=//www.rainmeter.net/favicon.ico><!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6/html5shiv.min.js"></script><![endif]--><body><div id=wrapper><div id=top><div class=container><a id=logo href=//rainmeter.net></a><nav id=nav><ul><li><a href=//www.rainmeter.net>Home</a><li><a href=//www.rainmeter.net/about>About</a><li><a href="../../../" class=active>Docs</a><li><a href=//www.rainmeter.net/discover>Discover</a><li><a href=//forum.rainmeter.net>Forum</a></ul></nav></div></div><div class=container><div class=row><div id=side-content><h1 id=category><a href=../../../manual>3.3 Manual</a></h1><form id=search-form method=get action=http://www.google.com/search><input name=sitesearch value=docs.rainmeter.net type=hidden> <input id=search name=q maxlength=255 size=16 placeholder=Search type=text></form><nav id=tree><h1>Contents</h1><ul><li><a href="../../getting-started/">Getting Started</a><ul><li><a href="../../getting-started/setting-up/">Setting Up</a><li><a href="../../getting-started/using-rainmeter/">Using Rainmeter</a><li><a href="../../getting-started/customizing/">Customizing</a><li><a href="../../getting-started/creating-skins/">Creating Skins</a><li><a href="../../getting-started/skin-anatomy/">Anatomy of a Skin</a><li><a href="../../getting-started/basic-tutorials/">Basic Tutorials</a><ul><li><a href="../../getting-started/basic-tutorials/launcher/">Launcher</a><li><a href="../../getting-started/basic-tutorials/clock/">Clock</a><li><a href="../../getting-started/basic-tutorials/system/">System</a></ul></ul><li><a href="../../installing-rainmeter/">Installing Rainmeter</a><li><a href="../../user-interface/">User Interface</a><ul><li><a href="../../user-interface/manage/">Manage</a><li><a href="../../user-interface/about/">About</a><li><a href="../../user-interface/context-menus/">Context Menus</a></ul><li><a href="../../installing-skins/">Installing Skins</a><li><a href="../../publishing-skins/">Publishing Skins</a></ul><h1>Reference</h1><ul><li><a href="../../settings/">Settings</a><ul><li><a href="../../settings/rainmeter-section/">[Rainmeter] Section</a><li><a href="../../settings/traymeasure-section/">[TrayMeasure] Section</a><li><a href="../../settings/skin-sections/">[Skin] Sections</a></ul><li><a href="../../skins/">Skins</a><ul><li><a href="../../skins/option-types/">Option Types</a><li><a href="../../skins/rainmeter-section/">[Rainmeter] Section</a><li><a href="../../skins/metadata-section/">[Metadata] Section</a><li><a href="../../skins/include-option/">@Include Options</a><li><a href="../../skins/resources-folder/">@Resources Folder</a></ul><li><a href="../../meters/">Meters</a><ul><li><a href="../../meters/general-options/">General Options</a><ul><li><a href="../../meters/general-options/image-options/">Image Options</a><li><a href="../../meters/general-options/meterstyles/">MeterStyles</a><li><a href="../../meters/general-options/tooltips/">Tooltips</a></ul><li><a href="../../meters/bar/">Bar</a><li><a href="../../meters/bitmap/">Bitmap</a><li><a href="../../meters/button/">Button</a><li><a href="../../meters/histogram/">Histogram</a><li><a href="../../meters/image/">Image</a><li><a href="../../meters/line/">Line</a><li><a href="../../meters/rotator/">Rotator</a><li><a href="../../meters/roundline/">Roundline</a><li><a href="../../meters/string/">String</a><ul><li><a href="../../meters/string/inline/">Inline Options</a></ul></ul><li><a href="../../measures/">Measures</a><ul><li><a href="../../measures/general-options/">General Options</a><ul><li><a href="../../measures/general-options/ifactions/">IfActions</a><li><a href="../../measures/general-options/ifconditions/">IfConditions</a><li><a href="../../measures/general-options/ifmatchactions/">IfMatchActions</a><li><a href="../../measures/general-options/substitute/">Substitute</a></ul><li><a href="../../measures/calc/">Calc</a><li><a href="../../measures/cpu/">CPU</a><li><a href="../../measures/freediskspace/">FreeDiskSpace</a><li><a href="../../measures/loop/">Loop</a><li><a href="../../measures/memory/">Memory</a><li><a href="../../measures/net/">Net</a><li><a href="../../measures/plugin/">Plugin</a><li><a href="../../measures/registry/">Registry</a><li><a href="../../measures/script/">Script</a><li><a href="../../measures/string/">String</a><li><a href="../../measures/time/">Time</a><li><a href="../../measures/uptime/">Uptime</a></ul><li><a href="../">Plugins</a><ul><li><a href="../actiontimer/">ActionTimer</a><li><a href="../advancedcpu/">AdvancedCPU</a><li><a href="../audiolevel/">AudioLevel</a><li><a href="../coretemp/">CoreTemp</a><li><a href="../fileview/">FileView</a><li><a href="../folderinfo/">FolderInfo</a><li><a href="../inputtext/">InputText</a><li><a href="../itunes/">iTunes</a><li><a href="../mediakey/">MediaKey</a><li><a href="">NowPlaying</a><li><a href="../perfmon/">PerfMon</a><li><a href="../ping/">Ping</a><li><a href="../power/">Power</a><li><a href="../process/">Process</a><li><a href="../quote/">Quote</a><li><a href="../recyclemanager/">RecycleManager</a><li><a href="../resmon/">ResMon</a><li><a href="../runcommand/">RunCommand</a><li><a href="../speedfan/">SpeedFan</a><li><a href="../sysinfo/">SysInfo</a><li><a href="../virtualdesktops/">VirtualDesktops</a><li><a href="../webparser/">WebParser</a><li><a href="../wifistatus/">WiFiStatus</a><li><a href="../win7audio/">Win7Audio</a><li><a href="../windowmessage/">WindowMessage</a></ul><li><a href="../../bangs/">Bangs</a><li><a href="../../formulas/">Formulas</a><li><a href="../../variables/">Variables</a><ul><li><a href="../../variables/built-in-variables/">Built-In Variables</a><li><a href="../../variables/section-variables/">Section Variables</a><li><a href="../../variables/mouse-variables/">Mouse Variables</a></ul><li><a href="../../groups/">Groups</a><li><a href="../../mouse-actions/">Mouse Actions</a><li><a href="../../lua-scripting/">Lua Scripting</a></ul><h1>More</h1><ul><li><a href="../../../manual-beta/">4.0 Beta Manual</a><li><a href="../../../tips/">Tips &amp; Tricks</a><li><a href="../../../snippets/">Snippets</a><li><a href="../../../developers/">Developers</a><li><a href="../../../history/">Version History</a></ul></nav></div><div id=content><header><h1>NowPlaying plugin</h1></header><article><p><code>Plugin=NowPlaying</code> retrieves information about the currently playing track from a number of media players.<h2>Options</h2><dl><dt>General measure options<dd>All <a href="../../measures/general-options/">general measure options</a> are valid.<dt id=PlayerName><code>PlayerName</code><dd>Can be either:<ul><li>The player <a href=#playerlist>interface name</a> (e.g. <code>PlayerName=iTunes</code>)<li>Or the name of another measure (e.g. <code>PlayerName=[MainMeasure]</code>)</ul><b>Important:</b> If multiple measures use the same player, specify the player interface name on the first NowPlaying measure and specify the name of the first measure in subsequent measures. See example below for proper usage.<dt id=PlayerType><code>PlayerType</code><dd>Type of the measure value. Valid values are:<ul><li><code>Artist</code>: Track artist.<li><code>Album</code>: Current album.<li><code>Title</code>: Track title.<li><code>Number</code>: Track number.<li><code>Year</code>: Track year.<li><code>Genre</code>: Track genre.<li><code>Cover</code>: Path to cover art.<li><code>File</code>: Path to the playing media file.<li><code>Duration</code>: Total length of track in seconds.<li><code>Position</code>: Current position in track in seconds.<li><code>Progress</code>: Percentage of track completed.<li><code>Rating</code>: Rating of current track (0 to 5).<li><code>Repeat</code>: 0 if repeat/loop track is off, 1 if on.<li><code>Shuffle</code>: 0 if shuffle/random tracks is off, 1 if on.<li><code>State</code>: 0 for stopped, 1 for playing, and 2 for paused.<li><code>Status</code>: 0 for inactive (player closed) and 1 for active (player open).<li><code>Volume</code>: From 0 to 100.</ul><b>Note:</b> With measures of type <code>Duration</code> or <code>Position</code>, the string value is in the form <code>MM:SS</code> and the number value is the actual number of seconds.<br><br>The <code>PlayerType=Genre</code> option is currently supported with the AIMP, CAD, iTunes, WMP and WinAmp <code>PlayerName</code> values.<dt id=PlayerPath><code>PlayerPath</code><dd>If defined, used to launch the player with the <code>OpenPlayer</code> command. If not defined, the plugin will attempt to automatically detect the path.<dt id=TrackChangeAction><code>TrackChangeAction</code><dd><a href=../../skins/option-types/#Action>Action</a> to execute when the track changes.<dt id=DisableLeadingZero><code>DisableLeadingZero</code> <small>Default: <code>0</code></small><dd>If set to <code>1</code>, the format of Duration and Position is <code>M:SS</code> instead of <code>MM:SS</code>. This option must be set on the main measure.</dl><h2>Bangs</h2><p>NowPlaying measures can be controlled with the <a href=../../bangs/#CommandMeasure>!CommandMeasure bang</a> with the argument parameter being:<ul class=spaced><li><code>Pause</code>: Pause current track.<li><code>Play</code>: Play current track.<li><code>PlayPause</code>: Play (if stopped/paused) or pause (if playing) current track.<li><code>Stop</code>: Stop current track.<li><code>Next</code>: Change to next track.<li><code>Previous</code>: Change to previous track.<li><code>OpenPlayer</code>: Opens the player. If already open, the player will be brought to the top.<li><code>ClosePlayer</code>: Closes the player.<li><code>TogglePlayer</code>: Opens/closes the player depending on current state.<li><code>SetPosition <em>n</em></code>: Where <em>n</em> is either an absolute value (<code>SetPosition 50</code> to jump to 50% of the track) or a relative value (<code>SetPosition +5</code> to jump 5% forward or <code>SetPosition -10</code> to jump 10% backward).<li><code>SetRating <em>n</em></code>: Where <em>n</em> is a value between <code>0</code> (no rating) and <code>5</code> (maximum rating).<li><code>SetShuffle <em>n</em></code>: Where <em>n</em> is <code>1</code> (shuffle on), <code>0</code> (shuffle off), or <code>-1</code> (toggle shuffle).<li><code>SetRepeat <em>n</em></code>: Where <em>n</em> is <code>1</code> (repeat on), <code>0</code> (repeat off), or <code>-1</code> (toggle repeat).<li><code>SetVolume <em>n</em></code>: Where <em>n</em> is either an absolute value (<code>SetVolume 50</code> to set volume to 50%) or a relative value (<code>SetVolume +20</code> to increase volume by 20% or<code>SetVolume -40</code> to decrease volume by 40%).</ul><h2 id=playerlist>Fully supported players</h2><p>The following players are fully supported. All features should work unless stated otherwise.<ul class=spaced><li><b>AIMP</b>: <code>PlayerName=AIMP</code><br>Fully supported. Tested with AIMP 2.61.<li><b>foobar2000</b>: <code>PlayerName=CAD</code><br>Fully supported. The <a href="http://poiru.github.com/foo-cad/">foo_cad plugin (download)</a> needs to be installed.<li><b>iTunes</b>: <code>PlayerName=iTunes</code><br>Fully supported. Tested with iTunes 10.2.<li><b>J. River Media Center</b> and <b>Media Jukebox</b>: <code>PlayerName=CAD</code><br>Fully supported through the CAD interface with Media Center 19 and later. More information <a href="http://yabb.jriver.com/interact/index.php?topic=84508.0">here</a>.<li><b>MediaMonkey</b>: <code>PlayerName=MediaMonkey</code><br>Fully supported. Tested with MediaMonkey 3.2.5.<li><b>MusicBee</b>: <code>PlayerName=CAD</code><br>Fully supported. <a href=http://getmusicbee.com/download.html>MusicBee 1.2</a> (or higher) is required.<li><b>Winamp</b>: <code>PlayerName=Winamp</code><br>Fully supported.<li><b>VLC</b>: <code>PlayerName=CAD</code><br>Fully supported. The <a href=http://code.google.com/p/vlc-libcad>libcad plugin</a> for VLC must be installed.<li><b>WMP</b>: <code>PlayerName=WMP</code><br>Fully supported, except for the <code>Repeat</code> / <code>Shuffle</code> types.</ul><h2>Partially supported players</h2><p>The following players are partially supported. Only some features will work.<ul class=spaced><li><b>Spotify</b>: <code>PlayerName=Spotify</code><br>Partially supported. Only the types <code>Artist</code>, <code>Track</code> and the bangs <code>Play</code>, <code>PlayPause</code>, <code>Stop</code>, <code>Next</code>, and <code>Previous</code> are available.<li><b>Last.fm Client</b>, <b>TTPlayer</b>, <b>OpenPandora</b>, <b>Zune</b>: <code>PlayerName=WLM</code><br>Partially supported. Even in the best case, only the types <code>Title</code>, <code>Artist</code>, <code>Album</code> and the bangs <code>Play</code>, <code>Pause</code>, <code>PlayPause</code>, <code>Next</code>, <code>Previous</code>, <code>Stop</code> are supported.</ul><h2>Example</h2><p>For a more complete example, check the <a href=http://poiru.deviantart.com/art/Soita-for-Rainmeter-209864541>Soita skin</a>.<figure class="highlight ini"><table><tr><td class=code><pre><span class=line><span class=title>[Rainmeter]</span></span><br><span class=line><span class=setting>Update=<span class=value><span class=number>1000</span></span></span></span><br><span class=line><span class=setting>BackgroundMode=<span class=value><span class=number>2</span></span></span></span><br><span class=line><span class=setting>SolidColor=<span class=value><span class=number>0</span>,<span class=number>0</span>,<span class=number>0</span>,<span class=number>255</span></span></span></span><br><span class=line></span><br><span class=line><span class=comment>; MeasurePlayer is the main measure.</span></span><br><span class=line><span class=comment>; MeasureArtist and MeasureAlbum are secondary measures.</span></span><br><span class=line><span class=title></span><br><span class=line>[MeasurePlayer]</span></span><br><span class=line><span class=setting>Measure=<span class=value>Plugin</span></span></span><br><span class=line><span class=setting>Plugin=<span class=value>NowPlaying</span></span></span><br><span class=line><span class=comment>; The main measure specifies the media player on PlayerName.</span></span><br><span class=line><span class=setting>PlayerName=<span class=value>iTunes</span></span></span><br><span class=line><span class=setting>PlayerType=<span class=value>TITLE</span></span></span><br><span class=line><span class=comment>; PlayerPath, TrackChangeAction, and DisableLeadingZero are valid here on</span></span><br><span class=line><span class=comment>; the main measure only.</span></span><br><span class=line><span class=title></span><br><span class=line>[MeasureArtist]</span></span><br><span class=line><span class=setting>Measure=<span class=value>Plugin</span></span></span><br><span class=line><span class=setting>Plugin=<span class=value>NowPlaying</span></span></span><br><span class=line><span class=comment>; Secondary measures specify the name of the main measure on PlayerName.</span></span><br><span class=line><span class=setting>PlayerName=<span class=value>[MeasurePlayer]</span></span></span><br><span class=line><span class=setting>PlayerType=<span class=value>ARTIST</span></span></span><br><span class=line><span class=title></span><br><span class=line>[MeasureAlbum]</span></span><br><span class=line><span class=setting>Measure=<span class=value>Plugin</span></span></span><br><span class=line><span class=setting>Plugin=<span class=value>NowPlaying</span></span></span><br><span class=line><span class=setting>PlayerName=<span class=value>[MeasurePlayer]</span></span></span><br><span class=line><span class=setting>PlayerType=<span class=value>ALBUM</span></span></span><br><span class=line><span class=title></span><br><span class=line>[MeterPrev]</span></span><br><span class=line><span class=setting>Meter=<span class=value>String</span></span></span><br><span class=line><span class=setting>X=<span class=value><span class=number>5</span></span></span></span><br><span class=line><span class=setting>Y=<span class=value><span class=number>5</span></span></span></span><br><span class=line><span class=setting>FontColor=<span class=value>FFFF00</span></span></span><br><span class=line><span class=setting>Text=<span class=value><span class=string>"Prev"</span></span></span></span><br><span class=line><span class=setting>LeftMouseUpAction=<span class=value>[!CommandMeasure <span class=string>"MeasurePlayer"</span> <span class=string>"Previous"</span>]</span></span></span><br><span class=line><span class=title></span><br><span class=line>[MeterNext]</span></span><br><span class=line><span class=setting>Meter=<span class=value>String</span></span></span><br><span class=line><span class=setting>X=<span class=value><span class=number>20</span>R</span></span></span><br><span class=line><span class=setting>Y=<span class=value><span class=number>5</span></span></span></span><br><span class=line><span class=setting>FontColor=<span class=value>FFFF00</span></span></span><br><span class=line><span class=setting>Text=<span class=value><span class=string>"Next"</span></span></span></span><br><span class=line><span class=setting>LeftMouseUpAction=<span class=value>[!CommandMeasure <span class=string>"MeasurePlayer"</span> <span class=string>"Next"</span>]</span></span></span><br><span class=line><span class=title></span><br><span class=line>[MeterTitle]</span></span><br><span class=line><span class=setting>Meter=<span class=value>String</span></span></span><br><span class=line><span class=setting>MeasureName=<span class=value>MeasurePlayer</span></span></span><br><span class=line><span class=setting>X=<span class=value><span class=number>5</span></span></span></span><br><span class=line><span class=setting>Y=<span class=value><span class=number>35</span></span></span></span><br><span class=line><span class=setting>W=<span class=value><span class=number>400</span></span></span></span><br><span class=line><span class=setting>H=<span class=value><span class=number>20</span></span></span></span><br><span class=line><span class=setting>FontColor=<span class=value><span class=number>255</span>,<span class=number>255</span>,<span class=number>255</span>,<span class=number>255</span></span></span></span><br><span class=line><span class=setting>Text=<span class=value><span class=string>"Title: %1"</span></span></span></span><br><span class=line><span class=title></span><br><span class=line>[MeterArtist]</span></span><br><span class=line><span class=setting>Meter=<span class=value>String</span></span></span><br><span class=line><span class=setting>MeasureName=<span class=value>MeasureArtist</span></span></span><br><span class=line><span class=setting>X=<span class=value><span class=number>5</span></span></span></span><br><span class=line><span class=setting>Y=<span class=value><span class=number>55</span></span></span></span><br><span class=line><span class=setting>W=<span class=value><span class=number>400</span></span></span></span><br><span class=line><span class=setting>H=<span class=value><span class=number>20</span></span></span></span><br><span class=line><span class=setting>FontColor=<span class=value><span class=number>255</span>,<span class=number>255</span>,<span class=number>255</span>,<span class=number>255</span></span></span></span><br><span class=line><span class=setting>Text=<span class=value><span class=string>"Artist: %1"</span></span></span></span><br><span class=line><span class=title></span><br><span class=line>[MeterAlbum]</span></span><br><span class=line><span class=setting>Meter=<span class=value>String</span></span></span><br><span class=line><span class=setting>MeasureName=<span class=value>MeasureAlbum</span></span></span><br><span class=line><span class=setting>X=<span class=value><span class=number>5</span></span></span></span><br><span class=line><span class=setting>Y=<span class=value><span class=number>75</span></span></span></span><br><span class=line><span class=setting>W=<span class=value><span class=number>400</span></span></span></span><br><span class=line><span class=setting>H=<span class=value><span class=number>20</span></span></span></span><br><span class=line><span class=setting>FontColor=<span class=value><span class=number>255</span>,<span class=number>255</span>,<span class=number>255</span>,<span class=number>255</span></span></span></span><br><span class=line><span class=setting>Text=<span class=value><span class=string>"Album: %1"</span></span></span></span><br></pre></table></figure></article></div></div></div><div id=footer-push></div></div><script src="../../../js/main.js?v=2"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>NowPlaying plugin - Rainmeter 3.3 Manual</title>
+	<link href="/css/main.css?v=1" rel="stylesheet">
+	<link rel="shortcut icon" href="//www.rainmeter.net/favicon.ico">
+	<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6/html5shiv.min.js"></script><![endif]-->
+</head>
+<body>
+	<div id="wrapper">
+		<div id="top">
+			<div class="container">
+				<a id="logo" href="//rainmeter.net/"></a>
+				<nav id="nav">
+					<ul>
+					<li><a href="//www.rainmeter.net">Home</a>
+					<li><a href="//www.rainmeter.net/about">About</a>
+					<li><a href="/" class="active">Docs</a>
+					<li><a href="//www.rainmeter.net/discover">Discover</a>
+					<li><a href="//forum.rainmeter.net">Forum</a>
+					</ul>
+				</nav>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div id="side-content">
+	<h1 id="category"><a href="/manual">3.3 Manual</a></h1>
+
+	<form id="search-form" method="get" action="http://www.google.com/search">
+		<input name="sitesearch" value="docs.rainmeter.net" type="hidden">
+		<input id="search" name="q" maxlength="255" size="16" placeholder="Search" type="text">
+	</form>
+
+	<nav id="tree">
+		<h1>Contents</h1>
+<ul>
+<li><a href="/manual/getting-started/">Getting Started</a>
+	<ul>
+	<li><a href="/manual/getting-started/setting-up/">Setting Up</a>
+	<li><a href="/manual/getting-started/using-rainmeter/">Using Rainmeter</a>
+	<li><a href="/manual/getting-started/customizing/">Customizing</a>
+	<li><a href="/manual/getting-started/creating-skins/">Creating Skins</a>
+	<li><a href="/manual/getting-started/skin-anatomy/">Anatomy of a Skin</a>
+	<li><a href="/manual/getting-started/basic-tutorials/">Basic Tutorials</a>
+		<ul>
+		<li><a href="/manual/getting-started/basic-tutorials/launcher/">Launcher</a>
+		<li><a href="/manual/getting-started/basic-tutorials/clock/">Clock</a>
+		<li><a href="/manual/getting-started/basic-tutorials/system/">System</a>
+		</ul>
+	</ul>
+<li><a href="/manual/installing-rainmeter/">Installing Rainmeter</a>
+<li><a href="/manual/user-interface/">User Interface</a>
+	<ul>
+	<li><a href="/manual/user-interface/manage/">Manage</a>
+	<li><a href="/manual/user-interface/about/">About</a>
+	<li><a href="/manual/user-interface/context-menus/">Context Menus</a>
+	</ul>
+<li><a href="/manual/installing-skins/">Installing Skins</a>
+<li><a href="/manual/publishing-skins/">Publishing Skins</a>
+</ul>
+
+<h1>Reference</h1>
+<ul>
+<li><a href="/manual/settings/">Settings</a>
+	<ul>
+	<li><a href="/manual/settings/rainmeter-section/">[Rainmeter] Section</a>
+	<li><a href="/manual/settings/traymeasure-section/">[TrayMeasure] Section</a>
+	<li><a href="/manual/settings/skin-sections/">[Skin] Sections</a>
+	</ul>
+<li><a href="/manual/skins/">Skins</a>
+	<ul>
+	<li><a href="/manual/skins/option-types/">Option Types</a>
+	<li><a href="/manual/skins/rainmeter-section/">[Rainmeter] Section</a>
+	<li><a href="/manual/skins/metadata-section/">[Metadata] Section</a>
+	<li><a href="/manual/skins/include-option/">@Include Options</a>
+	<li><a href="/manual/skins/resources-folder/">@Resources Folder</a>
+	</ul>
+<li><a href="/manual/meters/">Meters</a>
+	<ul>
+	<li><a href="/manual/meters/general-options/">General Options</a>
+		<ul>
+		<li><a href="/manual/meters/general-options/image-options/">Image Options</a>
+		<li><a href="/manual/meters/general-options/meterstyles/">MeterStyles</a>
+		<li><a href="/manual/meters/general-options/tooltips/">Tooltips</a>
+		</ul>
+	<li><a href="/manual/meters/bar/">Bar</a>
+	<li><a href="/manual/meters/bitmap/">Bitmap</a>
+	<li><a href="/manual/meters/button/">Button</a>
+	<li><a href="/manual/meters/histogram/">Histogram</a>
+	<li><a href="/manual/meters/image/">Image</a>
+	<li><a href="/manual/meters/line/">Line</a>
+	<li><a href="/manual/meters/rotator/">Rotator</a>
+	<li><a href="/manual/meters/roundline/">Roundline</a>
+	<li><a href="/manual/meters/string/">String</a>
+<ul>
+  <li><a href="/manual/meters/string/inline/">Inline Options</a>
+</ul>
+	</ul>
+<li><a href="/manual/measures/">Measures</a>
+	<ul>
+	<li><a href="/manual/measures/general-options/">General Options</a>
+		<ul>
+		<li><a href="/manual/measures/general-options/ifactions/">IfActions</a>
+		<li><a href="/manual/measures/general-options/ifconditions/">IfConditions</a>
+		<li><a href="/manual/measures/general-options/ifmatchactions/">IfMatchActions</a>
+		<li><a href="/manual/measures/general-options/substitute/">Substitute</a>
+		</ul>
+	<li><a href="/manual/measures/calc/">Calc</a>
+	<li><a href="/manual/measures/cpu/">CPU</a>
+	<li><a href="/manual/measures/freediskspace/">FreeDiskSpace</a>
+	<li><a href="/manual/measures/loop/">Loop</a>
+	<li><a href="/manual/measures/memory/">Memory</a>
+	<li><a href="/manual/measures/net/">Net</a>
+	<li><a href="/manual/measures/plugin/">Plugin</a>
+	<li><a href="/manual/measures/registry/">Registry</a>
+	<li><a href="/manual/measures/script/">Script</a>
+	<li><a href="/manual/measures/string/">String</a>
+	<li><a href="/manual/measures/time/">Time</a>
+	<li><a href="/manual/measures/uptime/">Uptime</a>
+	</ul>
+<li><a href="/manual/plugins/">Plugins</a>
+	<ul>
+	<li><a href="/manual/plugins/actiontimer/">ActionTimer</a>
+	<li><a href="/manual/plugins/advancedcpu/">AdvancedCPU</a>
+	<li><a href="/manual/plugins/audiolevel/">AudioLevel</a>
+	<li><a href="/manual/plugins/coretemp/">CoreTemp</a>
+	<li><a href="/manual/plugins/fileview/">FileView</a>
+	<li><a href="/manual/plugins/folderinfo/">FolderInfo</a>
+	<li><a href="/manual/plugins/inputtext/">InputText</a>
+	<li><a href="/manual/plugins/itunes/">iTunes</a>
+	<li><a href="/manual/plugins/mediakey/">MediaKey</a>
+	<li><a href="/manual/plugins/nowplaying/">NowPlaying</a>
+	<li><a href="/manual/plugins/perfmon/">PerfMon</a>
+	<li><a href="/manual/plugins/ping/">Ping</a>
+	<li><a href="/manual/plugins/power/">Power</a>
+	<li><a href="/manual/plugins/process/">Process</a>
+	<li><a href="/manual/plugins/quote/">Quote</a>
+	<li><a href="/manual/plugins/recyclemanager/">RecycleManager</a>
+	<li><a href="/manual/plugins/resmon/">ResMon</a>
+	<li><a href="/manual/plugins/runcommand/">RunCommand</a>
+	<li><a href="/manual/plugins/speedfan/">SpeedFan</a>
+	<li><a href="/manual/plugins/sysinfo/">SysInfo</a>
+	<li><a href="/manual/plugins/virtualdesktops/">VirtualDesktops</a>
+	<li><a href="/manual/plugins/webparser/">WebParser</a>
+	<li><a href="/manual/plugins/wifistatus/">WiFiStatus</a>
+	<li><a href="/manual/plugins/win7audio/">Win7Audio</a>
+	<li><a href="/manual/plugins/windowmessage/">WindowMessage</a>
+	</ul>
+<li><a href="/manual/bangs/">Bangs</a>
+<li><a href="/manual/formulas/">Formulas</a>
+<li><a href="/manual/variables/">Variables</a>
+	<ul>
+	<li><a href="/manual/variables/built-in-variables/">Built-In Variables</a>
+	<li><a href="/manual/variables/section-variables/">Section Variables</a>
+	<li><a href="/manual/variables/mouse-variables/">Mouse Variables</a>
+	</ul>
+<li><a href="/manual/groups/">Groups</a>
+<li><a href="/manual/mouse-actions/">Mouse Actions</a>
+<li><a href="/manual/lua-scripting/">Lua Scripting</a>
+</ul>
+
+<h1>More</h1>
+<ul>
+<li><a href="/manual-beta/">4.0 Beta Manual</a>
+<li><a href="/tips/">Tips &amp; Tricks</a>
+<li><a href="/snippets/">Snippets</a>
+<li><a href="/developers/">Developers</a>
+<li><a href="/history/">Version History</a>
+</ul>
+
+	</nav>
+</div>
+<div id="content">
+	<header>
+		<h1>NowPlaying plugin</h1>
+	</header>
+	<article><p><code>Plugin=NowPlaying</code> retrieves information about the currently playing track from a number of media players.</p>
+
+<h2>Options</h2>
+<dl>
+	<dt>General measure options</dt>
+	<dd>
+		All <a href="/manual/measures/general-options/">general measure options</a> are valid.
+	</dd>
+
+	<dt id="PlayerName"><code>PlayerName</code></dt>
+	<dd>
+		Can be either:
+		<ul>
+		<li>The player <a href="#playerlist">interface name</a> (e.g. <code>PlayerName=iTunes</code>)</li>
+		<li>Or the name of another measure (e.g. <code>PlayerName=[MainMeasure]</code>)</li>
+		</ul>
+
+		<b>Important:</b> If multiple measures use the same player, specify the player interface name on the first NowPlaying measure and specify the name of the first measure in subsequent measures. See example below for proper usage.
+	</dd>
+
+	<dt id="PlayerType"><code>PlayerType</code></dt>
+	<dd>
+		Type of the measure value. Valid values are:
+		<ul>
+		<li><code>Artist</code>: Track artist.</li>
+		<li><code>Album</code>: Current album.</li>
+		<li><code>Title</code>: Track title.</li>
+		<li><code>Number</code>: Track number.</li>
+		<li><code>Year</code>: Track year.</li>
+		<li><code>Genre</code>: Track genre.</li>
+		<li><code>Cover</code>: Path to cover art.</li>
+		<li><code>File</code>: Path to the playing media file.</li>
+		<li><code>Duration</code>: Total length of track in seconds.</li>
+		<li><code>Position</code>: Current position in track in seconds.</li>
+		<li><code>Progress</code>: Percentage of track completed.</li>
+		<li><code>Rating</code>: Rating of current track (0 to 5).</li>
+		<li><code>Repeat</code>: 0 if repeat/loop track is off, 1 if on.</li>
+		<li><code>Shuffle</code>: 0 if shuffle/random tracks is off, 1 if on.</li>
+		<li><code>State</code>: 0 for stopped, 1 for playing, and 2 for paused.</li>
+		<li><code>Status</code>: 0 for inactive (player closed) and 1 for active (player open).</li>
+		<li><code>Volume</code>: From 0 to 100.</li>
+		</ul>
+
+		<b>Note:</b> With measures of type <code>Duration</code> or <code>Position</code>, the string value is in the form <code>MM:SS</code> and the number value is the actual number of seconds.<br/><br/>
+		
+		The <code>PlayerType=Genre</code> option is currently supported with the AIMP, CAD, iTunes, WMP and WinAmp <code>PlayerName</code> values.
+	</dd>
+
+	<dt id="PlayerPath"><code>PlayerPath</code></dt>
+	<dd>
+		If defined, used to launch the player with the <code>OpenPlayer</code> command. If not defined, the plugin will attempt to automatically detect the path.
+	</dd>
+
+	<dt id="TrackChangeAction"><code>TrackChangeAction</code></dt>
+	<dd>
+		<a href="/manual/skins/option-types/#Action">Action</a> to execute when the track changes.
+	</dd>
+
+	<dt id="DisableLeadingZero"><code>DisableLeadingZero</code> <small>Default: <code>0</code></small></dt>
+	<dd>
+		If set to <code>1</code>, the format of Duration and Position is <code>M:SS</code> instead of <code>MM:SS</code>. This option must be set on the main measure.
+	</dd>
+</dl>
+
+<h2>Bangs</h2>
+<p>NowPlaying measures can be controlled with the <a href="/manual/bangs/#CommandMeasure">!CommandMeasure bang</a> with the argument parameter being:</p>
+<ul class="spaced">
+<li><code>Pause</code>: Pause current track.</li>
+<li><code>Play</code>: Play current track.</li>
+<li><code>PlayPause</code>: Play (if stopped/paused) or pause (if playing) current track.</li>
+<li><code>Stop</code>: Stop current track.</li>
+<li><code>Next</code>: Change to next track.</li>
+<li><code>Previous</code>: Change to previous track.</li>
+<li><code>OpenPlayer</code>: Opens the player. If already open, the player will be brought to the top.</li>
+<li><code>ClosePlayer</code>: Closes the player.</li>
+<li><code>TogglePlayer</code>: Opens/closes the player depending on current state.</li>
+<li><code>SetPosition <em>n</em></code>: Where <em>n</em> is either an absolute value (<code>SetPosition 50</code> to jump to 50% of the track) or a relative value (<code>SetPosition +5</code> to jump 5% forward or <code>SetPosition -10</code> to jump 10% backward).</li>
+<li><code>SetRating <em>n</em></code>: Where <em>n</em> is a value between <code>0</code> (no rating) and <code>5</code> (maximum rating).</li>
+<li><code>SetShuffle <em>n</em></code>: Where <em>n</em> is <code>1</code> (shuffle on), <code>0</code> (shuffle off), or <code>-1</code> (toggle shuffle).</li>
+<li><code>SetRepeat <em>n</em></code>: Where <em>n</em> is <code>1</code> (repeat on), <code>0</code> (repeat off), or <code>-1</code> (toggle repeat).</li>
+<li><code>SetVolume <em>n</em></code>: Where <em>n</em> is either an absolute value (<code>SetVolume 50</code> to set volume to 50%) or a relative value (<code>SetVolume +20</code> to increase volume by 20% or<code>SetVolume -40</code> to decrease volume by 40%).</li>
+</ul>
+
+<h2 id="playerlist">Fully supported players</h2>
+<p>The following players are fully supported. All features should work unless stated otherwise.</p>
+
+<ul class="spaced">
+	<li><b>AIMP</b>: <code>PlayerName=AIMP</code><br>
+	Fully supported. Tested with AIMP 2.61.</li>
+
+	<li><b>foobar2000</b>: <code>PlayerName=CAD</code><br>
+	Fully supported. The <a href="http://poiru.github.com/foo-cad/">foo_cad plugin (download)</a> needs to be installed.</li>
+
+	<li><b>iTunes</b>: <code>PlayerName=iTunes</code><br>
+	Fully supported. Tested with iTunes 10.2.</li>
+
+	<li><b>J. River Media Center</b> and <b>Media Jukebox</b>: <code>PlayerName=CAD</code><br>
+	Fully supported through the CAD interface with Media Center 19 and later. More information <a href="http://yabb.jriver.com/interact/index.php?topic=84508.0">here</a>.</li>
+
+	<li><b>MediaMonkey</b>: <code>PlayerName=MediaMonkey</code><br>
+	Fully supported. Tested with MediaMonkey 3.2.5.</li>
+
+	<li><b>MusicBee</b>: <code>PlayerName=CAD</code><br>
+	Fully supported. <a href="http://getmusicbee.com/download.html">MusicBee 1.2</a> (or higher) is required.</li>
+
+	<li><b>Winamp</b>: <code>PlayerName=Winamp</code><br>
+	Fully supported.</li>
+
+	<li><b>VLC</b>: <code>PlayerName=CAD</code><br>
+	Fully supported. The <a href="http://code.google.com/p/vlc-libcad">libcad plugin</a> for VLC must be installed.</li>
+
+	<li><b>WMP</b>: <code>PlayerName=WMP</code><br>
+	Fully supported, except for the <code>Repeat</code> / <code>Shuffle</code> types.</li>
+</ul>
+
+<h2>Partially supported players</h2>
+<p>The following players are partially supported. Only some features will work.</p>
+
+<ul class="spaced">
+	<li><b>Spotify</b>: <code>PlayerName=Spotify</code><br>
+	Partially supported. Only the types <code>Artist</code>, <code>Track</code> and the bangs <code>Play</code>, <code>PlayPause</code>, <code>Stop</code>, <code>Next</code>, and <code>Previous</code> are available.</li>
+
+	<li><b>Last.fm Client</b>, <b>TTPlayer</b>, <b>OpenPandora</b>, <b>Zune</b>: <code>PlayerName=WLM</code><br>
+	Partially supported. Even in the best case, only the types <code>Title</code>, <code>Artist</code>, <code>Album</code> and the bangs <code>Play</code>, <code>Pause</code>, <code>PlayPause</code>, <code>Next</code>, <code>Previous</code>, <code>Stop</code> are supported.</li>
+</ul>
+
+<h2>Example</h2>
+<p>For a more complete example, check the <a href="http://poiru.deviantart.com/art/Soita-for-Rainmeter-209864541">Soita skin</a>.</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="title">[Rainmeter]</span></span><br><span class="line"><span class="setting">Update=<span class="value"><span class="number">1000</span></span></span></span><br><span class="line"><span class="setting">BackgroundMode=<span class="value"><span class="number">2</span></span></span></span><br><span class="line"><span class="setting">SolidColor=<span class="value"><span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span></span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">; MeasurePlayer is the main measure.</span></span><br><span class="line"><span class="comment">; MeasureArtist and MeasureAlbum are secondary measures.</span></span><br><span class="line"><span class="title"></span><br><span class="line">[MeasurePlayer]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">Plugin</span></span></span><br><span class="line"><span class="setting">Plugin=<span class="value">NowPlaying</span></span></span><br><span class="line"><span class="comment">; The main measure specifies the media player on PlayerName.</span></span><br><span class="line"><span class="setting">PlayerName=<span class="value">iTunes</span></span></span><br><span class="line"><span class="setting">PlayerType=<span class="value">TITLE</span></span></span><br><span class="line"><span class="comment">; PlayerPath, TrackChangeAction, and DisableLeadingZero are valid here on</span></span><br><span class="line"><span class="comment">; the main measure only.</span></span><br><span class="line"><span class="title"></span><br><span class="line">[MeasureArtist]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">Plugin</span></span></span><br><span class="line"><span class="setting">Plugin=<span class="value">NowPlaying</span></span></span><br><span class="line"><span class="comment">; Secondary measures specify the name of the main measure on PlayerName.</span></span><br><span class="line"><span class="setting">PlayerName=<span class="value">[MeasurePlayer]</span></span></span><br><span class="line"><span class="setting">PlayerType=<span class="value">ARTIST</span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[MeasureAlbum]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">Plugin</span></span></span><br><span class="line"><span class="setting">Plugin=<span class="value">NowPlaying</span></span></span><br><span class="line"><span class="setting">PlayerName=<span class="value">[MeasurePlayer]</span></span></span><br><span class="line"><span class="setting">PlayerType=<span class="value">ALBUM</span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[MeterPrev]</span></span><br><span class="line"><span class="setting">Meter=<span class="value">String</span></span></span><br><span class="line"><span class="setting">X=<span class="value"><span class="number">5</span></span></span></span><br><span class="line"><span class="setting">Y=<span class="value"><span class="number">5</span></span></span></span><br><span class="line"><span class="setting">FontColor=<span class="value">FFFF00</span></span></span><br><span class="line"><span class="setting">Text=<span class="value"><span class="string">"Prev"</span></span></span></span><br><span class="line"><span class="setting">LeftMouseUpAction=<span class="value">[!CommandMeasure <span class="string">"MeasurePlayer"</span> <span class="string">"Previous"</span>]</span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[MeterNext]</span></span><br><span class="line"><span class="setting">Meter=<span class="value">String</span></span></span><br><span class="line"><span class="setting">X=<span class="value"><span class="number">20</span>R</span></span></span><br><span class="line"><span class="setting">Y=<span class="value"><span class="number">5</span></span></span></span><br><span class="line"><span class="setting">FontColor=<span class="value">FFFF00</span></span></span><br><span class="line"><span class="setting">Text=<span class="value"><span class="string">"Next"</span></span></span></span><br><span class="line"><span class="setting">LeftMouseUpAction=<span class="value">[!CommandMeasure <span class="string">"MeasurePlayer"</span> <span class="string">"Next"</span>]</span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[MeterTitle]</span></span><br><span class="line"><span class="setting">Meter=<span class="value">String</span></span></span><br><span class="line"><span class="setting">MeasureName=<span class="value">MeasurePlayer</span></span></span><br><span class="line"><span class="setting">X=<span class="value"><span class="number">5</span></span></span></span><br><span class="line"><span class="setting">Y=<span class="value"><span class="number">35</span></span></span></span><br><span class="line"><span class="setting">W=<span class="value"><span class="number">400</span></span></span></span><br><span class="line"><span class="setting">H=<span class="value"><span class="number">20</span></span></span></span><br><span class="line"><span class="setting">FontColor=<span class="value"><span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span></span></span></span><br><span class="line"><span class="setting">Text=<span class="value"><span class="string">"Title: %1"</span></span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[MeterArtist]</span></span><br><span class="line"><span class="setting">Meter=<span class="value">String</span></span></span><br><span class="line"><span class="setting">MeasureName=<span class="value">MeasureArtist</span></span></span><br><span class="line"><span class="setting">X=<span class="value"><span class="number">5</span></span></span></span><br><span class="line"><span class="setting">Y=<span class="value"><span class="number">55</span></span></span></span><br><span class="line"><span class="setting">W=<span class="value"><span class="number">400</span></span></span></span><br><span class="line"><span class="setting">H=<span class="value"><span class="number">20</span></span></span></span><br><span class="line"><span class="setting">FontColor=<span class="value"><span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span></span></span></span><br><span class="line"><span class="setting">Text=<span class="value"><span class="string">"Artist: %1"</span></span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[MeterAlbum]</span></span><br><span class="line"><span class="setting">Meter=<span class="value">String</span></span></span><br><span class="line"><span class="setting">MeasureName=<span class="value">MeasureAlbum</span></span></span><br><span class="line"><span class="setting">X=<span class="value"><span class="number">5</span></span></span></span><br><span class="line"><span class="setting">Y=<span class="value"><span class="number">75</span></span></span></span><br><span class="line"><span class="setting">W=<span class="value"><span class="number">400</span></span></span></span><br><span class="line"><span class="setting">H=<span class="value"><span class="number">20</span></span></span></span><br><span class="line"><span class="setting">FontColor=<span class="value"><span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span></span></span></span><br><span class="line"><span class="setting">Text=<span class="value"><span class="string">"Album: %1"</span></span></span></span><br></pre></td></tr></table></figure>
+
+</article>
+</div>
+
+			</div>
+		</div>
+
+		<div id="footer-push"></div>
+	</div>
+
+	<script src="/js/main.js?v=2"></script>
+</body>
+</html>
