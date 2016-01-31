@@ -59,7 +59,7 @@
 	</header>
 	<article><p>WebParser is commonly used for parsing a web site and retrieving information, such as weather information or an RSS feed or GMail messages. It can also be used to parse local text files on your computer. Just use the "file://" url construct instead of "http://"</p>
 
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="title">[MeasureText]</span></span><br><span class="line"><span class="setting">Measure=<span class="value">Plugin</span></span></span><br><span class="line"><span class="setting">Plugin=<span class="value">WebParser</span></span></span><br><span class="line"><span class="setting">Url=<span class="value">file://C:\Users\YourName\Documents\TextFile.txt</span></span></span><br><span class="line"><span class="setting">RegExp=<span class="value"><span class="string">"(?siU)Stuff to search for(.*)End of Search"</span></span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">[MeasureText]&#10;Measure=Plugin&#10;Plugin=WebParser&#10;Url=file://C:\Users\YourName\Documents\TextFile.txt&#10;RegExp=&#34;(?siU)Stuff to search for(.*)End of Search&#34;</span><br></pre></td></tr></table></figure>
 
 <p>WebParser will return the results of the Regular Expression search in StringIndex numbers as usual, which can be used in further measures or meters.</p>
 </article>

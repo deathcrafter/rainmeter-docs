@@ -269,7 +269,7 @@
 <p>The very first thing you're going to add to your skin is the <a href="/manual/skins/rainmeter-section/">[Rainmeter] section</a>. This is a skin's "header" property, like the <code>&lt;head&gt;</code> tag in an HTML webpage. For now, your [Rainmeter] section will be mostly empty, except for one option:</p>
 
 <div class="noscroll">
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="title">[Rainmeter]</span></span><br><span class="line"><span class="setting">Update=<span class="value"><span class="number">1000</span></span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">[Rainmeter]&#10;Update=1000</span><br></pre></td></tr></table></figure>
 
 </div>
 
@@ -278,7 +278,7 @@
 <p>Now that you've given your skin a "head," it's time to give it a "body." You're going to create a <a href="/manual/meters/string/">string meter</a>. This is one of the most common types of meters, and it is used to create <b>text</b>.</p>
 
 <div class="noscroll">
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="title">[Rainmeter]</span></span><br><span class="line"><span class="setting">Update=<span class="value"><span class="number">1000</span></span></span></span><br><span class="line"><span class="title"></span><br><span class="line">[MyMeter]</span></span><br><span class="line"><span class="setting">Meter=<span class="value">String</span></span></span><br><span class="line"><span class="setting">Text=<span class="value">Hello, world!</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">[Rainmeter]&#10;Update=1000&#10;&#10;[MyMeter]&#10;Meter=String&#10;Text=Hello, world!</span><br></pre></td></tr></table></figure>
 
 </div>
 
@@ -311,7 +311,7 @@
 <p>It's... not very big. Or pretty. Meters without any options tend to be very simple and unimpressive. So let's add some <b>formatting</b>.</p>
 
 <div class="noscroll">
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="title">[MyMeter]</span></span><br><span class="line"><span class="setting">Meter=<span class="value">String</span></span></span><br><span class="line"><span class="setting">Text=<span class="value">Hello, world!</span></span></span><br><span class="line"><span class="setting">AntiAlias=<span class="value"><span class="number">1</span></span></span></span><br><span class="line"><span class="setting">FontColor=<span class="value"><span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span></span></span></span><br><span class="line"><span class="setting">FontFace=<span class="value">Segoe UI</span></span></span><br><span class="line"><span class="setting">FontSize=<span class="value"><span class="number">20</span></span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">[MyMeter]&#10;Meter=String&#10;Text=Hello, world!&#10;AntiAlias=1&#10;FontColor=255,255,255&#10;FontFace=Segoe UI&#10;FontSize=20</span><br></pre></td></tr></table></figure>
 
 </div>
 
