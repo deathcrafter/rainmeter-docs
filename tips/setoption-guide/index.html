@@ -62,40 +62,40 @@
 <h3>Changing or adding an option</h3>
 
 <p>Change the color of the string meter from red to green and the style to bold when you hover over the meter.</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">[MeterOne]&#10;Meter=String&#10;FontColor=255,0,0,255&#10;Text=&#34;Hello World&#34;&#10;MouseOverAction=[!SetOption MeterOne FontColor 0,255,0,255][!SetOption MeterOne StringStyle Bold]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[MeterOne]</span><br><span class="line">Meter=String</span><br><span class="line">FontColor=255,0,0,255</span><br><span class="line">Text=&quot;Hello World&quot;</span><br><span class="line">MouseOverAction=[!SetOption MeterOne FontColor 0,255,0,255][!SetOption MeterOne StringStyle Bold]</span><br></pre></td></tr></table></figure>
 
 <h3>Removing or restoring an option</h3>
 
 <p>You can remove a change you made using !SetOption by using the bang again, with "" (an empty string) as the value you set the option to. It should be noted that this <b>removes</b> the entire option from the meter or measure.</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">[MeterOne]&#10;Meter=String&#10;FontColor=255,0,0,255&#10;Text=&#34;Hello World&#34;&#10;MouseOverAction=[!SetOption MeterOne FontColor 0,255,0,255][!SetOption MeterOne StringStyle Bold]&#10;MouseLeaveAction=[!SetOption MeterOne FontColor &#34;&#34;][!SetOption MeterOne StringStyle &#34;&#34;]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[MeterOne]</span><br><span class="line">Meter=String</span><br><span class="line">FontColor=255,0,0,255</span><br><span class="line">Text=&quot;Hello World&quot;</span><br><span class="line">MouseOverAction=[!SetOption MeterOne FontColor 0,255,0,255][!SetOption MeterOne StringStyle Bold]</span><br><span class="line">MouseLeaveAction=[!SetOption MeterOne FontColor &quot;&quot;][!SetOption MeterOne StringStyle &quot;&quot;]</span><br></pre></td></tr></table></figure>
 
 <p>This will remove the options FontColor and StringStyle from the meter. For the FontColor option, this is going to cause a problem. Now the meter has no FontColor settting at all, and will default to 0,0,0,255 (black) instead of changing back to 255,0,0,255 (red) as you might want.</p>
 
 <p>This can be solved in two ways:</p>
 
 <p>Specifically set the option back to what it originally was.</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">[MeterOne]&#10;Meter=String&#10;FontColor=255,0,0,255&#10;Text=&#34;Hello World&#34;&#10;MouseOverAction=[!SetOption MeterOne FontColor 0,255,0,255][!SetOption MeterOne StringStyle Bold]&#10;MouseLeaveAction=[!SetOption MeterOne FontColor 255,0,0,255][!SetOption MeterOne StringStyle &#34;&#34;]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[MeterOne]</span><br><span class="line">Meter=String</span><br><span class="line">FontColor=255,0,0,255</span><br><span class="line">Text=&quot;Hello World&quot;</span><br><span class="line">MouseOverAction=[!SetOption MeterOne FontColor 0,255,0,255][!SetOption MeterOne StringStyle Bold]</span><br><span class="line">MouseLeaveAction=[!SetOption MeterOne FontColor 255,0,0,255][!SetOption MeterOne StringStyle &quot;&quot;]</span><br></pre></td></tr></table></figure>
 
 <p>Use a MeterStyle. This will work as the first !SetOption adds a specific FontColor, and the second one removes it, thus allowing the MeterStyle setting on the meter to again control this option.</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">[TextStyle]&#10;FontColor=255,0,0,255&#10;&#10;[MeterOne]&#10;Meter=String&#10;MeterStyle=TextStyle&#10;Text=&#34;Hello World&#34;&#10;MouseOverAction=[!SetOption MeterOne FontColor 0,255,0,255][!SetOption MeterOne StringStyle Bold]&#10;MouseLeaveAction=[!SetOption MeterOne FontColor &#34;&#34;][!SetOption MeterOne StringStyle &#34;&#34;]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[TextStyle]</span><br><span class="line">FontColor=255,0,0,255</span><br><span class="line"></span><br><span class="line">[MeterOne]</span><br><span class="line">Meter=String</span><br><span class="line">MeterStyle=TextStyle</span><br><span class="line">Text=&quot;Hello World&quot;</span><br><span class="line">MouseOverAction=[!SetOption MeterOne FontColor 0,255,0,255][!SetOption MeterOne StringStyle Bold]</span><br><span class="line">MouseLeaveAction=[!SetOption MeterOne FontColor &quot;&quot;][!SetOption MeterOne StringStyle &quot;&quot;]</span><br></pre></td></tr></table></figure>
 
 <h3>Variables and !SetOption</h3>
 
 <p>!SetOption, like any other bang, will resolve any #Variables# before setting the option.</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">[Variables]&#10;MyColor=255,255,255,255&#10;&#10;[MeterOne]&#10;Meter=String&#10;Text=&#34;Hello World&#34;&#10;MouseOverAction=!SetOption MeterOne FontColor #MyColor#&#10;DynamicVariables=1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[Variables]</span><br><span class="line">MyColor=255,255,255,255</span><br><span class="line"></span><br><span class="line">[MeterOne]</span><br><span class="line">Meter=String</span><br><span class="line">Text=&quot;Hello World&quot;</span><br><span class="line">MouseOverAction=!SetOption MeterOne FontColor #MyColor#</span><br><span class="line">DynamicVariables=1</span><br></pre></td></tr></table></figure>
 
 <p>This sets the meter with FontColor=255,255,255,255, not FontColor=#MyColor#. You can however set the option with the literal "#MyColor#" if you wish. You will need to "escape" the variable, with the "*" character.</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">[MeterOne]&#10;Meter=String&#10;Text=&#34;Hello World&#34;&#10;MouseOverAction=!SetOption MeterOne FontColor #*MyColor*#&#10;DynamicVariables=1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[MeterOne]</span><br><span class="line">Meter=String</span><br><span class="line">Text=&quot;Hello World&quot;</span><br><span class="line">MouseOverAction=!SetOption MeterOne FontColor #*MyColor*#</span><br><span class="line">DynamicVariables=1</span><br></pre></td></tr></table></figure>
 
 <p>Now the meter will be set to FontColor=#MyColor# and will obey any changes made to that variable elsewhere in the skin, due to DynamicVariables=1 being set.</p>
 
 <h3>[Measures] and !SetOption</h3>
 
 <p>!SetOption will use the current value of a [Measure] if it is used in the option.</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">[MeasureTime1]&#10;Measure=Time&#10;Format=%S&#10;&#10;[MeasureTime2]&#10;Measure=Time&#10;Format=%M&#10;&#10;[MeterOne]&#10;Meter=String&#10;Text=[MeasureTime1]&#10;DynamicVariables=1&#10;LeftMouseUpAction=!SetOption MeterOne Text [MeasureTime2]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[MeasureTime1]</span><br><span class="line">Measure=Time</span><br><span class="line">Format=%S</span><br><span class="line"></span><br><span class="line">[MeasureTime2]</span><br><span class="line">Measure=Time</span><br><span class="line">Format=%M</span><br><span class="line"></span><br><span class="line">[MeterOne]</span><br><span class="line">Meter=String</span><br><span class="line">Text=[MeasureTime1]</span><br><span class="line">DynamicVariables=1</span><br><span class="line">LeftMouseUpAction=!SetOption MeterOne Text [MeasureTime2]</span><br></pre></td></tr></table></figure>
 
 <p>This sets the meter with the Text= as the current number of minutes, not Text=[MeasureTime2]. You can however set the option with the literal "[MeasureTime2]" if you wish. You will need to "escape" the measure, with the "*" character.</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">[MeasureTime1]&#10;Measure=Time&#10;Format=%S&#10;&#10;[MeasureTime2]&#10;Measure=Time&#10;Format=%M&#10;&#10;[MeterOne]&#10;Meter=String&#10;Text=[MeasureTime1]&#10;DynamicVariables=1&#10;LeftMouseUpAction=!SetOption MeterOne Text [*MeasureTime2*]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[MeasureTime1]</span><br><span class="line">Measure=Time</span><br><span class="line">Format=%S</span><br><span class="line"></span><br><span class="line">[MeasureTime2]</span><br><span class="line">Measure=Time</span><br><span class="line">Format=%M</span><br><span class="line"></span><br><span class="line">[MeterOne]</span><br><span class="line">Meter=String</span><br><span class="line">Text=[MeasureTime1]</span><br><span class="line">DynamicVariables=1</span><br><span class="line">LeftMouseUpAction=!SetOption MeterOne Text [*MeasureTime2*]</span><br></pre></td></tr></table></figure>
 
 <p>Now the meter will be set to Text=[MeasureTime2] and will stay current with the value of that measure, due to DynamicVariables=1 being set.</p>
 

@@ -198,13 +198,13 @@
 
 <p>Much like <a href="/manual-beta/measures/plugin/">plugin measures</a>, each script measure creates a separate <b>instance</b> of its script. This means that a skin can have any number of scripts loaded simultaneously&mdash;even from the same script file. (The order in which scripts are executed is determined by the <a href="/manual-beta/measures/#Order">measure order</a>.) "Global" variables are not shared between instances.</p>
 
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">[MeasureName]&#10;Measure=Script&#10;ScriptFile=MyScript.lua</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[MeasureName]</span><br><span class="line">Measure=Script</span><br><span class="line">ScriptFile=MyScript.lua</span><br></pre></td></tr></table></figure>
 
 <h3 id="Options">Options</h3>
 
 <p>In addition to <a href="/manual-beta/measures/general-options/">general measure options</a> and <a href="/manual-beta/measures/script/#ScriptFile">ScriptFile</a>, scripts also allow <a href="/manual-beta/measures/script/#UserDefined">user-defined options</a>. These options may have any name and value, and may be changed with <a href="/manual-beta/bangs/#SetOption">!SetOption</a>. The script can read and use its own option values using the <a href="#SelfObject">SELF object functions</a>. This allows the same script file to be used with different parameters depending on the context.</p>
 
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">[MeasureName]&#10;Measure=Script&#10;ScriptFile=MyScript.lua&#10;MyOption=Hello, world!</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[MeasureName]</span><br><span class="line">Measure=Script</span><br><span class="line">ScriptFile=MyScript.lua</span><br><span class="line">MyOption=Hello, world!</span><br></pre></td></tr></table></figure>
 
 <h3 id="DynamicVariables">Dynamic Variables</h3>
 

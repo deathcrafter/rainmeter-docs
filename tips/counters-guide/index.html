@@ -73,10 +73,10 @@
 
 <h2>Creating Counters</h2>
 <p>First we're going to create some variables that we are going to use later on.</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">[Variables]&#10;MaxNumber=30&#10;Pause=1&#10;Reset=1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[Variables]</span><br><span class="line">MaxNumber=30</span><br><span class="line">Pause=1</span><br><span class="line">Reset=1</span><br></pre></td></tr></table></figure>
 
 <p>Now we need to create the counter.</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">[cCounter]&#10;Measure=Calc&#10;Formula=cCounter+1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[cCounter]</span><br><span class="line">Measure=Calc</span><br><span class="line">Formula=cCounter+1</span><br></pre></td></tr></table></figure>
 
 <p>The reason this works is that when calling a measure the value from the last update cycle is used. With this in mind, by calling the measure inside itself we can easily change it's value.</p>
 
@@ -87,59 +87,59 @@
 <h3>Making the counter reset at a given value</h3>
 
 <p>Having it reset after a given value is easy and is accomplished the same way as if you were using the Counter variable.</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">[cCounter]&#10;Measure=Calc&#10;Formula=(cCounter+1)%(#MaxNumber#+1)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[cCounter]</span><br><span class="line">Measure=Calc</span><br><span class="line">Formula=(cCounter+1)%(#MaxNumber#+1)</span><br></pre></td></tr></table></figure>
 
 <p>This will have the counter reset to zero after it hits 30, which is what we have MaxNumber set to. We have the measure add 1 to MaxNumber so that it will reset after the value else it will reset at that value. This is due to the fact that including the number 0 counting to 30 is actually 31 numbers.</p>
 
 <p>If you want your counter to reset to one instead of zero we just need to move things around a bit.</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">[cCounter]&#10;Measure=Calc&#10;Formula=cCounter%#MaxNumber#+1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[cCounter]</span><br><span class="line">Measure=Calc</span><br><span class="line">Formula=cCounter%#MaxNumber#+1</span><br></pre></td></tr></table></figure>
 
 <p>With this method we also don't need to worry about adding one to the reset value.</p>
 
 <h3>Resetting a counter via Mouse Actions</h3>
 
 <p>How about having it reset to zero when we click on the skin.</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">[Rainmeter]&#10;LeftMouseUpAction=!SetVariable Reset 0&#10;&#10;[cCounter]&#10;Measure=Calc&#10;Formula=(cCounter+1)*#Reset#&#10;IfBelowValue=1&#10;IfBelowAction=!SetVariable Reset 1&#10;DynamicVariables=1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[Rainmeter]</span><br><span class="line">LeftMouseUpAction=!SetVariable Reset 0</span><br><span class="line"></span><br><span class="line">[cCounter]</span><br><span class="line">Measure=Calc</span><br><span class="line">Formula=(cCounter+1)*#Reset#</span><br><span class="line">IfBelowValue=1</span><br><span class="line">IfBelowAction=!SetVariable Reset 1</span><br><span class="line">DynamicVariables=1</span><br></pre></td></tr></table></figure>
 
 <p>Multiplying the counter by zero will easily reset it. Just make sure to set an action to set the Reset variable back to one when you're done.</p>
 
 <p>Or an alternative for resetting the counter with just a MouseOver:</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">[Rainmeter]&#10;MouseOverAction=!DisableMeasure cCounter&#10;MouseLeaveAction=!EnableMeasure cCounter&#10;&#10;[cCounter]&#10;Measure=Calc&#10;Formula=cCounter+1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[Rainmeter]</span><br><span class="line">MouseOverAction=!DisableMeasure cCounter</span><br><span class="line">MouseLeaveAction=!EnableMeasure cCounter</span><br><span class="line"></span><br><span class="line">[cCounter]</span><br><span class="line">Measure=Calc</span><br><span class="line">Formula=cCounter+1</span><br></pre></td></tr></table></figure>
 
 <p><b>Note:</b> This method only works if the counter is disabled for at least one update cycle.</p>
 
 <p>Now we can combine a couple methods of resetting to have the counter count up, reset, and wait for us to tell it restart again.</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">[cCounter]&#10;Measure=Calc&#10;Formula=cCounter+1&#10;IfEqualValue=#MaxNumber#&#10;IfEqualAction=!DisableMeasure #CURRENTSECTION#</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[cCounter]</span><br><span class="line">Measure=Calc</span><br><span class="line">Formula=cCounter+1</span><br><span class="line">IfEqualValue=#MaxNumber#</span><br><span class="line">IfEqualAction=!DisableMeasure #CURRENTSECTION#</span><br></pre></td></tr></table></figure>
 
 <p>When we want the counter to start counting again we just need to use <code>!EnableMeasure cCounter</code>.</p>
 
 <h3>Pausing a counter</h3>
 
 <p>Lets pause the counter when you mouse-over the skin.</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">[Rainmeter]&#10;MouseOverAction=!SetVariable Pause 0&#10;MouseLeaveAction=!SetVariable Pause 1&#10;&#10;[cCounter]&#10;Measure=Calc&#10;Formula=cCounter+#Pause#&#10;DynamicVariables=1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[Rainmeter]</span><br><span class="line">MouseOverAction=!SetVariable Pause 0</span><br><span class="line">MouseLeaveAction=!SetVariable Pause 1</span><br><span class="line"></span><br><span class="line">[cCounter]</span><br><span class="line">Measure=Calc</span><br><span class="line">Formula=cCounter+#Pause#</span><br><span class="line">DynamicVariables=1</span><br></pre></td></tr></table></figure>
 
 <p>When the MouseOver action is triggered you stop adding 1 to the counter yet it retains it's value. When the mouse leaves the skin you start adding 1 to it again.</p>
 
 <p><b>Note:</b> This functionality may also be accomplished using the <a href="/manual/bangs/#PauseMeasure">!PauseMeasure, !UnpauseMeasure and !TogglePauseMeasure</a> bangs.</p>
 
 <p>We can also have the counter stop counting at a certain value and stay there.</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">[cCounter]&#10;Measure=Calc&#10;Formula=cCounter+(cCounter&#60;#MaxNumber#)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[cCounter]</span><br><span class="line">Measure=Calc</span><br><span class="line">Formula=cCounter+(cCounter&lt;#MaxNumber#)</span><br></pre></td></tr></table></figure>
 
 <p>What we did was added a conditional statement. Conditional statements without an "if ? then : else" format resolve to either 1 for true or 0 for false. Using this fact we can easily use conditional statements in mathematical formulas.</p>
 
 <h3>Triggering Actions with a Counter</h3>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">[cCounter]&#10;Measure=Calc&#10;Formula=cCounter+1&#10;IfAboveValue=#MaxNumber#&#10;IfAboveAction=[!DisableMeasure #CURRENTSECTION#][&#34;Some Action&#34;]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[cCounter]</span><br><span class="line">Measure=Calc</span><br><span class="line">Formula=cCounter+1</span><br><span class="line">IfAboveValue=#MaxNumber#</span><br><span class="line">IfAboveAction=[!DisableMeasure #CURRENTSECTION#][&quot;Some Action&quot;]</span><br></pre></td></tr></table></figure>
 
 <p>This will count up to the MaxNumber, disable itself so it doesn't continue to count, and execute some action such as opening an addon. This method can be used to execute some action a certain number of updates after the skin is loaded.</p>
 
 <p>We can use the built in Counter function/variable to accomplish the same thing. Please note that Counter returns the number of updates since the skin was initially loaded and only returns to zero when Rainmeter is loaded or a !RefreshApp bang is used.</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">[cCounter]&#10;Measure=Calc&#10;Formula=Counter&#10;IfAboveValue=#MaxNumber#&#10;IfAboveAction=[!DisableMeasure #CURRENTSECTION#][&#34;Some Action&#34;]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[cCounter]</span><br><span class="line">Measure=Calc</span><br><span class="line">Formula=Counter</span><br><span class="line">IfAboveValue=#MaxNumber#</span><br><span class="line">IfAboveAction=[!DisableMeasure #CURRENTSECTION#][&quot;Some Action&quot;]</span><br></pre></td></tr></table></figure>
 
 <p><b>Note:</b> To execute a set of commands when the skin is loaded or refreshed, without using a counter, use <code>OnRefreshAction=!SomeAction</code> in the <code>[Rainmeter]</code> section of the skin.</p>
 
 <h3>Bonus Lesson: Making a counter that counts down, not up</h3>
 
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">[cCounter]&#10;Measure=Calc&#10;Formula=(cCounter-1+(#MaxNumber#+1))%(#MaxNumber#+1)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[cCounter]</span><br><span class="line">Measure=Calc</span><br><span class="line">Formula=(cCounter-1+(#MaxNumber#+1))%(#MaxNumber#+1)</span><br></pre></td></tr></table></figure>
 
 <p>This one is a bit harder to explain. What we are doing is taking the value of the counter and subtracting 1. Then we have to add the value of our MaxNumber else we'll just end up with a negative value. Now we have to take the remainder of that value using Modulo to get our final value.</p>
 
@@ -147,11 +147,11 @@
 
 <h3>Cycling Images</h3>
 
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">[cCounter]&#10;Measure=Calc&#10;Formula=cCounter%#MaxNumber#+1&#10;&#10;[MeterImage]&#10;Meter=Image&#10;MeasureName=cCounter&#10;ImageName=#@#Images/%1.png</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[cCounter]</span><br><span class="line">Measure=Calc</span><br><span class="line">Formula=cCounter%#MaxNumber#+1</span><br><span class="line"></span><br><span class="line">[MeterImage]</span><br><span class="line">Meter=Image</span><br><span class="line">MeasureName=cCounter</span><br><span class="line">ImageName=#@#Images/%1.png</span><br></pre></td></tr></table></figure>
 
 <h3>Cycling Between Measures</h3>
 
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">[Variables]&#10;MaxNumber=3&#10;&#10;[cCounter]&#10;Measure=Calc&#10;Formula=cCounter%#MaxNumber#+1&#10;&#10;[Measure1]&#10;Measure=String&#10;String=This is the first measure.&#10;&#10;[Measure2]&#10;Measure=String&#10;String=This is the second measure.&#10;&#10;[Measure3]&#10;Measure=String&#10;String=This is the third measure.&#10;&#10;[MeterString]&#10;Meter=String&#10;MeasureName=Measure1&#10;MeasureName2=Measure2&#10;MeasureName3=Measure3&#10;Text=%[cCounter]&#10;DynamicVariables=1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[Variables]</span><br><span class="line">MaxNumber=3</span><br><span class="line"></span><br><span class="line">[cCounter]</span><br><span class="line">Measure=Calc</span><br><span class="line">Formula=cCounter%#MaxNumber#+1</span><br><span class="line"></span><br><span class="line">[Measure1]</span><br><span class="line">Measure=String</span><br><span class="line">String=This is the first measure.</span><br><span class="line"></span><br><span class="line">[Measure2]</span><br><span class="line">Measure=String</span><br><span class="line">String=This is the second measure.</span><br><span class="line"></span><br><span class="line">[Measure3]</span><br><span class="line">Measure=String</span><br><span class="line">String=This is the third measure.</span><br><span class="line"></span><br><span class="line">[MeterString]</span><br><span class="line">Meter=String</span><br><span class="line">MeasureName=Measure1</span><br><span class="line">MeasureName2=Measure2</span><br><span class="line">MeasureName3=Measure3</span><br><span class="line">Text=%[cCounter]</span><br><span class="line">DynamicVariables=1</span><br></pre></td></tr></table></figure>
 
 </article>
 </div>

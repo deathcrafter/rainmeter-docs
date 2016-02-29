@@ -214,13 +214,13 @@
 		This will override the default behavior of the measure. Instead of measuring the time since the last restart of the system, this option will define a number of seconds. The Format option can then be used to format that number of seconds to days, hours, minutes and/or seconds as desired.<br/><br/>
 		
 		<p>An example might be:</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">[MesureFormatSeconds]&#10;Measure=UpTime&#10;SecondsValue=[SomeMeasureName]&#10;Format=&#34;%4!i!d %3!i!h %2!i!m %1!i!s&#34;&#10;DynamicVariables=1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[MesureFormatSeconds]</span><br><span class="line">Measure=UpTime</span><br><span class="line">SecondsValue=[SomeMeasureName]</span><br><span class="line">Format=&quot;%4!i!d %3!i!h %2!i!m %1!i!s&quot;</span><br><span class="line">DynamicVariables=1</span><br></pre></td></tr></table></figure>
 
 	</dd>	
 </dl>
 
 <h2>Example</h2>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">[Rainmeter]&#10;Update=1000&#10;AccurateText=1&#10;DynamicWindowSize=1&#10;&#10;[MeasureUptime]&#10;Measure=Uptime&#10;Format=&#34;%4!i! days, %3!i! hours, %2!i! minutes %1!i! seconds&#34;&#10;&#10;[MeterText]&#10;Meter=String&#10;MeasureName=MeasureUptime&#10;X=5&#10;Y=5&#10;W=200&#10;H=25&#10;FontSize=12&#10;FontColor=255,255,255,255&#10;SolidColor=47,47,47,255&#10;Padding=5,5,5,5&#10;AntiAlias=1&#10;Text=&#34;Uptime: %1&#34;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[Rainmeter]</span><br><span class="line">Update=1000</span><br><span class="line">AccurateText=1</span><br><span class="line">DynamicWindowSize=1</span><br><span class="line"></span><br><span class="line">[MeasureUptime]</span><br><span class="line">Measure=Uptime</span><br><span class="line">Format=&quot;%4!i! days, %3!i! hours, %2!i! minutes %1!i! seconds&quot;</span><br><span class="line"></span><br><span class="line">[MeterText]</span><br><span class="line">Meter=String</span><br><span class="line">MeasureName=MeasureUptime</span><br><span class="line">X=5</span><br><span class="line">Y=5</span><br><span class="line">W=200</span><br><span class="line">H=25</span><br><span class="line">FontSize=12</span><br><span class="line">FontColor=255,255,255,255</span><br><span class="line">SolidColor=47,47,47,255</span><br><span class="line">Padding=5,5,5,5</span><br><span class="line">AntiAlias=1</span><br><span class="line">Text=&quot;Uptime: %1&quot;</span><br></pre></td></tr></table></figure>
 
 <p><b>Note for Windows 8 or later:</b></p>
 

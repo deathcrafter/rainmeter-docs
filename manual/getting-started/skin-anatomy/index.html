@@ -207,7 +207,7 @@ OptionName=Option Value<br/>
 
 <p>The following is an example of a very simple Rainmeter skin file. It updates the skin once a second, measures the used CPU as a percentage, and displays that percentage.</p>
 
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">[Rainmeter]&#10;Update=1000&#10;&#10;[MeasureCPU]&#10;Measure=CPU&#10;&#10;[MeterCPU]&#10;Meter=String&#10;MeasureName=MeasureCPU</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[Rainmeter]</span><br><span class="line">Update=1000</span><br><span class="line"></span><br><span class="line">[MeasureCPU]</span><br><span class="line">Measure=CPU</span><br><span class="line"></span><br><span class="line">[MeterCPU]</span><br><span class="line">Meter=String</span><br><span class="line">MeasureName=MeasureCPU</span><br></pre></td></tr></table></figure>
 
 <h2 id="TypesOfSections">There are six types of [Sections]</h2>
 
@@ -224,14 +224,14 @@ This section will always be named [Metadata], and is used to provide information
 <p><b>[Variables]</b><br/>
 This section will always be named [Variables], and is used to define values that can be used anywhere in the skin by enclosing the variable name inside #PoundSigns#. This can be helpful to create a value that you want to use many places in the skin, while allowing you to change it in only one place. A simple example might be:</p>
 
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">[Variables]&#10;MyFontColor=255,255,255,255&#10;&#10;[MeterOne]&#10;Meter=String&#10;FontColor=#MyFontColor#&#10;&#10;[MeterTwo]&#10;Meter=String&#10;FontColor=#MyFontColor#</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[Variables]</span><br><span class="line">MyFontColor=255,255,255,255</span><br><span class="line"></span><br><span class="line">[MeterOne]</span><br><span class="line">Meter=String</span><br><span class="line">FontColor=#MyFontColor#</span><br><span class="line"></span><br><span class="line">[MeterTwo]</span><br><span class="line">Meter=String</span><br><span class="line">FontColor=#MyFontColor#</span><br></pre></td></tr></table></figure>
 
 <p><a href="/manual/variables/#Section">[Variables]</a> section details.</p>
 
 <p><b>[MeterStyles]</b><br/>
 These sections can have any unique name, and are similar to [Variables] in function. They allow you to set up "styles" for meters where you can for instance define some or all of the "formatting" options for your meters, and use the MeterStyle in many meters while again allowing you to only have to change it in one place. A simple example might be:</p>
 
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">[MyTextStyle]&#10;FontFace=Arial&#10;FontSize=12&#10;FontColor=255,255,255,255&#10;AntiAlias=1&#10;&#10;[MeterOne]&#10;Meter=String&#10;MeterStyle=MyTextStyle&#10;&#10;[MeterTwo]&#10;Meter=String&#10;MeterStyle=MyTextStyle</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[MyTextStyle]</span><br><span class="line">FontFace=Arial</span><br><span class="line">FontSize=12</span><br><span class="line">FontColor=255,255,255,255</span><br><span class="line">AntiAlias=1</span><br><span class="line"></span><br><span class="line">[MeterOne]</span><br><span class="line">Meter=String</span><br><span class="line">MeterStyle=MyTextStyle</span><br><span class="line"></span><br><span class="line">[MeterTwo]</span><br><span class="line">Meter=String</span><br><span class="line">MeterStyle=MyTextStyle</span><br></pre></td></tr></table></figure>
 
 <p><a href="/manual/meters/general-options/meterstyles/">[MeterStyle]</a> section details.</p>
 
@@ -240,14 +240,14 @@ These sections can have any unique name, and are used to "measure" some system o
 
 <p>There are two kinds of options used on a measure. There are <a href="/manual/measures/general-options/">general measure options</a> that define behaviors for most or all measure types, and measure options that are specific to the type of measure. These specific options are explained in the manual section for each measure type. Some simple examples might be:</p>
 
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">[MeasureDateTime]&#10;Measure=Time&#10;Format=%A, %B %#d, %Y %#I:%M %p&#10;&#10;[MeasureFreeDriveC]&#10;Measure=FreeDiskSpace&#10;Drive=C:</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[MeasureDateTime]</span><br><span class="line">Measure=Time</span><br><span class="line">Format=%A, %B %#d, %Y %#I:%M %p</span><br><span class="line"></span><br><span class="line">[MeasureFreeDriveC]</span><br><span class="line">Measure=FreeDiskSpace</span><br><span class="line">Drive=C:</span><br></pre></td></tr></table></figure>
 
 <p><a href="/manual/measures/">[Measures]</a> section details.</p>
 
 <p><b>[Meters]</b><br/>
 These sections can have any unique name, and are used to "display" things in the skin window. Most often, a meter will be used to display some information obtained by a measure, which is done by "binding" the meter to one or more measures with the <code>MeasureName=SomeMeasure</code> option. A simple example might be:</p>
 
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">[MeasureDateTime]&#10;Measure=Time&#10;Format=%A, %B %#d, %Y %#I:%M %p&#10;&#10;[MeterDateTime]&#10;Meter=String&#10;MeasureName=MeasureDateTime</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[MeasureDateTime]</span><br><span class="line">Measure=Time</span><br><span class="line">Format=%A, %B %#d, %Y %#I:%M %p</span><br><span class="line"></span><br><span class="line">[MeterDateTime]</span><br><span class="line">Meter=String</span><br><span class="line">MeasureName=MeasureDateTime</span><br></pre></td></tr></table></figure>
 
 <p><em>The meter [MeterDateTime] is "bound" to the measure [MeasureDateTime], and will display the current value of the measure as it changes.</em></p>
 
@@ -296,7 +296,7 @@ These are options that in a sense "test" the value or state of the measure they 
 
 <p>A simple example might be:</p>
 
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">[MeasureCPU]&#10;Measure=CPU&#10;IfCondition=MeasureCPU &#62; 60&#10;IfTrueAction=[!SetOption MeterCPU FontColor &#34;255,0,0&#34;]&#10;IfFalseAction=[!SetOption MeterCPU FontColor &#34;0,255,0&#34;]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[MeasureCPU]</span><br><span class="line">Measure=CPU</span><br><span class="line">IfCondition=MeasureCPU &gt; 60</span><br><span class="line">IfTrueAction=[!SetOption MeterCPU FontColor &quot;255,0,0&quot;]</span><br><span class="line">IfFalseAction=[!SetOption MeterCPU FontColor &quot;0,255,0&quot;]</span><br></pre></td></tr></table></figure>
 
 <p><em>If the value of [MeasureCPU] is greater than 60, then change the FontColor of the String meter [MeterCPU] to "red", if not, change it to "green".</em></p>
 
@@ -307,7 +307,7 @@ These are options you put on meters, (or the skin background) that can react to 
 
 <p>A simple example might be:</p>
 
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">[MeterCPU]&#10;Meter=String&#10;FontColor=0,255,0&#10;MouseOverAction=[!SetOption MeterCPU FontColor &#34;255,0,0&#34;]&#10;MouseLeaveAction=[!SetOption MeterCPU FontColor &#34;0,255,0&#34;]&#10;LeftMouseUpAction=[&#34;taskmgr.exe&#34;]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[MeterCPU]</span><br><span class="line">Meter=String</span><br><span class="line">FontColor=0,255,0</span><br><span class="line">MouseOverAction=[!SetOption MeterCPU FontColor &quot;255,0,0&quot;]</span><br><span class="line">MouseLeaveAction=[!SetOption MeterCPU FontColor &quot;0,255,0&quot;]</span><br><span class="line">LeftMouseUpAction=[&quot;taskmgr.exe&quot;]</span><br></pre></td></tr></table></figure>
 
 <p><a href="/manual/mouse-actions/">Mouse Action</a> details.</p>
 
@@ -325,7 +325,7 @@ In addition, you can have an action option execute any external command to the W
 
 <p>Some simple examples might be:</p>
 
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">LeftMouseUpAction=[&#34;C:\Program Files\WinRar\WinRar.exe&#34;]&#10;LeftMouseUpAction=[&#34;http://cnn.com&#34;]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">LeftMouseUpAction=[&quot;C:\Program Files\WinRar\WinRar.exe&quot;]</span><br><span class="line">LeftMouseUpAction=[&quot;http://cnn.com&quot;]</span><br></pre></td></tr></table></figure>
 
 <p>Hopefully this will get you off and running with Rainmeter skins. There are other areas of how the application itself works that are important to understand, and the <a href="/manual/getting-started/">Getting Started</a> and <a href="/manual/user-interface/">User Interface</a> sections of the manual are important references. Don't skip them.</p>
 

@@ -174,7 +174,7 @@ A variant of the UTF-8 standard with a <a href="http://en.wikipedia.org/wiki/Byt
 <h3>Reading and writing in Lua example:</h3>
 
 <p>LuaUTF8.ini (not encoded in anything special, just ANSI):<br/>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">[Rainmeter]&#10;Update=1000&#10;DynamicWindowSize=1&#10;&#10;[MeasureRead]&#10;Measure=Calc&#10;Formula=1&#10;IfEqualValue=1&#10;IfEqualAction=[!CommandMeasure MeasureScript &#34;Read()&#34;][!UpdateMeter *][!Redraw]&#10;&#10;[MeasureWrite]&#10;Measure=Calc&#10;Formula=1&#10;IfEqualValue=1&#10;IfEqualAction=[!CommandMeasure MeasureScript &#34;Write()&#34;]&#10;&#10;[MeasureScript]&#10;Measure=Script&#10;ScriptFile=#CURRENTPATH#LuaUTF8.lua&#10;UpdateDivider=-1&#10;&#10;[MeterUTF8]&#10;Meter=String&#10;FontSize=12&#10;FontColor=255,255,255,255&#10;SolidColor=60,60,60,255&#10;Padding=10,10,10,10&#10;AntiAlias=1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[Rainmeter]</span><br><span class="line">Update=1000</span><br><span class="line">DynamicWindowSize=1</span><br><span class="line"></span><br><span class="line">[MeasureRead]</span><br><span class="line">Measure=Calc</span><br><span class="line">Formula=1</span><br><span class="line">IfEqualValue=1</span><br><span class="line">IfEqualAction=[!CommandMeasure MeasureScript &quot;Read()&quot;][!UpdateMeter *][!Redraw]</span><br><span class="line"></span><br><span class="line">[MeasureWrite]</span><br><span class="line">Measure=Calc</span><br><span class="line">Formula=1</span><br><span class="line">IfEqualValue=1</span><br><span class="line">IfEqualAction=[!CommandMeasure MeasureScript &quot;Write()&quot;]</span><br><span class="line"></span><br><span class="line">[MeasureScript]</span><br><span class="line">Measure=Script</span><br><span class="line">ScriptFile=#CURRENTPATH#LuaUTF8.lua</span><br><span class="line">UpdateDivider=-1</span><br><span class="line"></span><br><span class="line">[MeterUTF8]</span><br><span class="line">Meter=String</span><br><span class="line">FontSize=12</span><br><span class="line">FontColor=255,255,255,255</span><br><span class="line">SolidColor=60,60,60,255</span><br><span class="line">Padding=10,10,10,10</span><br><span class="line">AntiAlias=1</span><br></pre></td></tr></table></figure>
 
 </p>
 
@@ -184,7 +184,7 @@ A variant of the UTF-8 standard with a <a href="http://en.wikipedia.org/wiki/Byt
 </p>
 
 <p>TestIn.txt (encoded in UTF-8 with BOM):<br/>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#1048;&#1089;&#1087;&#1099;&#1090;&#1072;&#1085;&#1080;&#1077; &#1085;&#1077;&#1082;&#1086;&#1090;&#1086;&#1088;&#1099;&#1093; &#1088;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081; &#1090;&#1077;&#1082;&#1089;&#1090;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Испытание некоторых русский текст</span><br></pre></td></tr></table></figure>
 
 </p>
 
