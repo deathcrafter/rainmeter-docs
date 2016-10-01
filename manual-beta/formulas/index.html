@@ -234,7 +234,8 @@
 
 <h3 id="Functions">Functions</h3>
 <ul>
-	<li><code>Atan(<em>x</em>)</code>, <code>Asin(<em>x</em>)</code>, <code>Acos(<em>x</em>)</code>, <code>Cos(<em>x</em>)</code>, <code>Sin(<em>x</em>)</code>, <code>Tan(<em>x</em>)</code>: Standard trigonometric functions. <em>x</em> is in radians.</li>
+	<li><code>Cos(<em>x</em>)</code>, <code>Sin(<em>x</em>)</code>, <code>Tan(<em>x</em>)</code>: Standard trigonometric functions. <em>x</em> is in radians.</li>
+	<li><code>Acos(<em>x</em>)</code>, <code>Asin(<em>x</em>)</code>, <code>Atan(<em>x</em>)</code>: Standard trigonometric functions. <em>x</em> is between -1 and 1.</li>
 	<li><code>Atan2(<em>y</em>, <em>x</em>)</code> - Returns the radians of arc tangent between points <em>Y</em> and <em>X</em> in the Cartesian plane. The sign of the elements determines the quadrant.</li>
 	<li><code>Rad(<em>x</em>)</code> - Converts <em>x</em> degrees to radians.</li>
 	<li><code>Abs(<em>x</em>)</code> - Absolute value of <em>x</em>.</li>
@@ -273,11 +274,11 @@
    end if
 </pre><br>
 
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[Measure]</span><br><span class="line">Measure=Calc</span><br><span class="line">Formula=5</span><br><span class="line"></span><br><span class="line">[Meter]</span><br><span class="line">Meter=String</span><br><span class="line">X=([Measure] &lt; 6 ? 0 : 10)</span><br><span class="line">DynamicVariables=1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[Measure]</div><div class="line">Measure=Calc</div><div class="line">Formula=5</div><div class="line"></div><div class="line">[Meter]</div><div class="line">Meter=String</div><div class="line">X=([Measure] &lt; 6 ? 0 : 10)</div><div class="line">DynamicVariables=1</div></pre></td></tr></table></figure>
 
 <p>The meter would be positioned at <code>X=0</code> since the condition <code>[Measure] &lt; 6</code> evaluates to true.</p>
 <p>Conditional operators can be nested. It should be noted that there is a maximum of 30 nested operators.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[Measure]</span><br><span class="line">Measure=Calc</span><br><span class="line">Formula=2</span><br><span class="line"></span><br><span class="line">[Meter]</span><br><span class="line">Meter=String</span><br><span class="line">X=([Measure] &lt; 1 ? 99 : ([Measure] &lt; 2 ? 98 : ([Measure] &lt; 3 ? 97 : 96)))</span><br><span class="line">DynamicVariables=1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[Measure]</div><div class="line">Measure=Calc</div><div class="line">Formula=2</div><div class="line"></div><div class="line">[Meter]</div><div class="line">Meter=String</div><div class="line">X=([Measure] &lt; 1 ? 99 : ([Measure] &lt; 2 ? 98 : ([Measure] &lt; 3 ? 97 : 96)))</div><div class="line">DynamicVariables=1</div></pre></td></tr></table></figure>
 
 <p>The meter would be positioned at <code>X=97</code>. Since the first statement of <code>[Measure] &lt; 1</code> is false, the formula begins testing the nested formulas in order until the condition becomes true . If none of the conditions are met, the final false value of 96 would be set.</p>
 </article>
