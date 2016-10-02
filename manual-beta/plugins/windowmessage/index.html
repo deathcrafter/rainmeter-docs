@@ -208,15 +208,15 @@
 
 <p>The following example returns the name of the song that is playing in WinAmp.</p>
 
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[MeasureWinamp]</div><div class="line">Measure=Plugin</div><div class="line">Plugin=WindowMessagePlugin</div><div class="line">WindowClass=Winamp v1.x</div><div class="line">Substitute=&quot;[Paused]&quot;:&quot;&quot;,&quot; - Winamp&quot;:&quot;&quot;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[MeasureWinamp]</span><br><span class="line">Measure=Plugin</span><br><span class="line">Plugin=WindowMessagePlugin</span><br><span class="line">WindowClass=Winamp v1.x</span><br><span class="line">Substitute=&quot;[Paused]&quot;:&quot;&quot;,&quot; - Winamp&quot;:&quot;&quot;</span><br></pre></td></tr></table></figure>
 
 <p>Check if Winamp is playing, or not. The following example returns <code>0</code> if it's not playing, <code>1</code> if it is playing, and <code>3</code> if it's paused.</p>
 
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[MeasureWinampPlaying]</div><div class="line">Measure=Plugin</div><div class="line">Plugin=WindowMessagePlugin</div><div class="line">WindowClass=Winamp v1.x</div><div class="line">WindowMessage=1024 0 104</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[MeasureWinampPlaying]</span><br><span class="line">Measure=Plugin</span><br><span class="line">Plugin=WindowMessagePlugin</span><br><span class="line">WindowClass=Winamp v1.x</span><br><span class="line">WindowMessage=1024 0 104</span><br></pre></td></tr></table></figure>
 
 <p>Show song progress. In the following example, the <code>[MeasureWinampDuration]</code> will return the current song position as a value between <code>0</code> and <code>1</code>. Then you can use the <a href="/manual-beta/meters/bar/">Bar</a> meter to display the value.</p>
 
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[MeasureWinampFull]</div><div class="line">Measure=Plugin</div><div class="line">Plugin=WindowMessagePlugin</div><div class="line">WindowClass=Winamp v1.x</div><div class="line">WindowMessage=1024 1 105</div><div class="line"></div><div class="line">[MeasureWinampCurr]</div><div class="line">Measure=Plugin</div><div class="line">Plugin=WindowMessagePlugin</div><div class="line">WindowClass=Winamp v1.x</div><div class="line">WindowMessage=1024 0 105</div><div class="line"></div><div class="line">[MeasureWinampDuration]</div><div class="line">Measure=Calc</div><div class="line">Formula=(MeasureWinampCurr&lt;=0)?0:(MeasureWinampCurr/(MeasureWinampFull*1000+1))</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[MeasureWinampFull]</span><br><span class="line">Measure=Plugin</span><br><span class="line">Plugin=WindowMessagePlugin</span><br><span class="line">WindowClass=Winamp v1.x</span><br><span class="line">WindowMessage=1024 1 105</span><br><span class="line"></span><br><span class="line">[MeasureWinampCurr]</span><br><span class="line">Measure=Plugin</span><br><span class="line">Plugin=WindowMessagePlugin</span><br><span class="line">WindowClass=Winamp v1.x</span><br><span class="line">WindowMessage=1024 0 105</span><br><span class="line"></span><br><span class="line">[MeasureWinampDuration]</span><br><span class="line">Measure=Calc</span><br><span class="line">Formula=(MeasureWinampCurr&lt;=0)?0:(MeasureWinampCurr/(MeasureWinampFull*1000+1))</span><br></pre></td></tr></table></figure>
 
 </article>
 </div>
