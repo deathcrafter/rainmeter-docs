@@ -199,13 +199,13 @@
 
 <p>Much like <a href="/manual/measures/plugin/">plugin measures</a>, each script measure creates a separate <b>instance</b> of its script. This means that a skin can have any number of scripts loaded simultaneously&mdash;even from the same script file. (The order in which scripts are executed is determined by the <a href="/manual/measures/#Order">measure order</a>.) "Global" variables are not shared between instances.</p>
 
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[MeasureName]</div><div class="line">Measure=Script</div><div class="line">ScriptFile=MyScript.lua</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[MeasureName]</span><br><span class="line">Measure=Script</span><br><span class="line">ScriptFile=MyScript.lua</span><br></pre></td></tr></table></figure>
 
 <h3 id="Options">Options</h3>
 
 <p>In addition to <a href="/manual/measures/general-options/">general measure options</a> and <a href="/manual/measures/script/#ScriptFile">ScriptFile</a>, scripts also allow <a href="/manual/measures/script/#UserDefined">user-defined options</a>. These options may have any name and value, and may be changed with <a href="/manual/bangs/#SetOption">!SetOption</a>. The script can read and use its own option values using the <a href="#SelfObject">SELF object functions</a>. This allows the same script file to be used with different parameters depending on the context.</p>
 
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[MeasureName]</div><div class="line">Measure=Script</div><div class="line">ScriptFile=MyScript.lua</div><div class="line">MyOption=Hello, world!</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[MeasureName]</span><br><span class="line">Measure=Script</span><br><span class="line">ScriptFile=MyScript.lua</span><br><span class="line">MyOption=Hello, world!</span><br></pre></td></tr></table></figure>
 
 <h3 id="DynamicVariables">Dynamic Variables</h3>
 
@@ -228,7 +228,7 @@
 
 <p>If the <b>Initialize</b> function is defined in any script, the function is called one time (without parameters) when the skin is activated or <a href="/manual/skins/#Refresh">refreshed</a>. This happens even if the script measure is <a href="/manual/measures/general-options/#Disabled">disabled</a>. If the script file is changed by a <a href="/manual/bangs/#SetOption">!SetOption</a> bang, the new script's Initialize function is called as well.</p>
 
-<figure class="highlight lua"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Initialize</span><span class="params">()</span></span></div><div class="line">	MyVariable = <span class="string">'Hello, world!'</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Initialize</span><span class="params">()</span></span></span><br><span class="line">	MyVariable = <span class="string">'Hello, world!'</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
 
 <p>Actions that are needed to "set up" the script, such as declaring global variables, should be done in the Initialize function.</p>
 
@@ -238,7 +238,7 @@
 
 <p>If the <b>Update</b> function is defined in any script, the function is called (without parameters) whenever the script measure <a href="/manual/skins/#Update">updates</a>. The script measure responds normally to the <a href="/manual/measures/general-options/#Disabled">Disabled</a> option, the <a href="/manual/measures/general-options/#UpdateDivider">UpdateDivider</a> option, and all <a href="/manual/bangs/#Measure">measure bangs</a>.</p>
 
-<figure class="highlight lua"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Update</span><span class="params">()</span></span></div><div class="line">	MyVariable = <span class="string">'Hello, world!'</span></div><div class="line">	<span class="keyword">return</span> MyVariable</div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Update</span><span class="params">()</span></span></span><br><span class="line">	MyVariable = <span class="string">'Hello, world!'</span></span><br><span class="line">	<span class="keyword">return</span> MyVariable</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
 
 <p>The Update function's <b>return value</b> determines what <a href="/manual/measures/#Values">values</a> are provided by the script measure. Strings and numbers in Lua are analogous to string values and number values in Rainmeter measures. Examples:</p>
 
