@@ -249,7 +249,7 @@
 	<dd>
 		<p>Defines a 5x5 matrix used to manipulate the color values of the image. It is divided into five separate options, one for each row, each numbered. The default matrix is as follows:</p>
 		
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ColorMatrix1=1; 0; 0; 0; 0</span><br><span class="line">ColorMatrix2=0; 1; 0; 0; 0</span><br><span class="line">ColorMatrix3=0; 0; 1; 0; 0</span><br><span class="line">ColorMatrix4=0; 0; 0; 1; 0</span><br><span class="line">ColorMatrix5=0; 0; 0; 0; 1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">ColorMatrix1=1; 0; 0; 0; 0</div><div class="line">ColorMatrix2=0; 1; 0; 0; 0</div><div class="line">ColorMatrix3=0; 0; 1; 0; 0</div><div class="line">ColorMatrix4=0; 0; 0; 1; 0</div><div class="line">ColorMatrix5=0; 0; 0; 0; 1</div></pre></td></tr></table></figure>
 
 		<p>The values on the main diagonal are, from top-left to bottom-right: Red, Green, Blue, Alpha and a placeholder. The values represent the percentage of the particular value present in the image, where 0.0 is none and 1.0 is normal. The remaining entries in the matrix allow a color to have its value modified in terms of another color (e.g. the value of Red might have half of the Blue value added), with the entries in the final row (ColorMatrix5) determining offset values that are added directly to the color (e.g. <code>ColorMatrix5=0.5; 0; 0; 0; 1</code> adds 50% to the red value).</p>
 
