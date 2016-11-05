@@ -184,17 +184,17 @@
 
 <p>Each skin may have a special <a href="/manual-beta/skins/#Format">section</a> called <b>[Variables]</b>. Each option in [Variables] defines a variable name. Unlike most other <a href="/manual-beta/skins/option-types/">option names</a> in Rainmeter, variable names are not limited to a specific list. They can have any valid name, as long as they do not conflict with Rainmeter's <a href="#BuiltInVariables">built-in variables</a>.</p>
 
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[Variables]</div><div class="line">Foo=This is a string!</div><div class="line">Bar=So is this!</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[Variables]</span><br><span class="line">Foo=This is a string!</span><br><span class="line">Bar=So is this!</span><br></pre></td></tr></table></figure>
 
 <h3 id="Using">Using Variables</h3>
 
 <p>Variable names are referenced in other options by surrounding the name with pound signs (<code>#</code>), as in <code>#Foo#</code>. When the skin is loaded, Rainmeter replaces the variable reference with the corresponding string. Variables are inserted "literally," which means they can be mixed with other variables or regular text.</p>
 
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[MeterFoo]</div><div class="line">Meter=String</div><div class="line">Text=The value of my &quot;Foo&quot; variable is: #Foo#</div><div class="line">FontColor=#Red#,#Green#,#Blue#,#Alpha#</div><div class="line"></div><div class="line">[MeterBar]</div><div class="line">Meter=String</div><div class="line">Text=The value of my &quot;Bar&quot; variable is: #Bar#</div><div class="line">FontColor=#Red#,#Green#,#Blue#,#Alpha#</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[MeterFoo]</span><br><span class="line">Meter=String</span><br><span class="line">Text=The value of my &quot;Foo&quot; variable is: #Foo#</span><br><span class="line">FontColor=#Red#,#Green#,#Blue#,#Alpha#</span><br><span class="line"></span><br><span class="line">[MeterBar]</span><br><span class="line">Meter=String</span><br><span class="line">Text=The value of my &quot;Bar&quot; variable is: #Bar#</span><br><span class="line">FontColor=#Red#,#Green#,#Blue#,#Alpha#</span><br></pre></td></tr></table></figure>
 
 <p>Variables can also be used to define other variables:</p>
 
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[Variables]</div><div class="line">Foo=rainmeter</div><div class="line">Bar=http://www.#Foo#.net/</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[Variables]</span><br><span class="line">Foo=rainmeter</span><br><span class="line">Bar=http://www.#Foo#.net/</span><br></pre></td></tr></table></figure>
 
 <h3 id="Changing">Changing Variables</h3>
 

@@ -196,13 +196,13 @@
 
 <p>Much like <a href="/manual-beta/measures/plugin/">plugin measures</a>, each script measure creates a separate <b>instance</b> of its script. This means that a skin can have any number of scripts loaded simultaneously&mdash;even from the same script file. (The order in which scripts are executed is determined by the <a href="/manual-beta/measures/#Order">measure order</a>.) "Global" variables are not shared between instances.</p>
 
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[MeasureName]</div><div class="line">Measure=Script</div><div class="line">ScriptFile=MyScript.lua</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[MeasureName]</span><br><span class="line">Measure=Script</span><br><span class="line">ScriptFile=MyScript.lua</span><br></pre></td></tr></table></figure>
 
 <h3 id="Options">Options</h3>
 
 <p>In addition to <a href="/manual-beta/measures/general-options/">general measure options</a> and <a href="/manual-beta/measures/script/#ScriptFile">ScriptFile</a>, scripts also allow <a href="/manual-beta/measures/script/#UserDefined">user-defined options</a>. These options may have any name and value, and may be changed with <a href="/manual-beta/bangs/#SetOption">!SetOption</a>. The script can read and use its own option values using the <a href="#SelfObject">SELF object functions</a>. This allows the same script file to be used with different parameters depending on the context.</p>
 
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[MeasureName]</div><div class="line">Measure=Script</div><div class="line">ScriptFile=MyScript.lua</div><div class="line">MyOption=Hello, world!</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[MeasureName]</span><br><span class="line">Measure=Script</span><br><span class="line">ScriptFile=MyScript.lua</span><br><span class="line">MyOption=Hello, world!</span><br></pre></td></tr></table></figure>
 
 <h3 id="DynamicVariables">Dynamic Variables</h3>
 
@@ -224,7 +224,7 @@
 
 <p>If the <b>Initialize</b> function is defined in any script, the function is called one time (without parameters) when the skin is activated or <a href="/manual-beta/skins/#Refresh">refreshed</a>. This happens even if the script measure is <a href="/manual-beta/measures/general-options/#Disabled">disabled</a>. If the script file is changed by a <a href="/manual-beta/bangs/#SetOption">!SetOption</a> bang, the new script's Initialize function is called as well.</p>
 
-<figure class="highlight lua"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Initialize</span><span class="params">()</span></span></div><div class="line">	MyVariable = <span class="string">'Hello, world!'</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Initialize</span><span class="params">()</span></span></span><br><span class="line">	MyVariable = <span class="string">'Hello, world!'</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
 
 <p>Actions that are needed to "set up" the script, such as declaring global variables, should be done in the Initialize function.</p>
 
@@ -232,7 +232,7 @@
 
 <p>The <a href="http://www.lua.org/manual/5.1/manual.html#pdf-dofile">dofile function</a> can be used to include libraries or other snippets of Lua code. You must specify a full path to the dofile, using the syntax <code>dofile('C:\PathToDoFile\SomeLua.lua')</code>. Use the <a href="#GetVariable">GetVariable</a> function if you want to use the #@# variable shortcut to the @Resources folder for the current config, or <a href="#MakePathAbsolute">MakePathAbsolute</a> if you want to have the .lua file be relative to the current skin folder.</a>
 
-<figure class="highlight lua"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Initalize</span><span class="params">()</span></span></div><div class="line">	<span class="built_in">dofile</span>(SKIN:GetVariable(<span class="string">'@'</span>)..<span class="string">'MyDoFiles\\toolkit.lua'</span>)</div><div class="line">	<span class="built_in">dofile</span>(SKIN:MakePathAbsolute(<span class="string">'toolkit.lua'</span>))</div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Initalize</span><span class="params">()</span></span></span><br><span class="line">	<span class="built_in">dofile</span>(SKIN:GetVariable(<span class="string">'@'</span>)..<span class="string">'MyDoFiles\\toolkit.lua'</span>)</span><br><span class="line">	<span class="built_in">dofile</span>(SKIN:MakePathAbsolute(<span class="string">'toolkit.lua'</span>))</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
 
 <p><b>Note:</b> While a dofile you call can be anywhere on your system, be aware that if you do not put the dofile .lua file somewhere in the path to the current config, you won't be able to distribute it with your skin as a .rmskin package. A .rmskin package can only distribute the contents of a single root config folder.</p>
 
@@ -240,7 +240,7 @@
 
 <p>If the <b>Update</b> function is defined in any script, the function is called (without parameters) whenever the script measure <a href="/manual-beta/skins/#Update">updates</a>. The script measure responds normally to the <a href="/manual-beta/measures/general-options/#Disabled">Disabled</a> option, the <a href="/manual-beta/measures/general-options/#UpdateDivider">UpdateDivider</a> option, and all <a href="/manual-beta/bangs/#Measure">measure bangs</a>.</p>
 
-<figure class="highlight lua"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Update</span><span class="params">()</span></span></div><div class="line">	MyVariable = <span class="string">'Hello, world!'</span></div><div class="line">	<span class="keyword">return</span> MyVariable</div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Update</span><span class="params">()</span></span></span><br><span class="line">	MyVariable = <span class="string">'Hello, world!'</span></span><br><span class="line">	<span class="keyword">return</span> MyVariable</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
 
 <p>The Update function's <b>return value</b> determines what <a href="/manual-beta/measures/#Values">values</a> are provided by the script measure. Strings and numbers in Lua are analogous to string values and number values in Rainmeter measures. Examples:</p>
 
@@ -322,7 +322,7 @@
 	<dd>
 		<p>If the given string is a valid <a href="/manual-beta/formulas/">formula</a>, evaluates the formula and returns the result as the number. Otherwise, returns <code>nil</code>. This can take advantage of mathematical functions in Rainmeter that may not be built into Lua. Remember that formulas in Rainmeter must be entirely enclosed in (parentheses).</p>
 		
-<figure class="highlight lua"><table><tr><td class="code"><pre><div class="line">numToRound = <span class="number">239.78</span></div><div class="line">roundedNum = SKIN:ParseFormula(<span class="string">'(Round('</span>..numToRound..<span class="string">'))'</span>)</div></pre></td></tr></table></figure>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line">numToRound = <span class="number">239.78</span></span><br><span class="line">roundedNum = SKIN:ParseFormula(<span class="string">'(Round('</span>..numToRound..<span class="string">'))'</span>)</span><br></pre></td></tr></table></figure>
 
 	</dd>
 </dl>
