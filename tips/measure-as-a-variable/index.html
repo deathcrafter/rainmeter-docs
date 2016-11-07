@@ -59,15 +59,15 @@
 	</header>
 	<article><p>In Rainmeter, <a href="/manual/variables/#DynamicVariables">dynamic variables</a> (DVs) let you use measure values almost anywhere you want. When you use a measure value in a <a href="/manual/measures/calc/">Calc</a> formula, there are special rules to consider. A Calc formula is the only place where you do not need DVs to use another measure's value. For example:</p>
 
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[MeasureA]</span><br><span class="line">Measure=...</span><br><span class="line"></span><br><span class="line">[MeasureB]</span><br><span class="line">Measure=Calc</span><br><span class="line">Formula=MeasureA+3</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[MeasureA]</div><div class="line">Measure=...</div><div class="line"></div><div class="line">[MeasureB]</div><div class="line">Measure=Calc</div><div class="line">Formula=MeasureA+3</div></pre></td></tr></table></figure>
 
 <p>Sometimes, however, you may still want to use DVs to get a measure value into a Calc formula. Why? Because in fact, every measure has two values: a <b>number value</b> and a <b>string value</b>. Normally, Calc formulas use the number value. But using DVs (with brackets around the measure name) forces Rainmeter to use the string value. Which means that this...</p>
 
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[MeasureB]</span><br><span class="line">Measure=Calc</span><br><span class="line">Formula=MeasureA+3</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[MeasureB]</div><div class="line">Measure=Calc</div><div class="line">Formula=MeasureA+3</div></pre></td></tr></table></figure>
 
 <p>...does not always mean the same thing as this:</p>
 
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[MeasureB]</span><br><span class="line">Measure=Calc</span><br><span class="line">Formula=[MeasureA]+3</span><br><span class="line">DynamicVariables=1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[MeasureB]</div><div class="line">Measure=Calc</div><div class="line">Formula=[MeasureA]+3</div><div class="line">DynamicVariables=1</div></pre></td></tr></table></figure>
 
 <h3>When should I use brackets?</h3>
 
@@ -106,13 +106,13 @@
 	<li>
 	<p><b>Substitution.</b> Measure <a href="/manual/measures/general-options/substitute/">substitution</a> is applied only to the string value, not the number value. For example:</p>
 
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[MeasureA]</span><br><span class="line">Measure=Calc</span><br><span class="line">Formula=1</span><br><span class="line">Substitute=&quot;1&quot;:&quot;2&quot;</span><br><span class="line"></span><br><span class="line">[MeasureB]</span><br><span class="line">Measure=Calc</span><br><span class="line">Formula=MeasureA+3</span><br><span class="line"></span><br><span class="line">[MeasureC]</span><br><span class="line">Measure=Calc</span><br><span class="line">Formula=[MeasureA]+3</span><br><span class="line">DynamicVariables=1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[MeasureA]</div><div class="line">Measure=Calc</div><div class="line">Formula=1</div><div class="line">Substitute=&quot;1&quot;:&quot;2&quot;</div><div class="line"></div><div class="line">[MeasureB]</div><div class="line">Measure=Calc</div><div class="line">Formula=MeasureA+3</div><div class="line"></div><div class="line">[MeasureC]</div><div class="line">Measure=Calc</div><div class="line">Formula=[MeasureA]+3</div><div class="line">DynamicVariables=1</div></pre></td></tr></table></figure>
 
 	<p>MeasureB uses the number value of MeasureA. It ignores the Substitute string on Measure A. Therefore, MeasureB returns a value of <em>4</em>. In MeasureC, we use DVs to get the string value of MeasureA. This value has substituted the original value, "1", with "2". So MeasureC returns a value of <em>5</em>.</p>
 
 	<p>This means that if you need the substituted value of a measure, you will need to use DVs and brackets. This can be useful when the original value of a measure is not a number at all (as in case #1), but a Substitute is used to change it into one:</p>
 
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[MeasureGetStatus]</span><br><span class="line">Measure=Plugin</span><br><span class="line">Plugin=Plugins\WebParser.dll</span><br><span class="line">URL=http://www.somesite.com/logs/status.xml</span><br><span class="line">RegExp=&quot;(?siU)&lt;status&gt;(.*)&lt;/status&gt;&quot;</span><br><span class="line">StringIndex=1</span><br><span class="line">Substitute=&quot;Running&quot;:&quot;1&quot;,&quot;Offline&quot;:&quot;0&quot;</span><br><span class="line"></span><br><span class="line">[MeasureCheckStatus]</span><br><span class="line">Measure=Calc</span><br><span class="line">Formula=[MeasureGetStatus]</span><br><span class="line">IfEqualValue=1</span><br><span class="line">IfEqualAction=[!SetOption Light MeterStyle &quot;Green&quot;]</span><br><span class="line">IfBelowValue=1</span><br><span class="line">IfBelowAction=[!SetOption Light MeterStyle &quot;Red&quot;]</span><br><span class="line">DynamicVariables=1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[MeasureGetStatus]</div><div class="line">Measure=Plugin</div><div class="line">Plugin=Plugins\WebParser.dll</div><div class="line">URL=http://www.somesite.com/logs/status.xml</div><div class="line">RegExp=&quot;(?siU)&lt;status&gt;(.*)&lt;/status&gt;&quot;</div><div class="line">StringIndex=1</div><div class="line">Substitute=&quot;Running&quot;:&quot;1&quot;,&quot;Offline&quot;:&quot;0&quot;</div><div class="line"></div><div class="line">[MeasureCheckStatus]</div><div class="line">Measure=Calc</div><div class="line">Formula=[MeasureGetStatus]</div><div class="line">IfEqualValue=1</div><div class="line">IfEqualAction=[!SetOption Light MeterStyle &quot;Green&quot;]</div><div class="line">IfBelowValue=1</div><div class="line">IfBelowAction=[!SetOption Light MeterStyle &quot;Red&quot;]</div><div class="line">DynamicVariables=1</div></pre></td></tr></table></figure>
 
 	<p>In this case, we have a web feed that returns either "Running" or "Offline". But we can't do math on a word&mdash;since neither of those values is a number or mathematical formula, the number value for both would be zero. Instead, we use a Substitute to transform the string value into "1" or "0", respectively. That way, our Calc measure can compare it to our IfEqualValue and IfBelowValue, and take the right action. If 1 ("Running"), then the light turns green; if 0 ("Offline"), the light turns red.</p>
 
@@ -125,7 +125,7 @@
 
 <p>You can use measures as number values if you are using DVs elsewhere in the Calc measure. You can even mix types of measure values within the same formula:</p>
 
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[MeasureD]</span><br><span class="line">Measure=Calc</span><br><span class="line">Formula=MeasureA+[MeasureA]+MeasureB+3</span><br><span class="line">IfAboveValue=[MeasureC]</span><br><span class="line">IfAboveAction=!HideMeter MeterE</span><br><span class="line">DynamicVariables=1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[MeasureD]</div><div class="line">Measure=Calc</div><div class="line">Formula=MeasureA+[MeasureA]+MeasureB+3</div><div class="line">IfAboveValue=[MeasureC]</div><div class="line">IfAboveAction=!HideMeter MeterE</div><div class="line">DynamicVariables=1</div></pre></td></tr></table></figure>
 
 <h3>A quick reference to using measure values</h3>
 
