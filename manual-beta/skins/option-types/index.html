@@ -179,7 +179,7 @@
 	</header>
 	<article><p>In the most basic sense, a skin in Rainmeter is controlled by a .ini file consisting of sections, options, and option values.</p>
 
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[SectionName]</div><div class="line">OptionName=OptionValue</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[SectionName]</span><br><span class="line">OptionName=OptionValue</span><br></pre></td></tr></table></figure>
 
 <p>The skin can have various kinds of sections. These include:</p>
 
@@ -198,12 +198,12 @@
 <h2 id="String">String options</h2>
 <p>String options require a text value.</p>
 
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">Text=Hello World</div><div class="line">MyVar=Hello World</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Text=Hello World</span><br><span class="line">MyVar=Hello World</span><br></pre></td></tr></table></figure>
 
 <h2 id="Number">Number options</h2>
 <p>Number options require either a number or a <a href="/manual-beta/formulas/">formula</a>.</p>
 
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">; The following lines are equivalent:</div><div class="line">FontSize=42</div><div class="line">FontSize=(40 + 2)</div><div class="line">FontSize=(2 &gt; 1 ? 42 : 666)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">; The following lines are equivalent:</span><br><span class="line">FontSize=42</span><br><span class="line">FontSize=(40 + 2)</span><br><span class="line">FontSize=(2 &gt; 1 ? 42 : 666)</span><br></pre></td></tr></table></figure>
 
 <h2 id="Path">Path options</h2>
 <p>Path options specify the relative or absolute path of either a file or a folder (depending on the option). For example, the path and name of an image file is expected with <code>ImageName</code>.</p>
@@ -212,7 +212,7 @@
 
 <p>In addition, there is a built-in variable <code>#@#</code> that resolves to the <a href="/manual-beta/skins/resources-folder/">@Resources</a> folder in the <a href="/manual-beta/skins/#Root">root config</a> folder of the current skin.
 
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">; Paths relative to the current skin folder:</div><div class="line">ImageName=lolcat.png</div><div class="line">ImageName=..\lolcat.png</div><div class="line"></div><div class="line">; Absolute path:</div><div class="line">ImageName=C:\lolcats\lolcat.png</div><div class="line"></div><div class="line">; Path to the current skin folder:</div><div class="line">ImageName=#CURRENTPATH#lolcat.png</div><div class="line"></div><div class="line">; Path to the @Resources\Images folder under the root config of the current skin:</div><div class="line">ImageName=#@#Images\lolcat.png</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">; Paths relative to the current skin folder:</span><br><span class="line">ImageName=lolcat.png</span><br><span class="line">ImageName=..\lolcat.png</span><br><span class="line"></span><br><span class="line">; Absolute path:</span><br><span class="line">ImageName=C:\lolcats\lolcat.png</span><br><span class="line"></span><br><span class="line">; Path to the current skin folder:</span><br><span class="line">ImageName=#CURRENTPATH#lolcat.png</span><br><span class="line"></span><br><span class="line">; Path to the @Resources\Images folder under the root config of the current skin:</span><br><span class="line">ImageName=#@#Images\lolcat.png</span><br></pre></td></tr></table></figure>
 
 <h2 id="Color">Color options</h2>
 <p>Color options such as <code>SolidColor</code> and <code>FontColor</code> should use the RGBA (red-green-blue-alpha) notation in either the hexadecimal or decimal form. The color results from a mixing of the red, green and blue components of the option, with the transparency (alpha channel) of the element set by the fourth component.</p>
@@ -221,27 +221,27 @@
 
 <p><b>Note:</b> The alpha component is optional. As with the other components it is a value from 0 to 255 (00 to FF), with 0 being completely invisible (and the meter will not react to the mouse) to 255, which is completely opaque. The default is 255 (or FF).  To have a element be "invisible" while still reacting to the mouse, use an alpha value of 1.</p>
 
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">; The following lines are equivalent to solid opaque red:</div><div class="line">SolidColor=255,0,0,255</div><div class="line">SolidColor=255,0,0</div><div class="line">SolidColor=(200 + 55),(2 - 2),0</div><div class="line">SolidColor=FF0000FF</div><div class="line">SolidColor=FF0000</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">; The following lines are equivalent to solid opaque red:</span><br><span class="line">SolidColor=255,0,0,255</span><br><span class="line">SolidColor=255,0,0</span><br><span class="line">SolidColor=(200 + 55),(2 - 2),0</span><br><span class="line">SolidColor=FF0000FF</span><br><span class="line">SolidColor=FF0000</span><br></pre></td></tr></table></figure>
 
 <h2 id="Action">Action options</h2>
 <p>Options in a skin which cause Rainmeter to take some action. Actions may be triggered by user input such as <a href="/manual-beta/mouse-actions/">mouse actions</a> or changing values and system events within the skin, such as <a href="/manual-beta/measures/general-options/ifactions/">IfActions</a> or <a href="/manual-beta/measures/general-options/#OnUpdateAction">OnUpdateAction</a>.</p>
 
 <p>Normally the value of an action option is going to be one or more <a href="/manual-beta/bangs/">bangs</a>, or the execution of external commands in Windows. When multiple bangs are defined on the same action option, enclose them in square brackets <code>[]</code>.</p>
 
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">; Single bang:</div><div class="line">LeftMouseUpAction=!HideMeter SomeMeter</div><div class="line">LeftMouseUpAction=[!HideMeter SomeMeter]</div><div class="line"></div><div class="line">; Multiple bangs:</div><div class="line">LeftMouseUpAction=[!HideMeter SomeMeter][!HideMeter SomeOtherMeter]</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">; Single bang:</span><br><span class="line">LeftMouseUpAction=!HideMeter SomeMeter</span><br><span class="line">LeftMouseUpAction=[!HideMeter SomeMeter]</span><br><span class="line"></span><br><span class="line">; Multiple bangs:</span><br><span class="line">LeftMouseUpAction=[!HideMeter SomeMeter][!HideMeter SomeOtherMeter]</span><br></pre></td></tr></table></figure>
 
 <p>For bangs that take parameters, the arguments should be separated by a space. Parameters that contain spaces must use quotes around the parameter.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">; These two lines are equivalent:</div><div class="line">LeftMouseUpAction=[!HideMeter SomeMeter]</div><div class="line">LeftMouseUpAction=[!HideMeter &quot;SomeMeter&quot;]</div><div class="line"></div><div class="line">; These two are NOT equivalent. The first line will cause an error due to the spaces</div><div class="line">; in the parameters while the second will properly set the value of SomeVariable</div><div class="line">; to: I think, therefore I am</div><div class="line">LeftMouseUpAction=[!SetVariable SomeVariable I think, therefore I am]</div><div class="line">LeftMouseUpAction=[!SetVariable SomeVariable &quot;I think, therefore I am&quot;]</div><div class="line"></div><div class="line">; These two may or may not be equivalent depending on the value of the #ImageFile#</div><div class="line">; variable. If #ImageFile# contains spaces, the first line will fail. In uncertain</div><div class="line">; cases, it is always best to use quotes as in the second line.</div><div class="line">LeftMouseUpAction=[!SetWallpaper #ImageFile#]</div><div class="line">LeftMouseUpAction=[!SetWallpaper &quot;#ImageFile#&quot;]</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">; These two lines are equivalent:</span><br><span class="line">LeftMouseUpAction=[!HideMeter SomeMeter]</span><br><span class="line">LeftMouseUpAction=[!HideMeter &quot;SomeMeter&quot;]</span><br><span class="line"></span><br><span class="line">; These two are NOT equivalent. The first line will cause an error due to the spaces</span><br><span class="line">; in the parameters while the second will properly set the value of SomeVariable</span><br><span class="line">; to: I think, therefore I am</span><br><span class="line">LeftMouseUpAction=[!SetVariable SomeVariable I think, therefore I am]</span><br><span class="line">LeftMouseUpAction=[!SetVariable SomeVariable &quot;I think, therefore I am&quot;]</span><br><span class="line"></span><br><span class="line">; These two may or may not be equivalent depending on the value of the #ImageFile#</span><br><span class="line">; variable. If #ImageFile# contains spaces, the first line will fail. In uncertain</span><br><span class="line">; cases, it is always best to use quotes as in the second line.</span><br><span class="line">LeftMouseUpAction=[!SetWallpaper #ImageFile#]</span><br><span class="line">LeftMouseUpAction=[!SetWallpaper &quot;#ImageFile#&quot;]</span><br></pre></td></tr></table></figure>
 
 <p>External Windows commands can be executed by specifying the path to the executable and any parameters. Enclose the command in square brackets <code>[]</code>, and enclose any values with spaces in quotes.</p>
 
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">LeftMouseUpAction=[&quot;C:\Windows\Notepad.exe&quot; MyFile.txt]</div><div class="line">; Runs Notepad.exe and loads the file MyFile.txt.</div><div class="line"></div><div class="line">LeftMouseUpAction=[&quot;https://forum.rainmeter.net&quot;]</div><div class="line">; Opens the URL in the default web browser.</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">LeftMouseUpAction=[&quot;C:\Windows\Notepad.exe&quot; MyFile.txt]</span><br><span class="line">; Runs Notepad.exe and loads the file MyFile.txt.</span><br><span class="line"></span><br><span class="line">LeftMouseUpAction=[&quot;https://forum.rainmeter.net&quot;]</span><br><span class="line">; Opens the URL in the default web browser.</span><br></pre></td></tr></table></figure>
 
 <h3 id="MagicQuotes"><b>Magic Quotes</b></h3>
 
 <p>A parameter to a bang that contains embedded quotes should be surrounded by a what we call """magic quotes""". A pair of triple quotes.</p>
 
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">; The first line will fail due to extra quotes. The second line will properly log</div><div class="line">; Example string: Bob said &quot;hello&quot; to Susan</div><div class="line">LeftMouseUpAction=[!Log &quot;Bob said &quot;hello&quot; to Susan&quot;]</div><div class="line">LeftMouseUpAction=[!Log &quot;&quot;&quot;Bob said &quot;hello&quot; to Susan&quot;&quot;&quot;]</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">; The first line will fail due to extra quotes. The second line will properly log</span><br><span class="line">; Example string: Bob said &quot;hello&quot; to Susan</span><br><span class="line">LeftMouseUpAction=[!Log &quot;Bob said &quot;hello&quot; to Susan&quot;]</span><br><span class="line">LeftMouseUpAction=[!Log &quot;&quot;&quot;Bob said &quot;hello&quot; to Susan&quot;&quot;&quot;]</span><br></pre></td></tr></table></figure>
 
 <h3 id="AsteriskEscape"><b>Escaping a #Variable# or [MeasureName]</b></h3>
 
@@ -249,7 +249,7 @@
 
 </p>For example, use <code>#*VarName*#</code> or <code>[*MeasureName*]</code> to tell Rainmeter to "escape" the variable or measure name. You do not want the value resolved, but rather used as a literal string.</p>
 
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">LeftMouseUpAction=!SetOption SomeMeter FontSize #VarName#</div><div class="line">; The FontSize option for SomeMeter will be set to the current value of the variable.</div><div class="line"></div><div class="line">LeftMouseUpAction=!SetOption SomeMeter FontSize #*VarName*#</div><div class="line">; The FontSize option for SomeMeter will be set to the the string &quot;#VarName#&quot;</div><div class="line"></div><div class="line">LeftMouseUpAction=!SetOption SomeMeter FontSize [MeasureName]</div><div class="line">; The FontSize option for SomeMeter will be set to the current value of the measure.</div><div class="line"></div><div class="line">LeftMouseUpAction=!SetOption SomeMeter FontSize [*MeasureName*]</div><div class="line">; The FontSize option for SomeMeter will be set to the string &quot;[MeasureName]&quot;.</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">LeftMouseUpAction=!SetOption SomeMeter FontSize #VarName#</span><br><span class="line">; The FontSize option for SomeMeter will be set to the current value of the variable.</span><br><span class="line"></span><br><span class="line">LeftMouseUpAction=!SetOption SomeMeter FontSize #*VarName*#</span><br><span class="line">; The FontSize option for SomeMeter will be set to the the string &quot;#VarName#&quot;</span><br><span class="line"></span><br><span class="line">LeftMouseUpAction=!SetOption SomeMeter FontSize [MeasureName]</span><br><span class="line">; The FontSize option for SomeMeter will be set to the current value of the measure.</span><br><span class="line"></span><br><span class="line">LeftMouseUpAction=!SetOption SomeMeter FontSize [*MeasureName*]</span><br><span class="line">; The FontSize option for SomeMeter will be set to the string &quot;[MeasureName]&quot;.</span><br></pre></td></tr></table></figure>
 
 <h2 id="RegExp">Regular expression options</h2>
 
