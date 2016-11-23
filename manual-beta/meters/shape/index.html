@@ -712,7 +712,7 @@
 		<p>This takes the form of the <b>Angle</b> for the gradient in degrees, a <b>|</b> pipe character, then a series of <b>Color codes</b>, a <b>;</b> semi-colon, and a <b>Percentage</b> from 0.0 to 1.0 to define the position of the color in the gradient. Each series of <b>Color ; Percentage</b> are separated by a <b>|</b> pipe character.</p>
 
 		<p><b>Example:</b></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[MeterShape]</div><div class="line">Meter=Shape</div><div class="line">Shape=Rectangle 0,0,100,100 | Fill LinearGradient MyFillGradient</div><div class="line">MyFillGradient=180 | 255,0,0,255 ; 0.0 | 0,255,0,255 ; 0.5 | 0,0,255,255 ; 1.0</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[MeterShape]</div><div class="line">Meter=Shape</div><div class="line">Shape=Rectangle 1,1,101,101 | Fill LinearGradient MyFillGradient</div><div class="line">MyFillGradient=180 | 255,0,0,255 ; 0.0 | 0,255,0,255 ; 0.5 | 0,0,255,255 ; 1.0</div></pre></td></tr></table></figure>
 
 		<p>That will define a gradient at 180 degrees. It will start with a color of 255,0,0,255 (red) at percentage 0.0 (the start), will transition to a color of 0,255,0,255 (green) at percentage 0.5 (50 percent), and to 0,0,255,255 (blue) at percentage 1.0 (100 percent).</p>
 
@@ -745,7 +745,7 @@
 		</p>
 
 		<p><b>Examples:</b></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[MeterShape]</div><div class="line">Meter=Shape</div><div class="line">Shape=Rectangle 1,1,100,100,50 | StrokeWidth 2 | Fill RadialGradient MyGradient1</div><div class="line">MyGradient1=0,0 | 155,200,232,255 ; 0.0 | 6,46,75,255 ; 1.0</div><div class="line">Shape2=Rectangle 111,1,100,100,50 | StrokeWidth 2 | Fill RadialGradient MyGradient2</div><div class="line">MyGradient2=0,0,20,20 | 155,200,232,255 ; 0.0 | 6,46,75,255 ; 1.0</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[MeterShape]</div><div class="line">Meter=Shape</div><div class="line">Shape=Ellipse 50,50,50 |  | StrokeWidth 0 | Fill RadialGradient MyGradient1</div><div class="line">MyGradient1=0,0 | 155,200,232,255 ; 0.0 | 6,46,75,255 ; 1.0</div><div class="line">Shape2=Ellipse 170,50,50 | StrokeWidth 0 | Fill RadialGradient MyGradient2</div><div class="line">MyGradient2=0,0,20,20 | 155,200,232,255 ; 0.0 | 6,46,75,255 ; 1.0</div></pre></td></tr></table></figure>
 
 		<p><b>Note:</b> Any defined color with a percentage outside the 0.0 to 1.0 range will not directly be displayed, but will still affect the interpolation of the gradient.</p>
 	</dd>
