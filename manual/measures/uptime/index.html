@@ -195,15 +195,16 @@
 	<dd>
 		Format of the measure value. This can be a combination of text and the following codes:
 		<ul>
-		<li><code>%4</code>: Days.
-		<li><code>%3</code>: Hours.
-		<li><code>%2</code>: Minutes.
-		<li><code>%1</code>: Seconds.
+		<li><code>%4</code>: Days.</li>
+		<li><code>%3</code>: Hours.</li>
+		<li><code>%2</code>: Minutes.</li>
+		<li><code>%1</code>: Seconds.</li>
 		</ul>
 		The following modify the codes:
 		<ul>
-		<li><code>!i!</code>: Putting this after the format code shows the numbers with no leading zeros.
-		<li><code>!02i!</code>: Putting this after the format code shows the numbers with leading zeros.
+		<li><code>!i!</code>: Putting this after the format code shows the numbers with no leading zeros.</li>
+		<li><code>!02i!</code>: Putting this after the format code shows the numbers with leading zeros.<br/>
+		The number following the <code>0</code>, as in <code>!02i!</code> above, defines the total length you want for the value, padded with zeros as needed to achieve the length.</li>
 		</ul>
 	</dd>
 
@@ -223,7 +224,7 @@
 </dl>
 
 <h2>Example</h2>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[Rainmeter]</div><div class="line">Update=1000</div><div class="line">AccurateText=1</div><div class="line">DynamicWindowSize=1</div><div class="line"></div><div class="line">[MeasureUptime]</div><div class="line">Measure=Uptime</div><div class="line">Format=&quot;%4!i! days, %3!i! hours, %2!i! minutes %1!i! seconds&quot;</div><div class="line"></div><div class="line">[MeterText]</div><div class="line">Meter=String</div><div class="line">MeasureName=MeasureUptime</div><div class="line">X=5</div><div class="line">Y=5</div><div class="line">W=200</div><div class="line">H=25</div><div class="line">FontSize=12</div><div class="line">FontColor=255,255,255,255</div><div class="line">SolidColor=47,47,47,255</div><div class="line">Padding=5,5,5,5</div><div class="line">AntiAlias=1</div><div class="line">Text=&quot;Uptime: %1&quot;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[Rainmeter]</div><div class="line">Update=1000</div><div class="line">DynamicWindowSize=1</div><div class="line">AccurateText=1</div><div class="line"></div><div class="line">[MeasureUptime]</div><div class="line">Measure=Uptime</div><div class="line">Format=&quot;%4!i! days, %3!i! hours, %2!i! minutes %1!i! seconds&quot;</div><div class="line"></div><div class="line">[MeterUptime]</div><div class="line">Meter=String</div><div class="line">MeasureName=MeasureUptime</div><div class="line">FontSize=12</div><div class="line">FontColor=255,255,255,255</div><div class="line">SolidColor=47,47,47,255</div><div class="line">Padding=5,5,5,5</div><div class="line">AntiAlias=1</div><div class="line">Text=&quot;Uptime: %1&quot;</div></pre></td></tr></table></figure>
 
 <p><b>Note for Windows 8 or later:</b></p>
 
