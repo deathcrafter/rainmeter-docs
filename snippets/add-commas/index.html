@@ -65,9 +65,9 @@
 	<article><p>Returns an input number as an output string formatted with commas.</p>
 
 <div class="noscroll">
-<figure class="highlight lua"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">FormatCommas</span><span class="params">(numVar)</span></span></div><div class="line"></div><div class="line">	<span class="built_in">assert</span>(<span class="built_in">tonumber</span>(numVar), <span class="string">'Function FormatCommas() expects a number.'</span>)</div><div class="line">	<span class="keyword">local</span> prefix, number, postfix = <span class="built_in">string</span>.match(numVar, <span class="string">'^([^%d]*%d)(%d*)(.-)$'</span>)</div><div class="line">	</div><div class="line">	<span class="keyword">return</span> prefix..(number:reverse():gsub(<span class="string">'(%d%d%d)'</span>, <span class="string">'%1,'</span>):reverse())..postfix</div><div class="line">	</div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<figure class="highlight lua"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">FormatCommas</span><span class="params">(numVar)</span></span></div><div class="line"></div><div class="line">	<span class="built_in">assert</span>(<span class="built_in">tonumber</span>(numVar), <span class="string">'Function FormatCommas() expects a number.'</span>)</div><div class="line">	<span class="keyword">local</span> prefix, number, postfix = <span class="built_in">string</span>.match(numVar, <span class="string">'^([^%d]*%d)(%d*)(.-)$'</span>)</div><div class="line"></div><div class="line">	<span class="keyword">return</span> prefix..(number:reverse():gsub(<span class="string">'(%d%d%d)'</span>, <span class="string">'%1,'</span>):reverse())..postfix</div><div class="line"></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
 
-</div>	
+</div>
 </article>
 </div>
 
