@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>math.clamp - Rainmeter Snippets</title>
+	<title>Clamp - Rainmeter Snippets</title>
 	<link href="/css/main.css?v=3" rel="stylesheet">
 	<link rel="shortcut icon" href="//www.rainmeter.net/favicon.ico">
 	<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6/html5shiv.min.js"></script><![endif]-->
@@ -60,14 +60,14 @@
 </div>
 <div id="content">
 	<header>
-		<h1>math.clamp</h1>
+		<h1>Clamp</h1>
 	</header>
-	<article><p>This creates the <b>math.clamp(<em>num</em>, <em>lower</em>, <em>upper</em>)</b> mathematical function, which is not part of the standard Lua math libraries.</p>
+	<article><p>This creates the <b>Clamp(<em>num</em>, <em>lower</em>, <em>upper</em>)</b> mathematical function, which is not part of the standard Lua math libraries.</p>
 
 <p>The argument <em>num</em> is the number or formula to test. <em>lower</em> is the lowest value it can be, and <em>upper</em> is the highest value it can be.</p>
 
 <div class="noscroll">
-<figure class="highlight lua"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">math.clamp</span><span class="params">(num, lower, upper)</span></span></div><div class="line">	<span class="built_in">assert</span>(num <span class="keyword">and</span> lower <span class="keyword">and</span> upper, <span class="string">'error: math.clamp(num, lower, upper)'</span>)</div><div class="line">	<span class="keyword">return</span> math.max(lower, math.min(upper, num))</div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<figure class="highlight lua"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Clamp</span><span class="params">(num, lower, upper)</span></span></div><div class="line">	<span class="built_in">assert</span>(num <span class="keyword">and</span> lower <span class="keyword">and</span> upper, <span class="string">'error: Clamp(num, lower, upper)'</span>)</div><div class="line">	<span class="keyword">return</span> math.max(lower, math.min(upper, num))</div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
 
 </div>
 
@@ -75,7 +75,7 @@
 <em>This will constrain the value of myVal between 15 and 25.</em></p>
 
 <div class="noscroll">
-<figure class="highlight lua"><table><tr><td class="code"><pre><div class="line"><span class="keyword">for</span> i = <span class="number">10</span>, <span class="number">30</span> <span class="keyword">do</span></div><div class="line">	myVal = math.clamp(i, <span class="number">15</span>, <span class="number">25</span>)</div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<figure class="highlight lua"><table><tr><td class="code"><pre><div class="line"><span class="keyword">for</span> i = <span class="number">10</span>, <span class="number">30</span> <span class="keyword">do</span></div><div class="line">	myVal = Clamp(i, <span class="number">15</span>, <span class="number">25</span>)</div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
 
 </div>
 </article>
