@@ -62,12 +62,12 @@
 	<header>
 		<h1>math.clamp</h1>
 	</header>
-	<article><p>This creates the <b>clamp(<em>val</em>, <em>lower</em>, <em>upper</em>)</b> mathematical function, which is not part of the standard Lua math libraries.</p>
+	<article><p>This creates the <b>clamp(<em>num</em>, <em>lower</em>, <em>upper</em>)</b> mathematical function, which is not part of the standard Lua math libraries.</p>
 
-<p>The argument <em>val</em> is the number or formula to test. <em>lower</em> is the lowest value it can be, and <em>upper</em> is the highest value it can be.</p>
+<p>The argument <em>num</em> is the number or formula to test. <em>lower</em> is the lowest value it can be, and <em>upper</em> is the highest value it can be.</p>
 
 <div class="noscroll">
-<figure class="highlight lua"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">math.clamp</span><span class="params">(val, lower, upper)</span></span></div><div class="line"></div><div class="line">	<span class="built_in">assert</span>(val <span class="keyword">and</span> lower <span class="keyword">and</span> upper, <span class="string">'error: math.clamp(val, lower, upper)'</span>)</div><div class="line">	<span class="keyword">return</span> math.max(lower, math.min(upper, val))</div><div class="line"></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<figure class="highlight lua"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">math.clamp</span><span class="params">(num, lower, upper)</span></span></div><div class="line">	<span class="built_in">assert</span>(num <span class="keyword">and</span> lower <span class="keyword">and</span> upper, <span class="string">'error: math.clamp(num, lower, upper)'</span>)</div><div class="line">	<span class="keyword">return</span> math.max(lower, math.min(upper, num))</div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
 
 </div>
 
