@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Nesting Variables - Rainmeter 4.1 Beta Manual</title>
+	<link href="/css/main.css?v=3" rel="stylesheet">
+	<link rel="shortcut icon" href="//www.rainmeter.net/favicon.ico">
+	<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6/html5shiv.min.js"></script><![endif]-->
+</head>
+<body>
+	<div id="wrapper">
+		<div id="top">
+			<div class="container">
+				<a id="logo" href="//rainmeter.net/"></a>
+				<nav id="nav">
+					<ul>
+					<li><a href="//www.rainmeter.net">Home</a>
+					<li><a href="//www.rainmeter.net/about">About</a>
+					<li><a href="/" class="active">Docs</a>
+					<li><a href="//www.rainmeter.net/discover">Discover</a>
+					<li><a href="//forum.rainmeter.net">Forum</a>
+					</ul>
+				</nav>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div id="side-content">
+	<h1 id="category"><a href="/manual-beta">4.1 Beta Manual</a></h1>
+
+	<form id="search-form" method="get" action="http://www.google.com/search">
+		<input name="sitesearch" value="docs.rainmeter.net" type="hidden">
+		<input id="search" name="q" maxlength="255" size="16" placeholder="Search" type="text">
+	</form>
+
+	<nav id="tree">
+		<h1>Contents</h1>
+<ul>
+<li><a href="/manual-beta/getting-started/">Getting Started</a>
+  <ul>
+  <li><a href="/manual-beta/getting-started/setting-up/">Setting Up</a>
+  <li><a href="/manual-beta/getting-started/using-rainmeter/">Using Rainmeter</a>
+  <li><a href="/manual-beta/getting-started/customizing/">Customizing</a>
+  <li><a href="/manual-beta/getting-started/creating-skins/">Creating Skins</a>
+  <li><a href="/manual-beta/getting-started/skin-anatomy/">Anatomy of a Skin</a>
+  <li><a href="/manual-beta/getting-started/basic-tutorials/">Basic Tutorials</a>
+    <ul>
+    <li><a href="/manual-beta/getting-started/basic-tutorials/launcher/">Launcher</a>
+    <li><a href="/manual-beta/getting-started/basic-tutorials/clock/">Clock</a>
+    <li><a href="/manual-beta/getting-started/basic-tutorials/system/">System</a>
+    </ul>
+  </ul>
+<li><a href="/manual-beta/installing-rainmeter/">Installing Rainmeter</a>
+<li><a href="/manual-beta/user-interface/">User Interface</a>
+  <ul>
+  <li><a href="/manual-beta/user-interface/manage/">Manage</a>
+<ul>
+  <li><a href="/manual-beta/user-interface/manage/new-skin">New Skin</a>
+</ul>
+  <li><a href="/manual-beta/user-interface/about/">About</a>
+  <li><a href="/manual-beta/user-interface/context-menus/">Context Menus</a>
+  </ul>
+<li><a href="/manual-beta/installing-skins/">Installing Skins</a>
+<li><a href="/manual-beta/arranging-skins/">Arranging Skins</a>
+<li><a href="/manual-beta/publishing-skins/">Publishing Skins</a>
+</ul>
+
+<h1>Reference</h1>
+<ul>
+<li><a href="/manual-beta/settings/">Settings</a>
+  <ul>
+  <li><a href="/manual-beta/settings/rainmeter-section/">[Rainmeter] Section</a>
+  <li><a href="/manual-beta/settings/traymeasure-section/">[TrayMeasure] Section</a>
+  <li><a href="/manual-beta/settings/skin-sections/">[Skin] Sections</a>
+  </ul>
+<li><a href="/manual-beta/skins/">Skins</a>
+  <ul>
+  <li><a href="/manual-beta/skins/option-types/">Option Types</a>
+  <li><a href="/manual-beta/skins/rainmeter-section/">[Rainmeter] Section</a>
+  <li><a href="/manual-beta/skins/metadata-section/">[Metadata] Section</a>
+  <li><a href="/manual-beta/skins/include-option/">@Include Options</a>
+  <li><a href="/manual-beta/skins/resources-folder/">@Resources Folder</a>
+  </ul>
+<li><a href="/manual-beta/meters/">Meters</a>
+  <ul>
+  <li><a href="/manual-beta/meters/general-options/">General Options</a>
+    <ul>
+    <li><a href="/manual-beta/meters/general-options/image-options/">Image Options</a>
+    <li><a href="/manual-beta/meters/general-options/meterstyles/">MeterStyles</a>
+    <li><a href="/manual-beta/meters/general-options/tooltips/">Tooltips</a>
+    </ul>
+  <li><a href="/manual-beta/meters/bar/">Bar</a>
+  <li><a href="/manual-beta/meters/bitmap/">Bitmap</a>
+  <li><a href="/manual-beta/meters/button/">Button</a>
+  <li><a href="/manual-beta/meters/histogram/">Histogram</a>
+  <li><a href="/manual-beta/meters/image/">Image</a>
+  <li><a href="/manual-beta/meters/line/">Line</a>
+  <li><a href="/manual-beta/meters/rotator/">Rotator</a>
+  <li><a href="/manual-beta/meters/roundline/">Roundline</a>
+  <li><a href="/manual-beta/meters/shape/">Shape</a>
+  <li><a href="/manual-beta/meters/string/">String</a>
+<ul>
+  <li><a href="/manual-beta/meters/string/inline/">Inline Options</a>
+</ul>
+  </ul>
+<li><a href="/manual-beta/measures/">Measures</a>
+  <ul>
+  <li><a href="/manual-beta/measures/general-options/">General Options</a>
+    <ul>
+    <li><a href="/manual-beta/measures/general-options/ifactions/">IfActions</a>
+    <li><a href="/manual-beta/measures/general-options/ifconditions/">IfConditions</a>
+    <li><a href="/manual-beta/measures/general-options/ifmatchactions/">IfMatchActions</a>
+    <li><a href="/manual-beta/measures/general-options/substitute/">Substitute</a>
+    </ul>
+  <li><a href="/manual-beta/measures/calc/">Calc</a>
+  <li><a href="/manual-beta/measures/cpu/">CPU</a>
+  <li><a href="/manual-beta/measures/freediskspace/">FreeDiskSpace</a>
+  <li><a href="/manual-beta/measures/loop/">Loop</a>
+  <li><a href="/manual-beta/measures/memory/">Memory</a>
+  <li><a href="/manual-beta/measures/net/">Net</a>
+  <li><a href="/manual-beta/measures/plugin/">Plugin</a>
+  <li><a href="/manual-beta/measures/registry/">Registry</a>
+  <li><a href="/manual-beta/measures/script/">Script</a>
+  <li><a href="/manual-beta/measures/string/">String</a>
+  <li><a href="/manual-beta/measures/time/">Time</a>
+  <li><a href="/manual-beta/measures/uptime/">Uptime</a>
+  </ul>
+<li><a href="/manual-beta/plugins/">Plugins</a>
+  <ul>
+  <li><a href="/manual-beta/plugins/actiontimer/">ActionTimer</a>
+  <li><a href="/manual-beta/plugins/advancedcpu/">AdvancedCPU</a>
+  <li><a href="/manual-beta/plugins/audiolevel/">AudioLevel</a>
+  <li><a href="/manual-beta/plugins/coretemp/">CoreTemp</a>
+  <li><a href="/manual-beta/plugins/fileview/">FileView</a>
+  <li><a href="/manual-beta/plugins/folderinfo/">FolderInfo</a>
+  <li><a href="/manual-beta/plugins/inputtext/">InputText</a>
+  <li><a href="/manual-beta/plugins/itunes/">iTunes</a>
+  <li><a href="/manual-beta/plugins/mediakey/">MediaKey</a>
+  <li><a href="/manual-beta/plugins/nowplaying/">NowPlaying</a>
+  <li><a href="/manual-beta/plugins/perfmon/">PerfMon</a>
+  <li><a href="/manual-beta/plugins/ping/">Ping</a>
+  <li><a href="/manual-beta/plugins/power/">Power</a>
+  <li><a href="/manual-beta/plugins/process/">Process</a>
+  <li><a href="/manual-beta/plugins/quote/">Quote</a>
+  <li><a href="/manual-beta/plugins/recyclemanager/">RecycleManager</a>
+  <li><a href="/manual-beta/plugins/resmon/">ResMon</a>
+  <li><a href="/manual-beta/plugins/runcommand/">RunCommand</a>
+  <li><a href="/manual-beta/plugins/speedfan/">SpeedFan</a>
+  <li><a href="/manual-beta/plugins/sysinfo/">SysInfo</a>
+  <li><a href="/manual-beta/plugins/webparser/">WebParser</a>
+  <li><a href="/manual-beta/plugins/wifistatus/">WiFiStatus</a>
+  <li><a href="/manual-beta/plugins/win7audio/">Win7Audio</a>
+  <li><a href="/manual-beta/plugins/windowmessage/">WindowMessage</a>
+  </ul>
+<li><a href="/manual-beta/bangs/">Bangs</a>
+<li><a href="/manual-beta/formulas/">Formulas</a>
+<li><a href="/manual-beta/variables/">Variables</a>
+  <ul>
+  <li><a href="/manual-beta/variables/built-in-variables/">Built-In Variables</a>
+  <li><a href="/manual-beta/variables/section-variables/">Section Variables</a>
+  <li><a href="/manual-beta/variables/mouse-variables/">Mouse Variables</a>
+  </ul>
+<li><a href="/manual-beta/groups/">Groups</a>
+<li><a href="/manual-beta/mouse-actions/">Mouse Actions</a>
+<li><a href="/manual-beta/lua-scripting/">Lua Scripting</a>
+</ul>
+
+<h1>More</h1>
+<ul>
+<li><a href="/manual/">4.0 Final Manual</a>
+<li><a href="/tips/">Tips &amp; Tricks</a>
+<li><a href="/snippets/">Snippets</a>
+<li><a href="/developers/">Developers</a>
+<li><a href="/history/">Version History</a>
+</ul>
+
+	</nav>
+</div>
+<div id="content">
+	<header>
+		<h1>Nesting Variables</h1>
+	</header>
+	<article>
+<p>There may be times when you want to embed or 'nest' variables within variables. This might include any combination of  <a href="/manual-beta/variables/">#Variables#</a>, <a href="/manual-beta/variables/built-in-variables/">#Built-InVariables#</a>, <a href="/manual-beta/variables/section-variables/">[SectionVariables]</a> or <a href="https://docs.rainmeter.net/manual-beta/variables/mouse-variables/">$MouseVariables$</a>.</p>
+
+<p>So for instance, the goal might be to have things like:</p>
+<p>
+<code>Text=#MyVar#MyOtherVar##</code><br/>
+<code>Text=#MyVar[MyMeasure]#</code><br/>
+<code>Text=[MyMeasure#MyVar#]</code><br/>
+<code>Text=[MyMeasure[MyOtherMeasure]]</code><br/>
+</p>
+
+<p>This creates ambiguities that simply can't be reliably parsed and understood by Rainmeter, and can't work.</p>
+
+<p>Rainmeter solves this by having an alternative form of these variables. These function exactly as their normal counterparts do, but can successfully be nested.<p>
+
+<h2>The alternative 'nesting' form of the variables</h2>
+
+<p><table class="table-striped">	
+	<tr><td><b>[#VarName]</b></td><td>&nbsp;&nbsp;&nbsp;</td><td>Replaces: #VarName#</td></tr>
+	<tr><td><b>[&MeasureName]</b></td><td>&nbsp;&nbsp;&nbsp;</td><td>Replaces: [MeasureName]</td></tr>
+	<tr><td><b>[$MouseVar]</b></td><td>&nbsp;&nbsp;&nbsp;</td><td>Replaces: $MouseVar$</td></tr>
+</table></p><br/>
+
+<p>So our examples above would look like:</p>
+<p>
+<code>Text=[#MyVar[#MyOtherVar]]</code><br/>
+<code>Text=[#MyVar[&MyMeasure]]</code><br/>
+<code>Text=[&MyMeasure[#MyVar]]</code><br/>
+<code>Text=[&MyMeasure[&MyOtherMeasure]]</code><br/>
+</p>
+
+<p><b>Notes:</b></p>
+
+<p>All the same rules for when <code>DynamicVaribles=1</code> is required where these are used still apply. Consider each component of the nested variable. If any of them require dynamic variables to successfully get the current value, then it must be used. In general, ANY nested variable that contains <code>[&MeasureName]</code> is going to require <code>DynamicVaribles=1</code> where it is used.</p>
+
+<p>Unless you are in fact 'nesting' variables within variables, there is no other benefit to using these instead of the normal syntax. It is not suggested that this in any way 'deprecates' the current style of using variables in your skin. This is an 'alternative' way, that simply allows for nesting to be successful. You can always use these if you like the consistency, or just use them as needed.</p>
+
+<p>By its nature, the built-in variable <code>#CURRENTSECTION#</code> has limitations on how it can be nested with other variables, so while the <code>[#CURRENTSECTION]</code> form is supported for consistency and completeness, care should be taken when trying to nest this variable.</p>
+
+<h2>Examples</h2>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[Rainmeter]</div><div class="line">Update=1000</div><div class="line">DynamicWindowSize=1</div><div class="line">AccurateText=1</div><div class="line"></div><div class="line">[Variables]</div><div class="line">Var1=One</div><div class="line">Var2=Two</div><div class="line"></div><div class="line">[MeasureStringOne]</div><div class="line">Measure=String</div><div class="line">String=I&apos;m the first Measure</div><div class="line"></div><div class="line">[MeasureStringTwo]</div><div class="line">Measure=String</div><div class="line">String=I&apos;m the second Measure</div><div class="line"></div><div class="line">[MeterTest1]</div><div class="line">Meter=String</div><div class="line">FontSize=13</div><div class="line">FontWeight=400</div><div class="line">FontColor=255,255,255,255</div><div class="line">SolidColor=47,47,47,255</div><div class="line">Padding=5,5,5,5</div><div class="line">AntiAlias=1</div><div class="line">Text=[&amp;MeasureString[#Var1]]#CRLF#[&amp;MeasureString[#Var2]]</div><div class="line">DynamicVariables=1</div><div class="line"></div><div class="line">[MeasureNum3]</div><div class="line">Measure=Calc</div><div class="line">Formula=3</div><div class="line"></div><div class="line">[MeasureNum4]</div><div class="line">Measure=Calc</div><div class="line">Formula=4</div><div class="line"></div><div class="line">[MeasureString3]</div><div class="line">Measure=String</div><div class="line">String=I&apos;m the third Measure</div><div class="line"></div><div class="line">[MeasureString4]</div><div class="line">Measure=String</div><div class="line">String=I&apos;m the fourth Measure</div><div class="line"></div><div class="line">[MeterTest2]</div><div class="line">Meter=String</div><div class="line">Y=10R</div><div class="line">FontSize=13</div><div class="line">FontWeight=400</div><div class="line">FontColor=255,255,255,255</div><div class="line">SolidColor=47,47,47,255</div><div class="line">Padding=5,5,5,5</div><div class="line">AntiAlias=1</div><div class="line">Text=[&amp;MeasureString[&amp;MeasureNum3]]#CRLF#[&amp;MeasureString[&amp;MeasureNum4]]</div><div class="line">DynamicVariables=1</div></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[Rainmeter]</div><div class="line">Update=1000</div><div class="line">DynamicWindowSize=1</div><div class="line">AccurateText=1</div><div class="line"></div><div class="line">[MeasureRandom]</div><div class="line">Measure=Calc</div><div class="line">Formula=Random</div><div class="line">LowBound=1</div><div class="line">HighBound=5</div><div class="line">UpdateRandom=1</div><div class="line">UniqueRandom=1</div><div class="line"></div><div class="line">[Measure1]</div><div class="line">Measure=String</div><div class="line">String=I&apos;m One</div><div class="line"></div><div class="line">[Measure2]</div><div class="line">Measure=String</div><div class="line">String=I&apos;m Two</div><div class="line"></div><div class="line">[Measure3]</div><div class="line">Measure=String</div><div class="line">String=I&apos;m Three</div><div class="line"></div><div class="line">[Measure4]</div><div class="line">Measure=String</div><div class="line">String=I&apos;m Four</div><div class="line"></div><div class="line">[Measure5]</div><div class="line">Measure=String</div><div class="line">String=I&apos;m Five</div><div class="line"></div><div class="line">[MeterTest1]</div><div class="line">Meter=String</div><div class="line">FontSize=13</div><div class="line">FontWeight=400</div><div class="line">FontColor=255,255,255,255</div><div class="line">SolidColor=47,47,47,255</div><div class="line">Padding=5,5,5,5</div><div class="line">AntiAlias=1</div><div class="line">Text=[&amp;Measure[&amp;MeasureRandom]]</div><div class="line">DynamicVariables=1</div></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[Rainmeter]</div><div class="line">Update=1000</div><div class="line">DynamicWindowSize=1</div><div class="line">AccurateText=1</div><div class="line"></div><div class="line">[Variables]</div><div class="line">XPos1=15</div><div class="line">XPos2=10</div><div class="line">XPos3=30</div><div class="line">XPos4=100</div><div class="line">XPos5=0</div><div class="line"></div><div class="line">[MeasureRandom]</div><div class="line">Measure=Calc</div><div class="line">Formula=Random</div><div class="line">LowBound=1</div><div class="line">HighBound=5</div><div class="line">UpdateRandom=1</div><div class="line">UniqueRandom=1</div><div class="line"></div><div class="line">[MeterTest1]</div><div class="line">Meter=String</div><div class="line">X=[#XPos[&amp;MeasureRandom]]</div><div class="line">FontSize=13</div><div class="line">FontWeight=400</div><div class="line">FontColor=255,255,255,255</div><div class="line">SolidColor=47,47,47,255</div><div class="line">Padding=5,5,5,5</div><div class="line">AntiAlias=1</div><div class="line">Text=Hello World</div><div class="line">DynamicVariables=1</div></pre></td></tr></table></figure>
+
+</article>
+</div>
+
+			</div>
+		</div>
+
+		<div id="footer-push"></div>
+	</div>
+
+	<script src="/js/main.js?v=4"></script>
+</body>
+</html>
