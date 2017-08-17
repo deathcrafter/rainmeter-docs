@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Inline Lua - Rainmeter 4.1 Beta Manual</title>
+	<link href="/css/main.css?v=3" rel="stylesheet">
+	<link rel="shortcut icon" href="//www.rainmeter.net/favicon.ico">
+	<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6/html5shiv.min.js"></script><![endif]-->
+</head>
+<body>
+	<div id="wrapper">
+		<div id="top">
+			<div class="container">
+				<a id="logo" href="//rainmeter.net/"></a>
+				<nav id="nav">
+					<ul>
+					<li><a href="//www.rainmeter.net">Home</a>
+					<li><a href="//www.rainmeter.net/about">About</a>
+					<li><a href="/" class="active">Docs</a>
+					<li><a href="//www.rainmeter.net/discover">Discover</a>
+					<li><a href="//forum.rainmeter.net">Forum</a>
+					</ul>
+				</nav>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div id="side-content">
+	<h1 id="category"><a href="/manual-beta">4.1 Beta Manual</a></h1>
+
+	<form id="search-form" method="get" action="http://www.google.com/search">
+		<input name="sitesearch" value="docs.rainmeter.net" type="hidden">
+		<input id="search" name="q" maxlength="255" size="16" placeholder="Search" type="text">
+	</form>
+
+	<nav id="tree">
+		<h1>Contents</h1>
+<ul>
+<li><a href="/manual-beta/getting-started/">Getting Started</a>
+  <ul>
+  <li><a href="/manual-beta/getting-started/setting-up/">Setting Up</a>
+  <li><a href="/manual-beta/getting-started/using-rainmeter/">Using Rainmeter</a>
+  <li><a href="/manual-beta/getting-started/customizing/">Customizing</a>
+  <li><a href="/manual-beta/getting-started/creating-skins/">Creating Skins</a>
+  <li><a href="/manual-beta/getting-started/skin-anatomy/">Anatomy of a Skin</a>
+  <li><a href="/manual-beta/getting-started/basic-tutorials/">Basic Tutorials</a>
+    <ul>
+    <li><a href="/manual-beta/getting-started/basic-tutorials/launcher/">Launcher</a>
+    <li><a href="/manual-beta/getting-started/basic-tutorials/clock/">Clock</a>
+    <li><a href="/manual-beta/getting-started/basic-tutorials/system/">System</a>
+    </ul>
+  </ul>
+<li><a href="/manual-beta/installing-rainmeter/">Installing Rainmeter</a>
+<li><a href="/manual-beta/user-interface/">User Interface</a>
+  <ul>
+  <li><a href="/manual-beta/user-interface/manage/">Manage</a>
+<ul>
+  <li><a href="/manual-beta/user-interface/manage/new-skin">New Skin</a>
+</ul>
+  <li><a href="/manual-beta/user-interface/about/">About</a>
+  <li><a href="/manual-beta/user-interface/context-menus/">Context Menus</a>
+  </ul>
+<li><a href="/manual-beta/installing-skins/">Installing Skins</a>
+<li><a href="/manual-beta/arranging-skins/">Arranging Skins</a>
+<li><a href="/manual-beta/publishing-skins/">Publishing Skins</a>
+</ul>
+
+<h1>Reference</h1>
+<ul>
+<li><a href="/manual-beta/settings/">Settings</a>
+  <ul>
+  <li><a href="/manual-beta/settings/rainmeter-section/">[Rainmeter] Section</a>
+  <li><a href="/manual-beta/settings/traymeasure-section/">[TrayMeasure] Section</a>
+  <li><a href="/manual-beta/settings/skin-sections/">[Skin] Sections</a>
+  </ul>
+<li><a href="/manual-beta/skins/">Skins</a>
+  <ul>
+  <li><a href="/manual-beta/skins/option-types/">Option Types</a>
+  <li><a href="/manual-beta/skins/rainmeter-section/">[Rainmeter] Section</a>
+  <li><a href="/manual-beta/skins/metadata-section/">[Metadata] Section</a>
+  <li><a href="/manual-beta/skins/include-option/">@Include Options</a>
+  <li><a href="/manual-beta/skins/resources-folder/">@Resources Folder</a>
+  </ul>
+<li><a href="/manual-beta/meters/">Meters</a>
+  <ul>
+  <li><a href="/manual-beta/meters/general-options/">General Options</a>
+    <ul>
+    <li><a href="/manual-beta/meters/general-options/image-options/">Image Options</a>
+    <li><a href="/manual-beta/meters/general-options/meterstyles/">MeterStyles</a>
+    <li><a href="/manual-beta/meters/general-options/tooltips/">Tooltips</a>
+    </ul>
+  <li><a href="/manual-beta/meters/bar/">Bar</a>
+  <li><a href="/manual-beta/meters/bitmap/">Bitmap</a>
+  <li><a href="/manual-beta/meters/button/">Button</a>
+  <li><a href="/manual-beta/meters/histogram/">Histogram</a>
+  <li><a href="/manual-beta/meters/image/">Image</a>
+  <li><a href="/manual-beta/meters/line/">Line</a>
+  <li><a href="/manual-beta/meters/rotator/">Rotator</a>
+  <li><a href="/manual-beta/meters/roundline/">Roundline</a>
+  <li><a href="/manual-beta/meters/shape/">Shape</a>
+  <li><a href="/manual-beta/meters/string/">String</a>
+<ul>
+  <li><a href="/manual-beta/meters/string/inline/">Inline Options</a>
+</ul>
+  </ul>
+<li><a href="/manual-beta/measures/">Measures</a>
+  <ul>
+  <li><a href="/manual-beta/measures/general-options/">General Options</a>
+    <ul>
+    <li><a href="/manual-beta/measures/general-options/ifactions/">IfActions</a>
+    <li><a href="/manual-beta/measures/general-options/ifconditions/">IfConditions</a>
+    <li><a href="/manual-beta/measures/general-options/ifmatchactions/">IfMatchActions</a>
+    <li><a href="/manual-beta/measures/general-options/substitute/">Substitute</a>
+    </ul>
+  <li><a href="/manual-beta/measures/calc/">Calc</a>
+  <li><a href="/manual-beta/measures/cpu/">CPU</a>
+  <li><a href="/manual-beta/measures/freediskspace/">FreeDiskSpace</a>
+  <li><a href="/manual-beta/measures/loop/">Loop</a>
+  <li><a href="/manual-beta/measures/memory/">Memory</a>
+  <li><a href="/manual-beta/measures/net/">Net</a>
+  <li><a href="/manual-beta/measures/plugin/">Plugin</a>
+  <li><a href="/manual-beta/measures/registry/">Registry</a>
+  <li><a href="/manual-beta/measures/script/">Script</a>
+  <li><a href="/manual-beta/measures/string/">String</a>
+  <li><a href="/manual-beta/measures/time/">Time</a>
+  <li><a href="/manual-beta/measures/uptime/">Uptime</a>
+  </ul>
+<li><a href="/manual-beta/plugins/">Plugins</a>
+  <ul>
+  <li><a href="/manual-beta/plugins/actiontimer/">ActionTimer</a>
+  <li><a href="/manual-beta/plugins/advancedcpu/">AdvancedCPU</a>
+  <li><a href="/manual-beta/plugins/audiolevel/">AudioLevel</a>
+  <li><a href="/manual-beta/plugins/coretemp/">CoreTemp</a>
+  <li><a href="/manual-beta/plugins/fileview/">FileView</a>
+  <li><a href="/manual-beta/plugins/folderinfo/">FolderInfo</a>
+  <li><a href="/manual-beta/plugins/inputtext/">InputText</a>
+  <li><a href="/manual-beta/plugins/itunes/">iTunes</a>
+  <li><a href="/manual-beta/plugins/mediakey/">MediaKey</a>
+  <li><a href="/manual-beta/plugins/nowplaying/">NowPlaying</a>
+  <li><a href="/manual-beta/plugins/perfmon/">PerfMon</a>
+  <li><a href="/manual-beta/plugins/ping/">Ping</a>
+  <li><a href="/manual-beta/plugins/power/">Power</a>
+  <li><a href="/manual-beta/plugins/process/">Process</a>
+  <li><a href="/manual-beta/plugins/quote/">Quote</a>
+  <li><a href="/manual-beta/plugins/recyclemanager/">RecycleManager</a>
+  <li><a href="/manual-beta/plugins/resmon/">ResMon</a>
+  <li><a href="/manual-beta/plugins/runcommand/">RunCommand</a>
+  <li><a href="/manual-beta/plugins/speedfan/">SpeedFan</a>
+  <li><a href="/manual-beta/plugins/sysinfo/">SysInfo</a>
+  <li><a href="/manual-beta/plugins/webparser/">WebParser</a>
+  <li><a href="/manual-beta/plugins/wifistatus/">WiFiStatus</a>
+  <li><a href="/manual-beta/plugins/win7audio/">Win7Audio</a>
+  <li><a href="/manual-beta/plugins/windowmessage/">WindowMessage</a>
+  </ul>
+<li><a href="/manual-beta/bangs/">Bangs</a>
+<li><a href="/manual-beta/formulas/">Formulas</a>
+<li><a href="/manual-beta/variables/">Variables</a>
+  <ul>
+  <li><a href="/manual-beta/variables/built-in-variables/">Built-In Variables</a>
+  <li><a href="/manual-beta/variables/section-variables/">Section Variables</a>
+  <li><a href="/manual-beta/variables/mouse-variables/">Mouse Variables</a>
+  </ul>
+<li><a href="/manual-beta/groups/">Groups</a>
+<li><a href="/manual-beta/mouse-actions/">Mouse Actions</a>
+<li><a href="/manual-beta/lua-scripting/">Lua Scripting</a>
+</ul>
+
+<h1>More</h1>
+<ul>
+<li><a href="/manual/">4.0 Final Manual</a>
+<li><a href="/tips/">Tips &amp; Tricks</a>
+<li><a href="/snippets/">Snippets</a>
+<li><a href="/developers/">Developers</a>
+<li><a href="/history/">Version History</a>
+</ul>
+
+	</nav>
+</div>
+<div id="content">
+	<header>
+		<h1>Inline Lua</h1>
+	</header>
+	<article><p>Functions in a Lua script may be executed "inline", by using a call to the function as a <a href="/manual-beta/variables/section-variables/">[SectionVariable]</a>, referencing the <a href="/manual-beta/measures/script/">Script measure</a> containing the <code>ScriptFile</code> option for the .lua file, and a reference to a single function() within the Lua script, with optional number or string parameters.</p>
+
+<p>The Lua function will be executed, using the provided number or string parameters, and the single number or string value returned by the function() in the Lua script will replace the [Section Variable] where it is used.</p>
+
+<p>The way to consider this is that this is a simple [SectionVariable], and works just like any other [SectionVariable]. The only difference is that a [SectionVariable] is used to reference a number or string value returned by some measure in the skin, and this is used to reference a number or string value returned by some function() in the Lua hosted by a Script measure in the skin.<p>
+
+<p>As the inline Lua can reference any function() within the .lua file, and can pass parameters specific to where the inline Lua is used, a single Script measure can host any number of functions, and those functions can return values specific to where you use them.</p>
+
+<p>These may be used anywhere a [SectionVariable] is allowed. This can be in almost any options in measures or meters, and any <a href="/manual-beta/bangs/">bangs</a> in an <a href="/manual-beta/skins/option-types/#Action">action</a>.</p>
+
+<p>As with any [SectionVariable], these will be resolved, in this case executed, when the skin is loaded, and on each update of the measure or meter containing them.</p>
+
+<h2>Nested variables</h2>
+
+<p>It must be remembered that the entire inline Lua functionality is contained within a [SectionVariable]. This means that any #Variables# or other measure [SectionVariable] you use in the parameters to the Lua function will cause "nesting" of variables within variables. The standard way of expressing #VariableName# and / or [MeasureName] in Rainmeter cannot be "nested", and won't work.</p>
+
+<p>This is solved by using the alternative <a href="/manual-beta/variables/nesting-variables/">Nesting Variables</a> syntax in any inline Lua. That link has a full explanation, but in short:</p>
+
+<p><table class="table-striped">	
+	<tr><td><b>[#VarName]</b></td><td>&nbsp;&nbsp;&nbsp;</td><td>Replaces: #VarName#</td></tr>
+	<tr><td><b>[&MeasureName]</b></td><td>&nbsp;&nbsp;&nbsp;</td><td>Replaces: [MeasureName]</td></tr>
+	<tr><td><b>[$MouseVar]</b></td><td>&nbsp;&nbsp;&nbsp;</td><td>Replaces: $MouseVar$</td></tr>
+</table></p>
+
+<p>In general, anything useful that you do with this functionality is going to entail passing variables of one form or another to the Lua function, and just always using the Nested Variables syntax with any inline Lua will save a lot of frustration and confusion.</p>
+
+<h2>Using inline Lua</h2>
+
+<p>The syntax of an inline Lua section variable is:</code>
+
+<p><code>[&ScriptMeasureName:LuaFunction(numberParameter, 'stringParameter', ...)]
+
+<p>String values in parameters must be explicitly passed as strings to the Lua function, by enclosing them in 'single quotes'.</p>
+
+<p>The best way to explain this is to disassemble a couple of simple examples.</p>
+
+<h2>SimpleLua</h2>
+
+<p>SimpleLua.ini:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[Rainmeter]</div><div class="line">Update=1000</div><div class="line">AccurateText=1</div><div class="line">DynamicWindowSize=1</div><div class="line"></div><div class="line">[MeasureGetUserName]</div><div class="line">Measure=Plugin</div><div class="line">Plugin=SysInfo</div><div class="line">SysInfoType=USER_NAME</div><div class="line">UpdateDivider=-1</div><div class="line"></div><div class="line">[MeasureScript]</div><div class="line">Measure=Script</div><div class="line">ScriptFile=SimpleLua.lua</div><div class="line">Disabled=1</div><div class="line"></div><div class="line">[MeterWelcome]</div><div class="line">Meter=String</div><div class="line">FontSize=20</div><div class="line">FontWeight=400</div><div class="line">FontColor=255,255,255,255</div><div class="line">SolidColor=47,47,47,255</div><div class="line">Padding=5,5,5,5</div><div class="line">AntiAlias=1</div><div class="line">Text=[&amp;MeasureScript:GetWelcome(&apos;[&amp;MeasureGetUserName]&apos;)]</div><div class="line">DynamicVariables=1</div></pre></td></tr></table></figure>
+
+<p>So we have a pretty simple skin, which gets the name of the user account logged into Windows with the <code>SysInfoType=USER_NAME</code> option on the SysInfo plugin measure [MeasureGetUserName].</p>
+
+<p>And we have a Script measure, [MeasureScript], which will load and make available the Lua script file SimpleLua.lua. Note that since we don't use or need an Update() function in the Lua, we can just disable this Script measure. There is nothing it can or should return on each update of the measure itself.</p>
+
+<p>Then in our [MeterWelcome] String meter, we use an inline Lua section variable. Let's look at the construction of that.</p>
+
+<p><code>Text=[&MeasureScript:GetWelcome('[&MeasureGetUserName]')]</code></p>
+
+<p>First, we reference our Script measure name with <code>[&MeasureScript</code>. That is followed with a <code>:</code> colon, to indicate a modifier, as with any [SectionVariable]. Note that we are using the Nested Variables syntax to reference our Script measure, as we are going to be "nesting" other variables in this.</p>
+
+<p>Then we reference the function() in the Lua script file that we want to call. In this case it is a function called <code>GetWelcome()</code>, which requires a 'string' parameter.</p>
+
+<p>We want to use the value of our [MeasureGetUserName] measure as the 'string' parameter to the Lua function, so we use the Nested Variables syntax to pass the value of that measure to the Lua as a 'string', with <code>('[&MeasureGetUserName]')</code>. Then we end the initial section variable, our inline Lua, with a <code>]</code> square bracket.</p>
+
+<p>SimpleLua.lua:</p>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">function GetWelcome(inArg)</div><div class="line"></div><div class="line">	hourOfDay = tonumber(os.date(&apos;%H&apos;))</div><div class="line">	</div><div class="line">	if hourOfDay &lt; 12 then</div><div class="line">		greetingText = &apos;Good Morning&apos;</div><div class="line">	elseif hourOfDay &lt; 17 then</div><div class="line">		greetingText = &apos;Good Afternoon&apos;</div><div class="line">	else</div><div class="line">		greetingText = &apos;Good Evening&apos;</div><div class="line">	end</div><div class="line"></div><div class="line">	welcomeText = greetingText..&apos;, &apos;..inArg</div><div class="line"></div><div class="line">	return welcomeText</div><div class="line"></div><div class="line">end</div></pre></td></tr></table></figure>
+
+<p>If we pretend that the value of our [MeasureGetUserName] measure is the string <code>RainmeterTeam</code>, then the function <code>GetWelcome('RainmeterTeam')</code> will be executed in the Lua script.</p>
+
+<p>The Lua script uses the current hour to choose a greeting appropriate for the time of day, and constructs a string to return as the section variable value to the String meter in Rainmeter. That is done with the <code>return</code> function in Lua, as <code>return welcomeText</code>. What would be seen in the skin at nine in the morning is "Good Morning, RainmeterTeam".
+
+<h2>FlipCoin</h2>
+
+<p>This example is a little more complex, showing how we can combine the use of an "action" in the Rainmeter skin, with inline Lua section variables, to get a result "on demand", and how we can use more than one function() in the same Lua script file.</p>
+
+<p>With this one, we will just explain using ;comments in the Rainmeter code, and --comments in the Lua code, as it might be easier to follow the explanation in the context.</p>
+
+<p>FlipCoin.ini:</p>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[Rainmeter]</div><div class="line">Update=1000</div><div class="line">DynamicWindowSize=1</div><div class="line">AccurateText=1</div><div class="line"></div><div class="line">; Demonstrates combining executing some Lua based on an &quot;action&quot;</div><div class="line">; in the skin, with some inline Lua section variables to get </div><div class="line">; different parts of the result.</div><div class="line"></div><div class="line">[MeasureScript]</div><div class="line">Measure=Script</div><div class="line">ScriptFile=FlipCoin.lua</div><div class="line">; There is no Update() function in the Lua, and we don&apos;t need</div><div class="line">; one, so there is no reason to enable this measure. It&apos;s a </div><div class="line">; &quot;host&quot; for the .lua file we use with !CommandMeasure and</div><div class="line">; inline Lua later on.</div><div class="line">Disabled=1</div><div class="line"></div><div class="line">[MeterFlip]</div><div class="line">Meter=String</div><div class="line">FontSize=13</div><div class="line">FontWeight=400</div><div class="line">FontColor=255,255,255,255</div><div class="line">SolidColor=47,47,47,255</div><div class="line">Padding=5,5,5,5</div><div class="line">AntiAlias=1</div><div class="line">Text=Flip Coin</div><div class="line">; We don&apos;t want the coin to flip on every update of the skin, or the meters with </div><div class="line">; the inline Lua section variables, we want to flip the coin on demand. So we</div><div class="line">; Use a !CommandMeasure bang with a LeftMouseUpAction to execute the </div><div class="line">; FlipCoin() function in the Lua, which will get a random number between 0 and 1, </div><div class="line">; and set the value of the coin to &quot;heads&quot; or &quot;tails&quot;.</div><div class="line">LeftMouseUpAction=[!CommandMeasure MeasureScript &quot;FlipCoin()&quot;][!UpdateMeterGroup Coins][!Redraw]</div><div class="line"></div><div class="line">[MeterCoin]</div><div class="line">Meter=String</div><div class="line">Group=Coins</div><div class="line">X=15R</div><div class="line">FontSize=20</div><div class="line">FontWeight=700</div><div class="line">FontColor=255,255,255,255</div><div class="line">SolidColor=0,0,0,1</div><div class="line">AntiAlias=1</div><div class="line">; Now we use an inline Lua section variable to ask for the current value,</div><div class="line">; &apos;Heads&apos; or &apos;Tails&apos; of the coin, using the GetCoin() function in the Lua.</div><div class="line">; This will get that value, which was created and changed by FlipCoin() and</div><div class="line">; is &quot;global&quot;, and replace the inline Lua section variable in the Text</div><div class="line">; option of the meter.</div><div class="line">Text=It&apos;s [&amp;MeasureScript:GetCoin()]</div><div class="line">DynamicVariables=1</div><div class="line"></div><div class="line">[MeterCount]</div><div class="line">Meter=String</div><div class="line">Group=Coins</div><div class="line">X=0</div><div class="line">Y=10R</div><div class="line">FontSize=17</div><div class="line">FontWeight=400</div><div class="line">FontColor=255,255,255,255</div><div class="line">SolidColor=0,0,0,1</div><div class="line">AntiAlias=1</div><div class="line">; And as an added bonus, when we flip the coin with our !CommandMeasure action, the</div><div class="line">; Lua also keeps track of how many times it was 0 or 1. We can then ask the</div><div class="line">; function GetCount() to return either the number of &apos;Heads&apos; or &apos;Tails&apos; and those</div><div class="line">; values will replace the inline Lua section variables in the Text option.</div><div class="line">Text=Heads: [&amp;MeasureScript:GetCount(&apos;Heads&apos;)]  Tails: [&amp;MeasureScript:GetCount(&apos;Tails&apos;)]</div><div class="line">DynamicVariables=1</div></pre></td></tr></table></figure>
+
+<p>FlipCoin.lua:</p>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">math.randomseed(tonumber(tostring(os.time()):reverse():sub(1,6)))</div><div class="line">	</div><div class="line">function FlipCoin()</div><div class="line"></div><div class="line">	flipNumber = math.random(0, 1)</div><div class="line">	</div><div class="line">	if flipNumber == 0 then</div><div class="line">		flipText = &apos;Heads&apos;</div><div class="line">		headsCount = headsCount + 1</div><div class="line">	else</div><div class="line">		flipText = &apos;Tails&apos;</div><div class="line">		tailsCount = tailsCount + 1</div><div class="line">	end</div><div class="line"></div><div class="line">end</div><div class="line">	</div><div class="line">function GetCoin()</div><div class="line"></div><div class="line">	-- If FlipCoin() hasn&apos;t been executed yet, flipText will be nil. We can&apos;t return nil to </div><div class="line">	-- Rainmeter, so we need to set it to some string initially. </div><div class="line">	flipText = flipText or &apos;None&apos;</div><div class="line">	</div><div class="line">	return flipText</div><div class="line"></div><div class="line">end</div><div class="line"></div><div class="line">function GetCount(faceArg)</div><div class="line"></div><div class="line">	-- If FlipCoin() hasn&apos;t been executed yet, the counts will be nil. We can&apos;t return nil to </div><div class="line">	-- Rainmeter, so we need to set them to 0 initially. </div><div class="line">	headsCount = headsCount or 0</div><div class="line">	tailsCount = tailsCount or 0</div><div class="line">	</div><div class="line">	if string.lower(faceArg) == &apos;heads&apos; then</div><div class="line">		return headsCount</div><div class="line">	else</div><div class="line">		return tailsCount</div><div class="line">	end</div><div class="line"></div><div class="line">end</div></pre></td></tr></table></figure>
+
+<h2>TranslateDay</h2>
+
+<p>This example adds a few more pieces, showing how we can use both [&SectionVariables] and [#Variables] (remember our Nesting Variables syntax!) embedded in the inline Lua, and how to pass multiple parameters to the Lua function.</p>
+
+<p>TranslateDay.ini:</p>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[Rainmeter]</div><div class="line">Update=1000</div><div class="line">AccurateText=1</div><div class="line">DynamicWindowSize=1</div><div class="line"></div><div class="line">; Demonstrates using [&amp;InlineLua:Function()] to get a single &quot;return&quot; value</div><div class="line">; from a Lua function, replacing the call to the function with the value </div><div class="line">; returned by it. Much like using other [#Variables] or [&amp;SectionVariables],</div><div class="line">; but we can do any programming we like in the Lua function() we call.</div><div class="line"></div><div class="line">; Note that we need to use DynamicVariables=1 with inline Lua variables,</div><div class="line">; just as we would with [&amp;SectionVariable]. In effect, an inline Lua </div><div class="line">; variable IS a section variable.</div><div class="line"></div><div class="line">; Examine TranslateDay.lua in the skin folder to see the work we are doing,</div><div class="line">; (not much, it&apos;s a simple table lookup) and how we are returning the value</div><div class="line">; to the inline Lua variable.</div><div class="line"></div><div class="line">[Variables]</div><div class="line">MainLang=English</div><div class="line"></div><div class="line">[MeasureDay]</div><div class="line">Measure=Time</div><div class="line">Format=%w</div><div class="line"></div><div class="line">[MeasureScript]</div><div class="line">Measure=Script</div><div class="line">ScriptFile=TranslateDay.lua</div><div class="line">; We are not doing anything on every skin update, and there is no Update() function</div><div class="line">; in the .lua file, so there is no need to enable this measure. In this case, it&apos;s</div><div class="line">; just a &quot;host&quot; for the function() in the script we will call &quot;inline&quot; later.</div><div class="line">Disabled=1</div><div class="line"></div><div class="line">[MeterBack]</div><div class="line">Meter=Shape</div><div class="line">Shape=Rectangle 0.5,0.5,220,110,12 | Fill Color 47,47,47,255 | StrokeWidth 1.5 | Stroke Color 150,150,150,255</div><div class="line"></div><div class="line">[MeterHeader]</div><div class="line">Meter=String</div><div class="line">X=10</div><div class="line">Y=10</div><div class="line">FontSize=13</div><div class="line">FontWeight=400</div><div class="line">FontColor=255,255,255,255</div><div class="line">AntiAlias=1</div><div class="line">; In this we use an inline Lua variable to call the TranslateHeader() function hosted</div><div class="line">; by our [MeasureScript] measure, and pass it the the string for the variable [#MainLang].</div><div class="line">; It will &quot;return&quot; the result, a lookup translation of the text &quot;Today is&quot;, and replace that</div><div class="line">; in the value of the Text option.</div><div class="line">Text=[&amp;MeasureScript:TranslateHeader(&apos;[#MainLang])&apos;]</div><div class="line">DynamicVariables=1</div><div class="line"></div><div class="line">[MeterLang1]</div><div class="line">Meter=String</div><div class="line">X=10</div><div class="line">Y=10R</div><div class="line">FontSize=11</div><div class="line">FontWeight=400</div><div class="line">FontColor=255,255,255,255</div><div class="line">AntiAlias=1</div><div class="line">; In this we use an inline Lua variable to call the TranslateDayOfWeek() function hosted</div><div class="line">; by our [MeasureScript] measure, pass it the day of the week as a number, and </div><div class="line">; the string &apos;Language&apos;. It will &quot;return&quot; the result and replace that in the value</div><div class="line">; of the Text option.</div><div class="line"></div><div class="line">; Note that [&amp;MeasureDay] represents a number and we pass it as a number. The value of</div><div class="line">; the variable [#MainLang] is a string, and we pass it as a string with single quotes.</div><div class="line">Text=[#MainLang]:		[&amp;MeasureScript:TranslateDayOfWeek([&amp;MeasureDay], &apos;[#MainLang]&apos;)]</div><div class="line">DynamicVariables=1</div><div class="line"></div><div class="line">[MeterLang2]</div><div class="line">Meter=String</div><div class="line">X=0r</div><div class="line">Y=5R</div><div class="line">FontSize=11</div><div class="line">FontWeight=400</div><div class="line">FontColor=255,255,255,255</div><div class="line">AntiAlias=1</div><div class="line">; This is were the power of this feature shines. Note that since we are </div><div class="line">; passing different &quot;parameters&quot; to the function in different places where</div><div class="line">; we &quot;use it&quot;, the result can be specifically tailored to the context</div><div class="line">; it it used in. So &quot;English&quot; before, and &quot;French&quot; here...</div><div class="line">Text=French:		[&amp;MeasureScript:TranslateDayOfWeek([&amp;MeasureDay], &apos;French&apos;)]</div><div class="line">DynamicVariables=1</div><div class="line"></div><div class="line">[MeterLang3]</div><div class="line">Meter=String</div><div class="line">X=0r</div><div class="line">Y=5R</div><div class="line">FontSize=11</div><div class="line">FontWeight=400</div><div class="line">FontColor=255,255,255,255</div><div class="line">AntiAlias=1</div><div class="line">Text=Russian:		[&amp;MeasureScript:TranslateDayOfWeek([&amp;MeasureDay], &apos;Russian&apos;)]</div><div class="line">DynamicVariables=1</div></pre></td></tr></table></figure>
+
+<p>TranslateDay.lua:</p>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">function Initialize()</div><div class="line"></div><div class="line">	translateToday = &#123;</div><div class="line">	english = &apos;Today is&apos;,</div><div class="line">	german = &apos;Heute ist&apos;,</div><div class="line">	french = &apos;Aujourd\&apos;hui, c\&apos;est&apos;,</div><div class="line">	spanish = &apos;Hoy es&apos;,</div><div class="line">	russian = &apos;Cегодня&apos;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	translateDays = &#123;</div><div class="line">	english = &#123;&apos;Sunday&apos;,&apos;Monday&apos;,&apos;Tuesday&apos;,&apos;Wednesday&apos;,&apos;Thursday&apos;,&apos;Friday&apos;,&apos;Saturday&apos;&#125;,</div><div class="line">	german = &#123;&apos;Sonntag&apos;,&apos;Montag&apos;,&apos;Dienstag&apos;,&apos;Mittwoch&apos;,&apos;Donnerstag&apos;,&apos;Freitag&apos;,&apos;Samstag&apos;&#125;,</div><div class="line">	french = &#123;&apos;dimanche&apos;,&apos;lundi&apos;,&apos;mardi&apos;,&apos;mercredi&apos;,&apos;jeudi&apos;,&apos;vendredi&apos;,&apos;samedi&apos;&#125;,</div><div class="line">	spanish = &#123;&apos;domingo&apos;,&apos;lunes&apos;,&apos;martes&apos;,&apos;mercredi&apos;,&apos;miércoles&apos;,&apos;viernes&apos;,&apos;sábado&apos;&#125;,</div><div class="line">	russian = &#123;&apos;воскресенье&apos;,&apos;понедельник&apos;,&apos;вторник&apos;,&apos;среда&apos;,&apos;четверг&apos;,&apos;пятница&apos;&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">end</div><div class="line"></div><div class="line">function TranslateHeader(langArg)</div><div class="line"></div><div class="line">	return translateToday[string.lower(langArg)]</div><div class="line">	</div><div class="line">end</div><div class="line"></div><div class="line">function TranslateDayOfWeek(dayArg, langArg)</div><div class="line"></div><div class="line">	return translateDays[string.lower(langArg)][dayArg+1]</div><div class="line">	</div><div class="line">end</div></pre></td></tr></table></figure>
+
+<h2>Download Examples</h2>
+
+<p>You can download the above examples, and a few others, as a .rmskin.</p>
+
+<div float="left">
+
+</div>
+<div class="exampleprev">
+	<a href="/manual-beta/examples/ExampleInlineLua.rmskin"><img src="/manual-beta/img/inline-lua/ExampleInlineLau.png"></a>
+</div></article>
+</div>
+
+			</div>
+		</div>
+
+		<div id="footer-push"></div>
+	</div>
+
+	<script src="/js/main.js?v=4"></script>
+</body>
+</html>
