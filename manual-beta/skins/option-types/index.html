@@ -259,6 +259,18 @@
 
 <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">LeftMouseUpAction=!SetOption SomeMeter FontSize #VarName#</div><div class="line">; The FontSize option for SomeMeter will be set to the current value of the variable.</div><div class="line"></div><div class="line">LeftMouseUpAction=!SetOption SomeMeter FontSize #*VarName*#</div><div class="line">; The FontSize option for SomeMeter will be set to the the string &quot;#VarName#&quot;</div><div class="line"></div><div class="line">LeftMouseUpAction=!SetOption SomeMeter FontSize [MeasureName]</div><div class="line">; The FontSize option for SomeMeter will be set to the current value of the measure.</div><div class="line"></div><div class="line">LeftMouseUpAction=!SetOption SomeMeter FontSize [*MeasureName*]</div><div class="line">; The FontSize option for SomeMeter will be set to the string &quot;[MeasureName]&quot;.</div></pre></td></tr></table></figure>
 
+<p>Normal variables<br/>
+<ul>
+	<li><code>#*VarName*#</code></li>
+	<li><code>[*MeasureName*]</code></li>
+</ul></p>
+
+<p>Nested variables<br/>
+<ul>
+	<li><code>[#*VarName*]</code></li>
+	<li><code>[&*MeasureName*]</code></li>
+</ul></p>
+
 <h2 id="RegExp">Regular expression options</h2>
 
 <p>These options use <a href="http://www.pcre.org/">Perl Compatible Regular Expressions</a> (PCRE) to match specific parts of a text string. Regular expressions are used when the structure of a piece of data is known, but the content is not.</p>
