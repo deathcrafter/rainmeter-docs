@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>WiFiStatus plugin - Rainmeter 4.1 Beta Manual</title>
+	<title>Character Reference Variables - Rainmeter 4.1 Beta Manual</title>
 	<link href="/css/main.css?v=3" rel="stylesheet">
 	<link rel="shortcut icon" href="//www.rainmeter.net/favicon.ico">
 	<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6/html5shiv.min.js"></script><![endif]-->
@@ -184,57 +184,70 @@
 </div>
 <div id="content">
 	<header>
-		<h1>WiFiStatus plugin</h1>
+		<h1>Character Reference Variables</h1>
 	</header>
-	<article><p><code>Plugin=WiFiStatus</code> can be used to display various attributes of visible wireless networks in your area.</p>
+	<article>
+<p>Often you will want to use a symbol in your skin design, perhaps for a media player like <span style="font-size:150%">▶</span> or <span style="font-size:150%">⏸</span>, a language character like <span style="font-size:150%">ඌ</span> or <span style="font-size:150%">乫</span>, or other UI elements like <span style="font-size:150%">↻</span> or <span style="font-size:150%">☑</span> or even just a degree symbol like <span style="font-size:150%">°</span>.</p>
 
-<h2>Options</h2>
-<dl>
-	<dt>General measure options</dt>
-	<dd>
-		All <a href="/manual-beta/measures/general-options/">general measure options</a> are valid.
-	</dd>
+<p>You can use an <a href="/manual-beta/meters/image/">Image meter</a> with a .png of the image you want, that can mean an extra meter in your skin code, and another file that you need to include when you distribute your skin. In addition, changing the color or size of the image can be problematic. An alternative is to use <a href="https://en.wikipedia.org/wiki/Unicode">Unicode</a> characters in a <a href="/manual-beta/meters/string/">String meter</a>.</p>
 
+<p>While you can simply copy and paste a Unicode character into your skin code, there are some issues with that:</p>
 
-	<dt id="WiFiInfoType"><code>WiFiInfoType</code></dt>
-	<dd>
-		<p>This defines what is measured. This option is <b>required</b>. Valid values are:</p>
-		<ul>
-			<li><code>SSID</code>: The broadcast name for your current connection. When trying to connect, you may see a 'connecting...' or 'authorizing...' next to the name, but only if your update speed is around 2 seconds.</li>
-			<li><code>Quality</code>: Percentage value of the maximum dBm signal strength for your current connection.</li>
-			<li><code>Encryption</code>: The cipher algorithm being used for your current connection. Possible values are: <code>NONE</code>, <code>WEP40</code>, <code>TKIP</code>, <code>AES</code>, <code>WEP104</code>, <code>WPA_GROUP</code>, and <code>WEP</code>. An unknown algorithm will return <code>???</code>.</li>
-			<li><code>AUTH</code>: The authentication algorithm being used for your current connection. Possible values are: <code>Open</code>, <code>Shared</code>, <code>WPA-NONE</code>, <code>WPA-Enterprise</code>, <code>WPA-Personal</code>, <code>WPA2-Enterprise</code>, and <code>WPA2-Personal</code>. An unknown algorithm will return <code>???</code>.</li>
-			<li><code>PHY</code>: The supported bands for your connection (<b>not</b> your adapter). Possible values are <code>802.11a</code>, <code>802.11ac</code>, <code>802.11b</code>, <code>802.11g</code>, <code>802.11n</code>, <code>DSSS</code>, <code>FHSSS</code>, and <code>IR-Band</code>. An unknown band will return <code>???</code>.</li>
-			<li><code>List</code>: Returns a list of all visible networks. The list is automatically separated by line-breaks <code>\n</code>, so each network appears on a separate line. It will also display the <code>PHY</code>, <code>Encryption</code>, and <code>AUTH</code> algorithms next the the network <code>SSID</code>.</li>
-		</ul>
-	</dd>
+<ul>
+<li>You must be sure to <a href="https://docs.rainmeter.net/tips/unicode-in-rainmeter/">encode</a> your skin .ini file as UTF-16 Little Endian.</li>
+<li>While the font you are using for your skin may support the character(s), the font in your text editor may not. This can make it hard to work on your skin.</li>
+<li>The majority of the 65,536 Unicode characters and symbols below (U+FFFE), the <a href="https://en.wikipedia.org/wiki/Plane_(Unicode)#Basic_Multilingual_Plane">Basic Multilingual Plane</a>, are well supported in popular fonts you will use. Characters above (U+FFFE) are not as well supported by fonts and not supported at all in Rainmeter. That is where an "icon" font like FontAwesome comes in, more on that in a bit.</li>
+</ul>
 
-	<dt id="WiFiIntfID"><code>WiFiIntfID</code> <small>Default: <code>0</code></small></dt>
-	<dd>
-		Only use this if you have more than 1 wireless interface adapter (which may include any bluetooth or infrared receivers). If you do not get any response from the measure with this value at <code>0</code>, then try other values starting from <code>1</code>, then <code>2</code> and so on.
-	</dd>
+<h2 id="UsingCharacterVariables">Using Character Variables in Rainmeter</h2>
 
-	<dt id="WiFiListStyle"><code>WiFiListStyle</code> <small>Default: <code>0</code></small></dt>
-	<dd>
-		<p>This allows you to control what information appears along with the names of all visible networks when <code>WiFiInfoType=List</code>. Valid values are:</p>
-		<ul>
-			<li><code>0</code>: SSID.</li>
-			<li><code>1</code>: SSID @band.</li>
-			<li><code>2</code>: SSID (Encryption:Authentication).</li>
-			<li><code>3</code>: SSID @band (Encryption:Authentication).</li>
-		</ul>
-	</dd>
+<p>The syntax for creating a plain-text reference to a Unicode or pictograph font character is:</p>
 
-	<dt id="WiFiListLimit"><code>WiFiListLimit</code> <small>Default: <code>5</code></small></dt>
-	<dd>
-		<p>Allows you to control the number of networks that are will be displayed when used with <code>WiFiInfoType=List</code>.</p>
-		<p><b>Note:</b> The list is sorted in descending order based on the signal quality of each network (i.e. strongest first, weakest last).</p>
-	</dd>
-</dl>
+<ul>
+<li><b>[\x2622]</b> : hexadecimal Unicode value. Allowed range is x0-xFFFE.</li>
+<li><b>[\9762]</b> : decimal Unicode value. Allowed range is 0-65536.</li>
+<li>In this example, either variant will produce the <span style="font-size:150%">☢</span> character.</li>
+</ul>
 
-<h2>Example</h2>
+<p>Example: <code>Text=Caution, radioactivity [\x2622] ahead!</code></p>
 
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[MeasureSSID]</div><div class="line">Measure=Plugin</div><div class="line">Plugin=WiFiStatus</div><div class="line">WiFiInfoType=SSID</div><div class="line">WiFiIntfID=0</div><div class="line"></div><div class="line">[MeasureNetworks]</div><div class="line">Measure=Plugin</div><div class="line">Plugin=WiFiStatus</div><div class="line">WiFiInfoType=LIST</div><div class="line">WiFiIntfID=0</div><div class="line">WiFiListStyle=3</div></pre></td></tr></table></figure>
+<p>These are font characters like any other, and can be modified with FontSize, FontColor and other effects.</p>
+
+<h2 id="FindingValues">Finding those Unicode values</h2>
+
+<p>There are two general ways to find characters and symbols to use in your skins:</p>
+
+<p><b>Standard Unicode characters in the Basic Multilingual Plane</b> as defined by the <a href="https://en.wikipedia.org/wiki/Unicode_Consortium">Unicode Consortium</a>. One good reference to these can be found at <a href="https://unicode-table.com/en/"><b>Unicode Character Table</b></a>. Simply select a desired character, and for example with our <span style="font-size:150%">☢</span> above, it will display both the Unicode (U+2622) and HTML (&amp;#9762;) values for the character. It is up to you whether you want to use hex or decimal, although hex may be more common outside of HTML. Then use those values in the syntax described above.</p>
+
+<p>Most quality fonts, certainly most of the popular ones that are included with Windows, as well as ones available from <a href="https://fonts.google.com/">Google Fonts</a> and other resources, will support the majority of these characters. There should be no need to install or use any special font, other than what is visually pleasing for your skin design.</p>
+
+<p><b>An "icon" font.</b> Again, since the use of characters outside the Basic Multilingual Plane, from x0 to xFFFE, is not supported by many fonts, and not at all by Rainmeter, it may be useful to look at using a specialize "icon" font, which will map many new, unusual, and popular symbols into the allowed range. They often also have unique images that can be of use in your skins.</p>
+
+<p>While there are quite a few of these types of fonts available, here are a few popular examples:</p>
+
+<ul>
+<li><b>FontAwesome</b><br/>
+Download site: <a href="http://fontawesome.io">http://fontawesome.io</a><br/>
+Reference site: <a href="http://fontawesome.io/cheatsheet/">http://fontawesome.io/cheatsheet/</a><br/></li>
+<li><b>Google Material Icons</b><br/>
+Download site: <a href="https://github.com/google/material-design-icons/tree/master/iconfont">https://github.com/google/material-design-icons/tree/master/iconfont</a><br/>
+Reference site: <a href="https://material.io/icons/">https://material.io/icons/</a><br/></li>
+<li><b>IcoFont</b><br/>
+Download site: <a href="http://icofont.com/">http://icofont.com/</a><br/>
+Reference site: <a href="http://icofont.com/">http://icofont.com/</a><br/></li>
+</ul>
+
+<p>Again, select a desired character to obtain either the Unicode or HTML character values. Use those with the syntax above in Rainmeter.</p>
+
+<p>The difference is that using these fonts will require that you place the font .ttf or .otf file in the <a href="/manual-beta/skins/resources-folder/#Fonts">@Resources\Fonts</a> folder in the root config of your skin, and use the family name of the font with the <a href="/manual-beta/meters/string/#FontFace">FontFace</a> option in a String meter to display them.</p>
+
+<h2 id="Example">Example</h2>
+<a href="/manual-beta/examples/ExampleCharacterVariables.rmskin" class="download"></a>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[Rainmeter]</div><div class="line">Update=1000</div><div class="line">DynamicWindowSize=1</div><div class="line">AccurateText=1</div><div class="line"></div><div class="line">; These should work with any decent font</div><div class="line">; https://unicode-table.com/en/</div><div class="line">; https://en.wikipedia.org/wiki/Unicode</div><div class="line"></div><div class="line">; These require that the appropriate font be in @Resources\Fonts</div><div class="line">; They are all there in this skin if you want / need them</div><div class="line">; http://fontawesome.io/cheatsheet/</div><div class="line">; https://material.io/icons/</div><div class="line">; https://github.com/google/material-design-icons/tree/master/iconfont</div><div class="line">; http://icofont.com/</div><div class="line"></div><div class="line">; Note that Rainmeter (and most fonts) only supports characters below [\65534] or [\xfffe]</div><div class="line">; This is the Basic Multilingual Plane in Unicode</div><div class="line">; https://en.wikipedia.org/wiki/Plane_(Unicode)#Basic_Multilingual_Plane</div><div class="line"></div><div class="line">[Variables]</div><div class="line">; One way to keep track of what&apos;s what is to use Variables to name characters you use</div><div class="line">fa-Raindrop=[\xf043]</div><div class="line">u-Degree=[\x00B0]</div><div class="line"></div><div class="line">[MeterChars]</div><div class="line">Meter=String</div><div class="line">; Use any font you like for text and most Unicode characters</div><div class="line">;FontFace=Fira Sans</div><div class="line">FontSize=20</div><div class="line">FontWeight=500</div><div class="line">FontColor=255,255,255,255</div><div class="line">SolidColor=47,47,47,255</div><div class="line">Padding=5,5,5,5</div><div class="line">AntiAlias=1</div><div class="line">; Use the font family name for fonts that have specialized characters</div><div class="line">; Note that | means &quot;or&quot; in InlinePattern</div><div class="line">InlineSetting=Face | FontAwesome</div><div class="line">InlinePattern=[\xf0e7]|#fa-Raindrop#|[\xf241]|[\x26C6]|[\xf0a9]</div><div class="line">InlineSetting2=Color | 242,216,162,255</div><div class="line">InlinePattern2=[\xf0e7]</div><div class="line">InlineSetting3=Color | 162,204,242,255</div><div class="line">InlinePattern3=[\xf043]</div><div class="line">InlineSetting4=Color | 242,104,104,255</div><div class="line">InlinePattern4=[\xf0a9]</div><div class="line">Text=Hello [\x27BD] [\xf0e7] #fa-Raindrop# [\xf241] [\xf0a9] #u-Degree# World</div></pre></td></tr></table></figure>
+
+<div class="exampleprev">
+	<img src="/manual-beta/img/character-variables/ExampleCharacterVariables.png"/>
+</div>
 
 </article>
 </div>
