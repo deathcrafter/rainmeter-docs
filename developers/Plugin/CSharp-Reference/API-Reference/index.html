@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>C# API Overview - Rainmeter Developers</title>
+	<link href="/css/main.css?v=3" rel="stylesheet">
+	<link rel="shortcut icon" href="//www.rainmeter.net/favicon.ico">
+	<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6/html5shiv.min.js"></script><![endif]-->
+</head>
+<body>
+	<div id="wrapper">
+		<div id="top">
+			<div class="container">
+				<a id="logo" href="//rainmeter.net/"></a>
+				<nav id="nav">
+					<ul>
+					<li><a href="//www.rainmeter.net">Home</a>
+					<li><a href="/" class="active">Documentation</a>
+					<li><a href="//www.rainmeter.net/discover">Discover</a>
+					<li><a href="//forum.rainmeter.net">Community</a>
+					</ul>
+				</nav>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div id="side-content">
+	<h1 id="category"><a href="/developers">Developers</a></h1>
+
+	<form id="search-form" method="get" action="http://www.google.com/search">
+		<input name="sitesearch" value="docs.rainmeter.net" type="hidden">
+		<input id="search" name="q" maxlength="255" size="16" placeholder="Search" type="text">
+	</form>
+
+	<nav id="tree">
+		<h1>Contents</h1>
+<ul>
+<li><a href="/developers/Plugin/Basics/">Anatomy of a Plugin</a>
+<li><a href="/developers/Plugin/C++-Reference/">C++ Overview</a>
+  <ul>
+  <li><a href="/developers/Plugin/C++-Reference/API-Reference/">C++ API Reference</a>
+  </ul>
+<li><a href="/developers/Plugin/CSharp-Reference/">C# Overview</a>
+  <ul>
+  <li><a href="/developers/Plugin/CSharp-Reference/API-Reference/">C# API Reference</a>
+  </ul>
+<li><a href="/developers/Plugin/Best-Practices/">Best Practices</a>
+</ul>
+
+<h1>More</h1>
+<ul>
+<li><a href="/manual/">4.0 Final Manual</a>
+<li><a href="/manual-beta/">4.1 Beta Manual</a>
+<li><a href="/tips/">Tips &amp; Tricks</a>
+<li><a href="/snippets/">Snippets</a>
+<li><a href="/history/">Version History</a>
+</ul>
+
+	</nav>
+</div>
+<div id="content">
+	<header>
+		<h1>C# API Overview</h1>
+	</header>
+	<article><p>This is an overview of the functions available in the C# Rainmeter API. All the functions are behind a Rainmeter.API wrapper which is created using the rm IntPtr</p>
+<p>Note that summaries are also provided in the API libraries</p>
+
+<dt id="ReadString"><code>ReadString</code> <small><code>string ReadString(string option, string defValue, bool replaceMeasures = true)</code></small></dt>
+<dd>
+  <p>Returns a string representation of an option</p>
+  <p>
+    <i>option:</i> <code>Option name to be read from skin</code><br>
+    <i>defValue:</i> <code>Default value for the option if it is not found or invalid</code><br>
+    <i>replaceMeasures:</i> <code>(Optional) If true, replaces section variables in the returned string</code>
+  </p>
+  <figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="function">internal <span class="keyword">void</span> <span class="title">Reload</span><span class="params">(Rainmeter.API rm, ref <span class="keyword">double</span> maxValue)</span></div><div class="line"></span>&#123;</div><div class="line">    <span class="built_in">string</span> value = rm.ReadString(<span class="string">"Value"</span>, <span class="string">"DefaultValue"</span>);</div><div class="line">    <span class="built_in">string</span> action = rm.ReadString(<span class="string">"Action"</span>, <span class="string">""</span>, <span class="literal">false</span>);</div><div class="line">      <span class="comment">// [MeasureNames] will be parsed/replaced when the action is executed with API.Execute</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+</dd>
+<dt id="ReadPath"><code>ReadPath</code> <small><code>string ReadPath(string option, string defValue)</code></small></dt>
+<dd>
+  <p>Retrieves the option defined in the skin file and converts a relative path to a absolute path</p>
+  <p>
+    <i>option:</i> <code>Option name to be read from skin</code><br>
+    <i>defValue:</i> <code>Default value for the option if it is not found or invalid</code>
+  </p>
+  <figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="function">internal <span class="keyword">void</span> <span class="title">Reload</span><span class="params">(Rainmeter.API rm, ref <span class="keyword">double</span> maxValue)</span></div><div class="line"></span>&#123;</div><div class="line">    <span class="built_in">string</span> path = rm.ReadPath(<span class="string">"MyPath"</span>, <span class="string">"C:\\"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+</dd>
+<dt id="ReadDouble"><code>ReadDouble</code> <small><code>double ReadDouble(string option, double defValue)</code></small></dt>
+<dd>
+  <p>Retrieves the option defined in the skin file and converts it to a double</p>
+  <p>
+    <i>option:</i> <code>Option name to be read from skin</code><br>
+    <i>defValue:</i> <code>Default value for the option if it is not found, invalid, or a formula could not be parsed</code>
+  </p>
+  <figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="function">internal <span class="keyword">void</span> <span class="title">Reload</span><span class="params">(Rainmeter.API rm, ref <span class="keyword">double</span> maxValue)</span></div><div class="line"></span>&#123;</div><div class="line">    <span class="keyword">double</span> value = rm.ReadDouble(<span class="string">"Value"</span>, <span class="number">20.0</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+</dd>
+<dt id="ReadInt"><code>ReadInt</code> <small><code>int ReadInt(string option, int defValue)</code></small></dt>
+<dd>
+  <p>Retrieves the option defined in the skin file and converts it to an integer</p>
+  <p>
+    <i>option:</i> <code>Option name to be read from skin</code><br>
+    <i>defValue:</i> <code>Default value for the option if it is not found, invalid, or a formula could not be parsed</code>
+  </p>
+  <figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="function">internal <span class="keyword">void</span> <span class="title">Reload</span><span class="params">(Rainmeter.API rm, ref <span class="keyword">double</span> maxValue)</span></div><div class="line"></span>&#123;</div><div class="line">    <span class="keyword">int</span> value = rm.ReadInt(<span class="string">"Value"</span>, <span class="number">20</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+</dd>
+<dt id="Execute"><code>Execute</code> <small><code>static void Execute(IntPtr skin, string command)</code></small></dt>
+<dd>
+  <p>Executes a command</p>
+  <p>
+    <i>skin:</i> <code>Pointer to current skin (See API.GetSkin)</code><br>
+    <i>command:</i> <code>Bang to execute</code>
+  </p>
+  <figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="function">internal <span class="keyword">double</span> <span class="title">Update</span><span class="params">(IntPtr data)</span></div><div class="line"></span>&#123;</div><div class="line">    Measure measure = (Measure)data;</div><div class="line">    Rainmeter.API(measure-&gt;skin, <span class="string">L"!SetVariable SomeVar 10"</span>);</div><div class="line">      <span class="comment">// 'measure-&gt;skin' stored previously in the Initialize function</span></div><div class="line">    <span class="keyword">return</span> <span class="number">0.0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+</dd>
+<dt id="ReplaceVariables"><code>ReplaceVariables</code> <small><code>string ReplaceVariables(string str)</code></small></dt>
+<dd>
+  <p>Returns a string, replacing any variables (or section variables) within the inputted string</p>
+  <p>
+    <i>str:</i> <code>String with unresolved variables</code>
+  </p>
+  <figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="function">internal <span class="keyword">double</span> <span class="title">Update</span><span class="params">()</span></div><div class="line"></span>&#123;</div><div class="line">    <span class="built_in">string</span> myVar = ReplaceVariables(<span class="string">"#MyVar#"</span>).ToUpperInvariant();</div><div class="line">    <span class="keyword">if</span> (myVar == <span class="string">"SOMETHING"</span>) &#123; <span class="keyword">return</span> <span class="number">1.0</span>; &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0.0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+</dd>
+<dt id="GetMeasureName"><code>GetMeasureName</code> <small><code>string GetMeasureName()</code></small></dt>
+<dd>
+  <p>Retrieves the name of the measure</p>
+  <figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="function">internal <span class="keyword">void</span> <span class="title">Initialize</span><span class="params">(Rainmeter.API rm)</span></div><div class="line"></span>&#123;</div><div class="line">    myName = GetMeasureName();  <span class="comment">// declare 'myName' as a string in class scope</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+</dd>
+<dt id="GetSkin"><code>GetSkin</code> <small><code>IntPtr GetSkin()</code></small></dt>
+<dd>
+  <p>Retrieves an internal pointer to the current skin</p>
+  <figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="function">internal <span class="keyword">void</span> <span class="title">Initialize</span><span class="params">(Rainmeter.API rm)</span></div><div class="line"></span>&#123;</div><div class="line">    mySkin = GetSkin();  <span class="comment">// declare 'mySkin' as a IntPtr in class scope</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+</dd>
+<dt id="GetSettingsFile"><code>GetSettingsFile</code> <small><code>string GetSettingsFile()</code></small></dt>
+<dd>
+  <p>Retrieves a path to the Rainmeter data file (Rainmeter.data)</p>
+  <figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="function">internal <span class="keyword">void</span> <span class="title">Initialize</span><span class="params">(Rainmeter.API rm)</span></div><div class="line"></span>&#123;</div><div class="line">    <span class="keyword">if</span> (rmDataFile == null) &#123; rmDataFile = GetSettingsFile(); &#125;</div><div class="line">      <span class="comment">// declare 'rmDataFile' as a string in global scope</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+</dd>
+<dt id="GetSkinName"><code>GetSkinName</code> <small><code>string GetSkinName()</code></small></dt>
+<dd>
+  <p>Retrieves full path and name of the skin</p>
+  <figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="function">internal <span class="keyword">void</span> <span class="title">Initialize</span><span class="params">(Rainmeter.API rm)</span></div><div class="line"></span>&#123;</div><div class="line">    skinName = GetSkinName(); &#125;  <span class="comment">// declare 'skinName' as a string in class scope</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+</dd>
+<dt id="GetSkinWindow"><code>GetSkinWindow</code> <small><code>IntPtr GetSkinWindow()</code></small></dt>
+<dd>
+  <p>Returns a pointer to the handle of the skin window (HWND)</p>
+  <figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="function">internal <span class="keyword">void</span> <span class="title">Initialize</span><span class="params">(Rainmeter.API rm)</span></div><div class="line"></span>&#123;</div><div class="line">    skinWindow = GetSkinWindow(); &#125;  <span class="comment">// declare 'skinWindow' as a IntPtr in class scope</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+</dd>
+<dt id="Log"><code>Log</code> <small><code>static void Log(IntPtr rm, LogType type, string message)</code></small></dt>
+<dd>
+  <p>Sends a message to the Rainmeter log with source</p>
+  <p>
+    <i>rm:</i> <code>Pointer to the plugin measure (Or Rainmeter.API object)</code><br>
+    <i>type:</i> <code>Log level (API.LogType of Error, Warning, Notice, or Debug)</code><br>
+    <i>message:</i> <code>Message to be logged</code>
+  </p>
+  <figure class="highlight c"><table><tr><td class="code"><pre><div class="line">Log(rm, LOG_NOTICE, <span class="string">"I am a 'notice' log message with a source"</span>);</div></pre></td></tr></table></figure>
+
+</dd>
+<dt id="LogF"><code>LogF</code> <small><code>static void LogF(IntPtr rm, LogType type, string format, params string[] args)</code></small></dt>
+<dd>
+  <p>Sends a formatted message to the Rainmeter log</p>
+  <p>
+    <i>rm:</i> <code>Pointer to the plugin measure (Or Rainmeter.API object)</code><br>
+    <i>type:</i> <code>Log level (API.LogType of Error, Warning, Notice, or Debug)</code><br>
+    <i>format:</i> <code>Formatted message to be logged, follows printf syntax</code><br>
+    <i>args:</i> <code>Comma separated list of args referenced in the formatted message</code>
+  </p>
+  <figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="built_in">string</span> notice = <span class="string">"notice"</span>;</div><div class="line">LogF(rm, LOG_NOTICE, <span class="string">"I am a '%s' log message with a source"</span>, notice);</div></pre></td></tr></table></figure>
+
+</dd>
+</article>
+</div>
+
+			</div>
+		</div>
+
+		<div id="footer-push"></div>
+	</div>
+
+	<script src="/js/main.js?v=4"></script>
+</body>
+</html>

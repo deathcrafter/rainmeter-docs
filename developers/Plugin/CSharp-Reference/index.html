@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Making a C# Plugin - Rainmeter Developers</title>
+	<link href="/css/main.css?v=3" rel="stylesheet">
+	<link rel="shortcut icon" href="//www.rainmeter.net/favicon.ico">
+	<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6/html5shiv.min.js"></script><![endif]-->
+</head>
+<body>
+	<div id="wrapper">
+		<div id="top">
+			<div class="container">
+				<a id="logo" href="//rainmeter.net/"></a>
+				<nav id="nav">
+					<ul>
+					<li><a href="//www.rainmeter.net">Home</a>
+					<li><a href="/" class="active">Documentation</a>
+					<li><a href="//www.rainmeter.net/discover">Discover</a>
+					<li><a href="//forum.rainmeter.net">Community</a>
+					</ul>
+				</nav>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div id="side-content">
+	<h1 id="category"><a href="/developers">Developers</a></h1>
+
+	<form id="search-form" method="get" action="http://www.google.com/search">
+		<input name="sitesearch" value="docs.rainmeter.net" type="hidden">
+		<input id="search" name="q" maxlength="255" size="16" placeholder="Search" type="text">
+	</form>
+
+	<nav id="tree">
+		<h1>Contents</h1>
+<ul>
+<li><a href="/developers/Plugin/Basics/">Anatomy of a Plugin</a>
+<li><a href="/developers/Plugin/C++-Reference/">C++ Overview</a>
+  <ul>
+  <li><a href="/developers/Plugin/C++-Reference/API-Reference/">C++ API Reference</a>
+  </ul>
+<li><a href="/developers/Plugin/CSharp-Reference/">C# Overview</a>
+  <ul>
+  <li><a href="/developers/Plugin/CSharp-Reference/API-Reference/">C# API Reference</a>
+  </ul>
+<li><a href="/developers/Plugin/Best-Practices/">Best Practices</a>
+</ul>
+
+<h1>More</h1>
+<ul>
+<li><a href="/manual/">4.0 Final Manual</a>
+<li><a href="/manual-beta/">4.1 Beta Manual</a>
+<li><a href="/tips/">Tips &amp; Tricks</a>
+<li><a href="/snippets/">Snippets</a>
+<li><a href="/history/">Version History</a>
+</ul>
+
+	</nav>
+</div>
+<div id="content">
+	<header>
+		<h1>Making a C# Plugin</h1>
+	</header>
+	<article><p>When making a Rainmeter plugin there are a some basic functions that your code must export, as well as several optional ones you may want to export.</p>
+
+<p>A copy of the API with some examples can be found <a href="https://github.com/rainmeter/rainmeter-plugin-sdk">here</a> as well as the basics of each function listed bellow:</p>
+<dt id="Initialize"><code>Initialize</code> <small><code>void Initialize(ref IntPtr data, IntPtr rm)</code></small></dt>
+<dd>
+  <p>Called when a measure is created (i.e. when Rainmeter is launched or when a skin is refreshed). Initialize your measure object here. If you need to save your measure reference that should also be done here</p>
+  <p>
+    <i>data:</i> <code>You may allocate and store measure-specific data in here</code><br>
+    <i>rm:</i> <code>Internal pointer that should can be used to make a Rainmeter.API object. Used to call certain Rm functions, can be saved for later</code>
+  </p>
+  <figure class="highlight c"><table><tr><td class="code"><pre><div class="line">[DllExport]</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Initialize</span><span class="params">(ref IntPtr data, IntPtr rm)</span></div><div class="line"></span>&#123;</div><div class="line">    Measure measure = <span class="keyword">new</span> Measure();</div><div class="line">    <span class="comment">//Do any init here, saving any values you want to into data for later</span></div><div class="line">    data = GCHandle.ToIntPtr(GCHandle.Alloc(measure));</div><div class="line">    Rainmeter.API api = (Rainmeter.API)rm;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+</dd>
+<dt id="Finalize"><code>Finalize</code> <small><code>void Finalize(IntPtr data)</code></small></dt>
+<dd>
+  <p>Called by Rainmeter when a measure is about to be destroyed. Perform cleanup here.</p>
+  <p>
+    <i>data:</i> <code>Pointer to whatever data was set to in Initialize</code>
+  </p>
+  <figure class="highlight haskell"><table><tr><td class="code"><pre><div class="line">[<span class="type">DllExport</span>]</div><div class="line"><span class="title">public</span> static void <span class="type">Finalize</span>(<span class="type">IntPtr</span> <span class="class"><span class="keyword">data</span>)</span></div><div class="line">&#123;</div><div class="line">    <span class="type">Measure</span> measure = (<span class="type">Measure</span>)<span class="class"><span class="keyword">data</span>;</span></div><div class="line">    //<span class="type">Do</span> any cleanup here</div><div class="line">    <span class="type">GCHandle</span>.<span class="type">FromIntPtr</span>(<span class="class"><span class="keyword">data</span>).<span class="type">Free</span>();</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+</dd>
+<dt id="Reload"><code>Reload</code> <small><code>void Reload(IntPtr data, IntPtr rm, ref double maxValue)</code></small></dt>
+<dd>
+  <p>Called by Rainmeter when the measure settings are to be read directly after Initialize. This function must be exported. If DynamicVariables=1 is set on the measure, Reload is called before every update cycle.</p>
+  <p>
+    <i>data:</i> <code>You may allocate and store measure-specific data in here</code><br>
+    <i>rm:</i> <code>Internal pointer that should can be used to make a Rainmeter.API object. Used to call certain Rm functions</code><br>
+    <i>maxValue:</i> <code>Whatever the maximum possible value of update will be for this measure. Used to for autoscaling. 0 will make it based on the highest value in update. Do not set maxValue unless necessary.</code>
+  </p>
+  <figure class="highlight c"><table><tr><td class="code"><pre><div class="line">[DllExport]</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Reload</span><span class="params">(IntPtr data, IntPtr rm, ref <span class="keyword">double</span> maxValue)</span></div><div class="line"></span>&#123;</div><div class="line">    Measure measure = (Measure)data;</div><div class="line">    <span class="comment">//Read options here</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+</dd>
+<dt id="Update"><code>Update</code> <small><code>double Update(IntPtr data)</code></small></dt>
+<dd>
+  <p>Called by Rainmeter when a measure value is to be updated (i.e. once on each update cycle). Return the new value.</p>
+  <p>
+    <i>data:</i> <code>Pointer to whatever data was set to in Initialize</code>
+  </p>
+  <p><i>returns:</i> <code>Number value for the measure, if no string value defined it will also be used for string values</code></p>
+  <figure class="highlight c"><table><tr><td class="code"><pre><div class="line">[DllExport]</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">Update</span><span class="params">(IntPtr data)</span></div><div class="line"></span>&#123;</div><div class="line">    Measure measure = (Measure)data;</div><div class="line">    <span class="comment">//Any processing that needs to happen often should happen here</span></div><div class="line">    <span class="keyword">return</span> <span class="number">0.0</span>; <span class="comment">//return whatever value you want rainmeter to display here</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+</dd>
+<dt id="GetString"><code>GetString (Optional)</code> <small><code>String GetString(IntPtr data)</code></small></dt>
+<dd>
+  <p>Called on-demand (in other words, may be called multiple times or not at all during a update cycle). Return the string value for the measure here. Do not process data or consume CPU time in this function, instead do processing for string values in update.</br>
+  <p>
+    <i>data:</i> <code>Pointer to whatever data was set to in Initialize</code>
+  </p>
+  <p><i>returns:</i> <code>String value for the measure, if null number value is used instead. Must be marshalled from a C# style string to a WCHAR*</code></p>
+  <figure class="highlight c"><table><tr><td class="code"><pre><div class="line">[DllExport]</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> IntPtr <span class="title">GetString</span><span class="params">(IntPtr data)</span></div><div class="line"></span>&#123;</div><div class="line">    Measure measure = (Measure)data;</div><div class="line">    <span class="keyword">if</span>(something)</div><div class="line">    &#123;</div><div class="line">        <span class="comment">//return a string value to use for this measure</span></div><div class="line">        <span class="comment">//Notice how you must marshal it back and can not use a return MarshalAs</span></div><div class="line">        <span class="keyword">return</span> Marshal.StringToHGlobalUni(<span class="string">"SomeValue"</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//Return null whenyou only want a number value for this measure</span></div><div class="line">    <span class="keyword">return</span> IntPtr.Zero;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+</dd>
+<dt id="ExecuteBang"><code>ExecuteBang (Optional)</code> <small><code>void ExecuteBang(IntPtr data, string args)</code></small></dt>
+<dd>
+  <p>Called by Rainmeter when a !CommandMeasure bang is sent to the measure. This can be used to change some data within the measure, or to interact with another application. .</p>
+  <p><b>Note:</b> args is a LPCWSTR in C++ an thus must be marshalled to a C# style string</p>
+  <p>
+    <i>data:</i> <code>Option name to be read from skin</code><br>
+    <i>args:</i> <code>Command string sent from Rainmeter using !CommandMeasure, all variables have been resolved.</code>
+  </p>
+  <figure class="highlight"><table><tr><td class="code"><pre><div class="line">[DllExport]</div><div class="line">public static void ExecuteBang(IntPtr data, [MarshalAs(UnmanagedType.LPWStr)]String args)</div><div class="line">&#123;</div><div class="line">    Measure measure = (Measure)data;</div><div class="line">    //Do something based on args here</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+</dd>
+<dt id="SectionVariables"><code>Section Variable(s) (Optional)</code> <small><code>static string func(IntPtr data, int argc, string[] argv)</code></small></dt>
+<dd>
+  <p>Called by Rainmeter when a section variable is used, ex. [&pluginMeasure:func(arg1, arg2)] where func is the function you want called, any non standard function you export can be used. Whatever value you return will replace that value</p>
+  <p><b>Note:</b> argv is a LPCWSTR in C++ and thus must be marshalled to a C# style string </p>
+  <p>
+    <i>data:</i> <code>Option name to be read from skin</code><br>
+    <i>argc:</i> <code>Number of arguments passed to function</code><br>
+    <i>argv:</i> <code>Array of arguments passed to function</code>
+  </p>
+  <p><i>returns:</i> <code>String to replace section variable with, if null it will be unchanged. Must be marshalled from a C# style string to a LPCWSTR</code></p>
+  <figure class="highlight"><table><tr><td class="code"><pre><div class="line">[DllExport]</div><div class="line">public static IntPtr ToLower(IntPtr data, int argc,</div><div class="line">    [MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.LPWStr, SizeParamIndex = 2)] string[] argv)</div><div class="line">&#123;</div><div class="line">    Measure measure = (Measure)data;</div><div class="line">    if(argc &gt; 0)</div><div class="line">    &#123;</div><div class="line">        //Do something and return a value to replace variable with</div><div class="line">        //Notice how you must marshal it back and can not use a return MarshalAs</div><div class="line">        return Marshal.StringToHGlobalUni(doSomething(argv));</div><div class="line">    &#125;</div><div class="line">    //If null returned then dont replace variable</div><div class="line">    return IntPtr.Zero;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+</dd>
+</article>
+</div>
+
+			</div>
+		</div>
+
+		<div id="footer-push"></div>
+	</div>
+
+	<script src="/js/main.js?v=4"></script>
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>C++ API Overview - Rainmeter Developers</title>
+	<link href="/css/main.css?v=3" rel="stylesheet">
+	<link rel="shortcut icon" href="//www.rainmeter.net/favicon.ico">
+	<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6/html5shiv.min.js"></script><![endif]-->
+</head>
+<body>
+	<div id="wrapper">
+		<div id="top">
+			<div class="container">
+				<a id="logo" href="//rainmeter.net/"></a>
+				<nav id="nav">
+					<ul>
+					<li><a href="//www.rainmeter.net">Home</a>
+					<li><a href="/" class="active">Documentation</a>
+					<li><a href="//www.rainmeter.net/discover">Discover</a>
+					<li><a href="//forum.rainmeter.net">Community</a>
+					</ul>
+				</nav>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div id="side-content">
+	<h1 id="category"><a href="/developers">Developers</a></h1>
+
+	<form id="search-form" method="get" action="http://www.google.com/search">
+		<input name="sitesearch" value="docs.rainmeter.net" type="hidden">
+		<input id="search" name="q" maxlength="255" size="16" placeholder="Search" type="text">
+	</form>
+
+	<nav id="tree">
+		<h1>Contents</h1>
+<ul>
+<li><a href="/developers/Plugin/Basics/">Anatomy of a Plugin</a>
+<li><a href="/developers/Plugin/C++-Reference/">C++ Overview</a>
+  <ul>
+  <li><a href="/developers/Plugin/C++-Reference/API-Reference/">C++ API Reference</a>
+  </ul>
+<li><a href="/developers/Plugin/CSharp-Reference/">C# Overview</a>
+  <ul>
+  <li><a href="/developers/Plugin/CSharp-Reference/API-Reference/">C# API Reference</a>
+  </ul>
+<li><a href="/developers/Plugin/Best-Practices/">Best Practices</a>
+</ul>
+
+<h1>More</h1>
+<ul>
+<li><a href="/manual/">4.0 Final Manual</a>
+<li><a href="/manual-beta/">4.1 Beta Manual</a>
+<li><a href="/tips/">Tips &amp; Tricks</a>
+<li><a href="/snippets/">Snippets</a>
+<li><a href="/history/">Version History</a>
+</ul>
+
+	</nav>
+</div>
+<div id="content">
+	<header>
+		<h1>C++ API Overview</h1>
+	</header>
+	<article><p>This is an overview of the functions available in C++ SDK for Rainmeter.</p>
+<p>Note that summaries are also provided in the API libraries</p>
+
+<dt id="ReadString"><code>RmReadString</code> <small><code>LPCWSTR ReadString(void* rm, LPCWSTR option, LPCWSTR defValue, BOOL replaceMeasures = TRUE)</code></small></dt>
+<dd>
+  <p>Returns a string representation of an option</p>
+  <p>
+    <i>rm:</i> <code>Pointer to the plugin measure</code><br>
+    <i>option:</i> <code>Option name to be read from skin</code><br>
+    <i>defValue:</i> <code>Default value for the option if it is not found or invalid</code><br>
+    <i>replaceMeasures:</i> <code>(Optional) If true, replaces section variables in the returned string</code>
+  </p>
+  <figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="function">PLUGIN_EXPORT <span class="keyword">void</span> <span class="title">Reload</span><span class="params">(<span class="keyword">void</span>* data, <span class="keyword">void</span>* rm, <span class="keyword">double</span>* maxValue)</span></div><div class="line"></span>&#123;</div><div class="line">    LPCWSTR value = RmReadString(rm, <span class="string">L"Value"</span>, <span class="string">L"DefaultValue"</span>);</div><div class="line">    LPCWSTR action = RmReadString(rm, <span class="string">L"Action"</span>, <span class="string">L""</span>, FALSE);</div><div class="line">      <span class="comment">// [MeasureNames] will be parsed/replaced when the action is executed with RmExecute</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+</dd>
+<dt id="ReadPath"><code>RmReadPath</code> <small><code>LPCWSTR RmReadPath(void* rm, LPCWSTR option, LPCWSTR defValue)</code></small></dt>
+<dd>
+  <p>Retrieves the option defined in the skin file and converts a relative path to a absolute path</p>
+  <p>
+    <i>rm:</i> <code>Pointer to the plugin measure</code><br>
+    <i>option:</i> <code>Option name to be read from skin</code><br>
+    <i>defValue:</i> <code>Default value for the option if it is not found or invalid</code>
+  </p>
+  <figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="function">PLUGIN_EXPORT <span class="keyword">void</span> <span class="title">Reload</span><span class="params">(<span class="keyword">void</span>* data, <span class="keyword">void</span>* rm, <span class="keyword">double</span>* maxValue)</span></div><div class="line"></span>&#123;</div><div class="line">    LPCWSTR path = RmReadPath(rm, <span class="string">L"MyPath"</span>, <span class="string">L"C:\\"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+</dd>
+<dt id="ReadDouble"><code>RmReadDouble</code> <small><code>double RmReadDouble(void* rm, LPCWSTR option, double defValue)</code></small></dt>
+<dd>
+  <p>Retrieves the option defined in the skin file and converts it to a double</p>
+  <p>
+    <i>rm:</i> <code>Pointer to the plugin measure</code><br>
+    <i>option:</i> <code>Option name to be read from skin</code><br>
+    <i>defValue:</i> <code>Default value for the option if it is not found, invalid, or a formula could not be parsed</code>
+  </p>
+  <figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="function">PLUGIN_EXPORT <span class="keyword">void</span> <span class="title">Reload</span><span class="params">(<span class="keyword">void</span>* data, <span class="keyword">void</span>* rm, <span class="keyword">double</span>* maxValue)</span></div><div class="line"></span>&#123;</div><div class="line">    <span class="keyword">double</span> value = RmReadDouble(rm, <span class="string">L"Value"</span>, <span class="number">20.0</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+</dd>
+<dt id="ReadInt"><code>RmReadInt</code> <small><code>int RmReadInt(void* rm, LPCWSTR option, int defValue)</code></small></dt>
+<dd>
+  <p>Retrieves the option defined in the skin file and converts it to an integer</p>
+  <p>
+    <i>rm:</i> <code>Pointer to the plugin measure</code><br>
+    <i>option:</i> <code>Option name to be read from skin</code><br>
+    <i>defValue:</i> <code>Default value for the option if it is not found, invalid, or a formula could not be parsed</code>
+  </p>
+  <figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="function">PLUGIN_EXPORT <span class="keyword">void</span> <span class="title">Reload</span><span class="params">(<span class="keyword">void</span>* data, <span class="keyword">void</span>* rm, <span class="keyword">double</span>* maxValue)</span></div><div class="line"></span>&#123;</div><div class="line">    <span class="keyword">int</span> value = RmReadInt(rm, <span class="string">L"Value"</span>, <span class="number">20</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+</dd>
+<dt id="Execute"><code>RmExecute</code> <small><code>void RmExecute(void* skin, LPCWSTR command)</code></small></dt>
+<dd>
+  <p>Executes a command</p>
+  <p>
+    <i>skin:</i> <code>Pointer to current skin (See API.GetSkin)</code><br>
+    <i>command:</i> <code>Bang to execute</code>
+  </p>
+  <figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="function">PLUGIN_EXPORT <span class="keyword">double</span> <span class="title">Update</span><span class="params">(<span class="keyword">void</span>* data)</span></div><div class="line"></span>&#123;</div><div class="line">    Measure* measure = (Measure*)data;</div><div class="line">    RmExecute(measure-&gt;skin, <span class="string">L"!SetVariable SomeVar 10"</span>);</div><div class="line">      <span class="comment">// 'measure-&gt;skin' stored previously in the Initialize function</span></div><div class="line">    <span class="keyword">return</span> <span class="number">0.0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+</dd>
+<dt id="ReplaceVariables"><code>RmReplaceVariables</code> <small><code>LPCWSTR RmReplaceVariables(void* rm, LPCWSTR str)</code></small></dt>
+<dd>
+  <p>Returns a string, replacing any variables (or section variables) within the inputted string</p>
+  <p>
+    <i>rm:</i> <code>Pointer to the plugin measure</code><br>
+    <i>str:</i> <code>String with unresolved variables</code>
+  </p>
+  <figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="function">PLUGIN_EXPORT <span class="keyword">double</span> <span class="title">Update</span><span class="params">(<span class="keyword">void</span>* data)</span></div><div class="line"></span>&#123;</div><div class="line">    Measure* measure = (Measure*)data;</div><div class="line">    LPCWSTR myVar = RmReplaceVariables(measure-&gt;rm, <span class="string">L"#MyVar#"</span>);</div><div class="line">      <span class="comment">// 'measure-&gt;rm' stored previously in the Initialize function</span></div><div class="line">    <span class="keyword">if</span> (_wcsicmp(myVar, <span class="string">L"SOMETHING"</span>) == <span class="number">0</span>) &#123; <span class="keyword">return</span> <span class="number">1.0</span>; &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0.0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+</dd>
+<dt id="GetMeasureName"><code>RmGetMeasureName</code> <small><code>LPCWSTR RmGetMeasureName(void* rm)</code></small></dt>
+<dd>
+  <p>Retrieves the name of the measure</p>
+  <p>
+    <i>rm:</i> <code>Pointer to the plugin measure</code>
+  </p>
+  <figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="function">PLUGIN_EXPORT <span class="keyword">void</span> <span class="title">Initialize</span><span class="params">(<span class="keyword">void</span>** data, <span class="keyword">void</span>* rm)</span></div><div class="line"></span>&#123;</div><div class="line">    Measure* measure = <span class="keyword">new</span> Measure;</div><div class="line">    *data = measure;</div><div class="line">    measure-&gt;myName = RmGetMeasureName(rm);</div><div class="line">      <span class="comment">// 'measure-&gt;myName' defined as a string (LPCWSTR) in class scope</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+</dd>
+<dt id="GetSkin"><code>RmGetSkin</code> <small><code>void* RmGetSkin(void* rm)</code></small></dt>
+<dd>
+  <p>Retrieves an internal pointer to the current skin</p>
+  <p>
+    <i>rm:</i> <code>Pointer to the plugin measure</code>
+  </p>
+  <figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="function">PLUGIN_EXPORT <span class="keyword">void</span> <span class="title">Initialize</span><span class="params">(<span class="keyword">void</span>** data, <span class="keyword">void</span>* rm)</span></div><div class="line"></span>&#123;</div><div class="line">    Measure* measure = <span class="keyword">new</span> Measure;</div><div class="line">    *data = measure;</div><div class="line">    measure-&gt;mySkin = RmGetSkin(rm);</div><div class="line">      <span class="comment">// 'measure-&gt;mySkin' defined as a 'void*' in class scope</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+</dd>
+<dt id="GetSettingsFile"><code>RmGetSettingsFile</code> <small><code>LPCWSTR GetSettingsFile()</code></small></dt>
+<dd>
+  <p>Retrieves a path to the Rainmeter data file (Rainmeter.data)</p>
+  <figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="function">PLUGIN_EXPORT <span class="keyword">void</span> <span class="title">Initialize</span><span class="params">(<span class="keyword">void</span>** data, <span class="keyword">void</span>* rm)</span></div><div class="line"></span>&#123;</div><div class="line">    Measure* measure = <span class="keyword">new</span> Measure;</div><div class="line">    *data = measure;</div><div class="line">    <span class="keyword">if</span> (rmDataFile == <span class="literal">nullptr</span>) &#123; rmDataFile = RmGetSettingsFile(); &#125;</div><div class="line">      <span class="comment">// 'rmDataFile' defined as a string (LPCWSTR) in global scope</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+</dd>
+<dt id="GetSkinName"><code>RmGetSkinName</code> <small><code>LPCWSTR RmGetSkinName(void* rm)</code></small></dt>
+<dd>
+  <p>Retrieves full path and name of the skin</p>
+  <p>
+    <i>rm:</i> <code>Pointer to the plugin measure</code>
+  </p>
+  <figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="function">PLUGIN_EXPORT <span class="keyword">void</span> <span class="title">Initialize</span><span class="params">(<span class="keyword">void</span>** data, <span class="keyword">void</span>* rm)</span></div><div class="line"></span>&#123;</div><div class="line">    Measure* measure = <span class="keyword">new</span> Measure;</div><div class="line">    *data = measure;</div><div class="line">    skinName = RmGetSkinName(rm); &#125;</div><div class="line">      <span class="comment">// 'measure-&gt;skinName' defined as a string (LPCWSTR) in class scope</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+</dd>
+<dt id="GetSkinWindow"><code>RmGetSkinWindow</code> <small><code>HWND RmGetSkinWindow(void* rm)</code></small></dt>
+<dd>
+  <p>Returns a pointer to the handle of the skin window (HWND)</p>
+  <p>
+    <i>rm:</i> <code>Pointer to the plugin measure</code>
+  </p>
+  <figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="function">PLUGIN_EXPORT <span class="keyword">void</span> <span class="title">Initialize</span><span class="params">(<span class="keyword">void</span>** data, <span class="keyword">void</span>* rm)</span></div><div class="line"></span>&#123;</div><div class="line">    Measure* measure = <span class="keyword">new</span> Measure;</div><div class="line">    *data = measure;</div><div class="line">    measure-&gt;skinWindow = RmGetSkinWindow(rm); &#125;</div><div class="line">      <span class="comment">// 'measure-&gt;skinWindow' defined as HWND in class scope</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+</dd>
+<dt id="Log"><code>RmLog</code> <small><code>void RmLog(void* rm, int level, LPCWSTR message)</code></small></dt>
+<dd>
+  <p>Sends a message to the Rainmeter log with source</p>
+  <p>
+    <i>rm:</i> <code>Pointer to the plugin measure</code><br>
+    <i>type:</i> <code>Log level (API.LogType of Error, Warning, Notice, or Debug)</code><br>
+    <i>message:</i> <code>Message to be logged</code>
+  </p>
+  <figure class="highlight c"><table><tr><td class="code"><pre><div class="line">RmLog(rm, LOG_NOTICE, <span class="string">L"I am a 'notice' log message with a source"</span>);</div></pre></td></tr></table></figure>
+
+</dd>
+<dt id="LogF"><code>RmLogF</code> <small><code>void RmLogF(void* rm, int level, LPCWSTR format, ...)</code></small></dt>
+<dd>
+  <p>Sends a formatted message to the Rainmeter log</p>
+  <p>
+    <i>rm:</i> <code>Pointer to the plugin measure</code><br>
+    <i>type:</i> <code>Log level (API.LogType of Error, Warning, Notice, or Debug)</code><br>
+    <i>format:</i> <code>Formatted message to be logged, follows printf syntax</code><br>
+    <i>args:</i> <code>Comma separated list of args referenced in the formatted message</code>
+  </p>
+  <figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="built_in">std</span>::wstring notice = <span class="string">L"notice"</span>;</div><div class="line">RmLogF(rm, LOG_NOTICE, <span class="string">L"I am a '%s' log message with a source"</span>, notice.c_str());</div></pre></td></tr></table></figure>
+
+</dd>
+</article>
+</div>
+
+			</div>
+		</div>
+
+		<div id="footer-push"></div>
+	</div>
+
+	<script src="/js/main.js?v=4"></script>
+</body>
+</html>
