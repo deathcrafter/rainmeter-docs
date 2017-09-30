@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>C/C++ Plugin Overview - Rainmeter Developers</title>
+	<link href="/css/main.css?v=3" rel="stylesheet">
+	<link rel="shortcut icon" href="//www.rainmeter.net/favicon.ico">
+	<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6/html5shiv.min.js"></script><![endif]-->
+</head>
+<body>
+	<div id="wrapper">
+		<div id="top">
+			<div class="container">
+				<a id="logo" href="//rainmeter.net/"></a>
+				<nav id="nav">
+					<ul>
+					<li><a href="//www.rainmeter.net">Home</a>
+					<li><a href="/" class="active">Documentation</a>
+					<li><a href="//www.rainmeter.net/discover">Discover</a>
+					<li><a href="//forum.rainmeter.net">Community</a>
+					</ul>
+				</nav>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div id="side-content">
+	<h1 id="category"><a href="/developers">Developers</a></h1>
+
+	<form id="search-form" method="get" action="http://www.google.com/search">
+		<input name="sitesearch" value="docs.rainmeter.net" type="hidden">
+		<input id="search" name="q" maxlength="255" size="16" placeholder="Search" type="text">
+	</form>
+
+	<nav id="tree">
+		<h1>Contents</h1>
+<ul>
+<li><a href="/developers/plugin/plugin-anatomy/">Anatomy of a Plugin</a>
+<li><a href="/developers/plugin/cpp/">C++ Overview</a>
+  <ul>
+  <li><a href="/developers/plugin/cpp/api/">C++ API Reference</a>
+  </ul>
+<li><a href="/developers/plugin/csharp/">C# Overview</a>
+  <ul>
+  <li><a href="/developers/plugin/csharp/api/">C# API Reference</a>
+  </ul>
+<li><a href="/developers/plugin/guidelines/">Plugin Guidelines</a>
+</ul>
+
+<h1>More</h1>
+<ul>
+<li><a href="/manual/">4.0 Final Manual</a>
+<li><a href="/manual-beta/">4.1 Beta Manual</a>
+<li><a href="/tips/">Tips &amp; Tricks</a>
+<li><a href="/snippets/">Snippets</a>
+<li><a href="/history/">Version History</a>
+</ul>
+
+	</nav>
+</div>
+<div id="content">
+	<header>
+		<h1>C/C++ Plugin Overview</h1>
+	</header>
+	<article><p>When making a Rainmeter plugin there are a some basic functions that your code must export, as well as several optional ones you may want to export.</p>
+
+<p>A copy of the API with some examples can be found <a href="https://github.com/rainmeter/rainmeter-plugin-sdk">here</a> as well as the basics of each function listed bellow:</p>
+
+<h2 id="Required">Required functions</h2>
+<dl>
+	<dt id="Initialize"><code>Initialize</code> <small><code>void Initialize(void** data, void* rm)</code></small></dt>
+	<dd>
+		<p>Called when a measure is created (i.e. when a skin is loaded or when a skin is refreshed). Create your measure object here. Any other initialization or code that only needs to happen once should be placed here.</p>
+		<p>
+			<ul>
+				<li><code>data</code>: You may allocate and store measure specific data to this variable. The object you save here will be passed to other functions below.</li>
+				<li><code>rm</code>: Internal pointer that is passed to most <a href="/developers/plugin/cpp/api/">API functions</a>. If needed, you may save this value for later use (like for <a href="/developers/plugin/cpp/api/#Log">logging functions</a>).</li>
+			</ul>
+		</p>
+		<h3>Example:</h3>
+<figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="function">PLUGIN_EXPORT <span class="keyword">void</span> <span class="title">Initialize</span><span class="params">(<span class="keyword">void</span>** data, <span class="keyword">void</span>* rm)</span></div><div class="line"></span>&#123;</div><div class="line">	Measure* measure = <span class="keyword">new</span> Measure;</div><div class="line">	*data = measure;</div><div class="line">	<span class="comment">//Do any initialization here, saving any values you want to into data for later</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+	</dd>
+	<dt id="Reload"><code>Reload</code> <small><code>void Reload(void* data, void* rm, double* maxValue)</code></small></dt>
+	<dd>
+		<p>Called by Rainmeter when the measure settings are to be read directly after <a href="/developers/plugin/cpp/#Intialize">Initialize</a>. If <code>DynamicVariables=1</code> is set on the measure, this function is called just before every call to the <a href="/developers/plugin/cpp/#Update">Update</a> function during the update cycle.</p>
+		<p>
+			<ul>
+				<li><code>data</code>: Pointer to the data set in <a href="/developers/plugin/cpp/#Initialize">Initialize</a>.</li>
+				<li><code>rm</code>: Internal pointer that is passed to most <a href="/developers/plugin/cpp/api/">API functions</a>.</li>
+				<li><code>maxValue</code>: Pointer to a double that can be assigned to the default maximum value for this measure. A value of <code>0.0</code> will make it based on the highest value returned from the <a href="/developers/plugin/cpp/#Update">Update</a> function. Do not set maxValue unless necessary.</li>
+			</ul>
+		</p>
+		<h3>Example:</h3>
+<figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="function">PLUGIN_EXPORT <span class="keyword">void</span> <span class="title">Reload</span><span class="params">(<span class="keyword">void</span>* data, <span class="keyword">void</span>* rm, <span class="keyword">double</span>* maxValue)</span></div><div class="line"></span>&#123;</div><div class="line">	Measure* measure = (Measure*)data;</div><div class="line">	<span class="comment">// Read measures values from the measure (see API functions)</span></div><div class="line">	*maxValue = <span class="number">100.0</span>;  <span class="comment">// The expected value returned in the Update function will not exceed 100.0</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+	</dd>
+	<dt id="Update"><code>Update</code> <small><code>double Update(void* data)</code></small></dt>
+	<dd>
+		<p>Called by Rainmeter when a measure value is to be updated (i.e. on each update cycle). The number returned represents the number value of the measure.</p>
+		<p>
+			<ul>
+				<li><code>data</code>: Pointer to the data set in <a href="/developers/plugin/cpp/#Initialize">Initialize</a>.</li>
+			</ul>
+		</p>
+		<p><b>Returns</b>: The number value of the measure (as a double). This value will be used as the string value of the measure if the <a href="/developers/plugin/cpp/#GetString">GetString</a> function is not used or returns a nullptr.</p>
+		<h3>Example:</h3>
+<figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="function">PLUGIN_EXPORT <span class="keyword">double</span> <span class="title">Update</span><span class="params">(<span class="keyword">void</span>* data)</span></div><div class="line"></span>&#123;</div><div class="line">	Measure* measure = (Measure*)data;</div><div class="line">	<span class="comment">//Any processing that needs to happen during the update cycle should happen here</span></div><div class="line">	<span class="keyword">return</span> <span class="number">0.0</span>;  <span class="comment">//return the number value of the measure</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+	</dd>
+	<dt id="Finalize"><code>Finalize</code> <small><code>void Finalize(void* data)</code></small></dt>
+	<dd>
+		<p>Called by Rainmeter when a measure is about to be destroyed. Perform cleanup here.</p>
+		<p>
+			<ul>
+				<li><code>data</code>: Pointer to the data set in <a href="/developers/plugin/cpp/#Initialize">Initialize</a>.</li>
+			</ul>
+		</p>
+		<h3>Example:</h3>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="function">PLUGIN_EXPORT <span class="keyword">void</span> <span class="title">Finalize</span><span class="params">(<span class="keyword">void</span>* data)</span></div><div class="line"></span>&#123;</div><div class="line">	Measure* measure = (Measure*)data;</div><div class="line">	<span class="comment">//Do any cleanup here</span></div><div class="line">	<span class="keyword">delete</span> measure;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+	</dd>
+</dl>
+
+<h2 id="Optional">Optional functions</h2>
+<dl>
+	<dt id="GetString"><code>GetString</code> <small><code>LPCWSTR GetString(void* data)</code></small></dt>
+	<dd>
+		<p>Optional function that returns the string value of the measure. Since this function is called 'on-demand' and may be called multiple times during the update cycle, do <b>not</b> process any data or consume CPU in this function. Do as minimal processing as possible to return the desired string. It is recommended to do all processing during the <a href="/developers/plugin/cpp/#Update">Update</a> function and set a string variable there and retrieve that string variable in this function.</p>
+		<p>
+			<ul>
+				<li><code>data</code>: Pointer to the data set in <a href="/developers/plugin/cpp/#Initialize">Initialize</a>.</li>
+			</ul>
+		</p>
+		<p><b>Returns</b>: The string value for the measure (as a LPCWSTR). If you want the number value (returned from <a href="/developers/plugin/cpp/#Update">Update</a>) to be used as the measures value, return nullptr instead.</p>
+		<h3>Example:</h3>
+<figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="function">PLUGIN_EXPORT LPCWSTR <span class="title">GetString</span><span class="params">(<span class="keyword">void</span>* data)</span></div><div class="line"></span>&#123;</div><div class="line">	Measure* measure = (Measure*)data;</div><div class="line">	<span class="keyword">if</span> (something)</div><div class="line">	&#123;</div><div class="line">		<span class="comment">//return a string value to use for this measure</span></div><div class="line">		<span class="keyword">return</span> <span class="string">L"SomeValue"</span>;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="comment">//Return nullptr when you want to use the number value for this measure (the value returned from the Update function)</span></div><div class="line">	<span class="keyword">return</span> <span class="literal">nullptr</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+	</dd>
+	<dt id="ExecuteBang"><code>ExecuteBang</code> <small><code>void ExecuteBang(void* data, LPCWSTR args)</code></small></dt>
+	<dd>
+		<p>Optional function that will process a custom bang when called from <a href="/manual/bangs/#CommandMeasure">!CommandMeasure</a>. This can be used to change some data within the measure, or to interact with another application.</p>
+		<p>
+			<ul>
+				<li><code>data</code>: Pointer to the data set in <a href="/developers/plugin/cpp/#Initialize">Initialize</a>.</li>
+				<li><code>args</code>: String that contains any arguments to parse.</li>
+			</ul>
+		</p>
+		<h3>Example:</h3>
+<figure class="highlight lasso"><table><tr><td class="code"><pre><div class="line">PLUGIN_EXPORT <span class="literal">void</span> ExecuteBang(<span class="literal">void</span>* <span class="built_in">data</span>, LPCWSTR args)</div><div class="line">&#123;</div><div class="line">	Measure* measure = (Measure*)<span class="built_in">data</span>;</div><div class="line">	<span class="comment">// !CommandMeasure was used on this measure...any arguments will be in args</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+	</dd>
+	<dt id="Custom"><code>Custom function</code> <small><code>LPCWSTR <em>func</em>(void* data, const int argc, const WCHAR* argv[])</code></small></dt>
+	<dd>
+		<p>You can define a custom function to be used in a section variable. The name of the function is the name to be used in the skin file as a section variable. The function <u>must</u> be exported and the function prototype must be: <code>LPCWSTR <em>func</em>(void*data, const int argc, const WCHAR* argv[])</code>.</p>
+		<p>The function name can be anything <b>except</b> the following: <code>Initialize</code>, <code>Reload</code>, <code>Update</code>, <code>Finialize</code>, <code>GetString</code>, <code>ExecuteBang</code>, <code>Update2</code>, <code>GetPluginAuthor</code>, and <code>GetPluginVersion</code>.</p>
+		<p>The skin will call this function (as a section variable) like this: <code>[PluginMeasure:func(someArg1, someArg2)]</code>.</p>
+		<p>
+			<ul>
+				<li><code>data</code>: Pointer to the data set in <a href="/developers/plugin/cpp/#Initialize">Initialize</a>.</li>
+				<li><code>argc</code>: Number of arguments passed to the function.</li>
+				<li><code>argv</code>: Arguments passed to the function as an array of strings.</li>
+			</ul>
+		</p>
+		<p><b>Returns</b>: A string to replace the section variable with (as a LPCWSTR). If a nullptr is returned, the variable will not be replaced and remain unchanged.</p>
+		<h3>Example:</h3>
+<figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="function">PLUGIN_EXPORT LPCWSTR <span class="title">SomeFunction</span><span class="params">(<span class="keyword">void</span>* rm, <span class="keyword">const</span> <span class="keyword">int</span> argc, <span class="keyword">const</span> WCHAR* argv[] argv)</span></div><div class="line"></span>&#123;</div><div class="line">	Measure measure = (Measure)data;</div><div class="line">	<span class="keyword">if</span> (argc &gt; <span class="number">0</span>)</div><div class="line">	&#123;</div><div class="line">		<span class="comment">//Do something and return a value to replace variable with</span></div><div class="line">		<span class="keyword">return</span> doSomething(argv);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="literal">nullptr</span>;  <span class="comment">// Do not replace the variable</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+	</dd>
+</dl>
+</article>
+</div>
+
+			</div>
+		</div>
+
+		<div id="footer-push"></div>
+	</div>
+
+	<script src="/js/main.js?v=4"></script>
+</body>
+</html>
