@@ -81,18 +81,18 @@
 <figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="function">PLUGIN_EXPORT <span class="keyword">void</span> <span class="title">Reload</span><span class="params">(<span class="keyword">void</span>* data, <span class="keyword">void</span>* rm, <span class="keyword">double</span>* maxValue)</span></div><div class="line"></span>&#123;</div><div class="line">	<span class="comment">// The following will replace regular variables and</span></div><div class="line">	<span class="comment">//  section variables in the 'Value' option.</span></div><div class="line">	LPCWSTR value = RmReadString(rm, <span class="string">L"Value"</span>, <span class="string">L"DefaultValue"</span>);</div><div class="line"></div><div class="line">	<span class="comment">// The following will only replace regular variables,</span></div><div class="line">	<span class="comment">//  but NOT section variables like [MeasureNames].</span></div><div class="line">	LPCWSTR action = RmReadString(rm, <span class="string">L"Action"</span>, <span class="string">L""</span>, FALSE);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
 	</dd>
-	<dt id="ReadPath"><code>RmReadPath</code> <small><code>LPCWSTR RmReadPath(void* rm, LPCWSTR option, LPCWSTR defValue)</code></small></dt>
+	<dt id="ReadInt"><code>RmReadInt</code> <small><code>int RmReadInt(void* rm, LPCWSTR option, int defValue)</code></small></dt>
 	<dd>
-		<p>Retrieves the option defined in the skin file and converts a relative path to a absolute path.</p>
+		<p>Retrieves the option defined in the skin file and converts it to an integer.</p>
 		<p>
 			<ul>
 				<li><code>rm</code> : Pointer to the plugin measure.</li>
 				<li><code>option</code> : Option name to be read from the measure.</li>
-				<li><code>defValue</code> : Default value for the option if it is not found or invalid.</li>
+				<li><code>defValue</code> : Default value for the option if it is not found, invalid, or a formula could not be parsed.</li>
 			</ul>
 		</p>
 		<h3>Example:</h3>
-<figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="function">PLUGIN_EXPORT <span class="keyword">void</span> <span class="title">Reload</span><span class="params">(<span class="keyword">void</span>* data, <span class="keyword">void</span>* rm, <span class="keyword">double</span>* maxValue)</span></div><div class="line"></span>&#123;</div><div class="line">	LPCWSTR path = RmReadPath(rm, <span class="string">L"MyPath"</span>, <span class="string">L"C:\\"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="function">PLUGIN_EXPORT <span class="keyword">void</span> <span class="title">Reload</span><span class="params">(<span class="keyword">void</span>* data, <span class="keyword">void</span>* rm, <span class="keyword">double</span>* maxValue)</span></div><div class="line"></span>&#123;</div><div class="line">	<span class="keyword">int</span> value = RmReadInt(rm, <span class="string">L"Value"</span>, <span class="number">20</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
 	</dd>
 	<dt id="ReadDouble"><code>RmReadDouble</code> <small><code>double RmReadDouble(void* rm, LPCWSTR option, double defValue)</code></small></dt>
@@ -109,23 +109,23 @@
 <figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="function">PLUGIN_EXPORT <span class="keyword">void</span> <span class="title">Reload</span><span class="params">(<span class="keyword">void</span>* data, <span class="keyword">void</span>* rm, <span class="keyword">double</span>* maxValue)</span></div><div class="line"></span>&#123;</div><div class="line">	<span class="keyword">double</span> value = RmReadDouble(rm, <span class="string">L"Value"</span>, <span class="number">20.0</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
 	</dd>
-	<dt id="ReadInt"><code>RmReadInt</code> <small><code>int RmReadInt(void* rm, LPCWSTR option, int defValue)</code></small></dt>
+	<dt id="ReadPath"><code>RmReadPath</code> <small><code>LPCWSTR RmReadPath(void* rm, LPCWSTR option, LPCWSTR defValue)</code></small></dt>
 	<dd>
-		<p>Retrieves the option defined in the skin file and converts it to an integer.</p>
+		<p>Retrieves the option defined in the skin file and converts a relative path to a absolute path.</p>
 		<p>
 			<ul>
 				<li><code>rm</code> : Pointer to the plugin measure.</li>
 				<li><code>option</code> : Option name to be read from the measure.</li>
-				<li><code>defValue</code> : Default value for the option if it is not found, invalid, or a formula could not be parsed.</li>
+				<li><code>defValue</code> : Default value for the option if it is not found or invalid.</li>
 			</ul>
 		</p>
 		<h3>Example:</h3>
-<figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="function">PLUGIN_EXPORT <span class="keyword">void</span> <span class="title">Reload</span><span class="params">(<span class="keyword">void</span>* data, <span class="keyword">void</span>* rm, <span class="keyword">double</span>* maxValue)</span></div><div class="line"></span>&#123;</div><div class="line">	<span class="keyword">int</span> value = RmReadInt(rm, <span class="string">L"Value"</span>, <span class="number">20</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="function">PLUGIN_EXPORT <span class="keyword">void</span> <span class="title">Reload</span><span class="params">(<span class="keyword">void</span>* data, <span class="keyword">void</span>* rm, <span class="keyword">double</span>* maxValue)</span></div><div class="line"></span>&#123;</div><div class="line">	LPCWSTR path = RmReadPath(rm, <span class="string">L"MyPath"</span>, <span class="string">L"C:\\"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
 	</dd>
 	<dt id="Execute"><code>RmExecute</code> <small><code>void RmExecute(void* skin, LPCWSTR command)</code></small></dt>
 	<dd>
-		<p>Executes an <a href="manual/skins/option-types/#Action">action</a>.</p>
+		<p>Executes an <a href="/manual/skins/option-types/#Action">action</a>.</p>
 		<p>
 			<ul>
 				<li><code>skin</code> : Pointer to current skin (see <a href="/developers/plugin/cpp/api/#GetSkin">RmGetSkin</a>).</li>
@@ -173,12 +173,6 @@
 <figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="function">PLUGIN_EXPORT <span class="keyword">void</span> <span class="title">Initialize</span><span class="params">(<span class="keyword">void</span>** data, <span class="keyword">void</span>* rm)</span></div><div class="line"></span>&#123;</div><div class="line">	Measure* measure = <span class="keyword">new</span> Measure;</div><div class="line">	*data = measure;</div><div class="line"></div><div class="line">	<span class="comment">// 'measure-&gt;mySkin' defined as a 'void*' in 'Measure' class scope</span></div><div class="line">	measure-&gt;mySkin = RmGetSkin(rm);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
 	</dd>
-	<dt id="GetSettingsFile"><code>RmGetSettingsFile</code> <small><code>LPCWSTR GetSettingsFile()</code></small></dt>
-	<dd>
-		<p>Retrieves a path to the Rainmeter data file (Rainmeter.data).</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="function">PLUGIN_EXPORT <span class="keyword">void</span> <span class="title">Initialize</span><span class="params">(<span class="keyword">void</span>** data, <span class="keyword">void</span>* rm)</span></div><div class="line"></span>&#123;</div><div class="line">	Measure* measure = <span class="keyword">new</span> Measure;</div><div class="line">	*data = measure;</div><div class="line"></div><div class="line">	<span class="comment">// 'rmDataFile' defined as a string (LPCWSTR) in global scope</span></div><div class="line">	<span class="keyword">if</span> (rmDataFile == <span class="literal">nullptr</span>) &#123; rmDataFile = RmGetSettingsFile(); &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-	</dd>
 	<dt id="GetSkinName"><code>RmGetSkinName</code> <small><code>LPCWSTR RmGetSkinName(void* rm)</code></small></dt>
 	<dd>
 		<p>Retrieves full path and name of the skin.</p>
@@ -201,6 +195,12 @@
 		</p>
 		<h3>Example:</h3>
 <figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="function">PLUGIN_EXPORT <span class="keyword">void</span> <span class="title">Initialize</span><span class="params">(<span class="keyword">void</span>** data, <span class="keyword">void</span>* rm)</span></div><div class="line"></span>&#123;</div><div class="line">	Measure* measure = <span class="keyword">new</span> Measure;</div><div class="line">	*data = measure;</div><div class="line"></div><div class="line">	<span class="comment">// 'measure-&gt;skinWindow' defined as HWND in 'Measure' class scope</span></div><div class="line">	measure-&gt;skinWindow = RmGetSkinWindow(rm);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+	</dd>
+	<dt id="GetSettingsFile"><code>RmGetSettingsFile</code> <small><code>LPCWSTR GetSettingsFile()</code></small></dt>
+	<dd>
+		<p>Retrieves a path to the Rainmeter data file (Rainmeter.data).</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="function">PLUGIN_EXPORT <span class="keyword">void</span> <span class="title">Initialize</span><span class="params">(<span class="keyword">void</span>** data, <span class="keyword">void</span>* rm)</span></div><div class="line"></span>&#123;</div><div class="line">	Measure* measure = <span class="keyword">new</span> Measure;</div><div class="line">	*data = measure;</div><div class="line"></div><div class="line">	<span class="comment">// 'rmDataFile' defined as a string (LPCWSTR) in global scope</span></div><div class="line">	<span class="keyword">if</span> (rmDataFile == <span class="literal">nullptr</span>) &#123; rmDataFile = RmGetSettingsFile(); &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
 	</dd>
 	<dt id="Log"><code>RmLog</code> <small><code>void RmLog(void* rm, int level, LPCWSTR message)</code></small></dt>

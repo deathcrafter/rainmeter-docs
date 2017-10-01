@@ -80,17 +80,17 @@
 <figure class="highlight cs"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">internal</span> <span class="keyword">void</span> <span class="title">Reload</span>(<span class="params">Rainmeter.API rm, <span class="keyword">ref</span> <span class="keyword">double</span> maxValue</span>)</div><div class="line"></span>&#123;</div><div class="line">	<span class="comment">// The following will replace regular variables and</span></div><div class="line">	<span class="comment">//  section variables in the 'Value' option.</span></div><div class="line">	<span class="keyword">string</span> <span class="keyword">value</span> = rm.ReadString(<span class="string">"Value"</span>, <span class="string">"DefaultValue"</span>);</div><div class="line"></div><div class="line">	<span class="comment">// The following will only replace regular variables,</span></div><div class="line">	<span class="comment">//  but NOT section variables like [MeasureNames].</span></div><div class="line">	<span class="keyword">string</span> action = rm.ReadString(<span class="string">"Action"</span>, <span class="string">""</span>, <span class="literal">false</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
 	</dd>
-	<dt id="ReadPath"><code>ReadPath</code> <small><code>string ReadPath(string option, string defValue)</code></small></dt>
+	<dt id="ReadInt"><code>ReadInt</code> <small><code>int ReadInt(string option, int defValue)</code></small></dt>
 	<dd>
-		<p>Retrieves the option defined in the skin file and converts a relative path to a absolute path.</p>
+		<p>Retrieves the option defined in the skin file and converts it to an integer.</p>
 		<p>
 			<ul>
 				<li><code>option</code> : Option name to be read from the measure.</li>
-				<li><code>defValue</code> : Default value for the option if it is not found or invalid.</li>
+				<li><code>defValue</code> : Default value for the option if it is not found, invalid, or a formula could not be parsed.</li>
 			</ul>
 		</p>
 		<h3>Example:</h3>
-<figure class="highlight cs"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">internal</span> <span class="keyword">void</span> <span class="title">Reload</span>(<span class="params">Rainmeter.API rm, <span class="keyword">ref</span> <span class="keyword">double</span> maxValue</span>)</div><div class="line"></span>&#123;</div><div class="line">	<span class="keyword">string</span> path = rm.ReadPath(<span class="string">"MyPath"</span>, <span class="string">"C:\\"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight cs"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">internal</span> <span class="keyword">void</span> <span class="title">Reload</span>(<span class="params">Rainmeter.API rm, <span class="keyword">ref</span> <span class="keyword">double</span> maxValue</span>)</div><div class="line"></span>&#123;</div><div class="line">	<span class="keyword">int</span> <span class="keyword">value</span> = rm.ReadInt(<span class="string">"Value"</span>, <span class="number">20</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
 	</dd>
 	<dt id="ReadDouble"><code>ReadDouble</code> <small><code>double ReadDouble(string option, double defValue)</code></small></dt>
@@ -106,22 +106,22 @@
 <figure class="highlight cs"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">internal</span> <span class="keyword">void</span> <span class="title">Reload</span>(<span class="params">Rainmeter.API rm, <span class="keyword">ref</span> <span class="keyword">double</span> maxValue</span>)</div><div class="line"></span>&#123;</div><div class="line">	<span class="keyword">double</span> <span class="keyword">value</span> = rm.ReadDouble(<span class="string">"Value"</span>, <span class="number">20.0</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
 	</dd>
-	<dt id="ReadInt"><code>ReadInt</code> <small><code>int ReadInt(string option, int defValue)</code></small></dt>
+	<dt id="ReadPath"><code>ReadPath</code> <small><code>string ReadPath(string option, string defValue)</code></small></dt>
 	<dd>
-		<p>Retrieves the option defined in the skin file and converts it to an integer.</p>
+		<p>Retrieves the option defined in the skin file and converts a relative path to a absolute path.</p>
 		<p>
 			<ul>
 				<li><code>option</code> : Option name to be read from the measure.</li>
-				<li><code>defValue</code> : Default value for the option if it is not found, invalid, or a formula could not be parsed.</li>
+				<li><code>defValue</code> : Default value for the option if it is not found or invalid.</li>
 			</ul>
 		</p>
 		<h3>Example:</h3>
-<figure class="highlight cs"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">internal</span> <span class="keyword">void</span> <span class="title">Reload</span>(<span class="params">Rainmeter.API rm, <span class="keyword">ref</span> <span class="keyword">double</span> maxValue</span>)</div><div class="line"></span>&#123;</div><div class="line">	<span class="keyword">int</span> <span class="keyword">value</span> = rm.ReadInt(<span class="string">"Value"</span>, <span class="number">20</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight cs"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">internal</span> <span class="keyword">void</span> <span class="title">Reload</span>(<span class="params">Rainmeter.API rm, <span class="keyword">ref</span> <span class="keyword">double</span> maxValue</span>)</div><div class="line"></span>&#123;</div><div class="line">	<span class="keyword">string</span> path = rm.ReadPath(<span class="string">"MyPath"</span>, <span class="string">"C:\\"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
 	</dd>
 	<dt id="Execute"><code>Execute</code> <small><code>void Execute(IntPtr skin, string command)</code></small></dt>
 	<dd>
-		<p>Executes an <a href="manual/skins/option-types/#Action">action</a>.</p>
+		<p>Executes an <a href="/manual/skins/option-types/#Action">action</a>.</p>
 		<p>
 			<ul>
 				<li><code>skin</code> : Pointer to current skin (see <a href="/developers/plugin/csharp/api/#GetSkin">GetSkin</a>).</li>
@@ -157,12 +157,6 @@
 <figure class="highlight cs"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">internal</span> <span class="keyword">void</span> <span class="title">Initialize</span>(<span class="params">Rainmeter.API rm</span>)</div><div class="line"></span>&#123;</div><div class="line">	mySkin = GetSkin();  <span class="comment">// declare 'mySkin' as a IntPtr in class scope</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
 	</dd>
-	<dt id="GetSettingsFile"><code>GetSettingsFile</code> <small><code>string GetSettingsFile()</code></small></dt>
-	<dd>
-		<p>Retrieves a path to the Rainmeter data file (Rainmeter.data).</p>
-<figure class="highlight cs"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">internal</span> <span class="keyword">void</span> <span class="title">Initialize</span>(<span class="params">Rainmeter.API rm</span>)</div><div class="line"></span>&#123;</div><div class="line">	<span class="comment">// declare 'rmDataFile' as a string in global scope</span></div><div class="line">	<span class="keyword">if</span> (rmDataFile == <span class="literal">null</span>) &#123; rmDataFile = GetSettingsFile(); &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-	</dd>
 	<dt id="GetSkinName"><code>GetSkinName</code> <small><code>string GetSkinName()</code></small></dt>
 	<dd>
 		<p>Retrieves full path and name of the skin.</p>
@@ -175,6 +169,12 @@
 		<p>Returns a pointer to the handle (HWND) of the skin window.</p>
 		<h3>Example:</h3>
 <figure class="highlight cs"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">internal</span> <span class="keyword">void</span> <span class="title">Initialize</span>(<span class="params">Rainmeter.API rm</span>)</div><div class="line"></span>&#123;</div><div class="line">	<span class="comment">// declare 'skinWindow' as a IntPtr in class scope</span></div><div class="line">	skinWindow = GetSkinWindow();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+	</dd>
+	<dt id="GetSettingsFile"><code>GetSettingsFile</code> <small><code>string GetSettingsFile()</code></small></dt>
+	<dd>
+		<p>Retrieves a path to the Rainmeter data file (Rainmeter.data).</p>
+<figure class="highlight cs"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">internal</span> <span class="keyword">void</span> <span class="title">Initialize</span>(<span class="params">Rainmeter.API rm</span>)</div><div class="line"></span>&#123;</div><div class="line">	<span class="comment">// declare 'rmDataFile' as a string in global scope</span></div><div class="line">	<span class="keyword">if</span> (rmDataFile == <span class="literal">null</span>) &#123; rmDataFile = GetSettingsFile(); &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
 	</dd>
 	<dt id="Log"><code>Log</code> <small><code>void Log(LogType type, string message)</code></small></dt>
