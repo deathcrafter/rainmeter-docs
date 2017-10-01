@@ -82,7 +82,7 @@
   <p>
     <i>data:</i> <code>Pointer to whatever data was set to in Initialize</code>
   </p>
-  <figure class="highlight haskell"><table><tr><td class="code"><pre><div class="line">[<span class="type">DllExport</span>]</div><div class="line"><span class="title">public</span> static void <span class="type">Finalize</span>(<span class="type">IntPtr</span> <span class="class"><span class="keyword">data</span>)</span></div><div class="line">&#123;</div><div class="line">    <span class="type">Measure</span> measure = (<span class="type">Measure</span>)<span class="class"><span class="keyword">data</span>;</span></div><div class="line">    //<span class="type">Do</span> any cleanup here</div><div class="line">    <span class="type">GCHandle</span>.<span class="type">FromIntPtr</span>(<span class="class"><span class="keyword">data</span>).<span class="type">Free</span>();</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+  <figure class="highlight scheme"><table><tr><td class="code"><pre><div class="line">[<span class="name">DllExport</span>]</div><div class="line">public static void Finalize(<span class="name">IntPtr</span> data)</div><div class="line">&#123;</div><div class="line">    Measure measure = (<span class="name">Measure</span>)data<span class="comment">;</span></div><div class="line">    //Do any cleanup here</div><div class="line">    GCHandle.FromIntPtr(<span class="name">data</span>).Free()<span class="comment">;</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
 </dd>
 <dt id="Reload"><code>Reload</code> <small><code>void Reload(IntPtr data, IntPtr rm, ref double maxValue)</code></small></dt>
