@@ -78,7 +78,7 @@
 			</ul>
 		</p>
 		<h3>Example:</h3>
-<figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="function">PLUGIN_EXPORT <span class="keyword">void</span> <span class="title">Reload</span><span class="params">(<span class="keyword">void</span>* data, <span class="keyword">void</span>* rm, <span class="keyword">double</span>* maxValue)</span></div><div class="line"></span>&#123;</div><div class="line">	<span class="comment">// The following will replace regular variables and</span></div><div class="line">	<span class="comment">//  section variables in the 'Value' option.</span></div><div class="line">	LPCWSTR value = RmReadString(rm, <span class="string">L"Value"</span>, <span class="string">L"DefaultValue"</span>);</div><div class="line"></div><div class="line">	<span class="comment">// The following will only replace regular variables,</span></div><div class="line">	<span class="comment">//  but NOT section variables like [MeasureNames].</span></div><div class="line">	LPCWSTR action = RmReadString(rm, <span class="string">L"Action"</span>, <span class="string">L""</span>, FALSE);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="function">PLUGIN_EXPORT <span class="keyword">void</span> <span class="title">Reload</span><span class="params">(<span class="keyword">void</span>* data, <span class="keyword">void</span>* rm, <span class="keyword">double</span>* maxValue)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">	<span class="comment">// The following will replace regular variables and</span></div><div class="line">	<span class="comment">//  section variables in the 'Value' option.</span></div><div class="line">	LPCWSTR value = RmReadString(rm, <span class="string">L"Value"</span>, <span class="string">L"DefaultValue"</span>);</div><div class="line"></div><div class="line">	<span class="comment">// The following will only replace regular variables,</span></div><div class="line">	<span class="comment">//  but NOT section variables like [MeasureNames].</span></div><div class="line">	LPCWSTR action = RmReadString(rm, <span class="string">L"Action"</span>, <span class="string">L""</span>, FALSE);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
 	</dd>
 	<dt id="ReadInt"><code>RmReadInt</code> <small><code>int RmReadInt(void* rm, LPCWSTR option, int defValue)</code></small></dt>
@@ -92,7 +92,7 @@
 			</ul>
 		</p>
 		<h3>Example:</h3>
-<figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="function">PLUGIN_EXPORT <span class="keyword">void</span> <span class="title">Reload</span><span class="params">(<span class="keyword">void</span>* data, <span class="keyword">void</span>* rm, <span class="keyword">double</span>* maxValue)</span></div><div class="line"></span>&#123;</div><div class="line">	<span class="keyword">int</span> value = RmReadInt(rm, <span class="string">L"Value"</span>, <span class="number">20</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="function">PLUGIN_EXPORT <span class="keyword">void</span> <span class="title">Reload</span><span class="params">(<span class="keyword">void</span>* data, <span class="keyword">void</span>* rm, <span class="keyword">double</span>* maxValue)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">	<span class="keyword">int</span> value = RmReadInt(rm, <span class="string">L"Value"</span>, <span class="number">20</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
 	</dd>
 	<dt id="ReadDouble"><code>RmReadDouble</code> <small><code>double RmReadDouble(void* rm, LPCWSTR option, double defValue)</code></small></dt>
@@ -106,7 +106,7 @@
 			</ul>
 		</p>
 		<h3>Example:</h3>
-<figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="function">PLUGIN_EXPORT <span class="keyword">void</span> <span class="title">Reload</span><span class="params">(<span class="keyword">void</span>* data, <span class="keyword">void</span>* rm, <span class="keyword">double</span>* maxValue)</span></div><div class="line"></span>&#123;</div><div class="line">	<span class="keyword">double</span> value = RmReadDouble(rm, <span class="string">L"Value"</span>, <span class="number">20.0</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="function">PLUGIN_EXPORT <span class="keyword">void</span> <span class="title">Reload</span><span class="params">(<span class="keyword">void</span>* data, <span class="keyword">void</span>* rm, <span class="keyword">double</span>* maxValue)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">	<span class="keyword">double</span> value = RmReadDouble(rm, <span class="string">L"Value"</span>, <span class="number">20.0</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
 	</dd>
 	<dt id="ReadPath"><code>RmReadPath</code> <small><code>LPCWSTR RmReadPath(void* rm, LPCWSTR option, LPCWSTR defValue)</code></small></dt>
@@ -120,7 +120,7 @@
 			</ul>
 		</p>
 		<h3>Example:</h3>
-<figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="function">PLUGIN_EXPORT <span class="keyword">void</span> <span class="title">Reload</span><span class="params">(<span class="keyword">void</span>* data, <span class="keyword">void</span>* rm, <span class="keyword">double</span>* maxValue)</span></div><div class="line"></span>&#123;</div><div class="line">	LPCWSTR path = RmReadPath(rm, <span class="string">L"MyPath"</span>, <span class="string">L"C:\\"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="function">PLUGIN_EXPORT <span class="keyword">void</span> <span class="title">Reload</span><span class="params">(<span class="keyword">void</span>* data, <span class="keyword">void</span>* rm, <span class="keyword">double</span>* maxValue)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">	LPCWSTR path = RmReadPath(rm, <span class="string">L"MyPath"</span>, <span class="string">L"C:\\"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
 	</dd>
 	<dt id="Execute"><code>RmExecute</code> <small><code>void RmExecute(void* skin, LPCWSTR command)</code></small></dt>
@@ -133,7 +133,7 @@
 			</ul>
 		</p>
 		<h3>Example:</h3>
-<figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="function">PLUGIN_EXPORT <span class="keyword">double</span> <span class="title">Update</span><span class="params">(<span class="keyword">void</span>* data)</span></div><div class="line"></span>&#123;</div><div class="line">	Measure* measure = (Measure*)data;</div><div class="line"></div><div class="line">	<span class="comment">// 'measure-&gt;skin' stored previously in the Initialize function</span></div><div class="line">	RmExecute(measure-&gt;skin, <span class="string">L"[!SetVariable SomeVar 10]"</span>);</div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="number">0.0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="function">PLUGIN_EXPORT <span class="keyword">double</span> <span class="title">Update</span><span class="params">(<span class="keyword">void</span>* data)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">	Measure* measure = (Measure*)data;</div><div class="line"></div><div class="line">	<span class="comment">// 'measure-&gt;skin' stored previously in the Initialize function</span></div><div class="line">	RmExecute(measure-&gt;skin, <span class="string">L"[!SetVariable SomeVar 10]"</span>);</div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="number">0.0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
 	</dd>
 	<dt id="ReplaceVariables"><code>RmReplaceVariables</code> <small><code>LPCWSTR RmReplaceVariables(void* rm, LPCWSTR str)</code></small></dt>
@@ -146,7 +146,7 @@
 			</ul>
 		</p>
 		<h3>Example:</h3>
-<figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="function">PLUGIN_EXPORT <span class="keyword">double</span> <span class="title">Update</span><span class="params">(<span class="keyword">void</span>* data)</span></div><div class="line"></span>&#123;</div><div class="line">	Measure* measure = (Measure*)data;</div><div class="line"></div><div class="line">	<span class="comment">// 'measure-&gt;rm' stored previously in the Initialize function</span></div><div class="line">	LPCWSTR myVar = RmReplaceVariables(measure-&gt;rm, <span class="string">L"#MyVar#"</span>);</div><div class="line"></div><div class="line">	<span class="keyword">if</span> (_wcsicmp(myVar, <span class="string">L"SOMETHING"</span>) == <span class="number">0</span>) &#123; <span class="keyword">return</span> <span class="number">1.0</span>; &#125;</div><div class="line">	<span class="keyword">return</span> <span class="number">0.0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="function">PLUGIN_EXPORT <span class="keyword">double</span> <span class="title">Update</span><span class="params">(<span class="keyword">void</span>* data)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">	Measure* measure = (Measure*)data;</div><div class="line"></div><div class="line">	<span class="comment">// 'measure-&gt;rm' stored previously in the Initialize function</span></div><div class="line">	LPCWSTR myVar = RmReplaceVariables(measure-&gt;rm, <span class="string">L"#MyVar#"</span>);</div><div class="line"></div><div class="line">	<span class="keyword">if</span> (_wcsicmp(myVar, <span class="string">L"SOMETHING"</span>) == <span class="number">0</span>) &#123; <span class="keyword">return</span> <span class="number">1.0</span>; &#125;</div><div class="line">	<span class="keyword">return</span> <span class="number">0.0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
 	</dd>
 	<dt id="GetMeasureName"><code>RmGetMeasureName</code> <small><code>LPCWSTR RmGetMeasureName(void* rm)</code></small></dt>
@@ -158,7 +158,7 @@
 			</ul>
 		</p>
 		<h3>Example:</h3>
-<figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="function">PLUGIN_EXPORT <span class="keyword">void</span> <span class="title">Initialize</span><span class="params">(<span class="keyword">void</span>** data, <span class="keyword">void</span>* rm)</span></div><div class="line"></span>&#123;</div><div class="line">	Measure* measure = <span class="keyword">new</span> Measure;</div><div class="line">	*data = measure;</div><div class="line"></div><div class="line">	<span class="comment">// 'measure-&gt;myName' defined as a string (LPCWSTR) in 'Measure' class scope</span></div><div class="line">	measure-&gt;myName = RmGetMeasureName(rm);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="function">PLUGIN_EXPORT <span class="keyword">void</span> <span class="title">Initialize</span><span class="params">(<span class="keyword">void</span>** data, <span class="keyword">void</span>* rm)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">	Measure* measure = <span class="keyword">new</span> Measure;</div><div class="line">	*data = measure;</div><div class="line"></div><div class="line">	<span class="comment">// 'measure-&gt;myName' defined as a string (LPCWSTR) in 'Measure' class scope</span></div><div class="line">	measure-&gt;myName = RmGetMeasureName(rm);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
 	</dd>
 	<dt id="GetSkin"><code>RmGetSkin</code> <small><code>void* RmGetSkin(void* rm)</code></small></dt>
@@ -170,7 +170,7 @@
 			</ul>
 		</p>
 		<h3>Example:</h3>
-<figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="function">PLUGIN_EXPORT <span class="keyword">void</span> <span class="title">Initialize</span><span class="params">(<span class="keyword">void</span>** data, <span class="keyword">void</span>* rm)</span></div><div class="line"></span>&#123;</div><div class="line">	Measure* measure = <span class="keyword">new</span> Measure;</div><div class="line">	*data = measure;</div><div class="line"></div><div class="line">	<span class="comment">// 'measure-&gt;mySkin' defined as a 'void*' in 'Measure' class scope</span></div><div class="line">	measure-&gt;mySkin = RmGetSkin(rm);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="function">PLUGIN_EXPORT <span class="keyword">void</span> <span class="title">Initialize</span><span class="params">(<span class="keyword">void</span>** data, <span class="keyword">void</span>* rm)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">	Measure* measure = <span class="keyword">new</span> Measure;</div><div class="line">	*data = measure;</div><div class="line"></div><div class="line">	<span class="comment">// 'measure-&gt;mySkin' defined as a 'void*' in 'Measure' class scope</span></div><div class="line">	measure-&gt;mySkin = RmGetSkin(rm);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
 	</dd>
 	<dt id="GetSkinName"><code>RmGetSkinName</code> <small><code>LPCWSTR RmGetSkinName(void* rm)</code></small></dt>
@@ -182,7 +182,7 @@
 			</ul>
 		</p>
 		<h3>Example:</h3>
-<figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="function">PLUGIN_EXPORT <span class="keyword">void</span> <span class="title">Initialize</span><span class="params">(<span class="keyword">void</span>** data, <span class="keyword">void</span>* rm)</span></div><div class="line"></span>&#123;</div><div class="line">	Measure* measure = <span class="keyword">new</span> Measure;</div><div class="line">	*data = measure;</div><div class="line"></div><div class="line">	<span class="comment">// 'measure-&gt;skinName' defined as a string (LPCWSTR) in the 'Measure' class scope</span></div><div class="line">	skinName = RmGetSkinName(rm);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="function">PLUGIN_EXPORT <span class="keyword">void</span> <span class="title">Initialize</span><span class="params">(<span class="keyword">void</span>** data, <span class="keyword">void</span>* rm)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">	Measure* measure = <span class="keyword">new</span> Measure;</div><div class="line">	*data = measure;</div><div class="line"></div><div class="line">	<span class="comment">// 'measure-&gt;skinName' defined as a string (LPCWSTR) in the 'Measure' class scope</span></div><div class="line">	skinName = RmGetSkinName(rm);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
 	</dd>
 	<dt id="GetSkinWindow"><code>RmGetSkinWindow</code> <small><code>HWND RmGetSkinWindow(void* rm)</code></small></dt>
@@ -194,13 +194,13 @@
 			</ul>
 		</p>
 		<h3>Example:</h3>
-<figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="function">PLUGIN_EXPORT <span class="keyword">void</span> <span class="title">Initialize</span><span class="params">(<span class="keyword">void</span>** data, <span class="keyword">void</span>* rm)</span></div><div class="line"></span>&#123;</div><div class="line">	Measure* measure = <span class="keyword">new</span> Measure;</div><div class="line">	*data = measure;</div><div class="line"></div><div class="line">	<span class="comment">// 'measure-&gt;skinWindow' defined as HWND in 'Measure' class scope</span></div><div class="line">	measure-&gt;skinWindow = RmGetSkinWindow(rm);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="function">PLUGIN_EXPORT <span class="keyword">void</span> <span class="title">Initialize</span><span class="params">(<span class="keyword">void</span>** data, <span class="keyword">void</span>* rm)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">	Measure* measure = <span class="keyword">new</span> Measure;</div><div class="line">	*data = measure;</div><div class="line"></div><div class="line">	<span class="comment">// 'measure-&gt;skinWindow' defined as HWND in 'Measure' class scope</span></div><div class="line">	measure-&gt;skinWindow = RmGetSkinWindow(rm);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
 	</dd>
 	<dt id="GetSettingsFile"><code>RmGetSettingsFile</code> <small><code>LPCWSTR GetSettingsFile()</code></small></dt>
 	<dd>
 		<p>Retrieves a path to the Rainmeter data file (Rainmeter.data).</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="function">PLUGIN_EXPORT <span class="keyword">void</span> <span class="title">Initialize</span><span class="params">(<span class="keyword">void</span>** data, <span class="keyword">void</span>* rm)</span></div><div class="line"></span>&#123;</div><div class="line">	Measure* measure = <span class="keyword">new</span> Measure;</div><div class="line">	*data = measure;</div><div class="line"></div><div class="line">	<span class="comment">// 'rmDataFile' defined as a string (LPCWSTR) in global scope</span></div><div class="line">	<span class="keyword">if</span> (rmDataFile == <span class="literal">nullptr</span>) &#123; rmDataFile = RmGetSettingsFile(); &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="function">PLUGIN_EXPORT <span class="keyword">void</span> <span class="title">Initialize</span><span class="params">(<span class="keyword">void</span>** data, <span class="keyword">void</span>* rm)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">	Measure* measure = <span class="keyword">new</span> Measure;</div><div class="line">	*data = measure;</div><div class="line"></div><div class="line">	<span class="comment">// 'rmDataFile' defined as a string (LPCWSTR) in global scope</span></div><div class="line">	<span class="keyword">if</span> (rmDataFile == <span class="literal">nullptr</span>) &#123; rmDataFile = RmGetSettingsFile(); &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
 	</dd>
 	<dt id="Log"><code>RmLog</code> <small><code>void RmLog(void* rm, int level, LPCWSTR message)</code></small></dt>
@@ -214,7 +214,7 @@
 			</ul>
 		</p>
 		<h3>Example:</h3>
-<figure class="highlight c"><table><tr><td class="code"><pre><div class="line">RmLog(rm, LOG_NOTICE, <span class="string">L"I am a 'notice' log message with a source"</span>);</div></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line">RmLog(rm, LOG_NOTICE, <span class="string">L"I am a 'notice' log message with a source"</span>);</div></pre></td></tr></table></figure>
 
 	</dd>
 	<dt id="LogF"><code>RmLogF</code> <small><code>void RmLogF(void* rm, int level, LPCWSTR format, ...)</code></small></dt>
@@ -229,7 +229,7 @@
 			</ul>
 		</p>
 		<h3>Example:</h3>
-<figure class="highlight c"><table><tr><td class="code"><pre><div class="line"><span class="built_in">std</span>::wstring notice = <span class="string">L"notice"</span>;</div><div class="line">RmLogF(rm, LOG_NOTICE, <span class="string">L"I am a '%s' log message with a source"</span>, notice.c_str());</div></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="built_in">std</span>::wstring notice = <span class="string">L"notice"</span>;</div><div class="line">RmLogF(rm, LOG_NOTICE, <span class="string">L"I am a '%s' log message with a source"</span>, notice.c_str());</div></pre></td></tr></table></figure>
 
 	</dd>
 </dl>

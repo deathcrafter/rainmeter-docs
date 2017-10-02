@@ -72,10 +72,10 @@
 
 <h2>Creating Counters</h2>
 <p>First we're going to create some variables that we are going to use later on.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[Variables]</div><div class="line">MaxNumber=30</div><div class="line">Pause=1</div><div class="line">Reset=1</div></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="code"><pre><div class="line"><span class="section">[Variables]</span></div><div class="line"><span class="attr">MaxNumber</span>=<span class="number">30</span></div><div class="line"><span class="attr">Pause</span>=<span class="number">1</span></div><div class="line"><span class="attr">Reset</span>=<span class="number">1</span></div></pre></td></tr></table></figure>
 
 <p>Now we need to create the counter.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[cCounter]</div><div class="line">Measure=Calc</div><div class="line">Formula=cCounter+1</div></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="code"><pre><div class="line"><span class="section">[cCounter]</span></div><div class="line"><span class="attr">Measure</span>=Calc</div><div class="line"><span class="attr">Formula</span>=cCounter+<span class="number">1</span></div></pre></td></tr></table></figure>
 
 <p>The reason this works is that when calling a measure the value from the last update cycle is used. With this in mind, by calling the measure inside itself we can easily change it's value.</p>
 
@@ -86,59 +86,59 @@
 <h3>Making the counter reset at a given value</h3>
 
 <p>Having it reset after a given value is easy and is accomplished the same way as if you were using the Counter variable.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[cCounter]</div><div class="line">Measure=Calc</div><div class="line">Formula=(cCounter+1)%(#MaxNumber#+1)</div></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="code"><pre><div class="line"><span class="section">[cCounter]</span></div><div class="line"><span class="attr">Measure</span>=Calc</div><div class="line"><span class="attr">Formula</span>=(cCounter+<span class="number">1</span>)%(#MaxNumber#+<span class="number">1</span>)</div></pre></td></tr></table></figure>
 
 <p>This will have the counter reset to zero after it hits 30, which is what we have MaxNumber set to. We have the measure add 1 to MaxNumber so that it will reset after the value else it will reset at that value. This is due to the fact that including the number 0 counting to 30 is actually 31 numbers.</p>
 
 <p>If you want your counter to reset to one instead of zero we just need to move things around a bit.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[cCounter]</div><div class="line">Measure=Calc</div><div class="line">Formula=cCounter%#MaxNumber#+1</div></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="code"><pre><div class="line"><span class="section">[cCounter]</span></div><div class="line"><span class="attr">Measure</span>=Calc</div><div class="line"><span class="attr">Formula</span>=cCounter%#MaxNumber#+<span class="number">1</span></div></pre></td></tr></table></figure>
 
 <p>With this method we also don't need to worry about adding one to the reset value.</p>
 
 <h3>Resetting a counter via Mouse Actions</h3>
 
 <p>How about having it reset to zero when we click on the skin.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[Rainmeter]</div><div class="line">LeftMouseUpAction=!SetVariable Reset 0</div><div class="line"></div><div class="line">[cCounter]</div><div class="line">Measure=Calc</div><div class="line">Formula=(cCounter+1)*#Reset#</div><div class="line">IfBelowValue=1</div><div class="line">IfBelowAction=!SetVariable Reset 1</div><div class="line">DynamicVariables=1</div></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="code"><pre><div class="line"><span class="section">[Rainmeter]</span></div><div class="line"><span class="attr">LeftMouseUpAction</span>=!SetVariable Reset <span class="number">0</span></div><div class="line"></div><div class="line"><span class="section">[cCounter]</span></div><div class="line"><span class="attr">Measure</span>=Calc</div><div class="line"><span class="attr">Formula</span>=(cCounter+<span class="number">1</span>)*#Reset#</div><div class="line"><span class="attr">IfBelowValue</span>=<span class="number">1</span></div><div class="line"><span class="attr">IfBelowAction</span>=!SetVariable Reset <span class="number">1</span></div><div class="line"><span class="attr">DynamicVariables</span>=<span class="number">1</span></div></pre></td></tr></table></figure>
 
 <p>Multiplying the counter by zero will easily reset it. Just make sure to set an action to set the Reset variable back to one when you're done.</p>
 
 <p>Or an alternative for resetting the counter with just a MouseOver:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[Rainmeter]</div><div class="line">MouseOverAction=!DisableMeasure cCounter</div><div class="line">MouseLeaveAction=!EnableMeasure cCounter</div><div class="line"></div><div class="line">[cCounter]</div><div class="line">Measure=Calc</div><div class="line">Formula=cCounter+1</div></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="code"><pre><div class="line"><span class="section">[Rainmeter]</span></div><div class="line"><span class="attr">MouseOverAction</span>=!DisableMeasure cCounter</div><div class="line"><span class="attr">MouseLeaveAction</span>=!EnableMeasure cCounter</div><div class="line"></div><div class="line"><span class="section">[cCounter]</span></div><div class="line"><span class="attr">Measure</span>=Calc</div><div class="line"><span class="attr">Formula</span>=cCounter+<span class="number">1</span></div></pre></td></tr></table></figure>
 
 <p><b>Note:</b> This method only works if the counter is disabled for at least one update cycle.</p>
 
 <p>Now we can combine a couple methods of resetting to have the counter count up, reset, and wait for us to tell it restart again.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[cCounter]</div><div class="line">Measure=Calc</div><div class="line">Formula=cCounter+1</div><div class="line">IfEqualValue=#MaxNumber#</div><div class="line">IfEqualAction=!DisableMeasure #CURRENTSECTION#</div></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="code"><pre><div class="line"><span class="section">[cCounter]</span></div><div class="line"><span class="attr">Measure</span>=Calc</div><div class="line"><span class="attr">Formula</span>=cCounter+<span class="number">1</span></div><div class="line"><span class="attr">IfEqualValue</span>=#MaxNumber#</div><div class="line"><span class="attr">IfEqualAction</span>=!DisableMeasure #CURRENTSECTION#</div></pre></td></tr></table></figure>
 
 <p>When we want the counter to start counting again we just need to use <code>!EnableMeasure cCounter</code>.</p>
 
 <h3>Pausing a counter</h3>
 
 <p>Lets pause the counter when you mouse-over the skin.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[Rainmeter]</div><div class="line">MouseOverAction=!SetVariable Pause 0</div><div class="line">MouseLeaveAction=!SetVariable Pause 1</div><div class="line"></div><div class="line">[cCounter]</div><div class="line">Measure=Calc</div><div class="line">Formula=cCounter+#Pause#</div><div class="line">DynamicVariables=1</div></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="code"><pre><div class="line"><span class="section">[Rainmeter]</span></div><div class="line"><span class="attr">MouseOverAction</span>=!SetVariable Pause <span class="number">0</span></div><div class="line"><span class="attr">MouseLeaveAction</span>=!SetVariable Pause <span class="number">1</span></div><div class="line"></div><div class="line"><span class="section">[cCounter]</span></div><div class="line"><span class="attr">Measure</span>=Calc</div><div class="line"><span class="attr">Formula</span>=cCounter+#Pause#</div><div class="line"><span class="attr">DynamicVariables</span>=<span class="number">1</span></div></pre></td></tr></table></figure>
 
 <p>When the MouseOver action is triggered you stop adding 1 to the counter yet it retains it's value. When the mouse leaves the skin you start adding 1 to it again.</p>
 
 <p><b>Note:</b> This functionality may also be accomplished using the <a href="/manual/bangs/#PauseMeasure">!PauseMeasure, !UnpauseMeasure and !TogglePauseMeasure</a> bangs.</p>
 
 <p>We can also have the counter stop counting at a certain value and stay there.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[cCounter]</div><div class="line">Measure=Calc</div><div class="line">Formula=cCounter+(cCounter&lt;#MaxNumber#)</div></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="code"><pre><div class="line"><span class="section">[cCounter]</span></div><div class="line"><span class="attr">Measure</span>=Calc</div><div class="line"><span class="attr">Formula</span>=cCounter+(cCounter&lt;#MaxNumber#)</div></pre></td></tr></table></figure>
 
 <p>What we did was added a conditional statement. Conditional statements without an "if ? then : else" format resolve to either 1 for true or 0 for false. Using this fact we can easily use conditional statements in mathematical formulas.</p>
 
 <h3>Triggering Actions with a Counter</h3>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[cCounter]</div><div class="line">Measure=Calc</div><div class="line">Formula=cCounter+1</div><div class="line">IfAboveValue=#MaxNumber#</div><div class="line">IfAboveAction=[!DisableMeasure #CURRENTSECTION#][&quot;Some Action&quot;]</div></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="code"><pre><div class="line"><span class="section">[cCounter]</span></div><div class="line"><span class="attr">Measure</span>=Calc</div><div class="line"><span class="attr">Formula</span>=cCounter+<span class="number">1</span></div><div class="line"><span class="attr">IfAboveValue</span>=#MaxNumber#</div><div class="line"><span class="attr">IfAboveAction</span>=[!DisableMeasure #CURRENTSECTION#][<span class="string">"Some Action"</span>]</div></pre></td></tr></table></figure>
 
 <p>This will count up to the MaxNumber, disable itself so it doesn't continue to count, and execute some action such as opening an addon. This method can be used to execute some action a certain number of updates after the skin is loaded.</p>
 
 <p>We can use the built in Counter function/variable to accomplish the same thing. Please note that Counter returns the number of updates since the skin was initially loaded and only returns to zero when Rainmeter is loaded or a !RefreshApp bang is used.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[cCounter]</div><div class="line">Measure=Calc</div><div class="line">Formula=Counter</div><div class="line">IfAboveValue=#MaxNumber#</div><div class="line">IfAboveAction=[!DisableMeasure #CURRENTSECTION#][&quot;Some Action&quot;]</div></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="code"><pre><div class="line"><span class="section">[cCounter]</span></div><div class="line"><span class="attr">Measure</span>=Calc</div><div class="line"><span class="attr">Formula</span>=Counter</div><div class="line"><span class="attr">IfAboveValue</span>=#MaxNumber#</div><div class="line"><span class="attr">IfAboveAction</span>=[!DisableMeasure #CURRENTSECTION#][<span class="string">"Some Action"</span>]</div></pre></td></tr></table></figure>
 
 <p><b>Note:</b> To execute a set of commands when the skin is loaded or refreshed, without using a counter, use <code>OnRefreshAction=!SomeAction</code> in the <code>[Rainmeter]</code> section of the skin.</p>
 
 <h3>Bonus Lesson: Making a counter that counts down, not up</h3>
 
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[cCounter]</div><div class="line">Measure=Calc</div><div class="line">Formula=(cCounter-1+(#MaxNumber#+1))%(#MaxNumber#+1)</div></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="code"><pre><div class="line"><span class="section">[cCounter]</span></div><div class="line"><span class="attr">Measure</span>=Calc</div><div class="line"><span class="attr">Formula</span>=(cCounter-<span class="number">1</span>+(#MaxNumber#+<span class="number">1</span>))%(#MaxNumber#+<span class="number">1</span>)</div></pre></td></tr></table></figure>
 
 <p>This one is a bit harder to explain. What we are doing is taking the value of the counter and subtracting 1. Then we have to add the value of our MaxNumber else we'll just end up with a negative value. Now we have to take the remainder of that value using Modulo to get our final value.</p>
 
@@ -146,11 +146,11 @@
 
 <h3>Cycling Images</h3>
 
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[cCounter]</div><div class="line">Measure=Calc</div><div class="line">Formula=cCounter%#MaxNumber#+1</div><div class="line"></div><div class="line">[MeterImage]</div><div class="line">Meter=Image</div><div class="line">MeasureName=cCounter</div><div class="line">ImageName=#@#Images/%1.png</div></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="code"><pre><div class="line"><span class="section">[cCounter]</span></div><div class="line"><span class="attr">Measure</span>=Calc</div><div class="line"><span class="attr">Formula</span>=cCounter%#MaxNumber#+<span class="number">1</span></div><div class="line"></div><div class="line"><span class="section">[MeterImage]</span></div><div class="line"><span class="attr">Meter</span>=Image</div><div class="line"><span class="attr">MeasureName</span>=cCounter</div><div class="line"><span class="attr">ImageName</span>=#@#Images/%<span class="number">1</span>.png</div></pre></td></tr></table></figure>
 
 <h3>Cycling Between Measures</h3>
 
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[Variables]</div><div class="line">MaxNumber=3</div><div class="line"></div><div class="line">[cCounter]</div><div class="line">Measure=Calc</div><div class="line">Formula=cCounter%#MaxNumber#+1</div><div class="line"></div><div class="line">[Measure1]</div><div class="line">Measure=String</div><div class="line">String=This is the first measure.</div><div class="line"></div><div class="line">[Measure2]</div><div class="line">Measure=String</div><div class="line">String=This is the second measure.</div><div class="line"></div><div class="line">[Measure3]</div><div class="line">Measure=String</div><div class="line">String=This is the third measure.</div><div class="line"></div><div class="line">[MeterString]</div><div class="line">Meter=String</div><div class="line">MeasureName=Measure1</div><div class="line">MeasureName2=Measure2</div><div class="line">MeasureName3=Measure3</div><div class="line">Text=%[cCounter]</div><div class="line">DynamicVariables=1</div></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="code"><pre><div class="line"><span class="section">[Variables]</span></div><div class="line"><span class="attr">MaxNumber</span>=<span class="number">3</span></div><div class="line"></div><div class="line"><span class="section">[cCounter]</span></div><div class="line"><span class="attr">Measure</span>=Calc</div><div class="line"><span class="attr">Formula</span>=cCounter%#MaxNumber#+<span class="number">1</span></div><div class="line"></div><div class="line"><span class="section">[Measure1]</span></div><div class="line"><span class="attr">Measure</span>=String</div><div class="line"><span class="attr">String</span>=This is the first measure.</div><div class="line"></div><div class="line"><span class="section">[Measure2]</span></div><div class="line"><span class="attr">Measure</span>=String</div><div class="line"><span class="attr">String</span>=This is the second measure.</div><div class="line"></div><div class="line"><span class="section">[Measure3]</span></div><div class="line"><span class="attr">Measure</span>=String</div><div class="line"><span class="attr">String</span>=This is the third measure.</div><div class="line"></div><div class="line"><span class="section">[MeterString]</span></div><div class="line"><span class="attr">Meter</span>=String</div><div class="line"><span class="attr">MeasureName</span>=Measure1</div><div class="line"><span class="attr">MeasureName2</span>=Measure2</div><div class="line"><span class="attr">MeasureName3</span>=Measure3</div><div class="line"><span class="attr">Text</span>=%[cCounter]</div><div class="line"><span class="attr">DynamicVariables</span>=<span class="number">1</span></div></pre></td></tr></table></figure>
 
 </article>
 </div>

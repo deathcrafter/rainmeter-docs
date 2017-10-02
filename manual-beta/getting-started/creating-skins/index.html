@@ -262,7 +262,7 @@
 <p>The very first thing you will see in your skin is the <a href="/manual-beta/skins/rainmeter-section/">[Rainmeter] section</a>. This is a skin's "header" property, like the <code>&lt;head&gt;</code> tag in an HTML webpage. In the [Rainmeter] section, you will see an <code>Update=1000</code> option. Like this:</p>
 
 <div class="noscroll">
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[Rainmeter]</div><div class="line">Update=1000</div></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="code"><pre><div class="line"><span class="section">[Rainmeter]</span></div><div class="line"><span class="attr">Update</span>=<span class="number">1000</span></div></pre></td></tr></table></figure>
 
 </div>
 
@@ -271,7 +271,7 @@
 <p>Now that you've given your skin a "head," it's time to give it a "body." Let's change that default <a href="/manual-beta/meters/string/">string meter</a>. This is one of the most common types of meters, and it is used to create <b>text</b>.</p>
 
 <div class="noscroll">
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[Rainmeter]</div><div class="line">Update=1000</div><div class="line"></div><div class="line">[MeterString]</div><div class="line">Meter=String</div><div class="line">Text=Hello, world!</div></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="code"><pre><div class="line"><span class="section">[Rainmeter]</span></div><div class="line"><span class="attr">Update</span>=<span class="number">1000</span></div><div class="line"></div><div class="line"><span class="section">[MeterString]</span></div><div class="line"><span class="attr">Meter</span>=String</div><div class="line"><span class="attr">Text</span>=Hello, world!</div></pre></td></tr></table></figure>
 
 </div>
 
@@ -304,7 +304,7 @@
 <p>It's... not very big. Or pretty. Meters without any options tend to be very simple and unimpressive. So let's add some <b>formatting</b>.</p>
 
 <div class="noscroll">
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[MyMeter]</div><div class="line">Meter=String</div><div class="line">Text=Hello, world!</div><div class="line">AntiAlias=1</div><div class="line">FontColor=255,255,255</div><div class="line">FontFace=Segoe UI</div><div class="line">FontSize=20</div></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="code"><pre><div class="line"><span class="section">[MyMeter]</span></div><div class="line"><span class="attr">Meter</span>=String</div><div class="line"><span class="attr">Text</span>=Hello, world!</div><div class="line"><span class="attr">AntiAlias</span>=<span class="number">1</span></div><div class="line"><span class="attr">FontColor</span>=<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span></div><div class="line"><span class="attr">FontFace</span>=Segoe UI</div><div class="line"><span class="attr">FontSize</span>=<span class="number">20</span></div></pre></td></tr></table></figure>
 
 </div>
 

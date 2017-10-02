@@ -247,7 +247,7 @@
 
 <p>The use of measure values in the Formula option of a Calc measure does not require the use of Dynamic Variables. Simply omit the [] and the number value of the measure will be retrieved. If the measure does not have a number value, 0 will be used. Section Variables, Variables and Built-in Variables follow the normal rules. For more information see the <a href="/tips/dynamiccheatsheet/">Dynamic Cheat Sheet</a>.</p>
 
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[MeasureOne]</div><div class="line">Measure=Calc</div><div class="line">Formula=5</div><div class="line"></div><div class="line">[MeasureTwo]</div><div class="line">Measure=Calc</div><div class="line">Formula=MeasureOne &lt; 6 ? 0 : 10</div></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="code"><pre><div class="line"><span class="section">[MeasureOne]</span></div><div class="line"><span class="attr">Measure</span>=Calc</div><div class="line"><span class="attr">Formula</span>=<span class="number">5</span></div><div class="line"></div><div class="line"><span class="section">[MeasureTwo]</span></div><div class="line"><span class="attr">Measure</span>=Calc</div><div class="line"><span class="attr">Formula</span>=MeasureOne &lt; <span class="number">6</span> ? <span class="number">0</span> : <span class="number">10</span></div></pre></td></tr></table></figure>
 
 </article>
 </div>
