@@ -66,7 +66,7 @@
 <p>The argument <em>num</em> is the number or formula to test. <em>lower</em> is the lowest value it can be, and <em>upper</em> is the highest value it can be.</p>
 
 <div class="noscroll">
-<figure class="highlight lua"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Clamp</span><span class="params">(num, lower, upper)</span></span></div><div class="line">	<span class="built_in">assert</span>(num <span class="keyword">and</span> lower <span class="keyword">and</span> upper, <span class="string">'error: Clamp(num, lower, upper)'</span>)</div><div class="line">	<span class="keyword">return</span> <span class="built_in">math</span>.max(lower, <span class="built_in">math</span>.min(upper, num))</div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<figure class="highlight lua"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Clamp</span><span class="params">(num, lower, upper)</span></span></div><div class="line">	<span class="built_in">assert</span>(num <span class="keyword">and</span> lower <span class="keyword">and</span> upper, <span class="string">'error: Clamp(num, lower, upper)'</span>)</div><div class="line">	<span class="keyword">return</span> math.max(lower, math.min(upper, num))</div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
 
 </div>
 
