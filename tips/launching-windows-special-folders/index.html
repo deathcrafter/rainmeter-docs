@@ -111,11 +111,14 @@ shutdown.exe -s</li>
 shutdown.exe -a</li>
 </ul><br>
 <p><b>Basic usage examples:</b></p>
-<pre>LeftMouseUpAction=[sndvol32.exe /tray Normal]</pre>
-<pre>LeftMouseUpAction=[shell:Desktop]</pre>
+<figure class="highlight ini"><table><tr><td class="code"><pre><div class="line"><span class="attr">LeftMouseUpAction</span>=[sndvol32.exe /tray Normal]</div></pre></td></tr></table></figure>
+
+<figure class="highlight ini"><table><tr><td class="code"><pre><div class="line"><span class="attr">LeftMouseUpAction</span>=[shell:Desktop]</div></pre></td></tr></table></figure>
+
 <p><em>If a space is included, you need to enclose with double quotes. e.g. ["shell:Start Menu"]</em></p>
 <p><em>You can send multiple commands simultaneously by surrounding each command in brackets.</em></p>
-<pre>LeftMouseUpAction=[shell:Desktop][shell:SendTo]["shell:Start Menu"]</pre>
+<figure class="highlight ini"><table><tr><td class="code"><pre><div class="line"><span class="attr">LeftMouseUpAction</span>=[shell:Desktop][shell:SendTo][<span class="string">"shell:Start Menu"</span>]</div></pre></td></tr></table></figure>
+
 </article>
 </div>
 

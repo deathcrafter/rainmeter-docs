@@ -62,8 +62,7 @@
 <p><b>Problem</b></p>
 <p>The problem came in when the image was referred to in the web site HTML using a relative path to the image. An example is the logo at the top of the Rainmeter forums:</p>
 
-<pre>&lt;a href="./index.php" title="Board index" id="logo"&gt;&lt;img src="./styles/saphic/imageset/site_logo.png"/&gt;&lt;/a&gt;
-</pre>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"./index.php"</span> <span class="attr">title</span>=<span class="string">"Board index"</span> <span class="attr">id</span>=<span class="string">"logo"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"./styles/saphic/imageset/site_logo.png"</span>/&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure>
 
 <p>As you can see, the full URL is not included in anything that WebParser can search for, so Download=1 fails... </p>
 <p><b>Solution</b></p>
