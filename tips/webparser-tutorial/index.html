@@ -163,7 +163,7 @@
 
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"data-item"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"bold"</span>&gt;</span>IP Address:<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">span</span>&gt;</span>205.185.193.236<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 
-<p>You can see that we will return 205.185.193.236 in StringIndex 1</p>
+<p>You can see that we will return <code>205.185.193.236</code> in StringIndex 1</p>
 
 <p><b>UpdateRate=3600</b> - We want to check the website at a rate 3600 times the value in the "Update=" parameter in the "Rainmeter" section. As this defaults to "1000" or once every 1000 milliseconds (1 second) we will be running WebParser every 3600 seconds or 60 minutes. This is plenty often, as your IP information doesn't change much and you don't want to "spam" the website with requests. You may well find yourself blocked...</p>
 
@@ -173,7 +173,7 @@
 
 <figure class="highlight ini"><table><tr><td class="code"><pre><div class="line"><span class="section">[MeasureIP]</span></div><div class="line"><span class="attr">Measure</span>=Plugin</div><div class="line"><span class="attr">Plugin</span>=WebParser</div><div class="line"><span class="attr">URL</span>=[MeasureSite]</div><div class="line"><span class="attr">StringIndex</span>=<span class="number">1</span></div></pre></td></tr></table></figure>
 
-<p>We are using the values returned by our parent measure [MeasureSite] as the <code>URL</code> for this measure, and setting the value contained in <code>StringIndex=1</code>.  So the value of this child measure will be "205.185.193.236".</p>
+<p>We are using the values returned by our parent measure [MeasureSite] as the <code>URL</code> for this measure, and setting the value contained in <code>StringIndex=1</code>.  So the value of this child measure will be <code>205.185.193.236</code>.</p>
 
 <h3>Testing as we go</h3>
 
@@ -190,8 +190,6 @@
 <p>The next information in the WebParserDump file that we want is the local path and name of the country flag image.</p>
 
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"data-item"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"bold"</span>&gt;</span>Country:<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"></div><div class="line">	<span class="tag">&lt;<span class="name">span</span>&gt;</span></div><div class="line">		</div><div class="line">		<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"../static/img/flags/br.gif"</span>&gt;</span></div><div class="line">		Brazil</div><div class="line">	<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-
-<p>
 
 <p>So we want to add to our "RegExp=" statement, search for the flag image name, and return the result in the next StringIndex on the parent measure:</p>
 
