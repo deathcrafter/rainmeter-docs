@@ -1,66 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<!-- Meta tags for proper character encoding and social media handling  -->
 	<meta charset="utf-8">
-	<title>Rainmeter Docs</title>
-	<link href="/css/main.css?v=3" rel="stylesheet">
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=0.9, maximum-scale=0.9">
+	<meta name="og:image" content="https://www.rainmeter.net/img/media_image.png">
+	<meta name="og:site_name" content="Rainmeter">
+	<meta name="og:type" content="website">
+
+	<!-- Page title  -->
+	<title>Rainmeter</title>
+
+	<!-- Files need to be local for offline version of documentations -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/rainmeter.css">
+	<link rel="stylesheet" href="css/jquery.fancybox.min.css">
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600">
+	<link href="https://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet">
+
+	<!-- Site icon -->
 	<link rel="shortcut icon" href="//www.rainmeter.net/favicon.ico">
-	<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6/html5shiv.min.js"></script><![endif]-->
+
 </head>
+
 <body>
-	<div id="wrapper">
-		<div id="top">
-			<div class="container">
-				<a id="logo" href="//rainmeter.net/"></a>
-				<nav id="nav">
-					<ul>
-					<li><a href="//www.rainmeter.net">Home</a>
-					<li><a href="/" class="active">Documentation</a>
-					<li><a href="//www.rainmeter.net/discover">Discover</a>
-					<li><a href="//forum.rainmeter.net">Community</a>
-					</ul>
-				</nav>
-			</div>
+
+  <div id="panel">
+  <div id="hero" class="flat">
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
+	<div class="container">
+		<a class="navbar-brand" href="https://docs.rainmeter.net"><img src="\img\logo_nav.png" alt=""></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavigation" aria-controls="mainNavigation" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse justify-content-end" id="mainNavigation">
+			<ul class="navbar-nav order-12">
+				<li class="nav-item "><a class="nav-link" href="//rainmeter.net/">Home</a></li>
+				<li class="nav-item active"><a class="nav-link" href="//docs.rainmeter.net/">Documentation</a></li>
+				<li class="nav-item "><a class="nav-link" href="//rainmeter.net/discover">Discover</a></li>
+				<li class="nav-item "><a class="nav-link" href="//forum.rainmeter.net">Community</a></li>
+				<div class="dropdown-divider"></div>
+			</ul>
 		</div>
-
-		<div class="container">
-			<div class="row">
-				<div id="content" class="index">
-	<div id="index-right">
-	<h3>Help</h3>
-	<p>Help is available on <a href="//forum.rainmeter.net/">the forum</a>. Members of the development team and the Rainmeter community offer support and advice on a volunteer basis.
-	<p>For shorter questions, join the discussion in our IRC chat room. Click <a href="http://webchat.freenode.net/?channels=rainmeter">here</a> to chat in your browser, or use your own IRC client to connect to #rainmeter at irc.freenode.net.
-
-	<h3>Contact</h3>
-	<p>For press inquiries or technical problems with the site or forums, email the development team at <a href="mailto:team&#64;rainmeter.net">team&#64;rainmeter.net</a>. Please do not send Rainmeter or skin support requests to this address; use the forum or chat room instead. Support requests sent to this address will not be answered.
-</div>
-<div id="index-left">
-	<h2><a href="/manual/">4.0 Manual</a></h2>
-	<p>Reference and tutorial material for the current final version of Rainmeter.
-
-	<h2><a href="/manual-beta/">4.1 Beta Manual</a></h2>
-	<p>Reference and tutorial material for the next version of Rainmeter in development.
-
-	<h2><a href="/tips/">Tips &amp; Tricks</a></h2>
-	<p>Suggested methods and solutions for using Rainmeter in the field.
-
-	<h2><a href="/snippets/">Snippets</a></h2>
-	<p>Useful code fragments for running Lua scripts in Rainmeter.
-
-	<h2><a href="/developers/">Developers</a></h2>
-	<p>Information for working with the Rainmeter project source code, creating custom plugins, and interacting with Rainmeter from external applications.
-
-	<h2><a href="/history/">Version History</a></h2>
-	<p>Complete record of changes in each version of Rainmeter.
-</div>
-
-</div>
-			</div>
-		</div>
-
-		<div id="footer-push"></div>
 	</div>
+</nav>
 
-	<script src="/js/main.js?v=4"></script>
+  </div>
+
+  <div id="content">
+    <div class="container">
+    <div class="row">
+	<div class="col-lg-8 docs-index">
+		<h2 class="mt-0">Rainmeter Docs</h2>
+		<hr/>
+			<a href="/manual/" class="card card-manual">
+
+					<div class="card-body">
+						<h4 class="card-title">4.0 Manual</h4>
+						<p>Reference and tutorial material for the current final version of Rainmeter.</p>
+					</div>
+			</a>
+			<a href="/manual-beta/" class="card card-manual">
+
+					<div class="card-body">
+						<h4 class="card-title">4.1 Beta Manual</h4>
+						<p>Reference and tutorial material for the next version of Rainmeter in development.</p>
+					</div>
+			</a>
+			<a href="/tips/" class="card">
+
+					<div class="card-body">
+						<h4 class="card-title">Tips &amp; Tricks</h4>
+						<p>Suggested methods and solutions for using Rainmeter in the field.</p>
+					</div>
+			</a>
+			<a href="/snippets/" class="card">
+
+					<div class="card-body">
+						<h4 class="card-title">Snippets</h4>
+						<p>Useful code fragments for running Lua scripts in Rainmeter.</p>
+					</div>
+			</a>
+			<a href="/developers/" class="card">
+
+					<div class="card-body">
+						<h4 class="card-title">Developers</h4>
+						<p>Information for working with the Rainmeter project source code, creating custom plugins, and interacting with Rainmeter from external applications.</p>
+					</div>
+			</a>
+			<a href="/history/" class="card">
+
+					<div class="card-body">
+						<h4 class="card-title">Version History</h4>
+						<p>Complete record of changes in each version of Rainmeter.</p>
+					</div>
+			</a>
+	</div>
+	<div class="col-lg-4">
+		<h2 class="mt-0">Info</h2>
+		<hr/>
+		<h3>Help</h3>
+		<p>Help is available on <a href="//forum.rainmeter.net/">the forum</a>. Members of the development team and the Rainmeter community offer support and advice on a volunteer basis.
+		<p>For shorter questions, join the discussion in our IRC chat room. Click <a href="http://webchat.freenode.net/?channels=rainmeter">here</a> to chat in your browser, or use your own IRC client to connect to #rainmeter at irc.freenode.net.
+
+		<h3>Contact</h3>
+		<p>For press inquiries or technical problems with the site or forums, email the development team at <a href="mailto:team&#64;rainmeter.net">team&#64;rainmeter.net</a>. Please do not send Rainmeter or skin support requests to this address; use the forum or chat room instead. Support requests sent to this address will not be answered.
+	</div>
+</div>
+
+    </div>
+  </div>
+
+  <footer id="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-6">Made with ❤ by the community.</div>
+      <div class="col-6 text-center text-md-right">Icons by <a href="https://feathericons.com/" alt="feathericons">feathericons.com</a></div>
+    </div>
+  </div>
+</footer>
+
+</div>
+
+
+	<!-- Javascript files  -->
+	<script src="js/main.js"></script>
+	<script src="js/jquery-3.2.1.slim.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/ahk-sliding-panel.js"></script>
+	<script src="js/jquery.fancybox.min.js"></script>
+
+	<!-- Script for the slideout menu on mobile -->
+	<script>
+		// set slideout menu variables
+		var docsnav = new ahk_slideout({
+		  id: "menu",
+		  side: "left",
+		  width: "18rem",
+		  touch_boundary: "50",
+		  slide_time: "0.2"
+		})
+
+		// function to toggle menu
+		function openNavMenu() {
+		  docsnav.openMenu()
+		}
+		// function to close menu
+		function closeNavMenu() {
+		  docsnav.closeMenu()
+		}
+
+		// when scrolling below 90, add sticky class to nav-button
+		$(function() {
+		  var header = $("#nav-button");
+		  $(window).scroll(function() {
+		    var scroll = $(window).scrollTop();
+		    if (scroll >= 90) {
+		      header.addClass("sticky");
+		    } else {
+		      header.removeClass("sticky");
+		    }
+		  });
+		});
+	</script>
+
 </body>
 </html>

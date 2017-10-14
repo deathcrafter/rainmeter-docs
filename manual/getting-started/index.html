@@ -1,185 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<!-- Meta tags for proper character encoding and social media handling  -->
 	<meta charset="utf-8">
-	<title>Getting Started - Rainmeter 4.0 Manual</title>
-	<link href="/css/main.css?v=3" rel="stylesheet">
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=0.9, maximum-scale=0.9">
+	<meta name="og:image" content="https://www.rainmeter.net/img/media_image.png">
+	<meta name="og:site_name" content="Rainmeter">
+	<meta name="og:type" content="website">
+
+	<!-- Page title  -->
+	<title>Getting Started - Rainmeter</title>
+
+	<!-- Files need to be local for offline version of documentations -->
+	<link rel="stylesheet" href="../../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../css/rainmeter.css">
+	<link rel="stylesheet" href="../../css/jquery.fancybox.min.css">
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600">
+	<link href="https://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet">
+
+	<!-- Site icon -->
 	<link rel="shortcut icon" href="//www.rainmeter.net/favicon.ico">
-	<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6/html5shiv.min.js"></script><![endif]-->
+
 </head>
+
 <body>
-	<div id="wrapper">
-		<div id="top">
-			<div class="container">
-				<a id="logo" href="//rainmeter.net/"></a>
-				<nav id="nav">
-					<ul>
-					<li><a href="//www.rainmeter.net">Home</a>
-					<li><a href="/" class="active">Documentation</a>
-					<li><a href="//www.rainmeter.net/discover">Discover</a>
-					<li><a href="//forum.rainmeter.net">Community</a>
-					</ul>
-				</nav>
-			</div>
+
+  <!-- Get current path and set it as an variable -->
+
+
+<!-- Include navbar -->
+<nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
+	<div class="container">
+		<a class="navbar-brand" href="https://docs.rainmeter.net"><img src="\img\logo_nav.png" alt=""></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavigation" aria-controls="mainNavigation" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse justify-content-end" id="mainNavigation">
+			<ul class="navbar-nav order-12">
+				<li class="nav-item "><a class="nav-link" href="//rainmeter.net/">Home</a></li>
+				<li class="nav-item active"><a class="nav-link" href="//docs.rainmeter.net/">Documentation</a></li>
+				<li class="nav-item "><a class="nav-link" href="//rainmeter.net/discover">Discover</a></li>
+				<li class="nav-item "><a class="nav-link" href="//forum.rainmeter.net">Community</a></li>
+				<div class="dropdown-divider"></div>
+			</ul>
 		</div>
+	</div>
+</nav>
 
-		<div class="container">
-			<div class="row">
-				<div id="side-content">
-	<h1 id="category"><a href="/manual">4.0 Manual</a></h1>
-
-	<form id="search-form" method="get" action="http://www.google.com/search">
-		<input name="sitesearch" value="docs.rainmeter.net" type="hidden">
-		<input id="search" name="q" maxlength="255" size="16" placeholder="Search" type="text">
-	</form>
-
-	<nav id="tree">
-		<h1>Contents</h1>
-<ul>
-<li><a href="/manual/getting-started/">Getting Started</a>
-  <ul>
-  <li><a href="/manual/getting-started/setting-up/">Setting Up</a>
-  <li><a href="/manual/getting-started/using-rainmeter/">Using Rainmeter</a>
-  <li><a href="/manual/getting-started/customizing/">Customizing</a>
-  <li><a href="/manual/getting-started/creating-skins/">Creating Skins</a>
-  <li><a href="/manual/getting-started/skin-anatomy/">Anatomy of a Skin</a>
-  <li><a href="/manual/getting-started/basic-tutorials/">Basic Tutorials</a>
-    <ul>
-    <li><a href="/manual/getting-started/basic-tutorials/launcher/">Launcher</a>
-    <li><a href="/manual/getting-started/basic-tutorials/clock/">Clock</a>
-    <li><a href="/manual/getting-started/basic-tutorials/system/">System</a>
-    </ul>
-  </ul>
-<li><a href="/manual/installing-rainmeter/">Installing Rainmeter</a>
-<li><a href="/manual/user-interface/">User Interface</a>
-  <ul>
-  <li><a href="/manual/user-interface/manage/">Manage</a>
-<ul>
-  <li><a href="/manual/user-interface/manage/new-skin">New Skin</a>
-</ul>
-  <li><a href="/manual/user-interface/about/">About</a>
-  <li><a href="/manual/user-interface/context-menus/">Context Menus</a>
-  </ul>
-<li><a href="/manual/installing-skins/">Installing Skins</a>
-<li><a href="/manual/publishing-skins/">Publishing Skins</a>
-</ul>
-
-<h1>Reference</h1>
-<ul>
-<li><a href="/manual/settings/">Settings</a>
-  <ul>
-  <li><a href="/manual/settings/rainmeter-section/">[Rainmeter] Section</a>
-  <li><a href="/manual/settings/traymeasure-section/">[TrayMeasure] Section</a>
-  <li><a href="/manual/settings/skin-sections/">[Skin] Sections</a>
-  </ul>
-<li><a href="/manual/skins/">Skins</a>
-  <ul>
-  <li><a href="/manual/skins/option-types/">Option Types</a>
-  <li><a href="/manual/skins/rainmeter-section/">[Rainmeter] Section</a>
-  <li><a href="/manual/skins/metadata-section/">[Metadata] Section</a>
-  <li><a href="/manual/skins/include-option/">@Include Options</a>
-  <li><a href="/manual/skins/resources-folder/">@Resources Folder</a>
-  </ul>
-<li><a href="/manual/meters/">Meters</a>
-  <ul>
-  <li><a href="/manual/meters/general-options/">General Options</a>
-    <ul>
-    <li><a href="/manual/meters/general-options/image-options/">Image Options</a>
-    <li><a href="/manual/meters/general-options/meterstyles/">MeterStyles</a>
-    <li><a href="/manual/meters/general-options/tooltips/">Tooltips</a>
-    </ul>
-  <li><a href="/manual/meters/bar/">Bar</a>
-  <li><a href="/manual/meters/bitmap/">Bitmap</a>
-  <li><a href="/manual/meters/button/">Button</a>
-  <li><a href="/manual/meters/histogram/">Histogram</a>
-  <li><a href="/manual/meters/image/">Image</a>
-  <li><a href="/manual/meters/line/">Line</a>
-  <li><a href="/manual/meters/rotator/">Rotator</a>
-  <li><a href="/manual/meters/roundline/">Roundline</a>
-  <li><a href="/manual/meters/shape/">Shape</a>
-  <li><a href="/manual/meters/string/">String</a>
-<ul>
-  <li><a href="/manual/meters/string/inline/">Inline Options</a>
-</ul>
-  </ul>
-<li><a href="/manual/measures/">Measures</a>
-  <ul>
-  <li><a href="/manual/measures/general-options/">General Options</a>
-    <ul>
-    <li><a href="/manual/measures/general-options/ifactions/">IfActions</a>
-    <li><a href="/manual/measures/general-options/ifconditions/">IfConditions</a>
-    <li><a href="/manual/measures/general-options/ifmatchactions/">IfMatchActions</a>
-    <li><a href="/manual/measures/general-options/substitute/">Substitute</a>
-    </ul>
-  <li><a href="/manual/measures/calc/">Calc</a>
-  <li><a href="/manual/measures/cpu/">CPU</a>
-  <li><a href="/manual/measures/freediskspace/">FreeDiskSpace</a>
-  <li><a href="/manual/measures/loop/">Loop</a>
-  <li><a href="/manual/measures/memory/">Memory</a>
-  <li><a href="/manual/measures/net/">Net</a>
-  <li><a href="/manual/measures/plugin/">Plugin</a>
-  <li><a href="/manual/measures/registry/">Registry</a>
-  <li><a href="/manual/measures/script/">Script</a>
-  <li><a href="/manual/measures/string/">String</a>
-  <li><a href="/manual/measures/time/">Time</a>
-  <li><a href="/manual/measures/uptime/">Uptime</a>
-  </ul>
-<li><a href="/manual/plugins/">Plugins</a>
-  <ul>
-  <li><a href="/manual/plugins/actiontimer/">ActionTimer</a>
-  <li><a href="/manual/plugins/advancedcpu/">AdvancedCPU</a>
-  <li><a href="/manual/plugins/audiolevel/">AudioLevel</a>
-  <li><a href="/manual/plugins/coretemp/">CoreTemp</a>
-  <li><a href="/manual/plugins/fileview/">FileView</a>
-  <li><a href="/manual/plugins/folderinfo/">FolderInfo</a>
-  <li><a href="/manual/plugins/inputtext/">InputText</a>
-  <li><a href="/manual/plugins/itunes/">iTunes</a>
-  <li><a href="/manual/plugins/mediakey/">MediaKey</a>
-  <li><a href="/manual/plugins/nowplaying/">NowPlaying</a>
-  <li><a href="/manual/plugins/perfmon/">PerfMon</a>
-  <li><a href="/manual/plugins/ping/">Ping</a>
-  <li><a href="/manual/plugins/power/">Power</a>
-  <li><a href="/manual/plugins/process/">Process</a>
-  <li><a href="/manual/plugins/quote/">Quote</a>
-  <li><a href="/manual/plugins/recyclemanager/">RecycleManager</a>
-  <li><a href="/manual/plugins/resmon/">ResMon</a>
-  <li><a href="/manual/plugins/runcommand/">RunCommand</a>
-  <li><a href="/manual/plugins/speedfan/">SpeedFan</a>
-  <li><a href="/manual/plugins/sysinfo/">SysInfo</a>
-  <li><a href="/manual/plugins/webparser/">WebParser</a>
-  <li><a href="/manual/plugins/wifistatus/">WiFiStatus</a>
-  <li><a href="/manual/plugins/win7audio/">Win7Audio</a>
-  <li><a href="/manual/plugins/windowmessage/">WindowMessage</a>
-  </ul>
-<li><a href="/manual/bangs/">Bangs</a>
-<li><a href="/manual/formulas/">Formulas</a>
-<li><a href="/manual/variables/">Variables</a>
-  <ul>
-  <li><a href="/manual/variables/built-in-variables/">Built-In Variables</a>
-  <li><a href="/manual/variables/section-variables/">Section Variables</a>
-  <li><a href="/manual/variables/mouse-variables/">Mouse Variables</a>
-  </ul>
-<li><a href="/manual/groups/">Groups</a>
-<li><a href="/manual/mouse-actions/">Mouse Actions</a>
-<li><a href="/manual/lua-scripting/">Lua Scripting</a>
-</ul>
-
-<h1>More</h1>
-<ul>
-<li><a href="/manual-beta/">4.1 Beta Manual</a>
-<li><a href="/tips/">Tips &amp; Tricks</a>
-<li><a href="/snippets/">Snippets</a>
-<li><a href="/developers/">Developers</a>
-<li><a href="/history/">Version History</a>
-</ul>
-
-	</nav>
-</div>
 <div id="content">
-	<header>
-		<h1>Getting Started</h1>
-	</header>
-	<article><p>If this is your first experience with Rainmeter, then you're in the right place! <em>Getting Started</em> is a guide designed to walk you through the basics of setting up Rainmeter, using, customizing, and ultimately creating your own skins.</p>
+    <div id="nav-button" class="docs-nav-button">
+      <div class="container d-flex flex-row align-items-center">
+      <svg onclick="openNavMenu()" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      <a onclick="openNavMenu()">Open navigation</a>
+  </div>
+</div>
+
+  <div class="container">
+    <div class="row">
+
+      <!-- Sidenav -->
+      <div id="menu" class="docs-nav col-12 col-lg-3">
+        
+
+<h4 id="category"><a href="/manual">4.0 Manual</a></h4>
+<svg class="closeButton" onclick="closeNavMenu()" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+<form id="search-form" method="get" action="http://www.google.com/search">
+  <input name="sitesearch" value="docs.rainmeter.net" type="hidden">
+  <input class="form-control" id="search" name="q" maxlength="255" size="16" placeholder="Search" type="text">
+</form>
+<hr />
+<nav id="sidenav" class="sidenav">
+<h4>Contents</h4>
+	<ul class="docs-nav-block">
+	<li><a href="/manual/getting-started/">Getting Started</a>
+		<ul>
+		<li><a href="/manual/getting-started/setting-up/">Setting Up</a>
+		<li><a href="/manual/getting-started/using-rainmeter/">Using Rainmeter</a>
+		<li><a href="/manual/getting-started/customizing/">Customizing</a>
+		<li><a href="/manual/getting-started/creating-skins/">Creating Skins</a>
+		<li><a href="/manual/getting-started/skin-anatomy/">Anatomy of a Skin</a>
+		<li><a href="/manual/getting-started/basic-tutorials/">Basic Tutorials</a>
+			<ul>
+			<li><a href="/manual/getting-started/basic-tutorials/launcher/">Launcher</a>
+			<li><a href="/manual/getting-started/basic-tutorials/clock/">Clock</a>
+			<li><a href="/manual/getting-started/basic-tutorials/system/">System</a>
+			</ul>
+		</ul>
+	<li><a href="/manual/installing-rainmeter/">Installing Rainmeter</a>
+	<li><a href="/manual/user-interface/">User Interface</a>
+		<ul>
+		<li><a href="/manual/user-interface/manage/">Manage</a>
+	<ul>
+		<li><a href="/manual/user-interface/manage/new-skin">New Skin</a>
+	</ul>
+		<li><a href="/manual/user-interface/about/">About</a>
+		<li><a href="/manual/user-interface/context-menus/">Context Menus</a>
+		</ul>
+	<li><a href="/manual/installing-skins/">Installing Skins</a>
+	<li><a href="/manual/publishing-skins/">Publishing Skins</a>
+	</ul>
+
+	<h4>Reference</h4>
+	<ul class="docs-nav-block">
+	<li><a href="/manual/settings/">Settings</a>
+		<ul>
+		<li><a href="/manual/settings/rainmeter-section/">[Rainmeter] Section</a>
+		<li><a href="/manual/settings/traymeasure-section/">[TrayMeasure] Section</a>
+		<li><a href="/manual/settings/skin-sections/">[Skin] Sections</a>
+		</ul>
+	<li><a href="/manual/skins/">Skins</a>
+		<ul>
+		<li><a href="/manual/skins/option-types/">Option Types</a>
+		<li><a href="/manual/skins/rainmeter-section/">[Rainmeter] Section</a>
+		<li><a href="/manual/skins/metadata-section/">[Metadata] Section</a>
+		<li><a href="/manual/skins/include-option/">@Include Options</a>
+		<li><a href="/manual/skins/resources-folder/">@Resources Folder</a>
+		</ul>
+	<li><a href="/manual/meters/">Meters</a>
+		<ul>
+		<li><a href="/manual/meters/general-options/">General Options</a>
+			<ul>
+			<li><a href="/manual/meters/general-options/image-options/">Image Options</a>
+			<li><a href="/manual/meters/general-options/meterstyles/">MeterStyles</a>
+			<li><a href="/manual/meters/general-options/tooltips/">Tooltips</a>
+			</ul>
+		<li><a href="/manual/meters/bar/">Bar</a>
+		<li><a href="/manual/meters/bitmap/">Bitmap</a>
+		<li><a href="/manual/meters/button/">Button</a>
+		<li><a href="/manual/meters/histogram/">Histogram</a>
+		<li><a href="/manual/meters/image/">Image</a>
+		<li><a href="/manual/meters/line/">Line</a>
+		<li><a href="/manual/meters/rotator/">Rotator</a>
+		<li><a href="/manual/meters/roundline/">Roundline</a>
+		<li><a href="/manual/meters/shape/">Shape</a>
+		<li><a href="/manual/meters/string/">String</a>
+	<ul>
+		<li><a href="/manual/meters/string/inline/">Inline Options</a>
+	</ul>
+		</ul>
+	<li><a href="/manual/measures/">Measures</a>
+		<ul>
+		<li><a href="/manual/measures/general-options/">General Options</a>
+			<ul>
+			<li><a href="/manual/measures/general-options/ifactions/">IfActions</a>
+			<li><a href="/manual/measures/general-options/ifconditions/">IfConditions</a>
+			<li><a href="/manual/measures/general-options/ifmatchactions/">IfMatchActions</a>
+			<li><a href="/manual/measures/general-options/substitute/">Substitute</a>
+			</ul>
+		<li><a href="/manual/measures/calc/">Calc</a>
+		<li><a href="/manual/measures/cpu/">CPU</a>
+		<li><a href="/manual/measures/freediskspace/">FreeDiskSpace</a>
+		<li><a href="/manual/measures/loop/">Loop</a>
+		<li><a href="/manual/measures/memory/">Memory</a>
+		<li><a href="/manual/measures/net/">Net</a>
+		<li><a href="/manual/measures/plugin/">Plugin</a>
+		<li><a href="/manual/measures/registry/">Registry</a>
+		<li><a href="/manual/measures/script/">Script</a>
+		<li><a href="/manual/measures/string/">String</a>
+		<li><a href="/manual/measures/time/">Time</a>
+		<li><a href="/manual/measures/uptime/">Uptime</a>
+		</ul>
+	<li><a href="/manual/plugins/">Plugins</a>
+		<ul>
+		<li><a href="/manual/plugins/actiontimer/">ActionTimer</a>
+		<li><a href="/manual/plugins/advancedcpu/">AdvancedCPU</a>
+		<li><a href="/manual/plugins/audiolevel/">AudioLevel</a>
+		<li><a href="/manual/plugins/coretemp/">CoreTemp</a>
+		<li><a href="/manual/plugins/fileview/">FileView</a>
+		<li><a href="/manual/plugins/folderinfo/">FolderInfo</a>
+		<li><a href="/manual/plugins/inputtext/">InputText</a>
+		<li><a href="/manual/plugins/itunes/">iTunes</a>
+		<li><a href="/manual/plugins/mediakey/">MediaKey</a>
+		<li><a href="/manual/plugins/nowplaying/">NowPlaying</a>
+		<li><a href="/manual/plugins/perfmon/">PerfMon</a>
+		<li><a href="/manual/plugins/ping/">Ping</a>
+		<li><a href="/manual/plugins/power/">Power</a>
+		<li><a href="/manual/plugins/process/">Process</a>
+		<li><a href="/manual/plugins/quote/">Quote</a>
+		<li><a href="/manual/plugins/recyclemanager/">RecycleManager</a>
+		<li><a href="/manual/plugins/resmon/">ResMon</a>
+		<li><a href="/manual/plugins/runcommand/">RunCommand</a>
+		<li><a href="/manual/plugins/speedfan/">SpeedFan</a>
+		<li><a href="/manual/plugins/sysinfo/">SysInfo</a>
+		<li><a href="/manual/plugins/webparser/">WebParser</a>
+		<li><a href="/manual/plugins/wifistatus/">WiFiStatus</a>
+		<li><a href="/manual/plugins/win7audio/">Win7Audio</a>
+		<li><a href="/manual/plugins/windowmessage/">WindowMessage</a>
+		</ul>
+	<li><a href="/manual/bangs/">Bangs</a>
+	<li><a href="/manual/formulas/">Formulas</a>
+	<li><a href="/manual/variables/">Variables</a>
+		<ul>
+		<li><a href="/manual/variables/built-in-variables/">Built-In Variables</a>
+		<li><a href="/manual/variables/section-variables/">Section Variables</a>
+		<li><a href="/manual/variables/mouse-variables/">Mouse Variables</a>
+		</ul>
+	<li><a href="/manual/groups/">Groups</a>
+	<li><a href="/manual/mouse-actions/">Mouse Actions</a>
+	<li><a href="/manual/lua-scripting/">Lua Scripting</a>
+	</ul>
+
+	<h4>More</h4>
+	<ul class="docs-nav-block">
+	<li><a href="/manual-beta/">4.1 Beta Manual</a>
+	<li><a href="/tips/">Tips &amp; Tricks</a>
+	<li><a href="/snippets/">Snippets</a>
+	<li><a href="/developers/">Developers</a>
+	<li><a href="/history/">Version History</a>
+	</ul>
+
+</nav>
+
+      </div>
+
+      <!-- Content -->
+      <div class="docs-content col-12 col-lg-9">
+        <h1 class="page-title">Getting Started</h1>
+        <hr />
+        <!-- Include content and Replace "!" in every url with correct path -->
+        <p>If this is your first experience with Rainmeter, then you're in the right place! <em>Getting Started</em> is a guide designed to walk you through the basics of setting up Rainmeter, using, customizing, and ultimately creating your own skins.</p>
 
 <p>Before you <a href="/manual/getting-started/setting-up/">begin</a>, here are some frequently-asked questions about what Rainmeter is and how it works.</p>
 
@@ -189,9 +229,9 @@
 
 <h3 id="WhatIsASkin">What is a "skin"?</h3>
 
-<div class="exampleprev floatright">
-	<img src="/manual/img/getting-started/index-skins.png" class="lightbox thumbnail"></a>
-	<p class="thumbnail">Some Rainmeter skins. Each skin is a separate window, and can be moved around on the desktop by clicking and dragging. Rainmeter can run any number of skins at one time, even from different sources.</p>
+<div class="exampleprev float-right thumbnail full-mobile">
+	<a href="/manual/img/getting-started/index-skins.png" data-fancybox><img src="/manual/img/getting-started/index-skins.png"></a>
+	<p>Some Rainmeter skins. Each skin is a separate window, and can be moved around on the desktop by clicking and dragging. Rainmeter can run any number of skins at one time, even from different sources.</p>
 </div>
 
 <p>A <a href="/manual/skins/">skin</a> can be many things. Some skins are very simple, single-purpose tools, like <a href="http://en.wikipedia.org/wiki/Windows_Desktop_Gadgets">Windows desktop gadgets</a>, or "widgets" on an <a href="http://en.wikipedia.org/wiki/Android_(operating_system)">Android device</a>. Others are more complex, like miniature applications themselves. Some skins even come bundled in large <a href="/manual/skins/#Suites">"suites"</a> and include their own tools for customizing their form and appearance, within or alongside Rainmeter's basic user interface. Every skin works differently, depending on the choices of that skin's individual author.</p>
@@ -204,18 +244,18 @@
 
 <p>If you only want to <b>download</b> skins from the Internet and <b>use</b> them as-is, then the answer is "none." Rainmeter provides a basic <a href="/manual/user-interface/">user interface</a> for managing your <a href="/manual/user-interface/manage/#SkinsList">library</a> of skins, saving and restoring <a href="/manual/user-interface/manage/#LayoutsTab">layouts</a>, and changing basic <a href="/manual/user-interface/manage/#SkinSettings">settings</a> such as a skin's location, transparency, and "always on top" behavior.</p>
 
-<div class="exampleprev floatleft">
-	<img src="/manual/img/getting-started/index-ui.png" class="lightbox thumbnail">
-	<p class="thumbail">Most Rainmeter features can be reached through the basic Manage window or context menus.</p>
+<div class="exampleprev float-left thumbnail full-mobile">
+	<a href="/manual/img/getting-started/index-ui.png" data-fancybox><img src="/manual/img/getting-started/index-ui.png"></a>
+	<p>Most Rainmeter features can be reached through the basic Manage window or context menus.</p>
 </div>
 
 <p>Some skin authors create their own controls for users to <b>customize</b> their skins. These controls may be included as a separate utility, or they may be created entirely within Rainmeter as another skin. If this is the case, then you will not need to know any code to customize these skins.</p>
 
 <p>In other cases, you may need to change some <a href="/manual/variables/">variables</a> in the skin code. This may be scary if you are not a programmer, but usually, these "variables" are clearly marked labeled, located near the beginning of the file so that you don't have to do any searching, and are accompanied by helpful instructions and comments.</p>
 
-<div class="exampleprev floatright">
-	<img src="/manual/img/getting-started/index-code.png" class="thumbnail">
-	<p class="thumbnail">An example of some Rainmeter code.</p>
+<div class="exampleprev float-right thumbnail">
+	<a href="/manual/img/getting-started/index-code.png" data-fancybox><img src="/manual/img/getting-started/index-code.png"></a>
+	<p>An example of some Rainmeter code.</p>
 </div>
 
 <p>If you want to <b>create</b> skins, or <b>modify</b> someone else's skin beyond the customization options that the author has provided, then you will get some hands-on experience with Rainmeter's code language. You do not need to be professional programmer to become a proficient writer of Rainmeter skins&mdash;although those skills will certainly help you, and a full-powered <a href="/manual/lua-scripting/">scripting</a> language is available for advanced users. But all of a skin's basic properties are written using a simple configuration language that is suitable for novice programmers. The difficulty level is similar to that of <a href="http://en.wikipedia.org/wiki/Html">HTML</a> or <a href="http://en.wikipedia.org/wiki/JavaScript">JavaScript</a>.</p>
@@ -234,18 +274,70 @@
 
 <p>In short, you cannot usually download and apply someone else's amazing desktop transformation in one click. Most customizers are courteous enough to provide links to the myriad programs, plugins, icons, wallpapers and other materials that they have used.</p>
 
-<p style="clear: both;">&nbsp;</p>
-
-<div class="right"><p><a href="/manual/getting-started/setting-up/">Continue to: Setting Up &raquo;</a></p> </div>
-</article>
+<div class="docs-pagination">
+  <hr class="mt-4"/>
+  <a class="btn btn-outline-primary float-right" href="/manual/getting-started/setting-up/">Continue to: Setting Up &raquo;</a>
 </div>
 
-			</div>
-		</div>
+      </div>
 
-		<div id="footer-push"></div>
-	</div>
+    </div>
+  </div>
 
-	<script src="/js/main.js?v=4"></script>
+</div>
+
+<!-- Include Footer -->
+<footer id="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-6">Made with ❤ by the community.</div>
+      <div class="col-6 text-center text-md-right">Icons by <a href="https://feathericons.com/" alt="feathericons">feathericons.com</a></div>
+    </div>
+  </div>
+</footer>
+
+
+
+	<!-- Javascript files  -->
+	<script src="../../js/main.js"></script>
+	<script src="../../js/jquery-3.2.1.slim.min.js"></script>
+	<script src="../../js/bootstrap.min.js"></script>
+	<script src="../../js/ahk-sliding-panel.js"></script>
+	<script src="../../js/jquery.fancybox.min.js"></script>
+
+	<!-- Script for the slideout menu on mobile -->
+	<script>
+		// set slideout menu variables
+		var docsnav = new ahk_slideout({
+		  id: "menu",
+		  side: "left",
+		  width: "18rem",
+		  touch_boundary: "50",
+		  slide_time: "0.2"
+		})
+
+		// function to toggle menu
+		function openNavMenu() {
+		  docsnav.openMenu()
+		}
+		// function to close menu
+		function closeNavMenu() {
+		  docsnav.closeMenu()
+		}
+
+		// when scrolling below 90, add sticky class to nav-button
+		$(function() {
+		  var header = $("#nav-button");
+		  $(window).scroll(function() {
+		    var scroll = $(window).scrollTop();
+		    if (scroll >= 90) {
+		      header.addClass("sticky");
+		    } else {
+		      header.removeClass("sticky");
+		    }
+		  });
+		});
+	</script>
+
 </body>
 </html>
