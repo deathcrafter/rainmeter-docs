@@ -69,7 +69,7 @@
 
 <h4 id="category"><a href="/developers">Developers</a></h4>
 <svg class="closeButton" onclick="closeNavMenu()" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-<form id="search-form" method="get" action="http://www.google.com/search">
+<form id="search-form" method="get" action="https://www.google.com/search">
   <input name="sitesearch" value="docs.rainmeter.net" type="hidden">
   <input class="form-control" id="search" name="q" maxlength="255" size="16" placeholder="Search" type="text">
 </form>
@@ -209,7 +209,7 @@
 		</p>
 		<p><b>Returns</b>: A string to replace the section variable with (as a LPCWSTR). If a nullptr is returned, the variable will not be replaced and remain unchanged.</p>
 		<h3>Example:</h3>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="function">PLUGIN_EXPORT LPCWSTR <span class="title">SomeFunction</span><span class="params">(<span class="keyword">void</span>* rm, <span class="keyword">const</span> <span class="keyword">int</span> argc, <span class="keyword">const</span> WCHAR* argv[] argv)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">	Measure measure = (Measure)data;</div><div class="line">	<span class="keyword">if</span> (argc &gt; <span class="number">0</span>)</div><div class="line">	&#123;</div><div class="line">		<span class="comment">// Do something and return a value to replace variable with</span></div><div class="line">		<span class="keyword">return</span> doSomething(argv);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="literal">nullptr</span>;  <span class="comment">// Do not replace the variable</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="function">PLUGIN_EXPORT LPCWSTR <span class="title">SomeFunction</span><span class="params">(<span class="keyword">void</span>* data, <span class="keyword">const</span> <span class="keyword">int</span> argc, <span class="keyword">const</span> WCHAR* argv[])</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">	Measure measure = (Measure)data;</div><div class="line">	<span class="keyword">if</span> (argc &gt; <span class="number">0</span>)</div><div class="line">	&#123;</div><div class="line">		<span class="comment">// Do something and return a value to replace variable with</span></div><div class="line">		<span class="keyword">return</span> doSomething(argv);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="literal">nullptr</span>;  <span class="comment">// Do not replace the variable</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
 	</dd>
 </dl>
