@@ -207,7 +207,7 @@
 
 	<h4>More</h4>
 	<ul class="docs-nav-block">
-	<li><a href="/manual-beta/">4.1 Beta Manual</a>
+	<li><a href="/manual-beta/">4.2 Beta Manual</a>
 	<li><a href="/tips/">Tips &amp; Tricks</a>
 	<li><a href="/snippets/">Snippets</a>
 	<li><a href="/developers/">Developers</a>
@@ -233,7 +233,7 @@
 <li>In a Bang: <code>LeftMouseUpAction=[!SetOption SomeMeter W "((2.5 + 100) * 2)"]</code></li>
 </ul>
 
-<p>There are a few place where formulas are not allowed. These are primarily places where the option value is assumed to be a string and only a string. In those cases, the characters used in a formula are treated as any other string character. A few examples are:</p>
+<br/><p>There are a few place where formulas are not allowed. These are primarily places where the option value is assumed to be a string and only a string. In those cases, the characters used in a formula are treated as any other string character. A few examples are:</p>
 
 <ul>
 <li>The <code>Text</code> option of a String meter.</li>
@@ -243,7 +243,7 @@
 <li><code>TootipText</code> or <code>TooltipTitle</code> options.</li>
 </ul>
 
-<p>While formulas can be used in the [Variables] section of a skin, be aware that the [Variables] section itself does not resolve the formula. If you have a variable <code>MyVar=(5 * 2)</code>, then the value of #MyVar# is not "10", but literally "(5 * 2)". However, if you then use the variable in an option that does allow formulas, that option itself will do the math, as in <code>X=#MyVar#</code> in a meter.</p>
+<br/><p>While formulas can be used in the [Variables] section of a skin, be aware that the [Variables] section itself does not resolve the formula. If you have a variable <code>MyVar=(5 * 2)</code>, then the value of #MyVar# is not "10", but literally "(5 * 2)". However, if you then use the variable in an option that does allow formulas, that option itself will do the math, as in <code>X=#MyVar#</code> in a meter.</p>
 
 <p>Mathematical formulas must be entirely enclosed in (parentheses) to alert Rainmeter that it is a formula, unless they are being used in the <a href="/manual/measures/calc/#Formula">Formula</a> option of a <a href="/manual/measures/calc/">Calc</a> measure or in a <a href="/manual/measures/general-options/ifconditions/">IfCondition</a> option, where the function is always assumed to be a formula, and the enclosing parentheses are optional.</p>
 
@@ -289,6 +289,7 @@
 	<li><code>Atan(<em>x</em>)</code>: The principal arc tangent of x, in the interval [-PI/2,+PI/2] radians.</li>
 	<li><code>Atan2(<em>y</em>, <em>x</em>)</code>: The principal arc tangent in the interval [-PI,+PI] radians between points <em>y</em> and <em>x</em> in the Cartesian plane. The sign of the elements determines the quadrant.</li>
 	<li><code>Rad(<em>x</em>)</code>: Converts <em>x</em> degrees to radians.</li>
+	<li><code>Deg(<em>x</em>)</code>: Converts <em>x</em> radians to degrees.</li>
 	<li><code>Abs(<em>x</em>)</code>: Absolute value of <em>x</em>.</li>
 	<li><code>Neg(<em>x</em>)</code>: Negative value of <em>x</em>.</li>
 	<li><code>Exp(<em>x</em>)</code>: Returns <em>e</em><sup>x</sup>.</li>
@@ -319,11 +320,11 @@
 <p>This will evaluate condition as being either true or false. If it is true, the expression to the left of the colon (:) is evaluated. If it is false, the expression to the right is evaluated. This is equivalent to the following if-then-else statement:</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">if (condition)</div><div class="line">  then</div><div class="line">    expr. if true</div><div class="line">  else</div><div class="line">    expr. if false</div><div class="line">end if</div></pre></td></tr></table></figure>
 
-<figure class="highlight ini"><table><tr><td class="code"><pre><div class="line"><span class="section">[Measure]</span></div><div class="line"><span class="attr">Measure</span>=Calc</div><div class="line"><span class="attr">Formula</span>=<span class="number">5</span></div><div class="line"></div><div class="line"><span class="section">[Meter]</span></div><div class="line"><span class="attr">Meter</span>=String</div><div class="line"><span class="attr">X</span>=([Measure] &lt; <span class="number">6</span> ? <span class="number">0</span> : <span class="number">10</span>)</div><div class="line"><span class="attr">DynamicVariables</span>=<span class="number">1</span></div></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="code"><pre><div class="line"><span class="section">[Measure]</span></div><div class="line"><span class="attr">Measure</span>=Calc</div><div class="line"><span class="attr">Formula</span>=<span class="number">5</span></div><div class="line"> </div><div class="line"><span class="section">[Meter]</span></div><div class="line"><span class="attr">Meter</span>=String</div><div class="line"><span class="attr">X</span>=([Measure] &lt; <span class="number">6</span> ? <span class="number">0</span> : <span class="number">10</span>)</div><div class="line"><span class="attr">DynamicVariables</span>=<span class="number">1</span></div></pre></td></tr></table></figure>
 
 <p>The meter would be positioned at <code>X=0</code> since the condition <code>[Measure] &lt; 6</code> evaluates to true.</p>
 <p>Conditional operators can be nested. It should be noted that there is a maximum of 30 nested operators.</p>
-<figure class="highlight ini"><table><tr><td class="code"><pre><div class="line"><span class="section">[Measure]</span></div><div class="line"><span class="attr">Measure</span>=Calc</div><div class="line"><span class="attr">Formula</span>=<span class="number">2</span></div><div class="line"></div><div class="line"><span class="section">[Meter]</span></div><div class="line"><span class="attr">Meter</span>=String</div><div class="line"><span class="attr">X</span>=([Measure] &lt; <span class="number">1</span> ? <span class="number">99</span> : ([Measure] &lt; <span class="number">2</span> ? <span class="number">98</span> : ([Measure] &lt; <span class="number">3</span> ? <span class="number">97</span> : <span class="number">96</span>)))</div><div class="line"><span class="attr">DynamicVariables</span>=<span class="number">1</span></div></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="code"><pre><div class="line"><span class="section">[Measure]</span></div><div class="line"><span class="attr">Measure</span>=Calc</div><div class="line"><span class="attr">Formula</span>=<span class="number">2</span></div><div class="line"> </div><div class="line"><span class="section">[Meter]</span></div><div class="line"><span class="attr">Meter</span>=String</div><div class="line"><span class="attr">X</span>=([Measure] &lt; <span class="number">1</span> ? <span class="number">99</span> : ([Measure] &lt; <span class="number">2</span> ? <span class="number">98</span> : ([Measure] &lt; <span class="number">3</span> ? <span class="number">97</span> : <span class="number">96</span>)))</div><div class="line"><span class="attr">DynamicVariables</span>=<span class="number">1</span></div></pre></td></tr></table></figure>
 
 <p>The meter would be positioned at <code>X=97</code>. Since the first statement of <code>[Measure] &lt; 1</code> is false, the formula begins testing the nested formulas in order until the condition becomes true . If none of the conditions are met, the final false value of 96 would be set.</p>
 

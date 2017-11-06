@@ -207,7 +207,7 @@
 
 	<h4>More</h4>
 	<ul class="docs-nav-block">
-	<li><a href="/manual-beta/">4.1 Beta Manual</a>
+	<li><a href="/manual-beta/">4.2 Beta Manual</a>
 	<li><a href="/tips/">Tips &amp; Tricks</a>
 	<li><a href="/snippets/">Snippets</a>
 	<li><a href="/developers/">Developers</a>
@@ -242,7 +242,7 @@
 
 	<dt id="DefaultUpdateDivider"><code>DefaultUpdateDivider</code> <small>Default: <code>1</code></small></dt>
 	<dd>
-		<p>Default number of updates at which skin measure and meter values are updated. The <a href="#Update">Update</a> option is multiplied by the specified value to determine how often measures and meters are updated.</p>
+		<p>Default number of updates at which skin measure and meter values are updated. The <a href="#Update">Update</a> option is multiplied by the specified value to determine how often measures and meters are updated.
 
 		<p>Example: If <code>Update=1000</code> and <code>DefaultUpdateDivider=30</code>, then by default all measures and meters are updated every 30 seconds.</p>
 
@@ -319,6 +319,18 @@
 	<dt id="Group"><code>Group</code></dt>
 	<dd>
 		<p>Defines a group or series of groups that the skin belongs to. For more information please see the <a href="/manual/groups/">Groups</a> page.</p>
+	</dd>
+</dl>
+
+	<dt id="SelectedColor"><code>SelectedColor</code><small>Default: <code>(see below)</code></small></dt>
+	<dd>
+		<p>A <a href="/manual/skins/option-types/#Color">color code</a> used to define the color and transparency of the overlay when a skin is selected in a <a href="/manual/arranging-skins/#Multiple">Drag Group</a>. If this option is not defined, the default setting <a href="/manual/settings/rainmeter-section/#SelectedColor">SelectedColor</a> option is used.</p>
+		<p><b>Note:</b> This option will override any default <a href="/manual/settings/rainmeter-section/#SelectedColor">SelectedColor</a>.</p>
+	</dd>
+
+	<dt id="DragGroup"><code>DragGroup</code></dt>
+	<dd>
+		<p>A group or series of <a href="/manual/arranging-skins/#Multiple">Drag Groups</a> that the skin belongs to. So if any skin is selected, any skins in the same DragGroup will automatically be selected as well.</p>
 	</dd>
 </dl>
 
@@ -424,7 +436,7 @@
 	</dd>
 	<br><p><b>Note:</b> Aero Blur options can be dynamically controlled with several <a href="/manual/bangs/#ShowHideToggleBlur">bangs</a>.</p>
 	<h3>Example</h3>
-<figure class="highlight ini"><table><tr><td class="code"><pre><div class="line"><span class="section">[Rainmeter]</span></div><div class="line"><span class="attr">Update</span>=<span class="number">1000</span></div><div class="line"><span class="attr">Blur</span>=<span class="number">1</span></div><div class="line"><span class="attr">BlurRegion</span>=<span class="number">1</span>,<span class="number">10</span>,<span class="number">10</span>,<span class="number">190</span>,<span class="number">50</span></div><div class="line"><span class="comment">; BlurRegion creates a rectangle starting at 10 pixels from the left, 10 pixels down from the top, and ending at 190 pixels to the right, 50 pixels from the top.</span></div><div class="line"></div><div class="line"><span class="attr">BlurRegion2</span>=<span class="number">3</span>,<span class="number">10</span>,<span class="number">70</span>,<span class="number">80</span>,<span class="number">110</span></div><div class="line"><span class="attr">BlurRegion3</span>=<span class="number">2</span>,<span class="number">10</span>,<span class="number">130</span>,<span class="number">190</span>,<span class="number">170</span>,<span class="number">15</span></div><div class="line"></div><div class="line"><span class="section">[Background]</span></div><div class="line"><span class="attr">Meter</span>=Image</div><div class="line"><span class="attr">W</span>=<span class="number">200</span></div><div class="line"><span class="attr">H</span>=<span class="number">180</span></div><div class="line"><span class="attr">SolidColor</span>=<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">50</span></div><div class="line"><span class="attr">LeftMouseUpAction</span>=[!AddBlur <span class="string">"1,0,0,200,80"</span>]</div></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="code"><pre><div class="line"><span class="section">[Rainmeter]</span></div><div class="line"><span class="attr">Update</span>=<span class="number">1000</span></div><div class="line"><span class="attr">Blur</span>=<span class="number">1</span></div><div class="line"><span class="attr">BlurRegion</span>=<span class="number">1</span>,<span class="number">10</span>,<span class="number">10</span>,<span class="number">190</span>,<span class="number">50</span></div><div class="line"><span class="comment">; BlurRegion creates a rectangle starting at 10 pixels from the left, 10 pixels down from the top, and ending at 190 pixels to the right, 50 pixels from the top.</span></div><div class="line"> </div><div class="line"><span class="attr">BlurRegion2</span>=<span class="number">3</span>,<span class="number">10</span>,<span class="number">70</span>,<span class="number">80</span>,<span class="number">110</span></div><div class="line"><span class="attr">BlurRegion3</span>=<span class="number">2</span>,<span class="number">10</span>,<span class="number">130</span>,<span class="number">190</span>,<span class="number">170</span>,<span class="number">15</span></div><div class="line"> </div><div class="line"><span class="section">[Background]</span></div><div class="line"><span class="attr">Meter</span>=Image</div><div class="line"><span class="attr">W</span>=<span class="number">200</span></div><div class="line"><span class="attr">H</span>=<span class="number">180</span></div><div class="line"><span class="attr">SolidColor</span>=<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">50</span></div><div class="line"><span class="attr">LeftMouseUpAction</span>=[!AddBlur <span class="string">"1,0,0,200,80"</span>]</div></pre></td></tr></table></figure>
 
 </dl>
 

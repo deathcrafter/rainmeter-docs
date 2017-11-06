@@ -207,7 +207,7 @@
 
 	<h4>More</h4>
 	<ul class="docs-nav-block">
-	<li><a href="/manual-beta/">4.1 Beta Manual</a>
+	<li><a href="/manual-beta/">4.2 Beta Manual</a>
 	<li><a href="/tips/">Tips &amp; Tricks</a>
 	<li><a href="/snippets/">Snippets</a>
 	<li><a href="/developers/">Developers</a>
@@ -280,7 +280,7 @@
 
 <p>The <a href="http://www.lua.org/manual/5.1/manual.html#pdf-dofile">dofile function</a> can be used to include libraries or other snippets of Lua code. You must specify a full path to the dofile, using the syntax <code>dofile('C:\PathToDoFile\SomeLua.lua')</code>. Use the <a href="#GetVariable">GetVariable</a> function if you want to use the #@# variable shortcut to the @Resources folder for the current config, or <a href="#MakePathAbsolute">MakePathAbsolute</a> if you want to have the .lua file be relative to the current skin folder.</a>
 
-<figure class="highlight lua"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Initalize</span><span class="params">()</span></span></div><div class="line">	<span class="built_in">dofile</span>(SKIN:GetVariable(<span class="string">'@'</span>)..<span class="string">'MyDoFiles\\toolkit.lua'</span>)</div><div class="line">	<span class="built_in">dofile</span>(SKIN:MakePathAbsolute(<span class="string">'toolkit.lua'</span>))</div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<figure class="highlight lua"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Initialize</span><span class="params">()</span></span></div><div class="line">	<span class="built_in">dofile</span>(SKIN:GetVariable(<span class="string">'@'</span>)..<span class="string">'MyDoFiles\\toolkit.lua'</span>)</div><div class="line">	<span class="built_in">dofile</span>(SKIN:MakePathAbsolute(<span class="string">'toolkit.lua'</span>))</div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
 
 <p><b>Note:</b> While a dofile you call can be anywhere on your system, be aware that if you do not put the dofile .lua file somewhere in the path to the current config, you won't be able to distribute it with your skin as a .rmskin package. A .rmskin package can only distribute the contents of a single root config folder.</p>
 
@@ -539,9 +539,8 @@
 <p>The following Lua features are not available in Rainmeter at this time:</p>
 
 <ul>
-	<li>The <a href="http://www.lua.org/manual/5.1/manual.html#5.2">coroutine</a> and <a href="http://www.lua.org/manual/5.1/manual.html#5.9">debug</a> libraries.</li>
 	<li>External compiled libraries, such as <a href="http://luacurl.luaforge.net/">LuaCURL</a>.</li>
-	<li>The <code><a href="http://www.lua.org/manual/5.1/manual.html#pdf-require">require</a></code>, <code>os.exit</code>, <code>os.setlocale</code>, <code>io.popen</code>, <code>collectgarbage</code>, <code>getfenv</code>, and <code>setfenv</code> functions.</li>
+	<li>The <code><a href="http://www.lua.org/manual/5.1/manual.html#pdf-require">require</a></code>, <code>os.exit</code>, <code>os.setlocale</code>, <code>io.popen</code>, and <code>collectgarbage</code> functions.</li>
 </ul>
 
 <h3 id="Deprecated">Deprecated Features</h3>

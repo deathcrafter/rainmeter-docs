@@ -207,7 +207,7 @@
 
 	<h4>More</h4>
 	<ul class="docs-nav-block">
-	<li><a href="/manual-beta/">4.1 Beta Manual</a>
+	<li><a href="/manual-beta/">4.2 Beta Manual</a>
 	<li><a href="/tips/">Tips &amp; Tricks</a>
 	<li><a href="/snippets/">Snippets</a>
 	<li><a href="/developers/">Developers</a>
@@ -342,7 +342,8 @@
 <li id="Monitors"><b>Display monitor</b>: Settings for the monitor on which the skin is displayed.<br><br>
 	<b>Use default: Primary monitor</b>: Removes the <code>@<em>N</em></code> directive from <a href="/manual/settings/skin-sections/#WindowXY">WindowX/WindowY</a> settings.<br>
 	<b>@0, @1, @2, ... , @32</b>: Adds the specified monitor number to WindowX/WindowY settings. <code>@0</code> represents <a href="http://msdn.microsoft.com/en-us/library/dd145136%28VS.85%29.aspx">"The Virtual Screen"</a>.<br>
-	<b>Auto-select based on window position</b>: If checked, the WindowX/WindowY <code>@<em>N</em></code> settings are made automatically based on the position of the meter's window. This setting will be unchecked when a specific monitor is selected.</li>
+	<b>Auto-select based on window position</b>: If checked, the WindowX/WindowY <code>@<em>N</em></code> settings are made automatically based on the position of the meter's window. This setting will be unchecked when a specific monitor is selected.
+</li>
 </ul>
 
 <h3 id="SkinButtons">Buttons used to control skins:</h3>
@@ -442,14 +443,6 @@
 <li><b>Show log file</b><br>If clicked, the Rainmeter.log file will be loaded in the text editor associated with .log files.</li>
 <li><b>Delete log file</b><br>If clicked, the Rainmeter.log file will be deleted. If <b>Log to file</b> is currently active, it will automatically be turned off.</li>
 </ul>
-
-<h3 id="EditTempate">Edit NewSkin.template file</h3>
-
-<p>When the <a href="#CreateNewSkin">Create new skin</a> button is used to create a new root-level skin, the new skin is initially populated with the contents of a file <b>NewSkin.template</b> which is stored in the <a href="/manual/variables/built-in-variables/#SETTINGSPATH">settings folder</a>. This link will open this template file in your default or defined text editor, so you can adjust what is in a new skin as desired.</p>
-
-<p>The default template is:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[Rainmeter]</div><div class="line">Update=1000</div><div class="line">AccurateText=1</div><div class="line"></div><div class="line">[Metadata]</div><div class="line">Name=</div><div class="line">Author=</div><div class="line">Information=</div><div class="line">Version=</div><div class="line">License=Creative Commons Attribution - Non - Commercial - Share Alike 3.0</div><div class="line"></div><div class="line">[Variables]</div><div class="line"></div><div class="line">[MeterString]</div><div class="line">Meter=String</div></pre></td></tr></table></figure>
-
 
       </div>
 

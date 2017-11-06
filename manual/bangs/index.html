@@ -207,7 +207,7 @@
 
 	<h4>More</h4>
 	<ul class="docs-nav-block">
-	<li><a href="/manual-beta/">4.1 Beta Manual</a>
+	<li><a href="/manual-beta/">4.2 Beta Manual</a>
 	<li><a href="/tips/">Tips &amp; Tricks</a>
 	<li><a href="/snippets/">Snippets</a>
 	<li><a href="/developers/">Developers</a>
@@ -277,7 +277,7 @@
 		<ul>
 		<li><code>TabName</code> (optional): Name of the tab to open. Valid values are: <code>Skins</code> (default), <code>Layouts</code>, and <code>Settings</code>.</li>
 		<li><code>Config</code> (optional): <a href="/manual/skins/#Config">Config name</a>. If specified the list on the left will jump to and select the named config. If Config is specified, then TabName is required.</li>
-		<li><code>File</code> (optional): A skin .ini file in a named config. If specified the list on the left will jump to and select the named skin .ini file. If File is specified, then TabName and Config are required.</li>
+		<li><code>File</code> (optional): A skin .ini file in a named config. If specified the list on the left will jump to and select the named skin .ini file. If File is specified, then TabName and Config are required.</li>		
 		</ul>
 		<br><b>Example:</b> <code>!Manage Skins "illustro\Clock" "Clock.ini"</code>
 	</dd>
@@ -427,6 +427,15 @@
 		</ul>
 	</dd>
 
+	<dt id="FadeDuration"><code>!FadeDuration</code> <small>Parameter: <code><b>milliseconds</b></code>, <code><em>Config</em></code></small></dt>
+	<dd>
+		Sets the <a href="/manual/settings/skin-sections/#FadeDuration">FadeDuration</a> value in milliseconds.
+		<ul>
+		<li><code>milliseconds</code> (required): Number of milliseconds for fade transition.</li>
+		<li><code>Config</code> (optional)</li>
+		</ul>
+	</dd>
+
 	<dt id="ShowHideToggleBlur"><code>!ShowBlur</code>, <code>!HideBlur</code>, <code>!ToggleBlur</code> <small>Parameter: <code><em>Config</em></code></small></dt>
 	<dd>
 		Shows or hides the <a href="/manual/skins/rainmeter-section/#AeroBlur">blur</a> behind a skin.
@@ -516,7 +525,7 @@
 		<p>Delays execution for a defined number of milliseconds when embedded in an <a href="/manual/skins/option-types/#Action">action option</a>. The lowest possible value is 16 milliseconds.</p>
 		<p>Note that this is a very limited form of what is offered by the <a href="/manual/plugins/actiontimer/">ActionTimer plugin</a>. There is no way to interrupt or cancel this short of a <code>!Refresh</code> of the skin, and nothing in the action itself can be dynamically changed during the execution of the action. It is simply a brute-force way to delay part of an action that has multiple components.</p>
 		<p><b>Example:</b> <code>[!ShowMeter SomeMeter][!Delay 5000][!HideMeter SomeMeter]</code></p>
-	</dd>		
+	</dd>	
 
 	<dt id="SkinMenu"><code>!SkinMenu</code> <small>Parameter: <code><em>Config</em></code></small></dt>
 	<dd>
@@ -598,6 +607,16 @@
 		<li><code>Config</code> (optional)</li>
 		</ul>
 	</dd>
+
+	<dt id="EditSkin"><code>!EditSkin</code> <small>Parameters: <code><em>Config</em>, <em>File</em></code></small></dt>
+	<dd>
+		Edits a skin .ini file using the text editor defined in <a href="/manual/settings/rainmeter-section/#ConfigEditor">ConfigEditor</a> in Rainmeter settings, or the text editor associated with .ini files in Windows. The default will be Windows Notepad.exe. If no parameters are defined the current skin .ini file will be edited.
+		<ul>
+		<li><code>Config</code> (optional): The config containing the skin.</li>
+		<li><code>File</code> (optional): The .ini skin file in the config to edit.</li>
+		</ul>
+		<br><b>Example:</b> <code>!EditSkin "illustro\Clock" "Clock.ini"</code>
+	</dd>
 </dl>
 
 <h3 id="SkinGroup">Skin group bangs:</h3>
@@ -619,6 +638,15 @@
 		</ul>
 	</dd>
 
+	<dt id="FadeDurationGroup"><code>!FadeDurationGroup</code> <small>Parameter: <code><b>milliseconds</b></code>, <code><b>Group</b></code></small></dt>
+	<dd>
+		Sets the <a href="/manual/settings/skin-sections/#FadeDuration">FadeDuration</a> value in milliseconds for a group of skins.
+		<ul>
+		<li><code>milliseconds</code> (required): Number of milliseconds for fade transition.</li>
+		<li><code>Group</code> (required): Group to set the value for.</li>
+		</ul>
+	</dd>
+
 	<dt id="DeactivateConfigGroup"><code>!DeactivateConfigGroup</code> <small>Parameter: <code><b>Group</b></code></small></dt>
 	<dd>
 		Deactivates a <a href="/manual/groups/">group</a> of skins.
@@ -627,7 +655,7 @@
 		</ul>
 	</dd>
 
-	<dt id="UpdateGroup"><code>!Updategroup</code> <small>Parameter: <code><b>Group</b></code></small></dt>
+	<dt id="UpdateGroup"><code>!UpdateGroup</code> <small>Parameter: <code><b>Group</b></code></small></dt>
 	<dd>
 		Overrides the setting of the <a href="/manual/skins/rainmeter-section/#Update">Update</a> option in [Rainmeter] and immediately updates the skins in the specified group, all <a href="/manual/measures/">measures</a> and <a href="/manual/meters/">meters</a>. This does not override any UpdateDivider options on <a href="/manual/measures/general-options/#UpdateDivider">measures</a> or <a href="/manual/meters/general-options/#UpdateDivider">meters</a>.
 		<ul>
@@ -781,7 +809,7 @@
 		<li><code>Measure</code> (required): Name of the measure.</li>
 		<li><code>Config</code> (optional)</li>
 		</ul>
-		This behavior can also be controlled with the <a href="/manual/measures/general-options/#Disabled">Disabled</a> general measure option. Numeric values in measures will be set to zero when the measure is disabled. <br>
+		This behavior can also be controlled with the <a href="/manual/measures/general-options/#Disabled">Disabled</a> general measure option. Numeric values in measures will be set to zero when the measure is disabled.<br>
 		<br><b>Example:</b> <code>!ToggleMeasure "CPUMeasure"</code>
 	</dd>
 

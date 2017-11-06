@@ -207,7 +207,7 @@
 
 	<h4>More</h4>
 	<ul class="docs-nav-block">
-	<li><a href="/manual-beta/">4.1 Beta Manual</a>
+	<li><a href="/manual-beta/">4.2 Beta Manual</a>
 	<li><a href="/tips/">Tips &amp; Tricks</a>
 	<li><a href="/snippets/">Snippets</a>
 	<li><a href="/developers/">Developers</a>
@@ -224,14 +224,14 @@
         <hr />
         <!-- Include content and Replace "!" in every url with correct path -->
         <p><code>Measure=NetIn</code> measures incoming (download) network traffic.<br>
-<code>Measure=NetOut</code> measures outgoing (upload) network traffic.<br>
-<code>Measure=NetTotal</code> measures both incoming and outgoing network traffic.</p>
+	<code>Measure=NetOut</code> measures outgoing (upload) network traffic.<br>
+	<code>Measure=NetTotal</code> measures both incoming and outgoing network traffic.</p>
 
 <p><b>Net measures will have a value in bytes per second.</b></p>
 
-<p><b>Bits and Bytes</b></p>
+<p><b>Bits and Bytes</b></p> 
 
-<p>The Net measures internally measure the traffic across the NIC (Network Interface Controller) in bits per second. The measures automatically divide both this internal measurement and any <a href="/manual/measures/general-options/#MinValue">MinValue</a> or <a href="/manual/measures/general-options/#MaxValue">MaxValue</a> options by 8, (there are 8 bits in a byte) in order to use and display the values as bytes in measures and meters.<p>
+<p>The Net measures internally measure the traffic across the NIC (Network Interface Controller) in bits per second. The measures automatically divide both this internal measurement and any <a href="/manual/measures/general-options/#MinValue">MinValue</a> or <a href="/manual/measures/general-options/#MaxValue">MaxValue</a> options by 8, (there are 8 bits in a byte) in order to use and display the values as bytes in measures and meters. This can be changed with the <a href="UseBits">UseBits</a> option on the measure.<p>
 
 <p><b>Note</b> that this means that any <a href="/manual/measures/general-options/#MinValue">MinValue</a> and <a href="/manual/measures/general-options/#MaxValue">MaxValue</a> options on the measures, used to support a <a href="/manual/measures/#Percentage">percentage</a> in meters, should be set by you in <b>bits</b>, not bytes. Rainmeter itself will do the conversion to bytes automatically when the value(s) are used.</p>
 
@@ -274,6 +274,13 @@
 
 		<p><b>Note:</b> The network traffic cumulative statistics are persistent and stored when Rainmeter is exited. They can be reset by either using the "Reset statistics" button in the "Settings" tab of the <a href="/manual/user-interface/manage/#General">Manage</a> interface, or by using the <a href="/manual/bangs/#ResetStats">!ResetStats</a> bang in a skin.</p>
 	</dd>
+	
+	<dt id="UseBits"><code>UseBits</code> <small>Default: <code>0</code></small></dt>
+	<dd>
+		<p>If set to <code>1</code>, the value of the measure is returned in bits per second, rather than the default bytes per second.</p>
+		
+		<p><b>Note:</b> If UseBits is set to 1 then any <a href="/manual/measures/general-options/#MaxValue">MaxValue</a> derived or set on the measure will also be calculated in bits, for use in percentages in meters that require them.</p>
+	</dd>	
 
 </dl>
 
@@ -293,7 +300,7 @@
 </dl>
 
 <h2>Example</h2>
-<figure class="highlight ini"><table><tr><td class="code"><pre><div class="line"><span class="section">[Rainmeter]</span></div><div class="line"><span class="attr">Update</span>=<span class="number">1000</span></div><div class="line"><span class="attr">BackgroundMode</span>=<span class="number">2</span></div><div class="line"><span class="attr">SolidColor</span>=<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span></div><div class="line"></div><div class="line"><span class="section">[MeasureNetIn]</span></div><div class="line"><span class="attr">Measure</span>=NetIn</div><div class="line"></div><div class="line"><span class="section">[MeasureNetOut]</span></div><div class="line"><span class="attr">Measure</span>=NetOut</div><div class="line"></div><div class="line"><span class="section">[MeterText]</span></div><div class="line"><span class="attr">Meter</span>=String</div><div class="line"><span class="attr">MeasureName</span>=MeasureNetIn</div><div class="line"><span class="attr">MeasureName2</span>=MeasureNetOut</div><div class="line"><span class="attr">X</span>=<span class="number">5</span></div><div class="line"><span class="attr">Y</span>=<span class="number">5</span></div><div class="line"><span class="attr">W</span>=<span class="number">100</span></div><div class="line"><span class="attr">H</span>=<span class="number">20</span></div><div class="line"><span class="attr">FontColor</span>=<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span></div><div class="line"><span class="attr">NumOfDecimals</span>=<span class="number">1</span></div><div class="line"><span class="attr">AutoScale</span>=<span class="number">1</span></div><div class="line"><span class="attr">Text</span>=<span class="string">"In: %1B, Out: %2B"</span></div></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="code"><pre><div class="line"><span class="section">[Rainmeter]</span></div><div class="line"><span class="attr">Update</span>=<span class="number">1000</span></div><div class="line"><span class="attr">BackgroundMode</span>=<span class="number">2</span></div><div class="line"><span class="attr">SolidColor</span>=<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span></div><div class="line"> </div><div class="line"><span class="section">[MeasureNetIn]</span></div><div class="line"><span class="attr">Measure</span>=NetIn</div><div class="line"> </div><div class="line"><span class="section">[MeasureNetOut]</span></div><div class="line"><span class="attr">Measure</span>=NetOut</div><div class="line"> </div><div class="line"><span class="section">[MeterText]</span></div><div class="line"><span class="attr">Meter</span>=String</div><div class="line"><span class="attr">MeasureName</span>=MeasureNetIn</div><div class="line"><span class="attr">MeasureName2</span>=MeasureNetOut</div><div class="line"><span class="attr">X</span>=<span class="number">5</span></div><div class="line"><span class="attr">Y</span>=<span class="number">5</span></div><div class="line"><span class="attr">W</span>=<span class="number">100</span></div><div class="line"><span class="attr">H</span>=<span class="number">20</span></div><div class="line"><span class="attr">FontColor</span>=<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span></div><div class="line"><span class="attr">NumOfDecimals</span>=<span class="number">1</span></div><div class="line"><span class="attr">AutoScale</span>=<span class="number">1</span></div><div class="line"><span class="attr">Text</span>=<span class="string">"In: %1B, Out: %2B"</span></div></pre></td></tr></table></figure>
 
 <p>A more detailed example and explanation can be found at <a href="/tips/network-skin">Network Skin</a>.</p>
 
