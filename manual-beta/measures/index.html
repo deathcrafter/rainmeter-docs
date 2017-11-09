@@ -249,7 +249,7 @@
 
 <p>Below is an example of a complete working measure:</p>
 
-<figure class="highlight ini"><table><tr><td class="code"><pre><div class="line"><span class="section">[MeasureFour]</span></div><div class="line"><span class="attr">Measure</span>=Calc</div><div class="line"><span class="attr">Formula</span>=<span class="number">2</span>+<span class="number">2</span></div><div class="line"><span class="attr">UpdateDivider</span>=-<span class="number">1</span></div></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[MeasureFour]</span></span><br><span class="line"><span class="attr">Measure</span>=Calc</span><br><span class="line"><span class="attr">Formula</span>=<span class="number">2</span>+<span class="number">2</span></span><br><span class="line"><span class="attr">UpdateDivider</span>=-<span class="number">1</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="Values">Values</h2>
 
@@ -279,7 +279,7 @@
 
 <p>For example:</p>
 
-<figure class="highlight ini"><table><tr><td class="code"><pre><div class="line"><span class="section">[MeasureCPUTemp]</span></div><div class="line"><span class="attr">Measure</span>=Plugin</div><div class="line"><span class="attr">Plugin</span>=SpeedFanPlugin</div><div class="line"><span class="attr">SpeedFanType</span>=TEMPERATURE</div><div class="line"><span class="attr">SpeedFanScale</span>=C</div><div class="line"><span class="attr">SpeedFanNumber</span>=<span class="number">2</span></div><div class="line"><span class="attr">MinValue</span>=<span class="number">30</span></div><div class="line"><span class="attr">MaxValue</span>=<span class="number">100</span></div><div class="line"></div><div class="line"><span class="section">[MeterCPUTempBar]</span></div><div class="line"><span class="attr">Meter</span>=Bar</div><div class="line"><span class="attr">MeasureName</span>=MeasureCPUTemp</div></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[MeasureCPUTemp]</span></span><br><span class="line"><span class="attr">Measure</span>=Plugin</span><br><span class="line"><span class="attr">Plugin</span>=SpeedFanPlugin</span><br><span class="line"><span class="attr">SpeedFanType</span>=TEMPERATURE</span><br><span class="line"><span class="attr">SpeedFanScale</span>=C</span><br><span class="line"><span class="attr">SpeedFanNumber</span>=<span class="number">2</span></span><br><span class="line"><span class="attr">MinValue</span>=<span class="number">30</span></span><br><span class="line"><span class="attr">MaxValue</span>=<span class="number">100</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MeterCPUTempBar]</span></span><br><span class="line"><span class="attr">Meter</span>=Bar</span><br><span class="line"><span class="attr">MeasureName</span>=MeasureCPUTemp</span><br></pre></td></tr></table></figure>
 
 <p>While the <a href="/manual-beta/meters/string/">String</a> meter does not require a percentage when displaying the number value of a measure, it can be told to use the value as a percentage, by using the <a href="/manual-beta/meters/string/">Percentual</a> option on the meter.  The meter will then use the MinValue and MaxValue of the measure to calculate what percentage of that the current value is.</p>
 
@@ -295,7 +295,7 @@
 
 <p>For example:</p>
 
-<figure class="highlight ini"><table><tr><td class="code"><pre><div class="line"><span class="section">[MeasureCounterPlusOne]</span></div><div class="line"><span class="attr">Measure</span>=Calc</div><div class="line"><span class="attr">Formula</span>=MeasureCounter + <span class="number">1</span></div><div class="line"></div><div class="line"><span class="section">[MeasureCounter]</span></div><div class="line"><span class="attr">Measure</span>=Calc</div><div class="line"><span class="attr">Formula</span>=Counter</div></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[MeasureCounterPlusOne]</span></span><br><span class="line"><span class="attr">Measure</span>=Calc</span><br><span class="line"><span class="attr">Formula</span>=MeasureCounter + <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MeasureCounter]</span></span><br><span class="line"><span class="attr">Measure</span>=Calc</span><br><span class="line"><span class="attr">Formula</span>=Counter</span><br></pre></td></tr></table></figure>
 
 <p>The intent is for [MeasureCounterPlusOne] to add one to the value of [MeasureCounter], so that it is always greater than [MeasureCounter]. If the measures were in the opposite order, this would work. However, because [MeasureCounterPlusOne] is evaluated before [MeasureCounter], it will only add to the old, "outdated" value, and the two measures will remain equal.</p>
 
