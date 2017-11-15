@@ -3,7 +3,7 @@
 <head>
 	<!-- Meta tags for proper character encoding and social media handling  -->
 	<meta charset="utf-8">
-	<meta property="viewport" content="user-scalable=no, width=device-width, initial-scale=0.9, maximum-scale=0.9">
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=0.9, maximum-scale=0.9">
 	<meta itemprop="name" content="Set Meter &amp; Measure Options - Rainmeter Docs">
 	<meta property="og:title" content="Set Meter &amp; Measure Options - Rainmeter Docs">
 	<meta property="og:type" content="website">
@@ -108,7 +108,7 @@
         <p>This is a simple method for setting multiple options on the same meter or measure.</p>
 
 <div class="noscroll">
-<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> key, value <span class="keyword">in</span> <span class="built_in">pairs</span> &#123;</span><br><span class="line">	Option = <span class="string">'Value'</span>,</span><br><span class="line">&#125; <span class="keyword">do</span> SKIN:Bang(<span class="string">'!SetOption'</span>, SectionName, key, value) <span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lua"><table><tr><td class="code"><pre><div class="line"><span class="keyword">for</span> key, value <span class="keyword">in</span> <span class="built_in">pairs</span> &#123;</div><div class="line">	Option = <span class="string">'Value'</span>,</div><div class="line">&#125; <span class="keyword">do</span> SKIN:Bang(<span class="string">'!SetOption'</span>, SectionName, key, value) <span class="keyword">end</span></div></pre></td></tr></table></figure>
 
 </div>
 
@@ -124,7 +124,7 @@
   <div class="container">
     <div class="row">
       <div class="col-6">Made with ❤ by the community.</div>
-      <div class="col-6 text-center text-md-right">Icons by <a href="http://www.freepik.com" alt="Freepik">Freepik</a> and <a href="https://feathericons.com/" alt="feathericons">feathericons.com</a></div>
+      <div class="col-6 text-right text-md-right">Icons by <a href="http://www.freepik.com" alt="Freepik">Freepik</a> and <a href="https://feathericons.com/" alt="feathericons">feathericons.com</a></div>
     </div>
   </div>
 </footer>

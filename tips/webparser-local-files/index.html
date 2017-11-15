@@ -3,7 +3,7 @@
 <head>
 	<!-- Meta tags for proper character encoding and social media handling  -->
 	<meta charset="utf-8">
-	<meta property="viewport" content="user-scalable=no, width=device-width, initial-scale=0.9, maximum-scale=0.9">
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=0.9, maximum-scale=0.9">
 	<meta itemprop="name" content="WebParser: Local Files - Rainmeter Docs">
 	<meta property="og:title" content="WebParser: Local Files - Rainmeter Docs">
 	<meta property="og:type" content="website">
@@ -102,7 +102,7 @@
         <!-- Include content and Replace "!" in every url with correct path -->
         <p>WebParser is commonly used for parsing a web site and retrieving information, such as weather information or an RSS feed or GMail messages. It can also be used to parse local text files on your computer. Just use the "file://" url construct instead of "http://"</p>
 
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[MeasureText]</span></span><br><span class="line"><span class="attr">Measure</span>=Plugin</span><br><span class="line"><span class="attr">Plugin</span>=WebParser</span><br><span class="line"><span class="attr">Url</span>=file://C:\Users\YourName\Documents\TextFile.txt</span><br><span class="line"><span class="attr">RegExp</span>=<span class="string">"(?siU)Stuff to search for(.*)End of Search"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="code"><pre><div class="line"><span class="section">[MeasureText]</span></div><div class="line"><span class="attr">Measure</span>=Plugin</div><div class="line"><span class="attr">Plugin</span>=WebParser</div><div class="line"><span class="attr">Url</span>=file://C:\Users\YourName\Documents\TextFile.txt</div><div class="line"><span class="attr">RegExp</span>=<span class="string">"(?siU)Stuff to search for(.*)End of Search"</span></div></pre></td></tr></table></figure>
 
 <p>WebParser will return the results of the Regular Expression search in StringIndex numbers as usual, which can be used in further measures or meters.</p>
 
@@ -118,7 +118,7 @@
   <div class="container">
     <div class="row">
       <div class="col-6">Made with ❤ by the community.</div>
-      <div class="col-6 text-center text-md-right">Icons by <a href="http://www.freepik.com" alt="Freepik">Freepik</a> and <a href="https://feathericons.com/" alt="feathericons">feathericons.com</a></div>
+      <div class="col-6 text-right text-md-right">Icons by <a href="http://www.freepik.com" alt="Freepik">Freepik</a> and <a href="https://feathericons.com/" alt="feathericons">feathericons.com</a></div>
     </div>
   </div>
 </footer>

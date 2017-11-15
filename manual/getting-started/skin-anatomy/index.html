@@ -3,7 +3,7 @@
 <head>
 	<!-- Meta tags for proper character encoding and social media handling  -->
 	<meta charset="utf-8">
-	<meta property="viewport" content="user-scalable=no, width=device-width, initial-scale=0.9, maximum-scale=0.9">
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=0.9, maximum-scale=0.9">
 	<meta itemprop="name" content="Anatomy of a Skin - Rainmeter Docs">
 	<meta property="og:title" content="Anatomy of a Skin - Rainmeter Docs">
 	<meta property="og:type" content="website">
@@ -258,7 +258,7 @@ OptionName=Option Value<br/>
 
 <p>The following is an example of a very simple Rainmeter skin file. It updates the skin once a second, measures the used CPU as a percentage, and displays that percentage.</p>
 
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[Rainmeter]</span></span><br><span class="line"><span class="attr">Update</span>=<span class="number">1000</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MeasureCPU]</span></span><br><span class="line"><span class="attr">Measure</span>=CPU</span><br><span class="line"></span><br><span class="line"><span class="section">[MeterCPU]</span></span><br><span class="line"><span class="attr">Meter</span>=String</span><br><span class="line"><span class="attr">MeasureName</span>=MeasureCPU</span><br></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="code"><pre><div class="line"><span class="section">[Rainmeter]</span></div><div class="line"><span class="attr">Update</span>=<span class="number">1000</span></div><div class="line"></div><div class="line"><span class="section">[MeasureCPU]</span></div><div class="line"><span class="attr">Measure</span>=CPU</div><div class="line"></div><div class="line"><span class="section">[MeterCPU]</span></div><div class="line"><span class="attr">Meter</span>=String</div><div class="line"><span class="attr">MeasureName</span>=MeasureCPU</div></pre></td></tr></table></figure>
 
 <h2 id="TypesOfSections">There are six types of [Sections]</h2>
 
@@ -275,14 +275,14 @@ This section will always be named [Metadata], and is used to provide information
 <p><b>[Variables]</b><br/>
 This section will always be named [Variables], and is used to define values that can be used anywhere in the skin by enclosing the variable name inside #PoundSigns#. This can be helpful to create a value that you want to use many places in the skin, while allowing you to change it in only one place. A simple example might be:</p>
 
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[Variables]</span></span><br><span class="line"><span class="attr">MyFontColor</span>=<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MeterOne]</span></span><br><span class="line"><span class="attr">Meter</span>=String</span><br><span class="line"><span class="attr">FontColor</span>=#MyFontColor#</span><br><span class="line"></span><br><span class="line"><span class="section">[MeterTwo]</span></span><br><span class="line"><span class="attr">Meter</span>=String</span><br><span class="line"><span class="attr">FontColor</span>=#MyFontColor#</span><br></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="code"><pre><div class="line"><span class="section">[Variables]</span></div><div class="line"><span class="attr">MyFontColor</span>=<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span></div><div class="line"></div><div class="line"><span class="section">[MeterOne]</span></div><div class="line"><span class="attr">Meter</span>=String</div><div class="line"><span class="attr">FontColor</span>=#MyFontColor#</div><div class="line"></div><div class="line"><span class="section">[MeterTwo]</span></div><div class="line"><span class="attr">Meter</span>=String</div><div class="line"><span class="attr">FontColor</span>=#MyFontColor#</div></pre></td></tr></table></figure>
 
 <p><a href="/manual/variables/#Section">[Variables]</a> section details.</p>
 
 <p><b>[MeterStyles]</b><br/>
 These sections can have any unique name, and are similar to [Variables] in function. They allow you to set up "styles" for meters where you can for instance define some or all of the "formatting" options for your meters, and use the MeterStyle in many meters while again allowing you to only have to change it in one place. A simple example might be:</p>
 
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[MyTextStyle]</span></span><br><span class="line"><span class="attr">FontFace</span>=Arial</span><br><span class="line"><span class="attr">FontSize</span>=<span class="number">12</span></span><br><span class="line"><span class="attr">FontColor</span>=<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span></span><br><span class="line"><span class="attr">AntiAlias</span>=<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MeterOne]</span></span><br><span class="line"><span class="attr">Meter</span>=String</span><br><span class="line"><span class="attr">MeterStyle</span>=MyTextStyle</span><br><span class="line"></span><br><span class="line"><span class="section">[MeterTwo]</span></span><br><span class="line"><span class="attr">Meter</span>=String</span><br><span class="line"><span class="attr">MeterStyle</span>=MyTextStyle</span><br></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="code"><pre><div class="line"><span class="section">[MyTextStyle]</span></div><div class="line"><span class="attr">FontFace</span>=Arial</div><div class="line"><span class="attr">FontSize</span>=<span class="number">12</span></div><div class="line"><span class="attr">FontColor</span>=<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span></div><div class="line"><span class="attr">AntiAlias</span>=<span class="number">1</span></div><div class="line"></div><div class="line"><span class="section">[MeterOne]</span></div><div class="line"><span class="attr">Meter</span>=String</div><div class="line"><span class="attr">MeterStyle</span>=MyTextStyle</div><div class="line"></div><div class="line"><span class="section">[MeterTwo]</span></div><div class="line"><span class="attr">Meter</span>=String</div><div class="line"><span class="attr">MeterStyle</span>=MyTextStyle</div></pre></td></tr></table></figure>
 
 <p><a href="/manual/meters/general-options/meterstyles/">[MeterStyle]</a> section details.</p>
 
@@ -291,14 +291,14 @@ These sections can have any unique name, and are used to "measure" some system o
 
 <p>There are two kinds of options used on a measure. There are <a href="/manual/measures/general-options/">general measure options</a> that define behaviors for most or all measure types, and measure options that are specific to the type of measure. These specific options are explained in the manual section for each measure type. Some simple examples might be:</p>
 
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[MeasureDateTime]</span></span><br><span class="line"><span class="attr">Measure</span>=Time</span><br><span class="line"><span class="attr">Format</span>=%A, %B %#d, %Y %#I:%M %p</span><br><span class="line"></span><br><span class="line"><span class="section">[MeasureFreeDriveC]</span></span><br><span class="line"><span class="attr">Measure</span>=FreeDiskSpace</span><br><span class="line"><span class="attr">Drive</span>=C:</span><br></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="code"><pre><div class="line"><span class="section">[MeasureDateTime]</span></div><div class="line"><span class="attr">Measure</span>=Time</div><div class="line"><span class="attr">Format</span>=%A, %B %#d, %Y %#I:%M %p</div><div class="line"></div><div class="line"><span class="section">[MeasureFreeDriveC]</span></div><div class="line"><span class="attr">Measure</span>=FreeDiskSpace</div><div class="line"><span class="attr">Drive</span>=C:</div></pre></td></tr></table></figure>
 
 <p><a href="/manual/measures/">[Measures]</a> section details.</p>
 
 <p><b>[Meters]</b><br/>
 These sections can have any unique name, and are used to "display" things in the skin window. Most often, a meter will be used to display some information obtained by a measure, which is done by "binding" the meter to one or more measures with the <code>MeasureName=SomeMeasure</code> option. A simple example might be:</p>
 
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[MeasureDateTime]</span></span><br><span class="line"><span class="attr">Measure</span>=Time</span><br><span class="line"><span class="attr">Format</span>=%A, %B %#d, %Y %#I:%M %p</span><br><span class="line"></span><br><span class="line"><span class="section">[MeterDateTime]</span></span><br><span class="line"><span class="attr">Meter</span>=String</span><br><span class="line"><span class="attr">MeasureName</span>=MeasureDateTime</span><br></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="code"><pre><div class="line"><span class="section">[MeasureDateTime]</span></div><div class="line"><span class="attr">Measure</span>=Time</div><div class="line"><span class="attr">Format</span>=%A, %B %#d, %Y %#I:%M %p</div><div class="line"></div><div class="line"><span class="section">[MeterDateTime]</span></div><div class="line"><span class="attr">Meter</span>=String</div><div class="line"><span class="attr">MeasureName</span>=MeasureDateTime</div></pre></td></tr></table></figure>
 
 <p><em>The meter [MeterDateTime] is "bound" to the measure [MeasureDateTime], and will display the current value of the measure as it changes.</em></p>
 
@@ -347,7 +347,7 @@ These are options that in a sense "test" the value or state of the measure they 
 
 <p>A simple example might be:</p>
 
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[MeasureCPU]</span></span><br><span class="line"><span class="attr">Measure</span>=CPU</span><br><span class="line"><span class="attr">IfCondition</span>=MeasureCPU &gt; <span class="number">60</span></span><br><span class="line"><span class="attr">IfTrueAction</span>=[!SetOption MeterCPU FontColor <span class="string">"255,0,0"</span>]</span><br><span class="line"><span class="attr">IfFalseAction</span>=[!SetOption MeterCPU FontColor <span class="string">"0,255,0"</span>]</span><br></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="code"><pre><div class="line"><span class="section">[MeasureCPU]</span></div><div class="line"><span class="attr">Measure</span>=CPU</div><div class="line"><span class="attr">IfCondition</span>=MeasureCPU &gt; <span class="number">60</span></div><div class="line"><span class="attr">IfTrueAction</span>=[!SetOption MeterCPU FontColor <span class="string">"255,0,0"</span>]</div><div class="line"><span class="attr">IfFalseAction</span>=[!SetOption MeterCPU FontColor <span class="string">"0,255,0"</span>]</div></pre></td></tr></table></figure>
 
 <p><em>If the value of [MeasureCPU] is greater than 60, then change the FontColor of the String meter [MeterCPU] to "red", if not, change it to "green".</em></p>
 
@@ -358,7 +358,7 @@ These are options you put on meters, (or the skin background) that can react to 
 
 <p>A simple example might be:</p>
 
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[MeterCPU]</span></span><br><span class="line"><span class="attr">Meter</span>=String</span><br><span class="line"><span class="attr">FontColor</span>=<span class="number">0</span>,<span class="number">255</span>,<span class="number">0</span></span><br><span class="line"><span class="attr">MouseOverAction</span>=[!SetOption MeterCPU FontColor <span class="string">"255,0,0"</span>]</span><br><span class="line"><span class="attr">MouseLeaveAction</span>=[!SetOption MeterCPU FontColor <span class="string">"0,255,0"</span>]</span><br><span class="line"><span class="attr">LeftMouseUpAction</span>=[<span class="string">"taskmgr.exe"</span>]</span><br></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="code"><pre><div class="line"><span class="section">[MeterCPU]</span></div><div class="line"><span class="attr">Meter</span>=String</div><div class="line"><span class="attr">FontColor</span>=<span class="number">0</span>,<span class="number">255</span>,<span class="number">0</span></div><div class="line"><span class="attr">MouseOverAction</span>=[!SetOption MeterCPU FontColor <span class="string">"255,0,0"</span>]</div><div class="line"><span class="attr">MouseLeaveAction</span>=[!SetOption MeterCPU FontColor <span class="string">"0,255,0"</span>]</div><div class="line"><span class="attr">LeftMouseUpAction</span>=[<span class="string">"taskmgr.exe"</span>]</div></pre></td></tr></table></figure>
 
 <p><a href="/manual/mouse-actions/">Mouse Action</a> details.</p>
 
@@ -376,7 +376,7 @@ In addition, you can have an action option execute any external command to the W
 
 <p>Some simple examples might be:</p>
 
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">LeftMouseUpAction</span>=[<span class="string">"C:\Program Files\WinRar\WinRar.exe"</span>]</span><br><span class="line"><span class="attr">LeftMouseUpAction</span>=[<span class="string">"http://cnn.com"</span>]</span><br></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="code"><pre><div class="line"><span class="attr">LeftMouseUpAction</span>=[<span class="string">"C:\Program Files\WinRar\WinRar.exe"</span>]</div><div class="line"><span class="attr">LeftMouseUpAction</span>=[<span class="string">"http://cnn.com"</span>]</div></pre></td></tr></table></figure>
 
 <p>Hopefully this will get you off and running with Rainmeter skins. There are other areas of how the application itself works that are important to understand, and the <a href="/manual/getting-started/">Getting Started</a> and <a href="/manual/user-interface/">User Interface</a> sections of the manual are important references. Don't skip them.</p>
 
@@ -398,7 +398,7 @@ In addition, you can have an action option execute any external command to the W
   <div class="container">
     <div class="row">
       <div class="col-6">Made with ❤ by the community.</div>
-      <div class="col-6 text-center text-md-right">Icons by <a href="http://www.freepik.com" alt="Freepik">Freepik</a> and <a href="https://feathericons.com/" alt="feathericons">feathericons.com</a></div>
+      <div class="col-6 text-right text-md-right">Icons by <a href="http://www.freepik.com" alt="Freepik">Freepik</a> and <a href="https://feathericons.com/" alt="feathericons">feathericons.com</a></div>
     </div>
   </div>
 </footer>

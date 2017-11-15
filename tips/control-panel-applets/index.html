@@ -3,7 +3,7 @@
 <head>
 	<!-- Meta tags for proper character encoding and social media handling  -->
 	<meta charset="utf-8">
-	<meta property="viewport" content="user-scalable=no, width=device-width, initial-scale=0.9, maximum-scale=0.9">
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=0.9, maximum-scale=0.9">
 	<meta itemprop="name" content="Control Panel Applets - Rainmeter Docs">
 	<meta property="og:title" content="Control Panel Applets - Rainmeter Docs">
 	<meta property="og:type" content="website">
@@ -106,10 +106,10 @@
 <p>They are run from Rainmeter by using the application <b>C:\Windows\System32\control.exe</b> which will take as a parameter the name of any of the Control Panel applets.</p>
 <p>The list of available applets and their functions:</p>
 
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Accessibility Options			access.cpl</span><br><span class="line">Add or Remove Programs			appwiz.cpl</span><br><span class="line">Display Properties				desk.cpl</span><br><span class="line">Windows Firewall				firewall.cpl</span><br><span class="line">Add Hardware					hdwwiz.cpl</span><br><span class="line">Internet Options				inetcpl.cpl</span><br><span class="line">Regional &amp; Language Options		intl.cpl</span><br><span class="line">Java Control Panel				javacpl.cpl</span><br><span class="line">Game Controllers				joy.cpl</span><br><span class="line">Mouse Properties				main.cpl</span><br><span class="line">Sound &amp; Audio Device Settings	mmsys.cpl</span><br><span class="line">Network Connections				ncpa.cpl</span><br><span class="line">Wireless Network Setup Wizard	netsetup.cpl</span><br><span class="line">User Accounts					nusrmgr.cpl</span><br><span class="line">ODBC Data Source Administrator	odbccp32.cpl</span><br><span class="line">Power Options					powercfg.cpl</span><br><span class="line">System Properties				sysdm.cpl</span><br><span class="line">Phone and Modem Options			telephon.cpl</span><br><span class="line">Time and Date Options			timedate.cpl</span><br><span class="line">Windows Security Center			wscui.cpl</span><br><span class="line">Automatic Updates				wuaucpl.cpl</span><br><span class="line">Active Directory Manager		admgmt.msc</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">Accessibility Options			access.cpl</div><div class="line">Add or Remove Programs			appwiz.cpl</div><div class="line">Display Properties				desk.cpl</div><div class="line">Windows Firewall				firewall.cpl</div><div class="line">Add Hardware					hdwwiz.cpl</div><div class="line">Internet Options				inetcpl.cpl</div><div class="line">Regional &amp; Language Options		intl.cpl</div><div class="line">Java Control Panel				javacpl.cpl</div><div class="line">Game Controllers				joy.cpl</div><div class="line">Mouse Properties				main.cpl</div><div class="line">Sound &amp; Audio Device Settings	mmsys.cpl</div><div class="line">Network Connections				ncpa.cpl</div><div class="line">Wireless Network Setup Wizard	netsetup.cpl</div><div class="line">User Accounts					nusrmgr.cpl</div><div class="line">ODBC Data Source Administrator	odbccp32.cpl</div><div class="line">Power Options					powercfg.cpl</div><div class="line">System Properties				sysdm.cpl</div><div class="line">Phone and Modem Options			telephon.cpl</div><div class="line">Time and Date Options			timedate.cpl</div><div class="line">Windows Security Center			wscui.cpl</div><div class="line">Automatic Updates				wuaucpl.cpl</div><div class="line">Active Directory Manager		admgmt.msc</div></pre></td></tr></table></figure>
 
 <p>So to execute one of these applets from Rainmeter use any of the <b>Action</b> features of Rainmeter:</p>
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">LeftMouseUpAction</span>=[<span class="string">"C:\Windows\System32\control.exe"</span> <span class="string">"ncpa.cpl"</span>]</span><br></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="code"><pre><div class="line"><span class="attr">LeftMouseUpAction</span>=[<span class="string">"C:\Windows\System32\control.exe"</span> <span class="string">"ncpa.cpl"</span>]</div></pre></td></tr></table></figure>
 
 
       </div>
@@ -124,7 +124,7 @@
   <div class="container">
     <div class="row">
       <div class="col-6">Made with ❤ by the community.</div>
-      <div class="col-6 text-center text-md-right">Icons by <a href="http://www.freepik.com" alt="Freepik">Freepik</a> and <a href="https://feathericons.com/" alt="feathericons">feathericons.com</a></div>
+      <div class="col-6 text-right text-md-right">Icons by <a href="http://www.freepik.com" alt="Freepik">Freepik</a> and <a href="https://feathericons.com/" alt="feathericons">feathericons.com</a></div>
     </div>
   </div>
 </footer>

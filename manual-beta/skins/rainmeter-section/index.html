@@ -3,7 +3,7 @@
 <head>
 	<!-- Meta tags for proper character encoding and social media handling  -->
 	<meta charset="utf-8">
-	<meta property="viewport" content="user-scalable=no, width=device-width, initial-scale=0.9, maximum-scale=0.9">
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=0.9, maximum-scale=0.9">
 	<meta itemprop="name" content="[Rainmeter] section - Rainmeter Docs">
 	<meta property="og:title" content="[Rainmeter] section - Rainmeter Docs">
 	<meta property="og:type" content="website">
@@ -442,7 +442,7 @@
 	</dd>
 	<br><p><b>Note:</b> Aero Blur options can be dynamically controlled with several <a href="/manual-beta/bangs/#ShowHideToggleBlur">bangs</a>.</p>
 	<h3>Example</h3>
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[Rainmeter]</span></span><br><span class="line"><span class="attr">Update</span>=<span class="number">1000</span></span><br><span class="line"><span class="attr">Blur</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">BlurRegion</span>=<span class="number">1</span>,<span class="number">10</span>,<span class="number">10</span>,<span class="number">190</span>,<span class="number">50</span></span><br><span class="line"><span class="comment">; BlurRegion creates a rectangle starting at 10 pixels from the left, 10 pixels down from the top, and ending at 190 pixels to the right, 50 pixels from the top.</span></span><br><span class="line"></span><br><span class="line"><span class="attr">BlurRegion2</span>=<span class="number">3</span>,<span class="number">10</span>,<span class="number">70</span>,<span class="number">80</span>,<span class="number">110</span></span><br><span class="line"><span class="attr">BlurRegion3</span>=<span class="number">2</span>,<span class="number">10</span>,<span class="number">130</span>,<span class="number">190</span>,<span class="number">170</span>,<span class="number">15</span></span><br><span class="line"></span><br><span class="line"><span class="section">[Background]</span></span><br><span class="line"><span class="attr">Meter</span>=Image</span><br><span class="line"><span class="attr">W</span>=<span class="number">200</span></span><br><span class="line"><span class="attr">H</span>=<span class="number">180</span></span><br><span class="line"><span class="attr">SolidColor</span>=<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">50</span></span><br><span class="line"><span class="attr">LeftMouseUpAction</span>=[!AddBlur <span class="string">"1,0,0,200,80"</span>]</span><br></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="code"><pre><div class="line"><span class="section">[Rainmeter]</span></div><div class="line"><span class="attr">Update</span>=<span class="number">1000</span></div><div class="line"><span class="attr">Blur</span>=<span class="number">1</span></div><div class="line"><span class="attr">BlurRegion</span>=<span class="number">1</span>,<span class="number">10</span>,<span class="number">10</span>,<span class="number">190</span>,<span class="number">50</span></div><div class="line"><span class="comment">; BlurRegion creates a rectangle starting at 10 pixels from the left, 10 pixels down from the top, and ending at 190 pixels to the right, 50 pixels from the top.</span></div><div class="line"> </div><div class="line"><span class="attr">BlurRegion2</span>=<span class="number">3</span>,<span class="number">10</span>,<span class="number">70</span>,<span class="number">80</span>,<span class="number">110</span></div><div class="line"><span class="attr">BlurRegion3</span>=<span class="number">2</span>,<span class="number">10</span>,<span class="number">130</span>,<span class="number">190</span>,<span class="number">170</span>,<span class="number">15</span></div><div class="line"> </div><div class="line"><span class="section">[Background]</span></div><div class="line"><span class="attr">Meter</span>=Image</div><div class="line"><span class="attr">W</span>=<span class="number">200</span></div><div class="line"><span class="attr">H</span>=<span class="number">180</span></div><div class="line"><span class="attr">SolidColor</span>=<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">50</span></div><div class="line"><span class="attr">LeftMouseUpAction</span>=[!AddBlur <span class="string">"1,0,0,200,80"</span>]</div></pre></td></tr></table></figure>
 
 </dl>
 
@@ -479,7 +479,7 @@
   <div class="container">
     <div class="row">
       <div class="col-6">Made with ❤ by the community.</div>
-      <div class="col-6 text-center text-md-right">Icons by <a href="http://www.freepik.com" alt="Freepik">Freepik</a> and <a href="https://feathericons.com/" alt="feathericons">feathericons.com</a></div>
+      <div class="col-6 text-right text-md-right">Icons by <a href="http://www.freepik.com" alt="Freepik">Freepik</a> and <a href="https://feathericons.com/" alt="feathericons">feathericons.com</a></div>
     </div>
   </div>
 </footer>
