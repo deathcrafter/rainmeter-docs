@@ -4,8 +4,8 @@
 	<!-- Meta tags for proper character encoding and social media handling  -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=0.9, maximum-scale=0.9">
-	<meta itemprop="name" content="Rainmeter Snippets - Rainmeter Docs">
-	<meta property="og:title" content="Rainmeter Snippets - Rainmeter Docs">
+	<meta itemprop="name" content="MinValue / MaxValue - Rainmeter Docs">
+	<meta property="og:title" content="MinValue / MaxValue - Rainmeter Docs">
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://www.rainmeter.net">
 	<meta property="og:image" content="https://www.rainmeter.net/img/media_image.png">
@@ -13,7 +13,7 @@
 	<meta property="og:locale" content="en_US" />
 
 	<!-- Page title  -->
-	<title>Rainmeter Snippets - Rainmeter</title>
+	<title>MinValue / MaxValue - Rainmeter</title>
 
 	<!-- Files need to be local for offline version of documentations -->
 	<link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -102,97 +102,30 @@
 
       <!-- Content -->
       <div class="docs-content col-12 col-lg-9">
-        <h1 class="page-title">Rainmeter Snippets</h1>
+        <h1 class="page-title">MinValue / MaxValue</h1>
         <hr />
         <!-- Include content and Replace "!" in every url with correct path -->
-        <p>This is a collection of useful "snippets" of Lua script code for users of <a href="http://www.rainmeter.net">Rainmeter</a>, a desktop customization tool for Windows. It is maintained by the Rainmeter development team, and hosted on <a href="https://github.com/rainmeter/rainmeter-docs/">GitHub</a>.</p>
+        <p>Returns the minimum or maximum numeric or alphabetical value of a set.</p>
 
-<h2 id="General">General</h2>
+<p>This must be used as an <a href="https://docs.rainmeter.net/manual/lua-scripting/inline-lua/#CallingAFunction">Inline Lua</a> section variable, and can be used anywhere that section variables are allowed. Ensure that <code>DynamicVariables=1</code> is used on any measures or meters using Inline Lua.</p>
 
-<ul>
-	<li><p><b><a href="/snippets/deliminate/">Deliminate</a></b><br>
-	A function that separates a string into parts by a given delimiter.</p></li>
-	<li><p><b><a href="/snippets/sortrandom/">SortRandom</a></b><br>
-	A function that sorts a given table into a random order.</p></li>
-	<li><p><b><a href="/snippets/switch/">Switch</a></b><br>
-	A function that emulates a switch statement.</p></li>
-	<li><p><b><a href="/snippets/min-max-value/">MinValue / MaxValue</a></b><br>
-	A function that returns the minimum or maximum numeric or alphabetical value of a set.</p></li>
-</ul>
+<p>Pass as many comma separated numeric or string values as desired to the function.</p>
 
-<h2 id="Conversions">Conversions</h2>
+<p><b>Examples:</b></p>
+<p><code>MinValue(3,29,58,17,4)</code><br/>
+<code>MaxValue(3,29,58,17,4)</code><br/>
+<code>MinValue('Juliett','Sierra','Bravo','Victor','Lima')</code></p>
 
-<ul>
-	<li><p><b><a href="/snippets/colors/">Colors</a></b><br>
-	Functions that convert <a href="/manual/options/#Color">color codes</a> from RGB to HEX, and vice versa.</p></li>
-	<li><p><b><a href="/snippets/convert-temperatures/">Convert Temperatures</a></b><br>
-	Converts temperatures between Celsius and Fahrenheit.</p></li>
-</ul>
+<div class="noscroll">
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[MeterMax]</span></span><br><span class="line"><span class="attr">Meter</span>=String</span><br><span class="line"><span class="attr">Text</span>=[&amp;LuaMeasure:MaxValue(<span class="number">3</span>,<span class="number">29</span>,<span class="number">58</span>,<span class="number">17</span>,<span class="number">4</span>)]</span><br><span class="line"><span class="attr">DynamicVariables</span>=<span class="number">1</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="FileInputOutput">File Input &amp; Output</h2>
+</div>
 
-<ul>
-	<li><p><b><a href="/snippets/read-write-file/">Read &amp; Write a File</a></b><br>
-	Functions that read and write any string to or from a text file.</p></li>
-	<li><p><b><a href="/snippets/read-ini/">Read INI</a></b><br>
-	A function that parses an <a href="http://en.wikipedia.org/wiki/INI_file">INI</a> formatted text file into a table, with the structure <code>Table[Section][Parameter] = Value</code>.</p></li>
-	<li><p><b><a href="/snippets/write-ini/">Write INI</a></b><br>
-	A function that writes an <a href="http://en.wikipedia.org/wiki/INI_file">INI</a> formatted text file from a given table, with the structure <code>Table[Section][Parameter] = Value</code>.</p></li>
-</ul>
+<p><b>Lua Code:</b></p>
+<div class="noscroll">
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">MinValue</span><span class="params">(...)</span></span></span><br><span class="line"></span><br><span class="line">	valueTable = &#123;&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> i = <span class="number">1</span>, #<span class="built_in">arg</span> <span class="keyword">do</span></span><br><span class="line">		<span class="built_in">table</span>.<span class="built_in">insert</span>(valueTable, <span class="built_in">arg</span>[i])</span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line">	</span><br><span class="line">	<span class="built_in">table</span>.<span class="built_in">sort</span>(valueTable, <span class="function"><span class="keyword">function</span><span class="params">(a,b)</span></span> <span class="keyword">return</span> a&lt;b <span class="keyword">end</span>)</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> valueTable[<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">MaxValue</span><span class="params">(...)</span></span></span><br><span class="line"></span><br><span class="line">	valueTable = &#123;&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> i = <span class="number">1</span>, #<span class="built_in">arg</span> <span class="keyword">do</span></span><br><span class="line">		<span class="built_in">table</span>.<span class="built_in">insert</span>(valueTable, <span class="built_in">arg</span>[i])</span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line">	</span><br><span class="line">	<span class="built_in">table</span>.<span class="built_in">sort</span>(valueTable, <span class="function"><span class="keyword">function</span><span class="params">(a,b)</span></span> <span class="keyword">return</span> a&gt;b <span class="keyword">end</span>)</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> valueTable[<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="Math">Math</h2>
-
-<ul>
-	<li><p><b><a href="/snippets/add-commas/">Add Commas</a></b><br>
-	Returns an input number as a string formatted with commas.</p></li>
-	<li><p><b><a href="/snippets/add-suffix/">Add Suffix</a></b><br>
-	Returns the ordinal suffix for an input number.</p></li>
-	<li><p><b><a href="/snippets/autoscale/">AutoScale</a></b><br>
-	A function that scales a number of bytes, with an optional number of decimal places. Returns a second string value with the scale suffix.</p></li>
-	<li><p><b><a href="/snippets/average/">Average</a></b><br>
-	A function that averages a list of numbers.</p></li>
-	<li><p><b><a href="/snippets/round/">Round</a></b><br>
-	Rounds a number (num) to any optional number of decimal places (idp)</p></li>
-	<li><p><b><a href="/snippets/clamp/">Clamp</a></b><br>
-	Constrains a number between low and high values.</p></li>	
-</ul>
-
-<h2 id="Methods">Methods</h2>
-
-<ul>
-	<li><p><b><a href="/snippets/detect-value-change/">Detect Value Change</a></b><br>
-	A simple method for &quot;watching&quot; a data value in the skin (variable, measure or option) and taking action when the value changes.</p></li>
-	<li><p><b><a href="/snippets/nested-expressions/">Nested Expressions</a></b><br>
-	A method for parsing a string with nested expressions such as variables (i.e. <code>{SomeVariable&#123;SomethingElse&#125;}</code>).</p></li>
-	<li><p><b><a href="/snippets/set-meter-measure-options/">Set Meter &amp; Measure Options</a></b><br>
-	A simple method for setting multiple options on the same meter or measure.</p></li>
-</ul>
-
-<h2 id="Rainmeter">Rainmeter</h2>
-
-<ul>
-	<li><p><b><a href="/snippets/root-config-name/">Root Config Name</a></b><br>
-	A function that takes a Rainmeter skin's <a href="/manual/skins/#Config">config name</a> and returns the root config name for that skin.</p></li>
-</ul>
-
-<h2 id="Strings">Strings</h2>
-
-<ul>
-	<li><b><a href="/snippets/parse-file-path/">Parse File Path</a></b><br>
-	A function that breaks down a file or folder path and returns the components as a table.</li>
-	<li><b><a href="/snippets/change-case/">Change Case</a></b><br>
-	A set of function to change a string to either Sentence Case or Title Case.</li>
-</ul>
-
-<h2 id="Time">Time</h2>
-
-<ul>
-	<li><p><b><a href="/snippets/convert-time/">Convert Time</a></b><br>
-	A function that converts <a href="http://en.wikipedia.org/wiki/Unix_time">Unix epoch</a> timestamps into Windows <a href="http://en.wikipedia.org/wiki/System_time#Operating_systems">FILETIME</a> timestamps (in seconds) and vice versa.</p></li>
-	<li><p><b><a href="/snippets/parse-twelve-hour-time/">Parse 12-Hour Time</a></b><br>
-	A function that takes a number (1-12) and a string ('AM' or 'PM') and returns the equivalent 24-hour figure.</p></li>
-	<li><p><b><a href="/snippets/format-time/">Format Seconds Into Time Intervals</a></b><br>A function that takes a number of seconds, and returns values for weeks, days, hours, minutes, and seconds.</p></li>
-</ul>
+</div>
 
       </div>
 
