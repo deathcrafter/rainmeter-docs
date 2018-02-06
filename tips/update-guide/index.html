@@ -118,7 +118,7 @@
 
 <h3>What about UpdateRate?</h3>
 
-<p>UpdateDivider is an option available to <em>all</em> meters and measures. <a href="/manual/plugins/webparser/#UpdateRate">UpdateRate</a>, on the other hand, is only available with the WebParser and Ping plugins. For the purpose of this example, let us use a plugin measure using WebParser.</p>
+<p>UpdateDivider is an option available to <em>all</em> meters and measures. <a href="/manual/measures/webparser/#UpdateRate">UpdateRate</a>, on the other hand, is only available with the WebParser and Ping plugins. For the purpose of this example, let us use a plugin measure using WebParser.</p>
 
 <p>UpdateRate essentially states how often the WebParser should connect to the internet to download the specified URL. The general formula for this is in seconds is as follows: (Update x UpdateDivider x UpdateRate / 1000).</p>
 
@@ -126,7 +126,7 @@
 
 <p>Since [MeasureMailCount] has <code>UpdateRate=1200</code> set, we can calculate that WebParser will download the page every 1200 seconds (or every 20 minutes).</p>
 
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[MeasureMailCount]</span></span><br><span class="line"><span class="attr">Measure</span>=Plugin</span><br><span class="line"><span class="attr">Plugin</span>=WebParser</span><br><span class="line"><span class="attr">URL</span>=https://username:pasword@gmail.google.com/gmail/feed/atom</span><br><span class="line"><span class="attr">RegExp</span>=<span class="string">"(?siU)&lt;fullcount&gt;(.*)&lt;/fullcount&gt;"</span></span><br><span class="line"><span class="attr">StringIndex</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">UpdateRate</span>=<span class="number">1200</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[MeasureMailCount]</span></span><br><span class="line"><span class="attr">Measure</span>=WebParser</span><br><span class="line"><span class="attr">URL</span>=https://username:pasword@gmail.google.com/gmail/feed/atom</span><br><span class="line"><span class="attr">RegExp</span>=<span class="string">"(?siU)&lt;fullcount&gt;(.*)&lt;/fullcount&gt;"</span></span><br><span class="line"><span class="attr">StringIndex</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">UpdateRate</span>=<span class="number">1200</span></span><br></pre></td></tr></table></figure>
 
 <p>Generally, you want to use UpdateRate in place of UpdateDivider on a WebParser measure, not in addition to it. In some instances, using both can cause a "lag" between when the plugin is finished getting and parsing the data from the site, and when it is actually used and displayed in the skin.</p>
 
