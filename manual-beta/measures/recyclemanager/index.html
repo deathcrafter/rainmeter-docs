@@ -4,8 +4,8 @@
 	<!-- Meta tags for proper character encoding and social media handling  -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=0.9, maximum-scale=0.9">
-	<meta itemprop="name" content="Calc measure - Rainmeter Docs">
-	<meta property="og:title" content="Calc measure - Rainmeter Docs">
+	<meta itemprop="name" content="RecycleManager measure - Rainmeter Docs">
+	<meta property="og:title" content="RecycleManager measure - Rainmeter Docs">
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://www.rainmeter.net">
 	<meta property="og:image" content="https://www.rainmeter.net/img/media_image.png">
@@ -13,7 +13,7 @@
 	<meta property="og:locale" content="en_US" />
 
 	<!-- Page title  -->
-	<title>Calc measure - Rainmeter</title>
+	<title>RecycleManager measure - Rainmeter</title>
 
 	<!-- Files need to be local for offline version of documentations -->
 	<link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -229,10 +229,18 @@
 
       <!-- Content -->
       <div class="docs-content col-12 col-lg-9">
-        <h1 class="page-title">Calc measure</h1>
+        <h1 class="page-title">RecycleManager measure</h1>
         <hr />
         <!-- Include content and Replace "!" in every url with correct path -->
-        <p><code>Measure=Calc</code> calculates mathematical formulas.</p>
+        <p><code>Measure=RecycleManager</code> monitors the state of the recycle bin.</p>
+
+<h2 id="NotAPlugin">Note: RecycleManager was previously a <em>plugin</em> measure.</h2>
+<p>In many existing skins you might see the syntax:</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[MeasureRecycle]</span></span><br><span class="line"><span class="attr">Measure</span>=Plugin</span><br><span class="line"><span class="attr">Plugin</span>=RecycleManager</span><br><span class="line">or</span><br><span class="line"><span class="attr">Plugin</span>=RecycleManager.dll</span><br><span class="line">or</span><br><span class="line"><span class="attr">Plugin</span>=Plugins\RecycleManager.dll</span><br></pre></td></tr></table></figure>
+
+<p>RecycleManager still works with those forms, and changing existing skins to the new <code>Measure=RecycleManager</code> syntax is entirely optional. However, new skins created going forward should use the correct syntax for accuracy and clarity. RecycleManager is a measure, and not a plugin.</p>
+
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[MeasureRecyle]</span></span><br><span class="line"><span class="attr">Measure</span>=RecycleManager</span><br></pre></td></tr></table></figure>
 
 <h2>Options</h2>
 <dl>
@@ -241,60 +249,26 @@
 		All <a href="/manual-beta/measures/general-options/">general measure options</a> are valid.
 	</dd>
 
-	<dt id="Formula"><code>Formula</code> <small>Default: <code>0</code></small></dt>
+	<dt id="RecycleType"><code>RecycleType</code> <small>Default: <code>Count</code></small></dt>
 	<dd>
-		Formula to calculate. The syntax can be found on the <a href="/manual-beta/formulas/">Formulas</a> page. The calc measure utilizes addition syntax as described below.
-	</dd>
-
-	<dt id="UpdateRandom"><code>UpdateRandom</code> <small>Default: <code>0</code></small></dt>
-	<dd>
-		If set to <code>1</code>, the <a href="#Constants">random</a> constant is regenerated on each update cycle.
-	</dd>
-
-	<dt id="UniqueRandom"><code>UniqueRandom</code> <small>Default: <code>0</code></small></dt>
-	<dd>
-		If set to <code>1</code>, any measure using the <a href="#Constants">random</a> constant and <a href="#UpdateRandom">UpdateRandom</a> will not repeat until all values between and including <a href="#LowBound">LowBound</a> and <a href="#HighBound">HighBound</a> have been used.<br/><br/>
-		Any dynamic change to <a href="#LowBound">LowBound</a> or <a href="#HighBound">HighBound</a> will reset the unique tracking of values.<br/><br/>
-		<b>Note:</b> UniqueRandom will only function if the difference between <code>LowBound</code> and <code>HighBound</code> is at most a 16bit unsigned integer, or 65535.
-
-	</dd>
-
-	<dt id="LowBound"><code>LowBound</code> <small>Default: <code>0.0</code></small></dt>
-	<dd>
-		Lower bound of the <a href="#Constants">random</a> constant.
-	</dd>
-
-	<dt id="HighBound"><code>HighBound</code> <small>Default: <code>100.0</code></small></dt>
-	<dd>
-		Upper bound of the <a href="#Constants">random</a> constant.<br/><br/>
-		<b>Note:</b> The maximum value of <code>HighBound</code> is a 32bit signed integer, or 2147483647.
+		Type of information to measure. Valid values are:
+		<ul>
+		<li><code>Count</code>: Number of files in the recycle bin.</li>
+		<li><code>Size</code>: Total size of the recycle bin in bytes.</li>
+		</ul>
 	</dd>
 </dl>
 
-<h2 id="Formulas">Additional Formula Syntax</h2>
-
-<h3 id="Functions">Functions</h3>
-<p><b>Note:</b> These functions are only available in the context the <code>Formula</code> option of a Calc measure, and not in other (formulas) in other measure or meter types.</p>
-
+<h2>Bangs</h2>
+<p>RecycleManager measures can be controlled with the <a href="/manual-beta/bangs/#CommandMeasure">!CommandMeasure bang</a> with the argument parameter being:</p>
 <ul>
-	<li><code>Random</code>: A random number. The number will be between and include the values set in <a href="#LowBound">LowBound</a> and <a href="#HighBound">HighBound</a>.</li>
-	<li><code>Counter</code>: The number of update cycles from the time the skin is loaded. This number only resets when the skin is unloaded and then loaded again - not when the skin is refreshed.</li>
+<li><code>OpenBin</code></li>
+<li><code>EmptyBin</code>: Empties the bin after confirmation.</li>
+<li><code>EmptyBinSilent</code>: Empties the bin silently without confirmation.</li>
 </ul>
 
-<h3 id="Bases">Other Bases</h3>
-
-<p>The Calc measure allows numbers to be represented numbering systems other than decimal. To use another base, prefix the number with a zero then the letter representing the system you wish to use. The following are accepted prefixes, which are case (lower) sensitive: </p>
-<ul>
-	<li><code>0b</code> - Binary number (base 2) (ex: 0b110110 - returns 54 in decimal)</li>
-	<li><code>0o</code> - Octal number (base 8) (ex: 0o123 - returns 83 in decimal)</li>
-	<li><code>0x</code> - Hexadecimal number (base 16) (ex: 0xF1 - returns 241 in decimal)</li>
-</ul>
-
-<h3 id="Values">Measure Values</h3>
-
-<p>The use of measure values in the Formula option of a Calc measure does not require the use of Dynamic Variables. Simply omit the [] and the number value of the measure will be retrieved. If the measure does not have a number value, 0 will be used. Section Variables, Variables and Built-in Variables follow the normal rules. For more information see the <a href="/tips/dynamiccheatsheet/">Dynamic Cheat Sheet</a>.</p>
-
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[MeasureOne]</span></span><br><span class="line"><span class="attr">Measure</span>=Calc</span><br><span class="line"><span class="attr">Formula</span>=<span class="number">5</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MeasureTwo]</span></span><br><span class="line"><span class="attr">Measure</span>=Calc</span><br><span class="line"><span class="attr">Formula</span>=MeasureOne &lt; <span class="number">6</span> ? <span class="number">0</span> : <span class="number">10</span></span><br></pre></td></tr></table></figure>
+<h2>Example</h2>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[Rainmeter]</span></span><br><span class="line"><span class="attr">Update</span>=<span class="number">1000</span></span><br><span class="line"><span class="attr">BackgroundMode</span>=<span class="number">2</span></span><br><span class="line"><span class="attr">SolidColor</span>=<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MeasureBinSize]</span></span><br><span class="line"><span class="attr">Measure</span>=RecycleManager</span><br><span class="line"><span class="attr">RecycleType</span>=Size</span><br><span class="line"><span class="attr">UpdateDivider</span>=<span class="number">5</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MeterBinSize]</span></span><br><span class="line"><span class="attr">Meter</span>=String</span><br><span class="line"><span class="attr">MeasureName</span>=MeasureBinSize</span><br><span class="line"><span class="attr">X</span>=<span class="number">5</span></span><br><span class="line"><span class="attr">Y</span>=<span class="number">5</span></span><br><span class="line"><span class="attr">W</span>=<span class="number">200</span></span><br><span class="line"><span class="attr">H</span>=<span class="number">20</span></span><br><span class="line"><span class="attr">FontColor</span>=<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span></span><br><span class="line"><span class="attr">SolidColor</span>=<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span></span><br><span class="line"><span class="attr">AutoScale</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">Text</span>=Bin size: %<span class="number">1</span>B</span><br><span class="line"><span class="attr">LeftMouseUpAction</span>=!CommandMeasure MeasureBinSize OpenBin</span><br><span class="line"><span class="attr">RightMouseUpAction</span>=!CommandMeasure MeasureBinSize EmptyBin</span><br></pre></td></tr></table></figure>
 
 
       </div>

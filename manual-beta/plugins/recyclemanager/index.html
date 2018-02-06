@@ -4,8 +4,8 @@
 	<!-- Meta tags for proper character encoding and social media handling  -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=0.9, maximum-scale=0.9">
-	<meta itemprop="name" content="RecycleManager plugin - Rainmeter Docs">
-	<meta property="og:title" content="RecycleManager plugin - Rainmeter Docs">
+	<meta itemprop="name" content="Redirect to measures - Rainmeter Docs">
+	<meta property="og:title" content="Redirect to measures - Rainmeter Docs">
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://www.rainmeter.net">
 	<meta property="og:image" content="https://www.rainmeter.net/img/media_image.png">
@@ -13,7 +13,7 @@
 	<meta property="og:locale" content="en_US" />
 
 	<!-- Page title  -->
-	<title>RecycleManager plugin - Rainmeter</title>
+	<title>Redirect to measures - Rainmeter</title>
 
 	<!-- Files need to be local for offline version of documentations -->
 	<link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -164,6 +164,7 @@
 		<li><a href="/manual-beta/measures/net/">Net</a>
 		<li><a href="/manual-beta/measures/nowplaying/">NowPlaying</a>
 		<li><a href="/manual-beta/measures/plugin/">Plugin</a>
+		<li><a href="/manual-beta/measures/recyclemanager/">RecycleManager</a>
 		<li><a href="/manual-beta/measures/registry/">Registry</a>
 		<li><a href="/manual-beta/measures/script/">Script</a>
 		<li><a href="/manual-beta/measures/string/">String</a>
@@ -187,7 +188,6 @@
 		<li><a href="/manual-beta/plugins/power/">Power</a>
 		<li><a href="/manual-beta/plugins/process/">Process</a>
 		<li><a href="/manual-beta/plugins/quote/">Quote</a>
-		<li><a href="/manual-beta/plugins/recyclemanager/">RecycleManager</a>
 		<li><a href="/manual-beta/plugins/resmon/">ResMon</a>
 		<li><a href="/manual-beta/plugins/runcommand/">RunCommand</a>
 		<li><a href="/manual-beta/plugins/speedfan/">SpeedFan</a>
@@ -229,39 +229,14 @@
 
       <!-- Content -->
       <div class="docs-content col-12 col-lg-9">
-        <h1 class="page-title">RecycleManager plugin</h1>
+        <h1 class="page-title">Redirect to measures</h1>
         <hr />
         <!-- Include content and Replace "!" in every url with correct path -->
-        <p><code>Plugin=RecycleManager</code> monitors the state of the recycle bin.</p>
-
-<h2>Options</h2>
-<dl>
-	<dt>General measure options</dt>
-	<dd>
-		All <a href="/manual-beta/measures/general-options/">general measure options</a> are valid.
-	</dd>
-
-	<dt id="RecycleType"><code>RecycleType</code> <small>Default: <code>Count</code></small></dt>
-	<dd>
-		Type of information to measure. Valid values are:
-		<ul>
-		<li><code>Count</code>: Number of files in the recycle bin.</li>
-		<li><code>Size</code>: Total size of the recycle bin in bytes.</li>
-		</ul>
-	</dd>
-</dl>
-
-<h2>Bangs</h2>
-<p>RecycleManager measures can be controlled with the <a href="/manual-beta/bangs/#CommandMeasure">!CommandMeasure bang</a> with the argument parameter being:</p>
-<ul>
-<li><code>OpenBin</code></li>
-<li><code>EmptyBin</code>: Empties the bin after confirmation.</li>
-<li><code>EmptyBinSilent</code>: Empties the bin silently without confirmation.</li>
-</ul>
-
-<h2>Example</h2>
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[Rainmeter]</span></span><br><span class="line"><span class="attr">Update</span>=<span class="number">1000</span></span><br><span class="line"><span class="attr">BackgroundMode</span>=<span class="number">2</span></span><br><span class="line"><span class="attr">SolidColor</span>=<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MeasureBinSize]</span></span><br><span class="line"><span class="attr">Measure</span>=Plugin</span><br><span class="line"><span class="attr">Plugin</span>=RecycleManager</span><br><span class="line"><span class="attr">RecycleType</span>=Size</span><br><span class="line"><span class="attr">UpdateDivider</span>=<span class="number">5</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MeterBinSize]</span></span><br><span class="line"><span class="attr">Meter</span>=String</span><br><span class="line"><span class="attr">MeasureName</span>=MeasureBinSize</span><br><span class="line"><span class="attr">X</span>=<span class="number">5</span></span><br><span class="line"><span class="attr">Y</span>=<span class="number">5</span></span><br><span class="line"><span class="attr">W</span>=<span class="number">200</span></span><br><span class="line"><span class="attr">H</span>=<span class="number">20</span></span><br><span class="line"><span class="attr">FontColor</span>=<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span></span><br><span class="line"><span class="attr">SolidColor</span>=<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span></span><br><span class="line"><span class="attr">AutoScale</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">Text</span>=Bin size: %<span class="number">1</span>B</span><br><span class="line"><span class="attr">LeftMouseUpAction</span>=!CommandMeasure MeasureBinSize OpenBin</span><br><span class="line"><span class="attr">RightMouseUpAction</span>=!CommandMeasure MeasureBinSize EmptyBin</span><br></pre></td></tr></table></figure>
-
+        <script>
+   currentLocation = window.location;
+   newPath = currentLocation.pathname.replace('/plugins/', '/measures/');
+   location.replace(currentLocation.protocol+'//'+currentLocation.hostname+newPath+currentLocation.hash);
+</script>
 
       </div>
 
