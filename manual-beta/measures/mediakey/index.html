@@ -4,8 +4,8 @@
 	<!-- Meta tags for proper character encoding and social media handling  -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=0.9, maximum-scale=0.9">
-	<meta itemprop="name" content="Tooltips - Rainmeter Docs">
-	<meta property="og:title" content="Tooltips - Rainmeter Docs">
+	<meta itemprop="name" content="MediaKey measure - Rainmeter Docs">
+	<meta property="og:title" content="MediaKey measure - Rainmeter Docs">
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://www.rainmeter.net">
 	<meta property="og:image" content="https://www.rainmeter.net/img/media_image.png">
@@ -13,7 +13,7 @@
 	<meta property="og:locale" content="en_US" />
 
 	<!-- Page title  -->
-	<title>Tooltips - Rainmeter</title>
+	<title>MediaKey measure - Rainmeter</title>
 
 	<!-- Files need to be local for offline version of documentations -->
 	<link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -229,75 +229,69 @@
 
       <!-- Content -->
       <div class="docs-content col-12 col-lg-9">
-        <h1 class="page-title">Tooltips</h1>
+        <h1 class="page-title">MediaKey measure</h1>
         <hr />
         <!-- Include content and Replace "!" in every url with correct path -->
-        <p>Creates a tooltip which appears when the mouse is hovered over the meter.</p>
+        <p><code>Measure=MediaKey</code> sends various keystrokes found on multimedia keyboards. It works with Spotify, Zune, foobar, and Windows Media Player. The measure is controlled by the <a href="/manual-beta/bangs/#CommandMeasure">!CommandMeasure bang</a>.</p>
+
+<h2 id="NotAPlugin">Note: MediaKey was previously a <em>plugin</em> measure.</h2>
+<p>In many existing skins you might see the syntax:</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[MeasureMedia]</span></span><br><span class="line"><span class="attr">Measure</span>=Plugin</span><br><span class="line"><span class="attr">Plugin</span>=MediaKey</span><br><span class="line">or</span><br><span class="line"><span class="attr">Plugin</span>=MediaKey.dll</span><br><span class="line">or</span><br><span class="line"><span class="attr">Plugin</span>=Plugins\MediaKey.dll</span><br></pre></td></tr></table></figure>
+
+<p>MediaKey still works with those forms, and changing existing skins to the new <code>Measure=MediaKey</code> syntax is entirely optional. However, new skins created going forward should use the correct syntax for accuracy and clarity. MediaKey is a measure, and not a plugin.</p>
+
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[MeasureMedia]</span></span><br><span class="line"><span class="attr">Measure</span>=MediaKey</span><br></pre></td></tr></table></figure>
 
 <h2>Options</h2>
 <dl>
-	<dt id="ToolTipText"><code>ToolTipText</code><small>Required</small></dt>
+	<dt>General measure options</dt>
 	<dd>
-		<p>Text to display. This option provides the content for the tooltip, and is required.</p>
+		All <a href="/manual-beta/measures/general-options/">general measure options</a> are valid.
+	</dd>
+</dl>
 
-		<p>Values from <code>MeasureName</code> from the meter can be used with <code>%1</code>, <code>%2</code> etc. as appropriate for various meter types:</p>
-		<ul>
-			<li><b>String, Line, Image:</b> <code>%1</code>, <code>%2</code>, <code>%3</code>, ...</li>
-			<li><b>Histogram:</b> <code>%1</code>, <code>%2</code></li>
-			<li><b>Others:</b> <code>%1</code></li>
-		</ul>
-
-		<p><b>Notes:</b></p>
-		<p>To wrap the text on multiple lines, use the <a href="/manual-beta/variables/built-in-variables/#CRLF">#CRLF# variable</a>.</p>
-		<p>There are no text formatting options possible with ToolTipText. The font, colors and sizes are the ones built into the standard tooltip behavior in the Windows operating system.</p>
-		<p>On a String meter, numeric formatting options are forced to <code>AutoScale=1</code>, <code>Scale=1</code>, <code>NumOfDecimals=0</code>, <code>Percentual=0</code> on the tooltip when values from the meter are used with <code>%1</code>, <code>%2</code> etc. To have more control over numeric formatting, <a href="/manual-beta/variables/section-variables/#MeasureParameters">[SectionVariables]</a> should be used instead. Be sure to use <code>DynamicVariables=1</code> on the meter when section variables are used.</p>
+<h2>Bangs</h2>
+<p>To control keystrokes on multimedia keyboards, use the <a href="/manual-beta/bangs/#CommandMeasure">!CommandMeasure</a> bang. In the examples below <code><em>MeasureMediaKey</em></code> is the section name for the MediaKey measure. Your <a href="/manual-beta/skins/#Format">section name</a> may differ.</p>
+<dl>
+	<dt id="NextTrack"><code>!CommandMeasure "<em>MeasureMediaKey</em>" "NextTrack"</code></dt>
+	<dd>
+		Moves to the next track in the list.
 	</dd>
 
-	<dt id="ToolTipTitle"><code>ToolTipTitle</code></dt>
+	<dt id="PrevTrack"><code>!CommandMeasure "<em>MeasureMediaKey</em>" "PrevTrack"</code></dt>
 	<dd>
-		<p>Title of the tooltip. Only one line of text can be used.</p>
+		Moves to the previous track in the list.
 	</dd>
 
-	<dt id="ToolTipIcon"><code>ToolTipIcon</code></dt>
+	<dt id="Stop"><code>!CommandMeasure "<em>MeasureMediaKey</em>" "Stop"</code></dt>
 	<dd>
-		<p>Specifies the icon to use for the tooltip. This can be the <a href="/manual-beta/skins/option-types/#Path">path</a> to an <a href="http://www.convertico.com/">.ico</a> file, or one of the following preset icons:</p>
-		<ul>
-			<li><code>Info</code></li>
-			<li><code>Warning</code></li>
-			<li><code>Error</code></li>
-			<li><code>Question</code></li>
-			<li><code>Shield</code></li>
-		</ul>
-
-		<p><b>Note:</b> <code>ToolTipTitle</code> must be specified to use <code>ToolTipIcon</code>.</p>
+		Stop playback.
 	</dd>
 
-	<dt id="ToolTipType"><code>ToolTipType</code><small>Default: <code>0</code></small></dt>
+	<dt id="PlayPause"><code>!CommandMeasure "<em>MeasureMediaKey</em>" "PlayPause"</code></dt>
 	<dd>
-		<p>If set to <code>1</code>, a balloon tooltip is displayed. Otherwise a normal tooltip is displayed.</p>
+		Plays/Pause playback.
 	</dd>
 
-	<dt id="ToolTipWidth"><code>ToolTipWidth</code><small>Default: <code>1000</code></small></dt>
+	<dt id="VolumeMute"><code>!CommandMeasure "<em>MeasureMediaKey</em>" "VolumeMute"</code></dt>
 	<dd>
-		<p>Maximum width for the tooltip. When the width is reached, the text will automatically wrap.</p>
-
-		<p><b>Note:</b> As a <code>ToolTipTitle</code> cannot be wrapped, do not set this width less than the length of the title, or there could be unexpected results.</p>
+		Mutes the sound.
 	</dd>
 
-	<dt id="ToolTipHidden"><code>ToolTipHidden</code><small>Default: <code>0</code></small></dt>
+	<dt id="VolumeDown"><code>!CommandMeasure "<em>MeasureMediaKey</em>" "VolumeDown"</code></dt>
 	<dd>
-		<p>If set to <code>1</code>, the tooltip is not displayed.</p>
-		<p><b>Note:</b> This option can also be used in the <a href="/manual-beta/skins/rainmeter-section/#ToolTipHidden">[Rainmeter] section</a> to hide all tooltips in the skin.</p>
+		Decreases volume.
 	</dd>
+
+	<dt id="VolumeUp"><code>!CommandMeasure "<em>MeasureMediaKey</em>" "VolumeUp"</code></dt>
+	<dd>
+		Increases volume.
+	</dd>
+</dl>
 
 <h2>Example</h2>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[MeasureMediaKey]</span></span><br><span class="line"><span class="attr">Measure</span>=MediaKey</span><br><span class="line"></span><br><span class="line"><span class="section">[MeterMute]</span></span><br><span class="line"><span class="attr">Meter</span>=String</span><br><span class="line"><span class="attr">SolidColor</span>=<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span></span><br><span class="line"><span class="attr">FontColor</span>=<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span></span><br><span class="line"><span class="attr">Text</span>=Mute</span><br><span class="line"><span class="attr">LeftMouseUpAction</span>=!CommandMeasure <span class="string">"MeasureMediaKey"</span> <span class="string">"VolumeMute"</span></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[Rainmeter]</span></span><br><span class="line"><span class="attr">Update</span>=<span class="number">1000</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MeasureCPU]</span></span><br><span class="line"><span class="attr">Measure</span>=CPU</span><br><span class="line"></span><br><span class="line"><span class="section">[MeasureCPUSpeed]</span></span><br><span class="line"><span class="attr">Measure</span>=Registry</span><br><span class="line"><span class="attr">RegHKey</span>=HKEY_LOCAL_MACHINE</span><br><span class="line"><span class="attr">RegKey</span>=HARDWARE\DESCRIPTION\System\CentralProcessor\<span class="number">0</span></span><br><span class="line"><span class="attr">RegValue</span>=~MHz</span><br><span class="line"><span class="attr">UpdateDivider</span>=-<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MeasureCPUName]</span></span><br><span class="line"><span class="attr">Measure</span>=Registry</span><br><span class="line"><span class="attr">RegHKey</span>=HKEY_LOCAL_MACHINE</span><br><span class="line"><span class="attr">RegKey</span>=HARDWARE\DESCRIPTION\System\CentralProcessor\<span class="number">0</span></span><br><span class="line"><span class="attr">RegValue</span>=ProcessorNameString</span><br><span class="line"><span class="attr">UpdateDivider</span>=-<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MeasureCPUIdentifier]</span></span><br><span class="line"><span class="attr">Measure</span>=Registry</span><br><span class="line"><span class="attr">RegHKey</span>=HKEY_LOCAL_MACHINE</span><br><span class="line"><span class="attr">RegKey</span>=HARDWARE\DESCRIPTION\System\CentralProcessor\<span class="number">0</span></span><br><span class="line"><span class="attr">RegValue</span>=Identifier</span><br><span class="line"><span class="attr">UpdateDivider</span>=-<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MeasureCPUText]</span></span><br><span class="line"><span class="attr">Meter</span>=String</span><br><span class="line"><span class="attr">X</span>=<span class="number">0</span></span><br><span class="line"><span class="attr">Y</span>=<span class="number">0</span></span><br><span class="line"><span class="attr">FontFace</span>=Segoe UI</span><br><span class="line"><span class="attr">FontColor</span>=<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span></span><br><span class="line"><span class="attr">SolidColor</span>=<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span></span><br><span class="line"><span class="attr">FontSize</span>=<span class="number">12</span></span><br><span class="line"><span class="attr">StringStyle</span>=Bold</span><br><span class="line"><span class="attr">StringAlign</span>=Left</span><br><span class="line"><span class="attr">AntiAlias</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">Text</span>=<span class="string">"CPU Usage:"</span></span><br><span class="line"><span class="attr">ToolTipTitle</span>=CPU Information</span><br><span class="line"><span class="attr">ToolTipType</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">ToolTipIcon</span>=INFO</span><br><span class="line"><span class="attr">ToolTipText</span>=[MeasureCPUName]#CRLF#[MeasureCPUIdentifier]#CRLF#Running at: [MeasureCPUSpeed] Mhz</span><br><span class="line"><span class="attr">DynamicVariables</span>=<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MeterCPU%]</span></span><br><span class="line"><span class="attr">MeasureName</span>=MeasureCPU</span><br><span class="line"><span class="attr">Meter</span>=String</span><br><span class="line"><span class="attr">X</span>=<span class="number">140</span></span><br><span class="line"><span class="attr">Y</span>=-<span class="number">2</span>r</span><br><span class="line"><span class="attr">FontFace</span>=Segoe UI</span><br><span class="line"><span class="attr">FontColor</span>=<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span></span><br><span class="line"><span class="attr">FontSize</span>=<span class="number">14</span></span><br><span class="line"><span class="attr">StringStyle</span>=Bold</span><br><span class="line"><span class="attr">StringAlign</span>=Right</span><br><span class="line"><span class="attr">AntiAlias</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">NumOfDecimals</span>=<span class="number">0</span></span><br><span class="line"><span class="attr">Percentual</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">Text</span>=<span class="string">"%1%"</span></span><br></pre></td></tr></table></figure>
-
-<div class="exampleprev">
-	<p><img src="/manual-beta/img/example-meters/ExampleTooltip.png"/></p>
-	<p>An example skin demontrating the Tooltip option.</p>
-</div>
 
       </div>
 

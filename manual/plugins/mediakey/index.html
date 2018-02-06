@@ -4,8 +4,8 @@
 	<!-- Meta tags for proper character encoding and social media handling  -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=0.9, maximum-scale=0.9">
-	<meta itemprop="name" content="MediaKey plugin - Rainmeter Docs">
-	<meta property="og:title" content="MediaKey plugin - Rainmeter Docs">
+	<meta itemprop="name" content="Redirect to measures - Rainmeter Docs">
+	<meta property="og:title" content="Redirect to measures - Rainmeter Docs">
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://www.rainmeter.net">
 	<meta property="og:image" content="https://www.rainmeter.net/img/media_image.png">
@@ -13,7 +13,7 @@
 	<meta property="og:locale" content="en_US" />
 
 	<!-- Page title  -->
-	<title>MediaKey plugin - Rainmeter</title>
+	<title>Redirect to measures - Rainmeter</title>
 
 	<!-- Files need to be local for offline version of documentations -->
 	<link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -157,6 +157,7 @@
 		<li><a href="/manual/measures/cpu/">CPU</a>
 		<li><a href="/manual/measures/freediskspace/">FreeDiskSpace</a>
 		<li><a href="/manual/measures/loop/">Loop</a>
+		<li><a href="/manual/measures/mediakey/">MediaKey</a>
 		<li><a href="/manual/measures/memory/">Memory</a>
 		<li><a href="/manual/measures/net/">Net</a>
 		<li><a href="/manual/measures/nowplaying/">NowPlaying</a>
@@ -179,7 +180,6 @@
 		<li><a href="/manual/plugins/folderinfo/">FolderInfo</a>
 		<li><a href="/manual/plugins/inputtext/">InputText</a>
 		<li><a href="/manual/plugins/itunes/">iTunes</a>
-		<li><a href="/manual/plugins/mediakey/">MediaKey</a>
 		<li><a href="/manual/plugins/perfmon/">PerfMon</a>
 		<li><a href="/manual/plugins/ping/">Ping</a>
 		<li><a href="/manual/plugins/power/">Power</a>
@@ -226,61 +226,14 @@
 
       <!-- Content -->
       <div class="docs-content col-12 col-lg-9">
-        <h1 class="page-title">MediaKey plugin</h1>
+        <h1 class="page-title">Redirect to measures</h1>
         <hr />
         <!-- Include content and Replace "!" in every url with correct path -->
-        <p><code>Plugin=MediaKey</code> sends various keystrokes found on multimedia keyboards. It works with Spotify, Zune, foobar, and Windows Media Player. The plugin is controlled by the <a href="/manual/bangs/#CommandMeasure">!CommandMeasure bang</a>.</p>
-
-<h2>Options</h2>
-<dl>
-	<dt>General measure options</dt>
-	<dd>
-		All <a href="/manual/measures/general-options/">general measure options</a> are valid.
-	</dd>
-</dl>
-
-<h2>Bangs</h2>
-<p>To control keystrokes on multimedia keyboards, use the <a href="/manual/bangs/#CommandMeasure">!CommandMeasure</a> bang. In the examples below <code><em>MeasureMediaKey</em></code> is the section name for the MediaKey measure. Your <a href="/manual/skins/#Format">section name</a> may differ.</p>
-<dl>
-	<dt id="NextTrack"><code>!CommandMeasure "<em>MeasureMediaKey</em>" "NextTrack"</code></dt>
-	<dd>
-		Moves to the next track in the list.
-	</dd>
-
-	<dt id="PrevTrack"><code>!CommandMeasure "<em>MeasureMediaKey</em>" "PrevTrack"</code></dt>
-	<dd>
-		Moves to the previous track in the list.
-	</dd>
-
-	<dt id="Stop"><code>!CommandMeasure "<em>MeasureMediaKey</em>" "Stop"</code></dt>
-	<dd>
-		Stop playback.
-	</dd>
-
-	<dt id="PlayPause"><code>!CommandMeasure "<em>MeasureMediaKey</em>" "PlayPause"</code></dt>
-	<dd>
-		Plays/Pause playback.
-	</dd>
-
-	<dt id="VolumeMute"><code>!CommandMeasure "<em>MeasureMediaKey</em>" "VolumeMute"</code></dt>
-	<dd>
-		Mutes the sound.
-	</dd>
-
-	<dt id="VolumeDown"><code>!CommandMeasure "<em>MeasureMediaKey</em>" "VolumeDown"</code></dt>
-	<dd>
-		Decreases volume.
-	</dd>
-
-	<dt id="VolumeUp"><code>!CommandMeasure "<em>MeasureMediaKey</em>" "VolumeUp"</code></dt>
-	<dd>
-		Increases volume.
-	</dd>
-</dl>
-
-<h2>Example</h2>
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[MeasureMediaKey]</span></span><br><span class="line"><span class="attr">Measure</span>=Plugin</span><br><span class="line"><span class="attr">Plugin</span>=MediaKey</span><br><span class="line"></span><br><span class="line"><span class="section">[MeterMute]</span></span><br><span class="line"><span class="attr">Meter</span>=String</span><br><span class="line"><span class="attr">SolidColor</span>=<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span></span><br><span class="line"><span class="attr">FontColor</span>=<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span></span><br><span class="line"><span class="attr">Text</span>=Mute</span><br><span class="line"><span class="attr">LeftMouseUpAction</span>=!CommandMeasure <span class="string">"MeasureMediaKey"</span> <span class="string">"VolumeMute"</span></span><br></pre></td></tr></table></figure>
-
+        <script>
+   currentLocation = window.location;
+   newPath = currentLocation.pathname.replace('/plugins/', '/measures/');
+   location.replace(currentLocation.protocol+'//'+currentLocation.hostname+newPath+currentLocation.hash);
+</script>
 
       </div>
 

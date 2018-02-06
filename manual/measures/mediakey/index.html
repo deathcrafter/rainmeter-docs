@@ -4,8 +4,8 @@
 	<!-- Meta tags for proper character encoding and social media handling  -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=0.9, maximum-scale=0.9">
-	<meta itemprop="name" content="[TrayMeasure] section - Rainmeter Docs">
-	<meta property="og:title" content="[TrayMeasure] section - Rainmeter Docs">
+	<meta itemprop="name" content="MediaKey measure - Rainmeter Docs">
+	<meta property="og:title" content="MediaKey measure - Rainmeter Docs">
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://www.rainmeter.net">
 	<meta property="og:image" content="https://www.rainmeter.net/img/media_image.png">
@@ -13,7 +13,7 @@
 	<meta property="og:locale" content="en_US" />
 
 	<!-- Page title  -->
-	<title>[TrayMeasure] section - Rainmeter</title>
+	<title>MediaKey measure - Rainmeter</title>
 
 	<!-- Files need to be local for offline version of documentations -->
 	<link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -226,51 +226,68 @@
 
       <!-- Content -->
       <div class="docs-content col-12 col-lg-9">
-        <h1 class="page-title">[TrayMeasure] section</h1>
+        <h1 class="page-title">MediaKey measure</h1>
         <hr />
         <!-- Include content and Replace "!" in every url with correct path -->
-        <p>The [TrayMeasure] section defines a <a href="/manual/measures/">measure</a> for the <a href="http://en.wikipedia.org/wiki/Taskbar#Taskbar_elements">notification area icon</a>. To use the default Rainmeter icon, remove the [TrayMeasure] section completely.</p>
+        <p><code>Measure=MediaKey</code> sends various keystrokes found on multimedia keyboards. It works with Spotify, Zune, foobar, and Windows Media Player. The measure is controlled by the <a href="/manual/bangs/#CommandMeasure">!CommandMeasure bang</a>.</p>
+
+<h2 id="NotAPlugin">Note: MediaKey was previously a <em>plugin</em> measure.</h2>
+<p>In many existing skins you might see the syntax:</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[MeasureMedia]</span></span><br><span class="line"><span class="attr">Measure</span>=Plugin</span><br><span class="line"><span class="attr">Plugin</span>=MediaKey</span><br><span class="line">or</span><br><span class="line"><span class="attr">Plugin</span>=MediaKey.dll</span><br><span class="line">or</span><br><span class="line"><span class="attr">Plugin</span>=Plugins\MediaKey.dll</span><br></pre></td></tr></table></figure>
+
+<p>MediaKey still works with those forms, and changing existing skins to the new <code>Measure=MediaKey</code> syntax is entirely optional. However, new skins created going forward should use the correct syntax for accuracy and clarity. MediaKey is a measure, and not a plugin.</p>
+
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[MeasureMedia]</span></span><br><span class="line"><span class="attr">Measure</span>=MediaKey</span><br></pre></td></tr></table></figure>
 
 <h2>Options</h2>
 <dl>
-	<dt id="Measure"><code>Measure</code></dt>
+	<dt>General measure options</dt>
 	<dd>
-		<p>Type of the measure to be shown as the tray icon. The measure must return values between some limits.</p>
-	</dd>
-
-	<dt id="TrayMeter"><code>TrayMeter</code><small>Default: <code>Histogram</code></small></dt>
-	<dd>
-		<p>The manner in which the measure is depicted. This can be either <code>Histogram</code> or <code>Bitmap</code>.</p>
-	</dd>
-
-	<dt id="TrayColor1"><code>TrayColor1</code><small>Default: <code>0,100,0</code></small></dt>
-	<dd>
-		<p>Background <a href="/manual/skins/option-types/#Color">color</a> for <code>TrayMeter=Histogram</code>.</p>
-	</dd>
-
-	<dt id="TrayColor2"><code>TrayColor2</code><small>Default: <code>0,255,0</code></small></dt>
-	<dd>
-		<p>Foreground <a href="/manual/skins/option-types/#Color">color</a> for <code>TrayMeter=Histogram</code>.</p>
-	</dd>
-
-	<dt id="TrayBitmap"><code>TrayBitmap</code></dt>
-	<dd>
-		<p>Path to the tray icon bitmap file for <code>TrayMeter=Bitmap</code>. Defines the name of the bitmap used when Bitmap is chosen for TrayMeter. The bitmap can have any number of 16x16 frames.</p>
-
-		<p>It is possible to use separate icon files as the tray bitmap. <code>%i</code> can be used in the filename to define an increasing number from 1. E.g. <code>TrayBitmap=tray-%i.ico</code> would read the icons files tray-1.ico, tray-2.ico, tray-3.ico and so on as long as it can find them. The format is like <a href="http://msdn.microsoft.com/en-us/library/wc7014hz%28v=vs.100%29.aspx">printf</a>. (e.g. <code>TrayBitmap=tray-%02i.ico</code> will load tray-01.ico, tray-02.ico, ...)</p>
-
-		<p>A simple <code>Measure</code> that returns a single value, combined with a <code>TrayBitmap</code> path and name of a single 16x16 .ico file can be used to replace the default tray icon with a custom one.</p>
-
-		<p><b>Note:</b> The path to a bitmap image or .ico files is a <a href="/manual/skins/option-types/">relative path</a> from the main Skins\ folder (i.e. <code>TrayBitmap=Icons\MyIcon.ico</code>.)</p>
+		All <a href="/manual/measures/general-options/">general measure options</a> are valid.
 	</dd>
 </dl>
 
-<h2>Examples</h2>
-<p>Show total network activity as a histogram.</p>
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[TrayMeasure]</span></span><br><span class="line"><span class="attr">Measure</span>=NetTotal</span><br><span class="line"><span class="attr">Interface</span>=<span class="number">0</span></span><br><span class="line"><span class="attr">TrayMeter</span>=Histogram</span><br></pre></td></tr></table></figure>
+<h2>Bangs</h2>
+<p>To control keystrokes on multimedia keyboards, use the <a href="/manual/bangs/#CommandMeasure">!CommandMeasure</a> bang. In the examples below <code><em>MeasureMediaKey</em></code> is the section name for the MediaKey measure. Your <a href="/manual/skins/#Format">section name</a> may differ.</p>
+<dl>
+	<dt id="NextTrack"><code>!CommandMeasure "<em>MeasureMediaKey</em>" "NextTrack"</code></dt>
+	<dd>
+		Moves to the next track in the list.
+	</dd>
 
-<p>Replace the default tray icon with a custom one.</p>
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[TrayMeasure]</span></span><br><span class="line"><span class="attr">Measure</span>=Calc</span><br><span class="line"><span class="attr">Formula</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">TrayMeter</span>=Bitmap</span><br><span class="line"><span class="attr">TrayBitmap</span>=Icons\MyIcon.ico</span><br></pre></td></tr></table></figure>
+	<dt id="PrevTrack"><code>!CommandMeasure "<em>MeasureMediaKey</em>" "PrevTrack"</code></dt>
+	<dd>
+		Moves to the previous track in the list.
+	</dd>
+
+	<dt id="Stop"><code>!CommandMeasure "<em>MeasureMediaKey</em>" "Stop"</code></dt>
+	<dd>
+		Stop playback.
+	</dd>
+
+	<dt id="PlayPause"><code>!CommandMeasure "<em>MeasureMediaKey</em>" "PlayPause"</code></dt>
+	<dd>
+		Plays/Pause playback.
+	</dd>
+
+	<dt id="VolumeMute"><code>!CommandMeasure "<em>MeasureMediaKey</em>" "VolumeMute"</code></dt>
+	<dd>
+		Mutes the sound.
+	</dd>
+
+	<dt id="VolumeDown"><code>!CommandMeasure "<em>MeasureMediaKey</em>" "VolumeDown"</code></dt>
+	<dd>
+		Decreases volume.
+	</dd>
+
+	<dt id="VolumeUp"><code>!CommandMeasure "<em>MeasureMediaKey</em>" "VolumeUp"</code></dt>
+	<dd>
+		Increases volume.
+	</dd>
+</dl>
+
+<h2>Example</h2>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[MeasureMediaKey]</span></span><br><span class="line"><span class="attr">Measure</span>=MediaKey</span><br><span class="line"></span><br><span class="line"><span class="section">[MeterMute]</span></span><br><span class="line"><span class="attr">Meter</span>=String</span><br><span class="line"><span class="attr">SolidColor</span>=<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span></span><br><span class="line"><span class="attr">FontColor</span>=<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span></span><br><span class="line"><span class="attr">Text</span>=Mute</span><br><span class="line"><span class="attr">LeftMouseUpAction</span>=!CommandMeasure <span class="string">"MeasureMediaKey"</span> <span class="string">"VolumeMute"</span></span><br></pre></td></tr></table></figure>
 
 
       </div>
