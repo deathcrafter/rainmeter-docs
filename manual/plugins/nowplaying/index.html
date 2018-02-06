@@ -4,8 +4,8 @@
 	<!-- Meta tags for proper character encoding and social media handling  -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=0.9, maximum-scale=0.9">
-	<meta itemprop="name" content="NowPlaying plugin - Rainmeter Docs">
-	<meta property="og:title" content="NowPlaying plugin - Rainmeter Docs">
+	<meta itemprop="name" content="Redirect to measures - Rainmeter Docs">
+	<meta property="og:title" content="Redirect to measures - Rainmeter Docs">
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://www.rainmeter.net">
 	<meta property="og:image" content="https://www.rainmeter.net/img/media_image.png">
@@ -13,7 +13,7 @@
 	<meta property="og:locale" content="en_US" />
 
 	<!-- Page title  -->
-	<title>NowPlaying plugin - Rainmeter</title>
+	<title>Redirect to measures - Rainmeter</title>
 
 	<!-- Files need to be local for offline version of documentations -->
 	<link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -159,6 +159,7 @@
 		<li><a href="/manual/measures/loop/">Loop</a>
 		<li><a href="/manual/measures/memory/">Memory</a>
 		<li><a href="/manual/measures/net/">Net</a>
+		<li><a href="/manual/measures/nowplaying/">NowPlaying</a>
 		<li><a href="/manual/measures/plugin/">Plugin</a>
 		<li><a href="/manual/measures/registry/">Registry</a>
 		<li><a href="/manual/measures/script/">Script</a>
@@ -178,7 +179,6 @@
 		<li><a href="/manual/plugins/inputtext/">InputText</a>
 		<li><a href="/manual/plugins/itunes/">iTunes</a>
 		<li><a href="/manual/plugins/mediakey/">MediaKey</a>
-		<li><a href="/manual/plugins/nowplaying/">NowPlaying</a>
 		<li><a href="/manual/plugins/perfmon/">PerfMon</a>
 		<li><a href="/manual/plugins/ping/">Ping</a>
 		<li><a href="/manual/plugins/power/">Power</a>
@@ -226,136 +226,14 @@
 
       <!-- Content -->
       <div class="docs-content col-12 col-lg-9">
-        <h1 class="page-title">NowPlaying plugin</h1>
+        <h1 class="page-title">Redirect to measures</h1>
         <hr />
         <!-- Include content and Replace "!" in every url with correct path -->
-        <p><code>Plugin=NowPlaying</code> retrieves information about the currently playing track from a number of media players.</p>
-
-<h2>Options</h2>
-<dl>
-	<dt>General measure options</dt>
-	<dd>
-		All <a href="/manual/measures/general-options/">general measure options</a> are valid.
-	</dd>
-
-	<dt id="PlayerName"><code>PlayerName</code></dt>
-	<dd>
-		Can be either:
-		<ul>
-		<li>The player <a href="#playerlist">interface name</a> (e.g. <code>PlayerName=iTunes</code>)</li>
-		<li>Or the name of another measure (e.g. <code>PlayerName=[MainMeasure]</code>)</li>
-		</ul>
-
-		<b>Important:</b> If multiple measures use the same player, specify the player interface name on the first NowPlaying measure and specify the name of the first measure in subsequent measures. See example below for proper usage.
-	</dd>
-
-	<dt id="PlayerType"><code>PlayerType</code></dt>
-	<dd>
-		Type of the measure value. Valid values are:
-		<ul>
-		<li><code>Artist</code>: Track artist.</li>
-		<li><code>Album</code>: Current album.</li>
-		<li><code>Title</code>: Track title.</li>
-		<li><code>Number</code>: Track number.</li>
-		<li><code>Year</code>: Track year.</li>
-		<li><code>Genre</code>: Track genre.</li>
-		<li><code>Cover</code>: Path to cover art.</li>
-		<li><code>File</code>: Path to the playing media file.</li>
-		<li><code>Duration</code>: Total length of track in seconds.</li>
-		<li><code>Position</code>: Current position in track in seconds.</li>
-		<li><code>Progress</code>: Percentage of track completed.</li>
-		<li><code>Rating</code>: Rating of current track (0 to 5).</li>
-		<li><code>Repeat</code>: 0 if repeat/loop track is off, 1 if on.</li>
-		<li><code>Shuffle</code>: 0 if shuffle/random tracks is off, 1 if on.</li>
-		<li><code>State</code>: 0 for stopped, 1 for playing, and 2 for paused.</li>
-		<li><code>Status</code>: 0 for inactive (player closed) and 1 for active (player open).</li>
-		<li><code>Volume</code>: From 0 to 100.</li>
-		</ul>
-
-		<b>Note:</b> With measures of type <code>Duration</code> or <code>Position</code>, the string value is in the form <code>MM:SS</code> and the number value is the actual number of seconds.<br/><br/>
-
-		The <code>PlayerType=Genre</code> option is currently supported with the AIMP, CAD, iTunes, WMP and WinAmp <code>PlayerName</code> values.
-	</dd>
-
-	<dt id="PlayerPath"><code>PlayerPath</code></dt>
-	<dd>
-		If defined, used to launch the player with the <code>OpenPlayer</code> command. If not defined, the plugin will attempt to automatically detect the path.
-	</dd>
-
-	<dt id="TrackChangeAction"><code>TrackChangeAction</code></dt>
-	<dd>
-		<a href="/manual/skins/option-types/#Action">Action</a> to execute when the track changes.
-	</dd>
-
-	<dt id="DisableLeadingZero"><code>DisableLeadingZero</code> <small>Default: <code>0</code></small></dt>
-	<dd>
-		If set to <code>1</code>, the format of Duration and Position is <code>M:SS</code> instead of <code>MM:SS</code>. This option must be set on the main measure.
-	</dd>
-</dl>
-
-<h2>Bangs</h2>
-<p>NowPlaying measures can be controlled with the <a href="/manual/bangs/#CommandMeasure">!CommandMeasure bang</a> with the argument parameter being:</p>
-<ul class="spaced">
-<li><code>Pause</code>: Pause current track.</li>
-<li><code>Play</code>: Play current track.</li>
-<li><code>PlayPause</code>: Play (if stopped/paused) or pause (if playing) current track.</li>
-<li><code>Stop</code>: Stop current track.</li>
-<li><code>Next</code>: Change to next track.</li>
-<li><code>Previous</code>: Change to previous track.</li>
-<li><code>OpenPlayer</code>: Opens the player. If already open, the player will be brought to the top.</li>
-<li><code>ClosePlayer</code>: Closes the player.</li>
-<li><code>TogglePlayer</code>: Opens/closes the player depending on current state.</li>
-<li><code>SetPosition <em>n</em></code>: Where <em>n</em> is either an absolute value (<code>SetPosition 50</code> to jump to 50% of the track) or a relative value (<code>SetPosition +5</code> to jump 5% forward or <code>SetPosition -10</code> to jump 10% backward).</li>
-<li><code>SetRating <em>n</em></code>: Where <em>n</em> is a value between <code>0</code> (no rating) and <code>5</code> (maximum rating).</li>
-<li><code>SetShuffle <em>n</em></code>: Where <em>n</em> is <code>1</code> (shuffle on), <code>0</code> (shuffle off), or <code>-1</code> (toggle shuffle).</li>
-<li><code>SetRepeat <em>n</em></code>: Where <em>n</em> is <code>1</code> (repeat on), <code>0</code> (repeat off), or <code>-1</code> (toggle repeat).</li>
-<li><code>SetVolume <em>n</em></code>: Where <em>n</em> is either an absolute value (<code>SetVolume 50</code> to set volume to 50%) or a relative value (<code>SetVolume +20</code> to increase volume by 20% or<code>SetVolume -40</code> to decrease volume by 40%).</li>
-</ul>
-
-<h2 id="playerlist">Fully supported players</h2>
-<p>The following players are fully supported. All features should work unless stated otherwise.</p>
-
-<ul class="spaced">
-	<li><b>AIMP</b>: <code>PlayerName=AIMP</code><br>
-	Fully supported. Tested with AIMP 2.61.</li>
-
-	<li><b>foobar2000</b>: <code>PlayerName=CAD</code><br>
-	Fully supported. The <a href="http://poiru.github.com/foo-cad/">foo_cad plugin (download)</a> needs to be installed.</li>
-
-	<li><b>iTunes</b>: <code>PlayerName=iTunes</code><br>
-	Fully supported. Tested with iTunes 10.2.</li>
-
-	<li><b>J. River Media Center</b> and <b>Media Jukebox</b>: <code>PlayerName=CAD</code><br>
-	Fully supported through the CAD interface with Media Center 19 and later. More information <a href="http://yabb.jriver.com/interact/index.php?topic=84508.0">here</a>.</li>
-
-	<li><b>MediaMonkey</b>: <code>PlayerName=MediaMonkey</code><br>
-	Fully supported. Tested with MediaMonkey 3.2.5.</li>
-
-	<li><b>MusicBee</b>: <code>PlayerName=CAD</code><br>
-	Fully supported. <a href="http://getmusicbee.com/download.html">MusicBee 1.2</a> (or higher) is required.</li>
-
-	<li><b>Winamp</b>: <code>PlayerName=Winamp</code><br>
-	Fully supported.</li>
-
-	<li><b>WMP</b>: <code>PlayerName=WMP</code><br>
-	Fully supported, except for the <code>Repeat</code> / <code>Shuffle</code> types.</li>
-</ul>
-
-<h2>Partially supported players</h2>
-<p>The following players are partially supported. Only some features will work.</p>
-
-<ul class="spaced">
-	<li><b>Spotify</b>: <code>PlayerName=Spotify</code><br>
-	Partially supported. Only the types <code>Artist</code>, <code>Track</code> and the bangs <code>Play</code>, <code>PlayPause</code>, <code>Stop</code>, <code>Next</code>, and <code>Previous</code> are available.</li>
-
-	<li><b>Last.fm Client</b>, <b>TTPlayer</b>, <b>OpenPandora</b>, <b>Zune</b>: <code>PlayerName=WLM</code><br>
-	Partially supported. Even in the best case, only the types <code>Title</code>, <code>Artist</code>, <code>Album</code> and the bangs <code>Play</code>, <code>Pause</code>, <code>PlayPause</code>, <code>Next</code>, <code>Previous</code>, <code>Stop</code> are supported.</li>
-</ul>
-
-<h2>Example</h2>
-<p>For a more complete example, check the <a href="http://poiru.deviantart.com/art/Soita-for-Rainmeter-209864541">Soita skin</a>.</p>
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[Rainmeter]</span></span><br><span class="line"><span class="attr">Update</span>=<span class="number">1000</span></span><br><span class="line"><span class="attr">BackgroundMode</span>=<span class="number">2</span></span><br><span class="line"><span class="attr">SolidColor</span>=<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span></span><br><span class="line"></span><br><span class="line"><span class="comment">; MeasurePlayer is the main measure.</span></span><br><span class="line"><span class="comment">; MeasureArtist and MeasureAlbum are secondary measures.</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MeasurePlayer]</span></span><br><span class="line"><span class="attr">Measure</span>=Plugin</span><br><span class="line"><span class="attr">Plugin</span>=NowPlaying</span><br><span class="line"><span class="comment">; The main measure specifies the media player on PlayerName.</span></span><br><span class="line"><span class="attr">PlayerName</span>=iTunes</span><br><span class="line"><span class="attr">PlayerType</span>=TITLE</span><br><span class="line"><span class="comment">; PlayerPath, TrackChangeAction, and DisableLeadingZero are valid here on</span></span><br><span class="line"><span class="comment">; the main measure only.</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MeasureArtist]</span></span><br><span class="line"><span class="attr">Measure</span>=Plugin</span><br><span class="line"><span class="attr">Plugin</span>=NowPlaying</span><br><span class="line"><span class="comment">; Secondary measures specify the name of the main measure on PlayerName.</span></span><br><span class="line"><span class="attr">PlayerName</span>=[MeasurePlayer]</span><br><span class="line"><span class="attr">PlayerType</span>=ARTIST</span><br><span class="line"></span><br><span class="line"><span class="section">[MeasureAlbum]</span></span><br><span class="line"><span class="attr">Measure</span>=Plugin</span><br><span class="line"><span class="attr">Plugin</span>=NowPlaying</span><br><span class="line"><span class="attr">PlayerName</span>=[MeasurePlayer]</span><br><span class="line"><span class="attr">PlayerType</span>=ALBUM</span><br><span class="line"></span><br><span class="line"><span class="section">[MeterPrev]</span></span><br><span class="line"><span class="attr">Meter</span>=String</span><br><span class="line"><span class="attr">X</span>=<span class="number">5</span></span><br><span class="line"><span class="attr">Y</span>=<span class="number">5</span></span><br><span class="line"><span class="attr">FontColor</span>=FFFF00</span><br><span class="line"><span class="attr">Text</span>=<span class="string">"Prev"</span></span><br><span class="line"><span class="attr">LeftMouseUpAction</span>=[!CommandMeasure <span class="string">"MeasurePlayer"</span> <span class="string">"Previous"</span>]</span><br><span class="line"></span><br><span class="line"><span class="section">[MeterNext]</span></span><br><span class="line"><span class="attr">Meter</span>=String</span><br><span class="line"><span class="attr">X</span>=<span class="number">20</span>R</span><br><span class="line"><span class="attr">Y</span>=<span class="number">5</span></span><br><span class="line"><span class="attr">FontColor</span>=FFFF00</span><br><span class="line"><span class="attr">Text</span>=<span class="string">"Next"</span></span><br><span class="line"><span class="attr">LeftMouseUpAction</span>=[!CommandMeasure <span class="string">"MeasurePlayer"</span> <span class="string">"Next"</span>]</span><br><span class="line"></span><br><span class="line"><span class="section">[MeterTitle]</span></span><br><span class="line"><span class="attr">Meter</span>=String</span><br><span class="line"><span class="attr">MeasureName</span>=MeasurePlayer</span><br><span class="line"><span class="attr">X</span>=<span class="number">5</span></span><br><span class="line"><span class="attr">Y</span>=<span class="number">35</span></span><br><span class="line"><span class="attr">W</span>=<span class="number">400</span></span><br><span class="line"><span class="attr">H</span>=<span class="number">20</span></span><br><span class="line"><span class="attr">FontColor</span>=<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span></span><br><span class="line"><span class="attr">Text</span>=<span class="string">"Title: %1"</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MeterArtist]</span></span><br><span class="line"><span class="attr">Meter</span>=String</span><br><span class="line"><span class="attr">MeasureName</span>=MeasureArtist</span><br><span class="line"><span class="attr">X</span>=<span class="number">5</span></span><br><span class="line"><span class="attr">Y</span>=<span class="number">55</span></span><br><span class="line"><span class="attr">W</span>=<span class="number">400</span></span><br><span class="line"><span class="attr">H</span>=<span class="number">20</span></span><br><span class="line"><span class="attr">FontColor</span>=<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span></span><br><span class="line"><span class="attr">Text</span>=<span class="string">"Artist: %1"</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MeterAlbum]</span></span><br><span class="line"><span class="attr">Meter</span>=String</span><br><span class="line"><span class="attr">MeasureName</span>=MeasureAlbum</span><br><span class="line"><span class="attr">X</span>=<span class="number">5</span></span><br><span class="line"><span class="attr">Y</span>=<span class="number">75</span></span><br><span class="line"><span class="attr">W</span>=<span class="number">400</span></span><br><span class="line"><span class="attr">H</span>=<span class="number">20</span></span><br><span class="line"><span class="attr">FontColor</span>=<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span></span><br><span class="line"><span class="attr">Text</span>=<span class="string">"Album: %1"</span></span><br></pre></td></tr></table></figure>
-
+        <script>
+   currentLocation = window.location;
+   newPath = currentLocation.pathname.replace('/plugins/', '/measures/');
+   location.replace(currentLocation.protocol+'//'+currentLocation.hostname+newPath+currentLocation.hash);
+</script>
 
       </div>
 
