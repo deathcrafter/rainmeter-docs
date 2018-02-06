@@ -231,6 +231,14 @@
         <!-- Include content and Replace "!" in every url with correct path -->
         <p><code>Measure=NowPlaying</code> retrieves information about the currently playing track from a number of media players.</p>
 
+<h2 id="NotAPlugin">Note: NowPlaying was previously a <em>plugin</em> measure.</h2>
+<p>In many existing skins you might see the syntax:</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[MeasureParent]</span></span><br><span class="line"><span class="attr">Measure</span>=Plugin</span><br><span class="line"><span class="attr">Plugin</span>=NowPlaying</span><br><span class="line">or</span><br><span class="line"><span class="attr">Plugin</span>=NowPlaying.dll</span><br><span class="line">or</span><br><span class="line"><span class="attr">Plugin</span>=Plugins\NowPlaying.dll</span><br></pre></td></tr></table></figure>
+
+<p>NowPlaying still works with those forms, and changing existing skins to the new <code>Measure=NowPlaying</code> syntax is entirely optional. However, new skins created going forward should use the correct syntax for accuracy and clarity. NowPlaying is a measure, and not a plugin.</p>
+
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[MeasureParent]</span></span><br><span class="line"><span class="attr">Measure</span>=NowPlaying</span><br></pre></td></tr></table></figure>
+
 <h2>Options</h2>
 <dl>
 	<dt>General measure options</dt>
