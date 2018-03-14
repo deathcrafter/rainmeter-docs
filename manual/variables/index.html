@@ -237,35 +237,49 @@
 
 <p>Each skin may have a special <a href="/manual/skins/#Format">section</a> called <b>[Variables]</b>. Each option in [Variables] defines a variable name. Unlike most other <a href="/manual/skins/option-types/">option names</a> in Rainmeter, variable names are not limited to a specific list. They can have any valid name, as long as they do not conflict with Rainmeter's <a href="#BuiltInVariables">built-in variables</a>.</p>
 
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[Variables]</span></span><br><span class="line"><span class="attr">Foo</span>=This is a string!</span><br><span class="line"><span class="attr">Bar</span>=So is this!</span><br></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[Variables]</span></span><br><span class="line"><span class="attr">MyVar1</span>=This is a string!</span><br><span class="line"><span class="attr">MyVar2</span>=So is this!</span><br><span class="line"><span class="attr">Red</span>=<span class="number">255</span></span><br><span class="line"><span class="attr">Green</span>=<span class="number">150</span></span><br><span class="line"><span class="attr">Blue</span>=<span class="number">0</span></span><br><span class="line"><span class="attr">Alpha</span>=<span class="number">90</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="Using">Using Variables</h3>
 
-<p>Variable names are referenced in other options by surrounding the name with pound signs (<code>#</code>), as in <code>#Foo#</code>. When the skin is loaded, Rainmeter replaces the variable reference with the corresponding string. Variables are inserted "literally," which means they can be mixed with other variables or regular text.</p>
+<p>Variable names are referenced in other options in one of two ways:</p>
 
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[MeterFoo]</span></span><br><span class="line"><span class="attr">Meter</span>=String</span><br><span class="line"><span class="attr">Text</span>=The value of my <span class="string">"Foo"</span> variable is: #Foo#</span><br><span class="line"><span class="attr">FontColor</span>=#Red#,#Green#,#Blue#,#Alpha#</span><br><span class="line"></span><br><span class="line"><span class="section">[MeterBar]</span></span><br><span class="line"><span class="attr">Meter</span>=String</span><br><span class="line"><span class="attr">Text</span>=The value of my <span class="string">"Bar"</span> variable is: #Bar#</span><br><span class="line"><span class="attr">FontColor</span>=#Red#,#Green#,#Blue#,#Alpha#</span><br></pre></td></tr></table></figure>
+<p>Normal variables syntax<br/>
+<ul>
+	<li><code>#VarName#</code></li>
+</ul></p>
+
+<p>Nested variables syntax<br/>
+<ul>
+	<li><code>[#VarName]</code></li>
+</ul></p>
+
+When the skin is loaded or refreshed, Rainmeter replaces the variable reference with the corresponding string. Variables are inserted "literally," which means they can be mixed with other variables or regular text.</p>
+
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[MeterMyVar1]</span></span><br><span class="line"><span class="attr">Meter</span>=String</span><br><span class="line"><span class="attr">Text</span>=The value of <span class="string">"MyVar1"</span> is: #MyVar1#</span><br><span class="line"><span class="attr">FontColor</span>=#Red#,#Green#,#Blue#,#Alpha#</span><br><span class="line"></span><br><span class="line"><span class="section">[MeterMyVar2]</span></span><br><span class="line"><span class="attr">Meter</span>=String</span><br><span class="line"><span class="attr">Text</span>=The value of <span class="string">"MyVar2"</span> is: #MyVar2#</span><br><span class="line"><span class="attr">FontColor</span>=#Red#,#Green#,#Blue#,#Alpha#</span><br></pre></td></tr></table></figure>
 
 <p>Variables can also be used to define other variables:</p>
 
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[Variables]</span></span><br><span class="line"><span class="attr">Foo</span>=rainmeter</span><br><span class="line"><span class="attr">Bar</span>=http://www.#Foo#.net/</span><br></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[Variables]</span></span><br><span class="line"><span class="attr">MyVar1</span>=rainmeter</span><br><span class="line"><span class="attr">MyVar2</span>=http://www.#MyVar1#.net/</span><br></pre></td></tr></table></figure>
 
 <h3 id="Changing">Changing Variables</h3>
 
-<p>The <a href="/manual/bangs/#WriteKeyValue">!WriteKeyValue</a> bang can be used to rewrite values in [Variables]. The skin must be <a href="/manual/skins/#Refresh">refreshed</a> to apply changes made by !WriteKeyValue.</p>
+<p>The <a href="/manual/bangs/#SetVariable">!SetVariable</a> bang can be used to change variable values <a href="#DynamicVariables">dynamically</a>. <b>!SetVariable can be used to create a variable that does not already exist in the [Variables] section.</b></p>
 
-	<blockquote><p><code>!WriteKeyValue "Variables" "Foo" "This is a new string!"</code></p></blockquote>
+	<blockquote><p><code>[!SetVariable "MyVar1" "This is a new string!"]</code></p></blockquote>
 
-<p>Alternatively, the <a href="/manual/bangs/#SetVariable">!SetVariable</a> bang can be used to change variable values <a href="#DynamicVariables">dynamically</a>. !SetVariable can be used to create a variable that does not already exist in the [Variables] section.</p>
+<p>Alternatively, the <a href="/manual/bangs/#WriteKeyValue">!WriteKeyValue</a> bang can be used to rewrite values in [Variables]. <b>The skin must be <a href="/manual/skins/#Refresh">refreshed</a> to apply changes made by !WriteKeyValue.</b></p>
 
-	<blockquote><p><code>!SetVariable "Foo" "This is a new string!"</code></p></blockquote>
-
+	<blockquote><p><code>[!WriteKeyValue "Variables" "MyVar1" "This is a new string!"]</code></p></blockquote>
+	
 <h2 id="DynamicVariables">Dynamic Variables</h2>
 
 <p>A variable whose value changes while the skin is active is called a <b>dynamic variable</b>. Dynamic variables allow a skin to store, retrieve and display ever-changing information without <a href="/manual/skins/#Refresh">refreshing</a> the skin.</p>
 
-<p>Dynamic variables can only be used in a <a href="/manual/measures/">measure</a> or <a href="/manual/meters/">meter</a> with the option <code>DynamicVariables=1</code>. Any <code>[MeasureName]</code> used in a bang as a <a href="/manual/variables/section-variables/">Section Variable</a> is automatically dynamic, and <code>DynamicVariables=1</code> is not required.</p>
+<p>Dynamic variables can only be used in a <a href="/manual/measures/">measure</a> or <a href="/manual/meters/">meter</a> by setting the option <code>DynamicVariables=1</code>.</p>
 
-<p>In addition, there are some <a href="/manual/plugins/">plugins</a> which do not support dynamic variables at this time. The following are sections where dynamic variables cannot be used:</p>
+<p>Note that any <code>[MeasureName]</code> used in a bang as a <a href="/manual/variables/section-variables/">Section Variable</a> is automatically dynamic, and <code>DynamicVariables=1</code> is not required.</p>
+
+<p>In addition, there are some [Sections] and <a href="/manual/plugins/">plugins</a> which do not support dynamic variables at this time. The following are sections where dynamic variables cannot be used:</p>
 
 <ul>
 	<li><a href="/manual/skins/rainmeter-section/">[Rainmeter]</a></li>
