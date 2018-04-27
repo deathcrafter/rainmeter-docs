@@ -4,8 +4,8 @@
 	<!-- Meta tags for proper character encoding and social media handling  -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=0.9, maximum-scale=0.9">
-	<meta itemprop="name" content="AdvancedCPU plugin - Rainmeter Docs">
-	<meta property="og:title" content="AdvancedCPU plugin - Rainmeter Docs">
+	<meta itemprop="name" content="iTunes plugin - Rainmeter Docs">
+	<meta property="og:title" content="iTunes plugin - Rainmeter Docs">
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://www.rainmeter.net">
 	<meta property="og:image" content="https://www.rainmeter.net/img/media_image.png">
@@ -13,7 +13,7 @@
 	<meta property="og:locale" content="en_US" />
 
 	<!-- Page title  -->
-	<title>AdvancedCPU plugin - Rainmeter</title>
+	<title>iTunes plugin - Rainmeter</title>
 
 	<!-- Files need to be local for offline version of documentations -->
 	<link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -176,14 +176,11 @@
 	<li><a href="/manual-beta/plugins/">Plugins</a>
 		<ul>
 		<li><a href="/manual-beta/plugins/actiontimer/">ActionTimer</a>
-		<li><a href="/manual-beta/plugins/advancedcpu/">AdvancedCPU</a>
 		<li><a href="/manual-beta/plugins/audiolevel/">AudioLevel</a>
 		<li><a href="/manual-beta/plugins/coretemp/">CoreTemp</a>
 		<li><a href="/manual-beta/plugins/fileview/">FileView</a>
 		<li><a href="/manual-beta/plugins/folderinfo/">FolderInfo</a>
 		<li><a href="/manual-beta/plugins/inputtext/">InputText</a>
-		<li><a href="/manual-beta/plugins/itunes/">iTunes</a>
-		<li><a href="/manual-beta/plugins/perfmon/">PerfMon</a>
 		<li><a href="/manual-beta/plugins/ping/">Ping</a>
 		<li><a href="/manual-beta/plugins/power/">Power</a>
 		<li><a href="/manual-beta/plugins/process/">Process</a>
@@ -196,6 +193,14 @@
 		<li><a href="/manual-beta/plugins/wifistatus/">WiFiStatus</a>
 		<li><a href="/manual-beta/plugins/win7audio/">Win7Audio</a>
 		<li><a href="/manual-beta/plugins/windowmessage/">WindowMessage</a>
+		</ul>
+			<ul>
+			<li><a href="/manual-beta/plugins/deprecated/">Deprecated Plugins</a>
+			<ul>
+			<li><a href="/manual-beta/plugins/deprecated/advancedcpu/">AdvancedCPU</a>
+			<li><a href="/manual-beta/plugins/deprecated/itunes/">iTunes</a>
+			<li><a href="/manual-beta/plugins/deprecated/perfmon/">PerfMon</a>
+			</ul>
 		</ul>
 	<li><a href="/manual-beta/bangs/">Bangs</a>
 	<li><a href="/manual-beta/formulas/">Formulas</a>
@@ -230,62 +235,75 @@
 
       <!-- Content -->
       <div class="docs-content col-12 col-lg-9">
-        <h1 class="page-title">AdvancedCPU plugin</h1>
+        <h1 class="page-title">iTunes plugin</h1>
         <hr />
         <!-- Include content and Replace "!" in every url with correct path -->
-        <p><code>Plugin=AdvancedCPU</code> measures CPU usage by processes.</p>
+        <p><code>Plugin=iTunesPlugin</code> retrieves the currently playing track infromation from the iTunes application.</p>
 
 <h2>Plugin Deprecated</h2>
 
 <p>This plugin has been deprecated, and should not be used in new skins.</p>
-<p>The <a href="/manual-beta/plugins/usagemonitor">UsageMonitor</a> plugin should be used in place of this.</p><br/>
-
-<p><b>Note:</b> The value is a calculation of process CPU time scaled by the number of CPU cores. In order to use the value as a <a href="/manual-beta/measures/#Percentage">percentage</a> in meters, it must have the <a href="/manual-beta/measures/general-options/#MaxValue">MaxValue</a> of the measure dynamically set to the current value of an AdvancedCPU measure which has no <code>CPUInclude</code> or <code>CPUExclude</code> options. See the <a href="#Example">Example</a> below.</p>
+<p>The <a href="/manual-beta/plugins/nowplaying/">NowPlaying</a> plugin should be used in place of this.</p><br/>
 
 <h2>Options</h2>
 <dl>
 	<dt>General measure options</dt>
 	<dd>
-		<p>All <a href="/manual-beta/measures/general-options/">general measure options</a> are valid.</p>
+		All <a href="/manual-beta/measures/general-options/">general measure options</a> are valid.
 	</dd>
 
-	<dt id="CPUInclude"><code>CPUInclude</code></dt>
+	<dt id="Command"><code>Command</code></dt>
 	<dd>
-		<p>List of process names separated by <code>;</code> (semicolon) to use in measurements	. If specified, <code>CPUExclude</code> is ignored.</p>
-	</dd>
-
-	<dt id="CPUExclude"><code>CPUExclude</code></dt>
-	<dd>
-		<p>List of processes separated by <code>;</code> (semicolon) to ignore in measurements.</p>
-		<p><b>Note:</b> The process <b>Idle</b> is a placeholder process used to manage unused CPU, therefore it should be excluded with <code>CPUExclude=Idle</code> to obtain CPU or <code>TopProcess</code> usage.</p>
-	</dd>
-
-	<dt id="TopProcess"><code>TopProcess</code> <small>Default: <code>0</code></small></dt>
-	<dd>
-		<p>Measures the process that is currently using the most CPU. Valid values are:
+		Defines the information to measure. Valid values are:
 		<ul>
-		<li><code>1</code> : The <a href="/manual-beta/measures/#Values">value</a> will be the process CPU usage.</li>
-		<li><code>2</code> : The <a href="/manual-beta/measures/#Values">string value</a> will be the process name. The number value is not altered.</li>
-		</ul></p>
+		<li><code>GetSoundVolume</code>: Player volume between 0 - 100.</li>
+		<li><code>GetPlayerPosition</code>: Player position in seconds.</li>
+		<li><code>GetPlayerPositionPercent</code>: Player position as a percentage.</li>
+		<li><code>GetCurrentTrackAlbum</code>: Album.</li>
+		<li><code>GetCurrentTrackArtist</code>: Artist.</li>
+		<li><code>GetCurrentTrackBitrate</code> Bitrate.</li>
+		<li><code>GetCurrentTrackBPM</code>: Beats per minute.</li>
+		<li><code>GetCurrentTrackComment</code>: Track comment.</li>
+		<li><code>GetCurrentTrackComposer</code>: Track composer.</li>
+		<li><code>GetCurrentTrackEQ</code>: EQ preset name.</li>
+		<li><code>GetCurrentTrackGenre</code>: Genre (category).</li>
+		<li><code>GetCurrentTrackKindAsString</code>: File description.</li>
+		<li><code>GetCurrentTrackName</code>: Track name.</li>
+		<li><code>GetCurrentTrackRating</code>: Rating from 0 - 100.</li>
+		<li><code>GetCurrentTrackSampleRate</code>: Sample rate.</li>
+		<li><code>GetCurrentTrackSize</code>: File size.</li>
+		<li><code>GetCurrentTrackTime</code>: Length of the track.</li>
+		<li><code>GetCurrentTrackTrackCount</code>: Number of tracks on the album.</li>
+		<li><code>GetCurrentTrackTrackNumber</code>: Track number or index.</li>
+		<li><code>GetCurrentTrackYear</code>: Track year.</li>
+		<li><code>GetCurrentTrackArtwork</code>: Artwork file path. Use in combination with <code>DefaultArtwork</code>.</li>
+		</ul>
 	</dd>
+
+	<dt id="DefaultArtwork"><code>DefaultArtwork</code></dt>
+	<dd><a href="/manual-beta/skins/option-types/#Path">Path</a> of the artwork folder relative to the skin folder. Used with <code>Command=GetCurrentTrackArtwork</code>.</dd>
 </dl>
 
-<h2 id="Example">Example</h2>
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[Rainmeter]</span></span><br><span class="line"><span class="attr">Update</span>=<span class="number">1000</span></span><br><span class="line"><span class="attr">DynamicWindowSize</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">BackGroundMode</span>=<span class="number">2</span></span><br><span class="line"><span class="attr">SolidColor</span>=<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span></span><br><span class="line"></span><br><span class="line"><span class="comment">;Measure maximum CPU time for use in MaxValue in other measures</span></span><br><span class="line"><span class="section">[MeasureCPUMax]</span></span><br><span class="line"><span class="attr">Measure</span>=Plugin</span><br><span class="line"><span class="attr">Plugin</span>=AdvancedCPU</span><br><span class="line"></span><br><span class="line"><span class="comment">;Measure current CPU usage with MaxValue set</span></span><br><span class="line"><span class="section">[MeasureCPU]</span></span><br><span class="line"><span class="attr">Measure</span>=Plugin</span><br><span class="line"><span class="attr">Plugin</span>=AdvancedCPU</span><br><span class="line"><span class="attr">CPUExclude</span>=Idle</span><br><span class="line"><span class="attr">MaxValue</span>=[MeasureCPUMax]</span><br><span class="line"><span class="attr">DynamicVariables</span>=<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">;Measure Name of top process</span></span><br><span class="line"><span class="section">[MeasureTopName]</span></span><br><span class="line"><span class="attr">Measure</span>=Plugin</span><br><span class="line"><span class="attr">Plugin</span>=AdvancedCPU</span><br><span class="line"><span class="attr">CPUExclude</span>=Idle</span><br><span class="line"><span class="attr">TopProcess</span>=<span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">;Measure CPU usage of top process with MaxValue set</span></span><br><span class="line"><span class="section">[MeasureTop%]</span></span><br><span class="line"><span class="attr">Measure</span>=Plugin</span><br><span class="line"><span class="attr">Plugin</span>=AdvancedCPU</span><br><span class="line"><span class="attr">CPUExclude</span>=Idle</span><br><span class="line"><span class="attr">TopProcess</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">MaxValue</span>=[MeasureCPUMax]</span><br><span class="line"><span class="attr">DynamicVariables</span>=<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">;Show current CPU usage as a percentage</span></span><br><span class="line"><span class="section">[MeterCPU]</span></span><br><span class="line"><span class="attr">Meter</span>=String</span><br><span class="line"><span class="attr">MeasureName</span>=MeasureCPU</span><br><span class="line"><span class="attr">Y</span>=<span class="number">2</span>R</span><br><span class="line"><span class="attr">FontColor</span>=<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span></span><br><span class="line"><span class="attr">FontSize</span>=<span class="number">12</span></span><br><span class="line"><span class="attr">AntiAlias</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">Percentual</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">NumOfDecimals</span>=<span class="number">2</span></span><br><span class="line"><span class="attr">DynamicVariables</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">Text</span>=CPU Usage: %<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">;Show name of top process</span></span><br><span class="line"><span class="section">[MeterTopName]</span></span><br><span class="line"><span class="attr">Meter</span>=String</span><br><span class="line"><span class="attr">MeasureName</span>=MeasureTopName</span><br><span class="line"><span class="attr">Y</span>=<span class="number">2</span>R</span><br><span class="line"><span class="attr">FontColor</span>=<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span></span><br><span class="line"><span class="attr">FontSize</span>=<span class="number">12</span></span><br><span class="line"><span class="attr">AntiAlias</span>=<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">;Show CPU usage of top process as a percentage</span></span><br><span class="line"><span class="section">[MeterTop%]</span></span><br><span class="line"><span class="attr">Meter</span>=String</span><br><span class="line"><span class="attr">MeasureName</span>=MeasureTop%</span><br><span class="line"><span class="attr">X</span>=<span class="number">2</span>R</span><br><span class="line"><span class="attr">Y</span>=<span class="number">0</span>r</span><br><span class="line"><span class="attr">FontColor</span>=<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span></span><br><span class="line"><span class="attr">FontSize</span>=<span class="number">12</span></span><br><span class="line"><span class="attr">AntiAlias</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">Percentual</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">NumOfDecimals</span>=<span class="number">2</span></span><br><span class="line"><span class="attr">Text</span>=(%<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<h2>Bangs</h2>
+<p>iTunes measures can be controlled with the <a href="/manual-beta/bangs/#CommandMeasure">!CommandMeasure bang</a> with the argument parameter being:</p>
+<ul>
+<li><code>Backtrack</code>: Reposition to the beginning of the current track, or go to the previous track if already at start of current track.</li>
+<li><code>FastForward</code>: Skip forward in a playing track.</li>
+<li><code>NextTrack</code>: Advance to the next track in the current playlist.</li>
+<li><code>Pause</code>: Pause playback.</li>
+<li><code>Play</code>: Play the currently targeted track.</li>
+<li><code>PlayPause</code>: Toggle the playing/paused state of the current track.</li>
+<li><code>PreviousTrack</code>: Return to the previous track in the current playlist.</li>
+<li><code>Resume</code>: Disable fast forward/rewind and resume playback if playing.</li>
+<li><code>Rewind</code>: Skip backwards in a playing track.</li>
+<li><code>Stop</code>: Stop playback.</li>
+<li><code>Power</code>: Open/close iTunes application.</li>
+<li><code>Quit</code>: Exit the iTunes application.</li>
+<li><code>SoundVolumeUp</code>: Turn the volume up 5%.</li>
+<li><code>SoundVolumeDown</code>: Turn the volume down 5%.</li>
+<li><code>ToggleiTunes</code>: Show/hide iTunes window.</li>
+</ul>
 
-<p><b>Note:</b></p>
-
-<p>While rare, it is possible for the database of "counters" that is maintained by Performance Monitor in Windows to become damaged, which will cause the plugin to stop functioning correctly.</p>
-
-<p>In many cases, this can be corrected by "rebuilding" the database from the Windows command line.</p>
-
-<p>Run cmd.exe, being sure to run "As administrator". At the command line, enter the following commands in order:</p>
-
-<figure class="highlight dos"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> c:\windows\system32</span><br><span class="line">lodctr /R</span><br><span class="line"><span class="built_in">cd</span> c:\windows\sysWOW64</span><br><span class="line">lodctr /R</span><br></pre></td></tr></table></figure>
-
-<p>You should see the following results:</p>
-
-<p><code>Info: Successfully rebuilt performance counter setting from system backup store</code></p>
       </div>
 
     </div>
