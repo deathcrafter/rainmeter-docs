@@ -282,7 +282,7 @@
 <h2>Example</h2>
 <figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[Rainmeter]</span></span><br><span class="line"><span class="attr">Update</span>=<span class="number">1000</span></span><br><span class="line"><span class="attr">DynamicWindowSize</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">AccurateText</span>=<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MeasureUptime]</span></span><br><span class="line"><span class="attr">Measure</span>=Uptime</span><br><span class="line"><span class="attr">Format</span>=<span class="string">"%4!i! days, %3!i! hours, %2!i! minutes %1!i! seconds"</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MeterUptime]</span></span><br><span class="line"><span class="attr">Meter</span>=String</span><br><span class="line"><span class="attr">MeasureName</span>=MeasureUptime</span><br><span class="line"><span class="attr">FontSize</span>=<span class="number">12</span></span><br><span class="line"><span class="attr">FontColor</span>=<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span></span><br><span class="line"><span class="attr">SolidColor</span>=<span class="number">47</span>,<span class="number">47</span>,<span class="number">47</span>,<span class="number">255</span></span><br><span class="line"><span class="attr">Padding</span>=<span class="number">5</span>,<span class="number">5</span>,<span class="number">5</span>,<span class="number">5</span></span><br><span class="line"><span class="attr">AntiAlias</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">Text</span>=<span class="string">"Uptime: %1"</span></span><br></pre></td></tr></table></figure>
 
-<p><b>Note for Windows 8 or later:</b></p>
+<h3 id="Win10Restart"><b>Note for Windows 10</b></h3>
 
 <p>Starting with Windows 8, the standard "shut down" functionality now does a "hybrid shut down", in order to make the system start much faster when you start it up again. What this does is "hibernate" the <em>system / kernel</em> part of Windows, and shut down the <em>user</em> part. When Windows restarts, the underlying boot up of the system much is faster, followed by loading your profile and applications normally.</p>
 
@@ -294,7 +294,13 @@
 <p>Full Shut Down:<br/>
 <code>%windir%\System32\shutdown.exe /s /f /t 00</code></p>
 
-<p>You can create these shortcuts, and put them on your desktop or pin them to your Windows 8 Start screen. <em>"Restart" always does a full system restart and is not affected.</em></p>
+<p>You can create these shortcuts, and put them on your desktop or pin them to your Windows 10 Start menu. <em>"Restart" always does a full system restart and is not affected.</em></p>
+
+<p><b>Alternatively</b>, you can use a <a href="/manual/plugins/sysinfo/">SysInfo plugin</a> measure to get a timestamp value for when the user account logged on to Windows with the <a href="/manual/plugins/sysinfo/#SysInfoType">USER_LOGINTIME</a> SysInfoType option. When a standard hybrid shutdown is done, this will then reflect when the restart took place. Use the value of this measure with the <code>SecondsValue</code> option in an Uptime meter to format the elapsed seconds.</p>
+
+<p>Example:</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[MeasureCurrentTime]</span></span><br><span class="line"><span class="attr">Measure</span>=Time</span><br><span class="line"></span><br><span class="line"><span class="section">[MeasureUserLoginTime]</span></span><br><span class="line"><span class="attr">Measure</span>=Plugin</span><br><span class="line"><span class="attr">Plugin</span>=SysInfo</span><br><span class="line"><span class="attr">SysInfoType</span>=USER_LOGONTIME</span><br><span class="line"><span class="attr">UpdateDivider</span>=-<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MeasureFormatSeconds]</span></span><br><span class="line"><span class="attr">Measure</span>=UpTime</span><br><span class="line"><span class="attr">SecondsValue</span>=([MeasureCurrentTime:] - [MeasureUserLoginTime:])</span><br><span class="line"><span class="attr">Format</span>=<span class="string">"%4!i!d %3!i!h %2!i!m"</span></span><br><span class="line"><span class="attr">DynamicVariables</span>=<span class="number">1</span></span><br></pre></td></tr></table></figure>
+
 
       </div>
 
