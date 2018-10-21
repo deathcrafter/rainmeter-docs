@@ -237,6 +237,7 @@
         <hr />
         <!-- Include content and Replace "!" in every url with correct path -->
         <script>
+   // Redirects the old location for NowPlaying from plugins to measures. Do not remove
    currentLocation = window.location;
    newPath = currentLocation.pathname.replace('/plugins/', '/measures/');
    location.replace(currentLocation.protocol+'//'+currentLocation.hostname+newPath+currentLocation.hash);
