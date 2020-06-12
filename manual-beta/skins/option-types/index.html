@@ -306,7 +306,7 @@
 
 <figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="comment">; The first line will fail due to extra quotes. The second line will properly log</span></span><br><span class="line"><span class="comment">; Example string: Bob said "hello" to Susan</span></span><br><span class="line"><span class="attr">LeftMouseUpAction</span>=[!Log <span class="string">"Bob said "</span>hello<span class="string">" to Susan"</span>]</span><br><span class="line"><span class="attr">LeftMouseUpAction</span>=[!Log <span class="string">"""Bob said "hello" to Susan"""</span>]</span><br></pre></td></tr></table></figure>
 
-<p>There may be other instances where embedded characters like <code>[</code> or <code>(</code> in a string might cause Rainmeter to improperly detect the beginning of a [SectionVariable] or (formula) and become confused. Magic Quotes can help with this as well.</p>
+<p>There are other instances where embedded characters like <code>[</code> or <code>(</code> in a parameter of a bang might cause Rainmeter to improperly detect the beginning of a [SectionVariable] or (formula) and become confused. Magic Quotes can help with this as well. All characters between """Magic Quotes""" are treated strictly literal.</p>
 
 <h3 id="AsteriskEscape"><b>Escaping a #Variable# or [MeasureName]</b></h3>
 
