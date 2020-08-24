@@ -4,8 +4,8 @@
 	<!-- Meta tags for proper character encoding and social media handling  -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=0.9, maximum-scale=0.9">
-	<meta itemprop="name" content="Process plugin - Rainmeter Docs">
-	<meta property="og:title" content="Process plugin - Rainmeter Docs">
+	<meta itemprop="name" content="Redirect to measures - Rainmeter Docs">
+	<meta property="og:title" content="Redirect to measures - Rainmeter Docs">
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://www.rainmeter.net">
 	<meta property="og:image" content="https://www.rainmeter.net/img/media_image.png">
@@ -13,7 +13,7 @@
 	<meta property="og:locale" content="en_US" />
 
 	<!-- Page title  -->
-	<title>Process plugin - Rainmeter</title>
+	<title>Redirect to measures - Rainmeter</title>
 
 	<!-- Files need to be local for offline version of documentations -->
 	<link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -169,6 +169,7 @@
 		<li><a href="/manual-beta/measures/net/">Net</a>
 		<li><a href="/manual-beta/measures/nowplaying/">NowPlaying</a>
 		<li><a href="/manual-beta/measures/plugin/">Plugin</a>
+		<li><a href="/manual-beta/measures/process/">Process</a>
 		<li><a href="/manual-beta/measures/recyclemanager/">RecycleManager</a>
 		<li><a href="/manual-beta/measures/registry/">Registry</a>
 		<li><a href="/manual-beta/measures/script/">Script</a>
@@ -187,7 +188,6 @@
 		<li><a href="/manual-beta/plugins/inputtext/">InputText</a>
 		<li><a href="/manual-beta/plugins/ping/">Ping</a>
 		<li><a href="/manual-beta/plugins/power/">Power</a>
-		<li><a href="/manual-beta/plugins/process/">Process</a>
 		<li><a href="/manual-beta/plugins/quote/">Quote</a>
 		<li><a href="/manual-beta/plugins/resmon/">ResMon</a>
 		<li><a href="/manual-beta/plugins/runcommand/">RunCommand</a>
@@ -237,35 +237,15 @@
 
       <!-- Content -->
       <div class="docs-content col-12 col-lg-9">
-        <h1 class="page-title">Process plugin</h1>
+        <h1 class="page-title">Redirect to measures</h1>
         <hr />
         <!-- Include content and Replace "!" in every url with correct path -->
-        <p><code>Plugin=Process</code> measures the running state of a process.</p>
-
-<p>The measure's <a href="/manual-beta/measures/#Values">value</a> will be:
-<ul>
-<li><code>1</code> : The specified <code>ProcessName</code> is running.</li>
-<li><code>-1</code> : The specified <code>ProcessName</code> is not running.</li>
-</ul>
-</p>
-
-<h2>Options</h2>
-<dl>
-	<dt>General measure options</dt>
-	<dd>
-		All <a href="/manual-beta/measures/general-options/">general measure options</a> are valid.
-	</dd>
-
-	<dt id="ProcessName"><code>ProcessName</code></dt>
-	<dd>
-		Name of the process (e.g. <code>Firefox.exe</code>).
-	</dd>
-</dl>
-
-<h2>Example</h2>
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[Rainmeter]</span></span><br><span class="line"><span class="attr">Update</span>=<span class="number">1000</span></span><br><span class="line"><span class="attr">BackgroundMode</span>=<span class="number">2</span></span><br><span class="line"><span class="attr">SolidColor</span>=<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MeasureProcess]</span></span><br><span class="line"><span class="attr">Measure</span>=Plugin</span><br><span class="line"><span class="attr">Plugin</span>=Process</span><br><span class="line"><span class="attr">ProcessName</span>=Notepad.exe</span><br><span class="line"><span class="attr">Substitute</span>=<span class="string">"-1"</span>:<span class="string">"not running"</span>,<span class="string">"1"</span>:<span class="string">"running"</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MeterProcess]</span></span><br><span class="line"><span class="attr">Meter</span>=String</span><br><span class="line"><span class="attr">MeasureName</span>=MeasureProcess</span><br><span class="line"><span class="attr">X</span>=<span class="number">5</span></span><br><span class="line"><span class="attr">Y</span>=<span class="number">5</span></span><br><span class="line"><span class="attr">W</span>=<span class="number">200</span></span><br><span class="line"><span class="attr">H</span>=<span class="number">20</span></span><br><span class="line"><span class="attr">FontColor</span>=<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span></span><br><span class="line"><span class="attr">Text</span>=Notepad.exe is %<span class="number">1</span>.</span><br></pre></td></tr></table></figure>
-
-
+        <script>
+   // Redirects the old location for Process from plugins to measures. Do not remove
+   currentLocation = window.location;
+   newPath = currentLocation.pathname.replace('/plugins/', '/measures/');
+   location.replace(currentLocation.protocol+'//'+currentLocation.hostname+newPath+currentLocation.hash);
+</script>
       </div>
 
     </div>
