@@ -26,7 +26,7 @@
 	<!-- Site icon -->
 	<link rel="shortcut icon" href="//www.rainmeter.net/favicon.ico">
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body>
 
@@ -42,10 +42,10 @@
 		</button>
 		<div class="collapse navbar-collapse justify-content-end" id="mainNavigation">
 			<ul class="navbar-nav order-12">
-				<li class="nav-item "><a class="nav-link" href="//rainmeter.net/">Home</a></li>
-				<li class="nav-item active"><a class="nav-link" href="//docs.rainmeter.net/">Documentation</a></li>
-				<li class="nav-item "><a class="nav-link" href="//rainmeter.net/discover">Discover</a></li>
-				<li class="nav-item "><a class="nav-link" href="//forum.rainmeter.net">Community</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../../rainmeter.net/">Home</a></li>
+				<li class="nav-item active"><a class="nav-link" href="../../../docs.rainmeter.net/">Documentation</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../../rainmeter.net/discover">Discover</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../../forum.rainmeter.net">Community</a></li>
 				<div class="dropdown-divider"></div>
 			</ul>
 		</div>
@@ -278,7 +278,6 @@
 <p>Show song progress. In the following example, the <code>[MeasureWinampDuration]</code> will return the current song position as a value between <code>0</code> and <code>1</code>. Then you can use the <a href="/manual/meters/bar/">Bar</a> meter to display the value.</p>
 
 <figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[MeasureWinampFull]</span></span><br><span class="line"><span class="attr">Measure</span>=Plugin</span><br><span class="line"><span class="attr">Plugin</span>=WindowMessagePlugin</span><br><span class="line"><span class="attr">WindowClass</span>=Winamp v1.x</span><br><span class="line"><span class="attr">WindowMessage</span>=<span class="number">1024</span> <span class="number">1</span> <span class="number">105</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MeasureWinampCurr]</span></span><br><span class="line"><span class="attr">Measure</span>=Plugin</span><br><span class="line"><span class="attr">Plugin</span>=WindowMessagePlugin</span><br><span class="line"><span class="attr">WindowClass</span>=Winamp v1.x</span><br><span class="line"><span class="attr">WindowMessage</span>=<span class="number">1024</span> <span class="number">0</span> <span class="number">105</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MeasureWinampDuration]</span></span><br><span class="line"><span class="attr">Measure</span>=Calc</span><br><span class="line"><span class="attr">Formula</span>=(MeasureWinampCurr&lt;=<span class="number">0</span>)?<span class="number">0</span>:(MeasureWinampCurr/(MeasureWinampFull*<span class="number">1000</span>+<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
-
 
       </div>
 

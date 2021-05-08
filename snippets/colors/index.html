@@ -26,7 +26,7 @@
 	<!-- Site icon -->
 	<link rel="shortcut icon" href="//www.rainmeter.net/favicon.ico">
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body>
 
@@ -42,10 +42,10 @@
 		</button>
 		<div class="collapse navbar-collapse justify-content-end" id="mainNavigation">
 			<ul class="navbar-nav order-12">
-				<li class="nav-item "><a class="nav-link" href="//rainmeter.net/">Home</a></li>
-				<li class="nav-item active"><a class="nav-link" href="//docs.rainmeter.net/">Documentation</a></li>
-				<li class="nav-item "><a class="nav-link" href="//rainmeter.net/discover">Discover</a></li>
-				<li class="nav-item "><a class="nav-link" href="//forum.rainmeter.net">Community</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../rainmeter.net/">Home</a></li>
+				<li class="nav-item active"><a class="nav-link" href="../../docs.rainmeter.net/">Documentation</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../rainmeter.net/discover">Discover</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../forum.rainmeter.net">Community</a></li>
 				<div class="dropdown-divider"></div>
 			</ul>
 		</div>
@@ -109,12 +109,10 @@
 
 <div class="noscroll">
 <figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ConvertToHex</span><span class="params">(color)</span></span> <span class="comment">-- Converts RGB colors to HEX</span></span><br><span class="line">	<span class="keyword">local</span> hex = &#123;&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> rgb <span class="keyword">in</span> color:<span class="built_in">gmatch</span>(<span class="string">'%d+'</span>) <span class="keyword">do</span></span><br><span class="line">		<span class="built_in">table</span>.<span class="built_in">insert</span>(hex, (<span class="string">'%02X'</span>):<span class="built_in">format</span>(<span class="built_in">tonumber</span>(rgb)))</span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">table</span>.<span class="built_in">concat</span>(hex)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-
 </div>
 
 <div class="noscroll">
 <figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ConvertToRGB</span><span class="params">(color)</span></span> <span class="comment">-- Converts HEX colors to RGB</span></span><br><span class="line">	<span class="keyword">local</span> rgb = &#123;&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> hex <span class="keyword">in</span> color:<span class="built_in">gmatch</span>(<span class="string">'..'</span>) <span class="keyword">do</span></span><br><span class="line">		<span class="built_in">table</span>.<span class="built_in">insert</span>(rgb, <span class="built_in">tonumber</span>(hex, <span class="number">16</span>))</span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">table</span>.<span class="built_in">concat</span>(rgb, <span class="string">','</span>)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-
 </div>
 
       </div>

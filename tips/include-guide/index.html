@@ -26,7 +26,7 @@
 	<!-- Site icon -->
 	<link rel="shortcut icon" href="//www.rainmeter.net/favicon.ico">
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body>
 
@@ -42,10 +42,10 @@
 		</button>
 		<div class="collapse navbar-collapse justify-content-end" id="mainNavigation">
 			<ul class="navbar-nav order-12">
-				<li class="nav-item "><a class="nav-link" href="//rainmeter.net/">Home</a></li>
-				<li class="nav-item active"><a class="nav-link" href="//docs.rainmeter.net/">Documentation</a></li>
-				<li class="nav-item "><a class="nav-link" href="//rainmeter.net/discover">Discover</a></li>
-				<li class="nav-item "><a class="nav-link" href="//forum.rainmeter.net">Community</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../rainmeter.net/">Home</a></li>
+				<li class="nav-item active"><a class="nav-link" href="../../docs.rainmeter.net/">Documentation</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../rainmeter.net/discover">Discover</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../forum.rainmeter.net">Community</a></li>
 				<div class="dropdown-divider"></div>
 			</ul>
 		</div>
@@ -106,11 +106,9 @@
 <h3>Using @include</h3>
 <p>There are several rules to using @include. The first is the @include call.<br>
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="section">[Section]</span></span><br><span class="line">@include=SomeFile.inc</span><br></pre></td></tr></table></figure>
-
 <p><b>Note:</b> The @include call must be made within a section. Authors have generally used the <code>[Rainmeter]</code> or <code>[Variables]</code> sections when appropriate.</p>
 <p>The second being the file that you're including.<br>
 <figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[Variables]</span></span><br><span class="line"><span class="attr">SomeVariable</span>=AValue</span><br></pre></td></tr></table></figure>
-
 <p>The file being used with @include must be formatted in the INI format, meaning that it has all the appropriate [sections] followed by Key=Value pairs. This includes using the [Variables] section.</p>
 <p>If you want to include more than one file, they need to be listed with unique identifiers.</p>
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">@include=SomeFile.inc</span><br><span class="line">@include2=SomeOtherFile.inc</span><br><span class="line">@includeAnotherInclude=YetAnotherFile.inc</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
@@ -127,7 +125,6 @@
 
 <p>YourSkin.ini</p>
 <figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[Variables]</span></span><br><span class="line">@include=SomeFile.inc</span><br><span class="line"></span><br><span class="line"><span class="section">[Foreground]</span></span><br><span class="line"><span class="attr">Meter</span>=Image</span><br><span class="line"><span class="attr">H</span>=<span class="number">20</span></span><br><span class="line"><span class="attr">W</span>=<span class="number">30</span></span><br><span class="line"><span class="attr">X</span>=<span class="number">5</span>r</span><br><span class="line"></span><br><span class="line"><span class="section">[String]</span></span><br><span class="line"><span class="attr">Meter</span>=String</span><br><span class="line"><span class="attr">Text</span>=This line will remain.</span><br></pre></td></tr></table></figure>
-
 <p>This would place the Background section before the Foreground section. Since the String section already exists in the main file, then any existing options won't be changed. In this case, the Text line will still read "This line will remain."</p>
 
 <h3>Practical Use: Skin Settings</h3>

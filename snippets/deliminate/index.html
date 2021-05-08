@@ -26,7 +26,7 @@
 	<!-- Site icon -->
 	<link rel="shortcut icon" href="//www.rainmeter.net/favicon.ico">
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body>
 
@@ -42,10 +42,10 @@
 		</button>
 		<div class="collapse navbar-collapse justify-content-end" id="mainNavigation">
 			<ul class="navbar-nav order-12">
-				<li class="nav-item "><a class="nav-link" href="//rainmeter.net/">Home</a></li>
-				<li class="nav-item active"><a class="nav-link" href="//docs.rainmeter.net/">Documentation</a></li>
-				<li class="nav-item "><a class="nav-link" href="//rainmeter.net/discover">Discover</a></li>
-				<li class="nav-item "><a class="nav-link" href="//forum.rainmeter.net">Community</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../rainmeter.net/">Home</a></li>
+				<li class="nav-item active"><a class="nav-link" href="../../docs.rainmeter.net/">Documentation</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../rainmeter.net/discover">Discover</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../forum.rainmeter.net">Community</a></li>
 				<div class="dropdown-divider"></div>
 			</ul>
 		</div>
@@ -112,7 +112,6 @@
 
 <div class="noscroll">
 <figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SplitString</span><span class="params">(inString, inDelimiter)</span></span></span><br><span class="line">	<span class="built_in">assert</span>(inDelimiter:<span class="built_in">len</span>() == <span class="number">1</span>, <span class="string">'SplitString: Delimiter may only be a single character'</span>)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">local</span> outTable = &#123;&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> matchedString <span class="keyword">in</span> inString:<span class="built_in">gmatch</span>(<span class="string">'[^%'</span> .. inDelimiter .. <span class="string">']+'</span>) <span class="keyword">do</span></span><br><span class="line">		<span class="built_in">table</span>.<span class="built_in">insert</span>(outTable, matchedString)</span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> outTable</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-
 </div>
 
 <h3>Method 2</h3>
@@ -122,7 +121,6 @@
 
 <div class="noscroll">
 <figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SplitString</span><span class="params">(inString, inPattern)</span></span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">local</span> outTable = &#123;&#125;</span><br><span class="line">	<span class="keyword">local</span> findPattern = <span class="string">'(.-)'</span> .. inPattern</span><br><span class="line">	<span class="keyword">local</span> lastEnd = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">local</span> currentStart, currentEnd, foundString = inString:<span class="built_in">find</span>(findPattern, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span> currentStart <span class="keyword">do</span></span><br><span class="line">		<span class="keyword">if</span> currentStart ~= <span class="number">1</span> <span class="keyword">or</span> foundString ~= <span class="string">''</span> <span class="keyword">then</span></span><br><span class="line">			<span class="built_in">table</span>.<span class="built_in">insert</span>(outTable, foundString)</span><br><span class="line">		<span class="keyword">end</span></span><br><span class="line">		lastEnd = currentEnd + <span class="number">1</span></span><br><span class="line">		currentStart, currentEnd, foundString = inString:<span class="built_in">find</span>(findPattern, lastEnd)</span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> lastEnd &lt;= #inString <span class="keyword">then</span></span><br><span class="line">		foundString = inString:<span class="built_in">sub</span>(lastEnd)</span><br><span class="line">		<span class="built_in">table</span>.<span class="built_in">insert</span>(outTable, foundString)</span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> outTable</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-
 </div>
       </div>
 

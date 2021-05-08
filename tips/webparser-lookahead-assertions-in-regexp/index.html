@@ -26,7 +26,7 @@
 	<!-- Site icon -->
 	<link rel="shortcut icon" href="//www.rainmeter.net/favicon.ico">
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body>
 
@@ -42,10 +42,10 @@
 		</button>
 		<div class="collapse navbar-collapse justify-content-end" id="mainNavigation">
 			<ul class="navbar-nav order-12">
-				<li class="nav-item "><a class="nav-link" href="//rainmeter.net/">Home</a></li>
-				<li class="nav-item active"><a class="nav-link" href="//docs.rainmeter.net/">Documentation</a></li>
-				<li class="nav-item "><a class="nav-link" href="//rainmeter.net/discover">Discover</a></li>
-				<li class="nav-item "><a class="nav-link" href="//forum.rainmeter.net">Community</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../rainmeter.net/">Home</a></li>
+				<li class="nav-item active"><a class="nav-link" href="../../docs.rainmeter.net/">Documentation</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../rainmeter.net/discover">Discover</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../forum.rainmeter.net">Community</a></li>
 				<div class="dropdown-divider"></div>
 			</ul>
 		</div>
@@ -119,7 +119,6 @@
 <p>Using a "lookahead assertion" will allow you to solve this. You can use a RegExp of:</p>
 
 <figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="comment">;RegExp with look-ahead assertions</span></span><br><span class="line"><span class="attr">RegExp</span>=<span class="string">"(?siU)(?(?=.*&lt;Item&gt;).*&lt;Name&gt;(.*)&lt;/Name&gt;)(?(?=.*&lt;Item&gt;).*&lt;Name&gt;(.*)&lt;/Name&gt;)(?(?=.*&lt;Item&gt;).*&lt;Name&gt;(.*)&lt;/Name&gt;)"</span></span><br></pre></td></tr></table></figure>
-
 <p>Now the WebParser measure will return the two StringIndexes for "Larry" and "Curly", and will just return a null value for the third search item (the third StringIndex) without failing.</p>
 
 <p><b>How does this work?</b></p>
@@ -139,7 +138,6 @@
 <p>Let's put it all together. I will use a [Variable] to define the search pattern, then just repeatedly use the variable in the <code>RegExp=</code> statement to save some typing, and set a <code>Substitute=</code> on the WebParser measures so we get something other than just a null value displayed.</p>
 
 <figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[Rainmeter]</span></span><br><span class="line"><span class="attr">DynamicWindowSize</span>=<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="section">[Variables]</span></span><br><span class="line"><span class="attr">Get</span>=(?(?=.*&lt;Item&gt;).*&lt;Name&gt;(.*)&lt;/Name&gt;)</span><br><span class="line"></span><br><span class="line"><span class="section">[MeasureParent]</span></span><br><span class="line"><span class="attr">Measure</span>=WebParser</span><br><span class="line"><span class="attr">URL</span>=file://<span class="comment">#CURRENTPATH#Test.html</span></span><br><span class="line"><span class="attr">RegExp</span>=<span class="string">"(?siU)#Get##Get##Get#"</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MeasureChild1]</span></span><br><span class="line"><span class="attr">Measure</span>=WebParser</span><br><span class="line"><span class="attr">URL</span>=[MeasureParent]</span><br><span class="line"><span class="attr">StringIndex</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">Substitute</span>=<span class="string">""</span>:<span class="string">"No Moe!"</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MeasureChild2]</span></span><br><span class="line"><span class="attr">Measure</span>=WebParser</span><br><span class="line"><span class="attr">URL</span>=[MeasureParent]</span><br><span class="line"><span class="attr">StringIndex</span>=<span class="number">2</span></span><br><span class="line"><span class="attr">Substitute</span>=<span class="string">""</span>:<span class="string">"No Moe!"</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MeasureChild3]</span></span><br><span class="line"><span class="attr">Measure</span>=WebParser</span><br><span class="line"><span class="attr">URL</span>=[MeasureParent]</span><br><span class="line"><span class="attr">StringIndex</span>=<span class="number">3</span></span><br><span class="line"><span class="attr">Substitute</span>=<span class="string">""</span>:<span class="string">"No Moe!"</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MeterChild1]</span></span><br><span class="line"><span class="attr">Meter</span>=String</span><br><span class="line"><span class="attr">MeasureName</span>=MeasureChild1</span><br><span class="line"><span class="attr">FontSize</span>=<span class="number">10</span></span><br><span class="line"><span class="attr">FontColor</span>=<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span></span><br><span class="line"><span class="attr">AntiAlias</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">Text</span>=Item <span class="number">1</span>: %<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MeterChild2]</span></span><br><span class="line"><span class="attr">Meter</span>=String</span><br><span class="line"><span class="attr">MeasureName</span>=MeasureChild2</span><br><span class="line"><span class="attr">Y</span>=<span class="number">2</span>R</span><br><span class="line"><span class="attr">FontSize</span>=<span class="number">10</span></span><br><span class="line"><span class="attr">FontColor</span>=<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span></span><br><span class="line"><span class="attr">AntiAlias</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">Text</span>=Item <span class="number">2</span>: %<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MeterChild3]</span></span><br><span class="line"><span class="attr">Meter</span>=String</span><br><span class="line"><span class="attr">MeasureName</span>=MeasureChild3</span><br><span class="line"><span class="attr">Y</span>=<span class="number">2</span>R</span><br><span class="line"><span class="attr">FontSize</span>=<span class="number">10</span></span><br><span class="line"><span class="attr">FontColor</span>=<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span></span><br><span class="line"><span class="attr">AntiAlias</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">Text</span>=Item <span class="number">3</span>: %<span class="number">1</span></span><br></pre></td></tr></table></figure>
-
 <p>This will display:</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Item 1: Larry</span><br><span class="line">Item 2: Curly</span><br><span class="line">Item 3: No Moe!</span><br></pre></td></tr></table></figure>
 

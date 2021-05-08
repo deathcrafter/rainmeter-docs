@@ -26,7 +26,7 @@
 	<!-- Site icon -->
 	<link rel="shortcut icon" href="//www.rainmeter.net/favicon.ico">
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body>
 
@@ -42,10 +42,10 @@
 		</button>
 		<div class="collapse navbar-collapse justify-content-end" id="mainNavigation">
 			<ul class="navbar-nav order-12">
-				<li class="nav-item "><a class="nav-link" href="//rainmeter.net/">Home</a></li>
-				<li class="nav-item active"><a class="nav-link" href="//docs.rainmeter.net/">Documentation</a></li>
-				<li class="nav-item "><a class="nav-link" href="//rainmeter.net/discover">Discover</a></li>
-				<li class="nav-item "><a class="nav-link" href="//forum.rainmeter.net">Community</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../rainmeter.net/">Home</a></li>
+				<li class="nav-item active"><a class="nav-link" href="../../docs.rainmeter.net/">Documentation</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../rainmeter.net/discover">Discover</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../forum.rainmeter.net">Community</a></li>
 				<div class="dropdown-divider"></div>
 			</ul>
 		</div>
@@ -111,7 +111,6 @@
 
 <div class="noscroll">
 <figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ReadFile</span><span class="params">(FilePath)</span></span></span><br><span class="line">	<span class="comment">-- HANDLE RELATIVE PATH OPTIONS.</span></span><br><span class="line">	FilePath = SKIN:MakePathAbsolute(FilePath)</span><br><span class="line"></span><br><span class="line">	<span class="comment">-- OPEN FILE.</span></span><br><span class="line">	<span class="keyword">local</span> File = <span class="built_in">io</span>.<span class="built_in">open</span>(FilePath)</span><br><span class="line"></span><br><span class="line">	<span class="comment">-- HANDLE ERROR OPENING FILE.</span></span><br><span class="line">	<span class="keyword">if</span> <span class="keyword">not</span> File <span class="keyword">then</span></span><br><span class="line">		<span class="built_in">print</span>(<span class="string">'ReadFile: unable to open file at '</span> .. FilePath)</span><br><span class="line">		<span class="keyword">return</span></span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">-- READ FILE CONTENTS AND CLOSE.</span></span><br><span class="line">	<span class="keyword">local</span> Contents = File:<span class="built_in">read</span>(<span class="string">'*all'</span>)</span><br><span class="line">	File:<span class="built_in">close</span>()</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> Contents</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-
 </div>
 
 <h3 id="ReadFileLines">ReadFileLines</h3>
@@ -120,14 +119,12 @@
 
 <div class="noscroll">
 <figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ReadFileLines</span><span class="params">(FilePath)</span></span></span><br><span class="line">	<span class="comment">-- HANDLE RELATIVE PATH OPTIONS.</span></span><br><span class="line">	FilePath = SKIN:MakePathAbsolute(FilePath)</span><br><span class="line"></span><br><span class="line">	<span class="comment">-- OPEN FILE.</span></span><br><span class="line">	<span class="keyword">local</span> File = <span class="built_in">io</span>.<span class="built_in">open</span>(FilePath)</span><br><span class="line"></span><br><span class="line">	<span class="comment">-- HANDLE ERROR OPENING FILE.</span></span><br><span class="line">	<span class="keyword">if</span> <span class="keyword">not</span> File <span class="keyword">then</span></span><br><span class="line">		<span class="built_in">print</span>(<span class="string">'ReadFile: unable to open file at '</span> .. FilePath)</span><br><span class="line">		<span class="keyword">return</span></span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">-- READ FILE CONTENTS AND CLOSE.</span></span><br><span class="line">	<span class="keyword">local</span> Contents = &#123;&#125;</span><br><span class="line">	<span class="keyword">for</span> Line <span class="keyword">in</span> File:<span class="built_in">lines</span>() <span class="keyword">do</span></span><br><span class="line">		<span class="built_in">table</span>.<span class="built_in">insert</span>(Contents, Line)</span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">	File:<span class="built_in">close</span>()</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> Contents</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-
 </div>
 
 <h3 id="WriteFile">WriteFile</h3>
 
 <div class="noscroll">
 <figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">WriteFile</span><span class="params">(FilePath, Contents)</span></span></span><br><span class="line">	<span class="comment">-- HANDLE RELATIVE PATH OPTIONS.</span></span><br><span class="line">	FilePath = SKIN:MakePathAbsolute(FilePath)</span><br><span class="line"></span><br><span class="line">	<span class="comment">-- OPEN FILE.</span></span><br><span class="line">	<span class="keyword">local</span> File = <span class="built_in">io</span>.<span class="built_in">open</span>(FilePath, <span class="string">'w'</span>)</span><br><span class="line"></span><br><span class="line">	<span class="comment">-- HANDLE ERROR OPENING FILE.</span></span><br><span class="line">	<span class="keyword">if</span> <span class="keyword">not</span> File <span class="keyword">then</span></span><br><span class="line">		<span class="built_in">print</span>(<span class="string">'WriteFile: unable to open file at '</span> .. FilePath)</span><br><span class="line">		<span class="keyword">return</span></span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">-- WRITE CONTENTS AND CLOSE FILE</span></span><br><span class="line">	File:<span class="built_in">write</span>(Contents)</span><br><span class="line">	File:<span class="built_in">close</span>()</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-
 </div>
 
 <p>To merge a table of "lines" into a single string with each value on a separate line, use <code>String = table.concat(Table, '\n')</code> </p>

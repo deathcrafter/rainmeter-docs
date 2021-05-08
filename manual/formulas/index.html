@@ -26,7 +26,7 @@
 	<!-- Site icon -->
 	<link rel="shortcut icon" href="//www.rainmeter.net/favicon.ico">
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body>
 
@@ -42,10 +42,10 @@
 		</button>
 		<div class="collapse navbar-collapse justify-content-end" id="mainNavigation">
 			<ul class="navbar-nav order-12">
-				<li class="nav-item "><a class="nav-link" href="//rainmeter.net/">Home</a></li>
-				<li class="nav-item active"><a class="nav-link" href="//docs.rainmeter.net/">Documentation</a></li>
-				<li class="nav-item "><a class="nav-link" href="//rainmeter.net/discover">Discover</a></li>
-				<li class="nav-item "><a class="nav-link" href="//forum.rainmeter.net">Community</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../rainmeter.net/">Home</a></li>
+				<li class="nav-item active"><a class="nav-link" href="../../docs.rainmeter.net/">Documentation</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../rainmeter.net/discover">Discover</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../forum.rainmeter.net">Community</a></li>
 				<div class="dropdown-divider"></div>
 			</ul>
 		</div>
@@ -337,11 +337,9 @@ Example: <code>(MyMeasure = 5) || (MyMeasure = 10)</code></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">if (condition)</span><br><span class="line">  then</span><br><span class="line">    expr. if true</span><br><span class="line">  else</span><br><span class="line">    expr. if false</span><br><span class="line">end if</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[Measure]</span></span><br><span class="line"><span class="attr">Measure</span>=Calc</span><br><span class="line"><span class="attr">Formula</span>=<span class="number">5</span></span><br><span class="line"></span><br><span class="line"><span class="section">[Meter]</span></span><br><span class="line"><span class="attr">Meter</span>=String</span><br><span class="line"><span class="attr">X</span>=([Measure] &lt; <span class="number">6</span> ? <span class="number">0</span> : <span class="number">10</span>)</span><br><span class="line"><span class="attr">DynamicVariables</span>=<span class="number">1</span></span><br></pre></td></tr></table></figure>
-
 <p>The meter would be positioned at <code>X=0</code> since the condition <code>[Measure] &lt; 6</code> evaluates to true.</p>
 <p>Conditional operators can be nested. It should be noted that there is a maximum of 30 nested operators.</p>
 <figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[Measure]</span></span><br><span class="line"><span class="attr">Measure</span>=Calc</span><br><span class="line"><span class="attr">Formula</span>=<span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="section">[Meter]</span></span><br><span class="line"><span class="attr">Meter</span>=String</span><br><span class="line"><span class="attr">X</span>=([Measure] &lt; <span class="number">1</span> ? <span class="number">99</span> : ([Measure] &lt; <span class="number">2</span> ? <span class="number">98</span> : ([Measure] &lt; <span class="number">3</span> ? <span class="number">97</span> : <span class="number">96</span>)))</span><br><span class="line"><span class="attr">DynamicVariables</span>=<span class="number">1</span></span><br></pre></td></tr></table></figure>
-
 <p>The meter would be positioned at <code>X=97</code>. Since the first statement of <code>[Measure] &lt; 1</code> is false, the formula begins testing the nested formulas in order until the condition becomes true . If none of the conditions are met, the final false value of 96 would be set.</p>
 
       </div>

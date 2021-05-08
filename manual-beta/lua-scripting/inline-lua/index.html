@@ -26,7 +26,7 @@
 	<!-- Site icon -->
 	<link rel="shortcut icon" href="//www.rainmeter.net/favicon.ico">
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body>
 
@@ -42,10 +42,10 @@
 		</button>
 		<div class="collapse navbar-collapse justify-content-end" id="mainNavigation">
 			<ul class="navbar-nav order-12">
-				<li class="nav-item "><a class="nav-link" href="//rainmeter.net/">Home</a></li>
-				<li class="nav-item active"><a class="nav-link" href="//docs.rainmeter.net/">Documentation</a></li>
-				<li class="nav-item "><a class="nav-link" href="//rainmeter.net/discover">Discover</a></li>
-				<li class="nav-item "><a class="nav-link" href="//forum.rainmeter.net">Community</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../../rainmeter.net/">Home</a></li>
+				<li class="nav-item active"><a class="nav-link" href="../../../docs.rainmeter.net/">Documentation</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../../rainmeter.net/discover">Discover</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../../forum.rainmeter.net">Community</a></li>
 				<div class="dropdown-divider"></div>
 			</ul>
 		</div>
@@ -335,7 +335,6 @@
 
 <p>SimpleLua.ini:</p>
 <figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[Rainmeter]</span></span><br><span class="line"><span class="attr">Update</span>=<span class="number">1000</span></span><br><span class="line"><span class="attr">AccurateText</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">DynamicWindowSize</span>=<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MeasureGetUserName]</span></span><br><span class="line"><span class="attr">Measure</span>=Plugin</span><br><span class="line"><span class="attr">Plugin</span>=SysInfo</span><br><span class="line"><span class="attr">SysInfoType</span>=USER_NAME</span><br><span class="line"><span class="attr">UpdateDivider</span>=-<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MeasureScript]</span></span><br><span class="line"><span class="attr">Measure</span>=Script</span><br><span class="line"><span class="attr">ScriptFile</span>=SimpleLua.lua</span><br><span class="line"><span class="attr">Disabled</span>=<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MeterWelcome]</span></span><br><span class="line"><span class="attr">Meter</span>=String</span><br><span class="line"><span class="attr">FontSize</span>=<span class="number">20</span></span><br><span class="line"><span class="attr">FontWeight</span>=<span class="number">400</span></span><br><span class="line"><span class="attr">FontColor</span>=<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span></span><br><span class="line"><span class="attr">SolidColor</span>=<span class="number">47</span>,<span class="number">47</span>,<span class="number">47</span>,<span class="number">255</span></span><br><span class="line"><span class="attr">Padding</span>=<span class="number">5</span>,<span class="number">5</span>,<span class="number">5</span>,<span class="number">5</span></span><br><span class="line"><span class="attr">AntiAlias</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">Text</span>=[&amp;MeasureScript:GetWelcome(<span class="string">'[&amp;MeasureGetUserName]'</span>)]</span><br><span class="line"><span class="attr">DynamicVariables</span>=<span class="number">1</span></span><br></pre></td></tr></table></figure>
-
 <p>So we have a pretty simple skin, which gets the name of the user account logged into Windows with the <code>SysInfoType=USER_NAME</code> option on the SysInfo plugin measure [MeasureGetUserName].</p>
 
 <p>And we have a Script measure, [MeasureScript], which will load and make available the Lua script file SimpleLua.lua. Note that since we don't use or need an Update() function in the Lua, we can just disable this Script measure. There is nothing it can or should return on each update of the measure itself.</p>

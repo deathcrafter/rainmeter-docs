@@ -26,7 +26,7 @@
 	<!-- Site icon -->
 	<link rel="shortcut icon" href="//www.rainmeter.net/favicon.ico">
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body>
 
@@ -42,10 +42,10 @@
 		</button>
 		<div class="collapse navbar-collapse justify-content-end" id="mainNavigation">
 			<ul class="navbar-nav order-12">
-				<li class="nav-item "><a class="nav-link" href="//rainmeter.net/">Home</a></li>
-				<li class="nav-item active"><a class="nav-link" href="//docs.rainmeter.net/">Documentation</a></li>
-				<li class="nav-item "><a class="nav-link" href="//rainmeter.net/discover">Discover</a></li>
-				<li class="nav-item "><a class="nav-link" href="//forum.rainmeter.net">Community</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../../rainmeter.net/">Home</a></li>
+				<li class="nav-item active"><a class="nav-link" href="../../../docs.rainmeter.net/">Documentation</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../../rainmeter.net/discover">Discover</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../../forum.rainmeter.net">Community</a></li>
 				<div class="dropdown-divider"></div>
 			</ul>
 		</div>
@@ -276,7 +276,6 @@
 
 		<p>An example might be:</p>
 <figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[MeasureFormatSeconds]</span></span><br><span class="line"><span class="attr">Measure</span>=UpTime</span><br><span class="line"><span class="attr">SecondsValue</span>=[SomeMeasureName]</span><br><span class="line"><span class="attr">Format</span>=<span class="string">"%4!i!d %3!i!h %2!i!m %1!i!s"</span></span><br><span class="line"><span class="attr">DynamicVariables</span>=<span class="number">1</span></span><br></pre></td></tr></table></figure>
-
 	</dd>	
 </dl>
 
@@ -301,7 +300,6 @@
 
 <p><b>Example:</b></p>
 <figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[MeasureCurrentTime]</span></span><br><span class="line"><span class="attr">Measure</span>=Time</span><br><span class="line"></span><br><span class="line"><span class="section">[MeasureUserLoginTime]</span></span><br><span class="line"><span class="attr">Measure</span>=Plugin</span><br><span class="line"><span class="attr">Plugin</span>=SysInfo</span><br><span class="line"><span class="attr">SysInfoType</span>=USER_LOGONTIME</span><br><span class="line"><span class="attr">UpdateDivider</span>=-<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MeasureFormatSeconds]</span></span><br><span class="line"><span class="attr">Measure</span>=UpTime</span><br><span class="line"><span class="attr">SecondsValue</span>=([MeasureCurrentTime:] - [MeasureUserLoginTime:])</span><br><span class="line"><span class="attr">Format</span>=<span class="string">"%4!i!d %3!i!h %2!i!m"</span></span><br><span class="line"><span class="attr">DynamicVariables</span>=<span class="number">1</span></span><br></pre></td></tr></table></figure>
-
 
       </div>
 

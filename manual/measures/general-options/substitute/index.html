@@ -26,7 +26,7 @@
 	<!-- Site icon -->
 	<link rel="shortcut icon" href="//www.rainmeter.net/favicon.ico">
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body>
 
@@ -42,10 +42,10 @@
 		</button>
 		<div class="collapse navbar-collapse justify-content-end" id="mainNavigation">
 			<ul class="navbar-nav order-12">
-				<li class="nav-item "><a class="nav-link" href="//rainmeter.net/">Home</a></li>
-				<li class="nav-item active"><a class="nav-link" href="//docs.rainmeter.net/">Documentation</a></li>
-				<li class="nav-item "><a class="nav-link" href="//rainmeter.net/discover">Discover</a></li>
-				<li class="nav-item "><a class="nav-link" href="//forum.rainmeter.net">Community</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../../../rainmeter.net/">Home</a></li>
+				<li class="nav-item active"><a class="nav-link" href="../../../../docs.rainmeter.net/">Documentation</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../../../rainmeter.net/discover">Discover</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../../../forum.rainmeter.net">Community</a></li>
 				<div class="dropdown-divider"></div>
 			</ul>
 		</div>
@@ -268,7 +268,6 @@
 
 <p>Regular expression substitution:</p>
 <figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[MeasureEx1]</span></span><br><span class="line"><span class="attr">Measure</span>=String</span><br><span class="line"><span class="attr">String</span>=I am Rainy</span><br><span class="line"><span class="attr">RegExpSubstitute</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">Substitute</span>=<span class="string">"(\w+) (\w+) (\w+)"</span>:<span class="string">"\3, \1 \2"</span>,<span class="string">"Rainy"</span>:<span class="string">"Yoda"</span></span><br><span class="line"><span class="comment">; Reorders the sentence and then replaces Rainy with Yoda.</span></span><br><span class="line"><span class="comment">; The result is: Yoda, I am</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MeasureEx2]</span></span><br><span class="line"><span class="attr">Measure</span>=String</span><br><span class="line"><span class="attr">String</span>=Hello, world!</span><br><span class="line"><span class="attr">RegExpSubstitute</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">Substitute</span>=<span class="string">"^(.&#123;0,5&#125;).+$"</span>:<span class="string">"\1..."</span></span><br><span class="line"><span class="comment">; Truncates string by length (in this case 5) and appends "...".</span></span><br><span class="line"><span class="comment">; The result is: Hello...</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MeasureEx3]</span></span><br><span class="line"><span class="attr">Measure</span>=String</span><br><span class="line"><span class="attr">String</span>=<span class="number">192.168</span>.<span class="number">1.101</span></span><br><span class="line"><span class="attr">RegExpSubstitute</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">Substitute</span>=<span class="string">"^(\d&#123;1,3&#125;).(\d&#123;1,3&#125;).(\d&#123;1,3&#125;).\d&#123;1,3&#125;$"</span>:<span class="string">"\1.\2.\3.***"</span></span><br><span class="line"><span class="comment">; Masks an IP address. The result is: 192.168.1.***</span></span><br></pre></td></tr></table></figure>
-
 
       </div>
 

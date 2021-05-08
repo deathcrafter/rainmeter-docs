@@ -26,7 +26,7 @@
 	<!-- Site icon -->
 	<link rel="shortcut icon" href="//www.rainmeter.net/favicon.ico">
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body>
 
@@ -42,10 +42,10 @@
 		</button>
 		<div class="collapse navbar-collapse justify-content-end" id="mainNavigation">
 			<ul class="navbar-nav order-12">
-				<li class="nav-item "><a class="nav-link" href="//rainmeter.net/">Home</a></li>
-				<li class="nav-item active"><a class="nav-link" href="//docs.rainmeter.net/">Documentation</a></li>
-				<li class="nav-item "><a class="nav-link" href="//rainmeter.net/discover">Discover</a></li>
-				<li class="nav-item "><a class="nav-link" href="//forum.rainmeter.net">Community</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../../rainmeter.net/">Home</a></li>
+				<li class="nav-item active"><a class="nav-link" href="../../../docs.rainmeter.net/">Documentation</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../../rainmeter.net/discover">Discover</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../../forum.rainmeter.net">Community</a></li>
 				<div class="dropdown-divider"></div>
 			</ul>
 		</div>
@@ -276,12 +276,10 @@
 
 <p>You first define the type of <a href="#Shape">Shape</a>, the relative starting position in the meter, and required and optional shape definition parameters.</p>
 <figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[MeterShape]</span></span><br><span class="line"><span class="attr">Meter</span>=Shape</span><br><span class="line"><span class="attr">Shape</span>=Rectangle <span class="number">0</span>,<span class="number">0</span>,<span class="number">100</span>,<span class="number">50</span></span><br></pre></td></tr></table></figure>
-
 <p>In this example we are saying "Create a rectangle, starting at an X of 0 and a Y of 0 relative to the meter, with a width of 100, and a height of 50." This is the most basic example of the meter, and will create a 100 X 50 rectangle with a default white fill color and a default 1 pixel black drawing stroke.</p>
 
 <p>You can then add <a href="#AttributeModifiers">Attribute</a> and <a href="#TransformModifiers">Transform</a> modifiers to each shape, which can control things like Fill Color, StrokeWidth, Rotate, Scale, and much more.</p>
 <figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[MeterShape]</span></span><br><span class="line"><span class="attr">Meter</span>=Shape</span><br><span class="line"><span class="attr">Shape</span>=Rectangle <span class="number">0</span>,<span class="number">0</span>,<span class="number">100</span>,<span class="number">50</span> | Fill Color <span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span> | StrokeWidth <span class="number">4</span> | Stroke Color <span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span></span><br></pre></td></tr></table></figure>
-
 <p>Modifiers are added on the Shape<em>N</em> option by defining them separated by the pipe <code>|</code> character. All modifiers are optional, and they can be in any order in the option, after the shape definition. This example adds "Use a solid black fill color in the shape, change the width of the drawing stroke to 4 pixels, and color the stroke white."</p>
 
 <p>Shapes in a meter can also be <a href="#Combine">Combined</a>, which will allow you to merge two or more separate shapes in a variety of ways.</p>
@@ -757,7 +755,6 @@
 
 				<p><b>Example:</b></p>
 <figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[MeterShapes]</span></span><br><span class="line"><span class="attr">Meter</span>=Shape</span><br><span class="line"><span class="attr">Shape</span>=Rectangle <span class="number">0</span>,<span class="number">0</span>,<span class="number">100</span>,<span class="number">50</span> | Extend MySharedModifiers, MyRotateAndScale1</span><br><span class="line"><span class="attr">Shape2</span>=Rectangle <span class="number">20</span>,<span class="number">10</span>,<span class="number">50</span>,<span class="number">50</span> | Extend MySharedModifiers, MyRotateAndScale2</span><br><span class="line"><span class="attr">MySharedModifiers</span>=Fill Color <span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span> | StrokeWidth <span class="number">4</span> | Stroke Color <span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span></span><br><span class="line"><span class="attr">MyRotateAndScale1</span>=Rotate <span class="number">20</span> | Scale <span class="number">1.5</span>,<span class="number">0</span></span><br><span class="line"><span class="attr">MyRotateAndScale2</span>=Rotate <span class="number">45</span> | Scale <span class="number">2.0</span>,<span class="number">1.5</span></span><br></pre></td></tr></table></figure>
-
 				<p><b>Notes on Extend:</b><br/>
 					The named options can be any names you like, however as with any other option in a .ini file, they must be unique to the [Section].<br/><br/>
 
@@ -784,7 +781,6 @@
 
 		<p><b>Example:</b></p>
 <figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[MeterShape]</span></span><br><span class="line"><span class="attr">Meter</span>=Shape</span><br><span class="line"><span class="attr">Shape</span>=Rectangle <span class="number">1</span>,<span class="number">1</span>,<span class="number">101</span>,<span class="number">101</span> | Fill LinearGradient MyFillGradient</span><br><span class="line"><span class="attr">MyFillGradient</span>=<span class="number">180</span> | <span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span> <span class="comment">; 0.0 | 0,255,0,255 ; 0.5 | 0,0,255,255 ; 1.0</span></span><br></pre></td></tr></table></figure>
-
 		<p>That will define a gradient at 180 degrees. It will start with a color of 255,0,0,255 (red) at percentage 0.0 (the start), will transition to a color of 0,255,0,255 (green) at percentage 0.5 (50 percent), and to 0,0,255,255 (blue) at percentage 1.0 (100 percent).</p>
 
 		<p>The <b>Angle</b> is defined as any number of degrees, with 0 or 360 starting directly to the right and rotating clockwise. This results in the following gradient <em>directions</em> on the Shape or Stroke:</p>

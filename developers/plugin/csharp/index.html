@@ -26,7 +26,7 @@
 	<!-- Site icon -->
 	<link rel="shortcut icon" href="//www.rainmeter.net/favicon.ico">
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body>
 
@@ -42,10 +42,10 @@
 		</button>
 		<div class="collapse navbar-collapse justify-content-end" id="mainNavigation">
 			<ul class="navbar-nav order-12">
-				<li class="nav-item "><a class="nav-link" href="//rainmeter.net/">Home</a></li>
-				<li class="nav-item active"><a class="nav-link" href="//docs.rainmeter.net/">Documentation</a></li>
-				<li class="nav-item "><a class="nav-link" href="//rainmeter.net/discover">Discover</a></li>
-				<li class="nav-item "><a class="nav-link" href="//forum.rainmeter.net">Community</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../../rainmeter.net/">Home</a></li>
+				<li class="nav-item active"><a class="nav-link" href="../../../docs.rainmeter.net/">Documentation</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../../rainmeter.net/discover">Discover</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../../forum.rainmeter.net">Community</a></li>
 				<div class="dropdown-divider"></div>
 			</ul>
 		</div>
@@ -124,7 +124,6 @@
 		</p>
 		<h3>Example:</h3>
 <figure class="highlight cs"><table><tr><td class="code"><pre><span class="line">[<span class="meta">DllExport</span>]</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Initialize</span>(<span class="params"><span class="keyword">ref</span> IntPtr data, IntPtr rm</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Measure measure = <span class="keyword">new</span> Measure();</span><br><span class="line">	data = GCHandle.ToIntPtr(GCHandle.Alloc(measure));</span><br><span class="line">	Rainmeter.API api = (Rainmeter.API)rm;</span><br><span class="line">	<span class="comment">// Do any initialization here, saving any values you want to into data for later</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 	</dd>
 	<dt id="Reload"><code>Reload</code> <small><code>void Reload(IntPtr data, IntPtr rm, ref double maxValue)</code></small></dt>
 	<dd>
@@ -138,7 +137,6 @@
 		</p>
 		<h3>Example:</h3>
 <figure class="highlight cs"><table><tr><td class="code"><pre><span class="line">[<span class="meta">DllExport</span>]</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Reload</span>(<span class="params">IntPtr data, IntPtr rm, <span class="keyword">ref</span> <span class="keyword">double</span> maxValue</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Measure measure = (Measure)data;</span><br><span class="line">	<span class="comment">// Read measures values from the measure (see API functions)</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// The expected value returned in the Update function will not exceed 100.0</span></span><br><span class="line">	maxValue = <span class="number">100.0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 	</dd>
 	<dt id="Update"><code>Update</code> <small><code>double Update(IntPtr data)</code></small></dt>
 	<dd>
@@ -151,7 +149,6 @@
 		<p><b>Returns</b>: The number value of the measure (as a double). This value will be used as the string value of the measure if the <a href="/developers/plugin/csharp/#GetString">GetString</a> function is not used or returns a null.</p>
 		<h3>Example:</h3>
 <figure class="highlight cs"><table><tr><td class="code"><pre><span class="line">[<span class="meta">DllExport</span>]</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">Update</span>(<span class="params">IntPtr data</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Measure measure = (Measure)data;</span><br><span class="line">	<span class="comment">//Any processing that needs to happen during the update cycle should happen here</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0.0</span>; <span class="comment">//return whatever value you want rainmeter to display here</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 	</dd>
 	<dt id="Finalize"><code>Finalize</code> <small><code>void Finalize(IntPtr data)</code></small></dt>
 	<dd>
@@ -163,7 +160,6 @@
 		</p>
 		<h3>Example:</h3>
 <figure class="highlight cs"><table><tr><td class="code"><pre><span class="line">[<span class="meta">DllExport</span>]</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Finalize</span>(<span class="params">IntPtr data</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Measure measure = (Measure)data;</span><br><span class="line">	<span class="comment">// Do any cleanup here</span></span><br><span class="line">	GCHandle.FromIntPtr(data).Free();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 	</dd>
 </dl>
 
@@ -180,7 +176,6 @@
 		<p><b>Returns</b>: The string value for the measure. If you want the number value (returned from <a href="/developers/plugin/csharp/#Update">Update</a>) to be used as the measures value, return null instead. The return value must be marshalled.</p>
 		<h3>Example:</h3>
 <figure class="highlight cs"><table><tr><td class="code"><pre><span class="line">[<span class="meta">DllExport</span>]</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> IntPtr <span class="title">GetString</span>(<span class="params">IntPtr data</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Measure measure = (Measure)data;</span><br><span class="line">	<span class="keyword">if</span> (something)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">// Return a string value to use for this measure (must be marshalled)</span></span><br><span class="line">		<span class="keyword">return</span> Marshal.StringToHGlobalUni(<span class="string">"SomeValue"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Return null when you want to use the number</span></span><br><span class="line">	<span class="comment">//  value for this measure (the value returned from the Update function)</span></span><br><span class="line">	<span class="keyword">return</span> IntPtr.Zero;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 	</dd>
 	<dt id="ExecuteBang"><code>ExecuteBang</code> <small><code>void ExecuteBang(IntPtr data, string args)</code></small></dt>
 	<dd>
@@ -193,7 +188,6 @@
 		</p>
 		<h3>Example:</h3>
 <figure class="highlight cs"><table><tr><td class="code"><pre><span class="line">[<span class="meta">DllExport</span>]</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">ExecuteBang</span>(<span class="params">IntPtr data, [MarshalAs(UnmanagedType.LPWStr</span>)] <span class="keyword">string</span> args)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Measure measure = (Measure)data;</span><br><span class="line">	<span class="comment">// !CommandMeasure was used on this measure...any arguments will be in args</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 	</dd>
 	<dt id="Custom"><code>Custom function</code> <small><code>string <em>func</em>(IntPtr data, const int argc, const string[] argv)</code></small></dt>
 	<dd>
@@ -210,7 +204,6 @@
 		<p><b>Returns</b>: A string to replace the section variable with. If a null is returned, the variable will not be replaced and remain unchanged. The return value must be marshalled.</p>
 		<h3>Example:</h3>
 <figure class="highlight cs"><table><tr><td class="code"><pre><span class="line">[<span class="meta">DllExport</span>]</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> IntPtr <span class="title">ToLower</span>(<span class="params">IntPtr data, <span class="keyword">const</span> <span class="keyword">int</span> argc,</span></span></span><br><span class="line"><span class="function"><span class="params">	[MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.LPWStr, SizeParamIndex = <span class="number">2</span></span>)] <span class="keyword">const</span> <span class="keyword">string</span>[] argv)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Measure measure = (Measure)data;</span><br><span class="line">	<span class="keyword">if</span> (argc &gt; <span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">// Do something and return a value to replace variable with (must be marshalled)</span></span><br><span class="line">		<span class="keyword">return</span> Marshal.StringToHGlobalUni(doSomething(argv));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> IntPtr.Zero;  <span class="comment">// Do not replace the variable</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 	</dd>
 </dl>
 

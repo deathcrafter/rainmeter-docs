@@ -26,7 +26,7 @@
 	<!-- Site icon -->
 	<link rel="shortcut icon" href="//www.rainmeter.net/favicon.ico">
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body>
 
@@ -42,10 +42,10 @@
 		</button>
 		<div class="collapse navbar-collapse justify-content-end" id="mainNavigation">
 			<ul class="navbar-nav order-12">
-				<li class="nav-item "><a class="nav-link" href="//rainmeter.net/">Home</a></li>
-				<li class="nav-item active"><a class="nav-link" href="//docs.rainmeter.net/">Documentation</a></li>
-				<li class="nav-item "><a class="nav-link" href="//rainmeter.net/discover">Discover</a></li>
-				<li class="nav-item "><a class="nav-link" href="//forum.rainmeter.net">Community</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../rainmeter.net/">Home</a></li>
+				<li class="nav-item active"><a class="nav-link" href="../../docs.rainmeter.net/">Documentation</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../rainmeter.net/discover">Discover</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../forum.rainmeter.net">Community</a></li>
 				<div class="dropdown-divider"></div>
 			</ul>
 		</div>
@@ -293,7 +293,6 @@ and a bit later on, a publication date of<br>
 <p>And the variable for the #Item# and the parent WebParser measure you can use to parse the same five items from this feed:</p>
 
 <figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[Variables]</span></span><br><span class="line"><span class="attr">Item</span>=(?(?=.*&lt;entry&gt;).*&lt;entry&gt;.*&lt;updated&gt;(.*)&lt;/updated&gt;.*&lt;link.*<span class="string">"(.*)"</span>.*&lt;title.*&gt;(.*)&lt;/title&gt;)</span><br><span class="line"><span class="attr">Sub</span>=<span class="string">"^\s+"</span>:<span class="string">""</span>,<span class="string">"&lt;!\[CDATA\["</span>:<span class="string">""</span>,<span class="string">"\]\]&gt;"</span>:<span class="string">""</span>,<span class="string">"!\[CDATA\["</span>:<span class="string">""</span>,<span class="string">"\]\]"</span>:<span class="string">""</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MeasureSite]</span></span><br><span class="line"><span class="attr">Measure</span>=WebParser</span><br><span class="line"><span class="attr">URL</span>=http://forum.rainmeter.net/feed.php</span><br><span class="line"><span class="attr">RegExp</span>=(?siU)&lt;title&gt;(.*)&lt;/title&gt;.*&lt;link.*<span class="string">"(.*)"</span>.*&lt;updated&gt;(.*)&lt;/updated&gt;<span class="comment">#Item##Item##Item##Item##Item#</span></span><br></pre></td></tr></table></figure>
-
 
       </div>
 

@@ -26,7 +26,7 @@
 	<!-- Site icon -->
 	<link rel="shortcut icon" href="//www.rainmeter.net/favicon.ico">
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body>
 
@@ -42,10 +42,10 @@
 		</button>
 		<div class="collapse navbar-collapse justify-content-end" id="mainNavigation">
 			<ul class="navbar-nav order-12">
-				<li class="nav-item "><a class="nav-link" href="//rainmeter.net/">Home</a></li>
-				<li class="nav-item active"><a class="nav-link" href="//docs.rainmeter.net/">Documentation</a></li>
-				<li class="nav-item "><a class="nav-link" href="//rainmeter.net/discover">Discover</a></li>
-				<li class="nav-item "><a class="nav-link" href="//forum.rainmeter.net">Community</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../rainmeter.net/">Home</a></li>
+				<li class="nav-item active"><a class="nav-link" href="../../docs.rainmeter.net/">Documentation</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../rainmeter.net/discover">Discover</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../forum.rainmeter.net">Community</a></li>
 				<div class="dropdown-divider"></div>
 			</ul>
 		</div>
@@ -140,7 +140,6 @@ The second string index is used when using a <code>RegExp</code> in a measure th
 
 <p>It might be obvious by now, but when we want to carry on with the second &lt;item&gt; from the feed, we use:</p>
 <figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[MeasureItem2Title]</span></span><br><span class="line"><span class="attr">Measure</span>=WebParser</span><br><span class="line"><span class="attr">Url</span>=[MeasureSite]</span><br><span class="line"><span class="attr">RegExp</span>=<span class="string">"(?siU)&lt;title&gt;(.*)&lt;/title&gt;"</span></span><br><span class="line"><span class="attr">StringIndex</span>=<span class="number">4</span></span><br><span class="line"><span class="attr">StringIndex2</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">Substitute</span>=<span class="comment">#Sub#</span></span><br></pre></td></tr></table></figure>
-
 <p>So now we are getting the information for the entire second &lt;item&gt; from the main measure, which is in <code>StringIndex=4</code> on that measure. Then we parse it with a RegExp= and the result is returned in the <code>StringIndex2=1</code> on this measure.</p>
 
 <p>Play with this a bit, and you might find that it can save a lot of extra parsing and creating huge RegExp= options to parse absolutely everything out of a site all at once up front. Get the main site in big chunks, then deal with the chunks as if they were sites in and of themselves.</p>

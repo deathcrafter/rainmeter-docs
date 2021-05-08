@@ -26,7 +26,7 @@
 	<!-- Site icon -->
 	<link rel="shortcut icon" href="//www.rainmeter.net/favicon.ico">
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body>
 
@@ -42,10 +42,10 @@
 		</button>
 		<div class="collapse navbar-collapse justify-content-end" id="mainNavigation">
 			<ul class="navbar-nav order-12">
-				<li class="nav-item "><a class="nav-link" href="//rainmeter.net/">Home</a></li>
-				<li class="nav-item active"><a class="nav-link" href="//docs.rainmeter.net/">Documentation</a></li>
-				<li class="nav-item "><a class="nav-link" href="//rainmeter.net/discover">Discover</a></li>
-				<li class="nav-item "><a class="nav-link" href="//forum.rainmeter.net">Community</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../rainmeter.net/">Home</a></li>
+				<li class="nav-item active"><a class="nav-link" href="../../docs.rainmeter.net/">Documentation</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../rainmeter.net/discover">Discover</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../forum.rainmeter.net">Community</a></li>
 				<div class="dropdown-divider"></div>
 			</ul>
 		</div>
@@ -127,7 +127,6 @@
 <p>Since [MeasureMailCount] has <code>UpdateRate=1200</code> set, we can calculate that WebParser will download the page every 1200 seconds (or every 20 minutes).</p>
 
 <figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[MeasureMailCount]</span></span><br><span class="line"><span class="attr">Measure</span>=WebParser</span><br><span class="line"><span class="attr">URL</span>=https://username:pasword@gmail.google.com/gmail/feed/atom</span><br><span class="line"><span class="attr">RegExp</span>=<span class="string">"(?siU)&lt;fullcount&gt;(.*)&lt;/fullcount&gt;"</span></span><br><span class="line"><span class="attr">StringIndex</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">UpdateRate</span>=<span class="number">1200</span></span><br></pre></td></tr></table></figure>
-
 <p>Generally, you want to use UpdateRate in place of UpdateDivider on a WebParser measure, not in addition to it. In some instances, using both can cause a "lag" between when the plugin is finished getting and parsing the data from the site, and when it is actually used and displayed in the skin.</p>
 
 <p>Since WebParser connects to the internet, it is important to have a high enough "download interval". If you try to download a page too often (e.g. every second), you may end up causing a high load on the target site, which ultimately may cause the site to block all access from your computer. As a safety measure, UpdateRate has a default value of 600, or 10 minutes when <code>Update=1000</code> and UpdateDivider is not set.</p>

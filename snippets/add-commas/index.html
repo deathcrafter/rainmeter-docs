@@ -26,7 +26,7 @@
 	<!-- Site icon -->
 	<link rel="shortcut icon" href="//www.rainmeter.net/favicon.ico">
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body>
 
@@ -42,10 +42,10 @@
 		</button>
 		<div class="collapse navbar-collapse justify-content-end" id="mainNavigation">
 			<ul class="navbar-nav order-12">
-				<li class="nav-item "><a class="nav-link" href="//rainmeter.net/">Home</a></li>
-				<li class="nav-item active"><a class="nav-link" href="//docs.rainmeter.net/">Documentation</a></li>
-				<li class="nav-item "><a class="nav-link" href="//rainmeter.net/discover">Discover</a></li>
-				<li class="nav-item "><a class="nav-link" href="//forum.rainmeter.net">Community</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../rainmeter.net/">Home</a></li>
+				<li class="nav-item active"><a class="nav-link" href="../../docs.rainmeter.net/">Documentation</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../rainmeter.net/discover">Discover</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../forum.rainmeter.net">Community</a></li>
 				<div class="dropdown-divider"></div>
 			</ul>
 		</div>
@@ -109,7 +109,6 @@
 
 <div class="noscroll">
 <figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">FormatCommas</span><span class="params">(numVar)</span></span></span><br><span class="line"></span><br><span class="line">	<span class="built_in">assert</span>(<span class="built_in">tonumber</span>(numVar), <span class="string">'Function FormatCommas() expects a number.'</span>)</span><br><span class="line">	<span class="keyword">local</span> prefix, number, postfix = <span class="built_in">string</span>.<span class="built_in">match</span>(numVar, <span class="string">'^([^%d]*%d)(%d*)(.-)$'</span>)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> prefix..(number:<span class="built_in">reverse</span>():<span class="built_in">gsub</span>(<span class="string">'(%d%d%d)'</span>, <span class="string">'%1,'</span>):<span class="built_in">reverse</span>())..postfix</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-
 </div>
 
       </div>

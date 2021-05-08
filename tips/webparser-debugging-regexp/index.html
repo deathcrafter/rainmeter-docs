@@ -26,7 +26,7 @@
 	<!-- Site icon -->
 	<link rel="shortcut icon" href="//www.rainmeter.net/favicon.ico">
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body>
 
@@ -42,10 +42,10 @@
 		</button>
 		<div class="collapse navbar-collapse justify-content-end" id="mainNavigation">
 			<ul class="navbar-nav order-12">
-				<li class="nav-item "><a class="nav-link" href="//rainmeter.net/">Home</a></li>
-				<li class="nav-item active"><a class="nav-link" href="//docs.rainmeter.net/">Documentation</a></li>
-				<li class="nav-item "><a class="nav-link" href="//rainmeter.net/discover">Discover</a></li>
-				<li class="nav-item "><a class="nav-link" href="//forum.rainmeter.net">Community</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../rainmeter.net/">Home</a></li>
+				<li class="nav-item active"><a class="nav-link" href="../../docs.rainmeter.net/">Documentation</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../rainmeter.net/discover">Discover</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../forum.rainmeter.net">Community</a></li>
 				<div class="dropdown-divider"></div>
 			</ul>
 		</div>
@@ -119,7 +119,6 @@
 <p>At its simplest, you use WebParser like this:</p>
 
 <figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[Rainmeter]</span></span><br><span class="line"><span class="attr">Update</span>=<span class="number">1000</span></span><br><span class="line"><span class="attr">AccurateText</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">DynamicWindowSize</span>=<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MeasureSite]</span></span><br><span class="line"><span class="attr">Measure</span>=WebParser</span><br><span class="line"><span class="attr">URL</span>=http://www.tell-my-ip.com/index.html</span><br><span class="line"><span class="attr">RegExp</span>=(?siU)&lt;td.*&gt;Your IP Address.*&lt;td&gt;(.*)&lt;/td&gt;</span><br><span class="line"></span><br><span class="line"><span class="section">[MeasureIP]</span></span><br><span class="line"><span class="attr">Measure</span>=WebParser</span><br><span class="line"><span class="attr">URL</span>=[MeasureSite]</span><br><span class="line"><span class="attr">StringIndex</span>=<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MeterIP]</span></span><br><span class="line"><span class="attr">Meter</span>=String</span><br><span class="line"><span class="attr">MeasureName</span>=MeasureIP</span><br><span class="line"><span class="attr">FontSize</span>=<span class="number">12</span></span><br><span class="line"><span class="attr">FontColor</span>=<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span></span><br><span class="line"><span class="attr">AntiAlias</span>=<span class="number">1</span></span><br></pre></td></tr></table></figure>
-
 <p>Where you provide a <code>URL</code> to connect to, and a <code>RegExp</code> to parse the text, finding and capturing the information you want with <code>(.*)</code> into <code>StringIndex</code> numbers. You then use the information in those StringIndexes to display the data.</p>
 
 <p>Generally, you are going to be capturing multiple bits of information from the site, so you can use multiple child measures and meters to create your skin.</p>

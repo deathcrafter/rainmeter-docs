@@ -26,7 +26,7 @@
 	<!-- Site icon -->
 	<link rel="shortcut icon" href="//www.rainmeter.net/favicon.ico">
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body>
 
@@ -42,10 +42,10 @@
 		</button>
 		<div class="collapse navbar-collapse justify-content-end" id="mainNavigation">
 			<ul class="navbar-nav order-12">
-				<li class="nav-item "><a class="nav-link" href="//rainmeter.net/">Home</a></li>
-				<li class="nav-item active"><a class="nav-link" href="//docs.rainmeter.net/">Documentation</a></li>
-				<li class="nav-item "><a class="nav-link" href="//rainmeter.net/discover">Discover</a></li>
-				<li class="nav-item "><a class="nav-link" href="//forum.rainmeter.net">Community</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../../../rainmeter.net/">Home</a></li>
+				<li class="nav-item active"><a class="nav-link" href="../../../../docs.rainmeter.net/">Documentation</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../../../rainmeter.net/discover">Discover</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../../../forum.rainmeter.net">Community</a></li>
 				<div class="dropdown-divider"></div>
 			</ul>
 		</div>
@@ -122,7 +122,6 @@
 		</p>
 		<h3>Example:</h3>
 <figure class="highlight cs"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">internal</span> <span class="keyword">void</span> <span class="title">Reload</span>(<span class="params">Rainmeter.API rm, <span class="keyword">ref</span> <span class="keyword">double</span> maxValue</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">// The following will replace regular variables and</span></span><br><span class="line">	<span class="comment">//  section variables in the 'Value' option.</span></span><br><span class="line">	<span class="keyword">string</span> <span class="keyword">value</span> = rm.ReadString(<span class="string">"Value"</span>, <span class="string">"DefaultValue"</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// The following will only replace regular variables,</span></span><br><span class="line">	<span class="comment">//  but NOT section variables like [MeasureNames].</span></span><br><span class="line">	<span class="keyword">string</span> action = rm.ReadString(<span class="string">"Action"</span>, <span class="string">""</span>, <span class="literal">false</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 	</dd>
 	<dt id="ReadInt"><code>ReadInt</code> <small><code>int ReadInt(string option, int defValue)</code></small></dt>
 	<dd>
@@ -135,7 +134,6 @@
 		</p>
 		<h3>Example:</h3>
 <figure class="highlight cs"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">internal</span> <span class="keyword">void</span> <span class="title">Reload</span>(<span class="params">Rainmeter.API rm, <span class="keyword">ref</span> <span class="keyword">double</span> maxValue</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> <span class="keyword">value</span> = rm.ReadInt(<span class="string">"Value"</span>, <span class="number">20</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 	</dd>
 	<dt id="ReadDouble"><code>ReadDouble</code> <small><code>double ReadDouble(string option, double defValue)</code></small></dt>
 	<dd>
@@ -148,7 +146,6 @@
 		</p>
 		<h3>Example:</h3>
 <figure class="highlight cs"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">internal</span> <span class="keyword">void</span> <span class="title">Reload</span>(<span class="params">Rainmeter.API rm, <span class="keyword">ref</span> <span class="keyword">double</span> maxValue</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">double</span> <span class="keyword">value</span> = rm.ReadDouble(<span class="string">"Value"</span>, <span class="number">20.0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 	</dd>
 	<dt id="ReadPath"><code>ReadPath</code> <small><code>string ReadPath(string option, string defValue)</code></small></dt>
 	<dd>
@@ -161,7 +158,6 @@
 		</p>
 		<h3>Example:</h3>
 <figure class="highlight cs"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">internal</span> <span class="keyword">void</span> <span class="title">Reload</span>(<span class="params">Rainmeter.API rm, <span class="keyword">ref</span> <span class="keyword">double</span> maxValue</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">string</span> path = rm.ReadPath(<span class="string">"MyPath"</span>, <span class="string">"C:\\"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 	</dd>
 	<dt id="Execute"><code>Execute</code> <small><code>void Execute(IntPtr skin, string command)</code></small></dt>
 	<dd>
@@ -174,7 +170,6 @@
 		</p>
 		<h3>Example:</h3>
 <figure class="highlight cs"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">internal</span> <span class="keyword">double</span> <span class="title">Update</span>(<span class="params">IntPtr data</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Measure measure = (Measure)data;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 'mySkin' stored previously in the Initialize function</span></span><br><span class="line">	API.Execute(mySkin, L<span class="string">"[!SetVariable SomeVar 10]"</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0.0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 	</dd>
 	<dt id="ReplaceVariables"><code>ReplaceVariables</code> <small><code>string ReplaceVariables(string str)</code></small></dt>
 	<dd>
@@ -185,41 +180,35 @@
 			</ul>
 		</p><h3>Example:</h3>
 <figure class="highlight cs"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">internal</span> <span class="keyword">double</span> <span class="title">Update</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">string</span> myVar = ReplaceVariables(<span class="string">"#MyVar#"</span>).ToUpperInvariant();</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (myVar == <span class="string">"SOMETHING"</span>) &#123; <span class="keyword">return</span> <span class="number">1.0</span>; &#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0.0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 	</dd>
 	<dt id="GetMeasureName"><code>GetMeasureName</code> <small><code>string GetMeasureName()</code></small></dt>
 	<dd>
 		<p>Retrieves the name of the measure.</p>
 		<h3>Example:</h3>
 <figure class="highlight cs"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">internal</span> <span class="keyword">void</span> <span class="title">Initialize</span>(<span class="params">Rainmeter.API rm</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	myName = GetMeasureName();  <span class="comment">// declare 'myName' as a string in class scope</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 	</dd>
 	<dt id="GetSkin"><code>GetSkin</code> <small><code>IntPtr GetSkin()</code></small></dt>
 	<dd>
 		<p>Retrieves an internal pointer to the current skin.</p>
 		<h3>Example:</h3>
 <figure class="highlight cs"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">internal</span> <span class="keyword">void</span> <span class="title">Initialize</span>(<span class="params">Rainmeter.API rm</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	mySkin = GetSkin();  <span class="comment">// declare 'mySkin' as a IntPtr in class scope</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 	</dd>
 	<dt id="GetSkinName"><code>GetSkinName</code> <small><code>string GetSkinName()</code></small></dt>
 	<dd>
 		<p>Retrieves full path and name of the skin.</p>
 		<h3>Example:</h3>
 <figure class="highlight cs"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">internal</span> <span class="keyword">void</span> <span class="title">Initialize</span>(<span class="params">Rainmeter.API rm</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">// declare 'skinName' as a string in class scope</span></span><br><span class="line">	skinName = GetSkinName();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 	</dd>
 	<dt id="GetSkinWindow"><code>GetSkinWindow</code> <small><code>IntPtr GetSkinWindow()</code></small></dt>
 	<dd>
 		<p>Returns a pointer to the handle (HWND) of the skin window.</p>
 		<h3>Example:</h3>
 <figure class="highlight cs"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">internal</span> <span class="keyword">void</span> <span class="title">Initialize</span>(<span class="params">Rainmeter.API rm</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">// declare 'skinWindow' as a IntPtr in class scope</span></span><br><span class="line">	skinWindow = GetSkinWindow();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 	</dd>
 	<dt id="GetSettingsFile"><code>GetSettingsFile</code> <small><code>string GetSettingsFile()</code></small></dt>
 	<dd>
 		<p>Retrieves a path to the Rainmeter data file (Rainmeter.data).</p>
 <figure class="highlight cs"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">internal</span> <span class="keyword">void</span> <span class="title">Initialize</span>(<span class="params">Rainmeter.API rm</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">// declare 'rmDataFile' as a string in global scope</span></span><br><span class="line">	<span class="keyword">if</span> (rmDataFile == <span class="literal">null</span>) &#123; rmDataFile = GetSettingsFile(); &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 	</dd>
 	<dt id="Log"><code>Log</code> <small><code>void Log(LogType type, string message)</code></small></dt>
 	<dd>
@@ -232,7 +221,6 @@
 		</p>
 		<h3>Example:</h3>
 <figure class="highlight cs"><table><tr><td class="code"><pre><span class="line">API.Log(API.LogType.Notice, <span class="string">"I am a 'notice' log message with a source"</span>);</span><br></pre></td></tr></table></figure>
-
 	</dd>
 	<dt id="LogF"><code>LogF</code> <small><code>void LogF(LogType type, string format, params string[] args)</code></small></dt>
 	<dd>
@@ -246,7 +234,6 @@
 		</p>
 		<h3>Example:</h3>
 <figure class="highlight cs"><table><tr><td class="code"><pre><span class="line"><span class="keyword">string</span> notice = <span class="string">"notice"</span>;</span><br><span class="line">API.LogF(API.LogType.Notice, <span class="string">"I am a '&#123;0&#125;' log message with a source"</span>, notice);</span><br></pre></td></tr></table></figure>
-
 	</dd>
 </dl>
 

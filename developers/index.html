@@ -26,7 +26,7 @@
 	<!-- Site icon -->
 	<link rel="shortcut icon" href="//www.rainmeter.net/favicon.ico">
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body>
 
@@ -42,10 +42,10 @@
 		</button>
 		<div class="collapse navbar-collapse justify-content-end" id="mainNavigation">
 			<ul class="navbar-nav order-12">
-				<li class="nav-item "><a class="nav-link" href="//rainmeter.net/">Home</a></li>
-				<li class="nav-item active"><a class="nav-link" href="//docs.rainmeter.net/">Documentation</a></li>
-				<li class="nav-item "><a class="nav-link" href="//rainmeter.net/discover">Discover</a></li>
-				<li class="nav-item "><a class="nav-link" href="//forum.rainmeter.net">Community</a></li>
+				<li class="nav-item "><a class="nav-link" href="../rainmeter.net/">Home</a></li>
+				<li class="nav-item active"><a class="nav-link" href="../docs.rainmeter.net/">Documentation</a></li>
+				<li class="nav-item "><a class="nav-link" href="../rainmeter.net/discover">Discover</a></li>
+				<li class="nav-item "><a class="nav-link" href="../forum.rainmeter.net">Community</a></li>
 				<div class="dropdown-divider"></div>
 			</ul>
 		</div>
@@ -209,7 +209,6 @@ An example plugin demonstrating how to implement functions to use as section var
 
 <p>AutoIT code:</p>
 <figure class="highlight autoit"><table><tr><td class="code"><pre><span class="line"><span class="comment">; Usage: SendBang("[!About]")</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;SendMessage.au3&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">Func</span> <span class="title">SendBang</span><span class="params">($szBang)</span></span></span><br><span class="line">   <span class="keyword">Local</span> <span class="keyword">Const</span> $hWnd = <span class="built_in">WinGetHandle</span>(<span class="string">"[CLASS:DummyRainWClass]"</span>)</span><br><span class="line">   <span class="keyword">If</span> $hWnd &lt;&gt; <span class="number">0</span> <span class="keyword">Then</span></span><br><span class="line">      <span class="keyword">Local</span> <span class="keyword">Const</span> $iSize = <span class="built_in">StringLen</span>($szBang) + <span class="number">1</span></span><br><span class="line"></span><br><span class="line">      <span class="keyword">Local</span> <span class="keyword">Const</span> $pMem = <span class="built_in">DllStructCreate</span>(<span class="string">"wchar["</span> &amp; $iSize &amp; <span class="string">"]"</span>)</span><br><span class="line">      <span class="built_in">DllStructSetData</span>($pMem, <span class="number">1</span>, $szBang)</span><br><span class="line"></span><br><span class="line">      <span class="keyword">Local</span> <span class="keyword">Const</span> $pCds = <span class="built_in">DllStructCreate</span>(<span class="string">"dword;dword;ptr"</span>)</span><br><span class="line">      <span class="built_in">DllStructSetData</span>($pCds, <span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line">      <span class="built_in">DllStructSetData</span>($pCds, <span class="number">2</span>, ($iSize * <span class="number">2</span>))</span><br><span class="line">      <span class="built_in">DllStructSetData</span>($pCds, <span class="number">3</span>, <span class="built_in">DllStructGetPtr</span>($pMem))</span><br><span class="line"></span><br><span class="line">      <span class="keyword">Local</span> <span class="keyword">Const</span> $WM_COPYDATA = <span class="number">0x004A</span></span><br><span class="line">      _SendMessage($hWnd, $WM_COPYDATA, <span class="number">0</span>, <span class="built_in">DllStructGetPtr</span>($pCds))</span><br><span class="line">   <span class="keyword">EndIf</span></span><br><span class="line"><span class="keyword">EndFunc</span></span><br></pre></td></tr></table></figure>
-
 
       </div>
 

@@ -26,7 +26,7 @@
 	<!-- Site icon -->
 	<link rel="shortcut icon" href="//www.rainmeter.net/favicon.ico">
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body>
 
@@ -42,10 +42,10 @@
 		</button>
 		<div class="collapse navbar-collapse justify-content-end" id="mainNavigation">
 			<ul class="navbar-nav order-12">
-				<li class="nav-item "><a class="nav-link" href="//rainmeter.net/">Home</a></li>
-				<li class="nav-item active"><a class="nav-link" href="//docs.rainmeter.net/">Documentation</a></li>
-				<li class="nav-item "><a class="nav-link" href="//rainmeter.net/discover">Discover</a></li>
-				<li class="nav-item "><a class="nav-link" href="//forum.rainmeter.net">Community</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../../rainmeter.net/">Home</a></li>
+				<li class="nav-item active"><a class="nav-link" href="../../../docs.rainmeter.net/">Documentation</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../../rainmeter.net/discover">Discover</a></li>
+				<li class="nav-item "><a class="nav-link" href="../../../forum.rainmeter.net">Community</a></li>
 				<div class="dropdown-divider"></div>
 			</ul>
 		</div>
@@ -305,7 +305,6 @@
 <p>A parameter to a bang that contains embedded quotes should be surrounded by a what we call """magic quotes""". A pair of triple quotes.</p>
 
 <figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="comment">; The first line will fail due to extra quotes. The second line will properly log</span></span><br><span class="line"><span class="comment">; Example string: Bob said "hello" to Susan</span></span><br><span class="line"><span class="attr">LeftMouseUpAction</span>=[!Log <span class="string">"Bob said "</span>hello<span class="string">" to Susan"</span>]</span><br><span class="line"><span class="attr">LeftMouseUpAction</span>=[!Log <span class="string">"""Bob said "hello" to Susan"""</span>]</span><br></pre></td></tr></table></figure>
-
 <p>There are other instances where embedded characters like <code>[</code> or <code>(</code> in a parameter of a bang might cause Rainmeter to improperly detect the beginning of a [SectionVariable] or (formula) and become confused. Magic Quotes can help with this as well. All characters between """Magic Quotes""" are treated strictly literal.</p>
 
 <h3 id="AsteriskEscape"><b>Escaping a #Variable# or [MeasureName]</b></h3>
