@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
 	<!-- Meta tags for proper character encoding and social media handling  -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=0.9, maximum-scale=0.9">
@@ -10,7 +10,7 @@
 	<meta property="og:url" content="https://www.rainmeter.net">
 	<meta property="og:image" content="https://www.rainmeter.net/img/media_image.png">
 	<meta property="og:site_name" content="Rainmeter">
-	<meta property="og:locale" content="en_US">
+	<meta property="og:locale" content="en_US" />
 
 	<!-- Page title  -->
 	<title>Plugin Guidelines - Rainmeter</title>
@@ -26,7 +26,7 @@
 	<!-- Site icon -->
 	<link rel="shortcut icon" href="//www.rainmeter.net/favicon.ico">
 
-</head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body>
 
@@ -36,18 +36,38 @@
 <!-- Include navbar -->
 <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
 	<div class="container">
-		<a class="navbar-brand" href="https://docs.rainmeter.net"><img src="\img\logo_nav.png" alt></a>
+		<a class="navbar-brand" href="https://docs.rainmeter.net"><img src="\img\logo_nav.png" alt=""></a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavigation" aria-controls="mainNavigation" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse justify-content-end" id="mainNavigation">
 			<ul class="navbar-nav order-12">
-				<li class="nav-item "><a class="nav-link" href="//rainmeter.net/">Home</a></li>
-				<li class="nav-item active"><a class="nav-link" href="//docs.rainmeter.net/">Documentation</a></li>
-				<li class="nav-item "><a class="nav-link" href="//rainmeter.net/discover">Discover</a></li>
-				<li class="nav-item "><a class="nav-link" href="//forum.rainmeter.net">Community</a></li>
-				<div class="dropdown-divider"></div>
-			</ul>
+                
+					
+                		<li class="nav-item>">
+                    		<a class="nav-link" target="_blank" rel="noopener" href="//www.rainmeter.net/">Home</a>
+                		</li>
+					
+                
+					
+						<li class="nav-item ">
+                    		<a class="nav-link" href="../../../index.html">Documentation</a>
+                		</li>
+					
+                
+					
+                		<li class="nav-item>">
+                    		<a class="nav-link" target="_blank" rel="noopener" href="//rainmeter.net/discover">Discover</a>
+                		</li>
+					
+                
+					
+                		<li class="nav-item>">
+                    		<a class="nav-link" target="_blank" rel="noopener" href="//forum.rainmeter.net/">Community</a>
+                		</li>
+					
+                
+                <div class="dropdown-divider"></div>
 		</div>
 	</div>
 </nav>
@@ -55,7 +75,7 @@
 <div id="content">
     <div id="nav-button" class="docs-nav-button">
       <div class="container d-flex flex-row align-items-center">
-      <svg onclick="openNavMenu()" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg onclick="openNavMenu()" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
       <a onclick="openNavMenu()">Open navigation</a>
   </div>
 </div>
@@ -68,35 +88,35 @@
         
 
 <h4 id="category"><a href="/developers">Developers</a></h4>
-<svg class="closeButton" onclick="closeNavMenu()" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+<svg class="closeButton" onclick="closeNavMenu()" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
 <form id="search-form" method="get" action="https://www.google.com/search">
   <input name="sitesearch" value="docs.rainmeter.net" type="hidden">
   <input class="form-control" id="search" name="q" maxlength="255" size="16" placeholder="Search" type="text">
 </form>
-<hr>
+<hr />
 <nav id="sidenav" class="sidenav">
 <h4>Contents</h4>
 	<ul class="docs-nav-block">
 	<li><a href="/developers/plugin/plugin-anatomy/">Anatomy of a Plugin</a>
-	</li><li><a href="/developers/plugin/cpp/">C++ Overview</a>
+	<li><a href="/developers/plugin/cpp/">C++ Overview</a>
 		<ul>
 		<li><a href="/developers/plugin/cpp/api/">C++ API Reference</a>
-		</li></ul>
-	</li><li><a href="/developers/plugin/csharp/">C# Overview</a>
+		</ul>
+	<li><a href="/developers/plugin/csharp/">C# Overview</a>
 		<ul>
 		<li><a href="/developers/plugin/csharp/api/">C# API Reference</a>
-		</li></ul>
-	</li><li><a href="/developers/plugin/guidelines/">Plugin Guidelines</a>
-	</li></ul>
+		</ul>
+	<li><a href="/developers/plugin/guidelines/">Plugin Guidelines</a>
+	</ul>
 
 	<h4>More</h4>
 	<ul class="docs-nav-block">
 	<li><a href="/manual/">4.3 Final Manual</a>
-	</li><li><a href="/manual-beta/">4.4 Beta Manual</a>
-	</li><li><a href="/tips/">Tips &amp; Tricks</a>
-	</li><li><a href="/snippets/">Snippets</a>
-	</li><li><a href="/history/">Version History</a>
-	</li></ul>
+	<li><a href="/manual-beta/">4.4 Beta Manual</a>
+	<li><a href="/tips/">Tips &amp; Tricks</a>
+	<li><a href="/snippets/">Snippets</a>
+	<li><a href="/history/">Version History</a>
+	</ul>
 
 </nav>
 
@@ -105,7 +125,7 @@
       <!-- Content -->
       <div class="docs-content col-12 col-lg-9">
         <h1 class="page-title">Plugin Guidelines</h1>
-        <hr>
+        <hr />
         <!-- Include content and Replace "!" in every url with correct path -->
         <p>After you make Rainmeter plugins for long enough you start to learn a lot of things you could have done better in your earlier plugins. This should help serve as a guide so you have as little of those moments as possible.</p>
 
@@ -135,7 +155,7 @@
 <h3 id="SettingsFile">Saving info in the <code>Rainmeter.data</code> file for later</h3>
 <p>You may have some data that needs to persist across multiple measures or skins and need a place to save it for later use. You may use the <code>Rainmeter.data</code> file to save this data if needed.</p>
 <p>You can retrieve the full path of the Rainmeter.data file by calling the <a href="/developers/plugin/cpp/api/#GetSettingsFile">RmGetSettingsFile</a> function.</p>
-<p>Use a unique key so other plugins will not overwrite your data. Keeping track of all the measures that reference your plugin may be necessary in order to prevent other measures of your plugin to overwrite the data. To store data in the settings file, use <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms725501(v=vs.85).aspx">WritePrivateProfileString</a>. To retrieve data, use <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms724353(v=vs.85).aspx">GetPrivateProfileString</a>.</p>
+<p>Use a unique key so other plugins will not overwrite your data. Keeping track of all the measures that reference your plugin may be necessary in order to prevent other measures of your plugin to overwrite the data. To store data in the settings file, use <a target="_blank" rel="noopener" href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms725501(v=vs.85).aspx">WritePrivateProfileString</a>. To retrieve data, use <a target="_blank" rel="noopener" href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms724353(v=vs.85).aspx">GetPrivateProfileString</a>.</p>
 
 <h3 id="SectionVariables">Custom section variables</h3>
 <p>There may be times when you want to return a custom value from your plugin that is independent from the <a href="/manual/measures/#Values">string or number</a> value of the measure. In these cases, you can export a custom function that will be called via <a href="/manual/variables/section-variables/">section variables</a>. Skin authors will be able to call this custom function "on demand" in any option that supports section variables. <code>DynamicVariables=1</code> will be required.</p>
@@ -153,14 +173,14 @@
 	<ul>
 		<li>Measures in Rainmeter can be paused/disabled at any time, which means the Update function will not be called. You <b>should not</b> rely on the Update function to control threads.</li>
 		<li>Because a skin can be unloaded or refreshed at any time, make sure detached threads can do any clean up required to your objects.</li>
-		<li>If accessing data across threads, make sure to lock any <a href="https://en.wikipedia.org/wiki/Critical_section">critical sections</a> to prevent <a href="https://en.wikipedia.org/wiki/Race_condition">race conditions</a>.</li>
-		<li>Most of the <a href="/developers/plugin/cpp/api/">API functions</a> should not be called in separate threads as they are not <a href="https://en.wikipedia.org/wiki/Thread_safety">thread-safe</a>. <a href="/developers/plugin/cpp/api/#Execute">RmExecute</a> and <a href="/developers/plugin/cpp/api/#Log">RmLog</a> will be the exceptions, but make sure to check if the skin is still running.</li>
+		<li>If accessing data across threads, make sure to lock any <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Critical_section">critical sections</a> to prevent <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Race_condition">race conditions</a>.</li>
+		<li>Most of the <a href="/developers/plugin/cpp/api/">API functions</a> should not be called in separate threads as they are not <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Thread_safety">thread-safe</a>. <a href="/developers/plugin/cpp/api/#Execute">RmExecute</a> and <a href="/developers/plugin/cpp/api/#Log">RmLog</a> will be the exceptions, but make sure to check if the skin is still running.</li>
 	</ul>
 </p>
 
 <h3 id="Marshalling">C# Marshalling</h3>
-<p>When making C# plugins you may notice references to IntPtr's and <a href="https://docs.microsoft.com/en-us/dotnet/framework/interop/interop-marshaling">Marshal</a> functions. Since Rainmeter is written in C++, variables are encoded differently, but don't be intimidated by them.</p>
-<p>An <a href="https://msdn.microsoft.com/en-us/library/system.intptr(v=vs.110).aspx">IntPtr</a> is basically an integer that represents a <a href="https://en.wikipedia.org/wiki/Pointer_(computer_programming)">pointer</a> to some data, which is why you must deallocate data in finalize as well as recast it in every function. Also since strings are formatted differently in C++, you should pass your string to <a href="https://msdn.microsoft.com/en-us/library/system.runtime.interopservices.marshal.stringtohglobaluni(v=vs.110).aspx">Marshal.StringToHGlobalUni</a> before returning it in <a href="/developers/plugin/csharp/#GetString">GetString</a> or <a href="/developers/plugin/csharp/#Custom">custom section variables</a>.</p>
+<p>When making C# plugins you may notice references to IntPtr's and <a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/dotnet/framework/interop/interop-marshaling">Marshal</a> functions. Since Rainmeter is written in C++, variables are encoded differently, but don't be intimidated by them.</p>
+<p>An <a target="_blank" rel="noopener" href="https://msdn.microsoft.com/en-us/library/system.intptr(v=vs.110).aspx">IntPtr</a> is basically an integer that represents a <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Pointer_(computer_programming)">pointer</a> to some data, which is why you must deallocate data in finalize as well as recast it in every function. Also since strings are formatted differently in C++, you should pass your string to <a target="_blank" rel="noopener" href="https://msdn.microsoft.com/en-us/library/system.runtime.interopservices.marshal.stringtohglobaluni(v=vs.110).aspx">Marshal.StringToHGlobalUni</a> before returning it in <a href="/developers/plugin/csharp/#GetString">GetString</a> or <a href="/developers/plugin/csharp/#Custom">custom section variables</a>.</p>
 <p>Also the MarshalAs in ExecuteBang and SectionVariable examples just makes sure that you get a C# style string or string array out of the box.</p>
 
       </div>
@@ -175,7 +195,7 @@
   <div class="container">
     <div class="row">
       <div class="col-6">Made with ❤ by the community.</div>
-      <div class="col-6 text-right text-md-right">Icons by <a href="http://www.freepik.com" alt="Freepik">Freepik</a> and <a href="https://feathericons.com/" alt="feathericons">feathericons.com</a></div>
+      <div class="col-6 text-right text-md-right">Icons by <a target="_blank" rel="noopener" href="http://www.freepik.com" alt="Freepik">Freepik</a> and <a target="_blank" rel="noopener" href="https://feathericons.com/" alt="feathericons">feathericons.com</a></div>
     </div>
   </div>
 </footer>
