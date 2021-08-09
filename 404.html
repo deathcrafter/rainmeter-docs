@@ -152,6 +152,12 @@
 </footer>
 
 
+<script>
+  if (location.pathname.indexOf('/manual-beta') === 0) {
+    location.pathname = location.pathname.replace('/manual-beta', '/manual')
+  }
+</script>
+
 
 	<!-- Javascript files  -->
 	<script src="/js/main.js"></script>
