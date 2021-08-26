@@ -30,7 +30,7 @@
 
 <body>
 
-  <!-- Get current path and set it as an variable -->
+  <!-- Get current path and set it as a variable -->
 
 
 <!-- Include navbar -->
@@ -87,7 +87,7 @@
       <div id="menu" class="docs-nav col-12 col-lg-3">
         
 
-<h4 id="category"><a href="/manual">4.3 Final Manual</a></h4>
+<h4 id="category"><a href="/manual">Manual</a></h4>
 <svg class="closeButton" onclick="closeNavMenu()" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
 <form id="search-form" method="get" action="https://www.google.com/search">
   <input name="sitesearch" value="docs.rainmeter.net" type="hidden">
@@ -112,6 +112,9 @@
 			</ul>
 		</ul>
 	<li><a href="/manual/installing-rainmeter/">Installing Rainmeter</a>
+			<ul>
+			<li><a href="/manual/installing-rainmeter/auto-update/">Auto Update</a>
+			</ul>
 	<li><a href="/manual/user-interface/">User Interface</a>
 		<ul>
 		<li><a href="/manual/user-interface/manage/">Manage</a>
@@ -241,7 +244,6 @@
 
 	<h4>More</h4>
 	<ul class="docs-nav-block">
-	<li><a href="/manual-beta/">4.4 Beta Manual</a>
 	<li><a href="/tips/">Tips &amp; Tricks</a>
 	<li><a href="/snippets/">Snippets</a>
 	<li><a href="/developers/">Developers</a>
@@ -275,7 +277,7 @@
 			<li><code>Quality</code>: Percentage value of the maximum dBm signal strength for your current connection.</li>
 			<li><code>Encryption</code>: The cipher algorithm being used for your current connection. Possible values are: <code>NONE</code>, <code>WEP40</code>, <code>TKIP</code>, <code>AES</code>, <code>WEP104</code>, <code>WPA_GROUP</code>, and <code>WEP</code>. An unknown algorithm will return <code>???</code>.</li>
 			<li><code>AUTH</code>: The authentication algorithm being used for your current connection. Possible values are: <code>Open</code>, <code>Shared</code>, <code>WPA-NONE</code>, <code>WPA-Enterprise</code>, <code>WPA-Personal</code>, <code>WPA2-Enterprise</code>, and <code>WPA2-Personal</code>. An unknown algorithm will return <code>???</code>.</li>
-			<li><code>PHY</code>: The supported bands for your connection (<b>not</b> your adapter). Possible values are <code>802.11a</code>, <code>802.11ac</code>, <code>802.11b</code>, <code>802.11g</code>, <code>802.11n</code>, <code>DSSS</code>, <code>FHSSS</code>, and <code>IR-Band</code>. An unknown band will return <code>???</code>.</li>
+			<li><code>PHY</code>: The supported bands for your connection (<b>not</b> your adapter). Possible values are <code>802.11a</code>, <code>802.11ac</code>, <code>802.11ad</code>, <code>802.11ax</code>, <code>802.11b</code>, <code>802.11g</code>, <code>802.11n</code>, <code>DSSS</code>, <code>FHSSS</code>, and <code>IR-Band</code>. An unknown band will return <code>???</code>.</li>
 			<li><code>List</code>: Returns a list of all visible networks. The list is automatically separated by line-breaks <code>\n</code>, so each network appears on a separate line. It will also display the <code>PHY</code>, <code>Encryption</code>, and <code>AUTH</code> algorithms next the the network <code>SSID</code>.</li>
 		</ul>
 	</dd>
