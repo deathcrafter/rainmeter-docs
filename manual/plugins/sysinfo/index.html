@@ -4,8 +4,8 @@
 	<!-- Meta tags for proper character encoding and social media handling  -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=0.9, maximum-scale=0.9">
-	<meta itemprop="name" content="SysInfo plugin - Rainmeter Docs">
-	<meta property="og:title" content="SysInfo plugin - Rainmeter Docs">
+	<meta itemprop="name" content="Redirect to measures - Rainmeter Docs">
+	<meta property="og:title" content="Redirect to measures - Rainmeter Docs">
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://www.rainmeter.net">
 	<meta property="og:image" content="https://www.rainmeter.net/img/media_image.png">
@@ -13,7 +13,7 @@
 	<meta property="og:locale" content="en_US" />
 
 	<!-- Page title  -->
-	<title>SysInfo plugin - Rainmeter</title>
+	<title>Redirect to measures - Rainmeter</title>
 
 	<!-- Files need to be local for offline version of documentations -->
 	<link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -196,6 +196,7 @@
 		<li><a href="/manual/measures/registry/">Registry</a>
 		<li><a href="/manual/measures/script/">Script</a>
 		<li><a href="/manual/measures/string/">String</a>
+		<li><a href="/manual/measures/sysinfo/">SysInfo</a>
 		<li><a href="/manual/measures/time/">Time</a>
 		<li><a href="/manual/measures/uptime/">Uptime</a>
 		<li><a href="/manual/measures/webparser/">WebParser</a>
@@ -215,7 +216,6 @@
 		<li><a href="/manual/plugins/resmon/">ResMon</a>
 		<li><a href="/manual/plugins/runcommand/">RunCommand</a>
 		<li><a href="/manual/plugins/speedfan/">SpeedFan</a>
-		<li><a href="/manual/plugins/sysinfo/">SysInfo</a>
 		<li><a href="/manual/plugins/usagemonitor/">UsageMonitor</a>
 		<li><a href="/manual/plugins/wifistatus/">WiFiStatus</a>
 		<li><a href="/manual/plugins/win7audio/">Win7Audio</a>
@@ -259,116 +259,15 @@
 
       <!-- Content -->
       <div class="docs-content col-12 col-lg-9">
-        <h1 class="page-title">SysInfo plugin</h1>
+        <h1 class="page-title">Redirect to measures</h1>
         <hr />
         <!-- Include content and Replace "!" in every url with correct path -->
-        <p><code>Plugin=SysInfo</code> measures various information about your system.</p>
-
-<h2>Options</h2>
-<dl>
-	<dt>General measure options</dt>
-	<dd>
-		All <a href="/manual/measures/general-options/">general measure options</a> are valid.
-	</dd>
-
-	<dt id="SysInfoType"><code>SysInfoType</code></dt>
-	<dd>
-		<p>Item of system information to retrieve. Some returned values are <em>String</em> for use in string measures or meters, and some are <em>Number</em> for use in any measure or meter.</p>
-
-		<h4 id="GeneralSystem">General system values</h4>
-		<ul>
-			<li><code>COMPUTER_NAME</code> : [String] The computer's name as specified in the system settings.</li>
-			<li><code>USER_NAME</code> : [String] The name of the current Windows user account.</li>
-			<li><code>USER_LOGONTIME</code> : [Number] A timestamp number (number of seconds since January 1, 1601) reflecting the date and time the current user account logged onto Windows. Use with a <a href="https://docs.rainmeter.net/manual/measures/time/">Time measure</a> to get a formatted string of the date/time, or subtract from the current time and use with an <a href="https://docs.rainmeter.net/manual/measures/uptime/">Uptime measure</a> to get a formatted string of the elapsed time.</li>
-			<li><code>LAST_SLEEP_TIME</code> : [Number] A timestamp number (number of seconds since January 1, 1601) reflecting the date and time Windows last entered a sleep state. Use with a <a href="https://docs.rainmeter.net/manual/measures/time/">Time measure</a> to get a formatted string of the date/time, or subtract from the current time and use with an <a href="https://docs.rainmeter.net/manual/measures/uptime/">Uptime measure</a> to get a formatted string of the elapsed time.</li>
-			<li><code>LAST_WAKE_TIME</code> : [Number] A timestamp number (number of seconds since January 1, 1601) reflecting the date and time Windows was last returned from a sleep state. Use with a <a href="https://docs.rainmeter.net/manual/measures/time/">Time measure</a> to get a formatted string of the date/time, or subtract from the current time and use with an <a href="https://docs.rainmeter.net/manual/measures/uptime/">Uptime measure</a> to get a formatted string of the elapsed time.</li>
-			<li><code>OS_VERSION</code> : [String] The version of Windows. E.g. <code>Windows 10.0</code>.</li>
-			<li><code>OS_BITS</code> : [Number] Returns whether the version of Windows is <code>32</code> or <code>64</code> bit.</li>
-			<li><code>PAGESIZE</code> : [Number] The size in bytes of the current contiguous page size allocated for system memory.</li>
-			<li><code>IDLE_TIME</code> : [Number] The number of seconds since the last mouse or keyboard input to the operating system.</li>
-
-		</ul>
-
-		<h4 id="Network">Network values</h4>
-		<ul>
-			<li><code>HOST_NAME</code> : [String] The computer's network host name.</li>
-			<li><code>DOMAIN_NAME</code> : [String] The computer's network domain name.</li>
-			<li><code>DOMAINWORKGROUP</code> : [String] The computer's network domain or workgroup name.</li>
-			<li><code>DNS_SERVER</code> : [String] The computer's network primary DNS server IP address.</li>
-			<li><code>ADAPTER_DESCRIPTION</code> : [String] The description of the network adapter specified by <code>SysInfoData</code>.</li>
-			<li><code>ADAPTER_TYPE</code> : [String and Number] The type of network adapter specified by <code>SysInfoData</code>.<br/><br/>The string value will be one of <code>Ethernet</code>, <code>Wireless</code> or <code>Other</code>. The number value will be one of <code>6</code> (Ethernet), <code>71</code> (Wireless), or some other number in the range 0-280 (Other). The meaning of numeric codes other than 6 and 71 can be found at: <a target="_blank" rel="noopener" href="https://msdn.microsoft.com/en-us/library/windows/desktop/aa366062(v=vs.85).aspx">MSDN Adapter Info</a>.<br/><br/>
-			<li><code>NET_MASK</code> : [String] The subnet mask of the network adapter specified by <code>SysInfoData</code>.</li>
-			<li><code>IP_ADDRESS</code> : [String] The LAN IP address of the network adapter specified by <code>SysInfoData</code>.</li>
-			<li><code>GATEWAY_ADDRESS</code> : [String] The gateway IP address of the network adapter specified by <code>SysInfoData</code>.</li>
-			<li><code>LAN_CONNECTIVITY</code> : [Number] Returns 1 if your computer is connected to a LAN, -1 if not.</li>
-			<li><code>INTERNET_CONNECTIVITY</code> : [Number] Returns 1 if your computer is connected to the Internet, -1 if not.</li>
-		</ul>
-
-		<h4 id="Monitor">Monitor and screen values</h4>
-		<ul>
-			<li><code>NUM_MONITORS</code> : [Number] The number of display monitors currently active.</li>
-			<li><code>SCREEN_SIZE</code> : [String] The resolution of the primary display monitor in the form "width x height".</li>
-			<li><code>SCREEN_WIDTH</code> : [Number] The width, in pixels, of the monitor. <code>SysInfoData</code> specifies which monitor if there are multiple.</li>
-			<li><code>SCREEN_HEIGHT</code> : [Number] The height, in pixels, of the monitor specified by <code>SysInfoData</code>.</li>
-			<li><code>VIRTUAL_SCREEN_TOP</code> : [Number] Y-Coordinate of the upper left corner of the virtual screen. Use <code>SysInfoData</code> to specify a monitor. These coordinates are relative to the primary monitor and can be negative.</li>
-			<li><code>VIRTUAL_SCREEN_LEFT</code> : [Number] X-Coordinate of the upper left corner of the virtual screen. Use <code>SysInfoData</code> to specify a monitor. These coordinates are relative to the primary monitor and can be negative.</li>
-			<li><code>VIRTUAL_SCREEN_WIDTH</code> : [Number] Width of the virtual screen which encompasses all display monitors.</li>
-			<li><code>VIRTUAL_SCREEN_HEIGHT</code> : [Number] Height of the virtual screen which encompasses all display monitors.</li>
-			<li><code>WORK_AREA</code> : [String] The size of the client area of the primary display monitor in the form "width x height".</li>
-			<li><code>WORK_AREA_TOP</code> : [Number] Y-Coordinate of the upper left corner of the client area. Use <code>SysInfoData</code> to specify a monitor. These coordinates are relative to the primary monitor and can be negative.</li>
-			<li><code>WORK_AREA_LEFT</code> : [Number] X-Coordinate of the upper left corner of the client area. Use <code>SysInfoData</code> to specify a monitor. These coordinates are relative to the primary monitor and can be negative.</li>
-			<li><code>WORK_AREA_WIDTH</code> : [Number] Width of the client area of the primary display monitor. Use <code>SysInfoData</code> to specify a different monitor.</li>
-			<li><code>WORK_AREA_HEIGHT</code> : [Number] Height of the client area of the primary display monitor. Use <code>SysInfoData</code> to specify a different monitor.</li>
-		</ul>
-
-		<h4 id="TimeZoneValues">Time Zone values</h4>
-		<ul>
-		<li><code>TIMEZONE_ISDST</code><br/>
-		[Number] A flag indicating the current state of Daylight Savings Time for the local computer.<br/>
-		Possible return values are:<br/>
-		<code>1</code> : Daylight Savings Time is currently in effect<br/>
-		<code>0</code> : Daylight Savings Time is currently not in effect<br/>
-		<code>-1</code> : The local region does not use Daylight Savings Time, or the functionality is disabled in Windows.</li>
-		<li><code>TIMEZONE_BIAS</code><br/>
-		[Number] The difference, in minutes, between standard local time and Coordinated Universal Time (UTC). This is the difference <em>from</em> the standard local time <em>to</em> UTC, or <code>UTC = standard local time + time zone bias</code>.</li>
-		<li><code>TIMEZONE_STANDARD_NAME</code><br/>
-		[String] The full name of the local computer's Time Zone when Daylight Savings Time is not in effect. For example, "Eastern Standard Time".</li>
-		<li><code>TIMEZONE_STANDARD_BIAS</code><br/>
-		[Number] The difference in minutes between standard local time and the local time when Daylight Savings Time is not in effect. For most areas, this will always be zero. Adding this to the value of TIMEZONE_BIAS will produce the total actual difference in minutes between the local computer and UTC when Daylight Savings Time is not in effect, or <code>UTC = standard local time + time zone bias + standard bias</code>.</li>
-		<li><code>TIMEZONE_DAYLIGHT_NAME</code><br/>
-		[String] The full name of the local computer's Time Zone when Daylight Savings Time is in effect. For example, "Eastern Daylight Time".</li>
-		<li><code>TIMEZONE_DAYLIGHT_BIAS</code><br/>
-		[Number] The difference in minutes between standard local time and the local time when Daylight Savings Time is in effect. For most areas, this will always be -60. Adding this to the value of TIMEZONE_BIAS will produce the total actual difference in minutes between the local computer and UTC when Daylight Savings Time is in effect, or <code>UTC = standard local time + time zone bias + daylight bias</code>.<br/><br/>
-		<b>Note:</b> Also see Daylight Savings Time <a href="/manual/measures/time/#TimeStamp">TimeStamp</a> options on <a href="/manual/measures/time/">Time</a> measures.</li>
-		</ul>
-	</dd>
-
-	<dt id="SysInfoData"><code>SysInfoData</code></dt>
-	<dd>
-		<p>An additional selector option that can be used to define an instance for some <a href="#SysInfoType">SysInfoType</a> values.</p>
-
-		<p><b>Network Interface Controller</b></p>
-		<p>For <code>SysInfoType</code> values related to network information, this will identify the network interface controller (NIC) to use.<p>
-		<p>This can be defined in one of several ways:
-		<ul>
-			<li>The string value <code>Best</code>, which will automatically detect the active interface.</li>
-			<li>The name of the network interface controller. For example, <code>Qualcomm AR938x Wireless Network Adapter</code>.</li>
-			<li>The index number of the network interface controller.</li>
-		</ul></p>
-		<p>Example: <code>SysInfoData=Best</code></p>
-		<p><b>Note:</b> When the option is set to <code>Best</code>, the function will select a "wired" network connection in preference to a "wireless" one, if both are active.</p>
-		<p>When the option is set to <code>Best</code>, <code>DynamicVariables=1</code> must be set on the measure if you want it to automatically react to changes in the active interface. This should be done if for instance you have a laptop or other computer that you switch between wired and wireless connections.</p>
-
-		<p><b>Monitor number</b></p>
-		<p>For <code>SysInfoType</code> values related to monitor information, this will identify the monitor number to use.</p>
-
-		<p><b>Note:</b> The appropriate value to use can be found by opening the Windows Display Properties dialog. It is important to note that "1" is not always the primary display monitor.</p>
-	</dd>
-</dl>
-
-<h2>Example</h2>
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[Rainmeter]</span></span><br><span class="line"><span class="attr">Update</span>=<span class="number">1000</span></span><br><span class="line"><span class="attr">DynamicWindowSize</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">BackgroundMode</span>=<span class="number">2</span></span><br><span class="line"><span class="attr">SolidColor</span>=<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MeasureOSVersion]</span></span><br><span class="line"><span class="attr">Measure</span>=Plugin</span><br><span class="line"><span class="attr">Plugin</span>=SysInfo</span><br><span class="line"><span class="attr">SysInfoType</span>=OS_VERSION</span><br><span class="line"><span class="attr">UpdateDivider</span>=-<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MeasureScreenWidth]</span></span><br><span class="line"><span class="attr">Measure</span>=Plugin</span><br><span class="line"><span class="attr">Plugin</span>=SysInfo</span><br><span class="line"><span class="attr">SysInfoType</span>=SCREEN_WIDTH</span><br><span class="line"><span class="attr">SysInfoData</span>=<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MeasureScreenHeight]</span></span><br><span class="line"><span class="attr">Measure</span>=Plugin</span><br><span class="line"><span class="attr">Plugin</span>=SysInfo</span><br><span class="line"><span class="attr">SysInfoType</span>=SCREEN_HEIGHT</span><br><span class="line"><span class="attr">SysInfoData</span>=<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MeterOSVersion]</span></span><br><span class="line"><span class="attr">Meter</span>=String</span><br><span class="line"><span class="attr">MeasureName</span>=MeasureOSVersion</span><br><span class="line"><span class="attr">FontSize</span>=<span class="number">12</span></span><br><span class="line"><span class="attr">FontColor</span>=<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span></span><br><span class="line"><span class="attr">StringStyle</span>=Bold</span><br><span class="line"><span class="attr">AntiAlias</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">Text</span>=OS Version: %<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MeterScreenSize]</span></span><br><span class="line"><span class="attr">Meter</span>=String</span><br><span class="line"><span class="attr">MeasureName</span>=MeasureScreenWidth</span><br><span class="line"><span class="attr">MeasureName2</span>=MeasureScreenHeight</span><br><span class="line"><span class="attr">Y</span>=<span class="number">2</span>R</span><br><span class="line"><span class="attr">FontSize</span>=<span class="number">12</span></span><br><span class="line"><span class="attr">FontColor</span>=<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span></span><br><span class="line"><span class="attr">StringStyle</span>=Bold</span><br><span class="line"><span class="attr">AntiAlias</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">Text</span>=Screen Size: %<span class="number">1</span> x %<span class="number">2</span></span><br></pre></td></tr></table></figure>
-
+        <script>
+   // Redirects the old location for SysInfo from plugins to measures. Do not remove
+   currentLocation = window.location;
+   newPath = currentLocation.pathname.replace('/plugins/', '/measures/');
+   location.replace(currentLocation.protocol+'//'+currentLocation.hostname+newPath+currentLocation.hash);
+</script>
       </div>
 
     </div>
