@@ -4,8 +4,8 @@
 	<!-- Meta tags for proper character encoding and social media handling  -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=0.9, maximum-scale=0.9">
-	<meta itemprop="name" content="Quote plugin - Rainmeter Docs">
-	<meta property="og:title" content="Quote plugin - Rainmeter Docs">
+	<meta itemprop="name" content="WiFiStatus measure - Rainmeter Docs">
+	<meta property="og:title" content="WiFiStatus measure - Rainmeter Docs">
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://www.rainmeter.net">
 	<meta property="og:image" content="https://www.rainmeter.net/img/media_image.png">
@@ -13,7 +13,7 @@
 	<meta property="og:locale" content="en_US" />
 
 	<!-- Page title  -->
-	<title>Quote plugin - Rainmeter</title>
+	<title>WiFiStatus measure - Rainmeter</title>
 
 	<!-- Files need to be local for offline version of documentations -->
 	<link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -259,16 +259,17 @@
 
       <!-- Content -->
       <div class="docs-content col-12 col-lg-9">
-        <h1 class="page-title">Quote plugin</h1>
+        <h1 class="page-title">WiFiStatus measure</h1>
         <hr />
         <!-- Include content and Replace "!" in every url with correct path -->
-        <p><code>Plugin=QuotePlugin</code> Retrieves a <b>random</b> value from one of two kinds of resources:</p>
-<ul>
-<li>A random string value (by default a single line) from a text file.</li>
-<li>A random file path and and name selected from a folder.</li>
-</ul>
+        <p><code>Measure=WiFiStatus</code> can be used to display various attributes of visible wireless networks in your area.</p>
 
-<p>The most common uses of the plugin are to either retrieve and display a random line of text from a text file of quotes, or to retrieve and display a random image file from a folder.</p>
+<h2 id="NotAPlugin">Note: WiFiStatus was previously a <em>plugin</em> measure.</h2>
+<p>In many existing skins you might see the syntax:</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[MeasureParent]</span></span><br><span class="line"><span class="attr">Measure</span>=Plugin</span><br><span class="line"><span class="attr">Plugin</span>=WiFiStatus</span><br><span class="line">or</span><br><span class="line"><span class="attr">Plugin</span>=WiFiStatus.dll</span><br><span class="line">or</span><br><span class="line"><span class="attr">Plugin</span>=Plugins\WiFiStatus.dll</span><br></pre></td></tr></table></figure>
+<p>WiFiStatus still works with those forms, and changing existing skins to the new <code>Measure=WiFiStatus</code> syntax is entirely optional. However, new skins created going forward should use the correct syntax for accuracy and clarity. WiFiStatus is a measure, and not a plugin.</p>
+
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[MeasureParent]</span></span><br><span class="line"><span class="attr">Measure</span>=WiFiStatus</span><br></pre></td></tr></table></figure>
 
 <h2>Options</h2>
 <dl>
@@ -277,35 +278,53 @@
 		All <a href="/manual/measures/general-options/">general measure options</a> are valid.
 	</dd>
 
-	<dt id="PathName"><code>PathName</code></dt>
+
+	<dt id="WiFiInfoType"><code>WiFiInfoType</code></dt>
 	<dd>
-		<a href="/manual/skins/option-types/#Path">Path</a> of a file or a folder.
+		<p>This defines what is measured. This option is <b>required</b>. Valid values are:</p>
 		<ul>
-		<li>If the specified path is a file, the measure value is a random part of a text file and the <code>Separator</code> option is valid for use.</li>
-		<li>If the specified path is a folder, the measure value is the path and name of a random file in the folder and the <code>Subfolders</code> and <code>FileFilter</code> options are valid for use.</li>
+			<li><code>SSID</code>: The broadcast name for your current connection. While actively trying to connect, you may see a 'connecting...' or 'authorizing...' next to the name.</li>
+			<li><code>Quality</code>: Percentage value of the maximum dBm signal strength for your current connection.</li>
+			<li><code>TXRate</code>: Theoretical maximum transmit speed in bits per second.</li>
+			<li><code>RXRate</code>: Theoretical maximum receive speed in bits per second.<br/>
+			<b>Note: </b><a = "a href=https://www.centurylink.com/home/help/internet/wireless/which-frequency-should-you-use.html">WiFi Band and Speed Information.</a></li>
+			<li><code>Encryption</code>: The cipher algorithm being used for your current connection. Possible values are: <code>NONE</code>, <code>WEP40</code>, <code>TKIP</code>, <code>AES</code>, <code>WEP104</code>, <code>WPA_GROUP</code>, <code>WEP</code>, <code>BIP</code>, and <code>GCMP</code>. An unknown algorithm will return <code>???</code>.</li>
+			<li><code>AUTH</code>: The authentication algorithm being used for your current connection. Possible values are: <code>Open</code>, <code>Shared</code>, <code>WPA-NONE</code>, <code>WPA-Enterprise</code>, <code>WPA-Personal</code>, <code>WPA2-Enterprise</code>, <code>WPA2-Personal</code>, <code>WPA3-Enterprise</code>, and <code>WPA3-Personal</code>. An unknown algorithm will return <code>???</code>.</li>
+			<li><code>PHY</code>: The supported band for your connection (<b>not</b> your adapter). Possible values are <code>802.11a</code>, <code>802.11ac</code>, <code>802.11ad</code>, <code>802.11ax</code>, <code>802.11b</code>, <code>802.11g</code>, <code>802.11n</code>, <code>DSSS</code>, <code>FHSSS</code>, and <code>IR-Band</code>. An unknown band will return <code>???</code>.</li>
+			<li><code>List</code>: Returns a list of all visible networks. The list is automatically separated by line-breaks, so each network appears on a separate line. It can also display the <code>PHY</code>, <code>Encryption</code>, <code>AUTH</code>, and <code>Quality</code> values next to the the network <code>SSID</code>, based on the value set in <code>WiFiListStyle</code>.</li>
 		</ul>
 	</dd>
 
-	<dt id="Separator"><code>Separator</code> <small>Default: <code>#CRLF#</code></small></dt>
+	<dt id="WiFiIntfID"><code>WiFiIntfID</code> <small>Default: <code>0</code></small></dt>
 	<dd>
-		Delimiter used to separate text. By default, the delimiter is a newline (carriage return / linefeed).
+		Only use this if you have more than 1 wireless interface adapter (which may include any bluetooth or infrared receivers). If you do not get any response from the measure with this value at <code>0</code>, then try other values starting from <code>1</code>, then <code>2</code> and so on.
 	</dd>
 
-	<dt id="Subfolders"><code>Subfolders</code> <small>Default: <code>1</code></small></dt>
+	<dt id="WiFiListStyle"><code>WiFiListStyle</code> <small>Default: <code>0</code></small></dt>
 	<dd>
-		If set to <code>1</code>, subfolders of <code>PathName</code> are also used.
+		<p>This allows you to control what information appears along with the SSID names of all visible networks when <code>WiFiInfoType=List</code>. Valid values are:</p>
+		<ul>
+			<li><code>0</code>: SSID</li>
+			<li><code>1</code>: SSID @PHY</li>
+			<li><code>2</code>: SSID (Encryption:AUTH)</li>
+			<li><code>3</code>: SSID @PHY (Encryption:AUTH)</li>
+			<li><code>4</code>: SSID [Quality]</li>
+			<li><code>5</code>: SSID @PHY [Quality]</li>
+			<li><code>6</code>: SSID (Encryption:AUTH) [Quality]</li>
+			<li><code>7</code>: SSID @PHY (Encryption:AUTH) [Quality]</li>
+		</ul>
 	</dd>
 
-	<dt id="FileFilter"><code>FileFilter</code></dt>
+	<dt id="WiFiListLimit"><code>WiFiListLimit</code> <small>Default: <code>5</code></small></dt>
 	<dd>
-		If specified, only file names matching a semicolon <code>;</code> delimited list of filters are taken into account. The standard wildcard characters <code>*</code> and <code>?</code> can be used.
-
-		<br><br><b>Example:</b> <code>*.jpg;*.png;*.gif</code>
+		<p>Allows you to control the number of networks that are will be displayed when used with <code>WiFiInfoType=List</code>.</p>
+		<p><b>Note:</b> The list will start with the interface with the strongest signal quality.</p>
 	</dd>
 </dl>
 
 <h2>Example</h2>
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[Rainmeter]</span></span><br><span class="line"><span class="attr">Update</span>=<span class="number">1000</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MeasureRandomImage]</span></span><br><span class="line"><span class="attr">Measure</span>=Plugin</span><br><span class="line"><span class="attr">Plugin</span>=QuotePlugin</span><br><span class="line"><span class="attr">PathName</span>=%HOMEDRIVE%%HOMEPATH%\Pictures\</span><br><span class="line"><span class="attr">Subfolders</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">FileFilter</span>=*.jpg<span class="comment">;*.png;*.gif</span></span><br><span class="line"><span class="attr">UpdateDivider</span>=<span class="number">30</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MeterRandomImage]</span></span><br><span class="line"><span class="attr">Meter</span>=Image</span><br><span class="line"><span class="attr">MeasureName</span>=MeasureRandomImage</span><br><span class="line"><span class="attr">X</span>=<span class="number">0</span></span><br><span class="line"><span class="attr">Y</span>=<span class="number">0</span></span><br><span class="line"><span class="attr">W</span>=<span class="number">200</span></span><br><span class="line"><span class="attr">PreserveAspectRatio</span>=<span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[MeasureSSID]</span></span><br><span class="line"><span class="attr">Measure</span>=WiFiStatus</span><br><span class="line"><span class="attr">WiFiInfoType</span>=SSID</span><br><span class="line"></span><br><span class="line"><span class="section">[MeasureNetworks]</span></span><br><span class="line"><span class="attr">Measure</span>=WiFiStatus</span><br><span class="line"><span class="attr">WiFiInfoType</span>=LIST</span><br><span class="line"><span class="attr">WiFiListStyle</span>=<span class="number">3</span></span><br></pre></td></tr></table></figure>
 
       </div>
 
