@@ -271,7 +271,7 @@
 		<p>All <a href="/manual/measures/general-options/">general measure options</a> are valid.</p>
 	</dd>
 
-	<dt id="RegHKey"><code>RegHKey</code></dt>
+	<dt id="RegHKey"><code>RegHKey</code> <small>Default: <code>HKEY_CURRENT_USER</code></small></dt>
 	<dd>
 		<p>Name of the root key. Valid values are:<br/>
 		<ul>
@@ -302,16 +302,16 @@
 			<li><code>REG_QWORD</code> (number): Represents a 64-bit unsigned integer.</li>
 			</p>
 	</dd>
-
-<h2>Example</h2>
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[Rainmeter]</span></span><br><span class="line"><span class="attr">Update</span>=<span class="number">1000</span></span><br><span class="line"><span class="attr">BackgroundMode</span>=<span class="number">2</span></span><br><span class="line"><span class="attr">SolidColor</span>=<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MeasureWindowsVersion]</span></span><br><span class="line"><span class="attr">Measure</span>=Registry</span><br><span class="line"><span class="attr">RegHKey</span>=HKEY_LOCAL_MACHINE</span><br><span class="line"><span class="attr">RegKey</span>=Software\Microsoft\Windows NT\CurrentVersion</span><br><span class="line"><span class="attr">RegValue</span>=ProductName</span><br><span class="line"><span class="attr">UpdateDivider</span>=-<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MeterText]</span></span><br><span class="line"><span class="attr">Meter</span>=String</span><br><span class="line"><span class="attr">MeasureName</span>=MeasureWindowsVersion</span><br><span class="line"><span class="attr">X</span>=<span class="number">5</span></span><br><span class="line"><span class="attr">Y</span>=<span class="number">5</span></span><br><span class="line"><span class="attr">W</span>=<span class="number">100</span></span><br><span class="line"><span class="attr">H</span>=<span class="number">25</span></span><br><span class="line"><span class="attr">FontColor</span>=<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span></span><br><span class="line"><span class="attr">Text</span>=<span class="string">&quot;Version: %1&quot;</span></span><br></pre></td></tr></table></figure>
+</dl>
 
 <h2 id="AlternativeBehavior">Alternative Behavior</h2>
-
-	<dt id="OutputType"><code>OutputType</code></dt>
+<dl>
+	<dt id="OutputType"><code>OutputType</code> <small>Default: <code>Value</code></small></dt>
 	<dd>
 		<p>Allows the default behavior where the named value is returned - to be changed - to return either a list of all subkeys for the defined key, or a list of all value names for the defined key. Valid values are:<br/>
 		<ul>
+			<li><code>Value</code><br/>
+			Retrieves the value defined by <code>RegKey</code>.</li>
 			<li><code>SubKeyList</code><br/>
 			Retrieves a list of subkey names under the key defined by <code>RegKey</code>. <em><code>RegValue</code> is ignored.</em></li>
 			<li><code>ValueList</code><br/>
@@ -320,11 +320,16 @@
 		</p>
 	</dd>
 
-	<dt id="OutputDelimiter"><code>OutputDelimiter</code></dt>
+	<dt id="OutputDelimiter"><code>OutputDelimiter</code>  <small>Default: <code>\n (newline)</code></small></dt>
 	<dd>
-		<p>When the value of <code>OutputType</code> is set to <code>SubKeyList</code> or <code>ValueList</code>, or the registry key value type is <code>REG_MULTI_SZ</code>, the character(s) defined will be used to delimit items in the list, instead of the default newline.</p>
+		<p>When the value of <code>OutputType</code> is set to <code>SubKeyList</code> or <code>ValueList</code>, or if the registry key value type is <code>REG_MULTI_SZ</code>, the character(s) defined will be used to delimit items in the list, instead of the default <a href="/manual/variables/built-in-variables/#CRLF">newline</a>.</p>
 	</dd>
 </dl>
+
+<h2>Example</h2>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[Rainmeter]</span></span><br><span class="line"><span class="attr">Update</span>=<span class="number">1000</span></span><br><span class="line"><span class="attr">BackgroundMode</span>=<span class="number">2</span></span><br><span class="line"><span class="attr">SolidColor</span>=<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MeasureWindowsVersion]</span></span><br><span class="line"><span class="attr">Measure</span>=Registry</span><br><span class="line"><span class="attr">RegHKey</span>=HKEY_LOCAL_MACHINE</span><br><span class="line"><span class="attr">RegKey</span>=Software\Microsoft\Windows NT\CurrentVersion</span><br><span class="line"><span class="attr">RegValue</span>=ProductName</span><br><span class="line"><span class="attr">UpdateDivider</span>=-<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MeterText]</span></span><br><span class="line"><span class="attr">Meter</span>=String</span><br><span class="line"><span class="attr">MeasureName</span>=MeasureWindowsVersion</span><br><span class="line"><span class="attr">X</span>=<span class="number">5</span></span><br><span class="line"><span class="attr">Y</span>=<span class="number">5</span></span><br><span class="line"><span class="attr">W</span>=<span class="number">100</span></span><br><span class="line"><span class="attr">H</span>=<span class="number">25</span></span><br><span class="line"><span class="attr">FontColor</span>=<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span></span><br><span class="line"><span class="attr">Text</span>=<span class="string">&quot;Version: %1&quot;</span></span><br></pre></td></tr></table></figure>
+
+
       </div>
 
     </div>
