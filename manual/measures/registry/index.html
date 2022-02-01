@@ -268,12 +268,12 @@
 <dl>
 	<dt>General measure options</dt>
 	<dd>
-		All <a href="/manual/measures/general-options/">general measure options</a> are valid.
+		<p>All <a href="/manual/measures/general-options/">general measure options</a> are valid.</p>
 	</dd>
 
 	<dt id="RegHKey"><code>RegHKey</code></dt>
 	<dd>
-		Name of the root key. Valid values are:
+		<p>Name of the root key. Valid values are:<br/>
 		<ul>
 		<li><code>HKEY_CURRENT_CONFIG</code></li>
 		<li><code>HKEY_CURRENT_USER</code></li>
@@ -281,32 +281,50 @@
 		<li><code>HKEY_CLASSES_ROOT</code></li>
 		<li><code>HKEY_PERFORMANCE_DATA</code></li>
 		<li><code>HKEY_DYN_DATA</code></li>
-		</ul>
+		</ul></p>
 	</dd>
 
 	<dt id="RegKey"><code>RegKey</code></dt>
 	<dd>
-		Name of the subkey.
+		<p>Name of the subkey.</p>
+		<p><b>Note:</b> Subkey names are case insensitive and delineated with <code>\</code> backslash characters.</p>
 	</dd>
 
 	<dt id="RegValue"><code>RegValue</code></dt>
 	<dd>
-		Name of the value. If not specified, the default value is retrieved.
-		<br><br><b>Note:</b> The <a target="_blank" rel="noopener" href="http://en.wikipedia.org/wiki/Windows_Registry">registry key value types</a> supported are:
+		<p>Name of the value to return. If not specified, the default value is retrieved.</p>
+		<p><b>Note:</b> The <a target="_blank" rel="noopener" href="http://en.wikipedia.org/wiki/Windows_Registry">registry key value types</a> supported are:<br/>
 		<ul>
 			<li><code>REG_SZ</code> (string): A string usually UTF-16LE encoded. If the string represents a number, both the string and number <a href="/manual/measures/#Values">measure values</a> will be set.</li>
 			<li><code>REG_EXPAND_SZ</code> (string): An "expandable" string similar to <code>REG_SZ</code> that can contain <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Environment_variable">environment variables</a>.</li>
 			<li><code>REG_MULTI_SZ</code> (string): A series of strings separated by a null character. Rainmeter will convert any null separators to a <a href="/manual/variables/built-in-variables/#CRLF">newline character</a>.</li>
 			<li><code>REG_DWORD</code> (number): Represents a 32-bit unsigned integer.</li>
 			<li><code>REG_QWORD</code> (number): Represents a 64-bit unsigned integer.</li>
-			<li><code>REG_BINARY</code> (string): Represents binary data in hex format.</li>
-		</ul>
+			</p>
 	</dd>
-</dl>
 
 <h2>Example</h2>
 <figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[Rainmeter]</span></span><br><span class="line"><span class="attr">Update</span>=<span class="number">1000</span></span><br><span class="line"><span class="attr">BackgroundMode</span>=<span class="number">2</span></span><br><span class="line"><span class="attr">SolidColor</span>=<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MeasureWindowsVersion]</span></span><br><span class="line"><span class="attr">Measure</span>=Registry</span><br><span class="line"><span class="attr">RegHKey</span>=HKEY_LOCAL_MACHINE</span><br><span class="line"><span class="attr">RegKey</span>=Software\Microsoft\Windows NT\CurrentVersion</span><br><span class="line"><span class="attr">RegValue</span>=ProductName</span><br><span class="line"><span class="attr">UpdateDivider</span>=-<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MeterText]</span></span><br><span class="line"><span class="attr">Meter</span>=String</span><br><span class="line"><span class="attr">MeasureName</span>=MeasureWindowsVersion</span><br><span class="line"><span class="attr">X</span>=<span class="number">5</span></span><br><span class="line"><span class="attr">Y</span>=<span class="number">5</span></span><br><span class="line"><span class="attr">W</span>=<span class="number">100</span></span><br><span class="line"><span class="attr">H</span>=<span class="number">25</span></span><br><span class="line"><span class="attr">FontColor</span>=<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span></span><br><span class="line"><span class="attr">Text</span>=<span class="string">&quot;Version: %1&quot;</span></span><br></pre></td></tr></table></figure>
 
+<h2 id="AlternativeBehavior">Alternative Behavior</h2>
+
+	<dt id="OutputType"><code>OutputType</code></dt>
+	<dd>
+		<p>Allows the default behavior where the named value is returned - to be changed - to return either a list of all subkeys for the defined key, or a list of all value names for the defined key. Valid values are:<br/>
+		<ul>
+			<li><code>SubKeyList</code><br/>
+			Retrieves a list of subkey names under the key defined by <code>RegKey</code>. <em><code>RegValue</code> is ignored.</em></li>
+			<li><code>ValueList</code><br/>
+			Retrieves a list of value names under the key defined by <code>RegKey</code>. <em><code>RegValue</code> is ignored.</em></li>
+		</ul>
+		</p>
+	</dd>
+
+	<dt id="OutputDelimiter"><code>OutputDelimiter</code></dt>
+	<dd>
+		<p>When the value of <code>OutputType</code> is set to <code>SubKeyList</code> or <code>ValueList</code>, or the registry key value type is <code>REG_MULTI_SZ</code>, the character(s) defined will be used to delimit items in the list, instead of the default newline.</p>
+	</dd>
+</dl>
       </div>
 
     </div>
